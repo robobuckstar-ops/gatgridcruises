@@ -1,0 +1,198 @@
+import { ships } from '@/data/ships'
+import { ports } from '@/data/ports'
+import { sailings } from '@/data/sailings'
+import { lastMinuteSailings } from '@/data/last-minute-sailings'
+import { priceSnapshots } from '@/data/price-snapshots'
+import { staterooms } from '@/data/staterooms'
+import { hotels } from '@/data/hotels'
+import { transfers } from '@/data/transfers'
+import { sailTogetherGroups } from '@/data/sail-together-groups'
+import { blogPosts } from '@/data/blog-posts'
+import type { Ship, Port, Sailing, PriceSnapshot, Stateroom, PreCruiseHotel, TransferOption } from '@/types/database'
+import type { SailTogetherGroup } from '@/data/sail-together-groups'
+import type { BlogPost } from '@/data/blog-posts'
+
+export interface SailTogetherGroupWithSailing extends SailTogetherGroup {
+  sailing: Sailing
+}
+
+// Ships
+export function getShips(): Ship[] {
+  return ships
+}
+
+export function getShipBySlug(slug: string): Ship | undefined {
+  return ships.find(s => s.slug === slug)
+}
+
+export function getShipById(id: string): Ship | undefined {
+  return ships.find(s => s.id === id)
+}
+
+// Ports
+export function getPorts(): Port[] {
+  return ports
+}
+
+export function getPortBySlug(slug: string): Port | undefined {
+  return ports.find(p => p.slug === slug)
+}
+
+export function getPortById(id: string): Port | undefined {
+  return ports.find(p => p.id === id)
+}
+
+// Sailings
+export function getSailings(): Sailing[] {
+  return sailings.map(s => ({
+    ...s,
+    ship: getShipById(s.ship_id),
+    departure_port: getPortById(s.departure_port_id),
+  }))
+}
+
+export function getSailingById(id: string): Sailing | undefined {
+  const s = sailings.find(s => s.id === id)
+  if (!s) return undefined
+  return {
+    ...s,
+    ship: getShipById(s.ship_id),
+    departure_port: getPortById(s.departure_port_id),
+    price_snapshots: getSnapshotsForSailing(s.id),
+  }
+}
+
+export function getFeaturedSailings(): Sailing[] {
+  return getSailings().filter(s => s.is_featured).slice(0, 12)
+}
+
+export function getBiggestPriceDrops(): Sailing[] {
+  const allSailings = getSailings()
+  return allSailings
+    .map(s => {
+      const snapshots = getSnapshotsForSailing(s.id)
+      if (snapshots.length < 2) return { ...s, drop: 0 }
+      const avg = snapshots.reduce((sum, sn) => sum + sn.lowest_price, 0) / snapshots.length
+      const drop = ((avg - s.current_lowest_price) / avg) * 100
+      return { ...s, drop }
+    })
+    .filter(s => s.drop > 0)
+    .sort((a, b) => b.drop - a.drop)
+    .slice(0, 6)
+}
+
+export function getLastMinuteDeals(): Sailing[] {
+  const now = new Date()
+  const ninetyDaysFromNow = new Date(now.getTime() + 90 * 24 * 60 * 60 * 1000)
+
+  // Combine last-minute sailings with regular sailings
+  const allSailings = [
+    ...lastMinuteSailings,
+    ...sailings
+  ]
+
+  // Filter for sailings departing within 90 days
+  const dealsWithin90 = allSailings.filter(s => {
+    const sailDate = new Date(s.sail_date)
+    return sailDate >= now && sailDate <= ninetyDaysFromNow
+  })
+
+  // Join ship and port data
+  const enrichedDeals = dealsWithin90.map(s => ({
+    ...s,
+    ship: getShipById(s.ship_id),
+    departure_port: getPortById(s.departure_port_id),
+  }))
+
+  // Sort by departure date (soonest first)
+  return enrichedDeals.sort((a, b) => a.sail_date.localeCompare(b.sail_date))
+}
+
+// Price Snapshots
+export function getSnapshotsForSailing(sailingId: string): PriceSnapshot[] {
+  return priceSnapshots
+    .filter(p => p.sailing_id === sailingId)
+    .sort((a, b) => a.snapshot_date.localeCompare(b.snapshot_date))
+}
+
+// Staterooms
+export function getStaterooms(): Stateroom[] {
+  return staterooms
+}
+
+export function getStateroomsForShip(shipId: string): Stateroom[] {
+  return staterooms.filter(s => s.ship_id === shipId)
+}
+
+// Hotels
+export function getHotelsForPort(portId: string): PreCruiseHotel[] {
+  return hotels.filter(h => h.port_id === portId)
+}
+
+// Transfers
+export function getTransfersForPort(portId: string): TransferOption[] {
+  return transfers.filter(t => t.port_id === portId)
+}
+
+// Sail Together Community Groups
+export function getSailTogetherGroups(): SailTogetherGroupWithSailing[] {
+  return sailTogetherGroups
+    .map(group => {
+      const sailing = getSailingById(group.sailing_id)
+      if (!sailing) return null
+      return {
+        ...group,
+        sailing,
+      }
+    })
+    .filter((g): g is SailTogetherGroupWithSailing => g !== null)
+    .sort((a, b) => a.sailing.sail_date.localeCompare(b.sailing.sail_date))
+}
+
+export function getSailTogetherGroupBySailingId(sailingId: string): SailTogetherGroupWithSailing | undefined {
+  const group = sailTogetherGroups.find(g => g.sailing_id === sailingId)
+  if (!group) return undefined
+  const sailing = getSailingById(sailingId)
+  if (!sailing) return undefined
+  return {
+    ...group,
+    sailing,
+  }
+}
+
+export function getSailTogetherGroupsByShip(shipId: string): SailTogetherGroupWithSailing[] {
+  return getSailTogetherGroups().filter(g => g.sailing.ship_id === shipId)
+}
+
+export function getSailTogetherGroupsByMonth(month: number, year: number): SailTogetherGroupWithSailing[] {
+  return getSailTogetherGroups().filter(g => {
+    const sailDate = new Date(g.sailing.sail_date)
+    return sailDate.getMonth() === month && sailDate.getFullYear() === year
+  })
+}
+
+// Blog Posts
+export function getBlogPosts(): BlogPost[] {
+  return blogPosts.sort((a, b) => new Date(b.published_date).getTime() - new Date(a.published_date).getTime())
+}
+
+export function getBlogPostBySlug(slug: string): BlogPost | undefined {
+  return blogPosts.find(post => post.slug === slug)
+}
+
+export function getRelatedPosts(postId: string, category: string, limit: number = 3): BlogPost[] {
+  return blogPosts
+    .filter(post => post.id !== postId && post.category === category)
+    .sort((a, b) => new Date(b.published_date).getTime() - new Date(a.published_date).getTime())
+    .slice(0, limit)
+}
+
+export function getBlogPostsByCategory(category: string): BlogPost[] {
+  return blogPosts
+    .filter(post => post.category === category)
+    .sort((a, b) => new Date(b.published_date).getTime() - new Date(a.published_date).getTime())
+}
+
+export function getFeaturedBlogPost(): BlogPost | undefined {
+  return getBlogPosts()[0]
+}

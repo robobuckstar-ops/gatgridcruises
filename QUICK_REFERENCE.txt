@@ -1,0 +1,271 @@
+GATGRIDCRUISES - QUICK REFERENCE CARD
+================================================================================
+
+IMPORT PATHS & USAGE
+================================================================================
+
+Deal Score:
+  import { calculateDealScore } from '@/lib/deal-score'
+  const result = calculateDealScore(sailing, snapshots?)
+  // result: { score, breakdown, recommendation, label }
+
+Pricing:
+  import {
+    calculateOutTheDoorPrice,
+    getOutTheDoorTotal,
+    getPricePerNight,
+    getPortFeesEstimate
+  } from '@/lib/pricing'
+
+Badges:
+  import { DealScoreBadge } from '@/components/ui/deal-score-badge'
+  import { PriceMatchBadge } from '@/components/ui/price-match-badge'
+
+Card:
+  import { SailingCard } from '@/components/ui/sailing-card'
+  <SailingCard sailing={sailing} />
+
+Types:
+  import type { DealScoreBreakdown, OutTheDoorPrice } from '@/types/database'
+
+================================================================================
+
+DEAL SCORE BREAKDOWN (6 Factors)
+================================================================================
+
+Price (40%)        → 0-100: current vs historical average
+Urgency (20%)      → 0-100: days until departure (last-minute boost)
+Ship (15%)         → 0-100: newness/popularity (newer = higher)
+Itinerary (10%)    → 0-100: region desirability + seasonality
+Availability (10%) → 0-100: cabin categories available
+Seasonal (5%)      → 0-100: off-peak bonus
+
+Final Score = weighted average of above factors
+
+Recommendations:
+  85+ = "Exceptional Deal" (strong-buy) [GREEN]
+  70-84 = "Great Value" (buy) [BLUE]
+  55-69 = "Fair Price" (fair) [GRAY]
+  40-54 = "Consider Waiting" (wait) [AMBER]
+  <40 = "Overpriced" (overpriced) [RED]
+
+================================================================================
+
+PRICING BREAKDOWN
+================================================================================
+
+Base Fare           = Listed price per stateroom
+Port Fees           = $125-$175 per person (region dependent)
+Gratuities          = $14.50-$16.50 per person per night
+Total               = Base + Fees + Tips
+Per Person          = Total / number of guests
+Per Night           = Total / number of nights
+
+Port Fees by Region:
+  Caribbean: $125    |  Alaska: $175      |  Europe: $150
+  Bahamas: $125      |  Pacific: $140     |  Other: $130
+
+Gratuity Rates:
+  Standard: $14.50/night   |  Concierge: $16.50/night
+
+================================================================================
+
+COMPONENT PROPS
+================================================================================
+
+<DealScoreBadge>
+  score: number (0-100) [REQUIRED]
+  size?: 'sm' | 'md' | 'lg' [default: 'md']
+  label?: string [optional]
+  showTooltip?: boolean [default: false]
+  className?: string [optional]
+
+<PriceMatchBadge>
+  size?: 'sm' | 'md' [default: 'md']
+  showTooltip?: boolean [default: true]
+  className?: string [optional]
+
+<SailingCard>
+  sailing: Sailing [REQUIRED]
+  percentBelow?: number [optional]
+
+================================================================================
+
+SIZE REFERENCES
+================================================================================
+
+Badge Sizes:
+  sm = 40px (small cards, tight spaces)
+  md = 56px (default, standard cards)
+  lg = 72px (detail pages, prominent display)
+
+Card Layout:
+  Top bar: blue-600 → gold hover (gradient)
+  Left: DealScoreBadge (md)
+  Right: Recommendation pill
+  Body: Itinerary name + details
+  Pricing: Out-the-door total + breakdown
+
+================================================================================
+
+COLOR SCHEME
+================================================================================
+
+Score-Based (Automatic):
+  80+  → Emerald-500 (green)
+  60-79 → Blue-500 (blue)
+  40-59 → Amber-500 (yellow)
+  <40  → Red-500 (red)
+
+Recommendations:
+  strong-buy  → Emerald (buy confidently)
+  buy         → Blue (good value)
+  fair        → Slate (neutral)
+  wait        → Amber (explore options)
+  overpriced  → Red (skip)
+
+Backgrounds:
+  Cards: White with light shadow
+  Gradients: blue-50 to indigo-50
+  Hover: Slight elevation + gold accent
+  Breakdown: Slate-50 (muted)
+
+================================================================================
+
+COMMON PATTERNS
+================================================================================
+
+Show Score on Card:
+  <DealScoreBadge
+    score={calculateDealScore(sailing).score}
+    size="md"
+  />
+
+Display All-In Pricing:
+  const { perPerson } = getOutTheDoorTotal(
+    sailing.current_lowest_price,
+    sailing.length_nights,
+    2,
+    sailing.region
+  )
+  <p>${perPerson} per person (all-in)</p>
+
+Detailed Modal:
+  const pricing = calculateOutTheDoorPrice(sailing, 'verandah', 2)
+  <!-- Show: baseFare, portFees, gratuities, total -->
+
+Price Match Info:
+  <PriceMatchBadge size="sm" showTooltip={true} />
+
+Full Card:
+  <SailingCard sailing={sailing} />
+
+================================================================================
+
+SAILING REGIONS
+================================================================================
+
+Valid Values:
+  'caribbean'  → Eastern/Western Caribbean routes
+  'bahamas'    → Bahamian day/weekend trips
+  'alaska'     → Alaska Inside Passage routes
+  'pacific'    → Baja & Pacific Coast
+  'europe'     → European itineraries
+  'other'      → Unknown/Other routes
+
+Auto-Detection (from itinerary name):
+  Contains "bahamian" → 'bahamas'
+  Contains "caribbean" → 'caribbean'
+  Contains "alaskan" → 'alaska'
+  Contains "baja" → 'pacific'
+  Anything else → 'other'
+
+All 18 sailings already have regions assigned.
+
+================================================================================
+
+PERFORMANCE TIPS
+================================================================================
+
+- calculateDealScore() is instant (<1ms)
+- All pricing calculations are O(1) - no loops
+- SVG badge renders efficiently, GPU-accelerated transitions
+- Use getOutTheDoorTotal() for cards (faster than detailed calculation)
+- Use calculateOutTheDoorPrice() only for detailed views/modals
+- Components memoized where needed for list rendering
+
+================================================================================
+
+TROUBLESHOOTING
+================================================================================
+
+Score is too high/low?
+  → Check price snapshot data completeness
+  → Verify ship year_launched is set
+  → Ensure sailing has region field
+
+Pricing doesn't match expectations?
+  → Verify sailing.region is correct
+  → Check guest count (default is 2)
+  → Verify cabin category selected
+  → Port fees vary by region (see table above)
+
+Badge colors not showing?
+  → Ensure Tailwind CSS is compiled
+  → Check color classes in browser devtools
+  → Verify score is within 0-100 range
+
+Card not expandable?
+  → Check JavaScript is enabled
+  → Verify 'use client' directive is present
+  → Check React state management
+
+================================================================================
+
+FILES & LOCATIONS
+================================================================================
+
+New Files:
+  /src/lib/deal-score.ts (265 lines)
+  /src/lib/pricing.ts (134 lines)
+  /src/components/ui/deal-score-badge.tsx (178 lines)
+  /src/components/ui/price-match-badge.tsx (73 lines)
+
+Updated Files:
+  /src/types/database.ts (interfaces)
+  /src/data/sailings.ts (region fields)
+  /src/components/ui/sailing-card.tsx (complete redesign)
+
+Documentation:
+  /FEATURES_BUILT.md (comprehensive)
+  /DEVELOPER_QUICK_START.md (quick API)
+  /BUILD_SUMMARY.txt (project overview)
+  /QUICK_REFERENCE.txt (this file)
+
+================================================================================
+
+NEXT INTEGRATION OPPORTUNITIES
+================================================================================
+
+Historical Charts:
+  Use DealScoreBreakdown to plot score factors over time
+
+Comparison Mode:
+  Show 2-3 sailings side-by-side with score comparison
+
+Smart Alerts:
+  "Price dropped 15%" or "3 days to departure - act fast!"
+
+Personalization:
+  Weight factors based on user preferences
+
+Budget Calculator:
+  Input budget → show matching sailings sorted by value
+
+Newsletter:
+  Email top deals from current week
+
+Analytics:
+  Track which scores drive bookings
+
+================================================================================
