@@ -84,8 +84,8 @@ export default function BestTimeToBookGuide() {
           <div className="mb-6 p-6 bg-amber-50 border-l-4 border-blue-600">
             <h3 className="font-fraunces text-xl font-bold text-slate-900 mb-3">What Is Wave Season?</h3>
             <p className="font-inter text-slate-600">
-              "Wave season" (January through March, sometimes extending into April) is when Disney and other cruise lines offer aggressive promotions, price drops, and discounts to drive bookings. Travel agencies see heightened commission opportunities, and passengers benefit from special onboard credits and reduced fares. It's the single best time to book a cruise if you're flexible on itineraries.
-            </p>
+              "Wave season" (January through March, sometimes extending into April) is when Disney and other cruise lines offer aggressive promotions, price drops, and discounts to drive bookings. Travel agencies see heightened commission opportunities, and passengers benefit from special onboard credits and reduced fares. It"s the single best time to book a cruise if you're flexible on itineraries.
+"            </p>
           </div>
 
           <div className="mb-6">
@@ -116,8 +116,8 @@ export default function BestTimeToBookGuide() {
 
           <div className="p-4 bg-green-50 rounded">
             <p className="font-inter text-slate-600">
-              <strong>Tip:</strong> If you're planning any cruise within the next 2-3 years, wave season (Jan-Mar) is prime time to shop. Even if your desired cruise isn't until 2026, prices on 2026 cruises are often reduced during wave season.
-            </p>
+              <strong>Tip:</strong> If you"re planning any cruise within the next 2-3 years, wave season (Jan-Mar) is prime time to shop. Even if your desired cruise isn't until 2026, prices on 2026 cruises are often reduced during wave season.
+"            </p>
           </div>
         </section>
 
@@ -331,8 +331,8 @@ export default function BestTimeToBookGuide() {
           <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-4">Real Price Lifecycle Example</h2>
 
           <p className="font-inter text-slate-600 leading-relaxed mb-6">
-            Here's a realistic example of how a 7-night Disney cruise's pricing evolves over its booking window (prices are estimates):
-          </p>
+            Here"s a realistic example of how a 7-night Disney cruise's pricing evolves over its booking window (prices are estimates):
+"          </p>
 
           <div className="overflow-x-auto mb-6">
             <table className="w-full font-inter text-sm border border-gray-300">

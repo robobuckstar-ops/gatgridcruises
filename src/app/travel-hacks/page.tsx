@@ -1,5 +1,3 @@
-'use client'
-
 import { Metadata } from 'next'
 import Link from 'next/link'
 import {
@@ -16,7 +14,7 @@ import { CreditCardRecommendation } from '@/components/ui/credit-card-recommenda
 import { getBestCardsFor, creditCards } from '@/lib/credit-card-config'
 
 export const metadata: Metadata = {
-  title: 'Travel Hacks: Make Your Disney Cruise Cheaper (or Free) | GatGrid Cruises',
+  title: 'Travel Hacks: Make Your Cruise Cheaper (or Free) | GatGrid Cruises',
   description:
     'Insider strategies for using credit card rewards, points, and perks to dramatically reduce your cruise vacation costs. Learn how to fly free, get trip insurance, and stack points for free cruises.',
   keywords: [
@@ -25,7 +23,7 @@ export const metadata: Metadata = {
     'free flights',
     'trip insurance',
     'travel hacks',
-    'disney cruise deals',
+    'cruise deals',
     'credit card strategy',
   ],
 }
@@ -94,7 +92,7 @@ export default function TravelHacksHub() {
           </div>
 
           <h1 className="text-4xl md:text-5xl font-fraunces font-bold mb-6 max-w-3xl">
-            Travel Hacks: Make Your Disney Cruise Cheaper (or Free)
+            Travel Hacks: Make Your Cruise Cheaper (or Free)
           </h1>
 
           <p className="text-xl text-slate-600 max-w-2xl leading-relaxed mb-8">

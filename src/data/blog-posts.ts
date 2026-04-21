@@ -28,14 +28,14 @@ export const blogPosts: BlogPost[] = [
     content: `
 <div class="prose prose-invert max-w-none">
 
-Disney Cruise Line has officially unveiled the Disney Treasure, a groundbreaking new ship that combines the best of Disney's nautical heritage with cutting-edge modern design. This 144,000-ton vessel represents a significant leap forward in cruise ship innovation and represents the future of Disney's fleet.
-
+Disney Cruise Line has officially unveiled the Disney Treasure, a groundbreaking new ship that combines the best of Disney"s nautical heritage with cutting-edge modern design. This 144,000-ton vessel represents a significant leap forward in cruise ship innovation and represents the future of Disney's fleet.
+"
 ## What Makes Disney Treasure Special?
 
 The Disney Treasure stands out for several reasons. First and foremost, the ship incorporates revolutionary new technology that sets industry standards. The navigation and propulsion systems are state-of-the-art, making the ship more fuel-efficient while maintaining the comfort and safety Disney is known for.
 
-The design philosophy behind Disney Treasure draws inspiration from classic Disney films and characters, woven throughout the ship's public spaces. Each area tells a unique story, from the atrium featuring characters from across Disney's cinematic universe to specialty restaurants celebrating different Disney movie franchises.
-
+The design philosophy behind Disney Treasure draws inspiration from classic Disney films and characters, woven throughout the ship"s public spaces. Each area tells a unique story, from the atrium featuring characters from across Disney's cinematic universe to specialty restaurants celebrating different Disney movie franchises.
+"
 ## Accommodations and Staterooms
 
 Disney hasn't skimped on guest accommodations. The Disney Treasure features over 1,200 staterooms with multiple categories to suit different budgets and preferences. Standard inside cabins have been redesigned with better layouts and lighting, while the premium suites feature private verandas with ocean views that are truly spectacular.
@@ -50,8 +50,8 @@ Entertainment has been elevated across the board, with new theater productions a
 
 ## When Can You Sail?
 
-The Disney Treasure's maiden voyage is scheduled for late 2025, with sailings from Port Canaveral initially focusing on 4, 5, and 7-night Caribbean itineraries. Given Disney's track record with new ships, we expect these sailings to book up quickly. If you're interested in experiencing the Treasure, we recommend getting on Disney's interest list early or monitoring pricing closely as the debut date approaches.
-
+The Disney Treasure"s maiden voyage is scheduled for late 2025, with sailings from Port Canaveral initially focusing on 4, 5, and 7-night Caribbean itineraries. Given Disney's track record with new ships, we expect these sailings to book up quickly. If you're interested in experiencing the Treasure, we recommend getting on Disney's interest list early or monitoring pricing closely as the debut date approaches.
+"
 The Disney Treasure represents Disney Cruise Line's commitment to innovation while maintaining the quality and magic that guests have come to expect. This is a ship worth getting excited about.
 
 </div>
@@ -171,24 +171,24 @@ September delivers an exceptional value proposition: dramatically lower prices, 
     content: `
 <div class="prose prose-invert max-w-none">
 
-Disney's private island experiences are highlight destinations for most cruisers. Castaway Cay in the Bahamas and Lookout Cay (formerly Lighthouse Point) in Eleuthera both offer pristine beaches and island activities, but they cater to different preferences. Let's break down the differences.
-
+Disney"s private island experiences are highlight destinations for most cruisers. Castaway Cay in the Bahamas and Lookout Cay (formerly Lighthouse Point) in Eleuthera both offer pristine beaches and island activities, but they cater to different preferences. Let's break down the differences.
+"
 ## Castaway Cay: The Established Classic
 
-Castaway Cay has been Disney's private island destination since 1998. Located in the Bahamas, it's a fully developed island experience with multiple beach areas, restaurants, and activities.
-
+Castaway Cay has been Disney"s private island destination since 1998. Located in the Bahamas, it's a fully developed island experience with multiple beach areas, restaurants, and activities.
+"
 **The Beaches**: Castaway Cay features several distinct beach areas. Family Beach is the main hub with plenty of lounge chairs and shallow water perfect for kids. Teen Beach caters to older guests with volleyball and water sports. Adults get their own adults-only beach with premium lounging and a full bar.
 
-**Activities**: Beyond lounging, you can enjoy snorkeling (though it's relatively basic), windsurfing, paddleboarding, and parasailing. There's also a splash pad for toddlers and various recreational activities like volleyball and cornhole.
-
+**Activities**: Beyond lounging, you can enjoy snorkeling (though it"s relatively basic), windsurfing, paddleboarding, and parasailing. There's also a splash pad for toddlers and various recreational activities like volleyball and cornhole.
+"
 **Dining**: The island features multiple food venues, including themed restaurants. IC Ice is famous for its frozen treats, and portions are generous. Barbecue lunch buffet options range from casual to premium.
 
 **The Experience**: Castaway Cay feels like a well-established, slightly busier island destination. With ships visiting regularly, it's managed to maintain infrastructure and quality, but popularity means crowds.
 
 ## Lookout Cay: The Newer Luxury Experience
 
-Lookout Cay is Disney's newest private island destination, having reopened as a Disney property in 2024. It represents a significant upgrade from the previous incarnation and signals Disney's commitment to enhancing private island experiences.
-
+Lookout Cay is Disney"s newest private island destination, having reopened as a Disney property in 2024. It represents a significant upgrade from the previous incarnation and signals Disney's commitment to enhancing private island experiences.
+"
 **The Beaches**: Lookout Cay features beautifully maintained beach areas with premium amenities. The main beach is immaculate and well-groomed. Premium stateroom guests get access to exclusive beach areas with premium facilities.
 
 **Activities**: While activities are similar to Castaway Cay (snorkeling, paddleboarding, etc.), Lookout Cay's facilities feel more modern and polished. The island features upscale dining options and lounge areas that feel more resort-like.
@@ -236,8 +236,8 @@ Ideally, if you cruise multiple times, experience both. Each offers something un
     content: `
 <div class="prose prose-invert max-w-none">
 
-Navigating Disney Cruise Line's beverage offerings can be complex. Should you purchase a drink package? Which one? Let's break down the options and help you make an informed decision.
-
+Navigating Disney Cruise Line"s beverage offerings can be complex. Should you purchase a drink package? Which one? Let's break down the options and help you make an informed decision.
+"
 ## Understanding the Options
 
 Disney offers several beverage package tiers, each with different inclusions and price points.
@@ -290,16 +290,16 @@ For a 7-night cruise, the deluxe package costs approximately $385 for one person
 
 **Timing**: Drink package prices increase closer to sail date. Book during wave season (late October-early December) or monitor pricing regularly.
 
-**Family Dynamics**: A family of four where two drink regularly and two don't might purchase one or two packages rather than four. You don't need to buy for everyone.
-
+**Family Dynamics**: A family of four where two drink regularly and two don"t might purchase one or two packages rather than four. You don't need to buy for everyone.
+"
 **Onboard Credit**: Check if your booking includes onboard credit. This can offset drink package costs significantly.
 
 **Specialty Venues**: Premium venues like Palo Steakhouse may not honor drink packages for wine pairings. Confirm restrictions when considering your options.
 
 ## Maximizing Package Value
 
-**1. Use It Liberally**: You've paid upfront, so enjoy the package throughout your cruise. Many people feel guilty using packages, but that's the whole point.
-
+**1. Use It Liberally**: You"ve paid upfront, so enjoy the package throughout your cruise. Many people feel guilty using packages, but that's the whole point.
+"
 **2. Try New Drinks**: Use the package to experiment with specialty cocktails and wines you might not order à la carte due to cost concerns.
 
 **3. Venue Awareness**: Different venues have different selections. Explore throughout the ship to find your favorites.
@@ -374,8 +374,8 @@ When you spot a potential error fare, here's what to do:
 
 ## Ethical Considerations
 
-Booking error fares is completely legal and ethical. You're not committing fraud—you're capitalizing on a publicly available offer. Once your booking is confirmed, the price is locked in.
-
+Booking error fares is completely legal and ethical. You"re not committing fraud—you're capitalizing on a publicly available offer. Once your booking is confirmed, the price is locked in.
+"
 However, it's poor form to "game the system" by booking multiple copies of the same error fare across different accounts or credit cards. Book once, enjoy your discounted cruise, and let others have the opportunity.
 
 ## Are Error Fares Worth Chasing?
@@ -409,12 +409,12 @@ Error fares represent the ultimate cruising bargain. Stay alert, monitor your ta
     content: `
 <div class="prose prose-invert max-w-none">
 
-The Disney Wish debuted in 2023 with tremendous anticipation and has now completed two years of operation. Disney has implemented numerous improvements and enhancements based on guest feedback. Here's what's new and what it means for future passengers.
-
+The Disney Wish debuted in 2023 with tremendous anticipation and has now completed two years of operation. Disney has implemented numerous improvements and enhancements based on guest feedback. Here"s what's new and what it means for future passengers.
+"
 ## Dining Enhancements
 
-Disney has expanded dining options throughout the ship, particularly in specialty venues. The chef's table experience at Lumiere's has been enhanced with new menu offerings that rotate seasonally. Themes of Enchantment dining has undergone renovations that improved sightlines to the ocean and added new menu items.
-
+Disney has expanded dining options throughout the ship, particularly in specialty venues. The chef"s table experience at Lumiere's has been enhanced with new menu offerings that rotate seasonally. Themes of Enchantment dining has undergone renovations that improved sightlines to the ocean and added new menu items.
+"
 The main dining rooms have also received subtle updates, with new courses rotated into the standard menus and special dietary accommodations expanded significantly.
 
 ## Technology Upgrades
@@ -455,8 +455,8 @@ This guest-centric approach has improved the overall experience and sets an exce
 
 ## What This Means for You
 
-If you're considering the Disney Wish, you're sailing a mature, well-refined ship with excellent amenities and a responsive management team. The early operational challenges have been addressed, and the guest experience has been continuously improved.
-
+If you"re considering the Disney Wish, you're sailing a mature, well-refined ship with excellent amenities and a responsive management team. The early operational challenges have been addressed, and the guest experience has been continuously improved.
+"
 Current sailing on the Disney Wish is significantly enhanced compared to the inaugural year, making her an excellent choice for cruisers seeking a newer ship experience with proven reliability.
 
 ## Sailing the Wish

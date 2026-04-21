@@ -25,8 +25,8 @@ export default function AboutPage() {
         <section className="mb-16">
           <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-4">Who We Are</h2>
           <p className="font-inter text-lg text-gray-700 leading-relaxed">
-            GatGridCruises is an independent Disney cruise planning resource built for families who want transparent, honest information before committing thousands of dollars to a cruise vacation. We're not a travel agency — we don't take bookings or earn commissions on cruise sales. We're a media and tools platform, like NerdWallet for Disney cruises.
-          </p>
+            GatGridCruises is an independent Disney cruise planning resource built for families who want transparent, honest information before committing thousands of dollars to a cruise vacation. We"re not a travel agency — we don't take bookings or earn commissions on cruise sales. We're a media and tools platform, like NerdWallet for Disney cruises.
+"          </p>
         </section>
 
         {/* Why This Exists */}
@@ -73,8 +73,8 @@ export default function AboutPage() {
 
             <div>
               <h3 className="font-semibold text-slate-900 mb-2">Sponsored Content</h3>
-              <p>Some content modules (like "Find a Disney Travel Specialist") are paid placements from travel agencies and service providers. These are always labeled as "Sponsored." We don't hide partnerships — we're transparent about them.</p>
-            </div>
+              <p>Some content modules (like "Find a Disney Travel Specialist") are paid placements from travel agencies and service providers. These are always labeled as "Sponsored." We don"t hide partnerships — we're transparent about them.</p>
+"            </div>
 
             <div>
               <h3 className="font-semibold text-slate-900 mb-2">Information Accuracy</h3>

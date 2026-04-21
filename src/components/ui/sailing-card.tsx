@@ -5,33 +5,30 @@ import Link from 'next/link'
 import type { Sailing } from '@/types/database'
 import { formatPrice, formatDate, cn } from '@/lib/utils'
 import { calculateDealScore } from '@/lib/deal-score'
-import { getOutTheDoorTotal, getPricePerNight } from '@/lib/pricing'
+import { getOutTheDoorTotalForGuests } from '@/lib/pricing'
 import { DealScoreBadge } from './deal-score-badge'
 import { Ship, Calendar, MapPin, ChevronDown } from 'lucide-react'
 
 interface SailingCardProps {
   sailing: Sailing
+  guestCount?: number
   percentBelow?: number
 }
 
-export function SailingCard({ sailing, percentBelow }: SailingCardProps) {
+export function SailingCard({ sailing, guestCount = 2, percentBelow }: SailingCardProps) {
   const [expandedPrice, setExpandedPrice] = useState(false)
 
-  // Calculate deal score
   const dealScore = calculateDealScore(sailing, sailing.price_snapshots)
 
-  // Calculate out-the-door pricing (for 2 guests by default)
-  const outTheDoor = getOutTheDoorTotal(
+  const pricing = getOutTheDoorTotalForGuests(
     sailing.current_lowest_price,
     sailing.length_nights,
-    2,
+    guestCount,
     sailing.region
   )
 
-  // Price per night
-  const pricePerNight = getPricePerNight(sailing.current_lowest_price, sailing.length_nights)
+  const guestLabel = guestCount === 1 ? '1 guest' : guestCount >= 4 ? '4+ guests' : `${guestCount} guests`
 
-  // Recommendation color
   const recommendationColors = {
     'strong-buy': 'bg-emerald-50 text-emerald-700 border-emerald-200',
     buy: 'bg-blue-50 text-blue-700 border-blue-200',
@@ -53,20 +50,16 @@ export function SailingCard({ sailing, percentBelow }: SailingCardProps) {
       href={`/sailing/${sailing.id}`}
       className="group block bg-white rounded-xl border border-slate-200 hover:border-blue-300 hover:shadow-lg transition-all duration-200 overflow-hidden"
     >
-      {/* Ship color bar at top */}
       <div className="h-1.5 bg-gradient-to-r from-blue-600 to-blue-500 group-hover:from-[#D4AF37] group-hover:to-amber-400 transition-all duration-200" />
 
       <div className="p-5">
         {/* Score badge + recommendation pill */}
         <div className="flex items-center justify-between gap-3 mb-3">
-          {/* Deal Score Badge - Circular */}
           <DealScoreBadge
             score={dealScore.score}
             label={dealScore.breakdown.final_score >= 80 ? '★' : undefined}
             size="md"
           />
-
-          {/* Recommendation Pill */}
           <div className="flex-1 flex items-center justify-end gap-2">
             <span
               className={cn(
@@ -89,7 +82,7 @@ export function SailingCard({ sailing, percentBelow }: SailingCardProps) {
           {sailing.ship && (
             <div className="flex items-center gap-2 text-sm text-slate-600">
               <Ship className="h-4 w-4 text-slate-400 flex-shrink-0" />
-              <span>Disney {sailing.ship.name.replace('Disney ', '')}</span>
+              <span>{sailing.ship.name}</span>
             </div>
           )}
           <div className="flex items-center gap-2 text-sm text-slate-600">
@@ -106,18 +99,21 @@ export function SailingCard({ sailing, percentBelow }: SailingCardProps) {
 
         {/* Pricing Section */}
         <div className="space-y-3 pt-3 border-t border-slate-100">
-          {/* Out-the-door total - prominent */}
-          <div className="space-y-1">
-            <div className="flex items-baseline justify-between">
-              <span className="text-sm text-slate-600 font-medium">Total Per Person</span>
-              <span className="text-xs text-slate-500">(all-in, 2 guests)</span>
-            </div>
-            <div className="flex items-baseline justify-between">
+          {/* Per-person per-night — most prominent */}
+          <div className="flex items-baseline justify-between">
+            <div>
               <span className="text-2xl font-bold text-slate-900">
-                {formatPrice(outTheDoor.perPerson)}
+                {formatPrice(pricing.perPersonPerNight)}
               </span>
-              <span className="text-xs text-emerald-600 font-semibold">per night: {formatPrice(pricePerNight)}</span>
+              <span className="text-sm text-slate-500 ml-1">/person/night</span>
             </div>
+            <span className="text-xs text-slate-500">{guestLabel}</span>
+          </div>
+
+          {/* All-in per person total */}
+          <div className="flex items-baseline justify-between">
+            <span className="text-sm text-slate-600">All-in per person</span>
+            <span className="text-base font-semibold text-slate-800">{formatPrice(pricing.perPerson)}</span>
           </div>
 
           {/* Expandable breakdown */}
@@ -126,7 +122,7 @@ export function SailingCard({ sailing, percentBelow }: SailingCardProps) {
               e.preventDefault()
               setExpandedPrice(!expandedPrice)
             }}
-            className="w-full flex items-center justify-between px-3 py-2 rounded-lg hover:bg-slate-50 transition-colors text-xs text-slate-600 font-medium group/btn"
+            className="w-full flex items-center justify-between px-3 py-2 rounded-lg hover:bg-slate-50 transition-colors text-xs text-slate-600 font-medium"
           >
             <span>View price breakdown</span>
             <ChevronDown
@@ -137,7 +133,6 @@ export function SailingCard({ sailing, percentBelow }: SailingCardProps) {
             />
           </button>
 
-          {/* Price breakdown */}
           {expandedPrice && (
             <div className="space-y-1.5 px-3 py-2 bg-slate-50 rounded-lg text-xs text-slate-700">
               <div className="flex justify-between">
@@ -145,20 +140,20 @@ export function SailingCard({ sailing, percentBelow }: SailingCardProps) {
                 <span className="font-semibold">{formatPrice(sailing.current_lowest_price / 2)}</span>
               </div>
               <div className="flex justify-between">
-                <span>Port Fees & Taxes</span>
-                <span className="font-semibold">{formatPrice(outTheDoor.total - sailing.current_lowest_price - (sailing.length_nights * 14.5 * 2))}</span>
+                <span>Port Fees & Taxes (est.)</span>
+                <span className="font-semibold text-slate-500">varies</span>
               </div>
               <div className="flex justify-between">
                 <span>Gratuities ({sailing.length_nights} nights)</span>
-                <span className="font-semibold">{formatPrice(sailing.length_nights * 14.5 * 2)}</span>
+                <span className="font-semibold">{formatPrice(sailing.length_nights * 14.5)}/person</span>
               </div>
               <div className="border-t border-slate-200 pt-1.5 flex justify-between font-semibold text-slate-900">
-                <span>Total Per Person</span>
-                <span>{formatPrice(outTheDoor.perPerson)}</span>
+                <span>Est. Total Per Person</span>
+                <span>{formatPrice(pricing.perPerson)}</span>
               </div>
+              <p className="text-xs text-slate-400 pt-1">Prices are approximate. Verify at cruise line for final totals.</p>
             </div>
           )}
-
         </div>
       </div>
     </Link>

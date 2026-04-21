@@ -3,10 +3,12 @@
 import { useState, useMemo } from 'react'
 import type { Sailing, Ship, Port } from '@/types/database'
 import { SailingCard } from '@/components/ui/sailing-card'
+import { GuestCountSelector } from '@/components/ui/guest-count-selector'
 import { AdSlot } from '@/components/ui/ad-slot'
 import { Search, SlidersHorizontal, X } from 'lucide-react'
+import { PRICES_LAST_UPDATED } from '@/lib/constants'
 
-type SortOption = 'score' | 'price_asc' | 'price_desc' | 'date' | 'drop'
+type SortOption = 'score' | 'price_asc' | 'price_desc' | 'price_per_night' | 'date' | 'duration' | 'drop'
 type SailingWithDrop = Sailing & { percentBelow: number }
 
 interface DealGridProps {
@@ -16,23 +18,31 @@ interface DealGridProps {
 }
 
 export function DealGrid({ sailings, ships, ports }: DealGridProps) {
-  // Filter state
   const [search, setSearch] = useState('')
-  const [selectedShips, setSelectedShips] = useState<string[]>([])
+  const [selectedCruiseLines, setSelectedCruiseLines] = useState<string[]>([])
   const [selectedPorts, setSelectedPorts] = useState<string[]>([])
   const [lengthFilter, setLengthFilter] = useState<number[]>([])
   const [minScore, setMinScore] = useState(0)
-  const [maxPrice, setMaxPrice] = useState(0) // 0 = no limit
+  const [maxPrice, setMaxPrice] = useState(0)
   const [sortBy, setSortBy] = useState<SortOption>('score')
   const [showFilters, setShowFilters] = useState(false)
+  const [guestCount, setGuestCount] = useState(2)
 
   const lengthOptions = [3, 4, 5, 7]
 
-  // Filter and sort logic
+  // Unique cruise lines from ships in active sailings
+  const cruiseLines = useMemo(() => {
+    const lines = new Set<string>()
+    sailings.forEach(s => {
+      const line = s.ship?.cruise_line || (s.ship?.name?.split(' ')[0] ?? 'Other')
+      lines.add(line)
+    })
+    return Array.from(lines).sort()
+  }, [sailings])
+
   const filtered = useMemo(() => {
     let results = [...sailings]
 
-    // Text search
     if (search) {
       const q = search.toLowerCase()
       results = results.filter(s =>
@@ -42,17 +52,17 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
       )
     }
 
-    // Ship filter
-    if (selectedShips.length) {
-      results = results.filter(s => selectedShips.includes(s.ship_id))
+    if (selectedCruiseLines.length) {
+      results = results.filter(s => {
+        const line = s.ship?.cruise_line || (s.ship?.name?.split(' ')[0] ?? 'Other')
+        return selectedCruiseLines.includes(line)
+      })
     }
 
-    // Port filter
     if (selectedPorts.length) {
       results = results.filter(s => selectedPorts.includes(s.departure_port_id))
     }
 
-    // Length filter
     if (lengthFilter.length) {
       results = results.filter(s => {
         if (lengthFilter.includes(7) && s.length_nights >= 7) return true
@@ -60,17 +70,14 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
       })
     }
 
-    // Score filter
     if (minScore > 0) {
       results = results.filter(s => s.sailing_score >= minScore)
     }
 
-    // Price filter
     if (maxPrice > 0) {
       results = results.filter(s => s.current_lowest_price <= maxPrice)
     }
 
-    // Sort
     switch (sortBy) {
       case 'score':
         results.sort((a, b) => b.sailing_score - a.sailing_score)
@@ -81,8 +88,16 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
       case 'price_desc':
         results.sort((a, b) => b.current_lowest_price - a.current_lowest_price)
         break
+      case 'price_per_night':
+        results.sort((a, b) =>
+          (a.current_lowest_price / a.length_nights) - (b.current_lowest_price / b.length_nights)
+        )
+        break
       case 'date':
         results.sort((a, b) => a.sail_date.localeCompare(b.sail_date))
+        break
+      case 'duration':
+        results.sort((a, b) => a.length_nights - b.length_nights)
         break
       case 'drop':
         results.sort((a, b) => b.percentBelow - a.percentBelow)
@@ -90,10 +105,10 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
     }
 
     return results
-  }, [sailings, search, selectedShips, selectedPorts, lengthFilter, minScore, maxPrice, sortBy])
+  }, [sailings, search, selectedCruiseLines, selectedPorts, lengthFilter, minScore, maxPrice, sortBy])
 
   const activeFilterCount = [
-    selectedShips.length > 0,
+    selectedCruiseLines.length > 0,
     selectedPorts.length > 0,
     lengthFilter.length > 0,
     minScore > 0,
@@ -101,7 +116,7 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
   ].filter(Boolean).length
 
   const clearFilters = () => {
-    setSelectedShips([])
+    setSelectedCruiseLines([])
     setSelectedPorts([])
     setLengthFilter([])
     setMinScore(0)
@@ -109,9 +124,9 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
     setSearch('')
   }
 
-  const toggleShip = (id: string) => {
-    setSelectedShips(prev =>
-      prev.includes(id) ? prev.filter(s => s !== id) : [...prev, id]
+  const toggleCruiseLine = (line: string) => {
+    setSelectedCruiseLines(prev =>
+      prev.includes(line) ? prev.filter(l => l !== line) : [...prev, line]
     )
   }
 
@@ -133,15 +148,24 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
       <div className="bg-gradient-to-br from-blue-50 to-indigo-50 text-slate-900 border-b border-slate-200 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="font-display text-3xl sm:text-4xl font-bold mb-2">
-            Disney Cruise Deals
+            Cruise Deals
           </h1>
           <p className="text-slate-600 text-lg">
-            {sailings.length} sailings tracked · Updated daily
+            {sailings.length} sailings tracked · Prices approximate, verify at cruise line
+          </p>
+          <p className="text-slate-400 text-sm mt-1">
+            Prices last updated: {PRICES_LAST_UPDATED}
           </p>
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Guest count selector — prominent, sticky-feeling */}
+        <div className="flex items-center justify-between mb-6 pb-4 border-b border-slate-100">
+          <GuestCountSelector value={guestCount} onChange={setGuestCount} />
+          <p className="text-xs text-slate-400">Price/person/night updates with guest count</p>
+        </div>
+
         {/* Search and filter bar */}
         <div className="flex flex-col sm:flex-row gap-3 mb-6">
           <div className="relative flex-1">
@@ -178,11 +202,13 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
               onChange={e => setSortBy(e.target.value as SortOption)}
               className="px-3 py-2.5 border border-slate-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-200"
             >
-              <option value="score">Best Score</option>
+              <option value="score">Deal Score</option>
+              <option value="price_per_night">$/Person/Night</option>
               <option value="price_asc">Price: Low → High</option>
               <option value="price_desc">Price: High → Low</option>
+              <option value="duration">Duration</option>
               <option value="date">Sail Date</option>
-              <option value="drop">Biggest Drop</option>
+              <option value="drop">Biggest Price Drop</option>
             </select>
           </div>
         </div>
@@ -190,23 +216,23 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
         {/* Expandable filter panel */}
         {showFilters && (
           <div className="bg-slate-50 border border-slate-200 rounded-xl p-5 mb-6 space-y-5">
-            {/* Ships */}
+            {/* Cruise Lines */}
             <div>
               <label className="block text-sm font-semibold text-slate-700 mb-2">
-                Ships
+                Cruise Line
               </label>
               <div className="flex flex-wrap gap-2">
-                {ships.map(ship => (
+                {cruiseLines.map(line => (
                   <button
-                    key={ship.id}
-                    onClick={() => toggleShip(ship.id)}
+                    key={line}
+                    onClick={() => toggleCruiseLine(line)}
                     className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-colors ${
-                      selectedShips.includes(ship.id)
+                      selectedCruiseLines.includes(line)
                         ? 'bg-blue-600 text-white border-blue-600'
                         : 'bg-white text-slate-600 border-slate-300 hover:border-blue-600'
                     }`}
                   >
-                    {ship.name}
+                    {line}
                   </button>
                 ))}
               </div>
@@ -258,7 +284,7 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
               </div>
             </div>
 
-            {/* Score and Price range */}
+            {/* Score and Price */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label className="block text-sm font-semibold text-slate-700 mb-2">
@@ -289,7 +315,6 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
               </div>
             </div>
 
-            {/* Clear filters */}
             {activeFilterCount > 0 && (
               <button
                 onClick={clearFilters}
@@ -307,16 +332,16 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
           Showing {filtered.length} of {sailings.length} sailings
         </p>
 
-        {/* Grid of results */}
+        {/* Grid */}
         {filtered.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {filtered.map((sailing, index) => (
               <div key={sailing.id}>
                 <SailingCard
                   sailing={sailing}
+                  guestCount={guestCount}
                   percentBelow={sailing.percentBelow}
                 />
-                {/* Insert ad after 6th card */}
                 {index === 5 && (
                   <div className="mt-5">
                     <AdSlot location="deals_grid_native" size="native" />
@@ -339,7 +364,6 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
           </div>
         )}
 
-        {/* Bottom ad */}
         <div className="mt-10">
           <AdSlot location="deals_bottom_banner" size="728x90" />
         </div>

@@ -59,8 +59,8 @@ export default function DisneyCruiseFoodGuide() {
           <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-4">Understanding Rotational Dining</h2>
 
           <p className="font-inter text-slate-600 leading-relaxed mb-6">
-            Disney's rotational dining system is unique among cruise lines. Here's how it works: you're assigned to three main dining rooms, and each night of your cruise, you rotate to a different restaurant with your assigned servers. Your servers (who become familiar friends) deliver consistent, personalized service while you experience varied menus and themed decor across three different restaurants.
-          </p>
+            Disney"s rotational dining system is unique among cruise lines. Here's how it works: you're assigned to three main dining rooms, and each night of your cruise, you rotate to a different restaurant with your assigned servers. Your servers (who become familiar friends) deliver consistent, personalized service while you experience varied menus and themed decor across three different restaurants.
+"          </p>
 
           <div className="p-6 bg-blue-50 border-l-4 border-blue-600 mb-6">
             <h3 className="font-fraunces text-xl font-bold text-slate-900 mb-3">Example 7-Night Rotation:</h3>
@@ -150,8 +150,8 @@ export default function DisneyCruiseFoodGuide() {
                 <p className="font-inter text-slate-600 text-sm">Botanical garden theme with multiple levels.</p>
               </div>
               <div className="p-4 bg-gray-50 rounded border-l-4 border-blue-600">
-                <p className="font-inter font-bold text-slate-900 mb-1">Goofy's Galley or Lumiere's</p>
-                <p className="font-inter text-slate-600 text-sm">Character-themed casual dining (varies by ship).</p>
+                <p className="font-inter font-bold text-slate-900 mb-1">Goofy"s Galley or Lumiere's</p>
+"                <p className="font-inter text-slate-600 text-sm">Character-themed casual dining (varies by ship).</p>
               </div>
             </div>
           </div>
@@ -295,8 +295,8 @@ export default function DisneyCruiseFoodGuide() {
 
             <div className="p-4 bg-green-50 rounded">
               <p className="font-inter text-slate-600 text-sm">
-                <strong>Quality:</strong> Accommodations aren't just "safe" meals—they're delicious, full-menu alternatives. Vegan, gluten-free, and allergy-friendly meals are prepared with care and taste. Disney takes pride in ensuring all guests eat well.
-              </p>
+                <strong>Quality:</strong> Accommodations aren"t just \"safe\" meals—they're delicious, full-menu alternatives. Vegan, gluten-free, and allergy-friendly meals are prepared with care and taste. Disney takes pride in ensuring all guests eat well.
+"              </p>
             </div>
           </div>
         </section>

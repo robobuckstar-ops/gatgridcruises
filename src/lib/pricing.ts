@@ -132,3 +132,43 @@ export function getPortFeesEstimate(region: string | undefined): string {
   const fees = PORT_FEES_BY_REGION[region || 'other']
   return `~$${fees} per person`
 }
+
+/**
+ * Adjust a 2-guest base price for a different guest count.
+ * Single supplement rule: 1 guest pays ~1.75× per-person rate.
+ * 3rd/4th guest: each additional guest adds ~60% of per-person rate.
+ */
+export function getPriceForGuests(basePrice: number, guestCount: number): number {
+  const perPersonRate = basePrice / 2
+  switch (guestCount) {
+    case 1:
+      return Math.round(perPersonRate * 1.75)
+    case 2:
+      return basePrice
+    case 3:
+      return Math.round(basePrice + perPersonRate * 0.6)
+    default: // 4+
+      return Math.round(basePrice + perPersonRate * 0.6 * 2)
+  }
+}
+
+/**
+ * Calculate out-the-door total adjusted for guest count
+ */
+export function getOutTheDoorTotalForGuests(
+  basePrice: number,
+  nights: number,
+  guestCount: number,
+  region: string = 'other'
+): { total: number; perPerson: number; perPersonPerNight: number } {
+  const adjustedBase = getPriceForGuests(basePrice, guestCount)
+  const guests = Math.min(guestCount, 4)
+  const portFees = getPortFees(region, nights, guests)
+  const gratuities = GRATUITY_RATES.standard * guests * nights
+
+  const total = adjustedBase + portFees + gratuities
+  const perPerson = Math.round(total / guests)
+  const perPersonPerNight = Math.round(perPerson / nights)
+
+  return { total, perPerson, perPersonPerNight }
+}

@@ -5,15 +5,16 @@ import { AlertCircle, Check, X, MapPin } from 'lucide-react'
 import { notFound } from 'next/navigation'
 
 interface PageProps {
-  params: {
+  params: Promise<{
     port: string
-  }
+  }>
 }
 
 export async function generateMetadata(
   { params }: PageProps,
 ): Promise<Metadata> {
-  const port = getPortBySlug(params.port)
+  const { port: portSlug } = await params
+  const port = getPortBySlug(portSlug)
   if (!port) return { title: 'Port not found' }
 
   return {
@@ -22,8 +23,9 @@ export async function generateMetadata(
   }
 }
 
-export default function PortTransfersPage({ params }: PageProps) {
-  const port = getPortBySlug(params.port)
+export default async function PortTransfersPage({ params }: PageProps) {
+  const { port: portSlug } = await params
+  const port = getPortBySlug(portSlug)
   if (!port) notFound()
 
   const transfers = getTransfersForPort(port.id)

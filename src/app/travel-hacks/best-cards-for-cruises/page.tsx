@@ -1,5 +1,3 @@
-'use client'
-
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft, Clock, Tag } from 'lucide-react'
@@ -75,8 +73,8 @@ export default function BestCardsForCruises() {
           </h2>
 
           <p className="text-slate-600 leading-relaxed mb-4">
-            Here's what most cruisers don't realize: your cruise fare, onboard charges, and
-            excursions hit your credit card differently depending on how you pay and which card
+            Here"s what most cruisers don't realize: your cruise fare, onboard charges, and
+"            excursions hit your credit card differently depending on how you pay and which card
             you use.
           </p>
 

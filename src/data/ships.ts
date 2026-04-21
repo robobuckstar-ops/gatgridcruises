@@ -1,964 +1,767 @@
 import type { Ship } from '@/types/database'
 
+// ─── DISNEY CRUISE LINE ───────────────────────────────────────
+const disneyIncluded = [
+  { category: 'Dining', items: ['Rotational dining across themed restaurants', 'Room service (breakfast & light fare)', 'Buffet at Lido Deck', 'Complimentary soft drinks & coffee'] },
+  { category: 'Entertainment', items: ['Broadway-style theatrical productions', 'Nightly deck parties & fireworks', 'Live music and comedy shows', 'Movie nights under the stars'] },
+  { category: "Kids' Clubs", items: ['Oceaneer Club (ages 3-12)', 'Oceaneer Lab (ages 3-12)', 'Edge (ages 11-14)', 'Vibe (ages 14-17)', 'Nursery services'] },
+  { category: 'Pools & Recreation', items: ['Multiple themed pools', 'Waterslides', 'Hot tubs', 'Fitness center'] },
+  { category: 'Characters', items: ['Daily character appearances', 'Meet & greets with Disney characters', 'Character dining experiences'] },
+]
+const disneyExtra = [
+  { category: 'Adult Dining', items: [{ name: 'Palo (Italian)', price_range: '$45/pp' }, { name: 'Remy / Enchante (French)', price_range: '$125-145/pp' }] },
+  { category: 'Beverages', items: [{ name: 'Alcoholic drinks', price_range: '$8-16/drink' }, { name: 'Beverage package', price_range: '$69-74/day' }] },
+  { category: 'Spa', items: [{ name: 'Massages & facials', price_range: '$150-350/session' }] },
+  { category: 'Internet', items: [{ name: 'Unlimited WiFi', price_range: '$69-99/cruise' }] },
+  { category: 'Shore Excursions', items: [{ name: 'Port Adventures', price_range: '$50-500/pp' }] },
+]
+
+// ─── ROYAL CARIBBEAN ─────────────────────────────────────────
+const rclIncluded = [
+  { category: 'Dining', items: ['Main Dining Room (rotational)', 'Windjammer Cafe buffet', "Park Cafe & Sorrento's pizza", 'Limited room service'] },
+  { category: 'Entertainment', items: ['Broadway-style shows', 'Casino (gambling extra)', 'Sports Court & FlowRider (select ships)', 'Pools & waterslides'] },
+  { category: "Kids' Adventure Ocean", items: ['Adventure Ocean (ages 3-11)', 'Teen Lounge (ages 12-17)'] },
+  { category: 'Fitness', items: ['Fitness center access', 'Rock climbing wall (select ships)'] },
+]
+const rclExtra = [
+  { category: 'Specialty Dining', items: [{ name: "Chops Grille / Giovanni's", price_range: '$39-59/pp' }, { name: '150 Central Park', price_range: '$49/pp' }] },
+  { category: 'Drinks', items: [{ name: 'Deluxe Beverage Package', price_range: '$79-109/day' }] },
+  { category: 'WiFi', items: [{ name: 'Unlimited VOOM WiFi', price_range: '$15-30/day' }] },
+  { category: 'Shore Excursions', items: [{ name: 'Port excursions', price_range: '$30-300/pp' }] },
+]
+
+// ─── CARNIVAL ────────────────────────────────────────────────
+const carnivalIncluded = [
+  { category: 'Dining', items: ["Main Dining Room", "Lido buffet", "Guy's Burger Joint", 'BlueIguana Cantina', 'Pizza Pirate (24-hr)'] },
+  { category: 'Entertainment', items: ['Playlist Productions shows', 'Comedy Club (seating extra)', 'Waterslides & pools', 'Sports Square'] },
+  { category: "Kids' Camp Ocean", items: ['Camp Ocean (ages 2-11)', "Circle 'C' (ages 12-14)", 'Club O2 (ages 15-17)'] },
+  { category: 'Fitness', items: ['Fitness center', 'Mini golf (select ships)'] },
+]
+const carnivalExtra = [
+  { category: 'Drinks', items: [{ name: 'CHEERS! Beverage Package', price_range: '$69-89/day' }] },
+  { category: 'Specialty Dining', items: [{ name: 'Fahrenheit 555 Steakhouse', price_range: '$35/pp' }] },
+  { category: 'WiFi', items: [{ name: 'Social / Value / Premium plans', price_range: '$6-25/day' }] },
+  { category: 'Shore Excursions', items: [{ name: 'Shore excursions', price_range: '$25-250/pp' }] },
+]
+
+// ─── NORWEGIAN ───────────────────────────────────────────────
+const nclIncluded = [
+  { category: 'Dining', items: ['Main Dining Rooms (2-3)', 'Garden Cafe buffet', "O'Sheehan's Pub (24-hr, select ships)", 'Room service (fee for most items)'] },
+  { category: 'Entertainment', items: ['Broadway shows (Kinky Boots, Beetlejuice, etc.)', 'Howl at the Moon dueling piano', 'Pools & waterslides', 'Sports complex (Prima/Bliss: go-karts extra)'] },
+  { category: "Kids' Splash Academy", items: ['Splash Academy (ages 3-12)', 'Entourage (ages 13-17)'] },
+  { category: 'Fitness', items: ['Fitness center', 'Rock climbing (select ships)'] },
+]
+const nclExtra = [
+  { category: 'Free at Sea Add-Ons', items: [{ name: 'Unlimited Open Bar', price_range: '$109/day or free promo' }, { name: 'Specialty Dining (3 meals)', price_range: '$99 or free promo' }, { name: 'WiFi package', price_range: '$29/day or free promo' }, { name: 'Shore Excursion credit', price_range: '$50 credit or free promo' }] },
+  { category: 'A la carte specialty dining', items: [{ name: "Cagney's Steakhouse", price_range: '$39/pp' }, { name: 'Teppanyaki', price_range: '$39/pp' }] },
+]
+
+// ─── MSC CRUISES ─────────────────────────────────────────────
+const mscIncluded = [
+  { category: 'Dining', items: ['Main Dining Room', 'Buffet Restaurant', 'Room service (fee after hours)'] },
+  { category: 'Entertainment', items: ['Production shows', 'Pools & waterparks', 'MSC for Me app & wristband'] },
+  { category: "Kids' Doremi Club", items: ['Mini Club (ages 3-6)', 'Junior Club (ages 7-11)', 'Young Club (ages 12-17)'] },
+  { category: 'Wellness', items: ['Fitness center', 'Tennis court (select ships)'] },
+]
+const mscExtra = [
+  { category: 'Experiences', items: [{ name: 'Drinks package (Easy/Classic/Premium)', price_range: '$45-75/day' }, { name: 'WiFi package', price_range: '$18-30/day' }] },
+  { category: 'Specialty Dining', items: [{ name: "Chef's Table", price_range: '$79/pp' }, { name: "Butcher's Cut", price_range: '$45/pp' }] },
+  { category: 'YC Yacht Club', items: [{ name: 'Yacht Club butler service & exclusive area', price_range: 'Premium fare upgrade' }] },
+]
+
+// ─── CELEBRITY CRUISES ───────────────────────────────────────
+const celebIncluded = [
+  { category: 'Always Included', items: ['Classic cocktails, beer & wine', 'Premium WiFi', 'Gratuities included', 'Main Dining Room & Oceanview Cafe'] },
+  { category: 'Entertainment', items: ['Production shows & live music', 'Eden (multi-level lounge)', 'Pools & fitness classes'] },
+  { category: "Kids' Club at Sea", items: ['Camp at Sea (ages 3-11)', 'X Club teens (ages 12-17)'] },
+  { category: 'Perks', items: ['Room service (select items)', 'Concierge Class upgrades available'] },
+]
+const celebExtra = [
+  { category: 'Always Included Upgrade', items: [{ name: 'Premium Beverage Package (upgrade)', price_range: '$20/day add-on' }] },
+  { category: 'Specialty Dining', items: [{ name: 'Le Voyage by Daniel Boulud', price_range: '$75/pp' }, { name: 'Raw on Five', price_range: '$50/pp' }] },
+  { category: 'The Retreat (Suites)', items: [{ name: 'Luminae restaurant & Retreat Sundeck', price_range: 'Suite upgrade' }] },
+]
+
+// ─── PRINCESS CRUISES ────────────────────────────────────────
+const princessIncluded = [
+  { category: 'Dining', items: ['Main Dining Room', 'Horizon Court buffet', 'Slice pizza & Trident Grill', 'MedallionNet internet (purchased separately)'] },
+  { category: 'Entertainment', items: ['Princess Live! shows', 'Movies Under the Stars', 'Pools & hot tubs', 'Lotus Spa (treatments extra)'] },
+  { category: 'Camp Discovery', items: ['Camp Discovery (ages 3-11)', 'Teen Club (ages 12-17)'] },
+  { category: 'MedallionClass', items: ['OceanMedallion wearable for seamless boarding & service'] },
+]
+const princessExtra = [
+  { category: 'Premier Package', items: [{ name: 'Drinks + WiFi + specialty dining (2x) + gratuities', price_range: '$80-100/day' }] },
+  { category: 'Specialty Dining', items: [{ name: 'Crown Grill Steakhouse', price_range: '$39/pp' }, { name: "Sabatini's Italian", price_range: '$35/pp' }] },
+  { category: 'WiFi', items: [{ name: 'MedallionNet 1 device', price_range: '$24.99/day' }] },
+]
+
+// ─── HOLLAND AMERICA ─────────────────────────────────────────
+const halIncluded = [
+  { category: 'Dining', items: ['Main Dining Room', 'Lido Market buffet', 'Dive-In burgers & New York Deli', 'Room service (fee for most items)'] },
+  { category: 'Entertainment', items: ['Lincoln Center Stage classical music', 'BBC Earth Experiences', "B.B. King's Blues Club", 'Pools & hot tubs'] },
+  { category: 'Club HAL', items: ['Club HAL (ages 3-12)', "teens' lounge"] },
+  { category: 'Fitness', items: ['Fitness center', 'Yoga & fitness classes (select)'] },
+]
+const halExtra = [
+  { category: 'Have It All Package', items: [{ name: 'Drinks + Specialty Dining + WiFi + Shore Excursions credit', price_range: '$99-149/day' }] },
+  { category: 'Specialty Dining', items: [{ name: 'Pinnacle Grill', price_range: '$39/pp' }, { name: 'Tamarind (Asian)', price_range: '$29/pp' }] },
+  { category: 'Explorations Cafe', items: [{ name: 'Specialty coffee & internet lounge (in partnership with The New York Times)', price_range: 'Varies' }] },
+]
+
 export const ships: Ship[] = [
+  // ─── DISNEY CRUISE LINE ─────────────────────────────────────
   {
     id: 'ship-0001',
     name: 'Disney Magic',
     slug: 'disney-magic',
+    cruise_line: 'Disney',
     year_launched: 1998,
-    capacity: 2713,
-    tonnage: 83969,
-    highlights: [
-      'The original Disney cruise ship with timeless elegance',
-      'Intimate atmosphere perfect for families seeking classic Disney magic',
-      'Multiple themed dining venues including The Animator\'s Palate',
-      'Beautiful atrium and classic interior design',
-      'Excellent for first-time cruisers'
-    ],
-    whats_included: [
-      {
-        category: 'Dining',
-        items: [
-          'Rotational dining across themed restaurants',
-          'Room service (breakfast and light fare)',
-          'Buffet dining at Lido Deck',
-          'Coffee and tea service',
-          'Complimentary soft drinks'
-        ]
-      },
-      {
-        category: 'Entertainment',
-        items: [
-          'Broadway-style theatrical productions',
-          'Nightly deck parties and fireworks',
-          'Live music and comedy shows',
-          'Family game shows and activities',
-          'Movie nights under the stars'
-        ]
-      },
-      {
-        category: 'Kids\' Clubs',
-        items: [
-          'Oceaneer Club (ages 3-12)',
-          'Oceaneer Lab (ages 3-12)',
-          'Edge (ages 11-14)',
-          'Vibe (ages 14-17)',
-          'Nursery services'
-        ]
-      },
-      {
-        category: 'Pools & Recreation',
-        items: [
-          'Multiple swimming pools',
-          'Waterslides',
-          'Hot tubs',
-          'Fitness center access',
-          'Deck games and sports'
-        ]
-      },
-      {
-        category: 'Character Meet & Greets',
-        items: [
-          'Daily character appearances',
-          'Scheduled meet and greet times',
-          'Character dining experiences',
-          'Photo opportunities with beloved Disney characters'
-        ]
-      }
-    ],
-    whats_extra: [
-      {
-        category: 'Adult Dining',
-        items: [
-          { name: 'Palo (Italian)', price_range: '$45 per person' },
-          { name: 'Remy (French)', price_range: '$125 per person' }
-        ]
-      },
-      {
-        category: 'Beverages',
-        items: [
-          { name: 'Alcoholic beverages', price_range: '$8-15 per drink' },
-          { name: 'Beverage package', price_range: '$69 per day' }
-        ]
-      },
-      {
-        category: 'Spa & Fitness',
-        items: [
-          { name: 'Massages', price_range: '$150-250 per session' },
-          { name: 'Facials', price_range: '$180-250 per session' },
-          { name: 'Specialty treatments', price_range: '$200-350 per session' }
-        ]
-      },
-      {
-        category: 'Port Adventures',
-        items: [
-          { name: 'Shore excursions', price_range: '$50-500 per person' }
-        ]
-      },
-      {
-        category: 'Photo Package',
-        items: [
-          { name: 'Digital or physical photos', price_range: '$199-349' }
-        ]
-      },
-      {
-        category: 'Internet',
-        items: [
-          { name: 'Daily WiFi pass', price_range: '$12 per day' },
-          { name: 'Unlimited WiFi (full cruise)', price_range: '$69-89 per cruise' }
-        ]
-      },
-      {
-        category: 'Kids\' Extras',
-        items: [
-          { name: 'Bibbidi Bobbidi Boutique', price_range: '$70-200' }
-        ]
-      }
-    ],
-    editorial_take: 'The Disney Magic is where the Disney Cruise Line dream began, and it still delivers all the charm and character you\'d expect from the original. While smaller than its newer siblings, that\'s actually its greatest strength—the ship feels intimate and personal rather than overwhelming. Perfect for first-timers or anyone who prefers a cozier cruise experience.',
+    capacity: 2400,
+    tonnage: 83000,
+    highlights: ['Original Disney ship with timeless design', 'Rot. dining across 3 themed restaurants', 'Adults-only pool & Palo restaurant', 'Smaller & more intimate than newer ships'],
+    whats_included: disneyIncluded,
+    whats_extra: disneyExtra,
+    editorial_take: "The Disney Magic is where the Disney Cruise Line dream began. Smaller than its newer siblings, that's actually its greatest strength — the ship feels intimate and personal. Perfect for first-timers or anyone who prefers a cozier cruise experience.",
     hero_image_url: '/images/ships/disney-magic.jpg',
     created_at: '2026-01-01T00:00:00Z',
-    updated_at: '2026-01-01T00:00:00Z'
+    updated_at: '2026-04-20T00:00:00Z',
   },
   {
     id: 'ship-0002',
     name: 'Disney Wonder',
     slug: 'disney-wonder',
+    cruise_line: 'Disney',
     year_launched: 1999,
-    capacity: 2713,
-    tonnage: 83969,
-    highlights: [
-      'Sister ship to Disney Magic with proven cruise excellence',
-      'Stunning art collection throughout the ship',
-      'Exceptional value for classic Disney cruise experience',
-      'Wonder-ful theming and attention to detail',
-      'Perfect for guests who love traditional elegance'
-    ],
-    whats_included: [
-      {
-        category: 'Dining',
-        items: [
-          'Rotational dining across themed restaurants',
-          'Room service (breakfast and light fare)',
-          'Buffet dining at Lido Deck',
-          'Coffee and tea service',
-          'Complimentary soft drinks'
-        ]
-      },
-      {
-        category: 'Entertainment',
-        items: [
-          'Broadway-style theatrical productions',
-          'Nightly deck parties and fireworks',
-          'Live music performances',
-          'Comedy shows and entertainment',
-          'Movie nights under the stars'
-        ]
-      },
-      {
-        category: 'Kids\' Clubs',
-        items: [
-          'Oceaneer Club (ages 3-12)',
-          'Oceaneer Lab (ages 3-12)',
-          'Edge (ages 11-14)',
-          'Vibe (ages 14-17)',
-          'Nursery services'
-        ]
-      },
-      {
-        category: 'Pools & Recreation',
-        items: [
-          'Multiple swimming pools',
-          'Waterslides',
-          'Hot tubs',
-          'Fitness center access',
-          'Deck activities and tournaments'
-        ]
-      },
-      {
-        category: 'Character Meet & Greets',
-        items: [
-          'Daily character appearances',
-          'Scheduled meet and greet times',
-          'Character dining experiences',
-          'Photo opportunities with beloved Disney characters'
-        ]
-      }
-    ],
-    whats_extra: [
-      {
-        category: 'Adult Dining',
-        items: [
-          { name: 'Palo (Italian)', price_range: '$45 per person' },
-          { name: 'Remy (French)', price_range: '$125 per person' }
-        ]
-      },
-      {
-        category: 'Beverages',
-        items: [
-          { name: 'Alcoholic beverages', price_range: '$8-15 per drink' },
-          { name: 'Beverage package', price_range: '$69 per day' }
-        ]
-      },
-      {
-        category: 'Spa & Fitness',
-        items: [
-          { name: 'Massages', price_range: '$150-250 per session' },
-          { name: 'Facials', price_range: '$180-250 per session' },
-          { name: 'Body treatments', price_range: '$200-350 per session' }
-        ]
-      },
-      {
-        category: 'Port Adventures',
-        items: [
-          { name: 'Shore excursions', price_range: '$50-500 per person' }
-        ]
-      },
-      {
-        category: 'Photo Package',
-        items: [
-          { name: 'Digital or physical photos', price_range: '$199-349' }
-        ]
-      },
-      {
-        category: 'Internet',
-        items: [
-          { name: 'Daily WiFi pass', price_range: '$12 per day' },
-          { name: 'Unlimited WiFi (full cruise)', price_range: '$69-89 per cruise' }
-        ]
-      },
-      {
-        category: 'Kids\' Extras',
-        items: [
-          { name: 'Bibbidi Bobbidi Boutique', price_range: '$70-200' }
-        ]
-      }
-    ],
-    editorial_take: 'The Disney Wonder proves that bigger isn\'t always better. This beautifully maintained classic delivers an authentic Disney cruise experience without the sensory overload of mega-ships. If you\'ve watched the Disney Cruise Line grow and miss the original magic, the Wonder is your ship.',
+    capacity: 2400,
+    tonnage: 83000,
+    highlights: ['Sister ship to the Magic', 'West Coast & Alaska itineraries', 'Recently refurbished', 'Art deco interior design'],
+    whats_included: disneyIncluded,
+    whats_extra: disneyExtra,
+    editorial_take: "The Disney Wonder proves that bigger isn't always better. Beautifully maintained and authentic, it delivers the Disney magic without sensory overload.",
     hero_image_url: '/images/ships/disney-wonder.jpg',
     created_at: '2026-01-01T00:00:00Z',
-    updated_at: '2026-01-01T00:00:00Z'
+    updated_at: '2026-04-20T00:00:00Z',
   },
   {
     id: 'ship-0003',
     name: 'Disney Dream',
     slug: 'disney-dream',
+    cruise_line: 'Disney',
     year_launched: 2011,
     capacity: 4000,
-    tonnage: 129690,
-    highlights: [
-      'Interactive AquaDuck watercoaster spanning four decks',
-      'Cutting-edge entertainment with immersive shows',
-      'Midship Bar serving craft cocktails',
-      'Modern technology with touchscreen dining menus',
-      'Perfect blend of innovation and Disney magic'
-    ],
-    whats_included: [
-      {
-        category: 'Dining',
-        items: [
-          'Rotational dining across themed restaurants',
-          'Room service (breakfast and light fare)',
-          'Buffet dining at Lido Deck',
-          'Coffee and tea service',
-          'Complimentary soft drinks and juice'
-        ]
-      },
-      {
-        category: 'Entertainment',
-        items: [
-          'Broadway-caliber theatrical shows',
-          'Nightly deck parties and fireworks',
-          'Live music venues and entertainment',
-          'Family-friendly shows and activities',
-          'Poolside movies and entertainment'
-        ]
-      },
-      {
-        category: 'Kids\' Clubs',
-        items: [
-          'Oceaneer Club (ages 3-12)',
-          'Oceaneer Lab (ages 3-12)',
-          'Edge (ages 11-14)',
-          'Vibe (ages 14-17)',
-          'Nursery services with programming'
-        ]
-      },
-      {
-        category: 'Pools & Recreation',
-        items: [
-          'Multiple themed pools',
-          'AquaDuck watercoaster',
-          'Splash pad for young children',
-          'Fitness center with classes',
-          'Basketball court and mini golf'
-        ]
-      },
-      {
-        category: 'Character Meet & Greets',
-        items: [
-          'Daily character appearances',
-          'Scheduled meet and greet times',
-          'Character dining experiences',
-          'Photo opportunities with Disney characters'
-        ]
-      }
-    ],
-    whats_extra: [
-      {
-        category: 'Adult Dining',
-        items: [
-          { name: 'Palo (Italian)', price_range: '$45 per person' },
-          { name: 'Remy (French)', price_range: '$125 per person' }
-        ]
-      },
-      {
-        category: 'Beverages',
-        items: [
-          { name: 'Alcoholic beverages', price_range: '$8-15 per drink' },
-          { name: 'Beverage package', price_range: '$69 per day' }
-        ]
-      },
-      {
-        category: 'Spa & Fitness',
-        items: [
-          { name: 'Spa treatments', price_range: '$150-300 per session' },
-          { name: 'Personal training', price_range: '$75-150 per session' },
-          { name: 'Thermal suite access', price_range: '$20-35 per day' }
-        ]
-      },
-      {
-        category: 'Port Adventures',
-        items: [
-          { name: 'Shore excursions', price_range: '$50-500 per person' }
-        ]
-      },
-      {
-        category: 'Photo Package',
-        items: [
-          { name: 'Digital or physical photos', price_range: '$199-349' }
-        ]
-      },
-      {
-        category: 'Internet',
-        items: [
-          { name: 'Daily WiFi pass', price_range: '$12 per day' },
-          { name: 'Unlimited WiFi (full cruise)', price_range: '$69-89 per cruise' }
-        ]
-      },
-      {
-        category: 'Kids\' Extras',
-        items: [
-          { name: 'Bibbidi Bobbidi Boutique', price_range: '$70-200' },
-          { name: 'Flounder\'s Reef Nursery', price_range: '$15-18 per hour' }
-        ]
-      }
-    ],
-    editorial_take: 'The Disney Dream represented a quantum leap in ship size and technology when it launched, and it still feels modern today. The AquaDuck is genuinely thrilling, and the entertainment here is next-level. This is the sweet spot for families who want innovation without losing the Disney magic.',
+    tonnage: 130000,
+    highlights: ['AquaDuck watercoaster (first on Disney ship)', 'Rotational dining with Enchanted Garden & Royal Palace', 'Adults-only Satellite Falls pool', 'Virtual portholes in inside cabins'],
+    whats_included: disneyIncluded,
+    whats_extra: disneyExtra,
+    editorial_take: "The Disney Dream set the template for modern Disney ships. The AquaDuck is still a crowd-pleaser, and the rotational dining lineup is among the best at sea.",
     hero_image_url: '/images/ships/disney-dream.jpg',
     created_at: '2026-01-01T00:00:00Z',
-    updated_at: '2026-01-01T00:00:00Z'
+    updated_at: '2026-04-20T00:00:00Z',
   },
   {
     id: 'ship-0004',
     name: 'Disney Fantasy',
     slug: 'disney-fantasy',
+    cruise_line: 'Disney',
     year_launched: 2012,
     capacity: 4000,
-    tonnage: 129750,
-    highlights: [
-      'Remy restaurant with French culinary excellence',
-      'Enchanted Garden dining with magical ambiance',
-      'AquaDuck watercoaster with thrilling drops',
-      'Stunning atrium and contemporary design',
-      'Advanced Castaway Club personalization'
-    ],
-    whats_included: [
-      {
-        category: 'Dining',
-        items: [
-          'Rotational dining across themed restaurants',
-          'Room service (breakfast and light fare)',
-          'Buffet dining at Lido Deck',
-          'Coffee and tea service',
-          'Complimentary soft drinks and beverages'
-        ]
-      },
-      {
-        category: 'Entertainment',
-        items: [
-          'Broadway-style theatrical shows',
-          'Nightly entertainment and deck parties',
-          'Live music venues',
-          'Family shows and entertainment',
-          'Movie nights and poolside events'
-        ]
-      },
-      {
-        category: 'Kids\' Clubs',
-        items: [
-          'Oceaneer Club (ages 3-12)',
-          'Oceaneer Lab (ages 3-12)',
-          'Edge (ages 11-14)',
-          'Vibe (ages 14-17)',
-          'Nursery with activities and nap time'
-        ]
-      },
-      {
-        category: 'Pools & Recreation',
-        items: [
-          'Multiple themed swimming pools',
-          'AquaDuck watercoaster',
-          'Splash pad for toddlers',
-          'Fitness center with group classes',
-          'Sports deck activities'
-        ]
-      },
-      {
-        category: 'Character Meet & Greets',
-        items: [
-          'Daily character appearances throughout ship',
-          'Scheduled meet and greet times',
-          'Character dining experiences',
-          'Photo opportunities with Disney characters'
-        ]
-      }
-    ],
-    whats_extra: [
-      {
-        category: 'Adult Dining',
-        items: [
-          { name: 'Palo (Italian)', price_range: '$45 per person' },
-          { name: 'Remy (French)', price_range: '$125 per person' }
-        ]
-      },
-      {
-        category: 'Beverages',
-        items: [
-          { name: 'Alcoholic beverages', price_range: '$8-15 per drink' },
-          { name: 'Beverage package', price_range: '$69 per day' }
-        ]
-      },
-      {
-        category: 'Spa & Fitness',
-        items: [
-          { name: 'Spa and wellness treatments', price_range: '$150-300 per session' },
-          { name: 'Salon services', price_range: '$50-150 per service' },
-          { name: 'Thermal suite access', price_range: '$20-35 per day' }
-        ]
-      },
-      {
-        category: 'Port Adventures',
-        items: [
-          { name: 'Shore excursions', price_range: '$50-500 per person' }
-        ]
-      },
-      {
-        category: 'Photo Package',
-        items: [
-          { name: 'Digital or physical photos', price_range: '$199-349' }
-        ]
-      },
-      {
-        category: 'Internet',
-        items: [
-          { name: 'Daily WiFi pass', price_range: '$12 per day' },
-          { name: 'Unlimited WiFi (full cruise)', price_range: '$69-89 per cruise' }
-        ]
-      },
-      {
-        category: 'Kids\' Extras',
-        items: [
-          { name: 'Bibbidi Bobbidi Boutique', price_range: '$70-200' },
-          { name: 'Flounder\'s Reef Nursery', price_range: '$15-18 per hour' }
-        ]
-      }
-    ],
-    editorial_take: 'The Disney Fantasy is where Disney Cruise Line proved they could innovate with confidence. Remy is genuinely one of the best restaurants at sea, and the overall experience balances luxury with family-friendly fun beautifully. If you\'re willing to spend a bit extra, this ship will reward you with exceptional memories.',
+    tonnage: 130000,
+    highlights: ['Sister to the Dream with expanded offerings', 'Enchanted Art interactive paintings', 'Longest 7-night itineraries in the fleet', 'Remy French restaurant (most exclusive)'],
+    whats_included: disneyIncluded,
+    whats_extra: disneyExtra,
+    editorial_take: "The Fantasy is the crown jewel of the classic Disney fleet. Remy is hands-down the best restaurant on any Disney ship, and the 7-night Eastern Caribbean route is consistently excellent.",
     hero_image_url: '/images/ships/disney-fantasy.jpg',
     created_at: '2026-01-01T00:00:00Z',
-    updated_at: '2026-01-01T00:00:00Z'
+    updated_at: '2026-04-20T00:00:00Z',
   },
   {
     id: 'ship-0005',
     name: 'Disney Wish',
     slug: 'disney-wish',
+    cruise_line: 'Disney',
     year_launched: 2022,
     capacity: 4000,
     tonnage: 144000,
-    highlights: [
-      'First-ever Disney attraction at sea with Rapunzel\'s Tower climb',
-      'Enchanté by Chef Jérôme Bompard representing finest French cuisine',
-      'Marvel-themed dining and entertainment',
-      'Advanced digital personalization throughout ship',
-      'The most technologically advanced Disney ship'
-    ],
-    whats_included: [
-      {
-        category: 'Dining',
-        items: [
-          'Rotational dining across themed restaurants',
-          'Room service with expanded menu',
-          'Buffet at Lido Deck',
-          'Coffee and tea service',
-          'Complimentary soft drinks and juice'
-        ]
-      },
-      {
-        category: 'Entertainment',
-        items: [
-          'Immersive theatrical productions',
-          'Nightly deck parties and pyrotechnics',
-          'Live music and entertainment venues',
-          'Disney original shows',
-          'Interactive family entertainment'
-        ]
-      },
-      {
-        category: 'Kids\' Clubs',
-        items: [
-          'Oceaneer Club (ages 3-12)',
-          'Oceaneer Lab (ages 3-12)',
-          'Edge (ages 11-14)',
-          'Vibe (ages 14-17)',
-          'Nursery with expanded hours'
-        ]
-      },
-      {
-        category: 'Pools & Recreation',
-        items: [
-          'Multiple themed pools',
-          'Rapunzel\'s Tower climbing experience',
-          'Splash pad and play areas',
-          'State-of-the-art fitness center',
-          'Deck games and sports activities'
-        ]
-      },
-      {
-        category: 'Character Meet & Greets',
-        items: [
-          'Daily character appearances and experiences',
-          'Scheduled meet and greet times',
-          'Character dining opportunities',
-          'Photo experiences with Disney characters'
-        ]
-      }
-    ],
-    whats_extra: [
-      {
-        category: 'Adult Dining',
-        items: [
-          { name: 'Palo (Italian)', price_range: '$45 per person' },
-          { name: 'Enchanté by Chef Jérôme Bompard (French)', price_range: '$145 per person' }
-        ]
-      },
-      {
-        category: 'Beverages',
-        items: [
-          { name: 'Alcoholic beverages', price_range: '$8-16 per drink' },
-          { name: 'Beverage package', price_range: '$74 per day' }
-        ]
-      },
-      {
-        category: 'Spa & Fitness',
-        items: [
-          { name: 'Spa treatments and wellness', price_range: '$150-350 per session' },
-          { name: 'Salon services', price_range: '$50-200 per service' },
-          { name: 'Thermal suite', price_range: '$20-35 per day' }
-        ]
-      },
-      {
-        category: 'Port Adventures',
-        items: [
-          { name: 'Shore excursions and experiences', price_range: '$50-500 per person' }
-        ]
-      },
-      {
-        category: 'Photo Package',
-        items: [
-          { name: 'Digital and physical photos', price_range: '$199-399' }
-        ]
-      },
-      {
-        category: 'Internet',
-        items: [
-          { name: 'Daily WiFi pass', price_range: '$15 per day' },
-          { name: 'Unlimited WiFi (full cruise)', price_range: '$79-99 per cruise' }
-        ]
-      },
-      {
-        category: 'Kids\' Extras',
-        items: [
-          { name: 'Bibbidi Bobbidi Boutique', price_range: '$85-300' },
-          { name: 'Flounder\'s Reef Nursery', price_range: '$15-18 per hour' }
-        ]
-      }
-    ],
-    editorial_take: 'The Disney Wish is what happens when Disney decides to dream big—literally, Rapunzel\'s Tower is a real climbing experience at sea. This is the most advanced ship in the fleet with technology that actually enhances rather than distracts from the magic. Fair warning: it\'s also the most expensive, but if you want the cutting edge of Disney cruising, this is it.',
+    highlights: ['First ship with Marvel & Star Wars experiences', 'Arendelle: A Frozen Dining Adventure', 'Splashtacular AquaMouse attraction', 'Enchante (most exclusive restaurant)'],
+    whats_included: disneyIncluded,
+    whats_extra: disneyExtra,
+    editorial_take: "The Disney Wish is what happens when Disney decides to dream big. The Marvel and Star Wars experiences are genuine attractions, not just decorations. A must for fans of those franchises.",
     hero_image_url: '/images/ships/disney-wish.jpg',
     created_at: '2026-01-01T00:00:00Z',
-    updated_at: '2026-01-01T00:00:00Z'
+    updated_at: '2026-04-20T00:00:00Z',
   },
   {
     id: 'ship-0006',
     name: 'Disney Treasure',
     slug: 'disney-treasure',
+    cruise_line: 'Disney',
     year_launched: 2024,
     capacity: 4000,
     tonnage: 144000,
-    highlights: [
-      'Adventure-themed design with exploration spirit',
-      'Treasure Ketch interactive dining experience',
-      'Adventure Ocean kids club with expanded programming',
-      'Modern sustainability features',
-      'Live-action entertainment inspired by Disney adventures'
-    ],
-    whats_included: [
-      {
-        category: 'Dining',
-        items: [
-          'Rotational dining across themed restaurants',
-          'Room service with expanded offerings',
-          'Buffet dining at Lido Deck',
-          'Coffee and tea service',
-          'Complimentary soft drinks and beverages'
-        ]
-      },
-      {
-        category: 'Entertainment',
-        items: [
-          'Live theatrical shows with adventure themes',
-          'Nightly entertainment and deck celebrations',
-          'Live music venues and performances',
-          'Family-friendly shows and entertainment',
-          'Movie nights and entertainment experiences'
-        ]
-      },
-      {
-        category: 'Kids\' Clubs',
-        items: [
-          'Adventure Ocean (ages 3-12) - new club concept',
-          'Oceaneer Lab (ages 3-12)',
-          'Edge (ages 11-14)',
-          'Vibe (ages 14-17)',
-          'Nursery services and programming'
-        ]
-      },
-      {
-        category: 'Pools & Recreation',
-        items: [
-          'Multiple themed pools',
-          'Water play areas for all ages',
-          'Modern fitness center',
-          'Sports and recreation activities',
-          'Outdoor deck activities'
-        ]
-      },
-      {
-        category: 'Character Meet & Greets',
-        items: [
-          'Daily character appearances',
-          'Adventure-themed meet and greets',
-          'Character dining experiences',
-          'Photo opportunities with Disney characters'
-        ]
-      }
-    ],
-    whats_extra: [
-      {
-        category: 'Adult Dining',
-        items: [
-          { name: 'Palo (Italian)', price_range: '$45 per person' },
-          { name: 'Enchanté by Chef Jérôme Bompard (French)', price_range: '$145 per person' }
-        ]
-      },
-      {
-        category: 'Beverages',
-        items: [
-          { name: 'Alcoholic beverages', price_range: '$8-16 per drink' },
-          { name: 'Beverage package', price_range: '$74 per day' }
-        ]
-      },
-      {
-        category: 'Spa & Fitness',
-        items: [
-          { name: 'Spa and wellness treatments', price_range: '$150-350 per session' },
-          { name: 'Salon services', price_range: '$50-200 per service' },
-          { name: 'Thermal suite access', price_range: '$20-35 per day' }
-        ]
-      },
-      {
-        category: 'Port Adventures',
-        items: [
-          { name: 'Shore excursions and experiences', price_range: '$50-500 per person' }
-        ]
-      },
-      {
-        category: 'Photo Package',
-        items: [
-          { name: 'Digital and physical photo packages', price_range: '$199-399' }
-        ]
-      },
-      {
-        category: 'Internet',
-        items: [
-          { name: 'Daily WiFi pass', price_range: '$15 per day' },
-          { name: 'Unlimited WiFi (full cruise)', price_range: '$79-99 per cruise' }
-        ]
-      },
-      {
-        category: 'Kids\' Extras',
-        items: [
-          { name: 'Bibbidi Bobbidi Boutique', price_range: '$85-300' },
-          { name: 'Flounder\'s Reef Nursery', price_range: '$15-18 per hour' }
-        ]
-      }
-    ],
-    editorial_take: 'The Disney Treasure shows Disney learning from the Wish while charting its own course. The adventure-theme resonates more than some might expect, and the ship manages to feel fresh without feeling like a rehash. If you want cutting-edge experiences at a slightly better price point than the Wish, this is genuinely worth considering.',
+    highlights: ['Disney Villains theme throughout', 'World of Marvel restaurant', 'Haunted Mansion Bar', 'Sister ship to the Wish'],
+    whats_included: disneyIncluded,
+    whats_extra: disneyExtra,
+    editorial_take: "The Disney Treasure leans into the edgier side of Disney with a Villains theme that feels fresh and fun. The Haunted Mansion Bar is a standout that no Disney fan should miss.",
     hero_image_url: '/images/ships/disney-treasure.jpg',
     created_at: '2026-01-01T00:00:00Z',
-    updated_at: '2026-01-01T00:00:00Z'
+    updated_at: '2026-04-20T00:00:00Z',
   },
   {
     id: 'ship-0007',
     name: 'Disney Destiny',
     slug: 'disney-destiny',
+    cruise_line: 'Disney',
     year_launched: 2025,
-    capacity: 4000,
-    tonnage: 144000,
-    highlights: [
-      'Next-generation Wish-class ship with enhanced design',
-      'Destiny-themed deck parties and entertainment',
-      'Integrated technology for seamless guest experience',
-      'Exclusive dining venues with diverse menus',
-      'Premium family-first design philosophy'
-    ],
-    whats_included: [
-      {
-        category: 'Dining',
-        items: [
-          'Rotational dining across themed restaurants',
-          'Room service with contemporary menu options',
-          'Buffet at Lido Deck',
-          'Coffee and tea throughout the day',
-          'Complimentary soft drinks and beverages'
-        ]
-      },
-      {
-        category: 'Entertainment',
-        items: [
-          'Original theatrical productions',
-          'Nightly deck parties and entertainment',
-          'Live music venues and performances',
-          'Family shows and entertainment programming',
-          'Interactive entertainment experiences'
-        ]
-      },
-      {
-        category: 'Kids\' Clubs',
-        items: [
-          'Oceaneer Club (ages 3-12) with themed activities',
-          'Oceaneer Lab (ages 3-12)',
-          'Edge (ages 11-14) with tech activities',
-          'Vibe (ages 14-17) with cool entertainment',
-          'Nursery services with flexible scheduling'
-        ]
-      },
-      {
-        category: 'Pools & Recreation',
-        items: [
-          'Multiple themed and activity pools',
-          'Water play areas and splash pads',
-          'Advanced fitness center',
-          'Sports deck and recreational activities',
-          'Outdoor deck experiences'
-        ]
-      },
-      {
-        category: 'Character Meet & Greets',
-        items: [
-          'Daily character appearances throughout ship',
-          'Scheduled meet and greet experiences',
-          'Character dining and interactions',
-          'Professional photo opportunities'
-        ]
-      }
-    ],
-    whats_extra: [
-      {
-        category: 'Adult Dining',
-        items: [
-          { name: 'Palo (Italian)', price_range: '$45 per person' },
-          { name: 'Enchanté by Chef Jérôme Bompard (French)', price_range: '$145 per person' }
-        ]
-      },
-      {
-        category: 'Beverages',
-        items: [
-          { name: 'Alcoholic beverages', price_range: '$8-16 per drink' },
-          { name: 'Beverage package', price_range: '$74 per day' }
-        ]
-      },
-      {
-        category: 'Spa & Fitness',
-        items: [
-          { name: 'Spa treatments and wellness', price_range: '$150-350 per session' },
-          { name: 'Salon services', price_range: '$50-200 per service' },
-          { name: 'Thermal suite access', price_range: '$20-35 per day' }
-        ]
-      },
-      {
-        category: 'Port Adventures',
-        items: [
-          { name: 'Shore excursions and guided experiences', price_range: '$50-500 per person' }
-        ]
-      },
-      {
-        category: 'Photo Package',
-        items: [
-          { name: 'Digital and physical photo memories', price_range: '$199-399' }
-        ]
-      },
-      {
-        category: 'Internet',
-        items: [
-          { name: 'Daily WiFi pass', price_range: '$15 per day' },
-          { name: 'Unlimited WiFi (full cruise)', price_range: '$79-99 per cruise' }
-        ]
-      },
-      {
-        category: 'Kids\' Extras',
-        items: [
-          { name: 'Bibbidi Bobbidi Boutique', price_range: '$85-300' },
-          { name: 'Flounder\'s Reef Nursery', price_range: '$15-18 per hour' }
-        ]
-      }
-    ],
-    editorial_take: 'The Disney Destiny represents everything Disney has learned about modern family cruising distilled into one ship. It\'s the most refined version of the newer fleet, with all the tech and entertainment bells and whistles but without feeling experimental. This is Disney saying "we know how to do this really, really well now."',
+    capacity: 4100,
+    tonnage: 208000,
+    highlights: ['Heroes vs. Villains theme', 'Largest Disney ship ever built', 'New dining & entertainment concepts', 'Debuting 2025'],
+    whats_included: disneyIncluded,
+    whats_extra: disneyExtra,
+    editorial_take: "The Disney Destiny is the biggest thing Disney Cruise Line has ever built. Watch for pricing — early sailings on new Disney ships can command a significant premium.",
     hero_image_url: '/images/ships/disney-destiny.jpg',
     created_at: '2026-01-01T00:00:00Z',
-    updated_at: '2026-01-01T00:00:00Z'
+    updated_at: '2026-04-20T00:00:00Z',
   },
   {
     id: 'ship-0008',
     name: 'Disney Adventure',
     slug: 'disney-adventure',
+    cruise_line: 'Disney',
     year_launched: 2025,
-    capacity: 6700,
+    capacity: 6000,
     tonnage: 208000,
-    highlights: [
-      'Revolutionary mega-ship design with innovative spaces',
-      'Seven-deck family neighborhoods creating intimate communities',
-      'Immersive multiverse-themed entertainment',
-      'Significantly expanded dining and beverage venues',
-      'The largest Disney Cruise ship ever built'
-    ],
-    whats_included: [
-      {
-        category: 'Dining',
-        items: [
-          'Rotational dining across multiple themed restaurants',
-          'Room service with extensive menu options',
-          'Buffet dining with international cuisine',
-          'Coffee and tea service throughout the day',
-          'Complimentary soft drinks and beverages'
-        ]
-      },
-      {
-        category: 'Entertainment',
-        items: [
-          'Large-scale theatrical productions',
-          'Nightly deck parties with advanced production',
-          'Multiple live music venues',
-          'Original Disney entertainment programming',
-          'Interactive immersive experiences'
-        ]
-      },
-      {
-        category: 'Kids\' Clubs',
-        items: [
-          'Expanded Oceaneer Club with neighborhood setting',
-          'Oceaneer Lab with themed areas',
-          'Edge (ages 11-14) with expanded programming',
-          'Vibe (ages 14-17) with teen-focused activities',
-          'Nursery services with flexible hours'
-        ]
-      },
-      {
-        category: 'Pools & Recreation',
-        items: [
-          'Multiple themed pool areas',
-          'Water play zones and splash pads',
-          'Full-service fitness center',
-          'Sports facilities and activities',
-          'Outdoor recreational deck areas'
-        ]
-      },
-      {
-        category: 'Character Meet & Greets',
-        items: [
-          'Daily character appearances and interactions',
-          'Scheduled meet and greet experiences',
-          'Character dining opportunities',
-          'Photo experiences with beloved characters'
-        ]
-      }
-    ],
-    whats_extra: [
-      {
-        category: 'Adult Dining',
-        items: [
-          { name: 'Palo (Italian)', price_range: '$45 per person' },
-          { name: 'Enchanté by Chef Jérôme Bompard (French)', price_range: '$145 per person' },
-          { name: 'additional specialty dining', price_range: '$50-150 per person' }
-        ]
-      },
-      {
-        category: 'Beverages',
-        items: [
-          { name: 'Alcoholic beverages', price_range: '$8-16 per drink' },
-          { name: 'Beverage package', price_range: '$74 per day' },
-          { name: 'Premium wine and spirits', price_range: '$15-30 per drink' }
-        ]
-      },
-      {
-        category: 'Spa & Fitness',
-        items: [
-          { name: 'Spa treatments and wellness services', price_range: '$150-400 per session' },
-          { name: 'Salon services', price_range: '$50-250 per service' },
-          { name: 'Thermal suite and relaxation areas', price_range: '$20-40 per day' }
-        ]
-      },
-      {
-        category: 'Port Adventures',
-        items: [
-          { name: 'Shore excursions and guided tours', price_range: '$50-500 per person' }
-        ]
-      },
-      {
-        category: 'Photo Package',
-        items: [
-          { name: 'Digital and physical photo packages', price_range: '$199-449' }
-        ]
-      },
-      {
-        category: 'Internet',
-        items: [
-          { name: 'Daily WiFi pass', price_range: '$15 per day' },
-          { name: 'Unlimited WiFi (full cruise)', price_range: '$79-99 per cruise' }
-        ]
-      },
-      {
-        category: 'Kids\' Extras',
-        items: [
-          { name: 'Bibbidi Bobbidi Boutique', price_range: '$85-450' },
-          { name: 'Flounder\'s Reef Nursery', price_range: '$15-18 per hour' }
-        ]
-      }
-    ],
-    editorial_take: 'The Disney Adventure redefines what a cruise ship can be—it\'s so massive that Disney had to rethink how to make it feel personal. The neighborhood concept is genuinely clever, and with over 6,700 passengers, you\'d expect chaos but somehow it works. This is the future of cruising, whether you\'re excited or intimidated by the scale.',
+    highlights: ['Singapore homeport', 'Asia-Pacific Disney Cruise Line debut', 'IP-heavy theming throughout', 'Massive new vessel'],
+    whats_included: disneyIncluded,
+    whats_extra: disneyExtra,
+    editorial_take: "The Disney Adventure brings Disney Cruise Line to Asia for the first time. Designed for the Asia-Pacific market, it will be the largest Disney ship afloat when launched.",
     hero_image_url: '/images/ships/disney-adventure.jpg',
     created_at: '2026-01-01T00:00:00Z',
-    updated_at: '2026-01-01T00:00:00Z'
-  }
+    updated_at: '2026-04-20T00:00:00Z',
+  },
+
+  // ─── ROYAL CARIBBEAN ─────────────────────────────────────────
+  {
+    id: 'ship-rcl-001',
+    name: 'Wonder of the Seas',
+    slug: 'wonder-of-the-seas',
+    cruise_line: 'Royal Caribbean',
+    year_launched: 2022,
+    capacity: 6988,
+    tonnage: 236857,
+    highlights: ['World largest cruise ship (by GT)', 'Suite Neighborhood (The Ultimate Family Suite)', 'Central Park neighborhood', 'The Boardwalk with AquaTheater'],
+    whats_included: rclIncluded,
+    whats_extra: rclExtra,
+    editorial_take: "Wonder of the Seas is the gold standard for mega-ship cruising. Its eight neighborhoods mean there's always something new to explore, even on a 7-night sailing.",
+    hero_image_url: '/images/ships/wonder-of-the-seas.jpg',
+    created_at: '2026-01-01T00:00:00Z',
+    updated_at: '2026-04-20T00:00:00Z',
+  },
+  {
+    id: 'ship-rcl-002',
+    name: 'Icon of the Seas',
+    slug: 'icon-of-the-seas',
+    cruise_line: 'Royal Caribbean',
+    year_launched: 2024,
+    capacity: 7600,
+    tonnage: 250800,
+    highlights: ['Currently largest cruise ship in the world', 'Category 6 waterpark', 'Perfect Day at CocoCay private island stop', 'Six record-breaking waterslides'],
+    whats_included: rclIncluded,
+    whats_extra: rclExtra,
+    editorial_take: "Icon of the Seas is genuinely jaw-dropping in scale. Perfect Day at CocoCay is included in the itinerary and alone justifies the premium price for families who love water parks.",
+    hero_image_url: '/images/ships/icon-of-the-seas.jpg',
+    created_at: '2026-01-01T00:00:00Z',
+    updated_at: '2026-04-20T00:00:00Z',
+  },
+  {
+    id: 'ship-rcl-003',
+    name: 'Star of the Seas',
+    slug: 'star-of-the-seas',
+    cruise_line: 'Royal Caribbean',
+    year_launched: 2025,
+    capacity: 7600,
+    tonnage: 250800,
+    highlights: ['Sister ship to Icon of the Seas', 'Thrill Island waterpark', 'Perfect Day at CocoCay itinerary', 'New entertainment concepts'],
+    whats_included: rclIncluded,
+    whats_extra: rclExtra,
+    editorial_take: "Star of the Seas is Icon of the Seas with refinements learned from the first year of operation. Expect the same epic scale with smoother execution.",
+    hero_image_url: '/images/ships/star-of-the-seas.jpg',
+    created_at: '2026-01-01T00:00:00Z',
+    updated_at: '2026-04-20T00:00:00Z',
+  },
+  {
+    id: 'ship-rcl-004',
+    name: 'Odyssey of the Seas',
+    slug: 'odyssey-of-the-seas',
+    cruise_line: 'Royal Caribbean',
+    year_launched: 2021,
+    capacity: 5510,
+    tonnage: 169379,
+    highlights: ['Two70 versatile entertainment venue', 'North Star observation capsule', 'Sky Pad bungee trampoline', 'Quantum class with modern technology'],
+    whats_included: rclIncluded,
+    whats_extra: rclExtra,
+    editorial_take: "Odyssey of the Seas hits the sweet spot between modern technology and manageable size. Two70 at the stern is one of the most versatile entertainment venues at sea.",
+    hero_image_url: '/images/ships/odyssey-of-the-seas.jpg',
+    created_at: '2026-01-01T00:00:00Z',
+    updated_at: '2026-04-20T00:00:00Z',
+  },
+  {
+    id: 'ship-rcl-005',
+    name: 'Allure of the Seas',
+    slug: 'allure-of-the-seas',
+    cruise_line: 'Royal Caribbean',
+    year_launched: 2010,
+    capacity: 6296,
+    tonnage: 225282,
+    highlights: ['Iconic Oasis-class design', 'Central Park with real trees', 'Recently amplified 2024', 'FlowRider surf simulator'],
+    whats_included: rclIncluded,
+    whats_extra: rclExtra,
+    editorial_take: "Allure of the Seas was amplified in 2024 and now competes with newer ships. The Central Park neighborhood with real trees is still one of the most unique spaces at sea.",
+    hero_image_url: '/images/ships/allure-of-the-seas.jpg',
+    created_at: '2026-01-01T00:00:00Z',
+    updated_at: '2026-04-20T00:00:00Z',
+  },
+  {
+    id: 'ship-rcl-006',
+    name: 'Grandeur of the Seas',
+    slug: 'grandeur-of-the-seas',
+    cruise_line: 'Royal Caribbean',
+    year_launched: 1996,
+    capacity: 2446,
+    tonnage: 74137,
+    highlights: ['Small ship with classic elegance', 'Vision class — easy to navigate', 'Great value from Tampa homeport', '7-night Caribbean itineraries'],
+    whats_included: rclIncluded,
+    whats_extra: rclExtra,
+    editorial_take: "Grandeur of the Seas is Royal Caribbean for those who want a classic experience without the mega-ship chaos. Smaller size means shorter lines, easier navigation, and a more personal feel.",
+    hero_image_url: '/images/ships/grandeur-of-the-seas.jpg',
+    created_at: '2026-01-01T00:00:00Z',
+    updated_at: '2026-04-20T00:00:00Z',
+  },
+  {
+    id: 'ship-rcl-007',
+    name: 'Brilliance of the Seas',
+    slug: 'brilliance-of-the-seas',
+    cruise_line: 'Royal Caribbean',
+    year_launched: 2002,
+    capacity: 2100,
+    tonnage: 90090,
+    highlights: ['Radiance class with panoramic windows', 'San Juan Caribbean homeport', 'Intimate size, modern amenities', 'Cantilevered hot tubs over the ocean'],
+    whats_included: rclIncluded,
+    whats_extra: rclExtra,
+    editorial_take: "Brilliance of the Seas from San Juan lets you skip the flight to a port and start island-hopping immediately. The radiance-class design with glass everywhere gives an airy, open feel.",
+    hero_image_url: '/images/ships/brilliance-of-the-seas.jpg',
+    created_at: '2026-01-01T00:00:00Z',
+    updated_at: '2026-04-20T00:00:00Z',
+  },
+
+  // ─── CARNIVAL ────────────────────────────────────────────────
+  {
+    id: 'ship-ccl-001',
+    name: 'Carnival Celebration',
+    slug: 'carnival-celebration',
+    cruise_line: 'Carnival',
+    year_launched: 2022,
+    capacity: 5374,
+    tonnage: 183521,
+    highlights: ['Excel class — largest Carnival ship', '20 restaurants including Emeril Lagasse partnership', 'Loft 19 adults-only retreat', 'Panorama atrium with 360-degree views'],
+    whats_included: carnivalIncluded,
+    whats_extra: carnivalExtra,
+    editorial_take: "Carnival Celebration is Carnival at its most ambitious. The sheer variety of food options — including the Emeril Lagasse restaurants — elevates it above typical Carnival fare.",
+    hero_image_url: '/images/ships/carnival-celebration.jpg',
+    created_at: '2026-01-01T00:00:00Z',
+    updated_at: '2026-04-20T00:00:00Z',
+  },
+  {
+    id: 'ship-ccl-002',
+    name: 'Carnival Horizon',
+    slug: 'carnival-horizon',
+    cruise_line: 'Carnival',
+    year_launched: 2018,
+    capacity: 3934,
+    tonnage: 133596,
+    highlights: ['IMAX theater at sea', 'Dr. Seuss WaterWorks', 'Guy Fieri dining partnership', 'Havana Bar & Pool (Cuban themed)'],
+    whats_included: carnivalIncluded,
+    whats_extra: carnivalExtra,
+    editorial_take: "Carnival Horizon is one of the best overall Carnival ships. The IMAX theater is a real differentiator, and Guy Fieri's Burger Joint is genuinely one of the best burgers at sea.",
+    hero_image_url: '/images/ships/carnival-horizon.jpg',
+    created_at: '2026-01-01T00:00:00Z',
+    updated_at: '2026-04-20T00:00:00Z',
+  },
+  {
+    id: 'ship-ccl-003',
+    name: 'Carnival Elation',
+    slug: 'carnival-elation',
+    cruise_line: 'Carnival',
+    year_launched: 1998,
+    capacity: 2052,
+    tonnage: 71000,
+    highlights: ['Fantasy class — intimate and easy to navigate', 'Bahamas from Jacksonville (no flight needed)', 'Budget-friendly pricing', 'Classic Carnival experience'],
+    whats_included: carnivalIncluded,
+    whats_extra: carnivalExtra,
+    editorial_take: "Carnival Elation is the no-frills gateway cruise. Sailing from Jacksonville means you can drive to the port, park your car, and be in the Bahamas in under 24 hours without touching an airport.",
+    hero_image_url: '/images/ships/carnival-elation.jpg',
+    created_at: '2026-01-01T00:00:00Z',
+    updated_at: '2026-04-20T00:00:00Z',
+  },
+
+  // ─── NORWEGIAN ───────────────────────────────────────────────
+  {
+    id: 'ship-ncl-001',
+    name: 'Norwegian Encore',
+    slug: 'norwegian-encore',
+    cruise_line: 'Norwegian',
+    year_launched: 2019,
+    capacity: 3998,
+    tonnage: 169116,
+    highlights: ['Top-deck go-kart racetrack', 'Aqua Racer waterslide', 'Speedway at Sea', 'Designed for Alaska & Caribbean'],
+    whats_included: nclIncluded,
+    whats_extra: nclExtra,
+    editorial_take: "Norwegian Encore is Norwegian at its most energetic. The rooftop go-kart track is a genuine wow moment, and the Freestyle dining concept means you eat when and where you want.",
+    hero_image_url: '/images/ships/norwegian-encore.jpg',
+    created_at: '2026-01-01T00:00:00Z',
+    updated_at: '2026-04-20T00:00:00Z',
+  },
+  {
+    id: 'ship-ncl-002',
+    name: 'Norwegian Epic',
+    slug: 'norwegian-epic',
+    cruise_line: 'Norwegian',
+    year_launched: 2010,
+    capacity: 4100,
+    tonnage: 155873,
+    highlights: ['Unique curved cabin design', 'Mediterranean & Caribbean deployments', 'Howl at the Moon dueling piano bar', 'Ice Bar experience'],
+    whats_included: nclIncluded,
+    whats_extra: nclExtra,
+    editorial_take: "Norwegian Epic is a quirky ship with a cult following. The curved stateroom design is either genius or odd depending on your perspective, but the entertainment lineup is consistently strong.",
+    hero_image_url: '/images/ships/norwegian-epic.jpg',
+    created_at: '2026-01-01T00:00:00Z',
+    updated_at: '2026-04-20T00:00:00Z',
+  },
+  {
+    id: 'ship-ncl-003',
+    name: 'Norwegian Prima',
+    slug: 'norwegian-prima',
+    cruise_line: 'Norwegian',
+    year_launched: 2022,
+    capacity: 3215,
+    tonnage: 142500,
+    highlights: ['Prima class — smaller & more premium', 'Infinity Beach adults-only sun deck', 'Three-level racetrack', 'Only 3 restaurants included (fewer crowds)'],
+    whats_included: nclIncluded,
+    whats_extra: nclExtra,
+    editorial_take: "Norwegian Prima is NCL going upmarket. Lower passenger count means better service ratios and less chaos. A great choice for cruisers who want Norwegian energy with a more refined experience.",
+    hero_image_url: '/images/ships/norwegian-prima.jpg',
+    created_at: '2026-01-01T00:00:00Z',
+    updated_at: '2026-04-20T00:00:00Z',
+  },
+  {
+    id: 'ship-ncl-004',
+    name: 'Norwegian Bliss',
+    slug: 'norwegian-bliss',
+    cruise_line: 'Norwegian',
+    year_launched: 2018,
+    capacity: 4004,
+    tonnage: 168028,
+    highlights: ['Coastal Kitchen specialty dining', 'Aqua Racer waterslide complex', 'laser tag arena', 'Strong Free at Sea promotions'],
+    whats_included: nclIncluded,
+    whats_extra: nclExtra,
+    editorial_take: "Norwegian Bliss is one of the best value propositions in cruising when you catch a good Free at Sea promo that includes drinks, dining, and WiFi. The actual base pricing is very competitive.",
+    hero_image_url: '/images/ships/norwegian-bliss.jpg',
+    created_at: '2026-01-01T00:00:00Z',
+    updated_at: '2026-04-20T00:00:00Z',
+  },
+
+  // ─── MSC CRUISES ─────────────────────────────────────────────
+  {
+    id: 'ship-msc-001',
+    name: 'MSC World America',
+    slug: 'msc-world-america',
+    cruise_line: 'MSC',
+    year_launched: 2025,
+    capacity: 6762,
+    tonnage: 215863,
+    highlights: ['World class MSC flagship', 'MSC Yacht Club ultra-luxury enclave', 'PortMiami homeport', 'Caribbean itineraries from Florida'],
+    whats_included: mscIncluded,
+    whats_extra: mscExtra,
+    editorial_take: "MSC World America brings European mega-ship sophistication to the US market. The Yacht Club within-a-ship concept is genuinely excellent if you can afford the upgrade.",
+    hero_image_url: '/images/ships/msc-world-america.jpg',
+    created_at: '2026-01-01T00:00:00Z',
+    updated_at: '2026-04-20T00:00:00Z',
+  },
+  {
+    id: 'ship-msc-002',
+    name: 'MSC Seascape',
+    slug: 'msc-seascape',
+    cruise_line: 'MSC',
+    year_launched: 2022,
+    capacity: 5877,
+    tonnage: 169400,
+    highlights: ['Seascape class with giant LED screens', 'MSC for Me digital experience', 'Year-round Caribbean from Miami', 'Competitive pricing'],
+    whats_included: mscIncluded,
+    whats_extra: mscExtra,
+    editorial_take: "MSC Seascape is one of the best value 7-night Caribbean options on the market. The MSC Yacht Club is a genuine luxury option, and even standard cabins are well-appointed.",
+    hero_image_url: '/images/ships/msc-seascape.jpg',
+    created_at: '2026-01-01T00:00:00Z',
+    updated_at: '2026-04-20T00:00:00Z',
+  },
+  {
+    id: 'ship-msc-003',
+    name: 'MSC Orchestra',
+    slug: 'msc-orchestra',
+    cruise_line: 'MSC',
+    year_launched: 2007,
+    capacity: 3013,
+    tonnage: 92409,
+    highlights: ['Musica class with classic European elegance', 'Mediterranean & worldwide deployments', 'Smaller & more intimate', 'Budget-friendly MSC entry point'],
+    whats_included: mscIncluded,
+    whats_extra: mscExtra,
+    editorial_take: "MSC Orchestra is the old-school option in the MSC fleet. Smaller and more classic, it suits cruisers who want a quieter, more European style of cruising without mega-ship chaos.",
+    hero_image_url: '/images/ships/msc-orchestra.jpg',
+    created_at: '2026-01-01T00:00:00Z',
+    updated_at: '2026-04-20T00:00:00Z',
+  },
+  {
+    id: 'ship-msc-004',
+    name: 'MSC Grandiosa',
+    slug: 'msc-grandiosa',
+    cruise_line: 'MSC',
+    year_launched: 2019,
+    capacity: 6334,
+    tonnage: 181541,
+    highlights: ['Grandiosa class — largest ever at launch', 'Mediterranean summer homeport', 'Cirque du Soleil at Sea partnership', 'Largest waterpark in MSC fleet'],
+    whats_included: mscIncluded,
+    whats_extra: mscExtra,
+    editorial_take: "MSC Grandiosa is where MSC hits its stride. The Cirque du Soleil at Sea shows are spectacular and unique to MSC — nothing else in cruising compares to that entertainment experience.",
+    hero_image_url: '/images/ships/msc-grandiosa.jpg',
+    created_at: '2026-01-01T00:00:00Z',
+    updated_at: '2026-04-20T00:00:00Z',
+  },
+
+  // ─── CELEBRITY CRUISES ───────────────────────────────────────
+  {
+    id: 'ship-cel-001',
+    name: 'Celebrity Apex',
+    slug: 'celebrity-apex',
+    cruise_line: 'Celebrity',
+    year_launched: 2020,
+    capacity: 2910,
+    tonnage: 130818,
+    highlights: ['Edge class with Magic Carpet cantilevered venue', 'Always Included pricing (drinks + WiFi + gratuities)', 'Resort deck with infinite pool', 'Le Voyage by Daniel Boulud'],
+    whats_included: celebIncluded,
+    whats_extra: celebExtra,
+    editorial_take: "Celebrity Apex with Always Included pricing is one of the most transparent deals in cruising — what you see is nearly what you pay. The Magic Carpet is a genuinely stunning architectural feat.",
+    hero_image_url: '/images/ships/celebrity-apex.jpg',
+    created_at: '2026-01-01T00:00:00Z',
+    updated_at: '2026-04-20T00:00:00Z',
+  },
+  {
+    id: 'ship-cel-002',
+    name: 'Celebrity Beyond',
+    slug: 'celebrity-beyond',
+    cruise_line: 'Celebrity',
+    year_launched: 2022,
+    capacity: 3260,
+    tonnage: 140600,
+    highlights: ['Largest Celebrity ship', 'Le Voyage restaurant by Daniel Boulud', 'The Retreat luxury enclave expanded', 'Rooftop Garden & Magic Carpet'],
+    whats_included: celebIncluded,
+    whats_extra: celebExtra,
+    editorial_take: "Celebrity Beyond takes everything great about Apex and adds more space and more luxury. The expanded Retreat Sun Deck is one of the best outdoor spaces at sea.",
+    hero_image_url: '/images/ships/celebrity-beyond.jpg',
+    created_at: '2026-01-01T00:00:00Z',
+    updated_at: '2026-04-20T00:00:00Z',
+  },
+  {
+    id: 'ship-cel-003',
+    name: 'Celebrity Summit',
+    slug: 'celebrity-summit',
+    cruise_line: 'Celebrity',
+    year_launched: 2001,
+    capacity: 2158,
+    tonnage: 90940,
+    highlights: ['Millennium class classic elegance', 'Recently Revolutionized (refurbished)', 'Smaller & more intimate', 'Caribbean & Bermuda itineraries'],
+    whats_included: celebIncluded,
+    whats_extra: celebExtra,
+    editorial_take: "Celebrity Summit is a classic — smaller than the Edge class but elegant and well-run. The Always Included pricing means your value proposition is clear before you book.",
+    hero_image_url: '/images/ships/celebrity-summit.jpg',
+    created_at: '2026-01-01T00:00:00Z',
+    updated_at: '2026-04-20T00:00:00Z',
+  },
+  {
+    id: 'ship-cel-004',
+    name: 'Celebrity Edge',
+    slug: 'celebrity-edge',
+    cruise_line: 'Celebrity',
+    year_launched: 2018,
+    capacity: 2918,
+    tonnage: 130818,
+    highlights: ['First Edge class ship — original Magic Carpet', 'Infinite Veranda staterooms', 'Eden multi-level entertainment space', 'Always Included pricing'],
+    whats_included: celebIncluded,
+    whats_extra: celebExtra,
+    editorial_take: "Celebrity Edge launched a new era in cruise design. Eden is one of the most visually striking spaces afloat, and the Infinite Veranda staterooms feel genuinely revolutionary.",
+    hero_image_url: '/images/ships/celebrity-edge.jpg',
+    created_at: '2026-01-01T00:00:00Z',
+    updated_at: '2026-04-20T00:00:00Z',
+  },
+
+  // ─── PRINCESS CRUISES ────────────────────────────────────────
+  {
+    id: 'ship-pri-001',
+    name: 'Regal Princess',
+    slug: 'regal-princess',
+    cruise_line: 'Princess',
+    year_launched: 2014,
+    capacity: 3560,
+    tonnage: 142229,
+    highlights: ['Royal class — elegant design', 'Princess Live! entertainment', 'OceanMedallion technology', 'Caribbean & European itineraries'],
+    whats_included: princessIncluded,
+    whats_extra: princessExtra,
+    editorial_take: "Regal Princess is Princess Cruises hitting its stride. The OceanMedallion system is the most seamless technology implementation in cruising — from boarding to ordering drinks poolside.",
+    hero_image_url: '/images/ships/regal-princess.jpg',
+    created_at: '2026-01-01T00:00:00Z',
+    updated_at: '2026-04-20T00:00:00Z',
+  },
+  {
+    id: 'ship-pri-002',
+    name: 'Caribbean Princess',
+    slug: 'caribbean-princess',
+    cruise_line: 'Princess',
+    year_launched: 2004,
+    capacity: 3782,
+    tonnage: 112894,
+    highlights: ['Grand class with classic Princess design', 'Movies Under the Stars pool deck', 'Fort Lauderdale homeport', 'Eastern & Western Caribbean routes'],
+    whats_included: princessIncluded,
+    whats_extra: princessExtra,
+    editorial_take: "Caribbean Princess is a workhorse of the Princess fleet — well-run, comfortable, and consistently priced as a strong value. Movies Under the Stars is a delightful evening tradition.",
+    hero_image_url: '/images/ships/caribbean-princess.jpg',
+    created_at: '2026-01-01T00:00:00Z',
+    updated_at: '2026-04-20T00:00:00Z',
+  },
+  {
+    id: 'ship-pri-003',
+    name: 'Star Princess',
+    slug: 'star-princess',
+    cruise_line: 'Princess',
+    year_launched: 2025,
+    capacity: 4300,
+    tonnage: 175500,
+    highlights: ['Sphere class — newest Princess design', 'Princess Arena entertainment venue', 'The Dome retractable roof', 'Alaska & Caribbean deployments'],
+    whats_included: princessIncluded,
+    whats_extra: princessExtra,
+    editorial_take: "Star Princess is the most technologically advanced Princess ship yet. The Dome — a retractable glass dome over an entertainment space — is stunning in port and at sea.",
+    hero_image_url: '/images/ships/star-princess.jpg',
+    created_at: '2026-01-01T00:00:00Z',
+    updated_at: '2026-04-20T00:00:00Z',
+  },
+  {
+    id: 'ship-pri-004',
+    name: 'Emerald Princess',
+    slug: 'emerald-princess',
+    cruise_line: 'Princess',
+    year_launched: 2007,
+    capacity: 3114,
+    tonnage: 113561,
+    highlights: ['Grand class classic design', 'Movies Under the Stars', 'Fort Lauderdale & Southampton routes', 'Strong value pricing'],
+    whats_included: princessIncluded,
+    whats_extra: princessExtra,
+    editorial_take: "Emerald Princess is Princess Cruises at its most reliable and value-focused. No gimmicks, just solid cruising with excellent service and consistent pricing.",
+    hero_image_url: '/images/ships/emerald-princess.jpg',
+    created_at: '2026-01-01T00:00:00Z',
+    updated_at: '2026-04-20T00:00:00Z',
+  },
+  {
+    id: 'ship-pri-005',
+    name: 'Discovery Princess',
+    slug: 'discovery-princess',
+    cruise_line: 'Princess',
+    year_launched: 2022,
+    capacity: 3660,
+    tonnage: 145281,
+    highlights: ['Royal class with modern updates', 'Los Angeles homeport', 'Mexican Riviera & California Coast', 'OceanMedallion enabled'],
+    whats_included: princessIncluded,
+    whats_extra: princessExtra,
+    editorial_take: "Discovery Princess from Los Angeles is the perfect ship for West Coast families who want to cruise without flying. The Mexican Riviera route hits Cabo, Puerto Vallarta, and Mazatlan in 7 nights.",
+    hero_image_url: '/images/ships/discovery-princess.jpg',
+    created_at: '2026-01-01T00:00:00Z',
+    updated_at: '2026-04-20T00:00:00Z',
+  },
+
+  // ─── HOLLAND AMERICA ─────────────────────────────────────────
+  {
+    id: 'ship-hal-001',
+    name: 'MS Zaandam',
+    slug: 'ms-zaandam',
+    cruise_line: 'Holland America',
+    year_launched: 2000,
+    capacity: 1432,
+    tonnage: 61396,
+    highlights: ['R class — one of the smallest HAL ships', 'Intimate & classic', 'Signature HAL service', 'Eclectic worldwide itineraries'],
+    whats_included: halIncluded,
+    whats_extra: halExtra,
+    editorial_take: "MS Zaandam is Holland America at its most intimate. The smaller size means a genuinely personal experience and access to ports that larger ships cannot visit.",
+    hero_image_url: '/images/ships/ms-zaandam.jpg',
+    created_at: '2026-01-01T00:00:00Z',
+    updated_at: '2026-04-20T00:00:00Z',
+  },
+  {
+    id: 'ship-hal-002',
+    name: 'MS Nieuw Amsterdam',
+    slug: 'ms-nieuw-amsterdam',
+    cruise_line: 'Holland America',
+    year_launched: 2010,
+    capacity: 2106,
+    tonnage: 86700,
+    highlights: ['Signature class with modern upgrades', 'Lincoln Center Stage performances', 'Culinary Arts Center', 'Caribbean from Fort Lauderdale'],
+    whats_included: halIncluded,
+    whats_extra: halExtra,
+    editorial_take: "MS Nieuw Amsterdam is Holland America for a new generation — all the warmth and service HAL is known for, with modern entertainment and dining options that appeal to younger cruisers.",
+    hero_image_url: '/images/ships/ms-nieuw-amsterdam.jpg',
+    created_at: '2026-01-01T00:00:00Z',
+    updated_at: '2026-04-20T00:00:00Z',
+  },
+  {
+    id: 'ship-hal-003',
+    name: 'MS Noordam',
+    slug: 'ms-noordam',
+    cruise_line: 'Holland America',
+    year_launched: 2006,
+    capacity: 1918,
+    tonnage: 82318,
+    highlights: ['Vista class classic design', 'Culinary Arts Center', 'Alaska deployments', 'Great value positioning'],
+    whats_included: halIncluded,
+    whats_extra: halExtra,
+    editorial_take: "MS Noordam is the workhorse Alaska ship for Holland America. Its smaller size and classic elegance suit the Alaska itinerary perfectly — glacier viewing from the upper deck is spectacular.",
+    hero_image_url: '/images/ships/ms-noordam.jpg',
+    created_at: '2026-01-01T00:00:00Z',
+    updated_at: '2026-04-20T00:00:00Z',
+  },
+  {
+    id: 'ship-hal-004',
+    name: 'MS Koningsdam',
+    slug: 'ms-koningsdam',
+    cruise_line: 'Holland America',
+    year_launched: 2016,
+    capacity: 2650,
+    tonnage: 99500,
+    highlights: ['Pinnacle class — largest modern HAL ships', 'Lincoln Center Stage & BBC Earth Experiences', 'Tamarind Asian restaurant', 'Grand Dutch Cafe'],
+    whats_included: halIncluded,
+    whats_extra: halExtra,
+    editorial_take: "MS Koningsdam is Holland America finally going big. The BBC Earth Experiences partnership brings wildlife documentary-quality presentations to sea, and it genuinely elevates the experience.",
+    hero_image_url: '/images/ships/ms-koningsdam.jpg',
+    created_at: '2026-01-01T00:00:00Z',
+    updated_at: '2026-04-20T00:00:00Z',
+  },
+  {
+    id: 'ship-hal-005',
+    name: 'MS Nieuw Statendam',
+    slug: 'ms-nieuw-statendam',
+    cruise_line: 'Holland America',
+    year_launched: 2018,
+    capacity: 2668,
+    tonnage: 99902,
+    highlights: ['Sister to Koningsdam with improved design', 'Rolling Stone Rock Room', 'Expanded Pinnacle Grill', 'Caribbean from Fort Lauderdale'],
+    whats_included: halIncluded,
+    whats_extra: halExtra,
+    editorial_take: "MS Nieuw Statendam refined the Koningsdam blueprint. The Rolling Stone Rock Room is a surprise highlight — genuine rock music performances in an elegant lounge setting.",
+    hero_image_url: '/images/ships/ms-nieuw-statendam.jpg',
+    created_at: '2026-01-01T00:00:00Z',
+    updated_at: '2026-04-20T00:00:00Z',
+  },
 ]

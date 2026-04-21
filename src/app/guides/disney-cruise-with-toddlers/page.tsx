@@ -1,4 +1,3 @@
-'use client';
 
 import { Metadata } from 'next';
 import Link from 'next/link';
@@ -153,8 +152,8 @@ export default function DisneyCruiseWithToddlersGuide() {
               Verandah Cabins (Recommended for Toddlers)
             </h3>
             <p className="font-inter text-slate-600 mb-3">
-              The verandah cabin is ideal for families with toddlers, even though it's pricier ($600-1,200+/night). Here's why:
-            </p>
+              The verandah cabin is ideal for families with toddlers, even though it"s pricier ($600-1,200+/night). Here's why:
+"            </p>
             <ul className="font-inter text-slate-600 space-y-2 ml-4">
               <li>• <strong>Nap time darkness:</strong> The verandah allows you to move outside while toddler naps inside. Cabin gets dark and cool for quality sleep.</li>
               <li>• <strong>More space:</strong> Toddlers need room to move around. Verandah cabins are substantially larger (~200+ sq ft) than inside cabins (~160 sq ft).</li>
@@ -456,8 +455,8 @@ export default function DisneyCruiseWithToddlersGuide() {
               <li className="flex gap-3">
                 <span className="text-blue-600 font-bold">•</span>
                 <div>
-                  <strong>Baby Beach Area:</strong> There's a dedicated beach area for babies and young toddlers with calm water and shallow wading. Perfect for toddlers who don't swim yet.
-                </div>
+                  <strong>Baby Beach Area:</strong> There"s a dedicated beach area for babies and young toddlers with calm water and shallow wading. Perfect for toddlers who don't swim yet.
+"                </div>
               </li>
               <li className="flex gap-3">
                 <span className="text-blue-600 font-bold">•</span>

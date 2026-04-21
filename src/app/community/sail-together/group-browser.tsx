@@ -16,11 +16,9 @@ export function GroupBrowser({ groups }: GroupBrowserProps) {
   const [selectedMonth, setSelectedMonth] = useState<string>('all')
 
   const ships = useMemo(() => {
-    const uniqueShips = Array.from(
-      new Set(groups.map(g => g.sailing.ship_id))
-    )
-    return ships.filter(s => uniqueShips.includes(s.id))
-  }, [])
+    const uniqueShips = new Set(groups.map(g => g.sailing.ship_id))
+    return getShips().filter(s => uniqueShips.has(s.id))
+  }, [groups])
 
   const months = useMemo(() => {
     const uniqueMonths = Array.from(

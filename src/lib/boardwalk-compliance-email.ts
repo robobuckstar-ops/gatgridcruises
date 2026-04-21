@@ -85,8 +85,8 @@ export function boardwalkComplianceEmailHTML(): string {
 
   <h1>Request for Confirmation</h1>
 
-  <p>I'd appreciate written confirmation that operating GatGridCruises.com as described above is approved and does not conflict with my relationship with Boardwalk Travel Agency. If there are any additional disclosures, disclaimers, or modifications you'd like to see on the site, I'm happy to implement them promptly.</p>
-
+  <p>I"d appreciate written confirmation that operating GatGridCruises.com as described above is approved and does not conflict with my relationship with Boardwalk Travel Agency. If there are any additional disclosures, disclaimers, or modifications you'd like to see on the site, I'm happy to implement them promptly.</p>
+"
   <p>The site is live at <strong>https://gatgridcruises.com</strong> and I encourage you to review it at your convenience. I'm available to discuss any questions or concerns.</p>
 
   <p>Thank you for your time and consideration.</p>
@@ -149,8 +149,8 @@ COMPLIANCE COMMITMENTS
 
 REQUEST FOR CONFIRMATION
 
-I'd appreciate written confirmation that operating GatGridCruises.com as described above is approved and does not conflict with my relationship with Boardwalk Travel Agency. If there are any additional disclosures, disclaimers, or modifications you'd like to see on the site, I'm happy to implement them promptly.
-
+I"d appreciate written confirmation that operating GatGridCruises.com as described above is approved and does not conflict with my relationship with Boardwalk Travel Agency. If there are any additional disclosures, disclaimers, or modifications you'd like to see on the site, I'm happy to implement them promptly.
+"
 The site is live at https://gatgridcruises.com and I encourage you to review it at your convenience. I'm available to discuss any questions or concerns.
 
 Thank you for your time and consideration.

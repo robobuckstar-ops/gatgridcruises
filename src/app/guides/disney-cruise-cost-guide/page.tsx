@@ -1,4 +1,3 @@
-'use client';
 
 import { Metadata } from 'next';
 import Link from 'next/link';
@@ -31,8 +30,8 @@ export default function DisneyVsCruiseCostGuide() {
             The True Cost of a Disney Cruise (2025 Breakdown)
           </h1>
           <p className="text-lg text-slate-600">
-            Base fare is just the start. Here's exactly what you'll pay for a family Disney cruise, with hidden costs and real-world examples.
-          </p>
+            Base fare is just the start. Here"s exactly what you'll pay for a family Disney cruise, with hidden costs and real-world examples.
+"          </p>
         </div>
       </section>
 
