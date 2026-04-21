@@ -23,7 +23,7 @@ export function TransferRecommender({ transfers, portName }: TransferRecommender
 
       // Scenario-based scoring
       if (scenario === 'flying_same_day') {
-        if (t.type === 'uber' || t.type === 'lyft') {
+        if (t.type === 'uber') {
           score += 40
           reasoning += 'Fast and cost-effective for same-day arrivals. '
         } else if (t.type === 'disney_ground') {
@@ -36,8 +36,8 @@ export function TransferRecommender({ transfers, portName }: TransferRecommender
       } else if (scenario === 'flying_previous_day') {
         if (t.type === 'hotel_shuttle') {
           score += 45
-          reasoning += 'If you're staying overnight, shuttle is ideal. '
-        } else if (t.type === 'uber' || t.type === 'lyft') {
+          reasoning += 'If you\'re staying overnight, shuttle is ideal. '
+        } else if (t.type === 'uber') {
           score += 35
           reasoning += 'Good option without overnight hotel. '
         } else if (t.type === 'disney_ground') {
@@ -51,7 +51,7 @@ export function TransferRecommender({ transfers, portName }: TransferRecommender
         } else if (t.type === 'personal_car') {
           score += 30
           reasoning += 'Viable if you have parking arranged. '
-        } else if (t.type === 'uber' || t.type === 'lyft') {
+        } else if (t.type === 'uber') {
           score += 25
           reasoning += 'Quick backup if shuttle unavailable. '
         }
@@ -61,7 +61,7 @@ export function TransferRecommender({ transfers, portName }: TransferRecommender
           reasoning += 'Your own car is the logical choice. '
         } else if (t.type === 'rental_car') {
           score += 15
-          reasoning += 'Don't rent if you're already driving. '
+          reasoning += 'Don\'t rent if you\'re already driving. '
         }
       }
 

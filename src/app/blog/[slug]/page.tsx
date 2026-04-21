@@ -1,12 +1,13 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { getBlogPostBySlug, getRelatedPosts, getBlogPosts } from '@/lib/data'
-import { ArrowLeft, Calendar, Clock, Share2, Twitter, Facebook, Copy } from 'lucide-react'
+import { ArrowLeft, Calendar, Clock } from 'lucide-react'
+import { ShareButtons } from './share-buttons'
 
 interface BlogPostPageProps {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
 export async function generateStaticParams() {
@@ -17,7 +18,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: BlogPostPageProps) {
-  const post = getBlogPostBySlug(params.slug)
+  const { slug } = await params
+  const post = getBlogPostBySlug(slug)
 
   if (!post) {
     return {
@@ -31,8 +33,9 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
   }
 }
 
-export default function BlogPostPage({ params }: BlogPostPageProps) {
-  const post = getBlogPostBySlug(params.slug)
+export default async function BlogPostPage({ params }: BlogPostPageProps) {
+  const { slug } = await params
+  const post = getBlogPostBySlug(slug)
 
   if (!post) {
     notFound()
@@ -154,35 +157,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
         {/* Share Section */}
         <div className="mt-12 pt-8 border-t border-slate-200">
           <h3 className="font-semibold text-slate-900 mb-4">Share this article</h3>
-          <div className="flex flex-wrap gap-3">
-            <a
-              href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(`https://gatgridcruises.com/blog/${post.slug}`)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100 transition-colors font-medium"
-            >
-              <Twitter className="h-4 w-4" />
-              Twitter
-            </a>
-            <a
-              href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://gatgridcruises.com/blog/${post.slug}`)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100 transition-colors font-medium"
-            >
-              <Facebook className="h-4 w-4" />
-              Facebook
-            </a>
-            <button
-              onClick={() => {
-                navigator.clipboard.writeText(`https://gatgridcruises.com/blog/${post.slug}`)
-              }}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 rounded-lg hover:bg-slate-200 transition-colors font-medium"
-            >
-              <Copy className="h-4 w-4" />
-              Copy Link
-            </button>
-          </div>
+          <ShareButtons title={post.title} slug={post.slug} />
         </div>
       </article>
 

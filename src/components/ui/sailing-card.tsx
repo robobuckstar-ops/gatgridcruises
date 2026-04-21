@@ -6,6 +6,7 @@ import type { Sailing } from '@/types/database'
 import { formatPrice, formatDate, cn } from '@/lib/utils'
 import { calculateDealScore } from '@/lib/deal-score'
 import { getOutTheDoorTotal, getPricePerNight } from '@/lib/pricing'
+import { useGuestCount } from '@/context/guest-count-context'
 import { DealScoreBadge } from './deal-score-badge'
 import { Ship, Calendar, MapPin, ChevronDown } from 'lucide-react'
 
@@ -16,15 +17,16 @@ interface SailingCardProps {
 
 export function SailingCard({ sailing, percentBelow }: SailingCardProps) {
   const [expandedPrice, setExpandedPrice] = useState(false)
+  const { guests } = useGuestCount()
 
   // Calculate deal score
   const dealScore = calculateDealScore(sailing, sailing.price_snapshots)
 
-  // Calculate out-the-door pricing (for 2 guests by default)
+  // Calculate out-the-door pricing based on selected guest count
   const outTheDoor = getOutTheDoorTotal(
     sailing.current_lowest_price,
     sailing.length_nights,
-    2,
+    guests,
     sailing.region
   )
 
@@ -110,7 +112,7 @@ export function SailingCard({ sailing, percentBelow }: SailingCardProps) {
           <div className="space-y-1">
             <div className="flex items-baseline justify-between">
               <span className="text-sm text-slate-600 font-medium">Total Per Person</span>
-              <span className="text-xs text-slate-500">(all-in, 2 guests)</span>
+              <span className="text-xs text-slate-500">(all-in, {guests === 4 ? '4+' : guests} guest{guests > 1 ? 's' : ''})</span>
             </div>
             <div className="flex items-baseline justify-between">
               <span className="text-2xl font-bold text-slate-900">
@@ -142,15 +144,15 @@ export function SailingCard({ sailing, percentBelow }: SailingCardProps) {
             <div className="space-y-1.5 px-3 py-2 bg-slate-50 rounded-lg text-xs text-slate-700">
               <div className="flex justify-between">
                 <span>Base Fare (per person)</span>
-                <span className="font-semibold">{formatPrice(sailing.current_lowest_price / 2)}</span>
+                <span className="font-semibold">{formatPrice(sailing.current_lowest_price / guests)}</span>
               </div>
               <div className="flex justify-between">
                 <span>Port Fees & Taxes</span>
-                <span className="font-semibold">{formatPrice(outTheDoor.total - sailing.current_lowest_price - (sailing.length_nights * 14.5 * 2))}</span>
+                <span className="font-semibold">{formatPrice(outTheDoor.total - sailing.current_lowest_price - (sailing.length_nights * 14.5 * guests))}</span>
               </div>
               <div className="flex justify-between">
-                <span>Gratuities ({sailing.length_nights} nights)</span>
-                <span className="font-semibold">{formatPrice(sailing.length_nights * 14.5 * 2)}</span>
+                <span>Gratuities ({sailing.length_nights} nights × {guests} guests)</span>
+                <span className="font-semibold">{formatPrice(sailing.length_nights * 14.5 * guests)}</span>
               </div>
               <div className="border-t border-slate-200 pt-1.5 flex justify-between font-semibold text-slate-900">
                 <span>Total Per Person</span>

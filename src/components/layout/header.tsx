@@ -7,10 +7,21 @@ import { Menu, X, ChevronDown } from 'lucide-react'
 import { SrOnly } from '@/components/ui/sr-only'
 
 const navItems = [
-  { label: 'Search', href: '/search' },
   { label: 'Deals', href: '/deals' },
-  { label: 'Last-Minute', href: '/deals/last-minute' },
+  { label: '90-Day Ticker', href: '/deals/last-minute' },
   { label: 'Ships', href: '/ships' },
+  {
+    label: 'Guides',
+    href: '/guides',
+    children: [
+      { label: 'All Guides', href: '/guides' },
+      { label: 'How to Get Comped Cruises', href: '/guides/comped-cruises' },
+      { label: 'Best Disney Staterooms', href: '/guides/best-disney-cruise-staterooms' },
+      { label: 'First-Time Tips', href: '/guides/first-time-disney-cruise-tips' },
+      { label: 'Disney Cruise Costs', href: '/guides/disney-cruise-cost-guide' },
+      { label: 'Travel Hacks', href: '/travel-hacks' },
+    ],
+  },
   {
     label: 'Tools',
     href: '/tools',
@@ -24,18 +35,15 @@ const navItems = [
       { label: 'Compare Sailings', href: '/tools/compare' },
     ],
   },
+  { label: 'Other Lines', href: '/deals/other-lines' },
   { label: 'Blog', href: '/blog' },
-  { label: 'Guides', href: '/guides' },
-  { label: 'Travel Hacks', href: '/travel-hacks' },
-  { label: 'Solo Cruising', href: '/solo-cruising' },
-  { label: 'Hotels', href: '/hotels' },
   { label: 'About', href: '/about' },
 ]
 
 export function Header() {
   const pathname = usePathname()
   const [mobileOpen, setMobileOpen] = useState(false)
-  const [toolsOpen, setToolsOpen] = useState(false)
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null)
   const menuRef = useRef<HTMLDivElement>(null)
   const menuButtonRef = useRef<HTMLButtonElement>(null)
 
@@ -60,15 +68,15 @@ export function Header() {
           announceMenuState(false)
           menuButtonRef.current?.focus()
         }
-        if (toolsOpen) {
-          setToolsOpen(false)
+        if (openDropdown) {
+          setOpenDropdown(null)
         }
       }
     }
 
     document.addEventListener('keydown', handleEscape)
     return () => document.removeEventListener('keydown', handleEscape)
-  }, [mobileOpen, toolsOpen])
+  }, [mobileOpen, openDropdown])
 
   // Focus trap for mobile menu
   useEffect(() => {
@@ -133,28 +141,28 @@ export function Header() {
                 <div
                   key={item.label}
                   className="relative"
-                  onMouseEnter={() => setToolsOpen(true)}
-                  onMouseLeave={() => setToolsOpen(false)}
+                  onMouseEnter={() => setOpenDropdown(item.label)}
+                  onMouseLeave={() => setOpenDropdown(null)}
                 >
                   <button
                     className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-slate-700 hover:text-navy rounded-lg hover:bg-slate-50 transition-colors duration-200"
-                    aria-expanded={toolsOpen}
+                    aria-expanded={openDropdown === item.label}
                     aria-haspopup="true"
-                    aria-controls="tools-dropdown"
+                    aria-controls={`${item.label.toLowerCase()}-dropdown`}
                   >
                     {item.label}
                     <ChevronDown
                       className="h-3.5 w-3.5 transition-transform duration-200"
                       aria-hidden="true"
                       style={{
-                        transform: toolsOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+                        transform: openDropdown === item.label ? 'rotate(180deg)' : 'rotate(0deg)',
                       }}
                     />
                   </button>
-                  {toolsOpen && (
+                  {openDropdown === item.label && (
                     <div
-                      id="tools-dropdown"
-                      className="absolute top-full left-0 mt-1 w-52 bg-white rounded-lg shadow-lg border border-slate-200 py-2"
+                      id={`${item.label.toLowerCase()}-dropdown`}
+                      className="absolute top-full left-0 mt-1 w-56 bg-white rounded-lg shadow-lg border border-slate-200 py-2"
                       role="menu"
                     >
                       {item.children.map((child) => (
@@ -163,7 +171,7 @@ export function Header() {
                           href={child.href}
                           className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-navy transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-0 focus-visible:outline-blue-600"
                           role="menuitem"
-                          onClick={() => setToolsOpen(false)}
+                          onClick={() => setOpenDropdown(null)}
                         >
                           {child.label}
                         </Link>

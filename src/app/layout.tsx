@@ -6,6 +6,7 @@ import { SkipNav } from '@/components/ui/skip-nav'
 import { Chatbot } from '@/components/ui/chatbot'
 import { generateWebsiteSchema } from '@/lib/structured-data'
 import { StructuredData } from '@/components/ui/structured-data'
+import { GuestCountProvider } from '@/context/guest-count-context'
 
 export const metadata: Metadata = {
   title: {
@@ -52,12 +53,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-screen flex flex-col">
-        <StructuredData data={generateWebsiteSchema()} />
-        <SkipNav />
-        <Header />
-        <main id="main-content" className="flex-1">{children}</main>
-        <Footer />
-        <Chatbot />
+        <GuestCountProvider>
+          <StructuredData data={generateWebsiteSchema()} />
+          <SkipNav />
+          <Header />
+          <main id="main-content" className="flex-1">{children}</main>
+          <Footer />
+          <Chatbot />
+        </GuestCountProvider>
       </body>
     </html>
   )
