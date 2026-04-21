@@ -210,7 +210,7 @@ export default function CastawayCayGuide() {
           </div>
 
           <div className="mb-6">
-            <h3 className="font-fraunces text-2xl font-bold text-slate-900 mb-3">Know the Schedule</html>
+            <h3 className="font-fraunces text-2xl font-bold text-slate-900 mb-3">Know the Schedule</h3>
             <p className="font-inter text-slate-600 leading-relaxed">
               All aboard is typically 4:30 PM. Plan to return to the ship by 4:00 PM to avoid any mishaps. The tenders (small boats) run continuously from the island to the ship; factor in 10-15 minute boat rides if you're on a tender ship. (Larger ships dock directly.) Check the daily program or your Key to the World app for exact tender schedules.
             </p>

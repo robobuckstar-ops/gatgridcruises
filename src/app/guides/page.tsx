@@ -127,7 +127,7 @@ export default function GuidesPage() {
 
                 {index === 3 && (
                   <div className="flex justify-center mt-8 mb-4">
-                    <AdSlot width={728} height={90} />
+                    <AdSlot size="728x90" />
                   </div>
                 )}
               </div>
