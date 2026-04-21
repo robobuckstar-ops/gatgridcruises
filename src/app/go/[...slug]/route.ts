@@ -1,13 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { TRAVEL_AFFILIATES, AMAZON_CONFIG, getCardReferralLink } from '@/lib/affiliate-config'
 
 // Click tracking (in-memory for MVP, Supabase table later)
 const clickLog: { provider: string; target: string; timestamp: string; referrer: string | null }[] = []
-
-const AFFILIATE_URLS: Record<string, string> = {
-  skyscanner: 'https://www.skyscanner.com/transport/flights',
-  booking: 'https://www.booking.com/hotel',
-  expedia: 'https://www.expedia.com/Hotel-Search',
-}
 
 export async function GET(
   request: NextRequest,
@@ -25,21 +20,43 @@ export async function GET(
     referrer: request.headers.get('referer'),
   })
 
-  // Build redirect URL
-  const searchParams = request.nextUrl.searchParams.toString()
-  let redirectUrl = AFFILIATE_URLS[provider]
+  let redirectUrl: string | null = null
 
-  if (redirectUrl) {
-    if (target) redirectUrl += '/' + target
-    if (searchParams) redirectUrl += '?' + searchParams
-  } else {
-    // Unknown provider — redirect to homepage
-    redirectUrl = '/'
+  // Handle card referral redirects: /go/cards/chase-sapphire-preferred
+  if (provider === 'cards' && target) {
+    redirectUrl = getCardReferralLink(target)
+    if (!redirectUrl) {
+      // No referral link configured — redirect to the travel hacks page
+      redirectUrl = '/travel-hacks/best-cards-for-cruises'
+    }
+    return NextResponse.redirect(new URL(redirectUrl, request.url), { status: 302 })
   }
 
-  // TODO: Add affiliate IDs from env
-  // if (provider === 'booking') redirectUrl += `&aid=${process.env.BOOKING_AFFILIATE_ID}`
-  // if (provider === 'expedia') redirectUrl += `&AFFLID=${process.env.EXPEDIA_AFFILIATE_ID}`
+  // Handle Amazon redirects: /go/amazon/dp/B09V3KXJPB
+  if (provider === 'amazon') {
+    const amazonPath = target || ''
+    const searchParams = request.nextUrl.searchParams.toString()
+    redirectUrl = `${AMAZON_CONFIG.baseUrl}/${amazonPath}`
+    const separator = redirectUrl.includes('?') ? '&' : '?'
+    redirectUrl += `${separator}tag=${AMAZON_CONFIG.tag}`
+    if (searchParams) redirectUrl += `&${searchParams}`
+    return NextResponse.redirect(redirectUrl, { status: 302 })
+  }
 
-  return NextResponse.redirect(redirectUrl, { status: 302 })
+  // Handle travel affiliate redirects: /go/skyscanner, /go/booking, etc.
+  const affiliate = TRAVEL_AFFILIATES[provider]
+  if (affiliate) {
+    redirectUrl = affiliate.baseUrl
+    if (target) redirectUrl += '/' + target
+    const searchParams = request.nextUrl.searchParams.toString()
+    if (searchParams) redirectUrl += '?' + searchParams
+    if (affiliate.affiliateParam && affiliate.affiliateId) {
+      const separator = redirectUrl.includes('?') ? '&' : '?'
+      redirectUrl += `${separator}${affiliate.affiliateParam}=${affiliate.affiliateId}`
+    }
+    return NextResponse.redirect(redirectUrl, { status: 302 })
+  }
+
+  // Unknown provider — redirect to homepage
+  return NextResponse.redirect(new URL('/', request.url), { status: 302 })
 }

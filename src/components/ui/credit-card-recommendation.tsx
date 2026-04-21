@@ -30,10 +30,13 @@ export function CreditCardRecommendation({
     other: 'bg-gray-100 text-gray-700',
   }
 
+  const hasReferralLink = card.referralUrl && card.referralUrl.length > 0
+
   if (compact) {
+    const CompactWrapper = hasReferralLink ? Link : 'div'
     return (
-      <Link
-        href={card.referralUrl}
+      <CompactWrapper
+        {...(hasReferralLink ? { href: card.referralUrl } : {})}
         className="group flex items-center gap-3 p-3 rounded-lg border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all duration-200 bg-white"
       >
         {/* Card color block */}
@@ -54,7 +57,7 @@ export function CreditCardRecommendation({
 
         {/* CTA */}
         <ChevronRight className="h-5 w-5 text-slate-400 group-hover:text-blue-600 flex-shrink-0 transition-colors" />
-      </Link>
+      </CompactWrapper>
     )
   }
 
@@ -148,15 +151,17 @@ export function CreditCardRecommendation({
           )}
 
           {/* CTA */}
-          <div className="mt-auto">
-            <Link
-              href={card.referralUrl}
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium text-sm transition-colors duration-200"
-            >
-              Learn More
-              <ChevronRight className="h-4 w-4" />
-            </Link>
-          </div>
+          {hasReferralLink && (
+            <div className="mt-auto">
+              <Link
+                href={card.referralUrl}
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium text-sm transition-colors duration-200"
+              >
+                Learn More
+                <ChevronRight className="h-4 w-4" />
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </div>

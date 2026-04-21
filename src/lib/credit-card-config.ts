@@ -1,7 +1,11 @@
 /**
  * Credit card configuration database
- * Easily updated with referral URLs by Grayson
+ *
+ * NOTE: Referral URLs are now centralized in affiliate-config.ts
+ * Update your links there — they flow here automatically.
  */
+
+import { getCardReferralLink } from './affiliate-config'
 
 export interface CreditCard {
   id: string
@@ -52,7 +56,7 @@ export const creditCards: CreditCard[] = [
       'Trip cancellation and delay protection',
       'Priority Pass lounge access',
     ],
-    referralUrl: 'https://gatgridcruises.com/go/cards/chase-sapphire-preferred',
+    referralUrl: getCardReferralLink('chase-sapphire-preferred') || '',
     imageColor: '#1a1f71',
     editorial_take:
       "The Sapphire Preferred is the gold standard for cruise-focused travelers. The 2x points on cruises alone make it valuable, and the $750 signup bonus pays for itself in the first year.",
@@ -81,7 +85,7 @@ export const creditCards: CreditCard[] = [
       '$300 annual travel credit (makes net fee only $250)',
       'Unlimited Priority Pass + exclusive lounge access',
     ],
-    referralUrl: 'https://gatgridcruises.com/go/cards/chase-sapphire-reserve',
+    referralUrl: getCardReferralLink('chase-sapphire-reserve') || '',
     imageColor: '#1a1f71',
     editorial_take:
       "If you cruise annually or more, the Reserve pays for itself through lounge access and the travel credit alone. The 3x points on cruises is unmatched.",
@@ -110,7 +114,7 @@ export const creditCards: CreditCard[] = [
       'Centurion Lounge access (industry best)',
       'Up to $500 annual air credit',
     ],
-    referralUrl: 'https://gatgridcruises.com/go/cards/amex-business-platinum',
+    referralUrl: getCardReferralLink('amex-business-platinum') || '',
     imageColor: '#111111',
     editorial_take:
       "The industry's most luxurious business card with the best lounge access. Ideal if you cruise frequently and want premium perks, though the high annual fee requires substantial spend.",
@@ -139,7 +143,7 @@ export const creditCards: CreditCard[] = [
       'American Express dining protections',
       'Amex Lounge access in select airports',
     ],
-    referralUrl: 'https://gatgridcruises.com/go/cards/amex-gold',
+    referralUrl: getCardReferralLink('amex-gold') || '',
     imageColor: '#FFD700',
     editorial_take:
       "Perfect for cruisers who care about dining experiences. The 4x points on dining adds up fast across ports, and the travel protections are excellent.",
@@ -168,7 +172,7 @@ export const creditCards: CreditCard[] = [
       'Priority Pass lounge access included',
       'Trip insurance and purchase protections',
     ],
-    referralUrl: 'https://gatgridcruises.com/go/cards/capital-one-venture-x',
+    referralUrl: getCardReferralLink('capital-one-venture-x') || '',
     imageColor: '#FF5000',
     editorial_take:
       "Capital One's premium offering has improved dramatically. The flat 2x miles on everything is easy to manage, and lounge access helps justify the fee.",
@@ -197,7 +201,7 @@ export const creditCards: CreditCard[] = [
       'Excellent travel insurance coverage',
       'No category complexity — simple earning',
     ],
-    referralUrl: 'https://gatgridcruises.com/go/cards/citi-premier',
+    referralUrl: getCardReferralLink('citi-premier') || '',
     imageColor: '#0066B2',
     editorial_take:
       "The Citi Premier is underrated. At $95 with 3x on cruises, it's a fantastic value play if you don't need lounge access.",
@@ -226,7 +230,7 @@ export const creditCards: CreditCard[] = [
       'Excellent for mixing business and leisure travel',
       'No employee cards — simpler than corporate cards',
     ],
-    referralUrl: 'https://gatgridcruises.com/go/cards/chase-ink-business-preferred',
+    referralUrl: getCardReferralLink('chase-ink-business-preferred') || '',
     imageColor: '#0066B2',
     editorial_take:
       "The highest signup bonus at a reasonable fee. Great for solo entrepreneurs who cruise for work or pleasure.",
@@ -255,7 +259,7 @@ export const creditCards: CreditCard[] = [
       'Low $95 annual fee with good earning',
       'Straightforward redemption for any travel',
     ],
-    referralUrl: 'https://gatgridcruises.com/go/cards/capital-one-venture',
+    referralUrl: getCardReferralLink('capital-one-venture') || '',
     imageColor: '#FF5000',
     editorial_take:
       "If you want simplicity and strong rewards without overthinking categories, the standard Venture is hard to beat. Perfect entry-level for cruise rewards.",
