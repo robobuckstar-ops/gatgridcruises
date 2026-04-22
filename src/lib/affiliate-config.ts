@@ -74,12 +74,12 @@ export const CARD_REFERRAL_LINKS: Record<string, string | null> = {
   /** Chase Sapphire Reserve — add your link when you have it */
   'chase-sapphire-reserve':    null,
 
-  /** Chase Ink Business Preferred — add your link when you have it */
-  'chase-ink-business-preferred': null,
+  /** Chase Ink Business Preferred */
+  'chase-ink-business-preferred': 'https://www.referyourchasecard.com/226m/6ZT33F9TOQ',
 
   // ── American Express ───────────────────────────────────────
-  /** Amex Business Platinum — add your link when you have it */
-  'amex-business-platinum':    null,
+  /** Amex Business Platinum */
+  'amex-business-platinum':    'https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS',
 
   /** Amex Gold — add your link when you have it */
   'amex-gold':                 null,

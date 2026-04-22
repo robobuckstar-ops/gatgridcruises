@@ -19,7 +19,7 @@ export const blogPosts: BlogPost[] = [
     slug: 'disney-treasure-first-look',
     title: 'Disney Treasure: First Look at the Newest Ship',
     excerpt: 'Disney Cruise Line\'s latest flagship promises to redefine luxury Disney cruising. Here\'s what we know about Disney Treasure.',
-    author: 'Grayson Bayliss',
+    author: 'Grayson Starbuck',
     published_date: '2025-04-15',
     category: 'news',
     tags: ['treasure', 'new-ships', 'disney-cruise-line'],
@@ -62,7 +62,7 @@ The Disney Treasure represents Disney Cruise Line's commitment to innovation whi
     slug: '5-ways-save-money-disney-cruise',
     title: '5 Ways to Save Money on Your Disney Cruise',
     excerpt: 'Disney cruises don\'t have to break the bank. Here are five proven strategies to reduce your cruise costs without sacrificing the magic.',
-    author: 'Grayson Bayliss',
+    author: 'Grayson Starbuck',
     published_date: '2025-04-12',
     category: 'tips',
     tags: ['budget', 'savings', 'disney-cruise-line', 'money-saving'],
@@ -115,7 +115,7 @@ Disney cruises represent exceptional value when you consider what's included—m
     slug: 'september-best-month-caribbean-cruise',
     title: 'Why September Is the Best Month to Cruise the Caribbean',
     excerpt: 'September offers an underrated opportunity for Caribbean cruising. Discover why this month delivers exceptional value and fewer crowds.',
-    author: 'Grayson Bayliss',
+    author: 'Grayson Starbuck',
     published_date: '2025-04-10',
     category: 'deals',
     tags: ['caribbean', 'seasonal', 'money-saving', 'september'],
@@ -162,7 +162,7 @@ September delivers an exceptional value proposition: dramatically lower prices, 
     slug: 'castaway-cay-vs-lookout-cay',
     title: 'Castaway Cay vs. Lookout Cay: Disney\'s Private Islands Compared',
     excerpt: 'Disney operates two private island destinations. Here\'s how Castaway Cay and Lookout Cay compare and what to expect at each.',
-    author: 'Grayson Bayliss',
+    author: 'Grayson Starbuck',
     published_date: '2025-04-08',
     category: 'destinations',
     tags: ['castaway-cay', 'lookout-cay', 'private-islands', 'destinations'],
@@ -227,7 +227,7 @@ Ideally, if you cruise multiple times, experience both. Each offers something un
     slug: 'complete-guide-disney-drink-packages',
     title: 'The Complete Guide to Disney Cruise Drink Packages',
     excerpt: 'Deciding whether to purchase a Disney drink package can be confusing. Here\'s everything you need to know to make the right choice.',
-    author: 'Grayson Bayliss',
+    author: 'Grayson Starbuck',
     published_date: '2025-04-05',
     category: 'tips',
     tags: ['drinks', 'packages', 'money-saving', 'planning'],
@@ -320,7 +320,7 @@ Calculate your expected consumption, compare to package pricing, and choose acco
     slug: 'error-fares-how-to-find-deals',
     title: 'Error Fares Explained: How to Score 50%+ Off Your Cruise',
     excerpt: 'Error fares represent the cruising world\'s best-kept secret. Learn how to spot them and book massive discounts before they\'re corrected.',
-    author: 'Grayson Bayliss',
+    author: 'Grayson Starbuck',
     published_date: '2025-04-02',
     category: 'deals',
     tags: ['error-fares', 'savings', 'deals', 'money-saving'],
@@ -400,7 +400,7 @@ Error fares represent the ultimate cruising bargain. Stay alert, monitor your ta
     slug: 'whats-new-disney-wish-2-years',
     title: 'What\'s New on Disney Wish After 2 Years at Sea',
     excerpt: 'The Disney Wish has undergone significant updates since her debut. Here\'s what\'s changed and why you should be excited about sailing this ship.',
-    author: 'Grayson Bayliss',
+    author: 'Grayson Starbuck',
     published_date: '2025-03-28',
     category: 'reviews',
     tags: ['wish', 'updates', 'ships', 'new-features'],
@@ -473,7 +473,7 @@ If you haven't yet sailed the Disney Wish, now is an excellent time to book.
     slug: 'cruising-with-teens-activities',
     title: 'Cruising with Teens: Activities They\'ll Actually Enjoy',
     excerpt: 'Cruising with teenagers doesn\'t have to be a challenge. Here are proven strategies and activities that keep teens engaged and entertained.',
-    author: 'Grayson Bayliss',
+    author: 'Grayson Starbuck',
     published_date: '2025-03-25',
     category: 'tips',
     tags: ['teens', 'family', 'activities', 'planning'],
@@ -588,6 +588,490 @@ Cruising with teens can be genuinely enjoyable for everyone if you approach it t
 Many teens who are skeptical before boarding return home having had a genuinely memorable experience and requesting to cruise again.
 
 </div>
+    `.trim(),
+  },
+  {
+    id: '9',
+    slug: 'disney-cruise-packing-list',
+    title: 'The Ultimate Disney Cruise Packing List for 2026',
+    excerpt: 'Everything you actually need for a Disney cruise, organized by category — with honest gear recommendations, Amazon affiliate links, and Disney-specific packing rules.',
+    author: 'Grayson Starbuck',
+    published_date: '2026-04-18',
+    category: 'tips',
+    tags: ['packing', 'essentials', 'planning', 'tips', 'gear'],
+    read_time: '12 min read',
+    featured_image_url: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=1200&h=600&fit=crop',
+    content: `
+<p><em>Affiliate disclosure: This post contains Amazon affiliate links. GatGridCruises earns a small commission at no extra cost to you. See our <a href="/disclosures">full disclosures page</a>.</em></p>
+
+<p>Your Disney cruise is booked. Now comes the packing. This guide covers everything you actually need — organized by category — with the Disney-specific rules that catch first-timers off guard.</p>
+
+<h2>Disney's Packing Rules: Know These First</h2>
+<p>A few Disney Cruise Line policies that affect what you pack:</p>
+<ul>
+<li><strong>Wine and champagne only:</strong> Adults may bring two 750ml bottles of wine or champagne aboard at embarkation. Beer, spirits, and hard seltzers are not permitted.</li>
+<li><strong>Surge-protected power strips only:</strong> Plain power strips without surge protection may be confiscated at security. Always use a surge-protected model.</li>
+<li><strong>No irons or steamers:</strong> These are prohibited due to fire risk. Use the ship's laundry service or self-service laundry rooms for anything that needs pressing.</li>
+<li><strong>Luggage arrives in your stateroom by evening:</strong> Bags are porter-tagged at the port and delivered throughout the afternoon. Pack a carry-on with day-one essentials — you won't see your checked luggage until dinner.</li>
+</ul>
+
+<h2>Carry-On Essentials (Never Check These)</h2>
+<p>Keep these on your person on embarkation day:</p>
+<ul>
+<li><strong>Passports and travel documents</strong></li>
+<li><strong>Swimsuit and cover-up</strong> — Pools open the moment you board</li>
+<li><strong>Sunscreen</strong> — buying onboard is extremely expensive</li>
+<li><strong>All medications</strong> — prescriptions especially; never check medications in luggage</li>
+<li><strong>Chargers and electronics</strong></li>
+<li><strong>Light jacket or cardigan</strong> — dining rooms and theaters run cold</li>
+<li><strong>Snacks for kids</strong> — port check-in lines can run 45–90 minutes</li>
+</ul>
+
+<h2>Clothing: Pack by Night Type</h2>
+
+<h3>Formal Night (1–2 nights per sailing)</h3>
+<p>Most itineraries include one or two formal nights in the main dining rooms. You don't have to dress up, but most guests do and the photos are some of the best trip mementos. Men typically wear suits or sport coats; women wear cocktail dresses or gowns. One dress outfit per person is sufficient.</p>
+<p>Packing tip: <a href="https://www.amazon.com/s?k=compression+packing+cubes+travel&tag=thm1230b0300-20" rel="nofollow sponsored">compression packing cubes</a> dramatically reduce the space formal clothes take up and prevent wrinkles.</p>
+
+<h3>Pirate Night (every sailing)</h3>
+<p>Every Disney cruise includes a Pirate Night deck party. Buy gear before you board — onboard pricing for themed merchandise is a significant premium. A bandana, eye patch, and striped shirt from Amazon costs a few dollars and is more than sufficient.</p>
+
+<h3>Swimwear</h3>
+<p>Bring more swimwear than you think you need. Two swimsuits per person minimum — they won't fully dry overnight. A <a href="https://www.amazon.com/s?k=rashguard+upf+50+swim+shirt&tag=thm1230b0300-20" rel="nofollow sponsored">UPF 50 rashguard</a> adds meaningful sun protection at Castaway Cay and beach ports.</p>
+
+<h3>Port and Shore Excursion Clothes</h3>
+<p>At Castaway Cay and beach ports: water shoes, rashguard, and beach cover-up. At historic or walking ports like Nassau: closed-toe, well-cushioned walking shoes. Sandals cause blisters on port days that involve significant walking.</p>
+
+<h2>Must-Have Cruise Gear</h2>
+
+<h3>Surge-Protected Power Strip</h3>
+<p>The single most-recommended item on every Disney cruise forum. Staterooms have limited outlets — a surge-protected power strip fixes this immediately. <a href="https://www.amazon.com/s?k=travel+power+strip+surge+protected+usb&tag=thm1230b0300-20" rel="nofollow sponsored">Look for compact travel models with USB ports</a>. It must say "surge protected" on the box.</p>
+
+<h3>Magnetic Hooks (Pack 4–8)</h3>
+<p>Disney stateroom walls and doors are magnetic. <a href="https://www.amazon.com/s?k=heavy+duty+magnetic+hooks+strong&tag=thm1230b0300-20" rel="nofollow sponsored">Heavy-duty magnetic hooks</a> let you hang wet swimwear, towels, bags, and accessories without using drawer or closet space. This is the Disney cruise hack that nearly every veteran cruiser swears by.</p>
+
+<h3>Over-the-Door Shoe Organizer</h3>
+<p>Hangs on the magnetic back of your stateroom door and provides 12–20 pockets for sunscreen, toiletries, charging cables, and daily essentials. Especially valuable in inside and oceanview cabins where counter space is limited.</p>
+
+<h3>Dry Bag (2–5L)</h3>
+<p>Essential at Castaway Cay. You need somewhere waterproof for your phone, Key to the World card, and cash when swimming. A <a href="https://www.amazon.com/s?k=waterproof+dry+bag+small+swimming&tag=thm1230b0300-20" rel="nofollow sponsored">small dry bag</a> costs under $15 and could save your phone.</p>
+
+<h3>Portable Battery Pack</h3>
+<p>Castaway Cay has no public charging stations. A <a href="https://www.amazon.com/s?k=portable+charger+10000mah+lightweight&tag=thm1230b0300-20" rel="nofollow sponsored">compact 10,000mAh power bank</a> keeps your phone alive through full port days.</p>
+
+<h3>Waterproof Phone Pouch with Lanyard</h3>
+<p>For snorkeling and water activities, a <a href="https://www.amazon.com/s?k=waterproof+phone+pouch+lanyard+underwater&tag=thm1230b0300-20" rel="nofollow sponsored">waterproof phone pouch with lanyard</a> lets you take photos in the water and keep your phone safe. These run $10–$20.</p>
+
+<h2>Castaway Cay Specific Packing</h2>
+<p>Castaway Cay is Disney's private island in the Bahamas — usually the trip highlight. Bring these specifically for island day:</p>
+<ul>
+<li><strong>Reef-safe sunscreen</strong> — Castaway Cay protects its coral reef; sunscreens containing oxybenzone and octinoxate are discouraged</li>
+<li><strong>Water shoes</strong> — the dock area and some beach entries have rocky sections</li>
+<li><strong>Snorkeling gear</strong> — rentable on the island, but bringing your own saves money. A <a href="https://www.amazon.com/s?k=snorkel+set+adult+dry+top&tag=thm1230b0300-20" rel="nofollow sponsored">dry-top snorkel set</a> runs $30–$50</li>
+<li><strong>Reusable water bottle</strong> — the island has water stations</li>
+</ul>
+<p>See our full <a href="/guides/ports/castaway-cay">Castaway Cay guide</a> for beach tips, dining, and activity recommendations.</p>
+
+<h2>Kids' Extras</h2>
+<ul>
+<li><strong>Autograph books and Sharpie markers</strong> — Sharpies write more clearly on glossy photo prints than felt-tip pens. <a href="https://www.amazon.com/s?k=disney+autograph+book+cruise&tag=thm1230b0300-20" rel="nofollow sponsored">Disney-themed autograph books on Amazon</a> cost less than onboard prices.</li>
+<li><strong>USB night light</strong> — Inside staterooms are completely dark; small USB-powered night lights are essential for kids who can't sleep in the dark</li>
+<li><strong>Tablet with downloaded content</strong> — Onboard WiFi packages are expensive. Download movies, shows, and games before boarding.</li>
+<li><strong>Glow sticks or LED wristbands</strong> — Very popular at the Pirate Night deck party; cheap from Amazon, premium prices onboard</li>
+</ul>
+
+<h2>Health and Safety</h2>
+<ul>
+<li><strong>Motion sickness medication</strong> — Dramamine, Bonine, or scopolamine patches. Buying onboard is very expensive.</li>
+<li><strong>Sunscreen and after-sun gel</strong> — You will get more sun than you expect. SPF 50+ minimum; one of the most expensive items onboard.</li>
+<li><strong>Compact first aid kit</strong> — Band-aids, blister pads, antacids, pain reliever. A <a href="https://www.amazon.com/s?k=travel+first+aid+kit+compact&tag=thm1230b0300-20" rel="nofollow sponsored">travel first aid kit</a> handles 90% of minor issues for under $20.</li>
+<li><strong>Prescriptions in original containers</strong> — Important for Customs inspection on international sailings</li>
+</ul>
+
+<h2>What Not to Pack</h2>
+<ul>
+<li><strong>Hair dryer</strong> — every stateroom has one built in</li>
+<li><strong>Iron or steamer</strong> — prohibited onboard; use ship laundry service</li>
+<li><strong>Power strip without surge protection</strong> — may be confiscated at security</li>
+<li><strong>Beer, spirits, or seltzers</strong> — only wine and champagne (2 bottles per adult) are permitted</li>
+</ul>
+
+<h2>Documents Checklist</h2>
+<ul>
+<li>Passports (required for international sailings)</li>
+<li>Cruise booking confirmation</li>
+<li>Port Arrival Time (PAT) confirmation from My Disney Cruise app</li>
+<li>Travel insurance documents</li>
+<li>Credit card registered as your onboard payment account</li>
+</ul>
+
+<h2>Protect Your Investment</h2>
+<p>A Disney cruise is often $3,000–$12,000 or more for a family. The right credit card provides trip cancellation coverage, lost luggage protection, and purchase protection. See our guide to <a href="/blog/best-credit-cards-disney-cruises">the best credit cards for Disney cruises</a> for which cards offer the best protection and how to trigger coverage on your booking.</p>
+<p>For our full gear guide, visit our <a href="/guides/packing-gear">Disney Cruise Packing Gear Guide</a>. Ready to find your sailing? Our <a href="/search">AI cruise finder</a> scans Disney's inventory for deals, or <a href="/book">reach out to Grayson directly</a> for personalized guidance.</p>
+    `.trim(),
+  },
+  {
+    id: '10',
+    slug: 'first-time-disney-cruise-tips',
+    title: 'First-Time Disney Cruise Tips: Everything You Need to Know',
+    excerpt: 'From embarkation day strategy to Castaway Cay tips, dining rotation explained, and how to find deals — your complete first-timer guide to Disney cruising.',
+    author: 'Grayson Starbuck',
+    published_date: '2026-04-16',
+    category: 'tips',
+    tags: ['first-time', 'tips', 'planning', 'guide', 'embarkation'],
+    read_time: '10 min read',
+    featured_image_url: 'https://images.unsplash.com/photo-1599640842225-85d111c60e6b?w=1200&h=600&fit=crop',
+    content: `
+<p>Your first Disney cruise has a learning curve most other cruise lines don't. The booking process, the app, the dining rotation, the character experiences — it all works differently. This guide gives you the insider knowledge to skip the rookie mistakes and make the most of every day aboard.</p>
+
+<h2>Before You Pack: Essential Pre-Trip Tasks in the App</h2>
+<p>Disney's My Disney Cruise app is where your entire pre-trip experience lives. Download it immediately after booking and complete these tasks:</p>
+
+<h3>Port Arrival Time (PAT) — Book This Early</h3>
+<p>Disney requires you to select a Port Arrival Time before you board. Don't arrive at the port without one — you'll wait in a long standby line. PATs open 30 days before your sail date for most guests. Choose the earliest available window to maximize your first day aboard.</p>
+
+<h3>Specialty Dining Reservations</h3>
+<p>Palo (adults-only Italian), Remy (French fine dining), and other specialty restaurants require separate reservations and sell out well in advance. Booking windows open 75 days before sailing for most guests (120 days for Concierge). Mark this date and book the moment the window opens.</p>
+
+<h3>Online Check-In</h3>
+<p>Complete all guest documentation in the app before your sail date. Upload passport photos, enter travel documents, and add your credit card as your onboard payment method. Completing this in advance significantly speeds up your port arrival process.</p>
+
+<h2>Embarkation Day: Your First Two Hours Set the Tone</h2>
+
+<h3>Your Stateroom Won't Be Ready Until ~1:30 PM</h3>
+<p>Don't head to your stateroom first — it won't be ready. Go straight to the pool deck. The Lido buffet (Cabanas) is open, pools are active, and the ship is yours. Change into swimwear in a pool-deck restroom and enjoy the first few hours while cabin cleaning finishes.</p>
+
+<h3>Don't Miss the Sail Away Party</h3>
+<p>Every Disney sailing has a Sail Away party on the top deck as the ship departs. The ship's horn plays "When You Wish Upon a Star," characters appear on upper decks, and the energy is extraordinary. Find a good rail position 20 minutes before departure — this is one of the most memorable moments of the entire cruise.</p>
+
+<h3>Check Your Stateroom for the Navigator</h3>
+<p>When your cabin opens, you'll find the Navigator — Disney's daily activity guide — waiting inside. Read it cover to cover. It contains all character meet-and-greet times, show schedules, and special events. Also available daily in the app.</p>
+
+<h2>Understanding Disney's Rotational Dining</h2>
+<p>Disney's rotational dining concept is unique and confuses nearly every first-timer. Here's how it works:</p>
+<p>You're assigned a dining time (early seating ~5:45–6pm, or late seating ~8–8:30pm) and a personal dining team — two servers who follow you through every main dining room throughout the cruise. On a 4-night sailing, you'll dine in four different themed restaurants over four nights with the same servers each time.</p>
+<p>The result: your servers learn your preferences, dietary restrictions, and kids' quirks by night two. Service quality is exceptionally consistent. It's one of Disney cruising's genuine differentiators.</p>
+
+<h3>Early vs. Late Seating</h3>
+<p>Early seating works best for families with young children — dinner ends before 8pm and you catch the late shows after dinner. Late seating gives more flexibility for port days; you see the early shows before dinner. Better for adults or families with older kids.</p>
+
+<h3>Dietary Needs and Allergies</h3>
+<p>Disney's dining team handles dietary accommodations exceptionally well. Inform your servers of any allergies on night one — they'll typically bring you the next night's menu in advance so you can pre-order and ensure safe preparation. This system works reliably even for severe food allergies.</p>
+
+<h2>Character Experiences: Strategy for Short Wait Times</h2>
+<ul>
+<li><strong>Check the Navigator every morning.</strong> Character schedules are published daily and change. Popular characters appear at different times and locations throughout the cruise.</li>
+<li><strong>Arrive 15–20 minutes before popular characters' start times.</strong> Elsa, Rapunzel, Anna, Moana, and princess characters draw the longest lines.</li>
+<li><strong>Attend scheduled meet-and-greets over roving appearances.</strong> Formal meet-and-greet locations run longer with autograph signing. Hallway appearances are brief photo opportunities.</li>
+<li><strong>Bring Sharpie markers for autograph books.</strong> They write more clearly on glossy prints than felt-tip pens.</li>
+</ul>
+
+<h2>The Youth Clubs: Don't Skip These</h2>
+<p>Disney's youth clubs are genuinely exceptional — immersive themed environments with structured activities, not glorified babysitting. The Oceaneer Club (ages 3–10) is a fully-realized, themed space where kids often don't want to leave. Edge (11–14) and Vibe (14–17) serve older kids with age-appropriate social programming.</p>
+<p>The clubs are complimentary and supervised by professionally-trained Disney staff. They give parents genuine vacation time while kids have a separate, memorable experience. Register kids in advance via the app to speed up check-in.</p>
+
+<h2>Castaway Cay: How to Have the Best Day</h2>
+<p>Most Caribbean itineraries include Castaway Cay, Disney's private island in the Bahamas — consistently rated the trip highlight by first-timers.</p>
+<ul>
+<li><strong>Get off the ship as early as possible.</strong> The island fills up as the morning progresses. First guests off the gangway get first choice of beach chairs.</li>
+<li><strong>Walk past the first beach section.</strong> The area closest to the dock is most crowded. Walking 5–10 minutes further gives noticeably less crowded water and sand.</li>
+<li><strong>The adult beach is real and worth using.</strong> Adults-only Serenity Bay is at the far end, accessible by tram, with a full bar and hammocks. If your kids are happily in Oceaneer Club, a few hours at Serenity Bay is highly recommended.</li>
+<li><strong>Consider the 5K.</strong> Castaway Cay hosts a morning fun run along island trails — free, low-key, and a memorable experience before the crowds build.</li>
+</ul>
+<p>Read our comprehensive <a href="/guides/castaway-cay-guide">Castaway Cay Guide</a> for the full breakdown.</p>
+
+<h2>Evening Shows: Attend at Least Two</h2>
+<p>Disney's theatrical productions are one of the biggest differentiators from other cruise lines. Productions like Tangled: The Musical and Frozen: A Musical Spectacular feature professional performers, elaborate sets, and original music at a level that rivals theme park entertainment — not hotel-lobby entertainment.</p>
+<p>Shows run twice nightly timed around your dining seating. Theaters fill up — arrive 20–25 minutes early for a good seat. Attending the show on your first night sets the tone for the rest of the cruise.</p>
+
+<h2>Money-Saving Moves Onboard</h2>
+<ul>
+<li><strong>Soft drinks and coffee are complimentary</strong> at Cabanas and in main dining — no drink package needed for non-alcoholic beverages.</li>
+<li><strong>Room service is 24/7</strong> with many items included in your fare. Use it for late-night hunger without paying premium quick-service prices.</li>
+<li><strong>The Cabanas buffet is free at all meals</strong> and genuinely good. It's particularly useful for quick lunches on port days.</li>
+<li><strong>Last sea day merchandise sales</strong> — the final day before disembarkation typically has the best onboard shop discounts.</li>
+</ul>
+
+<h2>Finding the Best Deal on Your Sailing</h2>
+<p>Disney cruise pricing changes frequently — sometimes daily. Getting timing right can save hundreds or thousands of dollars. GatGridCruises monitors Disney's pricing and surfaces deals as they appear.</p>
+<p>Try the <a href="/search">AI cruise finder</a> to search available sailings by dates, ship, and budget, or browse the <a href="/deals">deal grid</a> for current pricing across all sailings. Our <a href="/deals/last-minute">last-minute deals page</a> tracks price-reduced inventory in real time.</p>
+<p>For personalized advice on timing and itinerary selection, use the <a href="/book">free booking inquiry form</a> to reach Grayson directly.</p>
+    `.trim(),
+  },
+  {
+    id: '11',
+    slug: 'best-credit-cards-disney-cruises',
+    title: 'Best Credit Cards for Disney Cruises in 2026',
+    excerpt: 'The right credit card can pay for part of your Disney cruise, cover trip cancellation, and make airport lounges your pre-cruise ritual. Here are the top picks for cruise travelers in 2026.',
+    author: 'Grayson Starbuck',
+    published_date: '2026-04-14',
+    category: 'tips',
+    tags: ['credit-cards', 'rewards', 'points', 'money-saving', 'trip-insurance'],
+    read_time: '11 min read',
+    featured_image_url: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=600&fit=crop',
+    content: `
+<p><em>Affiliate disclosure: The card links in this post are referral links. GatGridCruises may earn a commission if you're approved using these links — at no additional cost to you. Card terms change frequently; verify current offers on the issuer's website before applying. See our <a href="/disclosures">full disclosures page</a>.</em></p>
+
+<p>A Disney cruise is one of the most significant travel purchases a family makes — often $5,000 to $15,000 or more when you factor in stateroom upgrades, flights, excursions, and onboard spending. The right credit card does three things: earns you meaningful rewards toward the cost, provides real trip insurance if plans change, and makes the travel day itself more comfortable with lounge access.</p>
+<p>This guide covers the three cards that deliver the best combination of those benefits for Disney cruise travelers, plus how to use them strategically.</p>
+
+<h2>What Matters Most for a Cruise Card</h2>
+
+<h3>Trip Cancellation and Interruption Insurance</h3>
+<p>This is the most underappreciated benefit in travel credit cards. Disney cruises have strict cancellation policies — losing an $8,000 cruise deposit because of an unexpected illness or family emergency can be financially devastating. Trip cancellation coverage on the right card reimburses you (typically $5,000–$10,000 per covered person) for non-refundable losses when you cancel for a covered reason such as serious illness, death of a close relative, severe weather, involuntary job loss, or jury duty.</p>
+<p><strong>Critical requirement: you must pay for the trip with the eligible card</strong> to activate coverage. Paying at minimum the deposit typically triggers the benefit — but verify your specific card's terms before booking.</p>
+
+<h3>Points Earning Rate on Travel</h3>
+<p>Disney cruise bookings typically code as "travel" at most card processors, earning the elevated travel bonus rate on cards with category bonuses. On a $6,000 cruise, the difference between 1x and 3x earning is roughly $60 vs. $180+ in travel value.</p>
+
+<h3>Airport Lounge Access</h3>
+<p>Most Disney cruises depart from Port Canaveral (Orlando) or PortMiami. Airport lounge access — free food, open bar, quiet seating, reliable WiFi — transforms the travel day before boarding into a pleasant start to your vacation.</p>
+
+<h3>Sign-Up Bonus Value</h3>
+<p>Premium travel cards offer 90,000–150,000+ point welcome bonuses worth $900–$2,000+ in travel value. Timing your application 3–6 months before your cruise booking lets you meet minimum spending requirements with normal expenses before your cruise payment lands.</p>
+
+<h2>Chase Ink Business Preferred: Best for Trip Insurance</h2>
+<p>For cruisers whose primary goal is solid trip cancellation coverage at a reasonable annual fee, the Chase Ink Business Preferred is the standout choice.</p>
+
+<h3>Trip Insurance Coverage</h3>
+<p>Provides <strong>trip cancellation and interruption insurance up to $5,000 per covered person</strong> when you pay for travel with the card. Coverage applies to the primary cardholder and immediate family members traveling with you.</p>
+
+<h3>Sign-Up Bonus</h3>
+<p>Typically offers <strong>90,000 Chase Ultimate Rewards points</strong> after meeting minimum spending. Chase UR points transfer 1:1 to United Airlines, Hyatt Hotels, Southwest Airlines, British Airways, Air France-KLM, and more. At 1.5¢ per point, 90,000 points are worth approximately $1,350 in travel value — often significantly more through airline transfers.</p>
+
+<h3>3x Points on Travel</h3>
+<p>Disney cruises typically earn 3 Chase UR points per dollar under the travel category bonus. On a $6,000 cruise, that's 18,000 additional points on top of the welcome bonus.</p>
+
+<h3>Annual Fee and Benefits</h3>
+<ul>
+<li><strong>Annual fee: $95/year</strong></li>
+<li>Cell phone protection up to $600 per claim</li>
+<li>Purchase protection and extended warranty on eligible purchases</li>
+<li>No foreign transaction fees</li>
+</ul>
+<p><a href="https://www.referyourchasecard.com/226m/6ZT33F9TOQ" rel="nofollow sponsored" target="_blank"><strong>Apply for the Chase Ink Business Preferred</strong></a></p>
+<p><em>Terms apply. Verify current welcome offers and coverage details directly with Chase before applying.</em></p>
+
+<h2>Amex Business Platinum: Best for Lounge Access and Maximum Coverage</h2>
+<p>For cruisers who fly to their port and want the most comprehensive combination of lounge access and trip protection, the American Express Business Platinum Card stands alone.</p>
+
+<h3>Global Lounge Collection</h3>
+<p>The Amex Business Platinum provides access to the most extensive lounge network in the credit card world:</p>
+<ul>
+<li><strong>Amex Centurion Lounges</strong> — 40+ worldwide including Miami International Airport (MIA), with restaurant-quality food and cocktails</li>
+<li><strong>Priority Pass Select</strong> — 1,300+ airport lounges worldwide, including multiple options at Orlando International (MCO)</li>
+<li><strong>Delta Sky Clubs</strong> — when flying Delta</li>
+<li><strong>Escape Lounges</strong> and more</li>
+</ul>
+<p>For families flying into MIA or MCO before a cruise, having a comfortable lounge with a real meal before boarding dramatically improves the travel day.</p>
+
+<h3>Trip Insurance: Highest Coverage Limits</h3>
+<p>Provides <strong>trip cancellation and interruption insurance up to $10,000 per covered trip</strong> — the highest limit of the three cards in this comparison. For premium Disney bookings in Concierge or verandah categories where a single cabin can run $5,000–$10,000+, this higher limit provides proportionally better protection.</p>
+
+<h3>Sign-Up Bonus and Earning Rate</h3>
+<p>Typically offers <strong>150,000+ Amex Membership Rewards points</strong> after meeting the welcome offer spending requirement. Amex MR points transfer to 20+ airline and hotel partners including Delta, British Airways, Air Canada, Singapore Airlines, and Marriott Bonvoy. At 5x points on flights booked through Amex Travel, your pre-cruise airfare earns premium rewards.</p>
+
+<h3>Annual Fee and Offsets</h3>
+<p>The $695 annual fee comes with credits that offset much of it for active travelers: $200 airline fee credit, $189 CLEAR Plus credit, $100 Global Entry/TSA PreCheck credit, and up to $400 in Dell Business credits. Fine Hotels &amp; Resorts benefits apply at 1,000+ properties — useful for pre-cruise hotel nights near Port Canaveral or Miami.</p>
+<p><a href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS" rel="nofollow sponsored" target="_blank"><strong>Apply for the Amex Business Platinum</strong></a></p>
+<p><em>Terms apply. Welcome offers change frequently. Verify current details directly with American Express before applying.</em></p>
+
+<h2>Capital One Spark Business: Best Simple High-Value Earner</h2>
+<p>For cruisers who want straightforward, high-rate rewards on all spending without category tracking, the Capital One Spark Business is ideal.</p>
+
+<h3>Flat 2% Rewards on Everything</h3>
+<p>Earns <strong>2% cash back on every purchase with no category restrictions</strong>. Disney cruise bookings, flights, excursions, onboard spending — everything earns 2%. No worrying about whether your cruise codes as "travel" or "entertainment." On a $7,000 cruise booking, that's $140 back unconditionally.</p>
+
+<h3>Sign-Up Bonus</h3>
+<p>Typically offers up to <strong>$1,000 cash bonus</strong> in the first year after meeting tiered spending requirements.</p>
+
+<h3>No Preset Spending Limit</h3>
+<p>No preset spending limit means charging large cruise deposits doesn't impact credit utilization the way a traditional revolving card would.</p>
+
+<h3>Annual Fee</h3>
+<p>$150/year, rebated if you spend $150,000+ annually.</p>
+<p><a href="https://i.capitalone.com/JKlfRwN3f" rel="nofollow sponsored" target="_blank"><strong>Apply for the Capital One Spark Business</strong></a></p>
+<p><em>Terms apply. Verify current welcome offers and card details with Capital One before applying.</em></p>
+
+<h2>Strategy: How to Use These Cards Together</h2>
+<ol>
+<li><strong>Apply for the Amex Business Platinum first</strong> — 3–6 months before your cruise. Use it for everyday spending to meet the minimum and earn the welcome bonus. Pay your cruise deposit with this card to trigger trip insurance and earn points.</li>
+<li><strong>Use the Chase Ink for all travel spending</strong> — flights to the port, hotel nights, excursion bookings. 3x on travel adds up quickly.</li>
+<li><strong>Use the Spark for everything else</strong> — 2% flat rate on any spending that doesn't fit a bonus category on the other cards.</li>
+</ol>
+<p>For a complete guide to stacking points toward a reduced-cost Disney cruise, see our <a href="/travel-hacks/stack-points-free-cruise">points stacking strategy guide</a>.</p>
+
+<h2>How to Ensure Trip Insurance Actually Applies</h2>
+<ul>
+<li><strong>Pay for the trip with the eligible card</strong> before any cancellation occurs. At minimum, pay the deposit with the qualifying card.</li>
+<li><strong>Understand covered reasons.</strong> Standard covered reasons include serious illness, death of a close relative, jury duty, involuntary job loss, and severe weather. Voluntary cancellations are not covered.</li>
+<li><strong>Keep documentation.</strong> If you cancel, you'll need supporting documentation for the covered reason.</li>
+</ul>
+<p>For more on trip insurance options including standalone policies, see our <a href="/travel-hacks/free-trip-insurance">free trip insurance guide</a>.</p>
+    `.trim(),
+  },
+  {
+    id: '12',
+    slug: 'disney-cruise-comparison',
+    title: 'Disney Cruise vs. Royal Caribbean vs. Carnival: Which Is Right for Your Family?',
+    excerpt: 'An honest side-by-side comparison of the three most popular family cruise lines — covering price, entertainment, dining, kids clubs, and private islands.',
+    author: 'Grayson Starbuck',
+    published_date: '2026-04-12',
+    category: 'reviews',
+    tags: ['royal-caribbean', 'carnival', 'comparison', 'tips', 'family'],
+    read_time: '9 min read',
+    featured_image_url: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200&h=600&fit=crop',
+    content: `
+<p>Disney, Royal Caribbean, and Carnival are the three most popular family cruise lines in the US — but they serve fundamentally different audiences, even when their ships sail to the same ports on the same days. This is an honest comparison. GatGrid focuses on Disney, but that doesn't mean Disney is right for every family.</p>
+
+<h2>Price: What You're Actually Paying</h2>
+
+<h3>Disney Cruise Line: Premium</h3>
+<p>Disney is the most expensive of the three — typically 30–60% more than a comparable Royal Caribbean or Carnival sailing. A 4-night Bahamian sailing for a family of four during moderate demand often runs $4,000–$8,000 on Disney versus $1,800–$4,000 on Carnival or Royal Caribbean. Concierge categories on Disney can reach $15,000+ for a 7-night sailing.</p>
+<p>However, Disney's headline price includes more than competitors'. Youth clubs are complimentary (no per-hour fee), all meals are included, entertainment is fully included, and the overall service standard is higher. When you calculate the true all-in cost with typical add-ons, the gap narrows — but doesn't close.</p>
+
+<h3>Royal Caribbean: Mid-Premium</h3>
+<p>Royal Caribbean spans a wide pricing range depending on the ship. An older Voyager-class sailing to the Bahamas might run $1,800 for a family of four. An Icon of the Seas sailing on a comparable itinerary approaches Disney pricing. The "value" of Royal Caribbean is highly dependent on which ship you sail.</p>
+
+<h3>Carnival: Value Leader</h3>
+<p>Carnival wins on sticker price. A 4-night Carnival Bahamian sailing for a family of four regularly runs $1,500–$2,500 during shoulder season. They're targeting a different value proposition than Disney — fun, food, entertainment at an accessible price — and they deliver it.</p>
+
+<h2>Entertainment: Disney's Clearest Advantage</h2>
+<p>This is where Disney's pricing justifies itself most clearly. Disney's theatrical productions are in a different category from anything Carnival offers and competitive with only Royal Caribbean's newest mega-ships.</p>
+
+<h3>Disney</h3>
+<p>Disney's Broadway-caliber shows draw on decades of storytelling infrastructure. Productions like Tangled: The Musical, Frozen: A Musical Spectacular, and Aladdin: A Musical Spectacular feature professional performers, elaborate sets, original music, and seamless character integration. Every sailing on every ship has original theatrical productions built specifically for that ship. Beyond shows: Pirate Night deck parties, Sail Away parties, character meet-and-greets woven through every day, and themed environments that maintain Disney's storytelling DNA in every public space.</p>
+
+<h3>Royal Caribbean</h3>
+<p>On Oasis-class and Icon-class ships, Royal competes in entertainment with genuine Broadway productions (Mamma Mia!, Grease), ice skating shows, aqua theater performances, and entertainment scale Disney doesn't attempt. On their older, smaller ships, entertainment is more standard — competent but not remarkable.</p>
+
+<h3>Carnival</h3>
+<p>Carnival's entertainment is functional and fun: comedy shows, live music, deck parties, trivia. It doesn't aim for theatrical heights. For guests who want a fun, social atmosphere rather than produced entertainment, Carnival delivers what it promises.</p>
+
+<h2>Dining Comparison</h2>
+
+<h3>Disney: Consistent, Personal, Above Average</h3>
+<p>Disney's rotational dining — where your personal server team follows you through themed restaurants across the cruise — creates a dining experience that's qualitatively different from any other cruise line. Service quality is exceptionally consistent because staff spend the entire sailing with the same tables. Main dining room food is meaningfully above average for cruise-ship food. Palo (adults-only Italian) and Remy (French fine dining) are genuinely excellent — comparable to quality land-based restaurants.</p>
+
+<h3>Royal Caribbean: More Options, Variable Quality</h3>
+<p>Newer Royal ships have extensive specialty dining options — Wonderland, Chops Grille, Izumi, Jamie's Italian, and more. The variety is impressive. Main dining room quality is solidly average. Specialty restaurant quality varies significantly between venues and ships.</p>
+
+<h3>Carnival: Fun, Filling, Good Value</h3>
+<p>Carnival's main dining delivers American comfort food with reliable competence. Guy Fieri's Burger Joint and BlueIguana Cantina are genuinely popular casual options. Specialty restaurants like Fahrenheit 555 steakhouse are solid. Don't expect fine dining and you won't be disappointed.</p>
+
+<h2>Kids' Clubs: Where Disney Stands Alone</h2>
+<p>If you have children between 3 and 12 with any connection to Disney characters and stories, the youth club comparison is essentially settled before it begins.</p>
+
+<h3>Disney's Oceaneer Club and Lab</h3>
+<p>Immersive, themed environments unlike anything else in the cruise industry. Each ship features unique spaces — Andy's Room on the Fantasy, Marvel's Hero Zone on the Wish — that create genuinely imaginative environments. Activities are thoughtfully designed, staff are exceptionally trained, and the staff-to-child ratio is high. The clubs are complimentary and supervised. Edge (11–14) and Vibe (14–17) serve older kids with programming that actually engages teenagers.</p>
+
+<h3>Royal Caribbean Adventure Ocean and Carnival Camp Ocean</h3>
+<p>Both are competent, well-run kids' programs that fall short of Disney's immersive environments. Genuinely good by non-Disney cruise standards — they serve their purpose without generating the same level of kid enthusiasm as Disney's program.</p>
+
+<h2>Private Islands</h2>
+<ul>
+<li><strong>Disney:</strong> Castaway Cay (Bahamas) — the benchmark private island experience, mature and beautifully maintained with dedicated sections for families, teens, and adults. Lookout Cay at Lighthouse Point (Eleuthera) is Disney's newer 2024 addition with a more premium, less crowded feel.</li>
+<li><strong>Royal Caribbean:</strong> Perfect Day at CocoCay — dramatically upgraded with a water park, helium balloon ride, and premium beach club. A legitimate competitor to Castaway Cay; arguably better for families wanting action-packed water park amenities.</li>
+<li><strong>Carnival:</strong> Half Moon Cay — pleasant, well-maintained, beautiful beach. Less developed than Disney's or Royal's islands; quieter, which some guests prefer.</li>
+</ul>
+
+<h2>Adults-Only Experience</h2>
+<p>Disney is a family resort at sea. Adults-only areas exist (Serenity Bay at Castaway Cay, adults-only pool on most ships, Palo and Remy restaurants), but Disney ships don't have traditional nightclubs or late-night party atmospheres. The ships prioritize family experience above adult-centric nightlife.</p>
+<p>Royal Caribbean and Carnival serve adult-primary vacationers more specifically, with full-service nightclubs, late-night entertainment, and programming built around an adult social atmosphere.</p>
+
+<h2>The Honest Bottom Line</h2>
+
+<h3>Choose Disney if:</h3>
+<ul>
+<li>You have children under 12 who love Disney characters and storytelling</li>
+<li>Theatrical entertainment quality matters to your family</li>
+<li>Consistent, high-quality dining and service are important</li>
+<li>You value the Castaway Cay private island experience</li>
+<li>You're willing to pay the premium for a demonstrably different experience</li>
+</ul>
+
+<h3>Choose Royal Caribbean if:</h3>
+<ul>
+<li>You want large-ship amenities: surf simulators, ice rinks, roller coasters on Icon-class</li>
+<li>You're sailing with teenagers who'd prefer adventure activities over character experiences</li>
+<li>You want a strong entertainment experience at a lower price than Disney</li>
+<li>Adults without young children wanting premium ship variety</li>
+</ul>
+
+<h3>Choose Carnival if:</h3>
+<ul>
+<li>Budget is the primary consideration</li>
+<li>You want a fun, social, casual Caribbean experience without premium pricing</li>
+<li>Adults traveling without young children who want a party-friendly atmosphere</li>
+</ul>
+
+<h2>Ready to Find a Disney Deal?</h2>
+<p>If Disney is the right choice for your family, timing your booking right can save hundreds or thousands of dollars. Our <a href="/search">AI cruise finder</a> monitors Disney's pricing and surfaces deals as they emerge. The <a href="/deals">deal grid</a> shows all current pricing across all sailings. Or reach out via the <a href="/book">booking inquiry form</a> for personalized guidance on which sailing is right for your family.</p>
+    `.trim(),
+  },
+  {
+    id: '13',
+    slug: 'save-money-disney-cruise',
+    title: 'How to Save Money on a Disney Cruise: 10 Insider Tips',
+    excerpt: 'Disney cruises are expensive — but there are real, proven strategies to reduce what you pay without sacrificing the magic. Here are 10 tips from someone who watches Disney pricing every day.',
+    author: 'Grayson Starbuck',
+    published_date: '2026-04-10',
+    category: 'tips',
+    tags: ['budget', 'savings', 'money-saving', 'tips', 'deals'],
+    read_time: '8 min read',
+    featured_image_url: 'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=1200&h=600&fit=crop',
+    content: `
+<p>There's no way around it — Disney cruises are expensive. But expensive doesn't mean there aren't real, meaningful levers you can pull to reduce what you pay. These ten strategies have helped real Disney cruisers save hundreds to thousands of dollars without cutting anything from the experience that matters.</p>
+
+<h2>Tip 1: Use GatGrid's Real-Time Deal Scanner</h2>
+<p>Disney's pricing changes constantly — sometimes daily — as their revenue management algorithms adjust for demand and unsold inventory. A sailing that's overpriced today can drop 15–25% within two weeks if Disney's system detects soft demand. Manually checking prices is tedious and easy to miss.</p>
+<p><a href="/search">GatGrid's AI cruise finder</a> monitors Disney's live pricing and helps you identify when a sailing is priced below its typical value. Set up <a href="/alerts">price drop alerts</a> on specific sailings you're interested in and get notified the moment that sailing hits your target price. This is the most reliable way to catch deals the moment they appear.</p>
+
+<h2>Tip 2: Book During Wave Season (January–February)</h2>
+<p>Wave season is the cruise industry's annual promotion window. Every January, cruise lines including Disney run their most aggressive incentive packages: onboard credit bundles, reduced deposits, free dining add-ons, and promotional pricing on select sailings. The combination of promotional incentives and early-booker inventory availability makes January–February the single best time to book a Disney cruise for any time of year.</p>
+<p>Subscribe to our <a href="/newsletter">weekly newsletter</a> — we publish wave-season deal alerts as they drop.</p>
+
+<h2>Tip 3: Sail Shoulder Season</h2>
+<p>Disney cruise pricing is demand-driven. Summer, school breaks, and holidays command peak prices. Shoulder-season sailings — early September, late August, and late January — offer the same ship, same private islands, and same experience at 20–35% below peak periods.</p>
+<p>September is particularly underrated. Caribbean weather is warm and sunny, ships run slightly less crowded, and pricing hits annual lows. We've seen 7-night Caribbean sailings in September that cost $8,000 in summer go for $5,500 in the fall — a real saving with no meaningful trade-off for most families.</p>
+
+<h2>Tip 4: Book Early for Popular Sailings, Late for Others</h2>
+<p>Disney pricing follows a predictable curve: high at initial release, then either dropping or spiking as sail date approaches depending on demand.</p>
+<ul>
+<li><strong>Book 12–18 months out for:</strong> holiday sailings, new ship inaugurals, and popular summer departures. These fill up and prices climb.</li>
+<li><strong>Watch for last-minute deals (60–90 days out) for:</strong> shoulder-season sailings and weekday departures. Disney sometimes releases meaningful discounts on inventory they're having trouble filling. Our <a href="/deals/last-minute">last-minute deals page</a> tracks these in real time.</li>
+</ul>
+
+<h2>Tip 5: Use a Credit Card Sign-Up Bonus Strategically</h2>
+<p>This is the highest-leverage single move on this list. Premium travel card sign-up bonuses — 90,000 to 150,000+ points — are worth $900 to $3,000+ in travel value when redeemed through airline transfer partners. A single well-timed card application can offset a significant portion of your cruise cost.</p>
+<p>Strategy: apply for a card 3–4 months before your cruise booking. Use it for everyday spending to meet the minimum spending requirement. Then pay your cruise fare with the card — this earns points on the large purchase AND triggers the card's trip insurance coverage on your booking.</p>
+<p>See our complete guide: <a href="/blog/best-credit-cards-disney-cruises">Best Credit Cards for Disney Cruises in 2026</a> — covering which specific cards offer the best sign-up bonuses and trip insurance for cruise travelers right now.</p>
+
+<h2>Tip 6: Access the Disney Vacation Club (DVC) Discount</h2>
+<p>Disney Vacation Club members receive discounts on cruise base fares — typically 10–15% off published rates. If you don't own DVC, a DVC-owning family member or friend can book the cruise under their membership (you pay them the cruise cost). Some DVC rental companies also offer cruise discounts worth investigating.</p>
+
+<h2>Tip 7: Watch for Kids Sail Free Promotions</h2>
+<p>Disney periodically runs promotions where third and fourth guests in a stateroom sail at significantly reduced rates or free. For families with two or more children, these promotions can save $1,000–$3,000 on a single sailing. They appear without significant advance notice and disappear quickly — subscribe to our <a href="/newsletter">weekly deal newsletter</a> to catch them.</p>
+
+<h2>Tip 8: Book Back-to-Back Sailings</h2>
+<p>Disney offers promotional incentives for back-to-back bookings. If you're planning a 7-night vacation, two consecutive 3- or 4-night sailings sometimes total less than a single 7-night booking, and Disney often discounts the second sailing. B2B also lets you experience two different itineraries while staying in the same stateroom between sailings without repacking.</p>
+
+<h2>Tip 9: Bring Your Allowed Wine Aboard</h2>
+<p>Disney permits each adult to bring two 750ml bottles of wine or champagne aboard at embarkation. A bottle of decent wine in Disney's main dining room runs $45–$75. The same bottle from a wine shop near your embarkation port runs $15–$30. For two adults on a 7-night sailing, this policy alone can save $150–$300 in beverage costs. Wrap bottles in clothing in your carry-on for the port walk.</p>
+
+<h2>Tip 10: Book Shore Excursions Independently</h2>
+<p>Disney's organized shore excursions carry a 30–50% premium over comparable independently-arranged alternatives. The same snorkeling trip, beach rental, or cultural tour that costs $120 per person through Disney often runs $60–$80 through a third-party operator.</p>
+<p>The trade-off: Disney-booked excursions guarantee the ship waits if your tour runs late due to unforeseen circumstances. Independent tours don't offer this protection. For low-risk activities close to the pier, independent booking is straightforward and saves meaningful money. For time-sensitive excursions far from port, Disney's guarantee may be worth the premium.</p>
+
+<h2>Bonus: Use GatGrid's Free Planning Tools</h2>
+<p>Beyond the deal scanner, GatGridCruises offers several free tools that help you plan smarter before you book:</p>
+<ul>
+<li><a href="/tools/cost-calculator">Cruise Cost Calculator</a> — model the true all-in cost including gratuities, excursions, and beverage packages</li>
+<li><a href="/tools/compare">Compare Sailings</a> — side-by-side comparison of different itineraries, ships, and price points</li>
+<li><a href="/tools/staterooms">Stateroom Finder</a> — compare cabin categories and find the right balance of space vs. price</li>
+<li><a href="/tools/flights">Flight Finder</a> — find the best flights to your embarkation port</li>
+</ul>
+<p>For personalized advice on timing, stateroom selection, and which sailing fits your family's preferences and budget, use the <a href="/book">free booking inquiry form</a> to reach Grayson directly. He monitors Disney pricing every day and can help you identify the right moment and the right sailing — no booking required, no pressure.</p>
     `.trim(),
   },
 ]

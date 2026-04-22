@@ -183,6 +183,21 @@ export function Footer() {
                   </Link>
                 </li>
                 <li>
+                  <Link href="/blog/disney-cruise-packing-list" className="text-slate-500 text-sm hover:text-blue-600 transition-colors duration-200">
+                    ↳ Packing List 2026
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blog/best-credit-cards-disney-cruises" className="text-slate-500 text-sm hover:text-blue-600 transition-colors duration-200">
+                    ↳ Best Credit Cards
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blog/save-money-disney-cruise" className="text-slate-500 text-sm hover:text-blue-600 transition-colors duration-200">
+                    ↳ 10 Money-Saving Tips
+                  </Link>
+                </li>
+                <li>
                   <Link href="/travel-hacks" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
                     Travel Hacks
                   </Link>

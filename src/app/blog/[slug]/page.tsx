@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { getBlogPostBySlug, getRelatedPosts, getBlogPosts } from '@/lib/data'
 import { ArrowLeft, Calendar, Clock } from 'lucide-react'
 import { ShareButtons } from './share-buttons'
+import { generateArticleSchema } from '@/lib/structured-data'
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -28,8 +29,26 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
   }
 
   return {
-    title: `${post.title} | GatGridCruises Blog`,
+    title: `${post.title} | GatGridCruises`,
     description: post.excerpt,
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      type: 'article',
+      url: `https://gatgridcruises.com/blog/${post.slug}`,
+      images: post.featured_image_url
+        ? [{ url: post.featured_image_url, width: 1200, height: 600, alt: post.title }]
+        : [],
+      publishedTime: post.published_date,
+      authors: [post.author],
+      siteName: 'GatGridCruises',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt,
+      images: post.featured_image_url ? [post.featured_image_url] : [],
+    },
   }
 }
 
@@ -53,8 +72,22 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   const colors = categoryColors[post.category]
 
+  const articleSchema = generateArticleSchema({
+    title: post.title,
+    description: post.excerpt,
+    content: post.content,
+    slug: post.slug,
+    publishedAt: post.published_date,
+    author: { name: post.author },
+    image: post.featured_image_url,
+  })
+
   return (
     <main className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
       {/* Hero Section */}
       <div className="bg-gradient-to-br from-blue-50 via-white to-indigo-50 pt-8 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
