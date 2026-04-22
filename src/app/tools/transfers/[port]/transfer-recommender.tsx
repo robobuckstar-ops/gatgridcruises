@@ -36,7 +36,7 @@ export function TransferRecommender({ transfers, portName }: TransferRecommender
       } else if (scenario === 'flying_previous_day') {
         if (t.type === 'hotel_shuttle') {
           score += 45
-          reasoning += 'If you're staying overnight, shuttle is ideal. '
+          reasoning += "If you're staying overnight, shuttle is ideal. "
         } else if (t.type === 'uber' || t.type === 'lyft') {
           score += 35
           reasoning += 'Good option without overnight hotel. '

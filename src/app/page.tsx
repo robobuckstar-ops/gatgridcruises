@@ -1,23 +1,21 @@
 import Link from 'next/link'
 import {
-  Anchor,
   TrendingDown,
   Calculator,
   Plane,
-  BedDouble,
   ArrowRight,
   Ship,
-  Star,
   Zap,
-  Search,
   Leaf,
   Users,
   Sparkles,
+  MapPin,
+  Clock,
+  Trophy,
 } from 'lucide-react'
 import { SailingCard } from '@/components/ui/sailing-card'
 import { EmailSignup } from '@/components/ui/email-signup'
-import { AdSlot } from '@/components/ui/ad-slot'
-import { HeroSearch } from '@/components/ui/hero-search'
+import { GetQuoteCTA } from '@/components/get-quote-cta'
 import {
   getFeaturedSailings,
   getBiggestPriceDrops,
@@ -63,9 +61,24 @@ export default async function Home() {
             daily, honest advice, and free tools to plan smarter.
           </p>
 
-          {/* AI Search Bar */}
-          <div className="mb-12">
-            <HeroSearch />
+          {/* Filter Pills */}
+          <div className="flex flex-wrap justify-center gap-3 mb-10">
+            <Link href="/deals?filter=ship" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border-2 border-slate-200 text-slate-700 font-semibold text-sm hover:border-[#1E3A5F] hover:text-[#1E3A5F] transition-colors shadow-sm">
+              <Ship className="w-4 h-4" aria-hidden="true" />
+              By Ship
+            </Link>
+            <Link href="/deals?filter=destination" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border-2 border-slate-200 text-slate-700 font-semibold text-sm hover:border-[#1E3A5F] hover:text-[#1E3A5F] transition-colors shadow-sm">
+              <MapPin className="w-4 h-4" aria-hidden="true" />
+              Destination
+            </Link>
+            <Link href="/deals?filter=duration" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border-2 border-slate-200 text-slate-700 font-semibold text-sm hover:border-[#1E3A5F] hover:text-[#1E3A5F] transition-colors shadow-sm">
+              <Clock className="w-4 h-4" aria-hidden="true" />
+              Duration
+            </Link>
+            <Link href="/deals?sort=score" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#1E3A5F] border-2 border-[#1E3A5F] text-white font-semibold text-sm hover:bg-[#162d4a] transition-colors shadow-sm">
+              <Trophy className="w-4 h-4" aria-hidden="true" />
+              Best Deal Score
+            </Link>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
@@ -83,10 +96,28 @@ export default async function Home() {
             </Link>
           </div>
 
-          {/* Ad Slot */}
+          {/* Amex Affiliate Banner */}
           <div className="flex justify-center mt-8">
-            <AdSlot width={728} height={90} />
+            <a
+              href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
+              target="_blank"
+              rel="noopener noreferrer sponsored"
+              className="block w-full max-w-2xl rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow"
+            >
+              <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4 flex items-center justify-between gap-4">
+                <div>
+                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Earn 150K+ Membership Rewards Points</p>
+                  <p className="text-blue-200 text-sm mt-0.5">Enough for your next Disney cruise upgrade — Amex Business Platinum</p>
+                </div>
+                <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">
+                  Learn More →
+                </span>
+              </div>
+            </a>
           </div>
+          <p className="text-center text-xs text-slate-400 mt-2">
+            <a href="mailto:robobuckstar@gmail.com" className="hover:text-slate-600 transition-colors">Advertise your travel agency here — contact us</a>
+          </p>
         </div>
       </section>
 
@@ -162,10 +193,28 @@ export default async function Home() {
               <div key={sailing.id}>
                 <SailingCard sailing={sailing} />
 
-                {/* Ad slot after 6th card */}
+                {/* Amex affiliate banner after 6th card */}
                 {index === 5 && (
-                  <div className="col-span-1 md:col-span-2 lg:col-span-3 flex justify-center mt-8">
-                    <AdSlot width={300} height={250} />
+                  <div className="col-span-1 md:col-span-2 lg:col-span-3 mt-8">
+                    <a
+                      href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
+                      target="_blank"
+                      rel="noopener noreferrer sponsored"
+                      className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow"
+                    >
+                      <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-5 flex items-center justify-between gap-4">
+                        <div>
+                          <p className="text-[#D4AF37] font-bold text-base leading-tight">Earn 150K+ Membership Rewards Points</p>
+                          <p className="text-blue-200 text-sm mt-0.5">Enough for your next Disney cruise upgrade — Amex Business Platinum</p>
+                        </div>
+                        <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">
+                          Learn More →
+                        </span>
+                      </div>
+                    </a>
+                    <p className="text-xs text-slate-400 mt-1.5">
+                      <a href="mailto:robobuckstar@gmail.com" className="hover:text-slate-600 transition-colors">Advertise your travel agency here — contact us</a>
+                    </p>
                   </div>
                 )}
               </div>
@@ -306,6 +355,9 @@ export default async function Home() {
           </div>
         </div>
       </section>
+
+      {/* Get a Quote CTA */}
+      <GetQuoteCTA />
 
       {/* Ship Quick Links */}
       <section className="bg-gradient-to-br from-blue-50 to-indigo-50 py-16 md:py-20 border-t border-slate-200" aria-labelledby="fleet-heading">

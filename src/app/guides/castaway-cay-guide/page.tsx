@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { MapPin, Clock, DollarSign, AlertCircle, Anchor } from 'lucide-react';
-import AdSlot from '@/components/ui/ad-slot';
+import { GetQuoteCTA } from '@/components/get-quote-cta';
 
 export const metadata: Metadata = {
   title: "Castaway Cay: The Ultimate Guide to Disney's Private Island",
@@ -41,7 +41,20 @@ export default function CastawayCayGuide() {
       {/* Main Content */}
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
-        <AdSlot placement="after-hero" />
+        <a
+              href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
+              target="_blank"
+              rel="noopener noreferrer sponsored"
+              className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow"
+            >
+              <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4 flex items-center justify-between gap-4">
+                <div>
+                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Earn 150K+ Membership Rewards Points</p>
+                  <p className="text-blue-200 text-sm mt-0.5">Enough for your next Disney cruise upgrade — Amex Business Platinum</p>
+                </div>
+                <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
+              </div>
+            </a>
 
         {/* Overview Section */}
         <section className="mb-12">
@@ -80,7 +93,20 @@ export default function CastawayCayGuide() {
           </div>
         </section>
 
-        <AdSlot placement="mid-content" />
+        <a
+              href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
+              target="_blank"
+              rel="noopener noreferrer sponsored"
+              className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow"
+            >
+              <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4 flex items-center justify-between gap-4">
+                <div>
+                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Earn 150K+ Membership Rewards Points</p>
+                  <p className="text-blue-200 text-sm mt-0.5">Enough for your next Disney cruise upgrade — Amex Business Platinum</p>
+                </div>
+                <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
+              </div>
+            </a>
 
         {/* Dining & Bars */}
         <section className="mb-12">
@@ -175,7 +201,20 @@ export default function CastawayCayGuide() {
           </div>
         </section>
 
-        <AdSlot placement="before-cta" />
+        <a
+              href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
+              target="_blank"
+              rel="noopener noreferrer sponsored"
+              className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow"
+            >
+              <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4 flex items-center justify-between gap-4">
+                <div>
+                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Earn 150K+ Membership Rewards Points</p>
+                  <p className="text-blue-200 text-sm mt-0.5">Enough for your next Disney cruise upgrade — Amex Business Platinum</p>
+                </div>
+                <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
+              </div>
+            </a>
 
         {/* Practical Tips */}
         <section className="mb-12">
@@ -210,7 +249,7 @@ export default function CastawayCayGuide() {
           </div>
 
           <div className="mb-6">
-            <h3 className="font-fraunces text-2xl font-bold text-slate-900 mb-3">Know the Schedule</html>
+            <h3 className="font-fraunces text-2xl font-bold text-slate-900 mb-3">Know the Schedule</h3>
             <p className="font-inter text-slate-600 leading-relaxed">
               All aboard is typically 4:30 PM. Plan to return to the ship by 4:00 PM to avoid any mishaps. The tenders (small boats) run continuously from the island to the ship; factor in 10-15 minute boat rides if you're on a tender ship. (Larger ships dock directly.) Check the daily program or your Key to the World app for exact tender schedules.
             </p>
