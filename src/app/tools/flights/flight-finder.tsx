@@ -1,7 +1,45 @@
 'use client'
 
-import { useState, useMemo } from 'react'
-import { ArrowRight, Plane, AlertCircle, Info } from 'lucide-react'
+import { useState, useMemo, useRef, useEffect } from 'react'
+import { ArrowRight, Plane, AlertCircle, Info, Bell, Check } from 'lucide-react'
+
+const US_AIRPORTS = [
+  { code: 'ATL', city: 'Atlanta, GA' },
+  { code: 'BOS', city: 'Boston, MA' },
+  { code: 'BWI', city: 'Baltimore, MD' },
+  { code: 'CLT', city: 'Charlotte, NC' },
+  { code: 'DAL', city: 'Dallas Love Field, TX' },
+  { code: 'DEN', city: 'Denver, CO' },
+  { code: 'DFW', city: 'Dallas/Fort Worth, TX' },
+  { code: 'DTW', city: 'Detroit, MI' },
+  { code: 'EWR', city: 'Newark, NJ' },
+  { code: 'HNL', city: 'Honolulu, HI' },
+  { code: 'IAH', city: 'Houston Intercontinental, TX' },
+  { code: 'JFK', city: 'New York JFK, NY' },
+  { code: 'LAS', city: 'Las Vegas, NV' },
+  { code: 'LAX', city: 'Los Angeles, CA' },
+  { code: 'LGA', city: 'New York LaGuardia, NY' },
+  { code: 'MCO', city: 'Orlando, FL' },
+  { code: 'MDW', city: 'Chicago Midway, IL' },
+  { code: 'MIA', city: 'Miami, FL' },
+  { code: 'MSP', city: 'Minneapolis, MN' },
+  { code: 'MSY', city: 'New Orleans, LA' },
+  { code: 'OAK', city: 'Oakland, CA' },
+  { code: 'ORD', city: 'Chicago O\'Hare, IL' },
+  { code: 'PDX', city: 'Portland, OR' },
+  { code: 'PHL', city: 'Philadelphia, PA' },
+  { code: 'PHX', city: 'Phoenix, AZ' },
+  { code: 'PIT', city: 'Pittsburgh, PA' },
+  { code: 'RDU', city: 'Raleigh-Durham, NC' },
+  { code: 'SAN', city: 'San Diego, CA' },
+  { code: 'SEA', city: 'Seattle, WA' },
+  { code: 'SFO', city: 'San Francisco, CA' },
+  { code: 'SJC', city: 'San Jose, CA' },
+  { code: 'SLC', city: 'Salt Lake City, UT' },
+  { code: 'SMF', city: 'Sacramento, CA' },
+  { code: 'STL', city: 'St. Louis, MO' },
+  { code: 'TPA', city: 'Tampa, FL' },
+]
 
 interface SailingOption {
   id: string
@@ -55,12 +93,10 @@ function calculateAirportDistance(homeCode: string, destCode: string): number {
     'SEA': [47.4502, -122.3088], // Seattle
     // Cruise ports
     'MCO': [28.4265, -81.3081],  // Orlando (Port Canaveral area)
-    'MIA': [25.7959, -80.2870],  // Miami
     'FLL': [26.0726, -80.1527],  // Fort Lauderdale
     'TPA': [27.9755, -82.5338],  // Tampa
     'MSY': [29.9841, -90.2458],  // New Orleans
     'HOU': [29.6452, -95.2113],  // Houston (Galveston area)
-    'LAX': [33.9425, -118.4081], // LA (Long Beach area)
     'SAN': [32.7345, -117.1897], // San Diego
   }
 
@@ -163,9 +199,32 @@ export function FlightFinder({
   ports: PortOption[]
 }) {
   const [homeAirport, setHomeAirport] = useState('')
+  const [airportInputValue, setAirportInputValue] = useState('')
+  const [showAirportDropdown, setShowAirportDropdown] = useState(false)
+  const airportRef = useRef<HTMLDivElement>(null)
   const [selectedSailing, setSelectedSailing] = useState<string | null>(null)
   const [selectedPort, setSelectedPort] = useState<string | null>(null)
   const [customDepartureDate, setCustomDepartureDate] = useState<string | null>(null)
+
+  // Close airport dropdown on outside click
+  useEffect(() => {
+    function handleClick(e: MouseEvent) {
+      if (airportRef.current && !airportRef.current.contains(e.target as Node)) {
+        setShowAirportDropdown(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClick)
+    return () => document.removeEventListener('mousedown', handleClick)
+  }, [])
+
+  // Filter airports by input
+  const filteredAirports = useMemo(() => {
+    const q = airportInputValue.toUpperCase()
+    if (!q) return US_AIRPORTS.slice(0, 8)
+    return US_AIRPORTS.filter(
+      a => a.code.startsWith(q) || a.city.toUpperCase().includes(q)
+    ).slice(0, 8)
+  }, [airportInputValue])
 
   // Derive values based on selections
   const selectedSailingObj = sailings.find(s => s.id === selectedSailing)
@@ -244,20 +303,49 @@ export function FlightFinder({
 
           <div className="grid md:grid-cols-2 gap-8">
             {/* Home Airport */}
-            <div>
+            <div ref={airportRef} className="relative">
               <label className="block text-sm font-semibold text-slate-700 mb-2">
                 Your Home Airport
               </label>
               <input
                 type="text"
-                value={homeAirport}
-                onChange={e => setHomeAirport(e.target.value.toUpperCase())}
-                placeholder="e.g., ORD, LAX, ATL"
-                maxLength={3}
-                className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-0"
-                style={{ focusRingColor: '#D4AF37' }}
+                value={airportInputValue}
+                onChange={e => {
+                  setAirportInputValue(e.target.value)
+                  setShowAirportDropdown(true)
+                  if (e.target.value.length !== 3) setHomeAirport('')
+                }}
+                onFocus={() => setShowAirportDropdown(true)}
+                placeholder="Search by code or city (e.g., ORD, Chicago)"
+                className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:ring-offset-0"
+                autoComplete="off"
               />
-              <p className="text-xs text-slate-500 mt-2">Enter 3-letter airport code</p>
+              {homeAirport && (
+                <p className="text-xs text-emerald-600 mt-1 font-medium">
+                  ✓ {homeAirport} selected
+                </p>
+              )}
+              {showAirportDropdown && filteredAirports.length > 0 && (
+                <ul className="absolute z-10 w-full mt-1 bg-white border border-slate-200 rounded-lg shadow-lg max-h-56 overflow-y-auto">
+                  {filteredAirports.map(airport => (
+                    <li key={airport.code}>
+                      <button
+                        type="button"
+                        className="w-full flex items-center gap-3 px-4 py-2.5 text-left hover:bg-blue-50 transition-colors"
+                        onMouseDown={e => {
+                          e.preventDefault()
+                          setHomeAirport(airport.code)
+                          setAirportInputValue(`${airport.code} — ${airport.city}`)
+                          setShowAirportDropdown(false)
+                        }}
+                      >
+                        <span className="font-mono font-bold text-blue-600 w-10 shrink-0">{airport.code}</span>
+                        <span className="text-sm text-slate-600">{airport.city}</span>
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
 
             {/* Sailing or Manual Port Selection */}
@@ -615,6 +703,177 @@ export function FlightFinder({
               Enter your home airport and select a sailing or port to get started.
             </p>
           </div>
+        )}
+
+        {/* Southwest Flight Alerts */}
+        <SouthwestAlerts homeAirport={homeAirport} />
+      </div>
+    </div>
+  )
+}
+
+const SW_PORTS = [
+  { name: 'Port Canaveral', nearestAirport: 'Orlando (MCO)' },
+  { name: 'Galveston', nearestAirport: 'Houston (HOU/IAH)' },
+  { name: 'Miami', nearestAirport: 'Miami (MIA)' },
+  { name: 'New Orleans', nearestAirport: 'New Orleans (MSY)' },
+  { name: 'San Juan', nearestAirport: 'San Juan (SJU)' },
+]
+
+function SouthwestAlerts({ homeAirport }: { homeAirport: string }) {
+  const [swEmail, setSwEmail] = useState('')
+  const [swAirport, setSwAirport] = useState(homeAirport)
+  const [submitted, setSubmitted] = useState(false)
+  const [error, setError] = useState('')
+  const [loading, setLoading] = useState(false)
+
+  // Keep in sync with parent's home airport input
+  useMemo(() => {
+    if (homeAirport && !swAirport) setSwAirport(homeAirport)
+  }, [homeAirport, swAirport])
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setError('')
+
+    if (!swEmail || !swEmail.includes('@')) {
+      setError('Please enter a valid email address')
+      return
+    }
+    if (!swAirport || swAirport.length < 3) {
+      setError('Please enter your 3-letter home airport code')
+      return
+    }
+
+    setLoading(true)
+
+    try {
+      const existing = JSON.parse(localStorage.getItem('sw_flight_alerts') || '[]')
+      existing.push({
+        airport: swAirport.toUpperCase(),
+        email: swEmail,
+        ports: SW_PORTS.map(p => p.name),
+        signedUpAt: new Date().toISOString(),
+      })
+      localStorage.setItem('sw_flight_alerts', JSON.stringify(existing))
+
+      await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: swEmail,
+          preferences: { source: 'sw_flight_alerts', homeAirport: swAirport.toUpperCase() },
+        }),
+      }).catch(() => {})
+
+      setSubmitted(true)
+    } catch {
+      setError('Something went wrong. Please try again.')
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  return (
+    <div className="mt-12 bg-gradient-to-br from-[#1E3A5F] to-[#2a4f7a] rounded-2xl overflow-hidden">
+      <div className="p-8">
+        <div className="flex items-start gap-4 mb-6">
+          <div className="flex-shrink-0 w-12 h-12 bg-[#D4AF37]/20 rounded-xl flex items-center justify-center">
+            <Bell className="w-6 h-6 text-[#D4AF37]" />
+          </div>
+          <div>
+            <p className="text-[#D4AF37] text-xs font-bold uppercase tracking-widest mb-1">Southwest Flight Alerts</p>
+            <h3 className="font-bold text-2xl text-white mb-2" style={{ fontFamily: 'Fraunces' }}>
+              Get Notified When Southwest Drops Fares
+            </h3>
+            <p className="text-blue-200 text-sm leading-relaxed max-w-xl">
+              Southwest releases cheap fare sales without warning — and they're gone in hours.
+              We'll alert you when low fares pop up from your home airport to any Disney cruise port.
+            </p>
+          </div>
+        </div>
+
+        {/* Ports covered */}
+        <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 mb-8">
+          {SW_PORTS.map(port => (
+            <div key={port.name} className="bg-white/10 rounded-xl px-3 py-2.5 text-center">
+              <p className="text-white text-xs font-semibold leading-tight">{port.name}</p>
+              <p className="text-blue-300 text-xs mt-0.5">{port.nearestAirport}</p>
+            </div>
+          ))}
+        </div>
+
+        {submitted ? (
+          <div className="bg-white/10 rounded-xl p-6 text-center">
+            <div className="inline-flex items-center justify-center w-14 h-14 bg-emerald-500/20 rounded-full mb-3">
+              <Check className="w-7 h-7 text-emerald-400" />
+            </div>
+            <h4 className="font-bold text-xl text-white mb-2" style={{ fontFamily: 'Fraunces' }}>
+              You're on the list!
+            </h4>
+            <p className="text-blue-200 text-sm">
+              We'll email <strong className="text-white">{swEmail}</strong> when Southwest drops cheap fares from{' '}
+              <strong className="text-white">{swAirport.toUpperCase()}</strong> to cruise ports.
+            </p>
+          </div>
+        ) : (
+          <form onSubmit={handleSubmit} noValidate>
+            {error && (
+              <div className="mb-4 p-3 bg-red-900/30 border border-red-500/30 rounded-xl flex items-center gap-2" role="alert">
+                <AlertCircle className="w-4 h-4 text-red-400 flex-shrink-0" aria-hidden="true" />
+                <p className="text-sm text-red-300">{error}</p>
+              </div>
+            )}
+
+            <div className="grid sm:grid-cols-3 gap-3">
+              <div>
+                <label htmlFor="sw-airport-input" className="block text-sm font-semibold text-blue-200 mb-2">
+                  Your Home Airport
+                </label>
+                <input
+                  id="sw-airport-input"
+                  type="text"
+                  value={swAirport}
+                  onChange={e => setSwAirport(e.target.value.toUpperCase())}
+                  placeholder="e.g., ORD"
+                  maxLength={3}
+                  required
+                  disabled={loading}
+                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder:text-blue-300 text-sm font-mono focus:outline-none focus:ring-2 focus:ring-[#D4AF37] disabled:opacity-50"
+                />
+              </div>
+              <div className="sm:col-span-2">
+                <label htmlFor="sw-email-input" className="block text-sm font-semibold text-blue-200 mb-2">
+                  Email Address
+                </label>
+                <div className="flex gap-2">
+                  <input
+                    id="sw-email-input"
+                    type="email"
+                    value={swEmail}
+                    onChange={e => setSwEmail(e.target.value)}
+                    placeholder="your@email.com"
+                    required
+                    disabled={loading}
+                    className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder:text-blue-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#D4AF37] disabled:opacity-50"
+                  />
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="px-5 py-3 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm rounded-xl hover:bg-yellow-300 transition-colors whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                  >
+                    {loading ? 'Saving…' : (
+                      <>Alert Me <ArrowRight className="w-4 h-4" aria-hidden="true" /></>
+                    )}
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <p className="mt-3 text-xs text-blue-400">
+              Free. We only email when fares drop — no spam. Powered by GatGridCruises deal monitoring.
+            </p>
+          </form>
         )}
       </div>
     </div>

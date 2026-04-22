@@ -4,6 +4,7 @@ import { Header } from '@/components/layout/header'
 import { Footer } from '@/components/layout/footer'
 import { SkipNav } from '@/components/ui/skip-nav'
 import { Chatbot } from '@/components/ui/chatbot'
+import { NewsletterPopup } from '@/components/ui/newsletter-popup'
 import { generateWebsiteSchema } from '@/lib/structured-data'
 import { StructuredData } from '@/components/ui/structured-data'
 
@@ -58,6 +59,7 @@ export default function RootLayout({
         <main id="main-content" className="flex-1">{children}</main>
         <Footer />
         <Chatbot />
+        <NewsletterPopup />
       </body>
     </html>
   )

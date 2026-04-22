@@ -129,10 +129,10 @@ export function CabinComparison({ shipSlug }: CabinComparisonProps) {
                 key={cat.key}
                 className={`px-6 py-4 text-center border-l border-slate-200 ${cat.bgColor}`}
               >
-                {startingPrices[cat.key] ? (
+                {startingPrices[cat.key] != null ? (
                   <div>
                     <p className={`font-fraunces text-xl font-bold ${cat.textColor}`}>
-                      {formatPrice(startingPrices[cat.key])}
+                      {formatPrice(startingPrices[cat.key]!)}
                     </p>
                     <p className="text-xs text-slate-600 mt-1">Lowest available</p>
                   </div>
@@ -413,11 +413,11 @@ export function CabinComparison({ shipSlug }: CabinComparisonProps) {
           <div key={cat.key} className={`${cat.bgColor} border-2 ${cat.borderColor} rounded-xl p-6`}>
             <h3 className={`font-fraunces text-2xl font-bold ${cat.textColor} mb-4`}>{cat.name}</h3>
 
-            {startingPrices[cat.key] && (
+            {startingPrices[cat.key] != null && (
               <div className="mb-6 pb-6 border-b border-slate-200">
                 <p className="text-sm text-slate-600 font-semibold mb-1">Starting Price</p>
                 <p className={`font-fraunces text-3xl font-bold ${cat.textColor}`}>
-                  {formatPrice(startingPrices[cat.key])}
+                  {formatPrice(startingPrices[cat.key]!)}
                 </p>
               </div>
             )}
