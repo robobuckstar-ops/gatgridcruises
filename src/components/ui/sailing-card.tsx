@@ -5,7 +5,7 @@ import Link from 'next/link'
 import type { Sailing } from '@/types/database'
 import { formatPrice, formatDate, cn } from '@/lib/utils'
 import { calculateDealScore } from '@/lib/deal-score'
-import { getOutTheDoorTotal, getPricePerNight } from '@/lib/pricing'
+import { getOutTheDoorTotal } from '@/lib/pricing'
 import { DealScoreBadge } from './deal-score-badge'
 import { Ship, Calendar, MapPin, ChevronDown } from 'lucide-react'
 
@@ -28,8 +28,8 @@ export function SailingCard({ sailing, percentBelow }: SailingCardProps) {
     sailing.region
   )
 
-  // Price per night
-  const pricePerNight = getPricePerNight(sailing.current_lowest_price, sailing.length_nights)
+  // Price per person per night (based on all-in per-person total)
+  const pricePerNight = sailing.length_nights > 0 ? Math.round(outTheDoor.perPerson / sailing.length_nights) : 0
 
   // Recommendation color
   const recommendationColors = {
@@ -116,7 +116,9 @@ export function SailingCard({ sailing, percentBelow }: SailingCardProps) {
               <span className="text-2xl font-bold text-slate-900">
                 {formatPrice(outTheDoor.perPerson)}
               </span>
-              <span className="text-xs text-emerald-600 font-semibold">per night: {formatPrice(pricePerNight)}</span>
+              {pricePerNight > 0 && (
+                <span className="text-xs text-emerald-600 font-semibold">{formatPrice(pricePerNight)}/night</span>
+              )}
             </div>
           </div>
 

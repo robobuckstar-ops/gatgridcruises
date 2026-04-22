@@ -331,6 +331,11 @@ export function LastMinuteDealGrid({ deals: initialDeals, ships, ports }: LastMi
                               {formatPrice(originalPrice)}
                             </span>
                           </div>
+                          {sailing.length_nights > 0 && (
+                            <p className="text-xs text-emerald-600 font-semibold mt-1">
+                              {formatPrice(Math.round(sailing.current_lowest_price / 2 / sailing.length_nights))}/night per guest
+                            </p>
+                          )}
                           {savings > 0 && (
                             <p className="text-sm text-emerald-600 font-semibold mt-2">
                               Save {formatPrice(savings)}

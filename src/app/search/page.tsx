@@ -154,6 +154,11 @@ export default function SearchPage() {
                             <p className="text-xs text-slate-600 mt-1 font-inter">
                               per person
                             </p>
+                            {sailing.length_nights > 0 && (
+                              <p className="text-xs text-emerald-600 font-semibold mt-1 font-inter">
+                                {formatPrice(Math.round(sailing.current_lowest_price / 2 / sailing.length_nights))}/night per guest
+                              </p>
+                            )}
                           </div>
 
                           {/* Cabin Types */}
