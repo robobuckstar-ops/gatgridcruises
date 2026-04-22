@@ -6,7 +6,7 @@ import { Heart, Users, Zap, Wallet, Shield, MapPin, Calendar, Anchor, ArrowRight
 
 // Metadata
 export const metadata = {
-  title: 'Solo Cruising - Your Guide to Sailing Alone | GatGrid Cruises',
+  title: 'Solo Cruising — Your Guide to Sailing Alone on Disney Cruise Line',
   description: 'Discover the freedom of solo cruising. Find solo-friendly sailings, tips for meeting people, safety advice, and the best value cruises for solo travelers.',
 }
 

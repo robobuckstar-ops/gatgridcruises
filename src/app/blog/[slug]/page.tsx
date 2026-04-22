@@ -1,13 +1,8 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { getBlogPostBySlug, getRelatedPosts, getBlogPosts } from '@/lib/data'
-import { ArrowLeft, Calendar, Clock, Share2, Twitter, Facebook, Copy } from 'lucide-react'
-
-interface BlogPostPageProps {
-  params: {
-    slug: string
-  }
-}
+import { ArrowLeft, Calendar, Clock, Twitter, Facebook } from 'lucide-react'
+import { CopyLinkButton } from './copy-link-button'
 
 export async function generateStaticParams() {
   const posts = getBlogPosts()
@@ -16,23 +11,23 @@ export async function generateStaticParams() {
   }))
 }
 
-export async function generateMetadata({ params }: BlogPostPageProps) {
-  const post = getBlogPostBySlug(params.slug)
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const post = getBlogPostBySlug(slug)
 
   if (!post) {
-    return {
-      title: 'Post Not Found | GatGridCruises',
-    }
+    return { title: 'Post Not Found' }
   }
 
   return {
-    title: `${post.title} | GatGridCruises Blog`,
+    title: post.title,
     description: post.excerpt,
   }
 }
 
-export default function BlogPostPage({ params }: BlogPostPageProps) {
-  const post = getBlogPostBySlug(params.slug)
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const post = getBlogPostBySlug(slug)
 
   if (!post) {
     notFound()
@@ -173,15 +168,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
               <Facebook className="h-4 w-4" />
               Facebook
             </a>
-            <button
-              onClick={() => {
-                navigator.clipboard.writeText(`https://gatgridcruises.com/blog/${post.slug}`)
-              }}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 rounded-lg hover:bg-slate-200 transition-colors font-medium"
-            >
-              <Copy className="h-4 w-4" />
-              Copy Link
-            </button>
+            <CopyLinkButton url={`https://gatgridcruises.com/blog/${post.slug}`} />
           </div>
         </div>
       </article>

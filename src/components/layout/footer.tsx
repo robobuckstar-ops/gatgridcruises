@@ -82,12 +82,12 @@ export function Footer() {
             <ul className="space-y-3">
               <li>
                 <Link href="/deals" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
-                  Deal Grid
+                  All Deals
                 </Link>
               </li>
               <li>
-                <Link href="/deals/last-minute" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
-                  Last-Minute Deals
+                <Link href="/deals/flash-deals" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                  Flash Deals
                 </Link>
               </li>
               <li>
@@ -96,13 +96,13 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
-                  Blog
+                <Link href="/travel-hacks" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                  Travel Hacks
                 </Link>
               </li>
               <li>
-                <Link href="/travel-hacks" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
-                  Travel Hacks
+                <Link href="/guides" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                  Guides
                 </Link>
               </li>
               <li>
@@ -116,8 +116,8 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/tools/compare" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
-                  Compare Sailings
+                <Link href="/search" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                  AI Cruise Finder
                 </Link>
               </li>
             </ul>

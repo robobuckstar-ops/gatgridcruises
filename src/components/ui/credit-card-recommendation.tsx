@@ -11,16 +11,11 @@ interface CreditCardRecommendationProps {
   compact?: boolean
 }
 
-/**
- * Credit Card Recommendation Component
- * Editorial-style card that presents a credit card as helpful advice, not a hard sell
- */
 export function CreditCardRecommendation({
   card,
   showEditorialTake = true,
   compact = false,
 }: CreditCardRecommendationProps) {
-  // Issuer badge colors
   const issuerColors: Record<string, string> = {
     chase: 'bg-blue-100 text-blue-700',
     amex: 'bg-indigo-100 text-indigo-700',
@@ -32,32 +27,34 @@ export function CreditCardRecommendation({
 
   const hasReferralLink = card.referralUrl && card.referralUrl.length > 0
 
-  if (compact) {
-    const CompactWrapper = hasReferralLink ? Link : 'div'
-    return (
-      <CompactWrapper
-        {...(hasReferralLink ? { href: card.referralUrl } : {})}
-        className="group flex items-center gap-3 p-3 rounded-lg border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all duration-200 bg-white"
+  const compactContent = (
+    <>
+      <div
+        className="h-12 w-10 rounded flex-shrink-0 flex items-center justify-center text-white shadow-sm"
+        style={{ backgroundColor: card.imageColor }}
       >
-        {/* Card color block */}
-        <div
-          className="h-12 w-10 rounded flex-shrink-0 flex items-center justify-center text-white shadow-sm"
-          style={{ backgroundColor: card.imageColor }}
-        >
-          <CreditCard className="h-5 w-5" />
-        </div>
+        <CreditCard className="h-5 w-5" />
+      </div>
+      <div className="flex-1 min-w-0">
+        <h4 className="text-sm font-semibold text-slate-900 line-clamp-1">{card.name}</h4>
+        <p className="text-xs text-emerald-600 font-medium">
+          {card.signupBonus} bonus (~${card.signupBonusValue})
+        </p>
+      </div>
+      <ChevronRight className="h-5 w-5 text-slate-400 group-hover:text-blue-600 flex-shrink-0 transition-colors" />
+    </>
+  )
 
-        {/* Content */}
-        <div className="flex-1 min-w-0">
-          <h4 className="text-sm font-semibold text-slate-900 line-clamp-1">{card.name}</h4>
-          <p className="text-xs text-emerald-600 font-medium">
-            {card.signupBonus} bonus (~${card.signupBonusValue})
-          </p>
-        </div>
-
-        {/* CTA */}
-        <ChevronRight className="h-5 w-5 text-slate-400 group-hover:text-blue-600 flex-shrink-0 transition-colors" />
-      </CompactWrapper>
+  if (compact) {
+    const wrapperClass = "group flex items-center gap-3 p-3 rounded-lg border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all duration-200 bg-white"
+    return hasReferralLink ? (
+      <Link href={card.referralUrl} target="_blank" rel="noopener noreferrer sponsored" className={wrapperClass}>
+        {compactContent}
+      </Link>
+    ) : (
+      <div className={wrapperClass}>
+        {compactContent}
+      </div>
     )
   }
 
@@ -76,7 +73,6 @@ export function CreditCardRecommendation({
 
         {/* Right: Details */}
         <div className="flex-1 p-6 flex flex-col">
-          {/* Header: Name + Issuer badge */}
           <div className="flex items-start justify-between gap-3 mb-3">
             <div className="flex-1">
               <h3 className="font-display text-xl font-semibold text-slate-900 mb-2">{card.name}</h3>
@@ -95,7 +91,6 @@ export function CreditCardRecommendation({
             </div>
           </div>
 
-          {/* Signup bonus + value */}
           <div className="mb-4 p-3 bg-emerald-50 rounded-lg border border-emerald-200">
             <div className="flex items-center justify-between">
               <div>
@@ -113,7 +108,6 @@ export function CreditCardRecommendation({
             )}
           </div>
 
-          {/* Highlights */}
           <div className="mb-4">
             <p className="text-xs font-semibold text-slate-700 mb-2">Key Benefits</p>
             <ul className="space-y-1.5">
@@ -126,7 +120,6 @@ export function CreditCardRecommendation({
             </ul>
           </div>
 
-          {/* Travel insurance badges */}
           <div className="mb-4 flex flex-wrap gap-2">
             {card.tripCancellation && (
               <span className="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-blue-50 text-blue-700 text-xs font-medium">
@@ -145,12 +138,10 @@ export function CreditCardRecommendation({
             )}
           </div>
 
-          {/* Editorial take */}
           {showEditorialTake && (
             <p className="text-sm italic text-slate-700 mb-4 leading-relaxed">"{card.editorial_take}"</p>
           )}
 
-          {/* CTA */}
           {hasReferralLink && (
             <div className="mt-auto">
               <Link
