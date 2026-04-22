@@ -61,7 +61,7 @@ export function TransferRecommender({ transfers, portName }: TransferRecommender
           reasoning += 'Your own car is the logical choice. '
         } else if (t.type === 'rental_car') {
           score += 15
-          reasoning += 'Don't rent if you're already driving. '
+          reasoning += "Don't rent if you're already driving. "
         }
       }
 

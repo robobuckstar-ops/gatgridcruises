@@ -12,6 +12,7 @@ import {
   MapPin,
   Clock,
   Trophy,
+  Search,
 } from 'lucide-react'
 import { SailingCard } from '@/components/ui/sailing-card'
 import { EmailSignup } from '@/components/ui/email-signup'
