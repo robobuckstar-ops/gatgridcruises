@@ -21,7 +21,7 @@ export default function DealsPage() {
         ? snapshots.reduce((sum, sn) => sum + sn.lowest_price, 0) / snapshots.length
         : s.current_lowest_price
     const percentBelow = avg > 0 ? Math.round(((avg - s.current_lowest_price) / avg) * 100) : 0
-    return { ...s, percentBelow: Math.max(0, percentBelow) }
+    return { ...s, price_snapshots: snapshots, percentBelow: Math.max(0, percentBelow) }
   })
 
   return <DealGrid sailings={sailingsWithDrops} ships={ships} ports={ports} />

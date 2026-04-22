@@ -5,6 +5,7 @@ import type { Sailing, Ship, Port } from '@/types/database'
 import { SailingCard } from '@/components/ui/sailing-card'
 import { AdSlot } from '@/components/ui/ad-slot'
 import { Search, SlidersHorizontal, X } from 'lucide-react'
+import { calculateDealScore } from '@/lib/deal-score'
 
 type SortOption = 'score' | 'price_asc' | 'price_desc' | 'date' | 'drop'
 type SailingWithDrop = Sailing & { percentBelow: number }
@@ -60,9 +61,9 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
       })
     }
 
-    // Score filter
+    // Score filter — uses the same dynamic calculation shown on each card
     if (minScore > 0) {
-      results = results.filter(s => s.sailing_score >= minScore)
+      results = results.filter(s => calculateDealScore(s, s.price_snapshots).score >= minScore)
     }
 
     // Price filter

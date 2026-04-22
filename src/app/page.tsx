@@ -4,6 +4,7 @@ import {
   Calculator,
   Plane,
   ArrowRight,
+  Search,
   Ship,
   Zap,
   Leaf,
