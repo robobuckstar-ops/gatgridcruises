@@ -29,7 +29,6 @@ const MONTH_MAP: Record<string, number> = {
   feb: 2,
   mar: 3,
   apr: 4,
-  may: 5,
   jun: 6,
   jul: 7,
   aug: 8,
@@ -50,7 +49,6 @@ const SEASON_MAP: Record<string, number[]> = {
 
 const REGION_MAP: Record<string, string> = {
   caribbean: 'caribbean',
-  bahamas: 'caribbean',
   bahamas: 'caribbean',
   western: 'caribbean',
   eastern: 'caribbean',
