@@ -330,18 +330,46 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Email Signup Section */}
-      <section className="bg-slate-50 py-16 md:py-20" aria-labelledby="newsletter-heading">
-        <div className="mx-auto max-w-xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8">
-            <h2 id="newsletter-heading" className="font-fraunces text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              Never Miss a Deal
-            </h2>
-            <p className="text-gray-600">
-              Get weekly updates on Disney cruise price drops, travel tips, and exclusive deals.
-            </p>
+      {/* Email Signup Section — full dark navy banner */}
+      <section className="bg-[#1E3A5F] py-16 md:py-20" aria-labelledby="newsletter-heading">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row items-center gap-10">
+            {/* Copy */}
+            <div className="flex-1 text-center lg:text-left">
+              <h2 id="newsletter-heading" className="font-fraunces text-3xl md:text-4xl font-bold text-white mb-4">
+                Never Miss a Price Drop
+              </h2>
+              <p className="text-blue-200 text-lg mb-6 max-w-lg mx-auto lg:mx-0">
+                Get notified when Disney cruise prices drop on your preferred dates. Our AI scans hundreds of sailings every day — you only hear about the ones worth booking.
+              </p>
+              <div className="flex flex-wrap gap-4 justify-center lg:justify-start text-sm text-blue-300">
+                <span className="flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]"></span>
+                  Weekly deal digest every Sunday
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]"></span>
+                  Mid-week price drop alerts
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]"></span>
+                  Personal reply from Grayson
+                </span>
+              </div>
+            </div>
+
+            {/* Form */}
+            <div className="w-full lg:w-auto lg:min-w-[400px]">
+              <div className="bg-white/10 border border-white/20 rounded-2xl p-6 sm:p-8">
+                <p className="text-[#D4AF37] font-semibold text-sm mb-1">Free deal alerts</p>
+                <p className="text-white font-fraunces text-xl font-bold mb-5">Join thousands of Disney cruise fans</p>
+                <EmailSignup />
+                <p className="text-blue-300 text-xs mt-3 text-center">
+                  No spam. Unsubscribe anytime. Sent by Grayson, not a bot.
+                </p>
+              </div>
+            </div>
           </div>
-          <EmailSignup />
         </div>
       </section>
 

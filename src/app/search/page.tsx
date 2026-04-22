@@ -7,7 +7,7 @@ import { getSailings } from '@/lib/data'
 import { formatPrice, formatDateShort } from '@/lib/utils'
 import type { Sailing } from '@/types/database'
 import Link from 'next/link'
-import { Star, MapPin, Calendar, Users, Anchor } from 'lucide-react'
+import { Star, MapPin, Calendar, Users, Anchor, Bell, ArrowRight } from 'lucide-react'
 
 const SUGGESTED_SEARCHES = [
   '7-night Alaska',
@@ -219,6 +219,26 @@ export default function SearchPage() {
                 >
                   Clear Search
                 </button>
+              </div>
+            )}
+
+            {/* Email CTA below results */}
+            {results.length > 0 && (
+              <div className="mt-12 rounded-xl bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-6">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#D4AF37]/20 flex items-center justify-center">
+                  <Bell className="w-6 h-6 text-[#D4AF37]" aria-hidden="true" />
+                </div>
+                <div className="flex-1 text-center sm:text-left">
+                  <h3 className="text-white font-bold text-lg mb-1">Don't see what you're looking for?</h3>
+                  <p className="text-blue-200 text-sm">Get a personal alert when prices drop on your preferred dates — Grayson will find it for you.</p>
+                </div>
+                <Link
+                  href="/deal-alerts"
+                  className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3 bg-[#D4AF37] text-[#1E3A5F] font-bold rounded-lg hover:bg-yellow-300 transition-colors text-sm whitespace-nowrap"
+                >
+                  Get Free Alerts
+                  <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                </Link>
               </div>
             )}
           </div>
