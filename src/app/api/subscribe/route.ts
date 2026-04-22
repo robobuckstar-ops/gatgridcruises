@@ -29,7 +29,7 @@ export async function POST(request: NextRequest) {
     // import { Resend } from 'resend'
     // const resend = new Resend(process.env.RESEND_API_KEY)
     // await resend.emails.send({
-    //   from: 'GatGridCruises <deals@gatgridcruises.com>',
+    //   from: 'Grayson at GatGrid Cruises <bookings@gatgridcruises.com>',
     //   to: email,
     //   subject: 'Confirm your subscription to GatGridCruises',
     //   html: `<h1>Welcome to GatGridCruises!</h1><p>Click below to confirm...</p>`

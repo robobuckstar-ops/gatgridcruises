@@ -36,7 +36,7 @@ export async function GET(request: NextRequest) {
     // const { data: subscribers } = await supabase.from('subscribers').select('email, unsubscribe_token').eq('confirmed', true)
     // for (const sub of subscribers) {
     //   await resend.emails.send({
-    //     from: 'GatGridCruises <deals@gatgridcruises.com>',
+    //     from: 'Grayson at GatGrid Cruises <bookings@gatgridcruises.com>',
     //     to: sub.email,
     //     subject: `Disney Cruise Deals — ${weekDate}`,
     //     html: html.replace('{{unsubscribe_token}}', sub.unsubscribe_token),

@@ -58,10 +58,15 @@ export default async function Home() {
             Magically Valuable Disney Cruises
           </h1>
 
-          <p className="font-inter text-lg md:text-xl text-slate-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+          <p className="font-inter text-lg md:text-xl text-slate-600 mb-4 max-w-3xl mx-auto leading-relaxed">
             Everything you need to know before you book a Disney cruise — deals watched
             daily, honest advice, and free tools to plan smarter.
           </p>
+
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold mb-8">
+            <Sparkles className="w-4 h-4" aria-hidden="true" />
+            Our AI scans thousands of sailings to find you the best Disney Cruise deals
+          </div>
 
           {/* Filter Pills */}
           <div className="flex flex-wrap justify-center gap-3 mb-10">
