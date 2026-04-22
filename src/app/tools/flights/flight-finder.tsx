@@ -55,12 +55,10 @@ function calculateAirportDistance(homeCode: string, destCode: string): number {
     'SEA': [47.4502, -122.3088], // Seattle
     // Cruise ports
     'MCO': [28.4265, -81.3081],  // Orlando (Port Canaveral area)
-    'MIA': [25.7959, -80.2870],  // Miami
     'FLL': [26.0726, -80.1527],  // Fort Lauderdale
     'TPA': [27.9755, -82.5338],  // Tampa
     'MSY': [29.9841, -90.2458],  // New Orleans
     'HOU': [29.6452, -95.2113],  // Houston (Galveston area)
-    'LAX': [33.9425, -118.4081], // LA (Long Beach area)
     'SAN': [32.7345, -117.1897], // San Diego
   }
 
@@ -255,7 +253,7 @@ export function FlightFinder({
                 placeholder="e.g., ORD, LAX, ATL"
                 maxLength={3}
                 className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-0"
-                style={{ focusRingColor: '#D4AF37' }}
+                style={{ '--tw-ring-color': '#D4AF37' } as React.CSSProperties}
               />
               <p className="text-xs text-slate-500 mt-2">Enter 3-letter airport code</p>
             </div>

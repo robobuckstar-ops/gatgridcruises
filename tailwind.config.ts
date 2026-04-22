@@ -53,6 +53,9 @@ const config: Config = {
         alert: '#EF4444',
         muted: '#64748B',
         dark: '#0F172A',
+        border: 'hsl(var(--border))',
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],

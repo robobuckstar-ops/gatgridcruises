@@ -85,7 +85,7 @@ export default async function Home() {
 
           {/* Ad Slot */}
           <div className="flex justify-center mt-8">
-            <AdSlot width={728} height={90} />
+            <AdSlot placement="homepage-top" size="728x90" />
           </div>
         </div>
       </section>
@@ -165,7 +165,7 @@ export default async function Home() {
                 {/* Ad slot after 6th card */}
                 {index === 5 && (
                   <div className="col-span-1 md:col-span-2 lg:col-span-3 flex justify-center mt-8">
-                    <AdSlot width={300} height={250} />
+                    <AdSlot placement="homepage-mid" size="300x250" />
                   </div>
                 )}
               </div>

@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { BarChart3, Users, Utensils, Zap, Heart, TrendingUp } from 'lucide-react';
-import AdSlot from '@/components/ui/ad-slot';
+import { AdSlot } from '@/components/ui/ad-slot';
 
 export const metadata: Metadata = {
   title: 'Disney Cruise vs. Royal Caribbean: Honest Comparison',

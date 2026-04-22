@@ -33,12 +33,9 @@ export function CreditCardRecommendation({
   const hasReferralLink = card.referralUrl && card.referralUrl.length > 0
 
   if (compact) {
-    const CompactWrapper = hasReferralLink ? Link : 'div'
+    const wrapperClass = "group flex items-center gap-3 p-3 rounded-lg border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all duration-200 bg-white"
     return (
-      <CompactWrapper
-        {...(hasReferralLink ? { href: card.referralUrl } : {})}
-        className="group flex items-center gap-3 p-3 rounded-lg border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all duration-200 bg-white"
-      >
+      <div className={wrapperClass}>
         {/* Card color block */}
         <div
           className="h-12 w-10 rounded flex-shrink-0 flex items-center justify-center text-white shadow-sm"
@@ -57,7 +54,7 @@ export function CreditCardRecommendation({
 
         {/* CTA */}
         <ChevronRight className="h-5 w-5 text-slate-400 group-hover:text-blue-600 flex-shrink-0 transition-colors" />
-      </CompactWrapper>
+      </div>
     )
   }
 
