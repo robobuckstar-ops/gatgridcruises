@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { NewsletterSignup } from '@/components/newsletter-signup'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -6,6 +7,11 @@ export function Footer() {
   return (
     <footer className="bg-slate-50 text-slate-700 border-t border-slate-200 mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        {/* Newsletter signup */}
+        <div className="mb-12">
+          <NewsletterSignup />
+        </div>
+
         {/* Four-column grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Company */}
@@ -47,8 +53,13 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/tools/cruise-cost-calculator" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                  Cruise Cost Calculator
+                </Link>
+              </li>
+              <li>
                 <Link href="/tools/cost-calculator" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
-                  Cost Calculator
+                  Full Trip Calculator
                 </Link>
               </li>
               <li>
@@ -101,8 +112,28 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/travel-hacks/best-cruise-credit-cards" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                  Best Credit Cards
+                </Link>
+              </li>
+              <li>
                 <Link href="/guides" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
                   Guides
+                </Link>
+              </li>
+              <li>
+                <Link href="/guides/first-time-disney-cruise" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                  First-Timer&apos;s Guide
+                </Link>
+              </li>
+              <li>
+                <Link href="/guides/stateroom-comparison" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                  Stateroom Comparison
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog/disney-cruise-packing-list" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                  Packing List
                 </Link>
               </li>
               <li>

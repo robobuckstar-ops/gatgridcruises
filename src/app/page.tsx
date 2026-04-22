@@ -12,6 +12,7 @@ import {
 } from 'lucide-react'
 import { SailingCard } from '@/components/ui/sailing-card'
 import { EmailSignup } from '@/components/ui/email-signup'
+import { NewsletterSignup } from '@/components/newsletter-signup'
 import { AdSlot } from '@/components/ui/ad-slot'
 import { HeroSearch } from '@/components/ui/hero-search'
 import {
@@ -301,6 +302,13 @@ export default async function Home() {
               </Link>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Weekly Deal Alerts */}
+      <section className="py-12 md:py-16 bg-white border-t border-slate-100">
+        <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
+          <NewsletterSignup />
         </div>
       </section>
 

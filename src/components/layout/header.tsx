@@ -21,6 +21,8 @@ const navItems = [
     label: 'Guides',
     href: '/guides',
     children: [
+      { label: 'First-Timer\'s Guide', href: '/guides/first-time-disney-cruise' },
+      { label: 'Stateroom Comparison', href: '/guides/stateroom-comparison' },
       { label: 'First-Time Tips', href: '/guides/first-time-disney-cruise-tips' },
       { label: 'Castaway Cay', href: '/guides/castaway-cay-guide' },
       { label: 'Cost Guide', href: '/guides/disney-cruise-cost-guide' },
@@ -33,7 +35,8 @@ const navItems = [
     label: 'Tools',
     href: '/tools',
     children: [
-      { label: 'Cost Calculator', href: '/tools/cost-calculator' },
+      { label: 'Cruise Cost Calculator', href: '/tools/cruise-cost-calculator' },
+      { label: 'Full Trip Calculator', href: '/tools/cost-calculator' },
       { label: 'Flight Finder', href: '/tools/flights' },
       { label: 'Stateroom Finder', href: '/tools/staterooms' },
       { label: 'Transfer Guide', href: '/tools/transfers' },
