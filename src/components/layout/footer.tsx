@@ -52,8 +52,8 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/tools/carbon-calculator" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
-                  Carbon Calculator
+                <Link href="/tools/credit-cards" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                  Credit Card Hack
                 </Link>
               </li>
               <li>

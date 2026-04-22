@@ -25,7 +25,7 @@ export default function AboutPage() {
         <section className="mb-16">
           <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-4">Who We Are</h2>
           <p className="font-inter text-lg text-gray-700 leading-relaxed">
-            GatGridCruises is an independent Disney cruise planning resource built for families who want transparent, honest information before committing thousands of dollars to a cruise vacation. We're not a travel agency — we don't take bookings or earn commissions on cruise sales. We're a media and tools platform, like NerdWallet for Disney cruises.
+            GatGridCruises is an independent Disney cruise planning resource built for families who want transparent, honest information before committing thousands of dollars to a cruise vacation. We partner with licensed travel advisors to help you book the perfect cruise. We're a media and tools platform, like NerdWallet for Disney cruises.
           </p>
         </section>
 

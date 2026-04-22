@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { Copy, Check } from 'lucide-react'
 
 interface Sailing {
@@ -15,6 +15,27 @@ interface Sailing {
 
 interface CostCalculatorProps {
   sailings: Sailing[]
+}
+
+const airportFlightEstimates: Record<string, number> = {
+  // West Coast
+  LAX: 350, SFO: 360, SEA: 340, PDX: 340, LAS: 300, PHX: 290, SAN: 320,
+  // Mountain
+  DEN: 300, SLC: 310,
+  // Midwest
+  ORD: 250, MDW: 250, MSP: 270, DTW: 250, CLE: 220, CMH: 230, IND: 230,
+  MKE: 260, STL: 240, CVG: 230,
+  // Texas
+  DFW: 280, IAH: 280, HOU: 270, AUS: 280, SAT: 275,
+  // Southeast (close to FL, cheaper)
+  ATL: 160, CLT: 200, GSP: 210, RDU: 210, CHS: 180, SAV: 170,
+  // Mid-Atlantic / Northeast
+  JFK: 200, LGA: 200, EWR: 200, PHL: 220, BWI: 220, IAD: 220, DCA: 220,
+  BOS: 250, PVD: 250, MHT: 250,
+  // Florida (very short or drive)
+  MCO: 0, TPA: 50, JAX: 80, MIA: 60, FLL: 60, PIE: 50,
+  // Hawaii / Alaska
+  HNL: 700, ANC: 600,
 }
 
 export function CostCalculator({ sailings }: CostCalculatorProps) {
@@ -47,6 +68,18 @@ export function CostCalculator({ sailings }: CostCalculatorProps) {
   const [bibbidiSpend, setBibbidiSpend] = useState<number>(0)
   const [kidsExtrasOther, setKidsExtrasOther] = useState<number>(0)
   const [copied, setCopied] = useState(false)
+  const [flightAutoLabel, setFlightAutoLabel] = useState<string>('')
+
+  // Auto-estimate flight cost when airport code is recognized
+  useEffect(() => {
+    const code = homeAirport.trim().toUpperCase()
+    if (code.length === 3 && airportFlightEstimates[code] !== undefined) {
+      setFlightCostPerPerson(airportFlightEstimates[code])
+      setFlightAutoLabel(code)
+    } else {
+      setFlightAutoLabel('')
+    }
+  }, [homeAirport])
 
   // Get selected sailing details
   const currentSailing = sailings.find((s) => s.id === selectedSailing)
@@ -349,6 +382,12 @@ export function CostCalculator({ sailings }: CostCalculatorProps) {
                     className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
+
+                {flightAutoLabel && (
+                  <p className="text-xs text-emerald-700 bg-emerald-50 border border-emerald-200 rounded px-3 py-2 -mt-2">
+                    ✈️ Auto-estimated round-trip cost from {flightAutoLabel} to Port Canaveral — adjust below if needed.
+                  </p>
+                )}
 
                 {/* Flight Costs */}
                 <div>
