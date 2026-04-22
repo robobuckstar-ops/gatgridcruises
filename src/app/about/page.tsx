@@ -29,12 +29,65 @@ export default function AboutPage() {
           </p>
         </section>
 
+        {/* Founder Story */}
+        <section className="mb-16">
+          <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-4">Meet Grayson</h2>
+          <div className="flex flex-col sm:flex-row gap-6 items-start">
+            <div className="flex-shrink-0">
+              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center text-white font-fraunces text-3xl font-bold select-none">
+                G
+              </div>
+            </div>
+            <div>
+              <p className="font-inter text-lg text-gray-700 leading-relaxed mb-4">
+                Hi — I'm Grayson Starbuck. By day I'm a Doctor of Physical Therapy; my wife Crystal and I run{' '}
+                <strong>Kinito Physical Therapy</strong> together. But when we're not at the clinic, we're plotting our next Disney cruise.
+              </p>
+              <p className="font-inter text-lg text-gray-700 leading-relaxed mb-4">
+                Disney cruises hit differently for our family. There's something about stepping onto that ship — the nostalgia, the magic, the way our kids light up — that nothing else quite matches. We've sailed several times now, and every trip we find ourselves wishing we had better tools to find the right sailing at the right price.
+              </p>
+              <p className="font-inter text-lg text-gray-700 leading-relaxed mb-4">
+                So I built GatGridCruises. I combined my love of technology and AI with everything I've learned as a Disney cruise enthusiast to create a site that actually helps families plan smarter — not one designed to pressure them into booking. I use AI tools to monitor prices, score deals, and surface what's genuinely worth your family's time and money.
+              </p>
+              <p className="font-inter text-lg text-gray-700 leading-relaxed">
+                When you're serious about booking, I'm personally available to help you through the final steps. You can reach me directly at{' '}
+                <a href="mailto:grayson@gatgridcruises.com" className="text-blue-600 hover:underline">grayson@gatgridcruises.com</a>.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Why This Exists */}
         <section className="mb-16">
           <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-4">Why This Exists</h2>
           <p className="font-inter text-lg text-gray-700 leading-relaxed">
             Because planning a Disney cruise is overwhelming. The real cost is always higher than the advertised price. And most "cruise deal" sites are just travel agencies in disguise. We built GatGridCruises to be different — no booking pressure, no hidden agendas, just tools and information.
           </p>
+        </section>
+
+        {/* How We Find Deals */}
+        <section className="mb-16">
+          <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-4">How We Find Deals</h2>
+          <p className="font-inter text-lg text-gray-700 leading-relaxed mb-4">
+            GatGridCruises uses AI to monitor Disney cruise pricing around the clock. Our system tracks hundreds of sailings at once — comparing current prices against historical averages, flagging meaningful drops, and scoring each deal so you can quickly tell what's genuinely worth booking and what just looks good on paper.
+          </p>
+          <p className="font-inter text-lg text-gray-700 leading-relaxed mb-6">
+            When a deal scores well, it surfaces in our weekly digest, deal alerts, and on the site's front page. When prices are elevated, we say so. The AI doesn't have an opinion on which cruise agency gets your booking — it just finds the deals.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="bg-blue-50 border border-blue-100 rounded-lg p-5">
+              <p className="font-fraunces font-bold text-slate-900 mb-1">Price Monitoring</p>
+              <p className="text-sm text-gray-600">AI tracks prices daily and compares them against historical baselines to spot real drops.</p>
+            </div>
+            <div className="bg-blue-50 border border-blue-100 rounded-lg p-5">
+              <p className="font-fraunces font-bold text-slate-900 mb-1">Deal Scoring</p>
+              <p className="text-sm text-gray-600">Every sailing gets a score based on value, timing, and demand — not gut feelings.</p>
+            </div>
+            <div className="bg-blue-50 border border-blue-100 rounded-lg p-5">
+              <p className="font-fraunces font-bold text-slate-900 mb-1">Smart Alerts</p>
+              <p className="text-sm text-gray-600">AI-curated deal alerts go out when something genuinely worth acting on appears.</p>
+            </div>
+          </div>
         </section>
 
         {/* The Name */}

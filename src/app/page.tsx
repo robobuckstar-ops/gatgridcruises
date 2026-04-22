@@ -13,6 +13,7 @@ import {
   MapPin,
   Clock,
   Trophy,
+  Bot,
 } from 'lucide-react'
 import { SailingCard } from '@/components/ui/sailing-card'
 import { EmailSignup } from '@/components/ui/email-signup'
@@ -54,13 +55,21 @@ export default async function Home() {
         </div>
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+          {/* AI badge */}
+          <div className="flex justify-center mb-5">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-100 border border-blue-200 text-blue-700 text-xs font-semibold tracking-wide">
+              <Bot className="w-3.5 h-3.5" aria-hidden="true" />
+              AI-Powered Deal Scanning
+            </span>
+          </div>
+
           <h1 className="font-fraunces text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
             Magically Valuable Disney Cruises
           </h1>
 
           <p className="font-inter text-lg md:text-xl text-slate-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Everything you need to know before you book a Disney cruise — deals watched
-            daily, honest advice, and free tools to plan smarter.
+            Our AI monitors hundreds of Disney cruise prices daily to surface the best deals —
+            honest advice, transparent pricing, and free tools to help you book smarter.
           </p>
 
           {/* Filter Pills */}
