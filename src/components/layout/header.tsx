@@ -24,7 +24,20 @@ const navItems = [
     ],
   },
   { label: 'Blog', href: '/blog' },
-  { label: 'Guides', href: '/guides' },
+  {
+    label: 'Guides',
+    href: '/guides',
+    children: [
+      { label: 'All Guides', href: '/guides' },
+      { label: 'Packing Gear', href: '/guides/packing-gear' },
+      { label: 'Travel Insurance', href: '/guides/travel-insurance' },
+      { label: 'Port Guides', href: '/guides/ports' },
+      { label: '↳ Port Canaveral', href: '/guides/ports/port-canaveral' },
+      { label: '↳ Nassau', href: '/guides/ports/nassau' },
+      { label: '↳ Castaway Cay', href: '/guides/ports/castaway-cay' },
+      { label: '↳ Cozumel', href: '/guides/ports/cozumel' },
+    ],
+  },
   { label: 'Travel Hacks', href: '/travel-hacks' },
   { label: 'Solo Cruising', href: '/solo-cruising' },
   { label: 'Hotels', href: '/hotels' },
@@ -34,11 +47,10 @@ const navItems = [
 export function Header() {
   const pathname = usePathname()
   const [mobileOpen, setMobileOpen] = useState(false)
-  const [toolsOpen, setToolsOpen] = useState(false)
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null)
   const menuRef = useRef<HTMLDivElement>(null)
   const menuButtonRef = useRef<HTMLButtonElement>(null)
 
-  // Announce menu state changes to screen readers
   const announceMenuState = (isOpen: boolean) => {
     const announcement = document.createElement('div')
     announcement.setAttribute('role', 'status')
@@ -50,7 +62,6 @@ export function Header() {
     setTimeout(() => announcement.remove(), 1000)
   }
 
-  // Handle Escape key to close menus
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
@@ -59,17 +70,16 @@ export function Header() {
           announceMenuState(false)
           menuButtonRef.current?.focus()
         }
-        if (toolsOpen) {
-          setToolsOpen(false)
+        if (openDropdown) {
+          setOpenDropdown(null)
         }
       }
     }
 
     document.addEventListener('keydown', handleEscape)
     return () => document.removeEventListener('keydown', handleEscape)
-  }, [mobileOpen, toolsOpen])
+  }, [mobileOpen, openDropdown])
 
-  // Focus trap for mobile menu
   useEffect(() => {
     if (!mobileOpen || !menuRef.current) return
 
@@ -140,28 +150,28 @@ export function Header() {
                 <div
                   key={item.label}
                   className="relative"
-                  onMouseEnter={() => setToolsOpen(true)}
-                  onMouseLeave={() => setToolsOpen(false)}
+                  onMouseEnter={() => setOpenDropdown(item.label)}
+                  onMouseLeave={() => setOpenDropdown(null)}
                 >
                   <button
                     className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-slate-700 hover:text-navy rounded-lg hover:bg-slate-50 transition-colors duration-200"
-                    aria-expanded={toolsOpen}
+                    aria-expanded={openDropdown === item.label}
                     aria-haspopup="true"
-                    aria-controls="tools-dropdown"
+                    aria-controls={`${item.label.toLowerCase()}-dropdown`}
                   >
                     {item.label}
                     <ChevronDown
                       className="h-3.5 w-3.5 transition-transform duration-200"
                       aria-hidden="true"
                       style={{
-                        transform: toolsOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+                        transform: openDropdown === item.label ? 'rotate(180deg)' : 'rotate(0deg)',
                       }}
                     />
                   </button>
-                  {toolsOpen && (
+                  {openDropdown === item.label && (
                     <div
-                      id="tools-dropdown"
-                      className="absolute top-full left-0 mt-1 w-52 bg-white rounded-lg shadow-lg border border-slate-200 py-2"
+                      id={`${item.label.toLowerCase()}-dropdown`}
+                      className="absolute top-full left-0 mt-1 w-56 bg-white rounded-lg shadow-lg border border-slate-200 py-2"
                       role="menu"
                     >
                       {item.children.map((child) => (
@@ -170,7 +180,7 @@ export function Header() {
                           href={child.href}
                           className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-navy transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-0 focus-visible:outline-blue-600"
                           role="menuitem"
-                          onClick={() => setToolsOpen(false)}
+                          onClick={() => setOpenDropdown(null)}
                         >
                           {child.label}
                         </Link>

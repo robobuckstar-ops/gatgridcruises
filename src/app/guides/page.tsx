@@ -10,6 +10,27 @@ export const metadata: Metadata = {
 
 const guides = [
   {
+    slug: 'packing-gear',
+    title: 'The Ultimate Disney Cruise Packing List (With Our Top Picks)',
+    description: 'The 30 Amazon picks that veteran Disney cruisers swear by — from magnetic hooks and non-surge power strips to reef-safe sunscreen and Sea-Band wristbands.',
+    category: 'Gear',
+    readTime: '10 min read',
+  },
+  {
+    slug: 'travel-insurance',
+    title: 'Do You Need Travel Insurance for a Disney Cruise?',
+    description: 'Disney\'s own plan vs. third-party options, what Amex Business Platinum covers, and how to think about the medical-at-sea risk most families overlook.',
+    category: 'Planning',
+    readTime: '8 min read',
+  },
+  {
+    slug: 'ports',
+    title: 'Disney Cruise Port Guides — What to Know Before You Dock',
+    description: 'In-depth guides for Port Canaveral, Nassau, Castaway Cay, and Cozumel — top excursions, nearby hotels, and insider tips for every Disney cruise port.',
+    category: 'Ports',
+    readTime: '5 min read',
+  },
+  {
     slug: 'disney-cruise-cost-guide',
     title: 'The True Cost of a Disney Cruise (2025 Breakdown)',
     description: 'What a Disney cruise really costs beyond the sticker price — gratuities, excursions, drink packages, Wi-Fi, and every hidden fee explained.',

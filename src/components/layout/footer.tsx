@@ -6,8 +6,8 @@ export function Footer() {
   return (
     <footer className="bg-slate-50 text-slate-700 border-t border-slate-200 mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        {/* Four-column grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        {/* Five-column grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
           {/* Company */}
           <div>
             <h3 className="font-display text-lg font-bold text-slate-900 mb-4">
@@ -69,6 +69,55 @@ export function Footer() {
               <li>
                 <Link href="/tools/transfers" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
                   Transfer Guide
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Guides */}
+          <div>
+            <h3 className="font-display text-lg font-bold text-slate-900 mb-4">
+              Guides
+            </h3>
+            <ul className="space-y-3">
+              <li>
+                <Link href="/guides" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                  All Guides
+                </Link>
+              </li>
+              <li>
+                <Link href="/guides/packing-gear" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                  Packing Gear
+                </Link>
+              </li>
+              <li>
+                <Link href="/guides/travel-insurance" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                  Travel Insurance
+                </Link>
+              </li>
+              <li>
+                <Link href="/guides/ports" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                  Port Guides
+                </Link>
+              </li>
+              <li>
+                <Link href="/guides/ports/port-canaveral" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                  Port Canaveral
+                </Link>
+              </li>
+              <li>
+                <Link href="/guides/ports/nassau" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                  Nassau
+                </Link>
+              </li>
+              <li>
+                <Link href="/guides/ports/castaway-cay" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                  Castaway Cay
+                </Link>
+              </li>
+              <li>
+                <Link href="/guides/ports/cozumel" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                  Cozumel
                 </Link>
               </li>
             </ul>
