@@ -17,6 +17,7 @@ import {
 import { SailingCard } from '@/components/ui/sailing-card'
 import { EmailSignup } from '@/components/ui/email-signup'
 import { GetQuoteCTA } from '@/components/get-quote-cta'
+import { HeroEmailCapture } from '@/components/ui/hero-email-capture'
 import {
   getFeaturedSailings,
   getBiggestPriceDrops,
@@ -95,6 +96,11 @@ export default async function Home() {
             >
               Calculate Trip Cost
             </Link>
+          </div>
+
+          {/* Hero Email Capture */}
+          <div className="flex justify-center mt-6 mb-2">
+            <HeroEmailCapture />
           </div>
 
           {/* Amex Affiliate Banner */}
