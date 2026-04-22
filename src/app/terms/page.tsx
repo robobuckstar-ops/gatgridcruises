@@ -17,7 +17,8 @@ export default function TermsPage() {
       </section>
 
       <section className="py-16">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 prose prose-slate max-w-none">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+        <div className="prose prose-slate">
           <h2 className="font-fraunces text-2xl font-bold text-[#1E3A5F] mb-4">Acceptance of Terms</h2>
           <p className="text-gray-600 mb-6 leading-relaxed">
             By accessing and using GatGridCruises.com, you agree to these Terms of Use. If you do not agree, please do not use the site. We reserve the right to modify these terms at any time — continued use constitutes acceptance of changes.
@@ -57,6 +58,7 @@ export default function TermsPage() {
           <p className="text-gray-600 mb-6 leading-relaxed">
             For questions about these terms, contact us at legal@gatgridcruises.com or via our <Link href="/about" className="text-[#D4AF37] hover:underline">About page</Link>.
           </p>
+        </div>
         </div>
       </section>
     </main>

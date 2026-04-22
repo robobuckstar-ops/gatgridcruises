@@ -1,12 +1,10 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { getBlogPostBySlug, getRelatedPosts, getBlogPosts } from '@/lib/data'
-import { ArrowLeft, Calendar, Clock, Share2, Twitter, Facebook, Copy } from 'lucide-react'
+import { ArrowLeft, Calendar, Clock, Twitter, Facebook } from 'lucide-react'
 
 interface BlogPostPageProps {
-  params: {
-    slug: string
-  }
+  params: Promise<{ slug: string }>
 }
 
 export async function generateStaticParams() {
@@ -17,7 +15,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: BlogPostPageProps) {
-  const post = getBlogPostBySlug(params.slug)
+  const { slug } = await params
+  const post = getBlogPostBySlug(slug)
 
   if (!post) {
     return {
@@ -31,8 +30,16 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
   }
 }
 
-export default function BlogPostPage({ params }: BlogPostPageProps) {
-  const post = getBlogPostBySlug(params.slug)
+function processMarkdown(content: string): string {
+  return content
+    .replace(/^### (.+)$/gm, '<h3 class="font-display text-xl font-semibold text-slate-900 mt-6 mb-3">$1</h3>')
+    .replace(/^## (.+)$/gm, '<h2 class="font-display text-2xl font-bold text-slate-900 mt-8 mb-4">$1</h2>')
+    .replace(/^# (.+)$/gm, '<h1 class="font-display text-3xl font-bold text-slate-900 mt-8 mb-4">$1</h1>')
+}
+
+export default async function BlogPostPage({ params }: BlogPostPageProps) {
+  const { slug } = await params
+  const post = getBlogPostBySlug(slug)
 
   if (!post) {
     notFound()
@@ -130,7 +137,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div
           className="prose prose-slate max-w-none"
-          dangerouslySetInnerHTML={{ __html: post.content }}
+          dangerouslySetInnerHTML={{ __html: processMarkdown(post.content) }}
         />
 
         {/* Tags */}
@@ -173,15 +180,6 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
               <Facebook className="h-4 w-4" />
               Facebook
             </a>
-            <button
-              onClick={() => {
-                navigator.clipboard.writeText(`https://gatgridcruises.com/blog/${post.slug}`)
-              }}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 rounded-lg hover:bg-slate-200 transition-colors font-medium"
-            >
-              <Copy className="h-4 w-4" />
-              Copy Link
-            </button>
           </div>
         </div>
       </article>

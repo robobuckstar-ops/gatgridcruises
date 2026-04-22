@@ -10,8 +10,7 @@ import { PriceChart } from '@/components/ui/price-chart'
 import { ScoreBadge } from '@/components/ui/score-badge'
 import { BuyWaitBadge } from '@/components/ui/buy-wait-badge'
 import { PriceTrend } from '@/components/ui/price-trend'
-import { AdSlot } from '@/components/ui/ad-slot'
-import { Ship, Calendar, MapPin, Clock, DollarSign, Anchor, BedDouble, Car, Building2, ArrowRight, Check, X as XIcon, Info, TrendingDown, TrendingUp } from 'lucide-react'
+import { Ship, Calendar, MapPin, Clock, DollarSign, Anchor, BedDouble, Car, Building2, ArrowRight, Check, X as XIcon, Info, TrendingDown, TrendingUp, ExternalLink } from 'lucide-react'
 
 interface PageProps {
   params: Promise<{ id: string }>
@@ -39,7 +38,6 @@ export default async function SailingDetailPage({ params }: PageProps) {
   const hotels = port ? getHotelsForPort(port.id).slice(0, 5) : []
   const transfers = port ? getTransfersForPort(port.id) : []
 
-  // Calculate average price from snapshots
   const avgPrice = snapshots.length > 0
     ? snapshots.reduce((sum, s) => sum + s.lowest_price, 0) / snapshots.length
     : sailing.current_lowest_price
@@ -106,17 +104,25 @@ export default async function SailingDetailPage({ params }: PageProps) {
                   <div className="flex justify-between"><span className="text-slate-600">Concierge</span><span className="font-medium">{formatPrice(sailing.current_concierge_price)}</span></div>
                 )}
               </div>
+              {/* Check Price on DCL */}
+              <div className="mt-4 pt-3 border-t border-blue-100">
+                <a
+                  href="https://disneycruise.disney.go.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 w-full px-4 py-2.5 bg-blue-600 text-white font-semibold text-sm rounded-lg hover:bg-blue-700 transition-colors"
+                >
+                  Check Price on Disney Cruise Line
+                  <ExternalLink className="h-4 w-4" />
+                </a>
+                <p className="text-[10px] text-slate-400 mt-2 text-center">Opens official Disney Cruise Line site</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Ad slot */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        <AdSlot location="sailing_top_banner" size="728x90" />
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 pt-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Main content - 2/3 */}
           <div className="lg:col-span-2 space-y-10">
@@ -141,12 +147,10 @@ export default async function SailingDetailPage({ params }: PageProps) {
             <section>
               <h2 className="font-display text-2xl font-bold text-slate-900 mb-4">Price Analysis</h2>
               <div className="space-y-4">
-                {/* Price History Chart */}
                 <div className="bg-white border border-slate-200 rounded-xl p-5">
                   <PriceChart snapshots={snapshots} currentPrice={sailing.current_lowest_price} />
                 </div>
 
-                {/* Buy/Wait Recommendation */}
                 {snapshots.length >= 2 && (
                   <div className="bg-white border border-slate-200 rounded-xl p-5">
                     <h3 className="font-display text-lg font-semibold text-slate-900 mb-3">Timing Recommendation</h3>
@@ -156,7 +160,7 @@ export default async function SailingDetailPage({ params }: PageProps) {
               </div>
             </section>
 
-            {/* Price Breakdown - Out the Door Pricing */}
+            {/* Price Breakdown */}
             <section>
               <h2 className="font-display text-2xl font-bold text-slate-900 mb-4">Total Cost Breakdown</h2>
               <div className="bg-white border border-slate-200 rounded-xl overflow-hidden">
@@ -231,7 +235,7 @@ export default async function SailingDetailPage({ params }: PageProps) {
               </div>
             </section>
 
-            {/* What's Included vs Extra (if ship data exists) */}
+            {/* What's Included vs Extra */}
             {ship && (
               <section>
                 <h2 className="font-display text-2xl font-bold text-slate-900 mb-4">What&apos;s Included vs. Extra</h2>
@@ -305,6 +309,23 @@ export default async function SailingDetailPage({ params }: PageProps) {
 
           {/* Sidebar - 1/3 */}
           <div className="space-y-6">
+            {/* Check Price CTA */}
+            <div className="bg-blue-600 rounded-xl p-5 text-white">
+              <h3 className="font-display text-lg font-semibold mb-2">Ready to Check Pricing?</h3>
+              <p className="text-sm text-blue-100 mb-4">
+                Verify the latest availability and pricing directly on Disney Cruise Line&apos;s official site.
+              </p>
+              <a
+                href="https://disneycruise.disney.go.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 w-full justify-center px-4 py-2.5 bg-white text-blue-600 font-semibold text-sm rounded-lg hover:bg-blue-50 transition-colors"
+              >
+                Check Price on Disney Cruise Line
+                <ExternalLink className="h-4 w-4" />
+              </a>
+            </div>
+
             {/* Cost Calculator CTA */}
             <div className="bg-slate-50 border border-slate-200 rounded-xl p-5">
               <h3 className="font-display text-lg font-semibold text-slate-900 mb-2">What Will This Trip Really Cost?</h3>
@@ -366,21 +387,6 @@ export default async function SailingDetailPage({ params }: PageProps) {
                 )}
               </div>
             )}
-
-            {/* Sidebar ad */}
-            <AdSlot location="sailing_sidebar" size="300x250" />
-
-            {/* Featured travel specialist stub */}
-            <div className="bg-[#D4AF37]/10 border border-[#D4AF37]/30 rounded-xl p-5">
-              <h3 className="font-display text-lg font-semibold text-slate-900 mb-2">Find a Disney Specialist</h3>
-              <p className="text-sm text-slate-600 mb-3">
-                Ready to book? A Disney-focused travel agent can help you get the best deal and perks.
-              </p>
-              <div className="bg-white/60 border border-dashed border-gold/40 rounded-lg p-3 text-center">
-                <p className="text-xs text-slate-400 italic">Example placement — your agency here</p>
-                <p className="text-[10px] text-slate-300 mt-1">Sponsored</p>
-              </div>
-            </div>
           </div>
         </div>
       </div>

@@ -1,9 +1,7 @@
-'use client';
-
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, CheckCircle2, AlertCircle } from 'lucide-react';
-import AdSlot from '@/components/ui/ad-slot';
+import { AdSlot } from '@/components/ui/ad-slot';
 
 export const metadata: Metadata = {
   title: 'Disney Cruise with Toddlers: Complete Parent\'s Guide | GatGrid Cruises',

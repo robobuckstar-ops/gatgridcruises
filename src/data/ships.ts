@@ -70,8 +70,7 @@ export const ships: Ship[] = [
       {
         category: 'Adult Dining',
         items: [
-          { name: 'Palo (Italian)', price_range: '$45 per person' },
-          { name: 'Remy (French)', price_range: '$125 per person' }
+          { name: 'Palo (Italian)', price_range: '$45 per person' }
         ]
       },
       {
@@ -189,8 +188,7 @@ export const ships: Ship[] = [
       {
         category: 'Adult Dining',
         items: [
-          { name: 'Palo (Italian)', price_range: '$45 per person' },
-          { name: 'Remy (French)', price_range: '$125 per person' }
+          { name: 'Palo (Italian)', price_range: '$45 per person' }
         ]
       },
       {

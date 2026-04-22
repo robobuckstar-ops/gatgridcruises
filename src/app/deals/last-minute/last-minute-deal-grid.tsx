@@ -136,7 +136,7 @@ export function LastMinuteDealGrid({ deals: initialDeals, ships, ports }: LastMi
             </div>
           </div>
           <h1 className="font-fraunces text-5xl md:text-6xl font-bold text-slate-900 mb-4">
-            ⚡ 90-Day Ticker
+            ⚡ Flash Deals
           </h1>
           <p className="text-xl text-slate-700 mb-2 max-w-2xl mx-auto">
             Last-minute sailings at steep discounts

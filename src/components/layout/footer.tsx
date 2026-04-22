@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { ReportIssueForm } from '@/components/ui/report-issue-form'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -159,6 +160,11 @@ export function Footer() {
           <p className="text-slate-500">
             <span className="text-slate-900 font-semibold">Not Financial Advice:</span> The information and tools on GatGridCruises are provided for informational purposes only and do not constitute financial, investment, or travel advice. Always verify current prices and policies directly with Disney Cruise Line before making booking decisions.
           </p>
+        </div>
+
+        {/* Report an Issue */}
+        <div className="border-t border-slate-200 pt-6 mb-6">
+          <ReportIssueForm />
         </div>
 
         {/* Copyright */}

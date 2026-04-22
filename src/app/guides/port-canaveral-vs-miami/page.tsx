@@ -1,9 +1,7 @@
-'use client';
-
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, MapPin, Clock, DollarSign } from 'lucide-react';
-import AdSlot from '@/components/ui/ad-slot';
+import { AdSlot } from '@/components/ui/ad-slot';
 
 export const metadata: Metadata = {
   title: 'Port Canaveral vs. Miami: Which Disney Cruise Port Is Better? | GatGrid Cruises',
