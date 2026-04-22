@@ -1,7 +1,45 @@
 'use client'
 
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useRef, useEffect } from 'react'
 import { ArrowRight, Plane, AlertCircle, Info } from 'lucide-react'
+
+const US_AIRPORTS = [
+  { code: 'ATL', city: 'Atlanta, GA' },
+  { code: 'BOS', city: 'Boston, MA' },
+  { code: 'BWI', city: 'Baltimore, MD' },
+  { code: 'CLT', city: 'Charlotte, NC' },
+  { code: 'DAL', city: 'Dallas Love Field, TX' },
+  { code: 'DEN', city: 'Denver, CO' },
+  { code: 'DFW', city: 'Dallas/Fort Worth, TX' },
+  { code: 'DTW', city: 'Detroit, MI' },
+  { code: 'EWR', city: 'Newark, NJ' },
+  { code: 'HNL', city: 'Honolulu, HI' },
+  { code: 'IAH', city: 'Houston Intercontinental, TX' },
+  { code: 'JFK', city: 'New York JFK, NY' },
+  { code: 'LAS', city: 'Las Vegas, NV' },
+  { code: 'LAX', city: 'Los Angeles, CA' },
+  { code: 'LGA', city: 'New York LaGuardia, NY' },
+  { code: 'MCO', city: 'Orlando, FL' },
+  { code: 'MDW', city: 'Chicago Midway, IL' },
+  { code: 'MIA', city: 'Miami, FL' },
+  { code: 'MSP', city: 'Minneapolis, MN' },
+  { code: 'MSY', city: 'New Orleans, LA' },
+  { code: 'OAK', city: 'Oakland, CA' },
+  { code: 'ORD', city: 'Chicago O\'Hare, IL' },
+  { code: 'PDX', city: 'Portland, OR' },
+  { code: 'PHL', city: 'Philadelphia, PA' },
+  { code: 'PHX', city: 'Phoenix, AZ' },
+  { code: 'PIT', city: 'Pittsburgh, PA' },
+  { code: 'RDU', city: 'Raleigh-Durham, NC' },
+  { code: 'SAN', city: 'San Diego, CA' },
+  { code: 'SEA', city: 'Seattle, WA' },
+  { code: 'SFO', city: 'San Francisco, CA' },
+  { code: 'SJC', city: 'San Jose, CA' },
+  { code: 'SLC', city: 'Salt Lake City, UT' },
+  { code: 'SMF', city: 'Sacramento, CA' },
+  { code: 'STL', city: 'St. Louis, MO' },
+  { code: 'TPA', city: 'Tampa, FL' },
+]
 
 interface SailingOption {
   id: string
@@ -161,9 +199,32 @@ export function FlightFinder({
   ports: PortOption[]
 }) {
   const [homeAirport, setHomeAirport] = useState('')
+  const [airportInputValue, setAirportInputValue] = useState('')
+  const [showAirportDropdown, setShowAirportDropdown] = useState(false)
+  const airportRef = useRef<HTMLDivElement>(null)
   const [selectedSailing, setSelectedSailing] = useState<string | null>(null)
   const [selectedPort, setSelectedPort] = useState<string | null>(null)
   const [customDepartureDate, setCustomDepartureDate] = useState<string | null>(null)
+
+  // Close airport dropdown on outside click
+  useEffect(() => {
+    function handleClick(e: MouseEvent) {
+      if (airportRef.current && !airportRef.current.contains(e.target as Node)) {
+        setShowAirportDropdown(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClick)
+    return () => document.removeEventListener('mousedown', handleClick)
+  }, [])
+
+  // Filter airports by input
+  const filteredAirports = useMemo(() => {
+    const q = airportInputValue.toUpperCase()
+    if (!q) return US_AIRPORTS.slice(0, 8)
+    return US_AIRPORTS.filter(
+      a => a.code.startsWith(q) || a.city.toUpperCase().includes(q)
+    ).slice(0, 8)
+  }, [airportInputValue])
 
   // Derive values based on selections
   const selectedSailingObj = sailings.find(s => s.id === selectedSailing)
@@ -242,19 +303,49 @@ export function FlightFinder({
 
           <div className="grid md:grid-cols-2 gap-8">
             {/* Home Airport */}
-            <div>
+            <div ref={airportRef} className="relative">
               <label className="block text-sm font-semibold text-slate-700 mb-2">
                 Your Home Airport
               </label>
               <input
                 type="text"
-                value={homeAirport}
-                onChange={e => setHomeAirport(e.target.value.toUpperCase())}
-                placeholder="e.g., ORD, LAX, ATL"
-                maxLength={3}
+                value={airportInputValue}
+                onChange={e => {
+                  setAirportInputValue(e.target.value)
+                  setShowAirportDropdown(true)
+                  if (e.target.value.length !== 3) setHomeAirport('')
+                }}
+                onFocus={() => setShowAirportDropdown(true)}
+                placeholder="Search by code or city (e.g., ORD, Chicago)"
                 className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:ring-offset-0"
+                autoComplete="off"
               />
-              <p className="text-xs text-slate-500 mt-2">Enter 3-letter airport code</p>
+              {homeAirport && (
+                <p className="text-xs text-emerald-600 mt-1 font-medium">
+                  ✓ {homeAirport} selected
+                </p>
+              )}
+              {showAirportDropdown && filteredAirports.length > 0 && (
+                <ul className="absolute z-10 w-full mt-1 bg-white border border-slate-200 rounded-lg shadow-lg max-h-56 overflow-y-auto">
+                  {filteredAirports.map(airport => (
+                    <li key={airport.code}>
+                      <button
+                        type="button"
+                        className="w-full flex items-center gap-3 px-4 py-2.5 text-left hover:bg-blue-50 transition-colors"
+                        onMouseDown={e => {
+                          e.preventDefault()
+                          setHomeAirport(airport.code)
+                          setAirportInputValue(`${airport.code} — ${airport.city}`)
+                          setShowAirportDropdown(false)
+                        }}
+                      >
+                        <span className="font-mono font-bold text-blue-600 w-10 shrink-0">{airport.code}</span>
+                        <span className="text-sm text-slate-600">{airport.city}</span>
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
 
             {/* Sailing or Manual Port Selection */}
