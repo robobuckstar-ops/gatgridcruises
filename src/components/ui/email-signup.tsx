@@ -5,6 +5,7 @@ import { Mail, ArrowRight, Check, AlertCircle } from 'lucide-react'
 
 export function EmailSignup() {
   const [email, setEmail] = useState('')
+  const [honeypot, setHoneypot] = useState('')
   const [submitted, setSubmitted] = useState(false)
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
@@ -24,7 +25,7 @@ export function EmailSignup() {
       const response = await fetch('/api/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, preferences: {} }),
+        body: JSON.stringify({ email, preferences: {}, _honeypot: honeypot }),
       })
 
       const data = await response.json()
@@ -81,6 +82,9 @@ export function EmailSignup() {
         </div>
       )}
       <form onSubmit={handleSubmit} className="flex gap-2" role="region" aria-label="Email subscription form">
+        <div style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0 }} aria-hidden="true">
+          <input type="text" name="website" value={honeypot} onChange={e => setHoneypot(e.target.value)} tabIndex={-1} autoComplete="off" />
+        </div>
         <label htmlFor="email-input" className="sr-only">
           Email address
         </label>

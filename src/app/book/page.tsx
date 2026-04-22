@@ -5,6 +5,8 @@ import { Shield, Star, Phone } from 'lucide-react'
 
 export default function BookPage() {
   const [submitted, setSubmitted] = useState(false)
+  const [honeypot, setHoneypot] = useState('')
+  const [formError, setFormError] = useState('')
   const [form, setForm] = useState({
     fullName: '',
     email: '',
@@ -46,7 +48,11 @@ export default function BookPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    console.log('Booking inquiry submitted:', form)
+    setFormError('')
+    if (honeypot) return
+    if (!form.fullName.trim()) { setFormError('Please enter your full name.'); return }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!form.email || !emailRegex.test(form.email)) { setFormError('Please enter a valid email address.'); return }
     setSubmitted(true)
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
@@ -121,6 +127,12 @@ export default function BookPage() {
           </div>
 
           <form onSubmit={handleSubmit} className="p-8 space-y-8">
+            <div style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0 }} aria-hidden="true">
+              <input type="text" name="website" value={honeypot} onChange={e => setHoneypot(e.target.value)} tabIndex={-1} autoComplete="off" />
+            </div>
+            {formError && (
+              <div className="p-3 bg-red-50 border border-red-200 rounded-lg text-sm text-red-700" role="alert">{formError}</div>
+            )}
 
             {/* Contact Info */}
             <div>

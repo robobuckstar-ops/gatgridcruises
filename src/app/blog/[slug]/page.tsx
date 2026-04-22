@@ -3,6 +3,8 @@ import Link from 'next/link'
 import { getBlogPostBySlug, getRelatedPosts, getBlogPosts } from '@/lib/data'
 import { ArrowLeft, Calendar, Clock } from 'lucide-react'
 import { ShareButtons } from './share-buttons'
+import { StructuredData } from '@/components/ui/structured-data'
+import { generateArticleSchema, generateBreadcrumbSchema } from '@/lib/structured-data'
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -27,9 +29,26 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
     }
   }
 
+  const canonical = `https://gatgridcruises.com/blog/${post.slug}`
   return {
-    title: `${post.title} | GatGridCruises Blog`,
+    title: `${post.title} | GatGridCruises`,
     description: post.excerpt,
+    alternates: { canonical },
+    openGraph: {
+      type: 'article',
+      url: canonical,
+      title: post.title,
+      description: post.excerpt,
+      publishedTime: post.published_date,
+      authors: [post.author],
+      images: post.featured_image_url ? [{ url: post.featured_image_url }] : [],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt,
+      images: post.featured_image_url ? [post.featured_image_url] : [],
+    },
   }
 }
 
@@ -53,8 +72,24 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   const colors = categoryColors[post.category]
 
+  const baseUrl = 'https://gatgridcruises.com'
+
   return (
     <main className="min-h-screen bg-white">
+      <StructuredData data={generateArticleSchema({
+        title: post.title,
+        description: post.excerpt,
+        content: post.content,
+        slug: post.slug,
+        publishedAt: post.published_date,
+        author: { name: post.author },
+        image: post.featured_image_url,
+      })} />
+      <StructuredData data={generateBreadcrumbSchema([
+        { name: 'Home', url: baseUrl },
+        { name: 'Blog', url: `${baseUrl}/blog` },
+        { name: post.title, url: `${baseUrl}/blog/${post.slug}` },
+      ])} />
       {/* Hero Section */}
       <div className="bg-gradient-to-br from-blue-50 via-white to-indigo-50 pt-8 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

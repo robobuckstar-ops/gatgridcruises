@@ -1,5 +1,20 @@
 import type { Sailing, Ship } from '@/types/database'
 
+export function generateOrganizationSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'GatGridCruises',
+    url: 'https://gatgridcruises.com',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://gatgridcruises.com/favicon.svg',
+    },
+    description: 'Disney cruise planning tools, deal tracking, and honest advice updated daily.',
+    sameAs: [],
+  }
+}
+
 export function generateWebsiteSchema() {
   return {
     '@context': 'https://schema.org',
