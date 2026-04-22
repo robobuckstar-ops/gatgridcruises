@@ -153,6 +153,17 @@ export default async function SailingDetailPage({ params }: PageProps) {
                     <BuyWaitBadge currentPrice={sailing.current_lowest_price} snapshots={snapshots} sailDate={sailing.sail_date} />
                   </div>
                 )}
+
+                {/* Link to price tracker */}
+                <div className="flex items-center justify-end">
+                  <Link
+                    href="/price-tracker"
+                    className="text-sm text-blue-600 hover:text-blue-800 font-medium flex items-center gap-1 transition-colors"
+                  >
+                    <TrendingDown className="w-4 h-4" />
+                    Compare prices across all sailings →
+                  </Link>
+                </div>
               </div>
             </section>
 

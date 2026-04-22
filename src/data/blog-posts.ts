@@ -107,6 +107,10 @@ Alternatively, drive to your port of embarkation if feasible. This eliminates ai
 
 Disney cruises represent exceptional value when you consider what's included—meals, entertainment, and accommodations all in one price. By employing these strategies, you can reduce your per-person costs while still experiencing the magic that makes Disney Cruise Line special.
 
+## One More: Protect What You've Saved
+
+All the money-saving strategies above mean nothing if an emergency forces you to cancel or cut your cruise short. A Disney cruise represents a $3,000–$15,000+ investment per family — and Disney's cancellation policy becomes fully non-refundable 89 days out. A comprehensive <a href="/guides/travel-insurance">cruise travel insurance policy</a> typically costs 4–8% of your trip and can recover the entire fare if you cancel for a covered reason. For September sailings during hurricane season, it's especially valuable. Don't save $800 on airfare only to lose $10,000 to an uncovered cancellation.
+
 </div>
     `.trim(),
   },
@@ -143,6 +147,8 @@ The pool decks are less congested, making it easier to find a lounger. Specialty
 September falls within hurricane season, which is why many cruise lines discount rates. However, hurricanes are statistically rare, and modern ships are equipped to navigate around weather patterns. Disney's itineraries are carefully planned to minimize risk, and the line has excellent protocols for guest safety.
 
 The reality? September weather in the Caribbean is typically sunny with afternoon showers—perfect vacation conditions. You'll experience the same warm tropical climate and beautiful ocean days as you would in any other season.
+
+One caveat: hurricane season does introduce meaningful cancellation risk. If Disney cancels your sailing due to a storm, they'll refund your cruise fare — but your non-refundable flights and pre-cruise hotel won't automatically be covered. This is exactly why <a href="/guides/travel-insurance">travel insurance becomes especially important for September sailings</a>. The cost is typically 4–8% of your trip and can recover your entire non-refundable investment.
 
 ## Strategic Booking
 
