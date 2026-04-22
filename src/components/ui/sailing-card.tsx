@@ -7,7 +7,7 @@ import { formatPrice, formatDate, cn } from '@/lib/utils'
 import { calculateDealScore } from '@/lib/deal-score'
 import { getOutTheDoorTotal } from '@/lib/pricing'
 import { DealScoreBadge } from './deal-score-badge'
-import { Ship, Calendar, MapPin, ChevronDown } from 'lucide-react'
+import { Ship, Calendar, MapPin, ChevronDown, Bot } from 'lucide-react'
 
 interface SailingCardProps {
   sailing: Sailing
@@ -66,8 +66,14 @@ export function SailingCard({ sailing, percentBelow }: SailingCardProps) {
             size="md"
           />
 
-          {/* Recommendation Pill */}
+          {/* Recommendation Pill + AI Pick badge */}
           <div className="flex-1 flex items-center justify-end gap-2">
+            {(dealScore.recommendation === 'strong-buy' || dealScore.recommendation === 'buy') && (
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-violet-50 border border-violet-200 text-violet-700 text-xs font-semibold">
+                <Bot className="w-3 h-3" aria-hidden="true" />
+                AI Pick
+              </span>
+            )}
             <span
               className={cn(
                 'inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold border',
