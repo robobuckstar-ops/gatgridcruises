@@ -11,7 +11,7 @@ import { ScoreBadge } from '@/components/ui/score-badge'
 import { BuyWaitBadge } from '@/components/ui/buy-wait-badge'
 import { PriceTrend } from '@/components/ui/price-trend'
 import { AdSlot } from '@/components/ui/ad-slot'
-import { Ship, Calendar, MapPin, Clock, DollarSign, Anchor, BedDouble, Car, Building2, ArrowRight, Check, X as XIcon, Info, TrendingDown, TrendingUp } from 'lucide-react'
+import { Ship, Calendar, MapPin, Clock, DollarSign, Anchor, BedDouble, Car, Building2, ArrowRight, Check, X as XIcon, Info, TrendingDown, TrendingUp, ShoppingBag } from 'lucide-react'
 
 interface PageProps {
   params: Promise<{ id: string }>
@@ -301,6 +301,38 @@ export default async function SailingDetailPage({ params }: PageProps) {
                 </Link>
               </section>
             )}
+
+            {/* Packing guide promo */}
+            <section className="border border-slate-200 rounded-xl p-5 bg-slate-50/60">
+              <div className="flex items-start gap-3 mb-4">
+                <div className="flex-shrink-0 w-9 h-9 bg-blue-50 border border-blue-100 rounded-lg flex items-center justify-center">
+                  <ShoppingBag className="h-5 w-5 text-blue-500" />
+                </div>
+                <div>
+                  <h3 className="font-display text-base font-semibold text-slate-900">Prepping for Your Voyage?</h3>
+                  <p className="text-sm text-slate-500 mt-0.5">Check out our curated list of Disney cruise must-haves</p>
+                </div>
+              </div>
+              <div className="grid grid-cols-3 gap-3 mb-4">
+                {[
+                  { name: 'Magnetic Hooks', emoji: '🧲', note: 'Stateroom essential' },
+                  { name: 'Cruise Lanyard', emoji: '🏷️', note: 'Key to the World card' },
+                  { name: 'Reef-Safe Sunscreen', emoji: '☀️', note: 'Required at Castaway Cay' },
+                ].map((item) => (
+                  <div key={item.name} className="bg-white border border-slate-200 rounded-lg p-3 text-center">
+                    <span className="text-2xl block mb-1">{item.emoji}</span>
+                    <p className="text-xs font-medium text-slate-800">{item.name}</p>
+                    <p className="text-[10px] text-slate-400 mt-0.5">{item.note}</p>
+                  </div>
+                ))}
+              </div>
+              <Link
+                href="/guides/packing-gear"
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-blue-600 hover:text-blue-700 transition-colors"
+              >
+                See the full packing list <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
+            </section>
           </div>
 
           {/* Sidebar - 1/3 */}
