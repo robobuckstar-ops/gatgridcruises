@@ -178,10 +178,9 @@ export function StateroomFinder({ ships, stateroomsByShip }: StateroomFinderProp
                     onClick={() => setSelectedShipId(ship.id)}
                     className={`px-4 py-2 rounded-lg font-medium transition ${
                       selectedShipId === ship.id
-                        ? 'text-white'
+                        ? 'bg-blue-600 text-white'
                         : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
                     }`}
-                    className={selectedShipId === ship.id ? 'bg-blue-600' : undefined}
                   >
                     {ship.name}
                     {!stateroomsByShip[ship.id] || stateroomsByShip[ship.id].length === 0 ? (
@@ -211,10 +210,9 @@ export function StateroomFinder({ ships, stateroomsByShip }: StateroomFinderProp
                       }}
                       className={`px-3 py-1.5 rounded-lg text-sm font-medium transition ${
                         selectedCategories.includes(cat)
-                          ? 'text-white'
+                          ? 'bg-blue-600 text-white'
                           : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
                       }`}
-                      className={selectedCategories.includes(cat) ? 'bg-blue-600' : undefined}
                     >
                       {cat}
                     </button>
@@ -240,10 +238,9 @@ export function StateroomFinder({ ships, stateroomsByShip }: StateroomFinderProp
                       }}
                       className={`px-3 py-1.5 rounded-lg text-sm font-medium transition capitalize ${
                         selectedPositions.includes(pos)
-                          ? 'text-white'
+                          ? 'bg-blue-600 text-white'
                           : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
                       }`}
-                      className={selectedPositions.includes(pos) ? 'bg-blue-600' : undefined}
                     >
                       {pos}
                     </button>
@@ -325,10 +322,9 @@ export function StateroomFinder({ ships, stateroomsByShip }: StateroomFinderProp
                 onClick={() => setOnlyAccessible(!onlyAccessible)}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition ${
                   onlyAccessible
-                    ? 'text-white'
+                    ? 'bg-blue-600 text-white'
                     : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
                 }`}
-                className={onlyAccessible ? 'bg-blue-600' : undefined}
               >
                 ♿ Accessible Only
               </button>
@@ -336,10 +332,9 @@ export function StateroomFinder({ ships, stateroomsByShip }: StateroomFinderProp
                 onClick={() => setOnlyConnecting(!onlyConnecting)}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition ${
                   onlyConnecting
-                    ? 'text-white'
+                    ? 'bg-blue-600 text-white'
                     : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
                 }`}
-                className={onlyConnecting ? 'bg-blue-600' : undefined}
               >
                 🔗 Connecting Rooms
               </button>
@@ -363,10 +358,9 @@ export function StateroomFinder({ ships, stateroomsByShip }: StateroomFinderProp
                     onClick={() => setSortBy(option.value)}
                     className={`px-3 py-1.5 rounded-lg text-sm font-medium transition ${
                       sortBy === option.value
-                        ? 'text-white'
+                        ? 'bg-blue-600 text-white'
                         : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
                     }`}
-                    className={sortBy === option.value ? 'bg-blue-600' : undefined}
                   >
                     {option.label}
                   </button>

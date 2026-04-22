@@ -78,8 +78,8 @@ export const CARD_REFERRAL_LINKS: Record<string, string | null> = {
   'chase-ink-business-preferred': null,
 
   // ── American Express ───────────────────────────────────────
-  /** Amex Business Platinum — add your link when you have it */
-  'amex-business-platinum':    null,
+  /** Amex Business Platinum referral link */
+  'amex-business-platinum':    'https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS',
 
   /** Amex Gold — add your link when you have it */
   'amex-gold':                 null,

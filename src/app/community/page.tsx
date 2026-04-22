@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Users, MessageSquare, Heart } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Community | GatGrid Cruises',
+  title: 'Community — Disney Cruisers Hub',
   description: 'Join the GatGrid Cruises community. Connect with fellow Disney cruisers, share tips, and plan your next adventure together.',
 }
 

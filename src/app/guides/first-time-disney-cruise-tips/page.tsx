@@ -1,12 +1,10 @@
-'use client';
-
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, CheckCircle2, Lightbulb } from 'lucide-react';
 import AdSlot from '@/components/ui/ad-slot';
 
 export const metadata: Metadata = {
-  title: '25 Things to Know Before Your First Disney Cruise | GatGrid Cruises',
+  title: '25 Things to Know Before Your First Disney Cruise',
   description: 'Complete first-time Disney cruiser guide covering rotational dining, Navigator app, Pirate Night, Castaway Cay, gratuities, kids clubs, and 19 more essential tips.',
 };
 

@@ -1,12 +1,10 @@
-'use client';
-
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, DollarSign, TrendingUp } from 'lucide-react';
 import AdSlot from '@/components/ui/ad-slot';
 
 export const metadata: Metadata = {
-  title: 'The True Cost of a Disney Cruise (2025 Breakdown) | GatGrid Cruises',
+  title: 'The True Cost of a Disney Cruise (2025 Breakdown)',
   description: 'Complete breakdown of Disney cruise costs including base fares, gratuities, drinks, excursions, specialty dining, and hidden fees. Plus sample family budget and cost calculator.',
 };
 

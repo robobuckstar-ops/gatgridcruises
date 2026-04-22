@@ -1,12 +1,10 @@
-'use client';
-
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, Home, MapPin, Wind } from 'lucide-react';
 import AdSlot from '@/components/ui/ad-slot';
 
 export const metadata: Metadata = {
-  title: 'Best Disney Cruise Staterooms: Category Guide | GatGrid Cruises',
+  title: 'Best Disney Cruise Staterooms: Complete Category Guide',
   description: 'Complete guide to Disney cruise cabin categories, locations, and features. Compare inside, oceanview, verandah, and concierge suites.',
 };
 

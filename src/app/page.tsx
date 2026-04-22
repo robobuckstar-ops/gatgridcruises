@@ -1,13 +1,9 @@
 import Link from 'next/link'
 import {
-  Anchor,
   TrendingDown,
   Calculator,
   Plane,
-  BedDouble,
   ArrowRight,
-  Ship,
-  Star,
   Zap,
   Search,
   Leaf,
@@ -24,7 +20,6 @@ import {
   getShips,
   getLastMinuteDeals,
 } from '@/lib/data'
-import { formatPrice } from '@/lib/utils'
 
 export const metadata = {
   title: 'GatGridCruises — Magically Valuable Disney Cruises',
@@ -47,45 +42,47 @@ export default async function Home() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-indigo-50 text-slate-900 py-20 md:py-28">
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-10 right-10 w-72 h-72 bg-blue-400 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-indigo-400 rounded-full blur-3xl"></div>
+      <section className="relative overflow-hidden bg-gradient-to-b from-slate-900 via-blue-950 to-slate-900 text-white py-24 md:py-36">
+        <div className="absolute inset-0 opacity-20 pointer-events-none">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500 rounded-full blur-[120px]"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-500 rounded-full blur-[120px]"></div>
         </div>
 
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="font-fraunces text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
-            Magically Valuable Disney Cruises
+        <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
+          {/* Trust signal pill */}
+          <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-blue-100 text-sm font-medium px-4 py-1.5 rounded-full mb-8 backdrop-blur-sm">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            Prices watched daily · No booking pressure · Free tools
+          </div>
+
+          <h1 className="font-fraunces text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight leading-[1.05]">
+            The Smarter Way to<br className="hidden md:block" /> Plan a Disney Cruise
           </h1>
 
-          <p className="font-inter text-lg md:text-xl text-slate-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Everything you need to know before you book a Disney cruise — deals watched
-            daily, honest advice, and free tools to plan smarter.
+          <p className="font-inter text-lg md:text-xl text-blue-100 mb-10 max-w-2xl mx-auto leading-relaxed">
+            Real-time deal tracking, honest guides, and free tools — everything you need
+            before you book Disney Cruise Line.
           </p>
 
           {/* AI Search Bar */}
-          <div className="mb-12">
+          <div className="mb-10 max-w-2xl mx-auto">
             <HeroSearch />
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link
               href="/deals"
-              className="inline-flex items-center justify-center px-8 py-3 rounded-lg bg-[#D4AF37] text-slate-900 font-semibold hover:bg-yellow-300 transition-colors duration-200"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-lg bg-[#D4AF37] text-slate-900 font-semibold hover:bg-yellow-300 transition-colors duration-200 shadow-lg shadow-yellow-900/20"
             >
-              Browse Deals
+              <TrendingDown className="w-4 h-4" aria-hidden="true" />
+              View Current Deals
             </Link>
             <Link
               href="/tools/cost-calculator"
-              className="inline-flex items-center justify-center px-8 py-3 rounded-lg border-2 border-blue-600 text-blue-600 font-semibold hover:bg-blue-600 hover:text-white transition-colors duration-200"
+              className="inline-flex items-center justify-center px-8 py-3.5 rounded-lg bg-white/10 border border-white/25 text-white font-semibold hover:bg-white/20 transition-colors duration-200 backdrop-blur-sm"
             >
               Calculate Trip Cost
             </Link>
-          </div>
-
-          {/* Ad Slot */}
-          <div className="flex justify-center mt-8">
-            <AdSlot width={728} height={90} />
           </div>
         </div>
       </section>
