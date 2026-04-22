@@ -7,7 +7,6 @@ import { Menu, X, ChevronDown } from 'lucide-react'
 import { SrOnly } from '@/components/ui/sr-only'
 
 const navItems = [
-  { label: 'Search', href: '/search' },
   { label: 'Deals', href: '/deals' },
   { label: 'Last-Minute', href: '/deals/last-minute' },
   { label: 'Ships', href: '/ships' },
@@ -126,6 +125,14 @@ export function Header() {
             </span>
           </Link>
 
+          {/* Get a Quote CTA — desktop */}
+          <Link
+            href="/book"
+            className="hidden md:inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#D4AF37] text-[#1E3A5F] text-sm font-bold hover:bg-yellow-300 transition-colors duration-200 shadow-sm"
+          >
+            Get a Quote
+          </Link>
+
           {/* Desktop nav */}
           <nav aria-label="Main navigation" className="hidden md:flex items-center gap-1">
             {navItems.map((item) =>
@@ -216,6 +223,13 @@ export function Header() {
           aria-label="Mobile navigation"
         >
           <nav className="px-4 py-4 space-y-1">
+            <Link
+              href="/book"
+              onClick={() => { setMobileOpen(false); announceMenuState(false) }}
+              className="block px-3 py-2.5 text-base font-bold rounded-lg bg-[#D4AF37] text-[#1E3A5F] text-center mb-2"
+            >
+              Get a Free Quote
+            </Link>
             {navItems.map((item) => (
               <div key={item.label}>
                 <Link

@@ -41,8 +41,8 @@ export function SailingCard({ sailing, percentBelow }: SailingCardProps) {
   }
 
   const recommendationLabels = {
-    'strong-buy': 'Strong Buy',
-    buy: 'Buy',
+    'strong-buy': 'Hot Deal',
+    buy: 'Great Deal',
     fair: 'Fair',
     wait: 'Wait',
     overpriced: 'Skip',

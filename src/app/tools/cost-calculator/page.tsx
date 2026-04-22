@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import { getSailings } from '@/lib/data'
 import { CostCalculator } from './calculator'
+import { GetQuoteCTA } from '@/components/get-quote-cta'
 
 export const metadata: Metadata = {
   title: 'Total Trip Cost Calculator',
@@ -18,5 +19,10 @@ export default function CostCalculatorPage() {
     nights: s.length_nights,
     lowestPrice: s.current_lowest_price,
   }))
-  return <CostCalculator sailings={sailings} />
+  return (
+    <>
+      <CostCalculator sailings={sailings} />
+      <GetQuoteCTA />
+    </>
+  )
 }
