@@ -4,9 +4,9 @@ import { getBlogPostBySlug, getRelatedPosts, getBlogPosts } from '@/lib/data'
 import { ArrowLeft, Calendar, Clock, Share2, Twitter, Facebook, Copy } from 'lucide-react'
 
 interface BlogPostPageProps {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
 export async function generateStaticParams() {
@@ -17,7 +17,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: BlogPostPageProps) {
-  const post = getBlogPostBySlug(params.slug)
+  const { slug } = await params
+  const post = getBlogPostBySlug(slug)
 
   if (!post) {
     return {
@@ -31,8 +32,9 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
   }
 }
 
-export default function BlogPostPage({ params }: BlogPostPageProps) {
-  const post = getBlogPostBySlug(params.slug)
+export default async function BlogPostPage({ params }: BlogPostPageProps) {
+  const { slug } = await params
+  const post = getBlogPostBySlug(slug)
 
   if (!post) {
     notFound()

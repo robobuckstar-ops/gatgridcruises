@@ -12,6 +12,7 @@ import {
   MapPin,
   Clock,
   Trophy,
+  Search,
 } from 'lucide-react'
 import { SailingCard } from '@/components/ui/sailing-card'
 import { EmailSignup } from '@/components/ui/email-signup'
@@ -115,9 +116,6 @@ export default async function Home() {
               </div>
             </a>
           </div>
-          <p className="text-center text-xs text-slate-400 mt-2">
-            <a href="mailto:robobuckstar@gmail.com" className="hover:text-slate-600 transition-colors">Advertise your travel agency here — contact us</a>
-          </p>
         </div>
       </section>
 
@@ -212,9 +210,6 @@ export default async function Home() {
                         </span>
                       </div>
                     </a>
-                    <p className="text-xs text-slate-400 mt-1.5">
-                      <a href="mailto:robobuckstar@gmail.com" className="hover:text-slate-600 transition-colors">Advertise your travel agency here — contact us</a>
-                    </p>
                   </div>
                 )}
               </div>
