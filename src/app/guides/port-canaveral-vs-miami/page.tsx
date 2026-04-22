@@ -1,9 +1,7 @@
-'use client';
-
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, MapPin, Clock, DollarSign } from 'lucide-react';
-import AdSlot from '@/components/ui/ad-slot';
+import { AdSlot } from '@/components/ui/ad-slot';
 
 export const metadata: Metadata = {
   title: 'Port Canaveral vs. Miami: Which Disney Cruise Port Is Better? | GatGrid Cruises',
@@ -37,7 +35,7 @@ export default function PortCanaveralVsMiamiGuide() {
       </section>
 
       {/* Ad Slot 1 */}
-      <AdSlot placement="top" />
+      <AdSlot size="728x90" />
 
       {/* Main Content */}
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -54,7 +52,7 @@ export default function PortCanaveralVsMiamiGuide() {
         </section>
 
         {/* Ad Slot 2 */}
-        <AdSlot placement="mid-content-1" />
+        <AdSlot size="728x90" />
 
         <section className="mb-12">
           <h2 className="text-3xl font-fraunces font-bold text-slate-900 mb-6">
@@ -165,7 +163,7 @@ export default function PortCanaveralVsMiamiGuide() {
         </section>
 
         {/* Ad Slot 3 */}
-        <AdSlot placement="mid-content-2" />
+        <AdSlot size="728x90" />
 
         <section className="mb-12">
           <h2 className="text-3xl font-fraunces font-bold text-slate-900 mb-6">
@@ -255,7 +253,7 @@ export default function PortCanaveralVsMiamiGuide() {
         </section>
 
         {/* Ad Slot 4 */}
-        <AdSlot placement="mid-content-3" />
+        <AdSlot size="728x90" />
 
         <section className="mb-12">
           <h2 className="text-3xl font-fraunces font-bold text-slate-900 mb-6">
@@ -407,7 +405,7 @@ export default function PortCanaveralVsMiamiGuide() {
         </section>
 
         {/* Ad Slot 5 */}
-        <AdSlot placement="mid-content-4" />
+        <AdSlot size="728x90" />
 
         <section className="mb-12">
           <h2 className="text-3xl font-fraunces font-bold text-slate-900 mb-6">
@@ -548,7 +546,7 @@ export default function PortCanaveralVsMiamiGuide() {
       </article>
 
       {/* Ad Slot 6 */}
-      <AdSlot placement="bottom" />
+      <AdSlot size="728x90" />
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { CheckCircle, AlertCircle, Printer, MapPin } from 'lucide-react';
-import AdSlot from '@/components/ui/ad-slot';
+import { AdSlot } from '@/components/ui/ad-slot'
 
 export const metadata: Metadata = {
   title: 'The Ultimate Disney Cruise Packing List (Printable)',
@@ -41,7 +41,7 @@ export default function PackingListGuide() {
       {/* Main Content */}
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
-        <AdSlot placement="after-hero" />
+        <AdSlot size="728x90" />
 
         {/* Introduction */}
         <section className="mb-12">
@@ -192,7 +192,7 @@ export default function PackingListGuide() {
           </div>
         </section>
 
-        <AdSlot placement="mid-content" />
+        <AdSlot size="728x90" />
 
         {/* Toiletries & Personal Care */}
         <section className="mb-12">
@@ -344,7 +344,7 @@ export default function PackingListGuide() {
           </div>
         </section>
 
-        <AdSlot placement="before-cta" />
+        <AdSlot size="728x90" />
 
         {/* Beach & Pool Items */}
         <section className="mb-12">

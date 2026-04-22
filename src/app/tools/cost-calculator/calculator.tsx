@@ -826,8 +826,8 @@ export function CostCalculator({ sailings }: CostCalculatorProps) {
                         <p className="font-medium text-sm text-slate-900 group-hover:text-blue-600">Skip trip insurance purchases</p>
                         <p className="text-xs text-slate-600 mt-0.5">Premium travel cards include free cancellation and baggage coverage</p>
                       </div>
-                    </a>
-                  </div>
+                    </div>
+                  </a>
                   <a href="/travel-hacks/best-cards-for-cruises" className="block p-3 bg-amber-50 border border-amber-200 rounded-lg hover:bg-amber-100 transition-colors group">
                     <div className="flex items-start gap-3">
                       <span className="text-lg">💳</span>
@@ -835,8 +835,8 @@ export function CostCalculator({ sailings }: CostCalculatorProps) {
                         <p className="font-medium text-sm text-slate-900 group-hover:text-blue-600">Earn 3–5x points on your cruise</p>
                         <p className="text-xs text-slate-600 mt-0.5">The right card covers your fare while you earn bonus points</p>
                       </div>
-                    </a>
-                  </div>
+                    </div>
+                  </a>
                   <a href="/travel-hacks/stack-points-free-cruise" className="block p-3 bg-amber-50 border border-amber-200 rounded-lg hover:bg-amber-100 transition-colors group">
                     <div className="flex items-start gap-3">
                       <span className="text-lg">🎯</span>
@@ -844,8 +844,8 @@ export function CostCalculator({ sailings }: CostCalculatorProps) {
                         <p className="font-medium text-sm text-slate-900 group-hover:text-blue-600">Stack bonuses for a free cruise</p>
                         <p className="text-xs text-slate-600 mt-0.5">With 2–3 card strategy, your next cruise could cost $0</p>
                       </div>
-                    </a>
-                  </div>
+                    </div>
+                  </a>
                 </div>
               </div>
 

@@ -4,8 +4,15 @@ import { getBlogPosts, getFeaturedBlogPost } from '@/lib/data'
 import { BlogList } from './blog-list'
 
 export const metadata = {
-  title: 'Blog | GatGridCruises',
-  description: 'Disney cruise news, tips, deals, and reviews from the crew at GatGridCruises.',
+  title: 'Blog — Disney Cruise Tips, Deals & News',
+  description:
+    'Disney cruise news, money-saving tips, deal analyses, and first-hand reviews. Practical advice for planning the perfect Disney Cruise Line vacation.',
+  openGraph: {
+    title: 'Blog — Disney Cruise Tips, Deals & News',
+    description:
+      'Practical Disney cruise advice: money-saving tips, deal analyses, ship reviews, and planning guides.',
+    url: 'https://gatgridcruises.com/blog',
+  },
 }
 
 export default function BlogPage() {

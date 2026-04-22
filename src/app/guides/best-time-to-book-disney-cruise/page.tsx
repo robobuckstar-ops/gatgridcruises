@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { Calendar, TrendingDown, AlertCircle, Zap, DollarSign } from 'lucide-react';
-import AdSlot from '@/components/ui/ad-slot';
+import { AdSlot } from '@/components/ui/ad-slot'
 
 export const metadata: Metadata = {
   title: 'Best Time to Book a Disney Cruise (Price Data Analysis)',
@@ -41,7 +41,7 @@ export default function BestTimeToBookGuide() {
       {/* Main Content */}
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
-        <AdSlot placement="after-hero" />
+        <AdSlot size="728x90" />
 
         {/* Overview */}
         <section className="mb-12">
@@ -121,7 +121,7 @@ export default function BestTimeToBookGuide() {
           </div>
         </section>
 
-        <AdSlot placement="mid-content" />
+        <AdSlot size="728x90" />
 
         {/* Typical Price Lifecycle */}
         <section className="mb-12">
@@ -245,7 +245,7 @@ export default function BestTimeToBookGuide() {
           </p>
         </section>
 
-        <AdSlot placement="before-cta" />
+        <AdSlot size="728x90" />
 
         {/* Booking Strategies */}
         <section className="mb-12">

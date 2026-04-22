@@ -4,8 +4,15 @@ import { getShips, getPorts } from '@/lib/data'
 import { DealGrid } from './deal-grid'
 
 export const metadata: Metadata = {
-  title: 'Disney Cruise Deals',
-  description: 'Browse and filter all available Disney cruise sailings. Find the best deals with our Sailing Score system.',
+  title: 'Disney Cruise Deals — Filter by Ship, Duration & Score',
+  description:
+    'Browse every Disney cruise sailing with our Deal Score system. Filter by ship, departure port, duration, and guest count. Prices tracked daily.',
+  openGraph: {
+    title: 'Disney Cruise Deals — Filter by Ship, Duration & Score',
+    description:
+      'Filter Disney cruise deals by ship, duration, port, and guest count. Deal Score ranks every sailing by value.',
+    url: 'https://gatgridcruises.com/deals',
+  },
 }
 
 export default function DealsPage() {

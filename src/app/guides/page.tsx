@@ -2,10 +2,18 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { BookOpen, ArrowRight } from 'lucide-react'
 import { AdSlot } from '@/components/ui/ad-slot'
+import { SpecialistCTA } from '@/components/ui/specialist-cta'
 
 export const metadata: Metadata = {
-  title: 'Disney Cruise Guides & Tips',
-  description: 'In-depth guides to help you plan the perfect Disney cruise. From first-timer tips to stateroom comparisons, packing lists, and destination guides.',
+  title: 'Disney Cruise Guides — In-Depth Planning Resources',
+  description:
+    'In-depth Disney Cruise Line guides: true cost breakdown, best staterooms, port comparisons, packing lists, first-timer tips, and dining rankings. Honest, no-fluff advice.',
+  openGraph: {
+    title: 'Disney Cruise Guides — In-Depth Planning Resources',
+    description:
+      'Comprehensive guides for planning a Disney cruise: costs, staterooms, ports, packing, first-timers, and more.',
+    url: 'https://gatgridcruises.com/guides',
+  },
 }
 
 const guides = [
@@ -126,12 +134,17 @@ export default function GuidesPage() {
                 </Link>
 
                 {index === 3 && (
-                  <div className="flex justify-center mt-8 mb-4">
-                    <AdSlot width={728} height={90} />
+                  <div className="col-span-full mt-8 mb-4">
+                    <AdSlot size="728x90" />
                   </div>
                 )}
               </div>
             ))}
+          </div>
+
+          {/* Specialist CTA */}
+          <div className="mt-12">
+            <SpecialistCTA />
           </div>
         </div>
       </section>

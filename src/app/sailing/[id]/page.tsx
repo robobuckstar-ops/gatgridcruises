@@ -12,6 +12,8 @@ import { BuyWaitBadge } from '@/components/ui/buy-wait-badge'
 import { PriceTrend } from '@/components/ui/price-trend'
 import { AdSlot } from '@/components/ui/ad-slot'
 import { Ship, Calendar, MapPin, Clock, DollarSign, Anchor, BedDouble, Car, Building2, ArrowRight, Check, X as XIcon, Info, TrendingDown, TrendingUp } from 'lucide-react'
+import { SpecialistCTA } from '@/components/ui/specialist-cta'
+import { ReportIssueForm } from '@/components/ui/report-issue-form'
 
 interface PageProps {
   params: Promise<{ id: string }>
@@ -301,6 +303,11 @@ export default async function SailingDetailPage({ params }: PageProps) {
                 </Link>
               </section>
             )}
+            {/* Specialist CTA */}
+            <SpecialistCTA />
+
+            {/* Report an Issue */}
+            <ReportIssueForm page={`/sailing/${sailing.id}`} />
           </div>
 
           {/* Sidebar - 1/3 */}
@@ -370,17 +377,8 @@ export default async function SailingDetailPage({ params }: PageProps) {
             {/* Sidebar ad */}
             <AdSlot location="sailing_sidebar" size="300x250" />
 
-            {/* Featured travel specialist stub */}
-            <div className="bg-[#D4AF37]/10 border border-[#D4AF37]/30 rounded-xl p-5">
-              <h3 className="font-display text-lg font-semibold text-slate-900 mb-2">Find a Disney Specialist</h3>
-              <p className="text-sm text-slate-600 mb-3">
-                Ready to book? A Disney-focused travel agent can help you get the best deal and perks.
-              </p>
-              <div className="bg-white/60 border border-dashed border-gold/40 rounded-lg p-3 text-center">
-                <p className="text-xs text-slate-400 italic">Example placement — your agency here</p>
-                <p className="text-[10px] text-slate-300 mt-1">Sponsored</p>
-              </div>
-            </div>
+            {/* Specialist CTA */}
+            <SpecialistCTA variant="compact" />
           </div>
         </div>
       </div>
