@@ -16,7 +16,7 @@ const cardDatabase = [
     diningPoints: 2,
     tripInsurance: 'Yes',
     loungeAccess: 'No',
-    bestFor: 'Best for travel flexibility',
+    bestFor: 'Best overall travel rewards',
   },
   {
     id: 'csr',
@@ -28,19 +28,19 @@ const cardDatabase = [
     diningPoints: 3,
     tripInsurance: 'Yes',
     loungeAccess: 'Priority Pass (10 visits)',
-    bestFor: 'Best premium card',
+    bestFor: 'Best premium travel card',
   },
   {
     id: 'amex-biz-platinum',
     name: 'Amex Business Platinum',
-    annualFee: 695,
-    signupBonus: '150K points',
+    annualFee: 895,
+    signupBonus: 'Up to 150K–300K points',
     bonusValue: 1500,
     travelPoints: 5,
     diningPoints: 1,
     tripInsurance: 'Yes',
-    loungeAccess: 'Centurion Lounge',
-    bestFor: 'Best for business travel',
+    loungeAccess: 'Centurion Lounge + Priority Pass',
+    bestFor: 'Best for luxury business travel',
   },
   {
     id: 'amex-gold',
@@ -52,7 +52,31 @@ const cardDatabase = [
     diningPoints: 4,
     tripInsurance: 'Yes',
     loungeAccess: 'No',
-    bestFor: 'Best for dining',
+    bestFor: 'Best for dining rewards',
+  },
+  {
+    id: 'chase-ink-preferred',
+    name: 'Chase Ink Business Preferred',
+    annualFee: 95,
+    signupBonus: '100K points',
+    bonusValue: 1250,
+    travelPoints: 3,
+    diningPoints: 3,
+    tripInsurance: 'Yes',
+    loungeAccess: 'No',
+    bestFor: 'Best business signup bonus',
+  },
+  {
+    id: 'chase-ink-unlimited',
+    name: 'Chase Ink Business Unlimited',
+    annualFee: 0,
+    signupBonus: '$750 cash back',
+    bonusValue: 750,
+    travelPoints: 1.5,
+    diningPoints: 1.5,
+    tripInsurance: 'No',
+    loungeAccess: 'No',
+    bestFor: 'Best no-fee business card',
   },
   {
     id: 'capital-one-venture-x',
@@ -63,8 +87,32 @@ const cardDatabase = [
     travelPoints: 2,
     diningPoints: 2,
     tripInsurance: 'Yes',
-    loungeAccess: 'Capital One Lounge',
-    bestFor: 'Best for simplicity',
+    loungeAccess: 'Capital One Lounge + Priority Pass',
+    bestFor: 'Best for simplicity + lounge access',
+  },
+  {
+    id: 'capital-one-spark-plus',
+    name: 'Capital One Spark Cash Plus',
+    annualFee: 150,
+    signupBonus: '$2,000 cash bonus',
+    bonusValue: 2000,
+    travelPoints: 2,
+    diningPoints: 2,
+    tripInsurance: 'No',
+    loungeAccess: 'No',
+    bestFor: 'Best for high business spend',
+  },
+  {
+    id: 'capital-one-spark-select',
+    name: 'Capital One Spark Cash Select',
+    annualFee: 0,
+    signupBonus: '$750 cash bonus',
+    bonusValue: 750,
+    travelPoints: 1.5,
+    diningPoints: 1.5,
+    tripInsurance: 'No',
+    loungeAccess: 'No',
+    bestFor: 'Best no-fee business cash back',
   },
   {
     id: 'citi-premier',
@@ -76,7 +124,7 @@ const cardDatabase = [
     diningPoints: 3,
     tripInsurance: 'Yes',
     loungeAccess: 'No',
-    bestFor: 'Best budget option',
+    bestFor: 'Best budget travel option',
   },
   {
     id: 'capital-one-venture',
@@ -88,14 +136,14 @@ const cardDatabase = [
     diningPoints: 2,
     tripInsurance: 'No',
     loungeAccess: 'No',
-    bestFor: 'Best for no annual fee',
+    bestFor: 'Best simple flat-rate card',
   },
 ]
 
 type CardId = typeof cardDatabase[number]['id']
 
 export default function CompareCardsPage() {
-  const [selectedCards, setSelectedCards] = useState<CardId[]>(['csp', 'csr', 'capital-one-venture-x'])
+  const [selectedCards, setSelectedCards] = useState<CardId[]>(['amex-biz-platinum', 'chase-ink-preferred', 'capital-one-venture-x'])
   const [openDropdown, setOpenDropdown] = useState(false)
 
   const activeCards = cardDatabase.filter(card => selectedCards.includes(card.id as CardId))
@@ -319,7 +367,7 @@ export default function CompareCardsPage() {
         {/* Affiliate Disclosure */}
         <div className="mt-12 border-t border-slate-200 pt-8">
           <p className="text-xs text-slate-500">
-            <strong>Affiliate Disclosure:</strong> We earn a small commission if you apply for these cards through our links at no extra cost to you. We only recommend cards we believe offer genuine value to Disney cruisers. All information is accurate as of April 2024 but may change — always verify terms with the card issuer.
+            <strong>Affiliate Disclosure:</strong> Some links on this page are referral links. We earn a small commission if you apply through our links at no extra cost to you. We only recommend cards we believe offer genuine value to Disney cruisers. All information is accurate as of April 2026 but may change — always verify current terms with the card issuer.
           </p>
         </div>
 

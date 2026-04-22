@@ -65,8 +65,11 @@ export function amazonSearchLink(query: string): string {
 //
 export const CARD_REFERRAL_LINKS: Record<string, string | null> = {
   // ── Chase ──────────────────────────────────────────────────
-  /** Chase Southwest / Ink referral (your current link) */
-  'chase-southwest-ink':       'https://www.referyourchasecard.com/226m/6ZT33F9TOQ',
+  /** Chase Ink Business Preferred referral */
+  'chase-ink-business-preferred': 'https://www.referyourchasecard.com/226m/6ZT33F9TOQ',
+
+  /** Chase Ink Business Unlimited — uses Ink Business Preferred link */
+  'chase-ink-business-unlimited': null,
 
   /** Chase Sapphire Preferred — add your link when you have it */
   'chase-sapphire-preferred':  null,
@@ -74,24 +77,24 @@ export const CARD_REFERRAL_LINKS: Record<string, string | null> = {
   /** Chase Sapphire Reserve — add your link when you have it */
   'chase-sapphire-reserve':    null,
 
-  /** Chase Ink Business Preferred — add your link when you have it */
-  'chase-ink-business-preferred': null,
-
   // ── American Express ───────────────────────────────────────
-  /** Amex Business Platinum — add your link when you have it */
-  'amex-business-platinum':    null,
+  /** Amex Business Platinum referral */
+  'amex-business-platinum':    'https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS',
 
   /** Amex Gold — add your link when you have it */
   'amex-gold':                 null,
 
   // ── Capital One ────────────────────────────────────────────
-  /** Capital One Spark Business referral (your current link) */
-  'capital-one-spark-business': 'https://i.capitalone.com/JKlfRwN3f',
+  /** Capital One Spark Cash Plus referral */
+  'capital-one-spark-cash-plus':   'https://i.capitalone.com/JKlfRwN3f',
 
-  /** Capital One Venture X — uses Spark Business link as fallback */
+  /** Capital One Spark Cash Select — uses Spark Cash Plus link */
+  'capital-one-spark-cash-select': null,
+
+  /** Capital One Venture X — uses Spark Cash Plus link as fallback */
   'capital-one-venture-x':     null,
 
-  /** Capital One Venture — uses Spark Business link as fallback */
+  /** Capital One Venture — uses Spark Cash Plus link as fallback */
   'capital-one-venture':       null,
 
   // ── Citi ───────────────────────────────────────────────────
@@ -110,14 +113,14 @@ export function getCardReferralLink(cardSlug: string): string | null {
     return CARD_REFERRAL_LINKS[cardSlug]
   }
 
-  // For Chase cards without a specific link, use the general Chase referral
-  if (cardSlug.startsWith('chase-') && CARD_REFERRAL_LINKS['chase-southwest-ink']) {
-    return CARD_REFERRAL_LINKS['chase-southwest-ink']
+  // For Chase cards without a specific link, use the Ink Business Preferred referral
+  if (cardSlug.startsWith('chase-') && CARD_REFERRAL_LINKS['chase-ink-business-preferred']) {
+    return CARD_REFERRAL_LINKS['chase-ink-business-preferred']
   }
 
-  // For Capital One cards without a specific link, use the Spark Business referral
-  if (cardSlug.startsWith('capital-one-') && CARD_REFERRAL_LINKS['capital-one-spark-business']) {
-    return CARD_REFERRAL_LINKS['capital-one-spark-business']
+  // For Capital One cards without a specific link, use the Spark Cash Plus referral
+  if (cardSlug.startsWith('capital-one-') && CARD_REFERRAL_LINKS['capital-one-spark-cash-plus']) {
+    return CARD_REFERRAL_LINKS['capital-one-spark-cash-plus']
   }
 
   return null
