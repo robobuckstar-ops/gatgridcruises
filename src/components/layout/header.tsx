@@ -18,7 +18,7 @@ const navItems = [
       { label: 'AI Cruise Finder', href: '/search' },
       { label: 'OBC Calculator', href: '/tools/obc-calculator' },
       { label: 'Cost Calculator', href: '/tools/cost-calculator' },
-      { label: 'Carbon Calculator', href: '/tools/carbon-calculator' },
+      { label: 'Credit Card Hack', href: '/tools/credit-cards' },
       { label: 'Flight Finder', href: '/tools/flights' },
       { label: 'Stateroom Finder', href: '/tools/staterooms' },
       { label: 'Transfer Guide', href: '/tools/transfers' },

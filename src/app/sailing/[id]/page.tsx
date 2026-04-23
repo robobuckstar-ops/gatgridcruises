@@ -111,10 +111,7 @@ export default async function SailingDetailPage({ params }: PageProps) {
         </div>
       </div>
 
-      {/* Ad slot */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        <AdSlot location="sailing_top_banner" size="728x90" />
-      </div>
+
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -410,19 +407,18 @@ export default async function SailingDetailPage({ params }: PageProps) {
               </div>
             )}
 
-            {/* Sidebar ad */}
-            <AdSlot location="sailing_sidebar" size="300x250" />
-
             {/* Featured travel specialist stub */}
             <div className="bg-[#D4AF37]/10 border border-[#D4AF37]/30 rounded-xl p-5">
               <h3 className="font-display text-lg font-semibold text-slate-900 mb-2">Find a Disney Specialist</h3>
               <p className="text-sm text-slate-600 mb-3">
                 Ready to book? A Disney-focused travel agent can help you get the best deal and perks.
               </p>
-              <div className="bg-white/60 border border-dashed border-gold/40 rounded-lg p-3 text-center">
-                <p className="text-xs text-slate-400 italic">Example placement — your agency here</p>
-                <p className="text-[10px] text-slate-300 mt-1">Sponsored</p>
-              </div>
+              <Link
+                href="/book"
+                className="inline-flex items-center gap-2 w-full justify-center px-4 py-2.5 bg-[#D4AF37] text-slate-900 font-semibold text-sm rounded-lg hover:bg-yellow-300 transition-colors"
+              >
+                Get a Free Quote <ArrowRight className="h-4 w-4" />
+              </Link>
             </div>
           </div>
         </div>

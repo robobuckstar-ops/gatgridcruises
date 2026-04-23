@@ -7,7 +7,7 @@ import {
   Search,
   Ship,
   Zap,
-  Leaf,
+  CreditCard,
   Users,
   Sparkles,
   MapPin,
@@ -137,9 +137,6 @@ export default async function Home() {
               </div>
             </a>
           </div>
-          <p className="text-center text-xs text-slate-400 mt-2">
-            <a href="mailto:robobuckstar@gmail.com" className="hover:text-slate-600 transition-colors">Advertise your travel agency here — contact us</a>
-          </p>
         </div>
       </section>
 
@@ -234,9 +231,6 @@ export default async function Home() {
                         </span>
                       </div>
                     </a>
-                    <p className="text-xs text-slate-400 mt-1.5">
-                      <a href="mailto:robobuckstar@gmail.com" className="hover:text-slate-600 transition-colors">Advertise your travel agency here — contact us</a>
-                    </p>
                   </div>
                 )}
               </div>
@@ -301,19 +295,19 @@ export default async function Home() {
               </p>
             </Link>
 
-            {/* Carbon Calculator */}
+            {/* Credit Card Hack */}
             <Link
-              href="/tools/carbon-calculator"
+              href="/tools/credit-cards"
               className="group p-6 rounded-lg border-2 border-gray-200 hover:border-blue-600 hover:shadow-lg transition-all duration-200"
             >
               <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-blue-100 group-hover:bg-blue-600 mb-4 transition-colors">
-                <Leaf className="w-6 h-6 text-blue-600 group-hover:text-white" aria-hidden="true" />
+                <CreditCard className="w-6 h-6 text-blue-600 group-hover:text-white" aria-hidden="true" />
               </div>
               <h3 className="font-fraunces text-lg font-bold text-slate-900 mb-2">
-                Carbon Calculator
+                Credit Card Hack
               </h3>
               <p className="text-gray-600 text-sm">
-                See the environmental impact of your cruise
+                The best card combo for Disney cruises — fly free, get trip insurance
               </p>
             </Link>
 
