@@ -7,7 +7,8 @@ import { formatPrice, formatDate, cn } from '@/lib/utils'
 import { calculateDealScore } from '@/lib/deal-score'
 import { getOutTheDoorTotal } from '@/lib/pricing'
 import { DealScoreBadge } from './deal-score-badge'
-import { Ship, Calendar, MapPin, ChevronDown, Bot } from 'lucide-react'
+import { Ship, Calendar, MapPin, ChevronDown, Bot, Gift } from 'lucide-react'
+import { getOBC } from '@/lib/obc'
 
 interface SailingCardProps {
   sailing: Sailing
@@ -19,6 +20,9 @@ export function SailingCard({ sailing, percentBelow }: SailingCardProps) {
 
   // Calculate deal score
   const dealScore = calculateDealScore(sailing, sailing.price_snapshots)
+
+  // OBC based on base cruise fare (current_lowest_price = total fare for all guests)
+  const obcAmount = getOBC(sailing.current_lowest_price)
 
   // Calculate out-the-door pricing (for 2 guests by default)
   const outTheDoor = getOutTheDoorTotal(
@@ -127,6 +131,27 @@ export function SailingCard({ sailing, percentBelow }: SailingCardProps) {
               )}
             </div>
           </div>
+
+          {/* OBC Badge */}
+          {obcAmount > 0 && (
+            <div className="rounded-lg bg-amber-50 border border-amber-200 px-3 py-2">
+              <div className="flex items-center gap-1.5">
+                <Gift className="w-3.5 h-3.5 text-amber-600 flex-shrink-0" aria-hidden="true" />
+                <span className="text-xs font-semibold text-amber-800">
+                  Book through GatGrid: ~${obcAmount} in free onboard credit*
+                </span>
+              </div>
+              <p className="text-[10px] text-amber-700/70 mt-0.5 leading-tight">
+                *Estimated OBC based on listed fare. Actual amount determined at booking and may vary. Applied after final payment.{' '}
+                <span
+                  className="underline cursor-pointer"
+                  title="Onboard credit (OBC) is provided as a booking incentive when you book through GatGrid Cruises / Boardwalk Travel Agency. OBC has no cash value; unused credit is forfeited at voyage end. OBC amounts subject to change. See gatgridcruises.com/onboard-credit for full terms."
+                >
+                  See full terms.
+                </span>
+              </p>
+            </div>
+          )}
 
           {/* Expandable breakdown */}
           <button

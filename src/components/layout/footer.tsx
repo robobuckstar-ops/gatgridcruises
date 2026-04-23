@@ -80,6 +80,16 @@ export function Footer() {
                   </Link>
                 </li>
                 <li>
+                  <Link href="/onboard-credit" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                    Free Onboard Credit
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/tools/obc-calculator" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                    OBC Calculator
+                  </Link>
+                </li>
+                <li>
                   <Link href="/tools/cost-calculator" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
                     Cost Calculator
                   </Link>

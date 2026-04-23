@@ -14,6 +14,7 @@ import {
   Clock,
   Trophy,
   Bot,
+  Gift,
 } from 'lucide-react'
 import { SailingCard } from '@/components/ui/sailing-card'
 import { EmailSignup } from '@/components/ui/email-signup'
@@ -326,6 +327,42 @@ export default async function Home() {
                 Learn insider strategies to make your cruise cheaper — or free
               </p>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* OBC Value Proposition */}
+      <section className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] py-14 md:py-18" aria-labelledby="obc-heading">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="flex-1">
+              <div className="flex items-center gap-3 mb-3">
+                <Gift className="w-7 h-7 text-[#D4AF37]" aria-hidden="true" />
+                <span className="text-[#D4AF37] text-xs font-bold uppercase tracking-widest">Exclusive Perk</span>
+              </div>
+              <h2 id="obc-heading" className="font-fraunces text-3xl md:text-4xl font-bold text-white mb-3">
+                Get Up to $400 in Free Onboard Credit
+              </h2>
+              <p className="text-blue-200 text-base max-w-xl">
+                Book your Disney cruise through GatGrid and we&rsquo;ll add free spending money to your onboard account — for spa, dining, excursions, and more. Zero extra cost to you.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
+              <Link
+                href="/tools/obc-calculator"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-[#D4AF37] text-[#1E3A5F] font-bold hover:bg-yellow-300 transition-colors"
+              >
+                <Gift className="w-4 h-4" aria-hidden="true" />
+                Calculate My OBC
+              </Link>
+              <Link
+                href="/onboard-credit"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg border border-white/30 text-white font-semibold hover:bg-white/10 transition-colors text-sm"
+              >
+                Learn More
+                <ArrowRight className="w-4 h-4" aria-hidden="true" />
+              </Link>
+            </div>
           </div>
         </div>
       </section>

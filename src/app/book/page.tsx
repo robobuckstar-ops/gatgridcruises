@@ -1,7 +1,10 @@
 'use client'
 
 import { useState } from 'react'
-import { Shield, Star, Phone } from 'lucide-react'
+import { Shield, Star, Phone, Gift } from 'lucide-react'
+import Link from 'next/link'
+import { OBC_TIERS } from '@/lib/obc'
+import { OBCDisclaimer } from '@/components/ui/obc-disclaimer'
 
 export default function BookPage() {
   const [submitted, setSubmitted] = useState(false)
@@ -110,6 +113,48 @@ export default function BookPage() {
               <p className="font-semibold text-slate-900 text-sm">Our Service is 100% Free</p>
               <p className="text-xs text-slate-500">We earn a commission from the cruise line, not you</p>
             </div>
+          </div>
+        </div>
+
+        {/* OBC Promo Banner */}
+        <div className="rounded-2xl bg-[#1E3A5F] p-6 mb-2">
+          <div className="flex items-center gap-3 mb-3">
+            <Gift className="w-6 h-6 text-[#D4AF37] flex-shrink-0" aria-hidden="true" />
+            <h2 className="font-fraunces text-xl font-bold text-white">Book Through GatGrid — Get Free Onboard Credit</h2>
+          </div>
+          <p className="text-blue-200 text-sm mb-5">
+            The more you cruise, the more free spending money we add to your onboard account. This perk isn&rsquo;t available when booking directly with Disney.
+          </p>
+
+          {/* Tier Table */}
+          <div className="rounded-xl overflow-hidden border border-white/10 mb-4">
+            <div className="grid grid-cols-2 gap-2 px-4 py-2 bg-white/10">
+              <span className="text-[#D4AF37] text-xs font-bold uppercase tracking-widest">Cruise Fare</span>
+              <span className="text-[#D4AF37] text-xs font-bold uppercase tracking-widest text-right">Free OBC*</span>
+            </div>
+            <div className="divide-y divide-white/10">
+              {OBC_TIERS.map((tier, i) => (
+                <div key={i} className="grid grid-cols-2 gap-2 px-4 py-2.5 items-center hover:bg-white/5 transition-colors">
+                  <span className="text-blue-100 text-sm">{tier.label}</span>
+                  <span className="font-fraunces font-bold text-white text-right">${tier.obc}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="flex items-center justify-between gap-4">
+            <p className="text-blue-300 text-xs">Not sure what tier you'd be in?</p>
+            <Link
+              href="/tools/obc-calculator"
+              className="inline-flex items-center gap-1.5 text-[#D4AF37] font-semibold text-sm hover:text-yellow-300 transition-colors flex-shrink-0"
+            >
+              <Gift className="w-4 h-4" aria-hidden="true" />
+              Calculate My OBC →
+            </Link>
+          </div>
+
+          <div className="mt-4 pt-4 border-t border-white/10">
+            <OBCDisclaimer />
           </div>
         </div>
 

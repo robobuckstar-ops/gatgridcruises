@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import { Gift } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'About GatGridCruises',
@@ -96,6 +97,29 @@ export default function AboutPage() {
           <p className="font-inter text-lg text-gray-700 leading-relaxed">
             GatGridCruises is named after our founder's kids — Gatlin and Gridley. Because the whole reason we got into Disney cruises was to give our family the best possible vacation.
           </p>
+        </section>
+
+        {/* The GatGrid Advantage */}
+        <section className="mb-16">
+          <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-4">The GatGrid Advantage</h2>
+          <p className="font-inter text-lg text-gray-700 leading-relaxed mb-6">
+            When you're ready to book, GatGrid Cruises offers something Disney won't: free onboard credit just for booking through us. We share part of our travel agent commission back with you as spending money loaded directly onto your stateroom folio.
+          </p>
+          <div className="flex items-start gap-4 bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] rounded-xl p-6 text-white">
+            <Gift className="w-8 h-8 text-[#D4AF37] flex-shrink-0 mt-0.5" aria-hidden="true" />
+            <div>
+              <p className="font-fraunces font-bold text-lg mb-1 text-[#D4AF37]">Up to $400 in Free Onboard Credit</p>
+              <p className="text-blue-200 text-sm leading-relaxed mb-3">
+                Book direct with Disney and you get $0 in OBC. Book through GatGrid and we add free money to your cruise account — for spa, specialty dining, excursions, or anything else you charge to your stateroom. Same price as booking direct, better perks.
+              </p>
+              <Link
+                href="/onboard-credit"
+                className="inline-flex items-center gap-1.5 text-[#D4AF37] font-semibold text-sm hover:text-yellow-300 transition-colors"
+              >
+                Learn how OBC works →
+              </Link>
+            </div>
+          </div>
         </section>
 
         {/* Editorial Independence */}

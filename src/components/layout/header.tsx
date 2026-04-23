@@ -15,6 +15,7 @@ const navItems = [
     href: '/tools',
     children: [
       { label: 'AI Cruise Finder', href: '/search' },
+      { label: 'OBC Calculator', href: '/tools/obc-calculator' },
       { label: 'Cost Calculator', href: '/tools/cost-calculator' },
       { label: 'Carbon Calculator', href: '/tools/carbon-calculator' },
       { label: 'Flight Finder', href: '/tools/flights' },
