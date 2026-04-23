@@ -26,6 +26,14 @@
     {
       "path": "/api/cron/digest",
       "schedule": "0 15 * * 0"
+    },
+    {
+      "path": "/api/cron/drip",
+      "schedule": "0 14 * * *"
+    },
+    {
+      "path": "/api/deal-alerts",
+      "schedule": "0 12 * * *"
     }
   ]
 }

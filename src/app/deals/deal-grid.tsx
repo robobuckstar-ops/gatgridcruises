@@ -4,8 +4,9 @@ import { useState, useMemo } from 'react'
 import type { Sailing, Ship, Port } from '@/types/database'
 import { SailingCard } from '@/components/ui/sailing-card'
 import { AdSlot } from '@/components/ui/ad-slot'
-import { Search, SlidersHorizontal, X } from 'lucide-react'
+import { Search, SlidersHorizontal, X, Bell, ArrowRight } from 'lucide-react'
 import { calculateDealScore } from '@/lib/deal-score'
+import Link from 'next/link'
 
 type SortOption = 'score' | 'price_asc' | 'price_desc' | 'date' | 'drop'
 type SailingWithDrop = Sailing & { percentBelow: number }
@@ -312,15 +313,38 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
         {filtered.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {filtered.map((sailing, index) => (
-              <div key={sailing.id}>
-                <SailingCard
-                  sailing={sailing}
-                  percentBelow={sailing.percentBelow}
-                />
-                {/* Insert ad after 6th card */}
-                {index === 5 && (
-                  <div className="mt-5">
-                    <AdSlot location="deals_grid_native" size="native" />
+              <div key={sailing.id} className={index === 11 ? 'contents' : ''}>
+                <div>
+                  <SailingCard
+                    sailing={sailing}
+                    percentBelow={sailing.percentBelow}
+                  />
+                  {/* Insert ad after 6th card */}
+                  {index === 5 && (
+                    <div className="mt-5">
+                      <AdSlot location="deals_grid_native" size="native" />
+                    </div>
+                  )}
+                </div>
+                {/* Email CTA after 11th card (0-indexed) */}
+                {index === 11 && (
+                  <div className="col-span-1 md:col-span-2 lg:col-span-3">
+                    <div className="rounded-xl bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-6">
+                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#D4AF37]/20 flex items-center justify-center">
+                        <Bell className="w-6 h-6 text-[#D4AF37]" aria-hidden="true" />
+                      </div>
+                      <div className="flex-1 text-center sm:text-left">
+                        <h3 className="text-white font-bold text-lg mb-1">Never miss a price drop</h3>
+                        <p className="text-blue-200 text-sm">Get personal email alerts when prices drop on sailings like these. Free, no spam.</p>
+                      </div>
+                      <Link
+                        href="/deal-alerts"
+                        className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3 bg-[#D4AF37] text-[#1E3A5F] font-bold rounded-lg hover:bg-yellow-300 transition-colors text-sm whitespace-nowrap"
+                      >
+                        Get Free Alerts
+                        <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                      </Link>
+                    </div>
                   </div>
                 )}
               </div>

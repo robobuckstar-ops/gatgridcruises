@@ -9,6 +9,7 @@ import { SrOnly } from '@/components/ui/sr-only'
 const navItems = [
   { label: 'Deals', href: '/deals' },
   { label: 'Last-Minute', href: '/deals/last-minute' },
+  { label: '🔔 Deal Alerts', href: '/deal-alerts' },
   { label: 'Ships', href: '/ships' },
   {
     label: 'Tools',
