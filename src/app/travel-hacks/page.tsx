@@ -14,7 +14,7 @@ import { CreditCardRecommendation } from '@/components/ui/credit-card-recommenda
 import { getBestCardsFor, creditCards } from '@/lib/credit-card-config'
 
 export const metadata: Metadata = {
-  title: 'Travel Hacks: Make Your Disney Cruise Cheaper (or Free) | GatGrid Cruises',
+  title: 'Travel Hacks: Make Your Disney Cruise Cheaper (or Free)',
   description:
     'Insider strategies for using credit card rewards, points, and perks to dramatically reduce your cruise vacation costs. Learn how to fly free, get trip insurance, and stack points for free cruises.',
   keywords: [
@@ -202,6 +202,52 @@ export default function TravelHacksHub() {
                 )}
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Amex Business Platinum Spotlight */}
+      <section className="bg-gradient-to-br from-slate-900 to-slate-800 text-white py-16 border-y border-slate-700">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row items-start gap-8">
+            <div className="flex-1">
+              <div className="inline-flex items-center gap-2 bg-yellow-400/20 border border-yellow-400/30 text-yellow-300 text-xs font-semibold px-3 py-1 rounded-full mb-4">
+                ★ Editor's Pick for Cruise Travelers
+              </div>
+              <h2 className="text-2xl md:text-3xl font-fraunces font-bold mb-4">
+                Amex Business Platinum: The Premium Cruise Card
+              </h2>
+              <p className="text-slate-300 mb-6 leading-relaxed">
+                If you're spending $15K+ in the next 3 months, the Amex Business Platinum's
+                150,000-point bonus is worth $1,500+ — enough to cover flights to your cruise port
+                and then some.
+              </p>
+              <ul className="space-y-3 mb-8">
+                {[
+                  { label: '5x points on flights booked directly', icon: '✈️' },
+                  { label: 'Centurion Lounge access (best in the business)', icon: '🍸' },
+                  { label: 'Automatic trip cancellation & delay coverage', icon: '🛡️' },
+                  { label: '150,000 welcome points ($1,500+ value)', icon: '🎁' },
+                ].map((item) => (
+                  <li key={item.label} className="flex items-center gap-3 text-slate-200">
+                    <span className="text-lg">{item.icon}</span>
+                    <span className="text-sm">{item.label}</span>
+                  </li>
+                ))}
+              </ul>
+              <a
+                href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
+                target="_blank"
+                rel="noopener noreferrer sponsored"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#D4AF37] text-slate-900 font-semibold rounded-lg hover:bg-yellow-300 transition-colors duration-200"
+              >
+                Check Offer on Amex →
+              </a>
+              <p className="text-xs text-slate-500 mt-3">
+                Referral link — we may earn a commission at no cost to you.
+                Annual fee: $695.
+              </p>
+            </div>
           </div>
         </div>
       </section>

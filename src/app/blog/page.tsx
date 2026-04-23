@@ -4,7 +4,7 @@ import { getBlogPosts, getFeaturedBlogPost } from '@/lib/data'
 import { BlogList } from './blog-list'
 
 export const metadata = {
-  title: 'Blog | GatGridCruises',
+  title: 'Disney Cruise News, Tips & Deals',
   description: 'Disney cruise news, tips, deals, and reviews from the crew at GatGridCruises.',
 }
 

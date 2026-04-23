@@ -4,7 +4,7 @@ import { ArrowRight, CheckCircle2, AlertCircle } from 'lucide-react';
 import { GetQuoteCTA } from '@/components/get-quote-cta';
 
 export const metadata: Metadata = {
-  title: 'Disney Cruise with Toddlers: Complete Parent\'s Guide | GatGrid Cruises',
+  title: "Disney Cruise with Toddlers: Complete Parent's Guide",
   description: 'Expert guide for cruising with toddlers: nursery, dining, stroller policy, packing, best itineraries, and Castaway Cay with young kids.',
 };
 

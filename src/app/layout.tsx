@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import './globals.css'
 import { Header } from '@/components/layout/header'
 import { Footer } from '@/components/layout/footer'
@@ -7,6 +8,8 @@ import { Chatbot } from '@/components/ui/chatbot'
 import { NewsletterPopup } from '@/components/ui/newsletter-popup'
 import { generateWebsiteSchema, generateOrganizationSchema } from '@/lib/structured-data'
 import { StructuredData } from '@/components/ui/structured-data'
+
+const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX' // Replace with your real GA4 Measurement ID
 
 export const metadata: Metadata = {
   title: {
@@ -33,11 +36,20 @@ export const metadata: Metadata = {
     siteName: 'GatGridCruises',
     title: 'GatGridCruises — Magically Valuable Disney Cruises',
     description: 'Find the best Disney cruise deals, compare prices, and plan your perfect voyage.',
+    images: [
+      {
+        url: 'https://gatgridcruises.com/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'GatGridCruises — Magically Valuable Disney Cruises',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'GatGridCruises — Magically Valuable Disney Cruises',
     description: 'Find the best Disney cruise deals, compare prices, and plan your perfect voyage.',
+    images: ['https://gatgridcruises.com/og-image.png'],
   },
   robots: {
     index: true,
@@ -56,6 +68,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-screen flex flex-col">
+        {/* Google Analytics 4 */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `}
+        </Script>
+
         <StructuredData data={generateWebsiteSchema()} />
         <StructuredData data={generateOrganizationSchema()} />
         <SkipNav />

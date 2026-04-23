@@ -4,7 +4,7 @@ import { ArrowRight, DollarSign, TrendingUp } from 'lucide-react';
 import { GetQuoteCTA } from '@/components/get-quote-cta';
 
 export const metadata: Metadata = {
-  title: 'The True Cost of a Disney Cruise (2025 Breakdown) | GatGrid Cruises',
+  title: 'The True Cost of a Disney Cruise (2025 Breakdown)',
   description: 'Complete breakdown of Disney cruise costs including base fares, gratuities, drinks, excursions, specialty dining, and hidden fees. Plus sample family budget and cost calculator.',
 };
 

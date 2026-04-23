@@ -4,7 +4,7 @@ import { ArrowRight, Home, MapPin, Wind } from 'lucide-react';
 import { GetQuoteCTA } from '@/components/get-quote-cta';
 
 export const metadata: Metadata = {
-  title: 'Best Disney Cruise Staterooms: Category Guide | GatGrid Cruises',
+  title: 'Best Disney Cruise Staterooms: Complete Category Guide',
   description: 'Complete guide to Disney cruise cabin categories, locations, and features. Compare inside, oceanview, verandah, and concierge suites.',
 };
 
