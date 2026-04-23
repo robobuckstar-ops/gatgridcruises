@@ -173,7 +173,18 @@ export default function BookPage() {
           <div className="flex flex-col sm:flex-row gap-6">
             <div className="flex-1 space-y-3">
               <div className="flex items-start gap-3">
-                <div className="w-10 h-10 rounded-full bg-[#1E3A5F] text-white flex items-center justify-center font-bold text-sm flex-shrink-0">
+                <img
+                  src="/images/grayson-family-castaway.jpg"
+                  alt="Grayson Starbuck at Castaway Cay"
+                  width={40}
+                  height={40}
+                  className="w-10 h-10 rounded-full object-cover flex-shrink-0 bg-[#1E3A5F]"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none'
+                    e.currentTarget.nextElementSibling?.classList.remove('hidden')
+                  }}
+                />
+                <div className="w-10 h-10 rounded-full bg-[#1E3A5F] text-white items-center justify-center font-bold text-sm flex-shrink-0 hidden">
                   GS
                 </div>
                 <div>
