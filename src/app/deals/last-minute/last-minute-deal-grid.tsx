@@ -140,10 +140,6 @@ export function LastMinuteDealGrid({ deals: initialDeals, ships, ports }: LastMi
             ⚡ Flash Deals
           </h1>
           <p className="text-xl text-slate-700 mb-2 max-w-2xl mx-auto">
-            Last-minute Disney sailings at steep discounts
-            Flash Deals
-          </h1>
-          <p className="text-xl text-slate-700 mb-2 max-w-2xl mx-auto">
             Sailings within 90 days at steep discounts
           </p>
           <p className="text-base text-slate-600 max-w-2xl mx-auto">
