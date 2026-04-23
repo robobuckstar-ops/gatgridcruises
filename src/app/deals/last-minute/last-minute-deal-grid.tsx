@@ -6,6 +6,7 @@ import type { Sailing, Ship, Port } from '@/types/database'
 import { formatPrice, formatDate, daysUntil, cn } from '@/lib/utils'
 import { CountdownTimer } from '@/components/ui/countdown-timer'
 import { DealScoreBadge } from '@/components/ui/deal-score-badge'
+import { GuestSelector } from '@/components/ui/guest-selector'
 import { Search, SlidersHorizontal, X, ArrowRight, Zap } from 'lucide-react'
 
 type SailingWithDrop = Sailing & { percentBelow?: number }
@@ -139,29 +140,20 @@ export function LastMinuteDealGrid({ deals: initialDeals, ships, ports }: LastMi
             ⚡ Flash Deals
           </h1>
           <p className="text-xl text-slate-700 mb-2 max-w-2xl mx-auto">
-            Last-minute sailings at steep discounts
+            Last-minute Disney sailings at steep discounts
           </p>
           <p className="text-base text-slate-600 max-w-2xl mx-auto">
             Prices can change any moment — act fast on these incredible limited-time offers
           </p>
+          <div className="flex justify-center mt-6">
+            <GuestSelector />
+          </div>
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         {/* Filter and Sort Bar */}
         <div className="mb-8 space-y-4">
-          {/* Search Bar */}
-          <div className="relative">
-            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-slate-400" />
-            <input
-              type="text"
-              placeholder="Search by itinerary, ship, or port..."
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              className="w-full pl-12 pr-4 py-3 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent text-slate-900"
-            />
-          </div>
-
           {/* Filter Toggle and Sort */}
           <div className="flex flex-col sm:flex-row gap-4">
             <button
@@ -258,6 +250,29 @@ export function LastMinuteDealGrid({ deals: initialDeals, ships, ports }: LastMi
               </div>
             </div>
           )}
+
+          {/* Secondary: AI / keyword search */}
+          <div>
+            <p className="text-xs text-slate-400 mb-1.5">Or describe what you&apos;re looking for...</p>
+            <div className="relative max-w-lg">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
+              <input
+                type="text"
+                placeholder="e.g. Bahamas, Disney Wish, 7-night..."
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                className="w-full pl-9 pr-4 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-blue-400 text-slate-700 placeholder:text-slate-400"
+              />
+              {search && (
+                <button
+                  onClick={() => setSearch('')}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+                >
+                  <X className="h-3.5 w-3.5" />
+                </button>
+              )}
+            </div>
+          </div>
         </div>
 
         {/* Results */}
