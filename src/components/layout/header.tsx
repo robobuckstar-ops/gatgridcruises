@@ -7,10 +7,16 @@ import { Menu, X, ChevronDown } from 'lucide-react'
 import { SrOnly } from '@/components/ui/sr-only'
 
 const navItems = [
-  { label: 'Deals', href: '/deals' },
-  { label: 'Last-Minute', href: '/deals/last-minute' },
-  { label: '🔔 Deal Alerts', href: '/deal-alerts' },
   { label: 'Ships', href: '/ships' },
+  {
+    label: 'Deals',
+    href: '/deals',
+    children: [
+      { label: 'All Deals', href: '/deals' },
+      { label: 'Last-Minute', href: '/deals/last-minute' },
+      { label: '🔔 Deal Alerts', href: '/deal-alerts' },
+    ],
+  },
   {
     label: 'Tools',
     href: '/tools',
@@ -46,10 +52,6 @@ const navItems = [
       { label: 'Packing Gear', href: '/guides/packing-gear' },
       { label: 'Travel Insurance', href: '/guides/travel-insurance' },
       { label: 'Port Guides', href: '/guides/ports' },
-      { label: '↳ Port Canaveral', href: '/guides/ports/port-canaveral' },
-      { label: '↳ Nassau', href: '/guides/ports/nassau' },
-      { label: '↳ Castaway Cay', href: '/guides/ports/castaway-cay' },
-      { label: '↳ Cozumel', href: '/guides/ports/cozumel' },
     ],
   },
   { label: 'Travel Hacks', href: '/travel-hacks' },
@@ -62,6 +64,7 @@ export function Header() {
   const pathname = usePathname()
   const [mobileOpen, setMobileOpen] = useState(false)
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
+  const [openMobileSection, setOpenMobileSection] = useState<string | null>(null)
   const menuRef = useRef<HTMLDivElement>(null)
   const menuButtonRef = useRef<HTMLButtonElement>(null)
 
@@ -132,6 +135,7 @@ export function Header() {
   const handleMobileMenuToggle = () => {
     setMobileOpen(!mobileOpen)
     announceMenuState(!mobileOpen)
+    if (mobileOpen) setOpenMobileSection(null)
   }
 
   return (
@@ -242,56 +246,79 @@ export function Header() {
         <div
           ref={menuRef}
           id="mobile-menu"
-          className="md:hidden border-t border-slate-200 bg-white"
+          className="md:hidden border-t border-slate-200 bg-white max-h-[calc(100vh-4rem)] overflow-y-auto"
           role="navigation"
           aria-label="Mobile navigation"
         >
-          <nav className="px-4 py-4 space-y-1">
+          <nav className="px-4 py-4 space-y-0.5">
             <Link
               href="/book"
               onClick={() => { setMobileOpen(false); announceMenuState(false) }}
-              className="block px-3 py-2.5 text-base font-bold rounded-lg bg-[#D4AF37] text-[#1E3A5F] text-center mb-2"
+              className="block px-3 py-2.5 text-base font-bold rounded-lg bg-[#D4AF37] text-[#1E3A5F] text-center mb-3"
             >
               Get a Free Quote
             </Link>
+
             {navItems.map((item) => (
               <div key={item.label}>
-                <Link
-                  href={item.href}
-                  onClick={() => {
-                    setMobileOpen(false)
-                    announceMenuState(false)
-                  }}
-                  className={`block px-3 py-2 text-base font-medium rounded-lg transition-colors duration-200 ${
-                    isCurrentPage(item.href)
-                      ? 'text-navy bg-slate-100'
-                      : 'text-slate-700 hover:bg-slate-50 hover:text-navy'
-                  }`}
-                  aria-current={isCurrentPage(item.href) ? 'page' : undefined}
-                >
-                  {item.label}
-                </Link>
-                {item.children && (
-                  <div className="pl-4" role="region" aria-label={`${item.label} submenu`}>
-                    {item.children.map((child) => (
-                      <Link
-                        key={child.href}
-                        href={child.href}
-                        onClick={() => {
-                          setMobileOpen(false)
-                          announceMenuState(false)
+                {item.children ? (
+                  <>
+                    <button
+                      onClick={() =>
+                        setOpenMobileSection(openMobileSection === item.label ? null : item.label)
+                      }
+                      className="flex items-center justify-between w-full px-3 py-2.5 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-navy rounded-lg transition-colors duration-200"
+                      aria-expanded={openMobileSection === item.label}
+                    >
+                      {item.label}
+                      <ChevronDown
+                        className="h-4 w-4 flex-shrink-0 transition-transform duration-200"
+                        aria-hidden="true"
+                        style={{
+                          transform:
+                            openMobileSection === item.label ? 'rotate(180deg)' : 'rotate(0deg)',
                         }}
-                        className={`block px-3 py-1.5 text-sm rounded-lg transition-colors duration-200 ${
-                          isCurrentPage(child.href)
-                            ? 'text-navy font-medium'
-                            : 'text-slate-500 hover:text-navy'
-                        }`}
-                        aria-current={isCurrentPage(child.href) ? 'page' : undefined}
-                      >
-                        {child.label}
-                      </Link>
-                    ))}
-                  </div>
+                      />
+                    </button>
+                    {openMobileSection === item.label && (
+                      <div className="mt-0.5 mb-1 ml-3 border-l-2 border-slate-100 pl-3 space-y-0.5">
+                        {item.children.map((child) => (
+                          <Link
+                            key={child.href}
+                            href={child.href}
+                            onClick={() => {
+                              setMobileOpen(false)
+                              announceMenuState(false)
+                            }}
+                            className={`block px-3 py-2 text-sm rounded-lg transition-colors duration-200 ${
+                              isCurrentPage(child.href)
+                                ? 'text-navy font-medium bg-slate-50'
+                                : 'text-slate-600 hover:text-navy hover:bg-slate-50'
+                            }`}
+                            aria-current={isCurrentPage(child.href) ? 'page' : undefined}
+                          >
+                            {child.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </>
+                ) : (
+                  <Link
+                    href={item.href}
+                    onClick={() => {
+                      setMobileOpen(false)
+                      announceMenuState(false)
+                    }}
+                    className={`block px-3 py-2.5 text-base font-medium rounded-lg transition-colors duration-200 ${
+                      isCurrentPage(item.href)
+                        ? 'text-navy bg-slate-100'
+                        : 'text-slate-700 hover:bg-slate-50 hover:text-navy'
+                    }`}
+                    aria-current={isCurrentPage(item.href) ? 'page' : undefined}
+                  >
+                    {item.label}
+                  </Link>
                 )}
               </div>
             ))}
