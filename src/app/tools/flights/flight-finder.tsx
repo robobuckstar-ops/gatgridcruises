@@ -40,9 +40,6 @@ const US_AIRPORTS = [
   { code: 'STL', city: 'St. Louis, MO' },
   { code: 'TPA', city: 'Tampa, FL' },
 ]
-import React, { useState, useMemo } from 'react'
-import { ArrowRight, Plane, AlertCircle, Info } from 'lucide-react'
-
 interface SailingOption {
   id: string
   label: string
