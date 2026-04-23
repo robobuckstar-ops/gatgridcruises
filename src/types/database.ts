@@ -140,7 +140,7 @@ export interface PreCruiseHotel {
 export interface TransferOption {
   id: string
   port_id: string
-  type: 'disney_ground' | 'uber' | 'rental_car' | 'personal_car' | 'hotel_shuttle' | 'taxi'
+  type: 'disney_ground' | 'uber' | 'lyft' | 'rental_car' | 'personal_car' | 'hotel_shuttle' | 'taxi'
   cost_estimate_min: number
   cost_estimate_max: number
   travel_time_minutes: number

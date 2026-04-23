@@ -164,9 +164,6 @@ export default function GuidesPage() {
                         </span>
                       </div>
                     </a>
-                    <p className="text-xs text-slate-400 mt-1.5">
-                      <a href="mailto:robobuckstar@gmail.com" className="hover:text-slate-600 transition-colors">Advertise your travel agency here — contact us</a>
-                    </p>
                   </div>
                 )}
               </div>
