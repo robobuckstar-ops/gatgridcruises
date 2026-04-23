@@ -140,8 +140,8 @@ export default function DisneyCruiseVsRoyalCaribbeanGuide() {
           <div className="mb-8 p-6 bg-amber-50 border-l-4 border-blue-600">
             <h3 className="font-fraunces text-xl font-bold text-slate-900 mb-3">Winner: Royal Caribbean (bigger ships)</h3>
             <p className="font-inter text-slate-600">
-              Royal Caribbean operates some of the world's largest cruise ships (Icon, Wonder of the Seas, Symphony of the Seas), with 5,500-6,700+ passengers. Disney's largest ships (Dream, Wish) carry 4,000-4,500 passengers. Royal Caribbean's bigger ships mean more amenities and pools but also more crowded common areas.
-            </p>
+              Royal Caribbean operates some of the world"s largest cruise ships (Icon, Wonder of the Seas, Symphony of the Seas), with 5,500-6,700+ passengers. Disney's largest ships (Dream, Wish) carry 4,000-4,500 passengers. Royal Caribbean's bigger ships mean more amenities and pools but also more crowded common areas.
+"            </p>
           </div>
 
           <div className="space-y-4 font-inter text-slate-600">
@@ -152,8 +152,8 @@ export default function DisneyCruiseVsRoyalCaribbeanGuide() {
 
             <div className="p-4 bg-gray-50 rounded">
               <p className="font-bold mb-2">Royal Caribbean's Advantage: More Amenities</p>
-              <p>Larger ships carry more pools, theaters, restaurants, bars, and activities. There's something happening constantly. If you want endless options and like variety, RCCL's megaships deliver. Bigger doesn't mean worse service—RCCL maintains quality across their fleet.</p>
-            </div>
+              <p>Larger ships carry more pools, theaters, restaurants, bars, and activities. There"s something happening constantly. If you want endless options and like variety, RCCL's megaships deliver. Bigger doesn't mean worse service—RCCL maintains quality across their fleet.</p>
+"            </div>
           </div>
         </section>
 
@@ -352,8 +352,8 @@ export default function DisneyCruiseVsRoyalCaribbeanGuide() {
           </div>
 
           <p className="font-inter text-slate-600 mb-4">
-            For families of 4, Disney's extra space makes a noticeable difference. Royal Caribbean offers studio cabins (unique among major cruise lines) for solo travelers, which Disney doesn't.
-          </p>
+            For families of 4, Disney"s extra space makes a noticeable difference. Royal Caribbean offers studio cabins (unique among major cruise lines) for solo travelers, which Disney doesn't.
+"          </p>
 
           <div className="p-4 bg-gray-50 rounded">
             <p className="font-inter text-slate-600">
@@ -394,8 +394,8 @@ export default function DisneyCruiseVsRoyalCaribbeanGuide() {
           <div className="mb-8 p-6 bg-amber-50 border-l-4 border-blue-600">
             <h3 className="font-fraunces text-xl font-bold text-slate-900 mb-3">Winner: Royal Caribbean (hands down)</h3>
             <p className="font-inter text-slate-600">
-              Royal Caribbean's megaships feature water slides, FlowRiders (surfing simulators), splash pads, and aquatic attractions that Disney's ships simply don't match. If water features and thrill activities are important, Royal Caribbean delivers far more.
-            </p>
+              Royal Caribbean"s megaships feature water slides, FlowRiders (surfing simulators), splash pads, and aquatic attractions that Disney's ships simply don't match. If water features and thrill activities are important, Royal Caribbean delivers far more.
+"            </p>
           </div>
 
           <p className="font-inter text-slate-600">
@@ -452,8 +452,8 @@ export default function DisneyCruiseVsRoyalCaribbeanGuide() {
           </div>
 
           <p className="font-inter text-slate-600 mt-4">
-            <strong>Verdict:</strong> Disney's higher upfront cost typically includes more. Royal Caribbean's lower price means more upsells. Factor total costs, not just cruise fare.
-          </p>
+            <strong>Verdict:</strong> Disney"s higher upfront cost typically includes more. Royal Caribbean's lower price means more upsells. Factor total costs, not just cruise fare.
+"          </p>
         </section>
 
         {/* Loyalty Programs */}

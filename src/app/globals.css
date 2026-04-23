@@ -33,8 +33,10 @@
     border-color: hsl(var(--border));
   }
   body {
+    @apply antialiased;
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
+<<<<<<< HEAD
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 =======
@@ -43,6 +45,8 @@
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
 >>>>>>> claude/focused-mcclintock-8fe348
+=======
+>>>>>>> claude/hopeful-perlman-a2eb26
     font-family: 'Inter', system-ui, sans-serif;
   }
   h1, h2, h3, h4, h5, h6 {

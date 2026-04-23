@@ -166,6 +166,7 @@ export default function GuidesPage() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> claude/tender-sutherland-edf4ad
                   <div className="mt-8 mb-4">
@@ -199,6 +200,10 @@ export default function GuidesPage() {
                       <a href="mailto:robobuckstar@gmail.com" className="hover:text-slate-600 transition-colors">Advertise your travel agency here — contact us</a>
                     </p>
 >>>>>>> claude/tender-sutherland-edf4ad
+=======
+                  <div className="flex justify-center mt-8 mb-4">
+                    <AdSlot placement="guides-mid" size="728x90" />
+>>>>>>> claude/hopeful-perlman-a2eb26
                   </div>
                 )}
               </div>

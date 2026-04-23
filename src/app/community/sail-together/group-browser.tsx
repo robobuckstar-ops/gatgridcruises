@@ -17,6 +17,7 @@ export function GroupBrowser({ groups }: GroupBrowserProps) {
 
   const ships = useMemo(() => {
 <<<<<<< HEAD
+<<<<<<< HEAD
     const uniqueShips = Array.from(
       new Set(groups.map(g => g.sailing.ship_id))
     )
@@ -29,6 +30,10 @@ export function GroupBrowser({ groups }: GroupBrowserProps) {
 >>>>>>> claude/focused-mcclintock-8fe348
 =======
 >>>>>>> claude/stupefied-fermat-7d3200
+=======
+    const uniqueShips = new Set(groups.map(g => g.sailing.ship_id))
+    return getShips().filter(s => uniqueShips.has(s.id))
+>>>>>>> claude/hopeful-perlman-a2eb26
   }, [groups])
 
   const months = useMemo(() => {

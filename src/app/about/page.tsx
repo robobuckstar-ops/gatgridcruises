@@ -27,11 +27,16 @@ export default function AboutPage() {
           <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-4">Who We Are</h2>
           <p className="font-inter text-lg text-gray-700 leading-relaxed">
 <<<<<<< HEAD
+<<<<<<< HEAD
             GatGridCruises is an independent Disney cruise planning resource built for families who want transparent, honest information before committing thousands of dollars to a cruise vacation. We're not a booking platform — we don't sell cruises or process reservations. We're a media and tools platform, like NerdWallet for Disney cruises. We do earn affiliate commissions when you click through to partner sites (hotels, flights, travel services) at no extra cost to you — these are disclosed throughout the site.
 =======
             GatGridCruises is an independent Disney cruise planning resource built for families who want transparent, honest information before committing thousands of dollars to a cruise vacation. We partner with licensed travel advisors to help you book the perfect cruise. We're a media and tools platform, like NerdWallet for Disney cruises.
 >>>>>>> claude/trusting-chaum-ad5704
           </p>
+=======
+            GatGridCruises is an independent Disney cruise planning resource built for families who want transparent, honest information before committing thousands of dollars to a cruise vacation. We"re not a travel agency — we don't take bookings or earn commissions on cruise sales. We're a media and tools platform, like NerdWallet for Disney cruises.
+"          </p>
+>>>>>>> claude/hopeful-perlman-a2eb26
         </section>
 
         {/* Founder Story */}
@@ -154,8 +159,8 @@ export default function AboutPage() {
 
             <div>
               <h3 className="font-semibold text-slate-900 mb-2">Sponsored Content</h3>
-              <p>Some content modules (like "Find a Disney Travel Specialist") are paid placements from travel agencies and service providers. These are always labeled as "Sponsored." We don't hide partnerships — we're transparent about them.</p>
-            </div>
+              <p>Some content modules (like "Find a Disney Travel Specialist") are paid placements from travel agencies and service providers. These are always labeled as "Sponsored." We don"t hide partnerships — we're transparent about them.</p>
+"            </div>
 
             <div>
               <h3 className="font-semibold text-slate-900 mb-2">Information Accuracy</h3>

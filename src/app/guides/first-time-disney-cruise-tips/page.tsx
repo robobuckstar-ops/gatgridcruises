@@ -1,3 +1,4 @@
+
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, CheckCircle2, Lightbulb } from 'lucide-react';
@@ -361,8 +362,8 @@ export default function FirstTimeDisneyCruiseTipsGuide() {
               Quick Service Venues (Free)
             </h3>
             <p className="font-inter text-slate-600">
-              Buffet alternatives, pizza, hot dogs, sandwiches, and casual eats. Perfect for when you're busy with activities and don't want to sit down for a full meal. No reservations needed.
-            </p>
+              Buffet alternatives, pizza, hot dogs, sandwiches, and casual eats. Perfect for when you"re busy with activities and don't want to sit down for a full meal. No reservations needed.
+"            </p>
           </div>
         </section>
 
@@ -372,8 +373,8 @@ export default function FirstTimeDisneyCruiseTipsGuide() {
           </h2>
 
           <p className="font-inter text-slate-600 leading-relaxed mb-6">
-            Disney's kids clubs are exceptional. Many parents cite kids club access as the best part of cruising—it gives adults guilt-free time away while kids have a blast. Here's what you need to know:
-          </p>
+            Disney"s kids clubs are exceptional. Many parents cite kids club access as the best part of cruising—it gives adults guilt-free time away while kids have a blast. Here's what you need to know:
+"          </p>
 
           <div className="space-y-6">
             <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg">
@@ -446,8 +447,8 @@ export default function FirstTimeDisneyCruiseTipsGuide() {
           </h2>
 
           <p className="font-inter text-slate-600 leading-relaxed mb-6">
-            Castaway Cay is Disney's private island and the emotional highlight of most cruises. Here's how to make the most of it:
-          </p>
+            Castaway Cay is Disney"s private island and the emotional highlight of most cruises. Here's how to make the most of it:
+"          </p>
 
           <ul className="font-inter text-slate-600 space-y-4">
             <li className="flex gap-3">

@@ -5,7 +5,7 @@ interface AdSlotProps {
   className?: string
 }
 
-export function AdSlot({ location, placement, size = '300x250', className = '' }: AdSlotProps) {
+function AdSlot({ location, placement, size = '300x250', className = '' }: AdSlotProps) {
   const label = location ?? placement ?? 'unknown'
   const dimensions = {
     '728x90': 'h-[90px] max-w-[728px]',
@@ -23,4 +23,5 @@ export function AdSlot({ location, placement, size = '300x250', className = '' }
   )
 }
 
+export { AdSlot }
 export default AdSlot

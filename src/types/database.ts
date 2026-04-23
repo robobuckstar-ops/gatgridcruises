@@ -2,6 +2,7 @@ export interface Ship {
   id: string
   name: string
   slug: string
+  cruise_line?: string
   year_launched: number
   capacity: number
   tonnage: number

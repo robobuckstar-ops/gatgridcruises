@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { getBlogPostBySlug, getRelatedPosts, getBlogPosts } from '@/lib/data'
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { ArrowLeft, Calendar, Clock } from 'lucide-react'
 import { ShareButtons } from './share-buttons'
 import { StructuredData } from '@/components/ui/structured-data'
@@ -11,6 +12,10 @@ import { generateArticleSchema, generateBreadcrumbSchema } from '@/lib/structure
 import { ArrowLeft, Calendar, Clock, Twitter, Facebook } from 'lucide-react'
 import { CopyLinkButton } from './copy-button'
 >>>>>>> claude/focused-mcclintock-8fe348
+=======
+import { ArrowLeft, Calendar, Clock, Share2, Twitter, Facebook } from 'lucide-react'
+import { CopyLinkButton } from './copy-link-button'
+>>>>>>> claude/hopeful-perlman-a2eb26
 
 interface BlogPostPageProps {
   params: Promise<{
