@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { CheckCircle, AlertCircle, Printer, MapPin } from 'lucide-react';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { GetQuoteCTA } from '@/components/get-quote-cta';
 =======
 import { AdSlot } from '@/components/ui/ad-slot'
@@ -10,6 +11,9 @@ import { AdSlot } from '@/components/ui/ad-slot'
 =======
 import { AdSlot } from '@/components/ui/ad-slot';
 >>>>>>> claude/stupefied-fermat-7d3200
+=======
+import { GetQuoteCTA } from '@/components/get-quote-cta';
+>>>>>>> claude/tender-sutherland-edf4ad
 
 export const metadata: Metadata = {
   title: 'The Ultimate Disney Cruise Packing List (Printable)',
@@ -50,6 +54,9 @@ export default function PackingListGuide() {
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> claude/tender-sutherland-edf4ad
         <a
               href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
               target="_blank"
@@ -64,9 +71,12 @@ export default function PackingListGuide() {
                 <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
               </div>
             </a>
+<<<<<<< HEAD
 =======
         <AdSlot size="728x90" />
 >>>>>>> claude/focused-mcclintock-8fe348
+=======
+>>>>>>> claude/tender-sutherland-edf4ad
 
         {/* Introduction */}
         <section className="mb-12">
@@ -218,6 +228,9 @@ export default function PackingListGuide() {
         </section>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> claude/tender-sutherland-edf4ad
         <a
               href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
               target="_blank"
@@ -232,9 +245,12 @@ export default function PackingListGuide() {
                 <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
               </div>
             </a>
+<<<<<<< HEAD
 =======
         <AdSlot size="728x90" />
 >>>>>>> claude/focused-mcclintock-8fe348
+=======
+>>>>>>> claude/tender-sutherland-edf4ad
 
         {/* Toiletries & Personal Care */}
         <section className="mb-12">
@@ -387,6 +403,9 @@ export default function PackingListGuide() {
         </section>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> claude/tender-sutherland-edf4ad
         <a
               href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
               target="_blank"
@@ -401,9 +420,12 @@ export default function PackingListGuide() {
                 <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
               </div>
             </a>
+<<<<<<< HEAD
 =======
         <AdSlot size="728x90" />
 >>>>>>> claude/focused-mcclintock-8fe348
+=======
+>>>>>>> claude/tender-sutherland-edf4ad
 
         {/* Beach & Pool Items */}
         <section className="mb-12">

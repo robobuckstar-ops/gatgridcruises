@@ -5,15 +5,22 @@ import {
   Plane,
   ArrowRight,
 <<<<<<< HEAD
+<<<<<<< HEAD
   Search,
   Ship,
   Zap,
   CreditCard,
+=======
+  Ship,
+  Zap,
+  Leaf,
+>>>>>>> claude/tender-sutherland-edf4ad
   Users,
   Sparkles,
   MapPin,
   Clock,
   Trophy,
+<<<<<<< HEAD
   Bot,
   Gift,
 } from 'lucide-react'
@@ -33,6 +40,12 @@ import { EmailSignup } from '@/components/ui/email-signup'
 import { AdSlot } from '@/components/ui/ad-slot'
 import { HomeDeals } from '@/components/ui/home-deals'
 >>>>>>> claude/focused-mcclintock-8fe348
+=======
+} from 'lucide-react'
+import { SailingCard } from '@/components/ui/sailing-card'
+import { EmailSignup } from '@/components/ui/email-signup'
+import { GetQuoteCTA } from '@/components/get-quote-cta'
+>>>>>>> claude/tender-sutherland-edf4ad
 import {
   getBiggestPriceDrops,
   getShips,
@@ -90,11 +103,14 @@ export default async function Home() {
             honest advice, transparent pricing, and free tools to help you book smarter.
           </p>
 
+<<<<<<< HEAD
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold mb-8">
             <Sparkles className="w-4 h-4" aria-hidden="true" />
             Our AI scans thousands of sailings to find you the best Disney Cruise deals
           </div>
 
+=======
+>>>>>>> claude/tender-sutherland-edf4ad
           {/* Filter Pills */}
           <div className="flex flex-wrap justify-center gap-3 mb-10">
             <Link href="/deals?filter=ship" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border-2 border-slate-200 text-slate-700 font-semibold text-sm hover:border-[#1E3A5F] hover:text-[#1E3A5F] transition-colors shadow-sm">
@@ -130,6 +146,7 @@ export default async function Home() {
             </Link>
           </div>
 
+<<<<<<< HEAD
           {/* Hero Email Capture */}
           <div className="flex justify-center mt-6 mb-2">
             <HeroEmailCapture />
@@ -138,14 +155,35 @@ export default async function Home() {
           {/* Amex Affiliate Banner */}
           <div className="flex justify-center mt-8">
 <<<<<<< HEAD
+=======
+          {/* Amex Affiliate Banner */}
+          <div className="flex justify-center mt-8">
+>>>>>>> claude/tender-sutherland-edf4ad
             <a
               href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
               target="_blank"
               rel="noopener noreferrer sponsored"
               className="block w-full max-w-2xl rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow"
+<<<<<<< HEAD
 =======
             <AdSlot placement="homepage-top" size="728x90" />
+=======
+            >
+              <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4 flex items-center justify-between gap-4">
+                <div>
+                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Earn 150K+ Membership Rewards Points</p>
+                  <p className="text-blue-200 text-sm mt-0.5">Enough for your next Disney cruise upgrade — Amex Business Platinum</p>
+                </div>
+                <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">
+                  Learn More →
+                </span>
+              </div>
+            </a>
+>>>>>>> claude/tender-sutherland-edf4ad
           </div>
+          <p className="text-center text-xs text-slate-400 mt-2">
+            <a href="mailto:robobuckstar@gmail.com" className="hover:text-slate-600 transition-colors">Advertise your travel agency here — contact us</a>
+          </p>
         </div>
       </section>
 
@@ -290,6 +328,9 @@ export default async function Home() {
                 {/* Amex affiliate banner after 6th card */}
                 {index === 5 && (
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> claude/tender-sutherland-edf4ad
                   <div className="col-span-1 md:col-span-2 lg:col-span-3 mt-8">
                     <a
                       href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
@@ -307,10 +348,16 @@ export default async function Home() {
                         </span>
                       </div>
                     </a>
+<<<<<<< HEAD
 =======
                   <div className="col-span-1 md:col-span-2 lg:col-span-3 flex justify-center mt-8">
                     <AdSlot placement="homepage-mid" size="300x250" />
 >>>>>>> claude/stupefied-fermat-7d3200
+=======
+                    <p className="text-xs text-slate-400 mt-1.5">
+                      <a href="mailto:robobuckstar@gmail.com" className="hover:text-slate-600 transition-colors">Advertise your travel agency here — contact us</a>
+                    </p>
+>>>>>>> claude/tender-sutherland-edf4ad
                   </div>
                 )}
               </div>
@@ -542,6 +589,16 @@ export default async function Home() {
 
       {/* Get a Quote CTA */}
       <GetQuoteCTA />
+<<<<<<< HEAD
+=======
+
+      {/* Ship Quick Links */}
+      <section className="bg-gradient-to-br from-blue-50 to-indigo-50 py-16 md:py-20 border-t border-slate-200" aria-labelledby="fleet-heading">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <h2 id="fleet-heading" className="font-fraunces text-3xl md:text-4xl font-bold text-slate-900 mb-8 text-center">
+            Explore Disney's Fleet
+          </h2>
+>>>>>>> claude/tender-sutherland-edf4ad
 
 =======
           <p className="text-blue-200 mb-8">

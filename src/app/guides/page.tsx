@@ -2,11 +2,15 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { BookOpen, ArrowRight } from 'lucide-react'
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { GetQuoteCTA } from '@/components/get-quote-cta'
 =======
 import { AdSlot } from '@/components/ui/ad-slot'
 import { SpecialistCTA } from '@/components/ui/specialist-cta'
 >>>>>>> claude/focused-mcclintock-8fe348
+=======
+import { GetQuoteCTA } from '@/components/get-quote-cta'
+>>>>>>> claude/tender-sutherland-edf4ad
 
 export const metadata: Metadata = {
   title: 'Disney Cruise Guides — In-Depth Planning Resources',
@@ -161,6 +165,9 @@ export default function GuidesPage() {
                 {index === 3 && (
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> claude/tender-sutherland-edf4ad
                   <div className="mt-8 mb-4">
                     <a
                       href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
@@ -178,6 +185,7 @@ export default function GuidesPage() {
                         </span>
                       </div>
                     </a>
+<<<<<<< HEAD
 =======
                   <div className="col-span-full mt-8 mb-4">
                     <AdSlot size="728x90" />
@@ -186,6 +194,11 @@ export default function GuidesPage() {
                   <div className="flex justify-center mt-8 mb-4">
                     <AdSlot placement="guides-mid" size="728x90" />
 >>>>>>> claude/stupefied-fermat-7d3200
+=======
+                    <p className="text-xs text-slate-400 mt-1.5">
+                      <a href="mailto:robobuckstar@gmail.com" className="hover:text-slate-600 transition-colors">Advertise your travel agency here — contact us</a>
+                    </p>
+>>>>>>> claude/tender-sutherland-edf4ad
                   </div>
                 )}
               </div>
