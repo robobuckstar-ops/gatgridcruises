@@ -91,20 +91,6 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* The Founder */}
-        <section className="mb-16">
-          <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-4">Meet Grayson</h2>
-          <p className="font-inter text-lg text-gray-700 leading-relaxed mb-4">
-            Hi, I'm Grayson Starbuck — the founder of GatGridCruises. By day, I'm a Doctor of Physical Therapy (DPT) and owner of <a href="https://kinitophysicaltherapy.com" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Kinito Physical Therapy</a>. But if you ask my family what I'm really passionate about, they'll tell you it's Disney cruises.
-          </p>
-          <p className="font-inter text-lg text-gray-700 leading-relaxed mb-4">
-            I've taken my family on several Disney cruises, and there's nothing quite like watching your kids experience the magic of a Disney ship for the first time — or the tenth. The nostalgia, the attention to detail, the feeling that everything has been thought of so you don't have to think at all. I genuinely believe nothing beats a Disney cruise for a family vacation.
-          </p>
-          <p className="font-inter text-lg text-gray-700 leading-relaxed">
-            That passion led me to build GatGridCruises — a place where families can find real deals without having to wade through commission-driven advice. I built the tools I wish I'd had when I was planning my first sailing.
-          </p>
-        </section>
-
         {/* The Name */}
         <section className="mb-16">
           <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-4">The Name</h2>
