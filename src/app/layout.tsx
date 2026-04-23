@@ -4,20 +4,12 @@ import './globals.css'
 import { Header } from '@/components/layout/header'
 import { Footer } from '@/components/layout/footer'
 import { SkipNav } from '@/components/ui/skip-nav'
-import { Chatbot } from '@/components/ui/chatbot'
+import { ChatWidget } from '@/components/ui/chat-widget'
 import { NewsletterPopup } from '@/components/ui/newsletter-popup'
 import { generateWebsiteSchema, generateOrganizationSchema } from '@/lib/structured-data'
 import { StructuredData } from '@/components/ui/structured-data'
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX' // Replace with your real GA4 Measurement ID
-=======
-const GA_ID = 'G-XXXXXXXXXX'
->>>>>>> claude/focused-mcclintock-8fe348
-=======
-const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX' // Replace with your real GA4 Measurement ID
->>>>>>> claude/zealous-gould-fd7cd0
 
 export const metadata: Metadata = {
   title: {
@@ -43,7 +35,6 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://gatgridcruises.com',
-<<<<<<< HEAD
     siteName: 'GatGridCruises',
     title: 'GatGridCruises — Magically Valuable Disney Cruises',
     description: 'Find the best Disney cruise deals, compare prices, and plan your perfect voyage.',
@@ -53,27 +44,11 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         alt: 'GatGridCruises — Magically Valuable Disney Cruises',
-<<<<<<< HEAD
-=======
-    siteName: 'Disney Cruise Deal Finder',
-    title: 'Disney Cruise Deal Finder — GatGridCruises',
-    description:
-      'Find the best Disney cruise deals with our Deal Score system. Compare prices, track drops, and plan smarter.',
-    images: [
-      {
-        url: 'https://gatgridcruises.com/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Disney Cruise Deal Finder',
->>>>>>> claude/focused-mcclintock-8fe348
-=======
->>>>>>> claude/zealous-gould-fd7cd0
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-<<<<<<< HEAD
     title: 'GatGridCruises — Magically Valuable Disney Cruises',
     description: 'Find the best Disney cruise deals, compare prices, and plan your perfect voyage.',
     images: ['https://gatgridcruises.com/og-image.png'],
@@ -85,13 +60,6 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://gatgridcruises.com',
   },
-=======
-    title: 'Disney Cruise Deal Finder — GatGridCruises',
-    description:
-      'Find the best Disney cruise deals with our Deal Score system. Compare prices, track drops, and plan smarter.',
-  },
-  robots: { index: true, follow: true },
->>>>>>> claude/focused-mcclintock-8fe348
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -100,36 +68,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-screen flex flex-col">
         {/* Google Analytics 4 */}
         <Script
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> claude/zealous-gould-fd7cd0
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
           strategy="afterInteractive"
         />
         <Script id="ga4-init" strategy="afterInteractive">
-<<<<<<< HEAD
-=======
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
->>>>>>> claude/focused-mcclintock-8fe348
-=======
->>>>>>> claude/zealous-gould-fd7cd0
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-<<<<<<< HEAD
-<<<<<<< HEAD
             gtag('config', '${GA_MEASUREMENT_ID}');
-=======
-            gtag('config', '${GA_ID}');
->>>>>>> claude/focused-mcclintock-8fe348
-=======
-            gtag('config', '${GA_MEASUREMENT_ID}');
->>>>>>> claude/zealous-gould-fd7cd0
           `}
         </Script>
 
@@ -139,7 +86,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main id="main-content" className="flex-1">{children}</main>
         <Footer />
-        <Chatbot />
+        <ChatWidget />
         <NewsletterPopup />
       </body>
     </html>
