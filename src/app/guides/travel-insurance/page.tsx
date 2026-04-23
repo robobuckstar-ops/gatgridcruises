@@ -252,6 +252,270 @@ export default function TravelInsurancePage() {
         </div>
       </section>
 
+      {/* Top Provider Comparison */}
+      <section className="py-12 md:py-16 bg-[#1E3A5F]">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <h2 className="font-fraunces text-3xl font-bold text-white mb-3">Top Travel Insurance Options</h2>
+          <p className="text-blue-200 mb-10 max-w-2xl">
+            We compared the most popular plans for Disney cruise travelers. None of these are the same —
+            pick based on your priorities.
+          </p>
+
+          {/* Affiliate disclosure */}
+          <div className="bg-white/10 rounded-xl p-3 mb-8 text-xs text-blue-300">
+            <strong className="text-blue-200">Affiliate disclosure:</strong> Some links below may earn us a commission at no extra cost to you.
+            See our <a href="/disclosures" className="underline hover:text-white">full disclosures</a>.
+            {/* TODO: Replace placeholder links below with actual affiliate partner links */}
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            {/* Allianz */}
+            <div className="bg-white rounded-2xl p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-3xl" aria-hidden="true">🛡️</span>
+                <div>
+                  <h3 className="font-bold text-[#1E3A5F] text-xl">Allianz Travel Insurance</h3>
+                  <p className="text-slate-500 text-sm">Best for families, established brand</p>
+                </div>
+              </div>
+              <ul className="space-y-2.5 mb-5">
+                {[
+                  { text: 'Medical coverage up to $50,000 (AllTrips Premier)', good: true },
+                  { text: 'Emergency transport up to $250,000', good: true },
+                  { text: 'Annual multi-trip plans available', good: true },
+                  { text: 'Strong trip cancellation coverage', good: true },
+                  { text: 'Cancel for Any Reason available on select plans', good: null },
+                  { text: 'Medical limits lower than some competitors', good: false },
+                ].map(({ text, good }) => (
+                  <li key={text} className="flex items-start gap-2.5">
+                    {good === true ? (
+                      <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                    ) : good === false ? (
+                      <XCircle className="w-4 h-4 text-red-400 flex-shrink-0 mt-0.5" />
+                    ) : (
+                      <AlertTriangle className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
+                    )}
+                    <span className="text-sm text-slate-700">{text}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="text-xs text-slate-500 mb-4">
+                <strong>Best for:</strong> Families wanting a trusted name with solid trip cancellation and reliable claims process.
+              </p>
+              {/* TODO: Replace with actual Allianz affiliate link */}
+              <a
+                href="https://www.allianztravelinsurance.com"
+                target="_blank"
+                rel="noopener noreferrer sponsored"
+                className="block w-full text-center bg-[#1E3A5F] text-white font-semibold rounded-xl py-2.5 text-sm hover:bg-blue-900 transition-colors"
+              >
+                Get Allianz Quote →
+              </a>
+            </div>
+
+            {/* World Nomads */}
+            <div className="bg-white rounded-2xl p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-3xl" aria-hidden="true">🌐</span>
+                <div>
+                  <h3 className="font-bold text-[#1E3A5F] text-xl">World Nomads</h3>
+                  <p className="text-slate-500 text-sm">Best for adventurers &amp; port excursions</p>
+                </div>
+              </div>
+              <ul className="space-y-2.5 mb-5">
+                {[
+                  { text: 'High medical coverage: up to $100,000', good: true },
+                  { text: 'Covers adventure activities at ports', good: true },
+                  { text: 'Buy or extend coverage while traveling', good: true },
+                  { text: 'Strong 24/7 emergency assistance', good: true },
+                  { text: 'No annual plan option', good: false },
+                  { text: 'Fewer trip cancellation options vs. competitors', good: null },
+                ].map(({ text, good }) => (
+                  <li key={text} className="flex items-start gap-2.5">
+                    {good === true ? (
+                      <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                    ) : good === false ? (
+                      <XCircle className="w-4 h-4 text-red-400 flex-shrink-0 mt-0.5" />
+                    ) : (
+                      <AlertTriangle className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
+                    )}
+                    <span className="text-sm text-slate-700">{text}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="text-xs text-slate-500 mb-4">
+                <strong>Best for:</strong> Active families who plan excursions (snorkeling, zip-lining) and want high medical limits.
+              </p>
+              {/* TODO: Replace with actual World Nomads affiliate link */}
+              <a
+                href="https://www.worldnomads.com"
+                target="_blank"
+                rel="noopener noreferrer sponsored"
+                className="block w-full text-center bg-[#1E3A5F] text-white font-semibold rounded-xl py-2.5 text-sm hover:bg-blue-900 transition-colors"
+              >
+                Get World Nomads Quote →
+              </a>
+            </div>
+
+            {/* Travel Guard */}
+            <div className="bg-white rounded-2xl p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-3xl" aria-hidden="true">⚓</span>
+                <div>
+                  <h3 className="font-bold text-[#1E3A5F] text-xl">Travel Guard (AIG)</h3>
+                  <p className="text-slate-500 text-sm">Best overall for comprehensive cruise coverage</p>
+                </div>
+              </div>
+              <ul className="space-y-2.5 mb-5">
+                {[
+                  { text: 'Medical coverage up to $100,000+', good: true },
+                  { text: 'Medical evacuation up to $1,000,000 (Platinum)', good: true },
+                  { text: 'Trip cancellation: 100% of trip cost', good: true },
+                  { text: 'Cancel for Any Reason: 75% cash refund', good: true },
+                  { text: 'Pre-existing condition waiver available', good: true },
+                  { text: 'Premium plan required for best limits', good: null },
+                ].map(({ text, good }) => (
+                  <li key={text} className="flex items-start gap-2.5">
+                    {good === true ? (
+                      <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                    ) : good === false ? (
+                      <XCircle className="w-4 h-4 text-red-400 flex-shrink-0 mt-0.5" />
+                    ) : (
+                      <AlertTriangle className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
+                    )}
+                    <span className="text-sm text-slate-700">{text}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="text-xs text-slate-500 mb-4">
+                <strong>Best for:</strong> Cruisers wanting the highest medical/evacuation limits and full CFAR protection. Our top pick for most families.
+              </p>
+              {/* TODO: Replace with actual Travel Guard affiliate link */}
+              <a
+                href="https://www.travelguard.com"
+                target="_blank"
+                rel="noopener noreferrer sponsored"
+                className="block w-full text-center bg-[#D4AF37] text-[#1E3A5F] font-bold rounded-xl py-2.5 text-sm hover:bg-yellow-300 transition-colors"
+              >
+                Get Travel Guard Quote → <span className="text-xs font-normal">(Our Pick)</span>
+              </a>
+            </div>
+
+            {/* Disney's Plan */}
+            <div className="bg-white rounded-2xl p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-3xl" aria-hidden="true">🏰</span>
+                <div>
+                  <h3 className="font-bold text-[#1E3A5F] text-xl">Disney Cruise Protection</h3>
+                  <p className="text-slate-500 text-sm">Convenient but typically not the best value</p>
+                </div>
+              </div>
+              <ul className="space-y-2.5 mb-5">
+                {[
+                  { text: 'Easy to add during DCL.com booking', good: true },
+                  { text: 'Trip cancellation: 100% cruise fare', good: true },
+                  { text: 'Medical coverage: only $10,000', good: false },
+                  { text: 'Medical evacuation: only $30,000', good: false },
+                  { text: 'CFAR returns 75% as cruise credit, not cash', good: false },
+                  { text: 'Limited pre-existing condition coverage', good: false },
+                ].map(({ text, good }) => (
+                  <li key={text} className="flex items-start gap-2.5">
+                    {good === true ? (
+                      <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                    ) : (
+                      <XCircle className="w-4 h-4 text-red-400 flex-shrink-0 mt-0.5" />
+                    )}
+                    <span className="text-sm text-slate-700">{text}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="bg-amber-50 rounded-xl p-3 text-sm text-amber-800 border border-amber-200">
+                <strong>Our take:</strong> Adequate if you primarily want trip cancellation and don&apos;t have any health concerns. Not recommended if medical coverage matters — $10,000 won&apos;t cover a serious emergency at sea.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What to Look For Checklist */}
+      <section className="py-12 md:py-16 bg-white">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <h2 className="font-fraunces text-3xl font-bold text-[#1E3A5F] mb-3">What to Look For</h2>
+          <p className="text-slate-600 mb-8">
+            Use this checklist when comparing cruise travel insurance plans. A plan that doesn&apos;t meet the critical requirements below isn&apos;t worth buying.
+          </p>
+
+          <div className="space-y-3">
+            {[
+              {
+                priority: 'Critical',
+                item: 'Emergency medical: minimum $100,000',
+                detail: 'The ship\'s medical center and foreign hospitals charge full private rates. Disney\'s plan covers only $10,000 — dangerously insufficient for a serious event.',
+              },
+              {
+                priority: 'Critical',
+                item: 'Medical evacuation: minimum $500,000',
+                detail: 'Air ambulance or helicopter to an adequate hospital runs $50,000–$250,000 without insurance. Premium plans offer $1,000,000+.',
+              },
+              {
+                priority: 'Essential',
+                item: 'Trip cancellation: 100% of prepaid, non-refundable trip costs',
+                detail: 'Must cover the full trip value (cruise + flights + hotels), not just the cruise fare.',
+              },
+              {
+                priority: 'Essential',
+                item: 'Trip interruption coverage',
+                detail: 'Distinct from cancellation — covers your costs if you must leave the cruise early after it has started.',
+              },
+              {
+                priority: 'Essential',
+                item: 'Pre-existing condition waiver (buy within 14–21 days of deposit)',
+                detail: 'Critical if any traveler has a known health condition. The window varies by plan — buy early.',
+              },
+              {
+                priority: 'Recommended',
+                item: '24/7 emergency assistance hotline',
+                detail: 'Invaluable for coordinating care at foreign ports. Make sure the plan includes a real human-staffed line, not just a website.',
+              },
+              {
+                priority: 'Recommended',
+                item: 'Cancel for Any Reason (CFAR) available as add-on',
+                detail: 'Refunds 75% as cash for any cancellation reason. Purchase within 14–21 days of first deposit.',
+              },
+              {
+                priority: 'Optional',
+                item: 'Baggage protection',
+                detail: 'Cruise cabin security means baggage loss is rare. Useful for flights, but not the priority.',
+              },
+            ].map(({ priority, item, detail }) => (
+              <div key={item} className="flex gap-4 p-4 rounded-xl border border-slate-200 bg-slate-50">
+                <CheckCircle className={`w-5 h-5 flex-shrink-0 mt-0.5 ${
+                  priority === 'Critical' ? 'text-red-500' :
+                  priority === 'Essential' ? 'text-blue-500' :
+                  priority === 'Recommended' ? 'text-emerald-500' :
+                  'text-slate-400'
+                }`} />
+                <div className="flex-1">
+                  <div className="flex flex-wrap items-center gap-2 mb-1">
+                    <p className="font-semibold text-slate-900 text-sm">{item}</p>
+                    <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${
+                      priority === 'Critical' ? 'bg-red-100 text-red-700' :
+                      priority === 'Essential' ? 'bg-blue-100 text-blue-700' :
+                      priority === 'Recommended' ? 'bg-green-100 text-green-700' :
+                      'bg-slate-200 text-slate-600'
+                    }`}>
+                      {priority}
+                    </span>
+                  </div>
+                  <p className="text-slate-500 text-sm">{detail}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Amex Business Platinum Section */}
       <section className="py-12 md:py-16 bg-slate-50 border-t border-b border-slate-200">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">

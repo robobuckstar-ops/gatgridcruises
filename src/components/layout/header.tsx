@@ -22,6 +22,7 @@ const navItems = [
       { label: 'Stateroom Finder', href: '/tools/staterooms' },
       { label: 'Transfer Guide', href: '/tools/transfers' },
       { label: 'Compare Sailings', href: '/tools/compare' },
+      { label: 'Price Tracker', href: '/price-tracker' },
     ],
   },
   { label: 'Blog', href: '/blog' },

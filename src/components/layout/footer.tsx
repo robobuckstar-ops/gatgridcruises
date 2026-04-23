@@ -212,6 +212,11 @@ export function Footer() {
                     Compare Sailings
                   </Link>
                 </li>
+                <li>
+                  <Link href="/price-tracker" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                    Price Tracker
+                  </Link>
+                </li>
               </ul>
             </div>
 
