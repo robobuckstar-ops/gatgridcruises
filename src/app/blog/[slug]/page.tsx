@@ -41,7 +41,10 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
       description: post.excerpt,
       publishedTime: post.published_date,
       authors: [post.author],
-      images: post.featured_image_url ? [{ url: post.featured_image_url }] : [],
+      siteName: 'GatGridCruises',
+      images: post.featured_image_url
+        ? [{ url: post.featured_image_url, width: 1200, height: 600, alt: post.title }]
+        : [],
     },
     twitter: {
       card: 'summary_large_image',

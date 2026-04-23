@@ -26,7 +26,18 @@ const navItems = [
       { label: 'Price Tracker', href: '/price-tracker' },
     ],
   },
-  { label: 'Blog', href: '/blog' },
+  {
+    label: 'Blog',
+    href: '/blog',
+    children: [
+      { label: 'All Posts', href: '/blog' },
+      { label: 'Packing List 2026', href: '/blog/disney-cruise-packing-list' },
+      { label: 'First-Time Tips', href: '/blog/first-time-disney-cruise-tips' },
+      { label: 'Best Credit Cards', href: '/blog/best-credit-cards-disney-cruises' },
+      { label: 'Disney vs. Other Lines', href: '/blog/disney-cruise-comparison' },
+      { label: '10 Ways to Save', href: '/blog/save-money-disney-cruise' },
+    ],
+  },
   {
     label: 'Guides',
     href: '/guides',
