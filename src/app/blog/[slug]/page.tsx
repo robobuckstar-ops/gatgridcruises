@@ -92,7 +92,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       {/* Hero Section */}
       <div className="bg-gradient-to-br from-blue-50 via-white to-indigo-50 pt-8 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Back Link */}
           <Link
             href="/blog"
             className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 mb-8 font-medium"
@@ -101,7 +100,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             Back to Blog
           </Link>
 
-          {/* Title & Metadata */}
           <div className="mb-8">
             <div className="mb-4 inline-block">
               <span className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wide ${colors.bg} ${colors.text}`}>
@@ -113,9 +111,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               {post.title}
             </h1>
 
-            {/* Post Meta */}
             <div className="flex flex-wrap items-center gap-6 text-slate-600 border-t border-slate-200 pt-6">
-              {/* Author */}
               <div className="flex items-center gap-3">
                 {post.author_avatar && (
                   <img
@@ -130,7 +126,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 </div>
               </div>
 
-              {/* Date */}
               <div className="flex items-center gap-2 text-sm">
                 <Calendar className="h-4 w-4" />
                 <time dateTime={post.published_date}>
@@ -142,7 +137,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 </time>
               </div>
 
-              {/* Read Time */}
               <div className="flex items-center gap-2 text-sm">
                 <Clock className="h-4 w-4" />
                 <span>{post.read_time}</span>
@@ -150,7 +144,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </div>
           </div>
 
-          {/* Featured Image */}
           {post.featured_image_url && (
             <div className="mb-8 rounded-xl overflow-hidden bg-gradient-to-br from-slate-100 to-slate-200 shadow-lg">
               <img
@@ -170,7 +163,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
 
-        {/* Tags */}
         {post.tags.length > 0 && (
           <div className="mt-12 pt-8 border-t border-slate-200">
             <h3 className="font-semibold text-slate-900 mb-4">Tagged with</h3>
@@ -188,14 +180,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
         )}
 
-        {/* Share Section */}
         <div className="mt-12 pt-8 border-t border-slate-200">
           <h3 className="font-semibold text-slate-900 mb-4">Share this article</h3>
           <ShareButtons title={post.title} slug={post.slug} />
         </div>
       </article>
 
-      {/* Related Posts */}
       {relatedPosts.length > 0 && (
         <div className="bg-slate-50 py-16 mt-20">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -254,11 +244,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         </div>
       )}
 
-      {/* Newsletter CTA */}
       <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-16 mt-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-display text-3xl font-bold mb-4">
-            Don't miss future articles
+            Don&apos;t miss future articles
           </h2>
           <p className="text-lg text-blue-100 mb-8">
             Subscribe to get the latest Disney cruise news and tips delivered to your inbox

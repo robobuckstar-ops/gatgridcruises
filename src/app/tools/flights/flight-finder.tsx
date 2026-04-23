@@ -40,7 +40,6 @@ const US_AIRPORTS = [
   { code: 'STL', city: 'St. Louis, MO' },
   { code: 'TPA', city: 'Tampa, FL' },
 ]
-
 interface SailingOption {
   id: string
   label: string
@@ -320,6 +319,12 @@ export function FlightFinder({
                 placeholder="Search by code or city (e.g., ORD, Chicago)"
                 className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:ring-offset-0"
                 autoComplete="off"
+                value={homeAirport}
+                onChange={e => setHomeAirport(e.target.value.toUpperCase())}
+                placeholder="e.g., ORD, LAX, ATL"
+                maxLength={3}
+                className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-0"
+                style={{ '--tw-ring-color': '#D4AF37' } as React.CSSProperties}
               />
               {homeAirport && (
                 <p className="text-xs text-emerald-600 mt-1 font-medium">
