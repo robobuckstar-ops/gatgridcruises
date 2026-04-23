@@ -4,15 +4,12 @@ import { TransferRecommender } from './transfer-recommender'
 import { AlertCircle, Check, X, MapPin } from 'lucide-react'
 import { notFound } from 'next/navigation'
 
-<<<<<<< HEAD
 interface PageProps {
   params: Promise<{
     port: string
   }>
 }
 
-=======
->>>>>>> claude/zealous-gould-fd7cd0
 export async function generateMetadata(
   { params }: { params: Promise<{ port: string }> },
 ): Promise<Metadata> {
@@ -26,11 +23,8 @@ export async function generateMetadata(
   }
 }
 
-<<<<<<< HEAD
 export default async function PortTransfersPage({ params }: PageProps) {
-=======
 export default async function PortTransfersPage({ params }: { params: Promise<{ port: string }> }) {
->>>>>>> claude/zealous-gould-fd7cd0
   const { port: portSlug } = await params
   const port = getPortBySlug(portSlug)
   if (!port) notFound()

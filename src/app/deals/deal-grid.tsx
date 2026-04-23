@@ -5,19 +5,13 @@ import type { Sailing, Ship, Port } from '@/types/database'
 import { SailingCard } from '@/components/ui/sailing-card'
 import { GuestCountSelector } from '@/components/ui/guest-count-selector'
 import { AdSlot } from '@/components/ui/ad-slot'
-<<<<<<< HEAD
 import { Search, SlidersHorizontal, X, Bell, ArrowRight } from 'lucide-react'
 import { calculateDealScore } from '@/lib/deal-score'
 import Link from 'next/link'
-=======
 import { Search, SlidersHorizontal, X } from 'lucide-react'
-<<<<<<< HEAD
 import { SpecialistCTA } from '@/components/ui/specialist-cta'
 import { ReportIssueForm } from '@/components/ui/report-issue-form'
->>>>>>> claude/focused-mcclintock-8fe348
-=======
 import { PRICES_LAST_UPDATED } from '@/lib/constants'
->>>>>>> claude/hopeful-perlman-a2eb26
 
 type SortOption = 'score' | 'price_asc' | 'price_desc' | 'price_per_night' | 'date' | 'duration' | 'drop'
 type SailingWithDrop = Sailing & { percentBelow: number }
@@ -81,10 +75,7 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
       })
     }
 
-<<<<<<< HEAD
     // Score filter — uses the same dynamic calculation shown on each card
-=======
->>>>>>> claude/hopeful-perlman-a2eb26
     if (minScore > 0) {
       results = results.filter(s => calculateDealScore(s, s.price_snapshots).score >= minScore)
     }
@@ -351,7 +342,6 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
         {filtered.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {filtered.map((sailing, index) => (
-<<<<<<< HEAD
               <div key={sailing.id} className={index === 11 ? 'contents' : ''}>
                 <div>
                   <SailingCard
@@ -384,7 +374,6 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
                         <ArrowRight className="w-4 h-4" aria-hidden="true" />
                       </Link>
                     </div>
-=======
               <div key={sailing.id}>
                 <SailingCard
                   sailing={sailing}
@@ -394,7 +383,6 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
                 {index === 5 && (
                   <div className="mt-5">
                     <AdSlot location="deals_grid_native" size="native" />
->>>>>>> claude/hopeful-perlman-a2eb26
                   </div>
                 )}
               </div>

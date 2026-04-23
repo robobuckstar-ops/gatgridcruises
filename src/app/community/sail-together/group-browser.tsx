@@ -17,28 +17,16 @@ export function GroupBrowser({ groups }: GroupBrowserProps) {
 
   const allShips = getShips()
   const ships = useMemo(() => {
-<<<<<<< HEAD
-<<<<<<< HEAD
     const uniqueShips = Array.from(
       new Set(groups.map(g => g.sailing.ship_id))
     )
-<<<<<<< HEAD
     return getShips().filter(s => uniqueShips.includes(s.id))
-<<<<<<< HEAD
-=======
     const allShips = getShips()
     const uniqueShipIds = Array.from(new Set(groups.map(g => g.sailing.ship_id)))
     return allShips.filter(s => uniqueShipIds.includes(s.id))
->>>>>>> claude/focused-mcclintock-8fe348
-=======
->>>>>>> claude/stupefied-fermat-7d3200
-=======
     const uniqueShips = new Set(groups.map(g => g.sailing.ship_id))
     return getShips().filter(s => uniqueShips.has(s.id))
->>>>>>> claude/hopeful-perlman-a2eb26
-=======
     return allShips.filter(s => uniqueShips.includes(s.id))
->>>>>>> claude/zealous-gould-fd7cd0
   }, [groups])
 
   const months = useMemo(() => {

@@ -1,6 +1,5 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-<<<<<<< HEAD
 import { ArrowLeft, CheckCircle, XCircle, Maximize2 } from 'lucide-react'
 import { NewsletterSignup } from '@/components/newsletter-signup'
 
@@ -159,7 +158,6 @@ function CheckIcon({ val }: { val: boolean }) {
     <CheckCircle className="h-5 w-5 text-emerald-500 mx-auto" />
   ) : (
     <XCircle className="h-5 w-5 text-slate-300 mx-auto" />
-=======
 
 export const metadata: Metadata = {
   title: 'Disney Cruise Stateroom Comparison: Inside vs Verandah vs Concierge | GatGridCruises',
@@ -406,7 +404,6 @@ function RatingBar({ label, value }: { label: string; value: number }) {
         />
       </div>
     </div>
->>>>>>> claude/zealous-gould-fd7cd0
   )
 }
 
@@ -414,7 +411,6 @@ export default function StateroomComparisonPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-<<<<<<< HEAD
       <section className="bg-gradient-to-br from-slate-800 to-slate-900 py-14 text-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
@@ -438,7 +434,6 @@ export default function StateroomComparisonPage() {
           <p className="text-slate-300 text-lg max-w-2xl">
             Inside, oceanview, verandah, or concierge? Compare every stateroom type by price,
             size, features, and who each one is best for.
-=======
       <section className="bg-gradient-to-b from-blue-950 to-blue-900 text-white py-16 px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-sm text-blue-300 mb-3 font-medium">Guides · Staterooms</div>
@@ -448,12 +443,10 @@ export default function StateroomComparisonPage() {
           <p className="text-lg text-blue-100 leading-relaxed max-w-2xl">
             Inside vs Oceanview vs Verandah vs Concierge — the honest breakdown of every Disney cruise
             stateroom category, with price ranges, square footage, and who each is best for.
->>>>>>> claude/zealous-gould-fd7cd0
           </p>
         </div>
       </section>
 
-<<<<<<< HEAD
       <article className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
         {/* Quick stats */}
@@ -547,17 +540,14 @@ export default function StateroomComparisonPage() {
           <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-6">
             Feature Comparison
           </h2>
-=======
       <div className="max-w-5xl mx-auto px-4 py-10">
         {/* Quick comparison table */}
         <section className="mb-14">
           <h2 className="font-display text-2xl font-bold text-slate-900 mb-5">Quick Comparison</h2>
->>>>>>> claude/zealous-gould-fd7cd0
           <div className="overflow-x-auto rounded-xl border border-slate-200">
             <table className="w-full text-sm">
               <thead>
                 <tr className="bg-slate-900 text-white">
-<<<<<<< HEAD
                   <th className="text-left px-4 py-3 font-medium">Feature</th>
                   <th className="text-center px-3 py-3 font-medium">Inside</th>
                   <th className="text-center px-3 py-3 font-medium">Oceanview</th>
@@ -610,7 +600,6 @@ export default function StateroomComparisonPage() {
                   <p className="font-bold text-slate-900 text-sm">→ {rec}</p>
                   <p className="text-slate-600 text-xs mt-1">{why}</p>
                 </div>
-=======
                   <th className="text-left p-3 font-semibold">Category</th>
                   <th className="text-left p-3 font-semibold">Size</th>
                   <th className="text-left p-3 font-semibold">View</th>
@@ -778,14 +767,12 @@ export default function StateroomComparisonPage() {
               <div key={scenario} className="border-l-2 border-amber-500 pl-4">
                 <div className="font-semibold text-amber-300 text-sm mb-1">{scenario}</div>
                 <p className="text-slate-300 text-sm leading-relaxed">{answer}</p>
->>>>>>> claude/zealous-gould-fd7cd0
               </div>
             ))}
           </div>
         </section>
 
         {/* CTA */}
-<<<<<<< HEAD
         <section className="mb-12">
           <div className="grid sm:grid-cols-2 gap-4">
             <Link
@@ -830,7 +817,6 @@ export default function StateroomComparisonPage() {
           </div>
         </section>
       </article>
-=======
         <section className="mt-12 text-center">
           <h2 className="font-display text-2xl font-bold text-slate-900 mb-3">Ready to Estimate Your Cost?</h2>
           <p className="text-slate-600 mb-6 max-w-lg mx-auto text-sm">
@@ -860,7 +846,6 @@ export default function StateroomComparisonPage() {
           </div>
         </section>
       </div>
->>>>>>> claude/zealous-gould-fd7cd0
     </div>
   )
 }

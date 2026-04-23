@@ -1,9 +1,5 @@
 'use client'
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> claude/zealous-gould-fd7cd0
 import { Copy } from 'lucide-react'
 
 export function CopyLinkButton({ url }: { url: string }) {
@@ -14,8 +10,6 @@ export function CopyLinkButton({ url }: { url: string }) {
     >
       <Copy className="h-4 w-4" />
       Copy Link
-<<<<<<< HEAD
-=======
 import { useState } from 'react'
 import { Copy, Check } from 'lucide-react'
 
@@ -35,9 +29,6 @@ export function CopyLinkButton({ url }: { url: string }) {
     >
       {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
       {copied ? 'Copied!' : 'Copy Link'}
->>>>>>> claude/trusting-chaum-ad5704
-=======
->>>>>>> claude/zealous-gould-fd7cd0
     </button>
   )
 }

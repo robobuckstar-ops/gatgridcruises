@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 'use client'
 
 import { useState, useMemo } from 'react'
@@ -422,7 +421,6 @@ export default function CruiseCostCalculatorPage() {
             </ul>
           </div>
         </section>
-=======
 import { Metadata } from 'next'
 import { CruiseCostCalculator } from './cruise-cost-calculator'
 
@@ -453,7 +451,6 @@ export default function CruiseCostCalculatorPage() {
           </p>
         </div>
         <CruiseCostCalculator />
->>>>>>> claude/zealous-gould-fd7cd0
       </div>
     </div>
   )

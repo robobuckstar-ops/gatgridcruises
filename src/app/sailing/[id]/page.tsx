@@ -120,6 +120,7 @@ export default async function SailingDetailPage({ params }: PageProps) {
 
             {/* Booking CTA — top */}
             <BookingInquiryButton sailing={sailing} variant="inline" />
+            <a href="mailto:bookings@gatgridcruises.com" className="inline-block mt-4 px-6 py-3 bg-amber-500 text-white rounded-lg hover:bg-amber-600 font-medium">Interested? Let us help you book this cruise →</a>
 
             {/* Travel Hack Tip */}
             <div className="bg-gradient-to-r from-amber-50 to-yellow-50 border-l-4 border-amber-400 rounded-r-lg p-4 mb-6">

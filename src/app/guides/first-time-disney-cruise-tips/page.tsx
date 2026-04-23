@@ -1,23 +1,11 @@
-<<<<<<< HEAD
 
-=======
->>>>>>> claude/zealous-gould-fd7cd0
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, CheckCircle2, Lightbulb } from 'lucide-react';
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 import { GetQuoteCTA } from '@/components/get-quote-cta';
-=======
 import { AdSlot } from '@/components/ui/ad-slot';
->>>>>>> claude/focused-mcclintock-8fe348
-=======
 import { AdSlot } from '@/components/ui/ad-slot';
->>>>>>> claude/stupefied-fermat-7d3200
-=======
 import { GetQuoteCTA } from '@/components/get-quote-cta';
->>>>>>> claude/tender-sutherland-edf4ad
 
 export const metadata: Metadata = {
   title: '25 Things to Know Before Your First Disney Cruise',
@@ -204,10 +192,6 @@ export default function FirstTimeDisneyCruiseTipsGuide() {
       </section>
 
       {/* Ad Slot 1 */}
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> claude/tender-sutherland-edf4ad
       <a
               href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
               target="_blank"
@@ -222,12 +206,7 @@ export default function FirstTimeDisneyCruiseTipsGuide() {
                 <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
               </div>
             </a>
-<<<<<<< HEAD
-=======
       <AdSlot size="728x90" />
->>>>>>> claude/focused-mcclintock-8fe348
-=======
->>>>>>> claude/tender-sutherland-edf4ad
 
       {/* Main Content */}
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -244,10 +223,6 @@ export default function FirstTimeDisneyCruiseTipsGuide() {
         </section>
 
         {/* Ad Slot 2 */}
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> claude/tender-sutherland-edf4ad
         <a
               href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
               target="_blank"
@@ -262,12 +237,7 @@ export default function FirstTimeDisneyCruiseTipsGuide() {
                 <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
               </div>
             </a>
-<<<<<<< HEAD
-=======
         <AdSlot size="728x90" />
->>>>>>> claude/focused-mcclintock-8fe348
-=======
->>>>>>> claude/tender-sutherland-edf4ad
 
         <section className="mb-12">
           <h2 className="text-3xl font-fraunces font-bold text-slate-900 mb-6">
@@ -299,10 +269,6 @@ export default function FirstTimeDisneyCruiseTipsGuide() {
         </section>
 
         {/* Ad Slot 3 */}
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> claude/tender-sutherland-edf4ad
         <a
               href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
               target="_blank"
@@ -317,12 +283,7 @@ export default function FirstTimeDisneyCruiseTipsGuide() {
                 <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
               </div>
             </a>
-<<<<<<< HEAD
-=======
         <AdSlot size="728x90" />
->>>>>>> claude/focused-mcclintock-8fe348
-=======
->>>>>>> claude/tender-sutherland-edf4ad
 
         <section className="mb-12">
           <h2 className="text-3xl font-fraunces font-bold text-slate-900 mb-6">
@@ -419,10 +380,6 @@ export default function FirstTimeDisneyCruiseTipsGuide() {
         </section>
 
         {/* Ad Slot 4 */}
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> claude/tender-sutherland-edf4ad
         <a
               href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
               target="_blank"
@@ -437,12 +394,7 @@ export default function FirstTimeDisneyCruiseTipsGuide() {
                 <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
               </div>
             </a>
-<<<<<<< HEAD
-=======
         <AdSlot size="728x90" />
->>>>>>> claude/focused-mcclintock-8fe348
-=======
->>>>>>> claude/tender-sutherland-edf4ad
 
         <section className="mb-12">
           <h2 className="text-3xl font-fraunces font-bold text-slate-900 mb-6">
@@ -582,10 +534,6 @@ export default function FirstTimeDisneyCruiseTipsGuide() {
         </section>
 
         {/* Ad Slot 5 */}
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> claude/tender-sutherland-edf4ad
         <a
               href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
               target="_blank"
@@ -600,12 +548,7 @@ export default function FirstTimeDisneyCruiseTipsGuide() {
                 <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
               </div>
             </a>
-<<<<<<< HEAD
-=======
         <AdSlot size="728x90" />
->>>>>>> claude/focused-mcclintock-8fe348
-=======
->>>>>>> claude/tender-sutherland-edf4ad
 
         <section className="mb-12">
           <h2 className="text-3xl font-fraunces font-bold text-slate-900 mb-6">
@@ -705,17 +648,11 @@ export default function FirstTimeDisneyCruiseTipsGuide() {
       </article>
 
       {/* Ad Slot 6 */}
-<<<<<<< HEAD
-<<<<<<< HEAD
 
       <GetQuoteCTA />
-=======
       <AdSlot size="728x90" />
->>>>>>> claude/focused-mcclintock-8fe348
-=======
 
       <GetQuoteCTA />
->>>>>>> claude/tender-sutherland-edf4ad
     </div>
   );
 }

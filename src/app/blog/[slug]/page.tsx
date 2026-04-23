@@ -1,39 +1,27 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { getBlogPostBySlug, getRelatedPosts, getBlogPosts } from '@/lib/data'
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 import { ArrowLeft, Calendar, Clock } from 'lucide-react'
 import { ShareButtons } from './share-buttons'
 import { StructuredData } from '@/components/ui/structured-data'
 import { generateArticleSchema, generateBreadcrumbSchema } from '@/lib/structured-data'
-=======
 import { ArrowLeft, Calendar, Clock, Twitter, Facebook } from 'lucide-react'
 import { CopyLinkButton } from './copy-button'
->>>>>>> claude/focused-mcclintock-8fe348
-=======
 import { ArrowLeft, Calendar, Clock, Share2, Twitter, Facebook } from 'lucide-react'
 import { CopyLinkButton } from './copy-link-button'
->>>>>>> claude/hopeful-perlman-a2eb26
 
 interface BlogPostPageProps {
   params: Promise<{
     slug: string
   }>
-=======
 import { ArrowLeft, Calendar, Clock } from 'lucide-react'
 import { ShareButtons } from './share-buttons'
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>
->>>>>>> claude/stupefied-fermat-7d3200
 }
-=======
 import { ArrowLeft, Calendar, Clock, Twitter, Facebook } from 'lucide-react'
 import { CopyLinkButton } from './copy-link-button'
->>>>>>> claude/zealous-gould-fd7cd0
 
 export async function generateStaticParams() {
   const posts = getBlogPosts()
@@ -42,11 +30,8 @@ export async function generateStaticParams() {
   }))
 }
 
-<<<<<<< HEAD
 export async function generateMetadata({ params }: BlogPostPageProps) {
-=======
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
->>>>>>> claude/zealous-gould-fd7cd0
   const { slug } = await params
   const post = getBlogPostBySlug(slug)
 
@@ -56,11 +41,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   const canonical = `https://gatgridcruises.com/blog/${post.slug}`
   return {
-<<<<<<< HEAD
     title: `${post.title} | GatGridCruises`,
-=======
     title: post.title,
->>>>>>> claude/zealous-gould-fd7cd0
     description: post.excerpt,
     alternates: { canonical },
     openGraph: {
@@ -84,11 +66,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
 }
 
-<<<<<<< HEAD
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
-=======
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
->>>>>>> claude/zealous-gould-fd7cd0
   const { slug } = await params
   const post = getBlogPostBySlug(slug)
 
@@ -228,10 +207,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         {/* Share Section */}
         <div className="mt-12 pt-8 border-t border-slate-200">
           <h3 className="font-semibold text-slate-900 mb-4">Share this article</h3>
-<<<<<<< HEAD
-<<<<<<< HEAD
           <ShareButtons title={post.title} slug={post.slug} />
-=======
           <div className="flex flex-wrap gap-3">
             <a
               href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(`https://gatgridcruises.com/blog/${post.slug}`)}`}
@@ -253,10 +229,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             </a>
             <CopyLinkButton url={`https://gatgridcruises.com/blog/${post.slug}`} />
           </div>
->>>>>>> claude/focused-mcclintock-8fe348
-=======
           <ShareButtons title={post.title} slug={post.slug} />
->>>>>>> claude/stupefied-fermat-7d3200
         </div>
       </article>
 

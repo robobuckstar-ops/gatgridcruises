@@ -132,19 +132,10 @@ export function CabinComparison({ shipSlug }: CabinComparisonProps) {
                 {startingPrices[cat.key] != null ? (
                   <div>
                     <p className={`font-fraunces text-xl font-bold ${cat.textColor}`}>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
                       {formatPrice(startingPrices[cat.key] as number)}
-=======
                       {formatPrice(startingPrices[cat.key] ?? 0)}
->>>>>>> claude/focused-mcclintock-8fe348
-=======
                       {formatPrice(startingPrices[cat.key] ?? 0)}
->>>>>>> claude/stupefied-fermat-7d3200
-=======
                       {formatPrice(startingPrices[cat.key] as number)}
->>>>>>> claude/zealous-gould-fd7cd0
                     </p>
                     <p className="text-xs text-slate-600 mt-1">Lowest available</p>
                   </div>
@@ -429,27 +420,12 @@ export function CabinComparison({ shipSlug }: CabinComparisonProps) {
               <div className="mb-6 pb-6 border-b border-slate-200">
                 <p className="text-sm text-slate-600 font-semibold mb-1">Starting Price</p>
                 <p className={`font-fraunces text-3xl font-bold ${cat.textColor}`}>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
                   {formatPrice(startingPrices[cat.key] as number)}
-=======
                   {formatPrice(startingPrices[cat.key]!)}
->>>>>>> claude/flamboyant-chebyshev-ecfe77
-=======
                   {formatPrice(startingPrices[cat.key]!)}
->>>>>>> claude/upbeat-lalande-15bcbe
-=======
                   {formatPrice(startingPrices[cat.key] ?? 0)}
->>>>>>> claude/focused-mcclintock-8fe348
-=======
                   {formatPrice(startingPrices[cat.key] ?? 0)}
->>>>>>> claude/stupefied-fermat-7d3200
-=======
                   {formatPrice(startingPrices[cat.key] as number)}
->>>>>>> claude/zealous-gould-fd7cd0
                 </p>
               </div>
             )}

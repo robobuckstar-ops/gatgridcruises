@@ -1,6 +1,5 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-<<<<<<< HEAD
 import { ArrowLeft, CreditCard, Star, CheckCircle } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -295,7 +294,6 @@ export default function BestCruiseCreditCardsPage() {
             <div className="bg-white/10 rounded-lg px-4 py-3 text-center">
               <p className="text-2xl font-bold text-yellow-400">$0</p>
               <p className="text-blue-200">Cost to compare</p>
-=======
 import { AffiliateDisclosure } from '@/components/ui/affiliate-disclosure'
 
 export const metadata: Metadata = {
@@ -414,13 +412,11 @@ export default function BestCruiseCreditCardsPage() {
             </div>
             <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 text-slate-200 text-sm">
               ✓ Cruise-specific tips
->>>>>>> claude/zealous-gould-fd7cd0
             </div>
           </div>
         </div>
       </section>
 
-<<<<<<< HEAD
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
         {/* Intro */}
@@ -550,7 +546,6 @@ export default function BestCruiseCreditCardsPage() {
               >
                 <span className="font-medium text-slate-900 text-sm">{label}</span>
                 <span className="text-blue-600 text-sm">→</span>
-=======
       <div className="max-w-4xl mx-auto px-4 py-10">
         <AffiliateDisclosure />
 
@@ -754,13 +749,11 @@ export default function BestCruiseCreditCardsPage() {
                 className="flex items-center gap-2 text-sm text-blue-700 hover:text-blue-900 font-medium"
               >
                 → {link.label}
->>>>>>> claude/zealous-gould-fd7cd0
               </Link>
             ))}
           </div>
         </section>
 
-<<<<<<< HEAD
         {/* Disclosure */}
         <section className="pt-8 border-t border-slate-200">
           <div className="bg-amber-50 rounded-lg p-5 border border-amber-200">
@@ -775,12 +768,10 @@ export default function BestCruiseCreditCardsPage() {
           </div>
         </section>
       </article>
-=======
         <div className="mt-10 pt-8 border-t border-slate-200">
           <AffiliateDisclosure />
         </div>
       </div>
->>>>>>> claude/zealous-gould-fd7cd0
     </div>
   )
 }

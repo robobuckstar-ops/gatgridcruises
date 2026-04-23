@@ -1,6 +1,5 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-<<<<<<< HEAD
 import { ArrowLeft, CheckCircle, XCircle, Package } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -28,7 +27,6 @@ function AmazonLink({ search, children }: { search: string; children: React.Reac
       {children}
     </a>
   )
-=======
 import { AffiliateDisclosure } from '@/components/ui/affiliate-disclosure'
 
 export const metadata: Metadata = {
@@ -46,12 +44,10 @@ export const metadata: Metadata = {
 const AMAZON_TAG = 'thm1230b0300-20'
 function amazonLink(searchTerm: string) {
   return `https://www.amazon.com/s?k=${encodeURIComponent(searchTerm)}&tag=${AMAZON_TAG}`
->>>>>>> claude/zealous-gould-fd7cd0
 }
 
 interface PackingItem {
   name: string
-<<<<<<< HEAD
   search: string
   note?: string
 }
@@ -111,7 +107,6 @@ export default function DisneyPackingListPage() {
             <span>10 min read</span>
             <span>·</span>
             <span>Updated April 2025</span>
-=======
   note?: string
   link?: string
 }
@@ -365,12 +360,10 @@ export default function PackingListPage() {
                 {cat}
               </span>
             ))}
->>>>>>> claude/zealous-gould-fd7cd0
           </div>
         </div>
       </section>
 
-<<<<<<< HEAD
       {/* Main content */}
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
@@ -643,7 +636,6 @@ export default function PackingListPage() {
                 <span className="text-slate-700">
                   <strong>{item}</strong> — <span className="text-slate-500">{reason}</span>
                 </span>
-=======
       <div className="max-w-4xl mx-auto px-4 py-10">
         <AffiliateDisclosure />
 
@@ -721,13 +713,11 @@ export default function PackingListPage() {
               <li key={item} className="flex items-start gap-2 text-sm text-emerald-800">
                 <span className="text-emerald-500 mt-0.5 flex-shrink-0">✓</span>
                 {item}
->>>>>>> claude/zealous-gould-fd7cd0
               </li>
             ))}
           </ul>
         </section>
 
-<<<<<<< HEAD
         {/* What Disney Provides */}
         <section id="disney-provides" className="mt-12">
           <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-6">
@@ -756,7 +746,6 @@ export default function PackingListPage() {
               <div key={item} className="bg-emerald-50 rounded-lg p-4 border border-emerald-100">
                 <p className="font-semibold text-slate-900 text-sm">{item}</p>
                 <p className="text-slate-600 text-xs mt-1">{detail}</p>
-=======
         {/* What NOT to Bring */}
         <section
           id="what-not-to-bring"
@@ -774,13 +763,11 @@ export default function PackingListPage() {
                   <span className="font-medium text-sm text-red-900">{item.item}</span>
                   <span className="text-xs text-red-700 ml-2">— {item.reason}</span>
                 </div>
->>>>>>> claude/zealous-gould-fd7cd0
               </div>
             ))}
           </div>
         </section>
 
-<<<<<<< HEAD
         {/* CTA */}
         <section className="mt-14 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-xl p-8 text-white">
           <h2 className="font-fraunces text-2xl font-bold mb-3">Ready to Start Planning?</h2>
@@ -799,7 +786,6 @@ export default function PackingListPage() {
               className="inline-block px-5 py-2.5 border border-white text-white font-semibold rounded-lg hover:bg-white/10 transition text-sm"
             >
               First Timer's Guide
-=======
         {/* Pro tips */}
         <section className="mt-12 bg-amber-50 border border-amber-200 rounded-xl p-6">
           <h2 className="font-display text-xl font-bold text-amber-900 mb-4">Pro Packing Tips</h2>
@@ -845,12 +831,10 @@ export default function PackingListPage() {
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-slate-300 hover:border-blue-400 text-slate-700 font-semibold transition-colors"
             >
               First-Timer&apos;s Guide
->>>>>>> claude/zealous-gould-fd7cd0
             </Link>
           </div>
         </section>
 
-<<<<<<< HEAD
         {/* Disclosure */}
         <section className="mt-10 pt-8 border-t border-slate-200">
           <div className="bg-amber-50 rounded-lg p-5 border border-amber-200">
@@ -863,12 +847,10 @@ export default function PackingListPage() {
           </div>
         </section>
       </article>
-=======
         <div className="mt-12 pt-8 border-t border-slate-200">
           <AffiliateDisclosure />
         </div>
       </div>
->>>>>>> claude/zealous-gould-fd7cd0
     </div>
   )
 }

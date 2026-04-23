@@ -1,6 +1,5 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-<<<<<<< HEAD
 import { ArrowLeft, Anchor, DollarSign, Star, Clock, MapPin, Users } from 'lucide-react'
 import { NewsletterSignup } from '@/components/newsletter-signup'
 
@@ -52,7 +51,6 @@ export default function FirstTimeDisneyGuide() {
             <span className="flex items-center gap-1"><Clock className="h-4 w-4" /> 15 min read</span>
             <span className="flex items-center gap-1"><Users className="h-4 w-4" /> All family types</span>
             <span className="flex items-center gap-1"><MapPin className="h-4 w-4" /> All itineraries</span>
-=======
 
 export const metadata: Metadata = {
   title: 'First-Timer\'s Guide to Disney Cruises 2025 | GatGridCruises',
@@ -87,12 +85,10 @@ export default function FirstTimeDisneyCruisePage() {
             <span className="px-3 py-1 bg-white/10 rounded-full">Pirate Night</span>
             <span className="px-3 py-1 bg-white/10 rounded-full">Castaway Cay</span>
             <span className="px-3 py-1 bg-white/10 rounded-full">Tipping</span>
->>>>>>> claude/zealous-gould-fd7cd0
           </div>
         </div>
       </section>
 
-<<<<<<< HEAD
       {/* Breadcrumb */}
       <div className="bg-slate-50 border-b border-slate-200 py-3 px-4">
         <div className="max-w-4xl mx-auto text-xs text-slate-500">
@@ -149,7 +145,6 @@ export default function FirstTimeDisneyCruisePage() {
                 <p className="text-2xl mb-2">{icon}</p>
                 <p className="font-semibold text-slate-900 text-sm mb-1">{title}</p>
                 <p className="text-xs text-slate-600">{desc}</p>
-=======
       <div className="max-w-4xl mx-auto px-4 py-10">
         {/* Table of Contents */}
         <nav className="bg-blue-50 border border-blue-200 rounded-xl p-5 mb-10">
@@ -233,13 +228,11 @@ export default function FirstTimeDisneyCruisePage() {
                     </li>
                   ))}
                 </ul>
->>>>>>> claude/zealous-gould-fd7cd0
               </div>
             ))}
           </div>
         </section>
 
-<<<<<<< HEAD
         {/* Section: What costs extra */}
         <section id="costs-extra" className="mb-14">
           <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-2">
@@ -342,7 +335,6 @@ export default function FirstTimeDisneyCruisePage() {
                 <div>
                   <h3 className="font-fraunces font-bold text-slate-900 mb-2">{title}</h3>
                   <p className="text-slate-600 text-sm leading-relaxed">{body}</p>
-=======
         {/* What Costs Extra */}
         <section id="what-costs-extra" className="mb-14">
           <h2 className="font-display text-3xl font-bold text-slate-900 mb-2">What Costs Extra</h2>
@@ -469,14 +461,12 @@ export default function FirstTimeDisneyCruisePage() {
                 <div>
                   <h3 className="font-semibold text-slate-900 text-sm mb-1">{tip.title}</h3>
                   <p className="text-xs text-slate-600 leading-relaxed">{tip.body}</p>
->>>>>>> claude/zealous-gould-fd7cd0
                 </div>
               </div>
             ))}
           </div>
         </section>
 
-<<<<<<< HEAD
         {/* Section: Pirate Night */}
         <section id="pirate-night" className="mb-14">
           <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-4">
@@ -606,7 +596,6 @@ export default function FirstTimeDisneyCruisePage() {
                 <div key={role} className="flex justify-between border-b border-slate-200 pb-2">
                   <span className="text-slate-700">{role}</span>
                   <span className="font-semibold text-slate-900">{amount}</span>
-=======
         {/* Pirate Night */}
         <section id="pirate-night" className="mb-14">
           <h2 className="font-display text-3xl font-bold text-slate-900 mb-2">Pirate Night Explained</h2>
@@ -643,12 +632,10 @@ export default function FirstTimeDisneyCruisePage() {
                 <div key={item.title} className="border-l-2 border-amber-500 pl-4">
                   <h3 className="font-semibold text-white text-sm mb-1">{item.title}</h3>
                   <p className="text-slate-400 text-xs leading-relaxed">{item.body}</p>
->>>>>>> claude/zealous-gould-fd7cd0
                 </div>
               ))}
             </div>
           </div>
-<<<<<<< HEAD
 
           <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
             <p className="text-sm text-slate-700">
@@ -708,7 +695,6 @@ export default function FirstTimeDisneyCruisePage() {
               >
                 <span className="font-medium text-slate-900">{label}</span>
                 <span className="text-blue-600">→</span>
-=======
         </section>
 
         {/* Castaway Cay */}
@@ -939,16 +925,12 @@ export default function FirstTimeDisneyCruisePage() {
               >
                 <h3 className="font-semibold text-slate-900 group-hover:text-blue-700 mb-1 text-sm">{tool.title} →</h3>
                 <p className="text-xs text-slate-500">{tool.description}</p>
->>>>>>> claude/zealous-gould-fd7cd0
               </Link>
             ))}
           </div>
         </section>
-<<<<<<< HEAD
       </article>
-=======
       </div>
->>>>>>> claude/zealous-gould-fd7cd0
     </div>
   )
 }
