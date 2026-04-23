@@ -21,11 +21,14 @@ export function GroupBrowser({ groups }: GroupBrowserProps) {
       new Set(groups.map(g => g.sailing.ship_id))
     )
     return getShips().filter(s => uniqueShips.includes(s.id))
+<<<<<<< HEAD
 =======
     const allShips = getShips()
     const uniqueShipIds = Array.from(new Set(groups.map(g => g.sailing.ship_id)))
     return allShips.filter(s => uniqueShipIds.includes(s.id))
 >>>>>>> claude/focused-mcclintock-8fe348
+=======
+>>>>>>> claude/stupefied-fermat-7d3200
   }, [groups])
 
   const months = useMemo(() => {

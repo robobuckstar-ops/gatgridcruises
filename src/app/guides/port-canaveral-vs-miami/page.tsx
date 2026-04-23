@@ -2,10 +2,14 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, MapPin, Clock, DollarSign } from 'lucide-react';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { GetQuoteCTA } from '@/components/get-quote-cta';
 =======
 import { AdSlot } from '@/components/ui/ad-slot';
 >>>>>>> claude/focused-mcclintock-8fe348
+=======
+import { AdSlot } from '@/components/ui/ad-slot';
+>>>>>>> claude/stupefied-fermat-7d3200
 
 export const metadata: Metadata = {
   title: 'Port Canaveral vs. Miami: Which Disney Cruise Port Is Better?',

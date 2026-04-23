@@ -2,10 +2,14 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { MapPin, Clock, DollarSign, AlertCircle, Anchor } from 'lucide-react';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { GetQuoteCTA } from '@/components/get-quote-cta';
 =======
 import { AdSlot } from '@/components/ui/ad-slot';
 >>>>>>> claude/focused-mcclintock-8fe348
+=======
+import { AdSlot } from '@/components/ui/ad-slot';
+>>>>>>> claude/stupefied-fermat-7d3200
 
 export const metadata: Metadata = {
   title: "Castaway Cay: The Ultimate Guide to Disney's Private Island",

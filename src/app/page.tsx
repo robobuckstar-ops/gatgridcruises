@@ -137,11 +137,39 @@ export default async function Home() {
 
           {/* Amex Affiliate Banner */}
           <div className="flex justify-center mt-8">
+<<<<<<< HEAD
             <a
               href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
               target="_blank"
               rel="noopener noreferrer sponsored"
               className="block w-full max-w-2xl rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow"
+=======
+            <AdSlot placement="homepage-top" size="728x90" />
+          </div>
+        </div>
+      </section>
+
+      {/* Last-Minute Deals */}
+      <section className="bg-gradient-to-br from-amber-50 to-yellow-50 py-16 md:py-20 border-t border-amber-100" aria-labelledby="last-minute-heading">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-3 mb-12">
+            <Zap className="w-8 h-8 text-amber-600" aria-hidden="true" />
+            <h2 id="last-minute-heading" className="font-fraunces text-3xl md:text-4xl font-bold text-slate-900">
+              Last-Minute Steals
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            {lastMinuteDealsList.map((sailing) => (
+              <SailingCard key={sailing.id} sailing={sailing} />
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Link
+              href="/deals/last-minute"
+              className="inline-flex items-center gap-2 text-amber-700 font-semibold hover:text-amber-900 transition-colors"
+>>>>>>> claude/stupefied-fermat-7d3200
             >
               <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4 flex items-center justify-between gap-4">
                 <div>
@@ -261,6 +289,7 @@ export default async function Home() {
 
                 {/* Amex affiliate banner after 6th card */}
                 {index === 5 && (
+<<<<<<< HEAD
                   <div className="col-span-1 md:col-span-2 lg:col-span-3 mt-8">
                     <a
                       href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
@@ -278,6 +307,10 @@ export default async function Home() {
                         </span>
                       </div>
                     </a>
+=======
+                  <div className="col-span-1 md:col-span-2 lg:col-span-3 flex justify-center mt-8">
+                    <AdSlot placement="homepage-mid" size="300x250" />
+>>>>>>> claude/stupefied-fermat-7d3200
                   </div>
                 )}
               </div>

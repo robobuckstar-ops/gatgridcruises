@@ -160,6 +160,7 @@ export default function GuidesPage() {
 
                 {index === 3 && (
 <<<<<<< HEAD
+<<<<<<< HEAD
                   <div className="mt-8 mb-4">
                     <a
                       href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
@@ -181,6 +182,10 @@ export default function GuidesPage() {
                   <div className="col-span-full mt-8 mb-4">
                     <AdSlot size="728x90" />
 >>>>>>> claude/focused-mcclintock-8fe348
+=======
+                  <div className="flex justify-center mt-8 mb-4">
+                    <AdSlot placement="guides-mid" size="728x90" />
+>>>>>>> claude/stupefied-fermat-7d3200
                   </div>
                 )}
               </div>

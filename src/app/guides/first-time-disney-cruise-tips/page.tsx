@@ -2,10 +2,14 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, CheckCircle2, Lightbulb } from 'lucide-react';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { GetQuoteCTA } from '@/components/get-quote-cta';
 =======
 import { AdSlot } from '@/components/ui/ad-slot';
 >>>>>>> claude/focused-mcclintock-8fe348
+=======
+import { AdSlot } from '@/components/ui/ad-slot';
+>>>>>>> claude/stupefied-fermat-7d3200
 
 export const metadata: Metadata = {
   title: '25 Things to Know Before Your First Disney Cruise',
