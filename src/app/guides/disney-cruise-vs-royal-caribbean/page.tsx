@@ -2,8 +2,6 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { BarChart3, Users, Utensils, Zap, Heart, TrendingUp } from 'lucide-react';
 import { GetQuoteCTA } from '@/components/get-quote-cta';
-import { AdSlot } from '@/components/ui/ad-slot'
-import { AdSlot } from '@/components/ui/ad-slot';
 import { GetQuoteCTA } from '@/components/get-quote-cta';
 
 export const metadata: Metadata = {
@@ -58,7 +56,6 @@ export default function DisneyCruiseVsRoyalCaribbeanGuide() {
                 <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
               </div>
             </a>
-        <AdSlot size="728x90" />
 
         {/* Overview */}
         <section className="mb-12">
@@ -153,7 +150,6 @@ export default function DisneyCruiseVsRoyalCaribbeanGuide() {
                 <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
               </div>
             </a>
-        <AdSlot size="728x90" />
 
         {/* Kids Programs */}
         <section className="mb-12">
@@ -349,7 +345,6 @@ export default function DisneyCruiseVsRoyalCaribbeanGuide() {
                 <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
               </div>
             </a>
-        <AdSlot size="728x90" />
 
         {/* Water Features & Thrill Factor */}
         <section className="mb-12">

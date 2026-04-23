@@ -4,7 +4,6 @@ import { useState, useMemo } from 'react'
 import type { Sailing, Ship, Port } from '@/types/database'
 import { SailingCard } from '@/components/ui/sailing-card'
 import { GuestCountSelector } from '@/components/ui/guest-count-selector'
-import { AdSlot } from '@/components/ui/ad-slot'
 import { Search, SlidersHorizontal, X, Bell, ArrowRight } from 'lucide-react'
 import { calculateDealScore } from '@/lib/deal-score'
 import Link from 'next/link'
@@ -349,11 +348,6 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
                     percentBelow={sailing.percentBelow}
                   />
                   {/* Insert ad after 6th card */}
-                  {index === 5 && (
-                    <div className="mt-5">
-                      <AdSlot location="deals_grid_native" size="native" />
-                    </div>
-                  )}
                 </div>
                 {/* Email CTA after 11th card (0-indexed) */}
                 {index === 11 && (
@@ -380,11 +374,6 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
                   guestCount={guestCount}
                   percentBelow={sailing.percentBelow}
                 />
-                {index === 5 && (
-                  <div className="mt-5">
-                    <AdSlot location="deals_grid_native" size="native" />
-                  </div>
-                )}
               </div>
             ))}
           </div>
@@ -401,10 +390,6 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
             </button>
           </div>
         )}
-
-        <div className="mt-10">
-          <AdSlot size="728x90" />
-        </div>
 
         {/* Specialist CTA */}
         <div className="mt-8">
