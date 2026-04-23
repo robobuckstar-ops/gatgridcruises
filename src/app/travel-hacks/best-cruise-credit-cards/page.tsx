@@ -583,10 +583,6 @@ export default function BestCruiseCreditCardsPage() {
           </div>
         </section>
       </article>
-        <div className="mt-10 pt-8 border-t border-slate-200">
-          <AffiliateDisclosure />
-        </div>
-      </div>
     </div>
   )
 }
