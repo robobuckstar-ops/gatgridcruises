@@ -55,6 +55,7 @@ export default function AlertsPage() {
     latestMonth: '',
     email: '',
   })
+  const [honeypot, setHoneypot] = useState('')
   const [submitted, setSubmitted] = useState(false)
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
@@ -123,6 +124,7 @@ export default function AlertsPage() {
             cabinTypes: prefs.cabinTypes,
             destinations: prefs.destinations,
           },
+          _honeypot: honeypot,
         }),
       }).catch(() => {}) // don't block on this
 
@@ -227,6 +229,9 @@ export default function AlertsPage() {
       {/* Form */}
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12">
         <form onSubmit={handleSubmit} className="space-y-8" noValidate>
+          <div style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0 }} aria-hidden="true">
+            <input type="text" name="website" value={honeypot} onChange={e => setHoneypot(e.target.value)} tabIndex={-1} autoComplete="off" />
+          </div>
 
           {/* Ships */}
           <section className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">

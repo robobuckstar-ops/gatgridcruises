@@ -5,6 +5,7 @@ import { ArrowRight, Check, AlertCircle } from 'lucide-react'
 
 export function NewsletterSignupForm({ source }: { source: string }) {
   const [email, setEmail] = useState('')
+  const [honeypot, setHoneypot] = useState('')
   const [submitted, setSubmitted] = useState(false)
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
@@ -18,7 +19,7 @@ export function NewsletterSignupForm({ source }: { source: string }) {
       const response = await fetch('/api/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, preferences: { source } }),
+        body: JSON.stringify({ email, preferences: { source }, _honeypot: honeypot }),
       })
 
       const data = await response.json()
@@ -68,6 +69,9 @@ export function NewsletterSignupForm({ source }: { source: string }) {
         role="region"
         aria-label="Newsletter signup"
       >
+        <div style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0 }} aria-hidden="true">
+          <input type="text" name="website" value={honeypot} onChange={e => setHoneypot(e.target.value)} tabIndex={-1} autoComplete="off" />
+        </div>
         <label htmlFor={`newsletter-email-${source}`} className="sr-only">Email address</label>
         <input
           id={`newsletter-email-${source}`}

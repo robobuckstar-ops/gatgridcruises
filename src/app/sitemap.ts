@@ -9,8 +9,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/search`, lastModified: new Date(), changeFrequency: 'daily' as const, priority: 0.9 },
     { url: `${baseUrl}/deals`, lastModified: new Date(), changeFrequency: 'daily' as const, priority: 0.9 },
     { url: `${baseUrl}/deals/last-minute`, lastModified: new Date(), changeFrequency: 'daily' as const, priority: 0.9 },
+    { url: `${baseUrl}/alerts`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.8 },
     { url: `${baseUrl}/blog`, lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 0.8 },
     { url: `${baseUrl}/ships`, lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 0.8 },
+    { url: `${baseUrl}/ports`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.7 },
     { url: `${baseUrl}/guides`, lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 0.8 },
     { url: `${baseUrl}/travel-hacks`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.8 },
     { url: `${baseUrl}/solo-cruising`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.8 },
@@ -24,6 +26,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/tools/staterooms/reviews`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.6 },
     { url: `${baseUrl}/tools/transfers`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.7 },
     { url: `${baseUrl}/tools/compare`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.6 },
+    { url: `${baseUrl}/book`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: `${baseUrl}/newsletter`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.5 },
     { url: `${baseUrl}/subscribe`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.5 },
     { url: `${baseUrl}/about`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.4 },
     { url: `${baseUrl}/disclosures`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.3 },
@@ -83,6 +87,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'best-time-to-book-disney-cruise',
     'disney-cruise-food-guide',
     'travel-hacks-credit-cards',
+    'packing-gear',
+    'travel-insurance',
   ].map(slug => ({
     url: `${baseUrl}/guides/${slug}`,
     lastModified: new Date(),
@@ -105,6 +111,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
+  // Port guide pages
+  const portGuidePages = ['castaway-cay', 'cozumel', 'nassau', 'port-canaveral'].map(slug => ({
+    url: `${baseUrl}/guides/ports/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }))
+  portGuidePages.push({
+    url: `${baseUrl}/guides/ports`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  })
+
   // Blog pages
   const posts = getBlogPosts()
   const blogPages = posts.map(p => ({
@@ -114,5 +134,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }))
 
-  return [...staticPages, ...sailingPages, ...shipPages, ...hotelPages, ...transferPages, ...guidePages, ...travelHacksPages, ...blogPages]
+  return [...staticPages, ...sailingPages, ...shipPages, ...hotelPages, ...transferPages, ...guidePages, ...portGuidePages, ...travelHacksPages, ...blogPages]
 }

@@ -5,7 +5,7 @@ import { Footer } from '@/components/layout/footer'
 import { SkipNav } from '@/components/ui/skip-nav'
 import { Chatbot } from '@/components/ui/chatbot'
 import { NewsletterPopup } from '@/components/ui/newsletter-popup'
-import { generateWebsiteSchema } from '@/lib/structured-data'
+import { generateWebsiteSchema, generateOrganizationSchema } from '@/lib/structured-data'
 import { StructuredData } from '@/components/ui/structured-data'
 
 export const metadata: Metadata = {
@@ -43,6 +43,9 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  alternates: {
+    canonical: 'https://gatgridcruises.com',
+  },
 }
 
 export default function RootLayout({
@@ -54,6 +57,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="min-h-screen flex flex-col">
         <StructuredData data={generateWebsiteSchema()} />
+        <StructuredData data={generateOrganizationSchema()} />
         <SkipNav />
         <Header />
         <main id="main-content" className="flex-1">{children}</main>
