@@ -10,10 +10,14 @@ import { generateWebsiteSchema, generateOrganizationSchema } from '@/lib/structu
 import { StructuredData } from '@/components/ui/structured-data'
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX' // Replace with your real GA4 Measurement ID
 =======
 const GA_ID = 'G-XXXXXXXXXX'
 >>>>>>> claude/focused-mcclintock-8fe348
+=======
+const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX' // Replace with your real GA4 Measurement ID
+>>>>>>> claude/zealous-gould-fd7cd0
 
 export const metadata: Metadata = {
   title: {
@@ -49,6 +53,7 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         alt: 'GatGridCruises — Magically Valuable Disney Cruises',
+<<<<<<< HEAD
 =======
     siteName: 'Disney Cruise Deal Finder',
     title: 'Disney Cruise Deal Finder — GatGridCruises',
@@ -61,6 +66,8 @@ export const metadata: Metadata = {
         height: 630,
         alt: 'Disney Cruise Deal Finder',
 >>>>>>> claude/focused-mcclintock-8fe348
+=======
+>>>>>>> claude/zealous-gould-fd7cd0
       },
     ],
   },
@@ -94,25 +101,35 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Google Analytics 4 */}
         <Script
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> claude/zealous-gould-fd7cd0
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
           strategy="afterInteractive"
         />
         <Script id="ga4-init" strategy="afterInteractive">
+<<<<<<< HEAD
 =======
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
 >>>>>>> claude/focused-mcclintock-8fe348
+=======
+>>>>>>> claude/zealous-gould-fd7cd0
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 <<<<<<< HEAD
+<<<<<<< HEAD
             gtag('config', '${GA_MEASUREMENT_ID}');
 =======
             gtag('config', '${GA_ID}');
 >>>>>>> claude/focused-mcclintock-8fe348
+=======
+            gtag('config', '${GA_MEASUREMENT_ID}');
+>>>>>>> claude/zealous-gould-fd7cd0
           `}
         </Script>
 

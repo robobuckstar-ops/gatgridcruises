@@ -5,6 +5,9 @@ import { BlogList } from './blog-list'
 
 export const metadata = {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> claude/zealous-gould-fd7cd0
   title: 'Disney Cruise News, Tips & Deals',
   description: 'Disney cruise news, tips, deals, and reviews from the crew at GatGridCruises.',
 =======

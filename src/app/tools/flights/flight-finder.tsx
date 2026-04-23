@@ -1,5 +1,6 @@
 'use client'
 
+<<<<<<< HEAD
 import { useState, useMemo, useRef, useEffect } from 'react'
 import { ArrowRight, Plane, AlertCircle, Info, Bell, Check } from 'lucide-react'
 
@@ -40,6 +41,10 @@ const US_AIRPORTS = [
   { code: 'STL', city: 'St. Louis, MO' },
   { code: 'TPA', city: 'Tampa, FL' },
 ]
+=======
+import React, { useState, useMemo } from 'react'
+import { ArrowRight, Plane, AlertCircle, Info } from 'lucide-react'
+>>>>>>> claude/zealous-gould-fd7cd0
 
 interface SailingOption {
   id: string
@@ -98,9 +103,12 @@ function calculateAirportDistance(homeCode: string, destCode: string): number {
     'MSY': [29.9841, -90.2458],  // New Orleans
     'HOU': [29.6452, -95.2113],  // Houston (Galveston area)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     'LGB': [33.8177, -118.1516], // Long Beach
 >>>>>>> claude/focused-mcclintock-8fe348
+=======
+>>>>>>> claude/zealous-gould-fd7cd0
     'SAN': [32.7345, -117.1897], // San Diego
   }
 
@@ -330,7 +338,11 @@ export function FlightFinder({
                 placeholder="e.g., ORD, LAX, ATL"
                 maxLength={3}
                 className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-0"
+<<<<<<< HEAD
 >>>>>>> claude/focused-mcclintock-8fe348
+=======
+                style={{ '--tw-ring-color': '#D4AF37' } as React.CSSProperties}
+>>>>>>> claude/zealous-gould-fd7cd0
               />
               {homeAirport && (
                 <p className="text-xs text-emerald-600 mt-1 font-medium">

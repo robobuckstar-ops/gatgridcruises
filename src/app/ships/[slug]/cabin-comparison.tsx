@@ -134,6 +134,7 @@ export function CabinComparison({ shipSlug }: CabinComparisonProps) {
                     <p className={`font-fraunces text-xl font-bold ${cat.textColor}`}>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                       {formatPrice(startingPrices[cat.key] as number)}
 =======
                       {formatPrice(startingPrices[cat.key] ?? 0)}
@@ -141,6 +142,9 @@ export function CabinComparison({ shipSlug }: CabinComparisonProps) {
 =======
                       {formatPrice(startingPrices[cat.key] ?? 0)}
 >>>>>>> claude/stupefied-fermat-7d3200
+=======
+                      {formatPrice(startingPrices[cat.key] as number)}
+>>>>>>> claude/zealous-gould-fd7cd0
                     </p>
                     <p className="text-xs text-slate-600 mt-1">Lowest available</p>
                   </div>
@@ -429,6 +433,7 @@ export function CabinComparison({ shipSlug }: CabinComparisonProps) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   {formatPrice(startingPrices[cat.key] as number)}
 =======
                   {formatPrice(startingPrices[cat.key]!)}
@@ -442,6 +447,9 @@ export function CabinComparison({ shipSlug }: CabinComparisonProps) {
 =======
                   {formatPrice(startingPrices[cat.key] ?? 0)}
 >>>>>>> claude/stupefied-fermat-7d3200
+=======
+                  {formatPrice(startingPrices[cat.key] as number)}
+>>>>>>> claude/zealous-gould-fd7cd0
                 </p>
               </div>
             )}

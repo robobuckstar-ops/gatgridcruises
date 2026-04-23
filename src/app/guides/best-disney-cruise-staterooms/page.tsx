@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> claude/zealous-gould-fd7cd0
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, Home, MapPin, Wind } from 'lucide-react';

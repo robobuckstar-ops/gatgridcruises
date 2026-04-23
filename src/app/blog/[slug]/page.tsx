@@ -4,6 +4,7 @@ import { getBlogPostBySlug, getRelatedPosts, getBlogPosts } from '@/lib/data'
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { ArrowLeft, Calendar, Clock } from 'lucide-react'
 import { ShareButtons } from './share-buttons'
 import { StructuredData } from '@/components/ui/structured-data'
@@ -29,6 +30,10 @@ interface BlogPostPageProps {
   params: Promise<{ slug: string }>
 >>>>>>> claude/stupefied-fermat-7d3200
 }
+=======
+import { ArrowLeft, Calendar, Clock, Twitter, Facebook } from 'lucide-react'
+import { CopyLinkButton } from './copy-link-button'
+>>>>>>> claude/zealous-gould-fd7cd0
 
 export async function generateStaticParams() {
   const posts = getBlogPosts()
@@ -37,19 +42,25 @@ export async function generateStaticParams() {
   }))
 }
 
+<<<<<<< HEAD
 export async function generateMetadata({ params }: BlogPostPageProps) {
+=======
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+>>>>>>> claude/zealous-gould-fd7cd0
   const { slug } = await params
   const post = getBlogPostBySlug(slug)
 
   if (!post) {
-    return {
-      title: 'Post Not Found | GatGridCruises',
-    }
+    return { title: 'Post Not Found' }
   }
 
   const canonical = `https://gatgridcruises.com/blog/${post.slug}`
   return {
+<<<<<<< HEAD
     title: `${post.title} | GatGridCruises`,
+=======
+    title: post.title,
+>>>>>>> claude/zealous-gould-fd7cd0
     description: post.excerpt,
     alternates: { canonical },
     openGraph: {
@@ -73,7 +84,11 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
   }
 }
 
+<<<<<<< HEAD
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
+=======
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+>>>>>>> claude/zealous-gould-fd7cd0
   const { slug } = await params
   const post = getBlogPostBySlug(slug)
 

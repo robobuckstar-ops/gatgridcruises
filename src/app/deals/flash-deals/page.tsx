@@ -4,6 +4,7 @@ import { LastMinuteDealGrid } from '../last-minute/last-minute-deal-grid'
 
 export const metadata: Metadata = {
 <<<<<<< HEAD
+<<<<<<< HEAD
   title: 'Flash Deals — Disney Cruise Discounts Within 90 Days',
   description: 'Flash deals on Disney cruises departing within 90 days. Steep discounts, limited availability. Check prices before they change.',
 =======
@@ -17,6 +18,10 @@ export const metadata: Metadata = {
     url: 'https://gatgridcruises.com/deals/flash-deals',
   },
 >>>>>>> claude/focused-mcclintock-8fe348
+=======
+  title: 'Flash Deals — Disney Cruise Discounts Within 90 Days',
+  description: 'Flash deals on Disney cruises departing within 90 days. Steep discounts, limited availability. Check prices before they change.',
+>>>>>>> claude/zealous-gould-fd7cd0
 }
 
 export default function FlashDealsPage() {
