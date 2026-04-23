@@ -24,7 +24,7 @@ export const blogPosts: BlogPost[] = [
     category: 'news',
     tags: ['treasure', 'new-ships', 'disney-cruise-line'],
     read_time: '6 min read',
-    featured_image_url: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200&h=600&fit=crop',
+    featured_image_url: 'https://images.unsplash.com/photo-1548574505-5e239809f9db?w=1200&h=600&fit=crop',
     content: `
 <div class="prose prose-invert max-w-none">
 

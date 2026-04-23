@@ -17,7 +17,8 @@ export default function PrivacyPage() {
       </section>
 
       <section className="py-16">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 prose prose-slate max-w-none">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+        <div className="prose prose-slate">
           <h2 className="font-fraunces text-2xl font-bold text-[#1E3A5F] mb-4">Overview</h2>
           <p className="text-gray-600 mb-6 leading-relaxed">
             GatGridCruises.com (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) is committed to protecting your privacy. This policy explains what information we collect, how we use it, and your rights regarding that information. We are an independent informational website and are not affiliated with The Walt Disney Company or Disney Cruise Line.
@@ -61,6 +62,7 @@ export default function PrivacyPage() {
           <p className="text-gray-600 mb-6 leading-relaxed">
             For privacy-related inquiries, contact us at privacy@gatgridcruises.com or via our <Link href="/about" className="text-[#D4AF37] hover:underline">About page</Link>.
           </p>
+        </div>
         </div>
       </section>
     </main>
