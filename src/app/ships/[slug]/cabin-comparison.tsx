@@ -417,7 +417,11 @@ export function CabinComparison({ shipSlug }: CabinComparisonProps) {
               <div className="mb-6 pb-6 border-b border-slate-200">
                 <p className="text-sm text-slate-600 font-semibold mb-1">Starting Price</p>
                 <p className={`font-fraunces text-3xl font-bold ${cat.textColor}`}>
+<<<<<<< HEAD
                   {formatPrice(startingPrices[cat.key] as number)}
+=======
+                  {formatPrice(startingPrices[cat.key]!)}
+>>>>>>> claude/flamboyant-chebyshev-ecfe77
                 </p>
               </div>
             )}
