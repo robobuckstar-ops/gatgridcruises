@@ -196,10 +196,11 @@ export function INQUIRY_RECEIVED(data: InquiryData): string {
   return wrapBookingEmail(`
     <h2 style="margin:0 0 8px;color:#1E3A5F;font-family:Georgia,serif;font-size:22px;">Hi ${data.fullName}!</h2>
     <p style="margin:0 0 16px;color:#334155;font-size:15px;line-height:1.6;">
-      Thanks for reaching out — I'm Grayson Starbuck, and I use AI tools to find the best Disney cruise deals for families like yours. When you're ready to book, I'll personally help you through the process.
+
+      I'm Grayson Starbuck — founder of GatGrid Cruises and a Disney cruise fanatic who has taken his family on more sailings than I care to admit. There's truly nothing like it, and I'd love to help your family experience that same magic.
     </p>
     <p style="margin:0 0 20px;color:#334155;font-size:15px;line-height:1.6;">
-      I received your request and will review your preferences and get back to you within <strong>24 hours</strong> with personalized options.
+      I received your request and will personally review your preferences and get back to you within <strong>24 hours</strong> with hand-picked options that fit your family's needs and budget.
     </p>
     <div style="background-color:#F0F7FF;border-left:4px solid #1E3A5F;border-radius:6px;padding:20px;margin-bottom:24px;">
       <h3 style="margin:0 0 12px;color:#1E3A5F;font-size:15px;font-family:Georgia,serif;">Here's what you're looking for:</h3>
@@ -212,7 +213,8 @@ export function INQUIRY_RECEIVED(data: InquiryData): string {
       <li style="margin-bottom:6px;"><a href="https://gatgridcruises.com/guides" style="color:#1E3A5F;">Disney Cruise Guides</a></li>
       <li><a href="https://gatgridcruises.com/deals" style="color:#1E3A5F;">Current Deals</a></li>
     </ul>
-    <p style="margin:0;color:#64748B;font-size:13px;">Talk soon,<br><strong style="color:#1E3A5F;">Grayson Starbuck</strong><br>GatGrid Cruises · Boardwalk Travel Agency</p>
+
+    <p style="margin:0;color:#64748B;font-size:13px;">Talk soon,<br><strong style="color:#1E3A5F;">Grayson Starbuck</strong><br>Grayson at GatGrid Cruises · Boardwalk Travel Agency</p>
   `)
 }
 
@@ -247,7 +249,8 @@ export function QUOTE_FOLLOW_UP(name: string, options: QuoteOption[]): string {
       <p style="margin:0;color:#92400E;font-size:13px;font-weight:600;">💳 Pro Tip: Pay with a travel rewards card</p>
       <p style="margin:6px 0 0;color:#78350F;font-size:13px;">Earn points toward future upgrades. The <a href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS" style="color:#92400E;">Amex Business Platinum</a> and <a href="https://www.referyourchasecard.com/226m/6ZT33F9TOQ" style="color:#92400E;">Chase Ink Business Preferred</a> both earn excellent travel rewards.</p>
     </div>
-    <p style="margin:0;color:#64748B;font-size:13px;">Ready to move forward? Just reply.<br><br><strong style="color:#1E3A5F;">Grayson Starbuck, GatGrid Cruises</strong></p>
+
+    <p style="margin:0;color:#64748B;font-size:13px;">Ready to move forward? Just reply.<br><br><strong style="color:#1E3A5F;">Grayson Starbuck</strong><br><span style="color:#64748B;">Grayson at GatGrid Cruises</span></p>
   `)
 }
 
@@ -299,7 +302,8 @@ export function BOOKING_CONFIRMED(details: BookingDetails): string {
       <p style="margin:0;color:#92400E;font-size:13px;font-weight:600;">💳 Maximize your rewards</p>
       <p style="margin:6px 0 0;color:#78350F;font-size:13px;">Consider paying your final balance with the <a href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS" style="color:#92400E;">Amex Business Platinum</a> (5× on flights, up to $200 airline fee credit) or <a href="https://www.referyourchasecard.com/226m/6ZT33F9TOQ" style="color:#92400E;">Chase Ink Business Preferred</a> (3× on travel, no foreign transaction fees).</p>
     </div>
-    <p style="margin:0;color:#64748B;font-size:13px;">Safe travels!<br><strong style="color:#1E3A5F;">Grayson Starbuck, GatGrid Cruises</strong></p>
+
+    <p style="margin:0;color:#64748B;font-size:13px;">Safe travels!<br><strong style="color:#1E3A5F;">Grayson Starbuck</strong><br>Grayson at GatGrid Cruises</p>
   `)
 }
 
@@ -318,7 +322,8 @@ export function REMINDER_90_DAYS(name: string, shipName: string, sailDate: strin
     <div style="border:1px solid #E2E8F0;border-radius:8px;overflow:hidden;margin-bottom:24px;">
       ${items.map(([title, desc], i) => `<div style="padding:14px 16px;${i > 0 ? 'border-top:1px solid #E2E8F0;' : ''}background-color:${i % 2 === 0 ? '#FFFFFF' : '#F8FAFC'};"><p style="margin:0 0 4px;color:#1E3A5F;font-weight:600;font-size:14px;">✓ ${title}</p><p style="margin:0;color:#64748B;font-size:13px;">${desc}</p></div>`).join('')}
     </div>
-    <p style="margin:0;color:#64748B;font-size:13px;">Reply with any questions!<br><strong style="color:#1E3A5F;">Grayson Starbuck, GatGrid Cruises</strong></p>
+
+    <p style="margin:0;color:#64748B;font-size:13px;">Reply with any questions!<br><strong style="color:#1E3A5F;">Grayson Starbuck</strong><br>Grayson at GatGrid Cruises</p>
   `)
 }
 
@@ -337,7 +342,8 @@ export function REMINDER_60_DAYS(name: string, shipName: string, sailDate: strin
     <div style="border:1px solid #E2E8F0;border-radius:8px;overflow:hidden;margin-bottom:24px;">
       ${items.map(([title, desc], i) => `<div style="padding:14px 16px;${i > 0 ? 'border-top:1px solid #E2E8F0;' : ''}background-color:${i % 2 === 0 ? '#FFFFFF' : '#F8FAFC'};"><p style="margin:0 0 4px;color:#1E3A5F;font-weight:600;font-size:14px;">✓ ${title}</p><p style="margin:0;color:#64748B;font-size:13px;">${desc}</p></div>`).join('')}
     </div>
-    <p style="margin:0;color:#64748B;font-size:13px;">Almost there!<br><strong style="color:#1E3A5F;">Grayson Starbuck, GatGrid Cruises</strong></p>
+
+    <p style="margin:0;color:#64748B;font-size:13px;">Almost there!<br><strong style="color:#1E3A5F;">Grayson Starbuck</strong><br>Grayson at GatGrid Cruises</p>
   `)
 }
 
@@ -356,7 +362,8 @@ export function REMINDER_30_DAYS(name: string, shipName: string, sailDate: strin
     <div style="border:1px solid #E2E8F0;border-radius:8px;overflow:hidden;margin-bottom:24px;">
       ${items.map(([title, desc], i) => `<div style="padding:14px 16px;${i > 0 ? 'border-top:1px solid #E2E8F0;' : ''}background-color:${i % 2 === 0 ? '#FFFFFF' : '#F8FAFC'};"><p style="margin:0 0 4px;color:#1E3A5F;font-weight:600;font-size:14px;">✓ ${title}</p><p style="margin:0;color:#64748B;font-size:13px;">${desc}</p></div>`).join('')}
     </div>
-    <p style="margin:0;color:#64748B;font-size:13px;">So close! Reply if you need anything.<br><strong style="color:#1E3A5F;">Grayson Starbuck, GatGrid Cruises</strong></p>
+
+    <p style="margin:0;color:#64748B;font-size:13px;">So close! Reply if you need anything.<br><strong style="color:#1E3A5F;">Grayson Starbuck</strong><br>Grayson at GatGrid Cruises</p>
   `)
 }
 
@@ -374,7 +381,8 @@ export function POST_CRUISE(name: string, shipName: string, returnDate: string):
     <p style="margin:0 0 24px;">
       <a href="https://gatgridcruises.com/book" style="display:inline-block;background-color:#D4AF37;color:#1E3A5F;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:bold;font-size:14px;">Plan My Next Cruise</a>
     </p>
-    <p style="margin:0;color:#64748B;font-size:13px;">Thank you for choosing GatGrid Cruises!<br><strong style="color:#1E3A5F;">Grayson Starbuck, GatGrid Cruises</strong></p>
+
+    <p style="margin:0;color:#64748B;font-size:13px;">Thank you for choosing GatGrid Cruises!<br><strong style="color:#1E3A5F;">Grayson Starbuck</strong><br>Grayson at GatGrid Cruises</p>
   `)
 }
 

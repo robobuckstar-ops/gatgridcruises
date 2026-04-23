@@ -73,6 +73,11 @@ export default async function Home() {
             honest advice, transparent pricing, and free tools to help you book smarter.
           </p>
 
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold mb-8">
+            <Sparkles className="w-4 h-4" aria-hidden="true" />
+            Our AI scans thousands of sailings to find you the best Disney Cruise deals
+          </div>
+
           {/* Filter Pills */}
           <div className="flex flex-wrap justify-center gap-3 mb-10">
             <Link href="/deals?filter=ship" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border-2 border-slate-200 text-slate-700 font-semibold text-sm hover:border-[#1E3A5F] hover:text-[#1E3A5F] transition-colors shadow-sm">
