@@ -361,8 +361,10 @@ export default function BestCruiseCreditCardsPage() {
               >
                 <span className="font-medium text-slate-900 text-sm">{label}</span>
                 <span className="text-blue-600 text-sm">→</span>
-      <div className="max-w-4xl mx-auto px-4 py-10">
-        <AffiliateDisclosure />
+              </Link>
+            ))}
+          </div>
+        </section>
 
         {/* Comparison table */}
         <section className="mt-10 overflow-x-auto">
