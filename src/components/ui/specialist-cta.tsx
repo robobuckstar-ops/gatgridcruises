@@ -18,7 +18,7 @@ export function SpecialistCTA({ variant = 'default' }: SpecialistCTAProps) {
               Free help finding the best deal and perks for your trip.
             </p>
             <a
-              href="mailto:robobuckstar@gmail.com"
+              href="mailto:bookings@gatgridcruises.com"
               className="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-600 hover:text-blue-700 transition-colors"
             >
               Contact a specialist →
@@ -46,7 +46,7 @@ export function SpecialistCTA({ variant = 'default' }: SpecialistCTAProps) {
         </div>
         <div className="flex-shrink-0">
           <a
-            href="mailto:robobuckstar@gmail.com"
+            href="mailto:bookings@gatgridcruises.com"
             className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition-colors whitespace-nowrap shadow-sm"
           >
             <PhoneCall className="w-4 h-4" />

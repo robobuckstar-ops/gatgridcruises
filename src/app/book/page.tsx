@@ -1,8 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-<<<<<<< HEAD
-import { Shield, Star, Phone, Gift } from 'lucide-react'
+import { Shield, Star, Phone, Gift, BadgeCheck, Building2 } from 'lucide-react'
 import Link from 'next/link'
 import { OBC_TIERS } from '@/lib/obc'
 import { OBCDisclaimer } from '@/components/ui/obc-disclaimer'
@@ -11,12 +10,6 @@ export default function BookPage() {
   const [submitted, setSubmitted] = useState(false)
   const [honeypot, setHoneypot] = useState('')
   const [formError, setFormError] = useState('')
-=======
-import { Shield, Star, Phone } from 'lucide-react'
-
-export default function BookPage() {
-  const [submitted, setSubmitted] = useState(false)
->>>>>>> claude/tender-sutherland-edf4ad
   const [form, setForm] = useState({
     fullName: '',
     email: '',
@@ -58,15 +51,11 @@ export default function BookPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-<<<<<<< HEAD
     setFormError('')
     if (honeypot) return
     if (!form.fullName.trim()) { setFormError('Please enter your full name.'); return }
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     if (!form.email || !emailRegex.test(form.email)) { setFormError('Please enter a valid email address.'); return }
-=======
-    console.log('Booking inquiry submitted:', form)
->>>>>>> claude/tender-sutherland-edf4ad
     setSubmitted(true)
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
@@ -133,7 +122,6 @@ export default function BookPage() {
           </div>
         </div>
 
-<<<<<<< HEAD
         {/* OBC Promo Banner */}
         <div className="rounded-2xl bg-[#1E3A5F] p-6 mb-2">
           <div className="flex items-center gap-3 mb-3">
@@ -161,7 +149,7 @@ export default function BookPage() {
           </div>
 
           <div className="flex items-center justify-between gap-4">
-            <p className="text-blue-300 text-xs">Not sure what tier you'd be in?</p>
+            <p className="text-blue-300 text-xs">Not sure what tier you&rsquo;d be in?</p>
             <Link
               href="/tools/obc-calculator"
               className="inline-flex items-center gap-1.5 text-[#D4AF37] font-semibold text-sm hover:text-yellow-300 transition-colors flex-shrink-0"
@@ -176,8 +164,54 @@ export default function BookPage() {
           </div>
         </div>
 
-=======
->>>>>>> claude/tender-sutherland-edf4ad
+        {/* Agent Credentials */}
+        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 mb-6">
+          <div className="flex items-center gap-2 mb-4">
+            <BadgeCheck className="w-5 h-5 text-blue-600 flex-shrink-0" />
+            <h2 className="font-fraunces text-lg font-bold text-slate-900">Your Personal Disney Cruise Specialist</h2>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-6">
+            <div className="flex-1 space-y-3">
+              <div className="flex items-start gap-3">
+                <div className="w-10 h-10 rounded-full bg-[#1E3A5F] text-white flex items-center justify-center font-bold text-sm flex-shrink-0">
+                  GS
+                </div>
+                <div>
+                  <p className="font-semibold text-slate-900">Grayson Starbuck, DPT</p>
+                  <p className="text-sm text-slate-500">Disney cruise specialist &amp; founder of GatGridCruises</p>
+                </div>
+              </div>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                No booking fees — the cruise line pays our commission, so you get expert concierge service at zero cost to you.
+              </p>
+            </div>
+            <div className="sm:border-l sm:border-slate-200 sm:pl-6 space-y-2.5 text-sm">
+              <div className="flex items-center gap-2">
+                <Building2 className="w-4 h-4 text-slate-400 flex-shrink-0" />
+                <div>
+                  <span className="text-slate-500">Host Agency: </span>
+                  <span className="font-semibold text-slate-800">Boardwalk Travel Agency</span>
+                </div>
+              </div>
+              <div className="flex items-center gap-2">
+                <BadgeCheck className="w-4 h-4 text-slate-400 flex-shrink-0" />
+                <div>
+                  <span className="text-slate-500">CLIA: </span>
+                  <span className="font-semibold text-slate-800">00039054</span>
+                </div>
+              </div>
+              <div className="flex items-center gap-2">
+                <Shield className="w-4 h-4 text-slate-400 flex-shrink-0" />
+                <div>
+                  <span className="text-slate-500">FL Seller of Travel: </span>
+                  <span className="font-semibold text-slate-800">ST43802</span>
+                  <span className="text-slate-400 text-xs ml-1">(via Boardwalk Travel Agency)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Form */}
         <div className="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden">
           <div className="bg-[#1E3A5F] px-8 py-6">
@@ -186,15 +220,12 @@ export default function BookPage() {
           </div>
 
           <form onSubmit={handleSubmit} className="p-8 space-y-8">
-<<<<<<< HEAD
             <div style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0 }} aria-hidden="true">
               <input type="text" name="website" value={honeypot} onChange={e => setHoneypot(e.target.value)} tabIndex={-1} autoComplete="off" />
             </div>
             {formError && (
               <div className="p-3 bg-red-50 border border-red-200 rounded-lg text-sm text-red-700" role="alert">{formError}</div>
             )}
-=======
->>>>>>> claude/tender-sutherland-edf4ad
 
             {/* Contact Info */}
             <div>

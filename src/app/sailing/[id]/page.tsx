@@ -10,14 +10,8 @@ import { PriceChart } from '@/components/ui/price-chart'
 import { ScoreBadge } from '@/components/ui/score-badge'
 import { BuyWaitBadge } from '@/components/ui/buy-wait-badge'
 import { PriceTrend } from '@/components/ui/price-trend'
-import { AdSlot } from '@/components/ui/ad-slot'
-<<<<<<< HEAD
 import { Ship, Calendar, MapPin, Clock, DollarSign, Anchor, BedDouble, Car, Building2, ArrowRight, Check, X as XIcon, Info, TrendingDown, TrendingUp, ShoppingBag } from 'lucide-react'
-=======
-import { Ship, Calendar, MapPin, Clock, DollarSign, Anchor, BedDouble, Car, Building2, ArrowRight, Check, X as XIcon, Info, TrendingDown, TrendingUp } from 'lucide-react'
-import { SpecialistCTA } from '@/components/ui/specialist-cta'
-import { ReportIssueForm } from '@/components/ui/report-issue-form'
->>>>>>> claude/focused-mcclintock-8fe348
+import { BookingInquiryButton } from '@/components/ui/booking-inquiry-button'
 
 interface PageProps {
   params: Promise<{ id: string }>
@@ -124,6 +118,9 @@ export default async function SailingDetailPage({ params }: PageProps) {
           {/* Main content - 2/3 */}
           <div className="lg:col-span-2 space-y-10">
 
+            {/* Booking CTA — top */}
+            <BookingInquiryButton sailing={sailing} variant="inline" />
+
             {/* Travel Hack Tip */}
             <div className="bg-gradient-to-r from-amber-50 to-yellow-50 border-l-4 border-amber-400 rounded-r-lg p-4 mb-6">
               <div className="flex items-start gap-3">
@@ -220,6 +217,9 @@ export default async function SailingDetailPage({ params }: PageProps) {
               </div>
             </section>
 
+            {/* Booking CTA — middle */}
+            <BookingInquiryButton sailing={sailing} variant="inline" />
+
             {/* Itinerary */}
             <section>
               <h2 className="font-display text-2xl font-bold text-slate-900 mb-4">Itinerary</h2>
@@ -315,7 +315,6 @@ export default async function SailingDetailPage({ params }: PageProps) {
                 </Link>
               </section>
             )}
-<<<<<<< HEAD
 
             {/* Packing guide promo */}
             <section className="border border-slate-200 rounded-xl p-5 bg-slate-50/60">
@@ -348,13 +347,9 @@ export default async function SailingDetailPage({ params }: PageProps) {
                 See the full packing list <ArrowRight className="h-3.5 w-3.5" />
               </Link>
             </section>
-=======
-            {/* Specialist CTA */}
-            <SpecialistCTA />
 
-            {/* Report an Issue */}
-            <ReportIssueForm page={`/sailing/${sailing.id}`} />
->>>>>>> claude/focused-mcclintock-8fe348
+            {/* Booking CTA — end of page */}
+            <BookingInquiryButton sailing={sailing} variant="banner" />
           </div>
 
           {/* Sidebar - 1/3 */}
@@ -421,27 +416,8 @@ export default async function SailingDetailPage({ params }: PageProps) {
               </div>
             )}
 
-<<<<<<< HEAD
-            {/* Featured travel specialist stub */}
-            <div className="bg-[#D4AF37]/10 border border-[#D4AF37]/30 rounded-xl p-5">
-              <h3 className="font-display text-lg font-semibold text-slate-900 mb-2">Find a Disney Specialist</h3>
-              <p className="text-sm text-slate-600 mb-3">
-                Ready to book? A Disney-focused travel agent can help you get the best deal and perks.
-              </p>
-              <Link
-                href="/book"
-                className="inline-flex items-center gap-2 w-full justify-center px-4 py-2.5 bg-[#D4AF37] text-slate-900 font-semibold text-sm rounded-lg hover:bg-yellow-300 transition-colors"
-              >
-                Get a Free Quote <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
-=======
-            {/* Sidebar ad */}
-            <AdSlot location="sailing_sidebar" size="300x250" />
-
-            {/* Specialist CTA */}
-            <SpecialistCTA variant="compact" />
->>>>>>> claude/focused-mcclintock-8fe348
+            {/* Booking inquiry CTA */}
+            <BookingInquiryButton sailing={sailing} variant="sidebar" />
           </div>
         </div>
       </div>

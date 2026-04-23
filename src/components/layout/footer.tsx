@@ -95,11 +95,6 @@ export function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/tools/carbon-calculator" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
-                    Carbon Calculator
-                  </Link>
-                </li>
-                <li>
                   <Link href="/tools/flights" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
                     Flight Finder
                   </Link>
