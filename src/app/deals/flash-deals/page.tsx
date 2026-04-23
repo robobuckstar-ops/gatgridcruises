@@ -3,8 +3,20 @@ import { getLastMinuteDeals, getShips, getPorts } from '@/lib/data'
 import { LastMinuteDealGrid } from '../last-minute/last-minute-deal-grid'
 
 export const metadata: Metadata = {
+<<<<<<< HEAD
   title: 'Flash Deals — Disney Cruise Discounts Within 90 Days',
   description: 'Flash deals on Disney cruises departing within 90 days. Steep discounts, limited availability. Check prices before they change.',
+=======
+  title: 'Flash Deals — Disney Cruises Departing Within 90 Days',
+  description:
+    'Flash deals on Disney cruises departing within 90 days. Steep discounts, limited availability. Prices change fast — check before they\'re gone.',
+  openGraph: {
+    title: 'Flash Deals — Disney Cruises Departing Within 90 Days',
+    description:
+      'Flash deals on Disney cruises departing within 90 days. Steep discounts, limited availability.',
+    url: 'https://gatgridcruises.com/deals/flash-deals',
+  },
+>>>>>>> claude/focused-mcclintock-8fe348
 }
 
 export default function FlashDealsPage() {

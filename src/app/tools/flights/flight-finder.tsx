@@ -97,6 +97,10 @@ function calculateAirportDistance(homeCode: string, destCode: string): number {
     'TPA': [27.9755, -82.5338],  // Tampa
     'MSY': [29.9841, -90.2458],  // New Orleans
     'HOU': [29.6452, -95.2113],  // Houston (Galveston area)
+<<<<<<< HEAD
+=======
+    'LGB': [33.8177, -118.1516], // Long Beach
+>>>>>>> claude/focused-mcclintock-8fe348
     'SAN': [32.7345, -117.1897], // San Diego
   }
 
@@ -309,6 +313,7 @@ export function FlightFinder({
               </label>
               <input
                 type="text"
+<<<<<<< HEAD
                 value={airportInputValue}
                 onChange={e => {
                   setAirportInputValue(e.target.value)
@@ -319,6 +324,13 @@ export function FlightFinder({
                 placeholder="Search by code or city (e.g., ORD, Chicago)"
                 className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:ring-offset-0"
                 autoComplete="off"
+=======
+                value={homeAirport}
+                onChange={e => setHomeAirport(e.target.value.toUpperCase())}
+                placeholder="e.g., ORD, LAX, ATL"
+                maxLength={3}
+                className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-0"
+>>>>>>> claude/focused-mcclintock-8fe348
               />
               {homeAirport && (
                 <p className="text-xs text-emerald-600 mt-1 font-medium">

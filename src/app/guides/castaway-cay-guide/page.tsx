@@ -1,7 +1,11 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { MapPin, Clock, DollarSign, AlertCircle, Anchor } from 'lucide-react';
+<<<<<<< HEAD
 import { GetQuoteCTA } from '@/components/get-quote-cta';
+=======
+import { AdSlot } from '@/components/ui/ad-slot';
+>>>>>>> claude/focused-mcclintock-8fe348
 
 export const metadata: Metadata = {
   title: "Castaway Cay: The Ultimate Guide to Disney's Private Island",
@@ -41,6 +45,7 @@ export default function CastawayCayGuide() {
       {/* Main Content */}
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
+<<<<<<< HEAD
         <a
               href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
               target="_blank"
@@ -55,6 +60,9 @@ export default function CastawayCayGuide() {
                 <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
               </div>
             </a>
+=======
+        <AdSlot size="728x90" />
+>>>>>>> claude/focused-mcclintock-8fe348
 
         {/* Overview Section */}
         <section className="mb-12">
@@ -93,6 +101,7 @@ export default function CastawayCayGuide() {
           </div>
         </section>
 
+<<<<<<< HEAD
         <a
               href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
               target="_blank"
@@ -107,6 +116,9 @@ export default function CastawayCayGuide() {
                 <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
               </div>
             </a>
+=======
+        <AdSlot size="728x90" />
+>>>>>>> claude/focused-mcclintock-8fe348
 
         {/* Dining & Bars */}
         <section className="mb-12">
@@ -201,6 +213,7 @@ export default function CastawayCayGuide() {
           </div>
         </section>
 
+<<<<<<< HEAD
         <a
               href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
               target="_blank"
@@ -215,6 +228,9 @@ export default function CastawayCayGuide() {
                 <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
               </div>
             </a>
+=======
+        <AdSlot size="728x90" />
+>>>>>>> claude/focused-mcclintock-8fe348
 
         {/* Practical Tips */}
         <section className="mb-12">

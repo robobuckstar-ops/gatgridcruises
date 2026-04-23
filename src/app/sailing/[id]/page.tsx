@@ -11,7 +11,13 @@ import { ScoreBadge } from '@/components/ui/score-badge'
 import { BuyWaitBadge } from '@/components/ui/buy-wait-badge'
 import { PriceTrend } from '@/components/ui/price-trend'
 import { AdSlot } from '@/components/ui/ad-slot'
+<<<<<<< HEAD
 import { Ship, Calendar, MapPin, Clock, DollarSign, Anchor, BedDouble, Car, Building2, ArrowRight, Check, X as XIcon, Info, TrendingDown, TrendingUp, ShoppingBag } from 'lucide-react'
+=======
+import { Ship, Calendar, MapPin, Clock, DollarSign, Anchor, BedDouble, Car, Building2, ArrowRight, Check, X as XIcon, Info, TrendingDown, TrendingUp } from 'lucide-react'
+import { SpecialistCTA } from '@/components/ui/specialist-cta'
+import { ReportIssueForm } from '@/components/ui/report-issue-form'
+>>>>>>> claude/focused-mcclintock-8fe348
 
 interface PageProps {
   params: Promise<{ id: string }>
@@ -309,6 +315,7 @@ export default async function SailingDetailPage({ params }: PageProps) {
                 </Link>
               </section>
             )}
+<<<<<<< HEAD
 
             {/* Packing guide promo */}
             <section className="border border-slate-200 rounded-xl p-5 bg-slate-50/60">
@@ -341,6 +348,13 @@ export default async function SailingDetailPage({ params }: PageProps) {
                 See the full packing list <ArrowRight className="h-3.5 w-3.5" />
               </Link>
             </section>
+=======
+            {/* Specialist CTA */}
+            <SpecialistCTA />
+
+            {/* Report an Issue */}
+            <ReportIssueForm page={`/sailing/${sailing.id}`} />
+>>>>>>> claude/focused-mcclintock-8fe348
           </div>
 
           {/* Sidebar - 1/3 */}
@@ -407,6 +421,7 @@ export default async function SailingDetailPage({ params }: PageProps) {
               </div>
             )}
 
+<<<<<<< HEAD
             {/* Featured travel specialist stub */}
             <div className="bg-[#D4AF37]/10 border border-[#D4AF37]/30 rounded-xl p-5">
               <h3 className="font-display text-lg font-semibold text-slate-900 mb-2">Find a Disney Specialist</h3>
@@ -420,6 +435,13 @@ export default async function SailingDetailPage({ params }: PageProps) {
                 Get a Free Quote <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
+=======
+            {/* Sidebar ad */}
+            <AdSlot location="sailing_sidebar" size="300x250" />
+
+            {/* Specialist CTA */}
+            <SpecialistCTA variant="compact" />
+>>>>>>> claude/focused-mcclintock-8fe348
           </div>
         </div>
       </div>

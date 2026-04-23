@@ -16,10 +16,16 @@ export function GroupBrowser({ groups }: GroupBrowserProps) {
   const [selectedMonth, setSelectedMonth] = useState<string>('all')
 
   const ships = useMemo(() => {
+<<<<<<< HEAD
     const uniqueShips = Array.from(
       new Set(groups.map(g => g.sailing.ship_id))
     )
     return getShips().filter(s => uniqueShips.includes(s.id))
+=======
+    const allShips = getShips()
+    const uniqueShipIds = Array.from(new Set(groups.map(g => g.sailing.ship_id)))
+    return allShips.filter(s => uniqueShipIds.includes(s.id))
+>>>>>>> claude/focused-mcclintock-8fe348
   }, [groups])
 
   const months = useMemo(() => {

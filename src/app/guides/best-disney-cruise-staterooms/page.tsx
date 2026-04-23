@@ -1,7 +1,11 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, Home, MapPin, Wind } from 'lucide-react';
+<<<<<<< HEAD
 import { GetQuoteCTA } from '@/components/get-quote-cta';
+=======
+import { AdSlot } from '@/components/ui/ad-slot';
+>>>>>>> claude/focused-mcclintock-8fe348
 
 export const metadata: Metadata = {
   title: 'Best Disney Cruise Staterooms: Complete Category Guide',
@@ -35,6 +39,7 @@ export default function BestDisneyCruiseStateroomsGuide() {
       </section>
 
       {/* Ad Slot 1 */}
+<<<<<<< HEAD
       <a
               href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
               target="_blank"
@@ -49,6 +54,9 @@ export default function BestDisneyCruiseStateroomsGuide() {
                 <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
               </div>
             </a>
+=======
+      <AdSlot size="728x90" />
+>>>>>>> claude/focused-mcclintock-8fe348
 
       {/* Main Content */}
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -65,6 +73,7 @@ export default function BestDisneyCruiseStateroomsGuide() {
         </section>
 
         {/* Ad Slot 2 */}
+<<<<<<< HEAD
         <a
               href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
               target="_blank"
@@ -79,6 +88,9 @@ export default function BestDisneyCruiseStateroomsGuide() {
                 <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
               </div>
             </a>
+=======
+        <AdSlot size="728x90" />
+>>>>>>> claude/focused-mcclintock-8fe348
 
         <section className="mb-12">
           <h2 className="text-3xl font-fraunces font-bold text-slate-900 mb-6">
@@ -166,6 +178,7 @@ export default function BestDisneyCruiseStateroomsGuide() {
         </section>
 
         {/* Ad Slot 3 */}
+<<<<<<< HEAD
         <a
               href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
               target="_blank"
@@ -180,6 +193,9 @@ export default function BestDisneyCruiseStateroomsGuide() {
                 <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
               </div>
             </a>
+=======
+        <AdSlot size="728x90" />
+>>>>>>> claude/focused-mcclintock-8fe348
 
         <section className="mb-12">
           <h2 className="text-3xl font-fraunces font-bold text-slate-900 mb-6">
@@ -343,6 +359,7 @@ export default function BestDisneyCruiseStateroomsGuide() {
         </section>
 
         {/* Ad Slot 4 */}
+<<<<<<< HEAD
         <a
               href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
               target="_blank"
@@ -357,6 +374,9 @@ export default function BestDisneyCruiseStateroomsGuide() {
                 <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
               </div>
             </a>
+=======
+        <AdSlot size="728x90" />
+>>>>>>> claude/focused-mcclintock-8fe348
 
         <section className="mb-12">
           <h2 className="text-3xl font-fraunces font-bold text-slate-900 mb-6">
@@ -526,8 +546,12 @@ export default function BestDisneyCruiseStateroomsGuide() {
       </article>
 
       {/* Ad Slot 5 */}
+<<<<<<< HEAD
 
       <GetQuoteCTA />
+=======
+      <AdSlot size="728x90" />
+>>>>>>> claude/focused-mcclintock-8fe348
     </div>
   );
 }

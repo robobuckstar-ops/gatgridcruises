@@ -4,8 +4,15 @@ import { ArrowRight, Ship } from 'lucide-react'
 import { getShips } from '@/lib/data'
 
 export const metadata: Metadata = {
-  title: 'Disney Cruise Line Ships',
-  description: 'Explore Disney Cruise Line fleet. Compare ships, view specs, and discover which vessel is right for your family vacation.',
+  title: 'Disney Cruise Line Ships — Fleet Guide & Comparison',
+  description:
+    'Compare every Disney Cruise Line ship — Disney Magic, Wonder, Dream, Fantasy, Wish, Treasure, and Adventure. Specs, highlights, staterooms, and deals for each vessel.',
+  openGraph: {
+    title: 'Disney Cruise Line Ships — Fleet Guide & Comparison',
+    description:
+      'Compare every Disney Cruise Line ship. Specs, stateroom categories, highlights, and current deals.',
+    url: 'https://gatgridcruises.com/ships',
+  },
 }
 
 export default function ShipsPage() {

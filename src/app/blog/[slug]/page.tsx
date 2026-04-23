@@ -1,10 +1,15 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { getBlogPostBySlug, getRelatedPosts, getBlogPosts } from '@/lib/data'
+<<<<<<< HEAD
 import { ArrowLeft, Calendar, Clock } from 'lucide-react'
 import { ShareButtons } from './share-buttons'
 import { StructuredData } from '@/components/ui/structured-data'
 import { generateArticleSchema, generateBreadcrumbSchema } from '@/lib/structured-data'
+=======
+import { ArrowLeft, Calendar, Clock, Twitter, Facebook } from 'lucide-react'
+import { CopyLinkButton } from './copy-button'
+>>>>>>> claude/focused-mcclintock-8fe348
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -195,7 +200,31 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         {/* Share Section */}
         <div className="mt-12 pt-8 border-t border-slate-200">
           <h3 className="font-semibold text-slate-900 mb-4">Share this article</h3>
+<<<<<<< HEAD
           <ShareButtons title={post.title} slug={post.slug} />
+=======
+          <div className="flex flex-wrap gap-3">
+            <a
+              href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(`https://gatgridcruises.com/blog/${post.slug}`)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100 transition-colors font-medium"
+            >
+              <Twitter className="h-4 w-4" />
+              Twitter
+            </a>
+            <a
+              href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://gatgridcruises.com/blog/${post.slug}`)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100 transition-colors font-medium"
+            >
+              <Facebook className="h-4 w-4" />
+              Facebook
+            </a>
+            <CopyLinkButton url={`https://gatgridcruises.com/blog/${post.slug}`} />
+          </div>
+>>>>>>> claude/focused-mcclintock-8fe348
         </div>
       </article>
 

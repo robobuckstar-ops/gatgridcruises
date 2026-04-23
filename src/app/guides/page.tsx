@@ -1,11 +1,23 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { BookOpen, ArrowRight } from 'lucide-react'
+<<<<<<< HEAD
 import { GetQuoteCTA } from '@/components/get-quote-cta'
+=======
+import { AdSlot } from '@/components/ui/ad-slot'
+import { SpecialistCTA } from '@/components/ui/specialist-cta'
+>>>>>>> claude/focused-mcclintock-8fe348
 
 export const metadata: Metadata = {
-  title: 'Disney Cruise Guides & Tips',
-  description: 'In-depth guides to help you plan the perfect Disney cruise. From first-timer tips to stateroom comparisons, packing lists, and destination guides.',
+  title: 'Disney Cruise Guides — In-Depth Planning Resources',
+  description:
+    'In-depth Disney Cruise Line guides: true cost breakdown, best staterooms, port comparisons, packing lists, first-timer tips, and dining rankings. Honest, no-fluff advice.',
+  openGraph: {
+    title: 'Disney Cruise Guides — In-Depth Planning Resources',
+    description:
+      'Comprehensive guides for planning a Disney cruise: costs, staterooms, ports, packing, first-timers, and more.',
+    url: 'https://gatgridcruises.com/guides',
+  },
 }
 
 const guides = [
@@ -147,6 +159,7 @@ export default function GuidesPage() {
                 </Link>
 
                 {index === 3 && (
+<<<<<<< HEAD
                   <div className="mt-8 mb-4">
                     <a
                       href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
@@ -164,10 +177,19 @@ export default function GuidesPage() {
                         </span>
                       </div>
                     </a>
+=======
+                  <div className="col-span-full mt-8 mb-4">
+                    <AdSlot size="728x90" />
+>>>>>>> claude/focused-mcclintock-8fe348
                   </div>
                 )}
               </div>
             ))}
+          </div>
+
+          {/* Specialist CTA */}
+          <div className="mt-12">
+            <SpecialistCTA />
           </div>
         </div>
       </section>

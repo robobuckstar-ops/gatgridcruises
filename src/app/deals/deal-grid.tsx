@@ -4,9 +4,15 @@ import { useState, useMemo } from 'react'
 import type { Sailing, Ship, Port } from '@/types/database'
 import { SailingCard } from '@/components/ui/sailing-card'
 import { AdSlot } from '@/components/ui/ad-slot'
+<<<<<<< HEAD
 import { Search, SlidersHorizontal, X, Bell, ArrowRight } from 'lucide-react'
 import { calculateDealScore } from '@/lib/deal-score'
 import Link from 'next/link'
+=======
+import { Search, SlidersHorizontal, X } from 'lucide-react'
+import { SpecialistCTA } from '@/components/ui/specialist-cta'
+import { ReportIssueForm } from '@/components/ui/report-issue-form'
+>>>>>>> claude/focused-mcclintock-8fe348
 
 type SortOption = 'score' | 'price_asc' | 'price_desc' | 'date' | 'drop'
 type SailingWithDrop = Sailing & { percentBelow: number }
@@ -366,7 +372,17 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
 
         {/* Bottom ad */}
         <div className="mt-10">
-          <AdSlot location="deals_bottom_banner" size="728x90" />
+          <AdSlot size="728x90" />
+        </div>
+
+        {/* Specialist CTA */}
+        <div className="mt-8">
+          <SpecialistCTA />
+        </div>
+
+        {/* Report an Issue */}
+        <div className="mt-8">
+          <ReportIssueForm page="/deals" />
         </div>
       </div>
     </div>
