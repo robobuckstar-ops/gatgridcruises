@@ -3,8 +3,6 @@ import Link from 'next/link';
 import { MapPin, Clock, DollarSign, AlertCircle, Anchor } from 'lucide-react';
 import { GetQuoteCTA } from '@/components/get-quote-cta';
 import { AdSlot } from '@/components/ui/ad-slot';
-import { AdSlot } from '@/components/ui/ad-slot';
-import { GetQuoteCTA } from '@/components/get-quote-cta';
 
 export const metadata: Metadata = {
   title: "Castaway Cay: The Ultimate Guide to Disney's Private Island",

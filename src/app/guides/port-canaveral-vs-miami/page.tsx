@@ -4,8 +4,6 @@ import Link from 'next/link';
 import { ArrowRight, MapPin, Clock, DollarSign } from 'lucide-react';
 import { GetQuoteCTA } from '@/components/get-quote-cta';
 import { AdSlot } from '@/components/ui/ad-slot';
-import { AdSlot } from '@/components/ui/ad-slot';
-import { GetQuoteCTA } from '@/components/get-quote-cta';
 
 export const metadata: Metadata = {
   title: 'Port Canaveral vs. Miami: Which Disney Cruise Port Is Better?',

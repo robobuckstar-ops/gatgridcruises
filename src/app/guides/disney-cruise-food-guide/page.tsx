@@ -3,8 +3,6 @@ import Link from 'next/link';
 import { Utensils, Wine, ChefHat, Heart, Star } from 'lucide-react';
 import { GetQuoteCTA } from '@/components/get-quote-cta';
 import { AdSlot } from '@/components/ui/ad-slot'
-import { AdSlot } from '@/components/ui/ad-slot';
-import { GetQuoteCTA } from '@/components/get-quote-cta';
 
 export const metadata: Metadata = {
   title: 'Disney Cruise Food Guide: Every Restaurant Ranked',

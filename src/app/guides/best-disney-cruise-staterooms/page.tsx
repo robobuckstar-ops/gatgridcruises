@@ -4,8 +4,6 @@ import Link from 'next/link';
 import { ArrowRight, Home, MapPin, Wind } from 'lucide-react';
 import { GetQuoteCTA } from '@/components/get-quote-cta';
 import { AdSlot } from '@/components/ui/ad-slot';
-import { AdSlot } from '@/components/ui/ad-slot';
-import { GetQuoteCTA } from '@/components/get-quote-cta';
 
 export const metadata: Metadata = {
   title: 'Best Disney Cruise Staterooms: Complete Category Guide',

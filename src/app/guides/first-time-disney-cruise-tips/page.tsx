@@ -4,8 +4,6 @@ import Link from 'next/link';
 import { ArrowRight, CheckCircle2, Lightbulb } from 'lucide-react';
 import { GetQuoteCTA } from '@/components/get-quote-cta';
 import { AdSlot } from '@/components/ui/ad-slot';
-import { AdSlot } from '@/components/ui/ad-slot';
-import { GetQuoteCTA } from '@/components/get-quote-cta';
 
 export const metadata: Metadata = {
   title: '25 Things to Know Before Your First Disney Cruise',

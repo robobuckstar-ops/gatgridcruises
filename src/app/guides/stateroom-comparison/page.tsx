@@ -1,145 +1,19 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowLeft, CheckCircle, XCircle, Maximize2 } from 'lucide-react'
+import { CheckCircle, XCircle } from 'lucide-react'
 import { NewsletterSignup } from '@/components/newsletter-signup'
 
 export const metadata: Metadata = {
-  title: 'Disney Cruise Stateroom Comparison: Inside vs Oceanview vs Verandah vs Concierge',
+  title: 'Disney Cruise Stateroom Comparison: Inside vs Verandah vs Concierge | GatGridCruises',
   description:
-    'Compare all Disney Cruise Line stateroom types: inside, oceanview, verandah, and concierge. Price ranges, square footage, pros and cons, and how to choose.',
-  keywords: [
-    'disney cruise stateroom comparison',
-    'disney cruise cabin types',
-    'disney cruise inside vs verandah',
-    'disney cruise concierge class',
-    'disney cruise cabin size',
-  ],
+    'Full comparison of Disney cruise stateroom types — Inside, Oceanview, Verandah, and Concierge. Price ranges, square footage, pros/cons, and which is best for families, couples, and budget travelers.',
+  openGraph: {
+    title: 'Disney Cruise Stateroom Comparison 2025',
+    description:
+      'Inside vs Oceanview vs Verandah vs Concierge — which Disney cruise stateroom is right for you? Full comparison with price ranges and honest advice.',
+    type: 'article',
+  },
 }
-
-interface StateroomData {
-  type: string
-  slug: string
-  priceRange: string
-  sizeRange: string
-  occupancy: string
-  description: string
-  pros: string[]
-  cons: string[]
-  bestFor: string[]
-  color: string
-  gradient: string
-  badge?: string
-}
-
-const staterooms: StateroomData[] = [
-  {
-    type: 'Inside Stateroom',
-    slug: 'inside',
-    priceRange: '$165–$240/person/night',
-    sizeRange: '169–204 sq ft',
-    occupancy: '1–4 guests',
-    description:
-      'No windows or portholes. Complete darkness makes these the best for sleeping — many parents prefer them for kids. The most affordable way to experience Disney Cruise Line.',
-    pros: [
-      'Lowest price point — often 30–40% cheaper than verandah',
-      'Complete blackout darkness is ideal for children\'s sleep',
-      'Same amenities and service as other cabin types',
-      'Smaller footprint means less to manage with young kids',
-      'Spend most of your time outside the cabin anyway',
-    ],
-    cons: [
-      'No natural light — disorienting for some guests',
-      'Feels smallest of all cabin types',
-      'Not ideal for longer cruises (7+ nights)',
-      'Can feel claustrophobic for adults who value space',
-    ],
-    bestFor: ['Budget-conscious travelers', 'Families with young children who sleep well', 'Short cruises (3–5 nights)', 'Those who plan to spend most time outside the cabin'],
-    color: 'slate',
-    gradient: 'from-slate-700 to-slate-900',
-  },
-  {
-    type: 'Oceanview Stateroom',
-    slug: 'oceanview',
-    priceRange: '$210–$300/person/night',
-    sizeRange: '170–214 sq ft',
-    occupancy: '1–4 guests',
-    description:
-      'Features a porthole or large picture window providing natural light and ocean views. Similar size to inside staterooms but with the psychological and visual benefit of daylight and sea views.',
-    pros: [
-      'Natural daylight throughout the day',
-      'Ocean views provide connection to the sea',
-      'More affordable than verandah',
-      'Good middle-ground for light sleepers who want views',
-      'Same deck layout options as verandah cabins',
-    ],
-    cons: [
-      'Window doesn\'t open — no fresh air',
-      'Views can be obstructed on some ships/decks',
-      'Porthole windows on older ships feel small',
-      'No outdoor private space',
-      'Minimal size upgrade over inside staterooms',
-    ],
-    bestFor: ['Travelers who want natural light without the verandah premium', 'First-timers on a moderate budget', 'Couples looking for an affordable upgrade', 'Alaska or Northern Europe itineraries where scenery viewing matters'],
-    color: 'blue',
-    gradient: 'from-blue-600 to-blue-800',
-  },
-  {
-    type: 'Verandah (Balcony)',
-    slug: 'verandah',
-    priceRange: '$280–$400/person/night',
-    sizeRange: '204–268 sq ft',
-    occupancy: '1–5 guests',
-    description:
-      'Disney calls balcony cabins "verandah" staterooms. A private outdoor space with patio furniture lets you watch the ocean, enjoy sunrises, and have morning coffee outside. The most popular upgrade for repeat guests.',
-    pros: [
-      'Private outdoor space — sea air and ocean views anytime',
-      'Larger cabin square footage than inside/oceanview',
-      'Perfect for morning coffee or evening sunsets',
-      'Great for spotting wildlife, ports, and scenery',
-      'Provides a quiet escape from busy common areas',
-      'Full floor-to-ceiling doors flood cabin with natural light',
-    ],
-    cons: [
-      'Significantly more expensive than inside/oceanview',
-      'Balconies are small — typically 2 chairs and a table',
-      'Some verandah cabins have obstructed views from lifeboats',
-      'Balcony position matters (forward/aft/midship)',
-    ],
-    bestFor: ['Couples and adults who value private outdoor space', 'Repeat Disney cruisers ready to upgrade', 'Alaska or Norway itineraries (wildlife and scenery)', 'Guests celebrating special occasions'],
-    color: 'indigo',
-    gradient: 'from-indigo-600 to-indigo-800',
-    badge: 'Most Popular',
-  },
-  {
-    type: 'Concierge Class',
-    slug: 'concierge',
-    priceRange: '$490–$710/person/night',
-    sizeRange: '246–622 sq ft (incl. 2-story suites)',
-    occupancy: '1–7 guests (suites)',
-    description:
-      'The premium tier of Disney Cruise Line. Dedicated concierge team handles reservations and special requests before and during the cruise. Access to a private sun deck lounge with exclusive food and beverage service.',
-    pros: [
-      'Dedicated Concierge team available before sailing and onboard',
-      'Private sun deck lounge with exclusive food, drinks, and seating',
-      'Priority embarkation and disembarkation',
-      'Priority reservations for specialty dining and activities',
-      'Largest staterooms on the ship — some 2-story suites',
-      'Complimentary champagne and welcome amenities',
-      'Priority tendering at ports',
-    ],
-    cons: [
-      'Extremely expensive — typically 2–3x verandah pricing',
-      'Concierge lounge most valuable on sea days — less so at ports',
-      'Still limited to ship-wide amenities and same dining rooms',
-      'Diminishing returns if you\'re rarely in the cabin',
-      'Not all ships have equal concierge facilities',
-    ],
-    bestFor: ['Luxury travelers seeking a premium Disney experience', 'Milestone celebrations (honeymoons, anniversaries)', 'Large families needing suite-sized accommodations', 'Guests who value priority access and concierge service'],
-    color: 'amber',
-    gradient: 'from-amber-600 to-orange-700',
-    badge: 'Premium',
-  },
-]
 
 const comparisonFeatures = [
   { feature: 'Private outdoor space', inside: false, oceanview: false, verandah: true, concierge: true },
@@ -158,17 +32,7 @@ function CheckIcon({ val }: { val: boolean }) {
     <CheckCircle className="h-5 w-5 text-emerald-500 mx-auto" />
   ) : (
     <XCircle className="h-5 w-5 text-slate-300 mx-auto" />
-
-export const metadata: Metadata = {
-  title: 'Disney Cruise Stateroom Comparison: Inside vs Verandah vs Concierge | GatGridCruises',
-  description:
-    'Full comparison of Disney cruise stateroom types — Inside, Oceanview, Verandah, and Concierge. Price ranges, square footage, pros/cons, and which is best for families, couples, and budget travelers.',
-  openGraph: {
-    title: 'Disney Cruise Stateroom Comparison 2025',
-    description:
-      'Inside vs Oceanview vs Verandah vs Concierge — which Disney cruise stateroom is right for you? Full comparison with price ranges and honest advice.',
-    type: 'article',
-  },
+  )
 }
 
 const staterooms = [
@@ -195,14 +59,14 @@ const staterooms = [
       'Cheapest stateroom available — save thousands',
       'Same ship access — pools, shows, dining, kids clubs',
       'Blackout-dark — best sleep on the ship',
-      'You won\'t miss the balcony if you\'re rarely in the room',
+      "You won't miss the balcony if you're rarely in the room",
       'Savings can fund excursions, specialty dining, or a future cruise',
     ],
     cons: [
       'No window — zero natural light',
       'Can feel claustrophobic, especially for longer sailings',
       'No outdoor private space',
-      'Hard to tell if it\'s day or night without checking your phone',
+      "Hard to tell if it's day or night without checking your phone",
     ],
     bestFor: [
       'Budget-focused families',
@@ -294,7 +158,7 @@ const staterooms = [
       'Significantly more expensive than inside or oceanview',
       'Balcony size varies — some are quite small',
       'Aft-facing balconies get ship exhaust on some vessels',
-      'Not worth it if you\'re only doing 3-night sailings',
+      "Not worth it if you're only doing 3-night sailings",
     ],
     bestFor: [
       'Families on 5+ night sailings',
@@ -304,7 +168,7 @@ const staterooms = [
     ],
     worstFor: [
       'Very budget-conscious travelers (inside saves thousands)',
-      'Short 3-night sailings where you\'re rarely in the room',
+      "Short 3-night sailings where you're rarely in the room",
     ],
     rating: { value: 3, luxury: 4, family: 5, couple: 5 },
     color: 'emerald',
@@ -335,13 +199,13 @@ const staterooms = [
       'Concierge lounge is genuinely wonderful for relaxing',
       'Suites have room for large families with space to breathe',
       'Worth it as a once-in-a-lifetime splurge',
-      'Concierge guests often say it\'s the only way they\'ll cruise now',
+      "Concierge guests often say it's the only way they'll cruise now",
     ],
     cons: [
       'Extremely expensive — often 3–4x the cost of a verandah',
       'Most of the "benefits" are already included for everyone',
       'ROI is hard to justify vs. spending that money on a second cruise',
-      'The Concierge lounge perk diminishes if you\'re off the ship all day',
+      "The Concierge lounge perk diminishes if you're off the ship all day",
     ],
     bestFor: [
       'Luxury travelers for whom price is not a concern',
@@ -352,42 +216,18 @@ const staterooms = [
     worstFor: [
       'Budget-conscious travelers (obvious)',
       'Families who spend all day at ports or the beach',
-      'First-time Disney cruisers who don\'t know what they\'re comparing against',
+      "First-time Disney cruisers who don't know what they're comparing against",
     ],
     rating: { value: 2, luxury: 5, family: 4, couple: 5 },
     color: 'purple',
   },
 ]
 
-const colorMap: Record<string, { bg: string; border: string; badge: string; badgeText: string; bar: string }> = {
-  slate: {
-    bg: 'bg-slate-50',
-    border: 'border-slate-200',
-    badge: 'bg-slate-100',
-    badgeText: 'text-slate-700',
-    bar: 'bg-slate-500',
-  },
-  blue: {
-    bg: 'bg-blue-50',
-    border: 'border-blue-200',
-    badge: 'bg-blue-100',
-    badgeText: 'text-blue-700',
-    bar: 'bg-blue-500',
-  },
-  emerald: {
-    bg: 'bg-emerald-50',
-    border: 'border-emerald-200',
-    badge: 'bg-emerald-100',
-    badgeText: 'text-emerald-700',
-    bar: 'bg-emerald-500',
-  },
-  purple: {
-    bg: 'bg-purple-50',
-    border: 'border-purple-200',
-    badge: 'bg-purple-100',
-    badgeText: 'text-purple-700',
-    bar: 'bg-purple-500',
-  },
+const colorMap: Record<string, { bg: string; border: string; badge: string; badgeText: string }> = {
+  slate: { bg: 'bg-slate-50', border: 'border-slate-200', badge: 'bg-slate-100', badgeText: 'text-slate-700' },
+  blue: { bg: 'bg-blue-50', border: 'border-blue-200', badge: 'bg-blue-100', badgeText: 'text-blue-700' },
+  emerald: { bg: 'bg-emerald-50', border: 'border-emerald-200', badge: 'bg-emerald-100', badgeText: 'text-emerald-700' },
+  purple: { bg: 'bg-purple-50', border: 'border-purple-200', badge: 'bg-purple-100', badgeText: 'text-purple-700' },
 }
 
 function RatingBar({ label, value }: { label: string; value: number }) {
@@ -398,10 +238,7 @@ function RatingBar({ label, value }: { label: string; value: number }) {
         <span className="font-medium text-slate-700">{value}/5</span>
       </div>
       <div className="h-1.5 bg-slate-200 rounded-full overflow-hidden">
-        <div
-          className="h-full bg-blue-500 rounded-full"
-          style={{ width: `${(value / 5) * 100}%` }}
-        />
+        <div className="h-full bg-blue-500 rounded-full" style={{ width: `${(value / 5) * 100}%` }} />
       </div>
     </div>
   )
@@ -411,29 +248,6 @@ export default function StateroomComparisonPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-slate-800 to-slate-900 py-14 text-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Link
-            href="/guides"
-            className="inline-flex items-center gap-1 text-slate-400 hover:text-white text-sm mb-6 transition"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Back to Guides
-          </Link>
-
-          <div className="flex items-center gap-2 mb-4">
-            <Maximize2 className="h-5 w-5 text-yellow-400" />
-            <span className="text-sm font-semibold text-yellow-400 uppercase tracking-wider">
-              Cabin Guide
-            </span>
-          </div>
-
-          <h1 className="font-fraunces text-4xl md:text-5xl font-bold mb-4">
-            Disney Cruise Stateroom Comparison
-          </h1>
-          <p className="text-slate-300 text-lg max-w-2xl">
-            Inside, oceanview, verandah, or concierge? Compare every stateroom type by price,
-            size, features, and who each one is best for.
       <section className="bg-gradient-to-b from-blue-950 to-blue-900 text-white py-16 px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-sm text-blue-300 mb-3 font-medium">Guides · Staterooms</div>
@@ -447,99 +261,6 @@ export default function StateroomComparisonPage() {
         </div>
       </section>
 
-      <article className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-
-        {/* Quick stats */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-14">
-          {[
-            { label: 'Stateroom Types', value: '4 main' },
-            { label: 'Smallest (sq ft)', value: '169' },
-            { label: 'Largest (sq ft)', value: '622+' },
-            { label: 'Price Difference', value: '4× inside' },
-          ].map(({ label, value }) => (
-            <div key={label} className="bg-slate-50 rounded-xl p-4 text-center border border-slate-200">
-              <p className="font-fraunces font-bold text-2xl text-slate-900">{value}</p>
-              <p className="text-xs text-slate-500 mt-1">{label}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* Stateroom cards */}
-        <section className="space-y-10 mb-16">
-          {staterooms.map((room) => (
-            <div key={room.slug} className="border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
-              <div className={`bg-gradient-to-r ${room.gradient} px-6 py-5 text-white flex items-center justify-between`}>
-                <div>
-                  <h2 className="font-fraunces text-2xl font-bold">{room.type}</h2>
-                  <div className="flex flex-wrap gap-4 mt-2 text-sm text-white/80">
-                    <span>{room.sizeRange}</span>
-                    <span>·</span>
-                    <span>{room.occupancy}</span>
-                  </div>
-                </div>
-                <div className="text-right">
-                  {room.badge && (
-                    <span className="bg-yellow-400 text-slate-900 text-xs font-bold px-3 py-1 rounded-full block mb-2">
-                      {room.badge}
-                    </span>
-                  )}
-                  <p className="text-sm text-white/70">Est. price</p>
-                  <p className="font-bold text-lg">{room.priceRange}</p>
-                </div>
-              </div>
-
-              <div className="p-6">
-                <p className="text-slate-600 mb-6">{room.description}</p>
-
-                <div className="grid sm:grid-cols-2 gap-6 mb-6">
-                  <div>
-                    <h3 className="font-semibold text-slate-900 text-sm mb-3 flex items-center gap-1">
-                      <CheckCircle className="h-4 w-4 text-emerald-500" /> Pros
-                    </h3>
-                    <ul className="space-y-2">
-                      {room.pros.map((p) => (
-                        <li key={p} className="text-sm text-slate-600 flex items-start gap-2">
-                          <span className="text-emerald-500 mt-0.5 flex-shrink-0">+</span>
-                          {p}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-slate-900 text-sm mb-3 flex items-center gap-1">
-                      <XCircle className="h-4 w-4 text-red-400" /> Cons
-                    </h3>
-                    <ul className="space-y-2">
-                      {room.cons.map((c) => (
-                        <li key={c} className="text-sm text-slate-600 flex items-start gap-2">
-                          <span className="text-red-400 mt-0.5 flex-shrink-0">−</span>
-                          {c}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-
-                <div className="bg-slate-50 rounded-lg p-4">
-                  <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Best For</p>
-                  <div className="flex flex-wrap gap-2">
-                    {room.bestFor.map((bf) => (
-                      <span key={bf} className="bg-white border border-slate-200 text-slate-700 text-xs px-3 py-1 rounded-full">
-                        {bf}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </section>
-
-        {/* Comparison table */}
-        <section className="mb-16">
-          <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-6">
-            Feature Comparison
-          </h2>
       <div className="max-w-5xl mx-auto px-4 py-10">
         {/* Quick comparison table */}
         <section className="mb-14">
@@ -581,14 +302,14 @@ export default function StateroomComparisonPage() {
 
         {/* Decision guide */}
         <section className="bg-blue-50 rounded-2xl p-8 border border-blue-100 mb-14">
-          <h2 className="font-fraunces text-2xl font-bold text-slate-900 mb-6">
+          <h2 className="font-display text-2xl font-bold text-slate-900 mb-6">
             How to Choose: Quick Decision Guide
           </h2>
           <div className="space-y-4">
             {[
               { cond: 'Budget is your primary concern', rec: 'Inside Stateroom', why: 'Same ship experience at the lowest cost. All dining, entertainment, and pools are identical.' },
-              { cond: 'First-time cruiser wanting a solid experience', rec: 'Oceanview or Verandah', why: 'Natural light makes the cruise feel less hotel-like; verandah adds the private outdoor touch.' },
-              { cond: 'Alaska, Norway, or scenic itinerary', rec: 'Verandah strongly recommended', why: 'Wildlife, glaciers, and fjords are viewed best from your private balcony — you\'d regret an inside cabin here.' },
+              { cond: 'First-time cruiser wanting a solid experience', rec: 'Oceanview or Verandah', why: "Natural light makes the cruise feel less hotel-like; verandah adds the private outdoor touch." },
+              { cond: 'Alaska, Norway, or scenic itinerary', rec: 'Verandah strongly recommended', why: "Wildlife, glaciers, and fjords are viewed best from your private balcony — you'd regret an inside cabin here." },
               { cond: 'Celebrating a milestone (wedding, honeymoon, anniversary)', rec: 'Verandah or Concierge', why: 'Private space and priority service make special occasions feel extraordinary.' },
               { cond: 'You have 4+ people in one cabin', rec: 'Verandah or Concierge suite', why: 'More square footage prevents cabin fever; suites sleep 5–7 guests comfortably.' },
               { cond: 'Maximum luxury and hassle-free experience', rec: 'Concierge Class', why: 'Concierge team handles everything; private lounge is a genuine retreat on sea days.' },
@@ -600,38 +321,17 @@ export default function StateroomComparisonPage() {
                   <p className="font-bold text-slate-900 text-sm">→ {rec}</p>
                   <p className="text-slate-600 text-xs mt-1">{why}</p>
                 </div>
-                  <th className="text-left p-3 font-semibold">Category</th>
-                  <th className="text-left p-3 font-semibold">Size</th>
-                  <th className="text-left p-3 font-semibold">View</th>
-                  <th className="text-left p-3 font-semibold">Est. Cost (pp/night)</th>
-                  <th className="text-left p-3 font-semibold">Best For</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-100">
-                {staterooms.map((room, i) => (
-                  <tr key={room.id} className={i % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
-                    <td className="p-3 font-semibold text-slate-900">
-                      <span className="mr-1.5">{room.emoji}</span>
-                      {room.name}
-                    </td>
-                    <td className="p-3 text-slate-600">{room.sqft}</td>
-                    <td className="p-3 text-slate-600">{room.window}</td>
-                    <td className="p-3 text-slate-900 font-medium">{room.priceRange}</td>
-                    <td className="p-3 text-slate-600 text-xs">{room.bestFor[0]}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+              </div>
+            ))}
           </div>
         </section>
 
-        {/* Detailed cards */}
-        <div className="space-y-10">
+        {/* Detailed stateroom cards */}
+        <div className="space-y-10 mb-14">
           {staterooms.map((room) => {
             const colors = colorMap[room.color]
             return (
               <section key={room.id} id={room.id} className={`rounded-2xl border-2 ${colors.border} overflow-hidden`}>
-                {/* Header */}
                 <div className={`${colors.bg} p-6 border-b ${colors.border}`}>
                   <div className="flex items-start justify-between gap-4 flex-wrap">
                     <div>
@@ -649,8 +349,7 @@ export default function StateroomComparisonPage() {
                       <div className="text-xs text-slate-500">{room.typicalTotal}</div>
                     </div>
                   </div>
-
-                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-4">
                     {[
                       { label: 'Size', value: room.sqft },
                       { label: 'Sleeps', value: room.sleeps },
@@ -663,11 +362,8 @@ export default function StateroomComparisonPage() {
                     ))}
                   </div>
                 </div>
-
-                {/* Body */}
                 <div className="p-6 bg-white">
                   <div className="grid md:grid-cols-3 gap-6">
-                    {/* Features */}
                     <div>
                       <h3 className="font-semibold text-slate-800 mb-3 text-sm">What&apos;s Included</h3>
                       <ul className="space-y-1.5">
@@ -679,8 +375,6 @@ export default function StateroomComparisonPage() {
                         ))}
                       </ul>
                     </div>
-
-                    {/* Pros / Cons */}
                     <div className="space-y-4">
                       <div>
                         <h3 className="font-semibold text-emerald-700 mb-2 text-sm">Pros</h3>
@@ -703,8 +397,6 @@ export default function StateroomComparisonPage() {
                         </ul>
                       </div>
                     </div>
-
-                    {/* Best for / Worst for + ratings */}
                     <div className="space-y-4">
                       <div>
                         <h3 className="font-semibold text-slate-800 mb-2 text-sm">Best For</h3>
@@ -733,36 +425,18 @@ export default function StateroomComparisonPage() {
           })}
         </div>
 
-        {/* Decision guide */}
-        <section className="mt-14 bg-slate-900 text-white rounded-2xl p-8">
+        {/* Which should you book */}
+        <section className="bg-slate-900 text-white rounded-2xl p-8 mb-14">
           <h2 className="font-display text-2xl font-bold mb-2">Which Stateroom Should You Book?</h2>
           <p className="text-slate-400 mb-6 text-sm">Our honest take, based on budget and trip style:</p>
           <div className="space-y-4">
             {[
-              {
-                scenario: 'If you\'re on a tight budget...',
-                answer: 'Book Inside. You have access to every single thing on the ship. The money you save can fund excursions, specialty dining, or even a second cruise.',
-              },
-              {
-                scenario: 'If it\'s a 3–4 night sailing...',
-                answer: 'Inside or Oceanview. You\'ll spend very little time in the stateroom — save the balcony premium for a longer sailing where you\'ll actually use it.',
-              },
-              {
-                scenario: 'If it\'s a 7+ night sailing...',
-                answer: 'Verandah is worth every penny. Sea days with a private balcony are genuinely magical. Morning coffee watching the ocean approach a port is a bucket-list experience.',
-              },
-              {
-                scenario: 'If it\'s a honeymoon or anniversary...',
-                answer: 'Verandah minimum, Concierge if budget allows. The balcony transforms a vacation into an experience.',
-              },
-              {
-                scenario: 'If you have a family of 5+...',
-                answer: 'Consider a Verandah or Concierge suite. Standard staterooms max out at 4–5 guests. Suites give you the space to actually coexist.',
-              },
-              {
-                scenario: 'If money is no object...',
-                answer: 'Concierge. The service level and suite size are genuinely extraordinary. The concierge team handles everything. You\'ll board first, eat first, and relax more than anyone.',
-              },
+              { scenario: "If you're on a tight budget...", answer: 'Book Inside. You have access to every single thing on the ship. The money you save can fund excursions, specialty dining, or even a second cruise.' },
+              { scenario: "If it's a 3–4 night sailing...", answer: "Inside or Oceanview. You'll spend very little time in the stateroom — save the balcony premium for a longer sailing where you'll actually use it." },
+              { scenario: "If it's a 7+ night sailing...", answer: "Verandah is worth every penny. Sea days with a private balcony are genuinely magical. Morning coffee watching the ocean approach a port is a bucket-list experience." },
+              { scenario: "If it's a honeymoon or anniversary...", answer: 'Verandah minimum, Concierge if budget allows. The balcony transforms a vacation into an experience.' },
+              { scenario: 'If you have a family of 5+...', answer: 'Consider a Verandah or Concierge suite. Standard staterooms max out at 4–5 guests. Suites give you the space to actually coexist.' },
+              { scenario: 'If money is no object...', answer: "Concierge. The service level and suite size are genuinely extraordinary. The concierge team handles everything. You'll board first, eat first, and relax more than anyone." },
             ].map(({ scenario, answer }) => (
               <div key={scenario} className="border-l-2 border-amber-500 pl-4">
                 <div className="font-semibold text-amber-300 text-sm mb-1">{scenario}</div>
@@ -795,9 +469,9 @@ export default function StateroomComparisonPage() {
         {/* Newsletter */}
         <NewsletterSignup className="mb-12" />
 
-        {/* Related */}
+        {/* Related guides */}
         <section className="bg-slate-50 rounded-xl p-8 border border-slate-200">
-          <h3 className="font-fraunces text-2xl font-bold text-slate-900 mb-5">Related Guides</h3>
+          <h3 className="font-display text-2xl font-bold text-slate-900 mb-5">Related Guides</h3>
           <div className="grid sm:grid-cols-2 gap-4">
             {[
               ['/guides/first-time-disney-cruise', 'First-Time Disney Cruise Guide'],
@@ -814,35 +488,6 @@ export default function StateroomComparisonPage() {
                 <span className="text-blue-600">→</span>
               </Link>
             ))}
-          </div>
-        </section>
-      </article>
-        <section className="mt-12 text-center">
-          <h2 className="font-display text-2xl font-bold text-slate-900 mb-3">Ready to Estimate Your Cost?</h2>
-          <p className="text-slate-600 mb-6 max-w-lg mx-auto text-sm">
-            Use our free calculator to see estimated fares based on your stateroom choice, ship, length, and party size.
-          </p>
-          <div className="flex flex-wrap gap-3 justify-center">
-            <Link
-              href="/tools/cruise-cost-calculator"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold transition-colors"
-            >
-              Cruise Cost Calculator
-            </Link>
-            <Link
-              href="/guides/first-time-disney-cruise"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-slate-300 hover:border-blue-400 text-slate-700 font-semibold transition-colors"
-            >
-              First-Timer&apos;s Guide
-            </Link>
-            <a
-              href="https://disneycruise.disney.go.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-slate-900 hover:bg-slate-700 text-white font-semibold transition-colors"
-            >
-              Check Prices on Disney Cruise Line →
-            </a>
           </div>
         </section>
       </div>

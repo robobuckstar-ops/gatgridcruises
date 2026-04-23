@@ -5,23 +5,10 @@ import { ArrowLeft, Calendar, Clock } from 'lucide-react'
 import { ShareButtons } from './share-buttons'
 import { StructuredData } from '@/components/ui/structured-data'
 import { generateArticleSchema, generateBreadcrumbSchema } from '@/lib/structured-data'
-import { ArrowLeft, Calendar, Clock, Twitter, Facebook } from 'lucide-react'
-import { CopyLinkButton } from './copy-button'
-import { ArrowLeft, Calendar, Clock, Share2, Twitter, Facebook } from 'lucide-react'
-import { CopyLinkButton } from './copy-link-button'
-
-interface BlogPostPageProps {
-  params: Promise<{
-    slug: string
-  }>
-import { ArrowLeft, Calendar, Clock } from 'lucide-react'
-import { ShareButtons } from './share-buttons'
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>
 }
-import { ArrowLeft, Calendar, Clock, Twitter, Facebook } from 'lucide-react'
-import { CopyLinkButton } from './copy-link-button'
 
 export async function generateStaticParams() {
   const posts = getBlogPosts()
@@ -31,7 +18,6 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: BlogPostPageProps) {
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   const post = getBlogPostBySlug(slug)
 
@@ -42,7 +28,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const canonical = `https://gatgridcruises.com/blog/${post.slug}`
   return {
     title: `${post.title} | GatGridCruises`,
-    title: post.title,
     description: post.excerpt,
     alternates: { canonical },
     openGraph: {
@@ -67,7 +52,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
-export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   const post = getBlogPostBySlug(slug)
 
@@ -207,28 +191,6 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         {/* Share Section */}
         <div className="mt-12 pt-8 border-t border-slate-200">
           <h3 className="font-semibold text-slate-900 mb-4">Share this article</h3>
-          <ShareButtons title={post.title} slug={post.slug} />
-          <div className="flex flex-wrap gap-3">
-            <a
-              href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(`https://gatgridcruises.com/blog/${post.slug}`)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100 transition-colors font-medium"
-            >
-              <Twitter className="h-4 w-4" />
-              Twitter
-            </a>
-            <a
-              href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://gatgridcruises.com/blog/${post.slug}`)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100 transition-colors font-medium"
-            >
-              <Facebook className="h-4 w-4" />
-              Facebook
-            </a>
-            <CopyLinkButton url={`https://gatgridcruises.com/blog/${post.slug}`} />
-          </div>
           <ShareButtons title={post.title} slug={post.slug} />
         </div>
       </article>

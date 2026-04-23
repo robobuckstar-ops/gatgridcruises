@@ -2,7 +2,6 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { BarChart3, Users, Utensils, Zap, Heart, TrendingUp } from 'lucide-react';
 import { GetQuoteCTA } from '@/components/get-quote-cta';
-import { GetQuoteCTA } from '@/components/get-quote-cta';
 
 export const metadata: Metadata = {
   title: 'Disney Cruise vs. Royal Caribbean: Honest Comparison',

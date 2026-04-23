@@ -2,9 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { CheckCircle, AlertCircle, Printer, MapPin } from 'lucide-react';
 import { GetQuoteCTA } from '@/components/get-quote-cta';
-import { AdSlot } from '@/components/ui/ad-slot'
 import { AdSlot } from '@/components/ui/ad-slot';
-import { GetQuoteCTA } from '@/components/get-quote-cta';
 
 export const metadata: Metadata = {
   title: 'The Ultimate Disney Cruise Packing List (Printable)',
