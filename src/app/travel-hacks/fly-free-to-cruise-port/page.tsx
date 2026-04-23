@@ -1,4 +1,3 @@
-
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft, Clock, Tag, AlertCircle } from 'lucide-react'

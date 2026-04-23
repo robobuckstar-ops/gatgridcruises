@@ -32,44 +32,35 @@ export function CreditCardRecommendation({
 
   const hasReferralLink = card.referralUrl && card.referralUrl.length > 0
 
-  if (compact) {
-    const innerContent = (
-      <>
-        {/* Card color block */}
-        <div
-          className="h-12 w-10 rounded flex-shrink-0 flex items-center justify-center text-white shadow-sm"
-          style={{ backgroundColor: card.imageColor }}
-        >
-          <CreditCard className="h-5 w-5" />
-        </div>
-
-        {/* Content */}
-        <div className="flex-1 min-w-0">
-          <h4 className="text-sm font-semibold text-slate-900 line-clamp-1">{card.name}</h4>
-          <p className="text-xs text-emerald-600 font-medium">
-            {card.signupBonus} bonus (~${card.signupBonusValue})
-          </p>
-        </div>
-
-        {/* CTA */}
-        <ChevronRight className="h-5 w-5 text-slate-400 group-hover:text-blue-600 flex-shrink-0 transition-colors" />
-      </>
-    )
-
-    if (hasReferralLink) {
-      return (
-        <Link
-          href={card.referralUrl!}
-          className="group flex items-center gap-3 p-3 rounded-lg border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all duration-200 bg-white"
-        >
-          {innerContent}
-        </Link>
-      )
-    }
-    return (
-      <div className="group flex items-center gap-3 p-3 rounded-lg border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all duration-200 bg-white">
-        {innerContent}
+  const compactInner = (
+    <>
+      {/* Card color block */}
+      <div
+        className="h-12 w-10 rounded flex-shrink-0 flex items-center justify-center text-white shadow-sm"
+        style={{ backgroundColor: card.imageColor }}
+      >
+        <CreditCard className="h-5 w-5" />
       </div>
+
+      {/* Content */}
+      <div className="flex-1 min-w-0">
+        <h4 className="text-sm font-semibold text-slate-900 line-clamp-1">{card.name}</h4>
+        <p className="text-xs text-emerald-600 font-medium">
+          {card.signupBonus} bonus (~${card.signupBonusValue})
+        </p>
+      </div>
+
+      {/* CTA */}
+      <ChevronRight className="h-5 w-5 text-slate-400 group-hover:text-blue-600 flex-shrink-0 transition-colors" />
+    </>
+  )
+
+  if (compact) {
+    const wrapperClass = "group flex items-center gap-3 p-3 rounded-lg border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all duration-200 bg-white"
+    return hasReferralLink ? (
+      <Link href={card.referralUrl!} className={wrapperClass}>{compactInner}</Link>
+    ) : (
+      <div className={wrapperClass}>{compactInner}</div>
     )
   }
 
