@@ -124,7 +124,7 @@ const timelineSteps = [
     label: 'Post-Cruise',
     title: 'Follow-Up & Re-Booking Deals',
     description:
-      'After you're home we check in on your trip and flag any Placeholder Club discounts or re-booking offers you're eligible for. Many of our clients book their next cruise from the ship.',
+      "After you're home we check in on your trip and flag any Placeholder Club discounts or re-booking offers you're eligible for. Many of our clients book their next cruise from the ship.",
   },
 ]
 
@@ -194,22 +194,22 @@ const faqs = [
   {
     question: 'How do I communicate with my concierge?',
     answer:
-      'However works best for you. Most of our clients prefer text messages for quick reminders and updates. We also do email for anything that needs more detail, and you can always reach us through the site. We're not a call center — you get a real person who knows your trip.',
+      "However works best for you. Most of our clients prefer text messages for quick reminders and updates. We also do email for anything that needs more detail, and you can always reach us through the site. We're not a call center — you get a real person who knows your trip.",
   },
   {
     question: 'What if I already booked directly with Disney?',
     answer:
-      'Good news — you can often transfer an existing Disney booking to a travel agent within 30 days of booking, and we can request the OBC on your behalf. Reach out and share your reservation details. We'll let you know if it's eligible and handle the transfer.',
+      "Good news — you can often transfer an existing Disney booking to a travel agent within 30 days of booking, and we can request the OBC on your behalf. Reach out and share your reservation details. We'll let you know if it's eligible and handle the transfer.",
   },
   {
     question: 'What is onboard credit (OBC) and how much do I get?',
     answer:
-      'Onboard credit is money loaded onto your ship account that you can spend on anything — drinks, spa treatments, shore excursions, specialty dining, gift shop items. The amount depends on your sailing and stateroom category. We'll confirm your exact OBC amount once we receive your booking details.',
+      "Onboard credit is money loaded onto your ship account that you can spend on anything — drinks, spa treatments, shore excursions, specialty dining, gift shop items. The amount depends on your sailing and stateroom category. We'll confirm your exact OBC amount once we receive your booking details.",
   },
   {
     question: 'Do you only work with Disney Cruise Line?',
     answer:
-      'Our concierge service is specialized for Disney Cruise Line because that's where our expertise is deepest. Castaway Club status, the booking windows, the ships, the ports — we know the Disney experience inside and out. If you're considering other cruise lines, we're happy to share honest thoughts, but our concierge service is Disney-focused.',
+      "Our concierge service is specialized for Disney Cruise Line because that's where our expertise is deepest. Castaway Club status, the booking windows, the ships, the ports — we know the Disney experience inside and out. If you're considering other cruise lines, we're happy to share honest thoughts, but our concierge service is Disney-focused.",
   },
 ]
 
@@ -236,7 +236,7 @@ export default function ConciergePage() {
             Your Personal Disney<br className="hidden sm:block" /> Cruise Concierge
           </h1>
           <p className="font-inter text-lg md:text-xl text-blue-200 max-w-2xl mx-auto mb-10 leading-relaxed">
-            From the moment you book to the moment you step off the ship — and beyond — we're in your
+            From the moment you book to the moment you step off the ship — and beyond — we&apos;re in your
             corner every step of the way. Free onboard credit. Zero extra cost. Expert guidance.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -281,8 +281,8 @@ export default function ConciergePage() {
               Why Book Through GatGrid Instead of Directly?
             </h2>
             <p className="font-inter text-lg text-slate-600 max-w-2xl mx-auto">
-              Disney's price is Disney's price — you can't beat it. But you can get more out of it.
-              Here's what booking through us adds.
+              Disney&apos;s price is Disney&apos;s price — you can&apos;t beat it. But you can get more out of it.
+              Here&apos;s what booking through us adds.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -365,7 +365,7 @@ export default function ConciergePage() {
               Everything Included in Your Concierge
             </h2>
             <p className="font-inter text-lg text-slate-600 max-w-2xl mx-auto">
-              These aren't upsells — they're all part of the service, at no charge.
+              These aren&apos;t upsells — they&apos;re all part of the service, at no charge.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
