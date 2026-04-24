@@ -59,13 +59,13 @@ const valueProps = [
     icon: Star,
     title: 'Expert Disney Knowledge',
     description:
-      'We've sailed multiple times across multiple ships. We know what's worth booking, what to skip, which restaurants to prioritize, and how to get the most out of every port.',
+      "We've sailed multiple times across multiple ships. We know what's worth booking, what to skip, which restaurants to prioritize, and how to get the most out of every port.",
   },
   {
     icon: ShieldCheck,
     title: 'Zero Extra Cost',
     description:
-      'The concierge experience is completely free. Disney pays travel agents a commission — so you get our full service, your OBC bonus, and the same price you'd pay booking directly.',
+      "The concierge experience is completely free. Disney pays travel agents a commission — so you get our full service, your OBC bonus, and the same price you'd pay booking directly.",
   },
 ]
 
@@ -75,7 +75,7 @@ const timelineSteps = [
     label: 'Day 1',
     title: 'Welcome & Trip Setup',
     description:
-      'You'll receive a personalized welcome message. We collect your travel details, confirm your OBC, and set up your concierge profile so we know exactly how to help you.',
+      "You'll receive a personalized welcome message. We collect your travel details, confirm your OBC, and set up your concierge profile so we know exactly how to help you.",
   },
   {
     icon: Plane,
@@ -89,14 +89,14 @@ const timelineSteps = [
     label: 'At Your Booking Window',
     title: 'Excursion Booking Reminder',
     description:
-      'Disney opens port adventures and excursion booking based on your Castaway Club status. We'll text you the day your window opens so you can grab the best tours before they sell out.',
+      "Disney opens port adventures and excursion booking based on your Castaway Club status. We'll text you the day your window opens so you can grab the best tours before they sell out.",
   },
   {
     icon: Utensils,
     label: 'At Your Dining Window',
     title: 'Dining Reservation Reminder',
     description:
-      'Specialty dining opens at a set window before sailing. We remind you with a breakdown of each restaurant on your ship — what's worth booking and what's walk-in friendly.',
+      "Specialty dining opens at a set window before sailing. We remind you with a breakdown of each restaurant on your ship — what's worth booking and what's walk-in friendly.",
   },
   {
     icon: CheckCircle,
@@ -124,7 +124,7 @@ const timelineSteps = [
     label: 'Post-Cruise',
     title: 'Follow-Up & Re-Booking Deals',
     description:
-      'After you're home we check in on your trip and flag any Placeholder Club discounts or re-booking offers you're eligible for. Many of our clients book their next cruise from the ship.',
+      "After you're home we check in on your trip and flag any Placeholder Club discounts or re-booking offers you're eligible for. Many of our clients book their next cruise from the ship.",
   },
 ]
 
@@ -151,7 +151,7 @@ const features = [
     icon: Shirt,
     title: 'What to Wear Guides',
     description:
-      'Formal night, pirate night, theme nights — we'll tell you exactly what fits in, what to pack, and how to dress your family for every occasion.',
+      "Formal night, pirate night, theme nights — we'll tell you exactly what fits in, what to pack, and how to dress your family for every occasion.",
   },
   {
     icon: Utensils,
@@ -163,13 +163,13 @@ const features = [
     icon: Users,
     title: 'Fish Extender Group Help',
     description:
-      'Want to join or organize a Fish Extender exchange? We'll help you find the right group and get set up before you sail.',
+      "Want to join or organize a Fish Extender exchange? We'll help you find the right group and get set up before you sail.",
   },
   {
     icon: Clock,
     title: 'Countdown Texts with Tips',
     description:
-      'As your sail date approaches you'll get a fun countdown with a fresh tip each week — things to book, things to look forward to, things to know.',
+      "As your sail date approaches you'll get a fun countdown with a fresh tip each week — things to book, things to look forward to, things to know.",
   },
   {
     icon: Camera,
@@ -189,27 +189,27 @@ const faqs = [
   {
     question: 'Does using your concierge cost anything extra?',
     answer:
-      'Absolutely not. You pay Disney's exact same price — not a penny more. Disney pays travel agents a commission directly, which is how we cover our costs. On top of that, we negotiate onboard credit for you that you wouldn't get booking directly. So you actually come out ahead.',
+      "Absolutely not. You pay Disney's exact same price — not a penny more. Disney pays travel agents a commission directly, which is how we cover our costs. On top of that, we negotiate onboard credit for you that you wouldn't get booking directly. So you actually come out ahead.",
   },
   {
     question: 'How do I communicate with my concierge?',
     answer:
-      'However works best for you. Most of our clients prefer text messages for quick reminders and updates. We also do email for anything that needs more detail, and you can always reach us through the site. We're not a call center — you get a real person who knows your trip.',
+      "However works best for you. Most of our clients prefer text messages for quick reminders and updates. We also do email for anything that needs more detail, and you can always reach us through the site. We're not a call center — you get a real person who knows your trip.",
   },
   {
     question: 'What if I already booked directly with Disney?',
     answer:
-      'Good news — you can often transfer an existing Disney booking to a travel agent within 30 days of booking, and we can request the OBC on your behalf. Reach out and share your reservation details. We'll let you know if it's eligible and handle the transfer.',
+      "Good news — you can often transfer an existing Disney booking to a travel agent within 30 days of booking, and we can request the OBC on your behalf. Reach out and share your reservation details. We'll let you know if it's eligible and handle the transfer.",
   },
   {
     question: 'What is onboard credit (OBC) and how much do I get?',
     answer:
-      'Onboard credit is money loaded onto your ship account that you can spend on anything — drinks, spa treatments, shore excursions, specialty dining, gift shop items. The amount depends on your sailing and stateroom category. We'll confirm your exact OBC amount once we receive your booking details.',
+      "Onboard credit is money loaded onto your ship account that you can spend on anything — drinks, spa treatments, shore excursions, specialty dining, gift shop items. The amount depends on your sailing and stateroom category. We'll confirm your exact OBC amount once we receive your booking details.",
   },
   {
     question: 'Do you only work with Disney Cruise Line?',
     answer:
-      'Our concierge service is specialized for Disney Cruise Line because that's where our expertise is deepest. Castaway Club status, the booking windows, the ships, the ports — we know the Disney experience inside and out. If you're considering other cruise lines, we're happy to share honest thoughts, but our concierge service is Disney-focused.',
+      "Our concierge service is specialized for Disney Cruise Line because that's where our expertise is deepest. Castaway Club status, the booking windows, the ships, the ports — we know the Disney experience inside and out. If you're considering other cruise lines, we're happy to share honest thoughts, but our concierge service is Disney-focused.",
   },
 ]
 
