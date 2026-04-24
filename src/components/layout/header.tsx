@@ -54,7 +54,14 @@ const navItems = [
       { label: 'Travel Hacks', href: '/travel-hacks' },
     ],
   },
-  { label: 'About', href: '/about' },
+  {
+    label: 'About',
+    href: '/about',
+    children: [
+      { label: 'About GatGrid', href: '/about' },
+      { label: '⭐ Concierge Service', href: '/concierge' },
+    ],
+  },
 ]
 
 export function Header() {
