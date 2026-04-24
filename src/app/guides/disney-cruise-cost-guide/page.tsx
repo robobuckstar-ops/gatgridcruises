@@ -5,7 +5,7 @@ import { ArrowRight, DollarSign, TrendingUp } from 'lucide-react';
 import { GetQuoteCTA } from '@/components/get-quote-cta';
 
 export const metadata: Metadata = {
-  title: 'The True Cost of a Disney Cruise (2025 Breakdown)',
+  title: 'The True Cost of a Disney Cruise (2026 Breakdown)',
   description: 'Complete breakdown of Disney cruise costs including base fares, gratuities, drinks, excursions, specialty dining, and hidden fees. Plus sample family budget and cost calculator.',
 };
 
@@ -27,7 +27,7 @@ export default function DisneyVsCruiseCostGuide() {
             <span className="text-gray-300 text-sm">The True Cost of a Disney Cruise</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-fraunces font-bold mb-4">
-            The True Cost of a Disney Cruise (2025 Breakdown)
+            The True Cost of a Disney Cruise (2026 Breakdown)
           </h1>
           <p className="text-lg text-slate-600">
             Base fare is just the start. Here"s exactly what you'll pay for a family Disney cruise, with hidden costs and real-world examples.

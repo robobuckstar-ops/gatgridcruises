@@ -2,11 +2,11 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'The Ultimate Disney Cruise Packing List 2025 | GatGridCruises',
+  title: 'The Ultimate Disney Cruise Packing List 2026 | GatGridCruises',
   description:
     'Complete Disney cruise packing list organized by category — essentials, clothing, toiletries, electronics, kids items, and cruise-specific gear like fish extenders and door magnets. With Amazon links.',
   openGraph: {
-    title: 'The Ultimate Disney Cruise Packing List 2025',
+    title: 'The Ultimate Disney Cruise Packing List 2026',
     description:
       'Everything you need for a Disney cruise, organized by category with Amazon links. Plus what NOT to bring and what Disney already provides.',
     type: 'article',

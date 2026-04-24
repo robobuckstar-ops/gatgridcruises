@@ -2,11 +2,11 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Best Business Credit Cards for Disney Cruises 2025 | GatGridCruises',
+  title: 'Best Business Credit Cards for Disney Cruises 2026 | GatGridCruises',
   description:
     'Compare the best business credit cards for Disney cruise bookings. Chase Ink, Capital One Spark, and Amex Business Platinum — earn points, get trip insurance, and save on your next cruise.',
   openGraph: {
-    title: 'Best Business Credit Cards for Disney Cruises 2025',
+    title: 'Best Business Credit Cards for Disney Cruises 2026',
     description:
       'Chase Ink vs Capital One Spark vs Amex Business Platinum — which business card earns the most on Disney cruise bookings?',
     type: 'article',
