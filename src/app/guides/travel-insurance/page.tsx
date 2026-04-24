@@ -265,7 +265,6 @@ export default function TravelInsurancePage() {
           <div className="bg-white/10 rounded-xl p-3 mb-8 text-xs text-blue-300">
             <strong className="text-blue-200">Affiliate disclosure:</strong> Some links below may earn us a commission at no extra cost to you.
             See our <a href="/disclosures" className="underline hover:text-white">full disclosures</a>.
-            {/* TODO: Replace placeholder links below with actual affiliate partner links */}
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -303,7 +302,6 @@ export default function TravelInsurancePage() {
               <p className="text-xs text-slate-500 mb-4">
                 <strong>Best for:</strong> Families wanting a trusted name with solid trip cancellation and reliable claims process.
               </p>
-              {/* TODO: Replace with actual Allianz affiliate link */}
               <a
                 href="https://www.allianztravelinsurance.com"
                 target="_blank"
@@ -347,7 +345,6 @@ export default function TravelInsurancePage() {
               <p className="text-xs text-slate-500 mb-4">
                 <strong>Best for:</strong> Active families who plan excursions (snorkeling, zip-lining) and want high medical limits.
               </p>
-              {/* TODO: Replace with actual World Nomads affiliate link */}
               <a
                 href="https://www.worldnomads.com"
                 target="_blank"
@@ -391,7 +388,6 @@ export default function TravelInsurancePage() {
               <p className="text-xs text-slate-500 mb-4">
                 <strong>Best for:</strong> Cruisers wanting the highest medical/evacuation limits and full CFAR protection. Our top pick for most families.
               </p>
-              {/* TODO: Replace with actual Travel Guard affiliate link */}
               <a
                 href="https://www.travelguard.com"
                 target="_blank"

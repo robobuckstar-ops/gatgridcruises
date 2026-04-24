@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { NewsletterSignup } from '@/components/newsletter-signup'
 
 export const metadata: Metadata = {
-  title: 'First-Timer\'s Guide to Disney Cruises 2025 | GatGridCruises',
+  title: 'First-Timer\'s Guide to Disney Cruises 2026 | GatGridCruises',
   description:
     'Everything first-time Disney cruisers need to know — what\'s included, what costs extra, embarkation day tips, Pirate Night, Castaway Cay, stateroom types, tipping, and more.',
   openGraph: {
-    title: 'First-Timer\'s Complete Guide to Disney Cruises (2025)',
+    title: 'First-Timer\'s Complete Guide to Disney Cruises (2026)',
     description:
       'What\'s included in the fare, what costs extra, embarkation tips, Pirate Night, Castaway Cay, stateroom comparisons, and gratuity guide.',
     type: 'article',

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     'Full comparison of Disney cruise stateroom types — Inside, Oceanview, Verandah, and Concierge. Price ranges, square footage, pros/cons, and which is best for families, couples, and budget travelers.',
   openGraph: {
-    title: 'Disney Cruise Stateroom Comparison 2025',
+    title: 'Disney Cruise Stateroom Comparison 2026',
     description:
       'Inside vs Oceanview vs Verandah vs Concierge — which Disney cruise stateroom is right for you? Full comparison with price ranges and honest advice.',
     type: 'article',

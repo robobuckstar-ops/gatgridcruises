@@ -173,12 +173,12 @@ export default function FirstTimeDisneyCruiseTipsGuide() {
             <Link href="/" className="text-blue-600 hover:underline text-sm">
               Home
             </Link>
-            <span className="text-white mx-2">/</span>
+            <span className="text-slate-400 mx-2">/</span>
             <Link href="/guides" className="text-blue-600 hover:underline text-sm">
               Guides
             </Link>
-            <span className="text-white mx-2">/</span>
-            <span className="text-gray-300 text-sm">25 First-Time Cruise Tips</span>
+            <span className="text-slate-400 mx-2">/</span>
+            <span className="text-slate-500 text-sm">25 First-Time Cruise Tips</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-fraunces font-bold mb-4">
             25 Things to Know Before Your First Disney Cruise
@@ -324,8 +324,8 @@ export default function FirstTimeDisneyCruiseTipsGuide() {
               Quick Service Venues (Free)
             </h3>
             <p className="font-inter text-slate-600">
-              Buffet alternatives, pizza, hot dogs, sandwiches, and casual eats. Perfect for when you"re busy with activities and don't want to sit down for a full meal. No reservations needed.
-"            </p>
+              Buffet alternatives, pizza, hot dogs, sandwiches, and casual eats. Perfect for when you're busy with activities and don't want to sit down for a full meal. No reservations needed.
+            </p>
           </div>
         </section>
 
@@ -335,8 +335,8 @@ export default function FirstTimeDisneyCruiseTipsGuide() {
           </h2>
 
           <p className="font-inter text-slate-600 leading-relaxed mb-6">
-            Disney"s kids clubs are exceptional. Many parents cite kids club access as the best part of cruising—it gives adults guilt-free time away while kids have a blast. Here's what you need to know:
-"          </p>
+            Disney's kids clubs are exceptional. Many parents cite kids club access as the best part of cruising—it gives adults guilt-free time away while kids have a blast. Here's what you need to know:
+          </p>
 
           <div className="space-y-6">
             <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg">
@@ -400,8 +400,8 @@ export default function FirstTimeDisneyCruiseTipsGuide() {
           </h2>
 
           <p className="font-inter text-slate-600 leading-relaxed mb-6">
-            Castaway Cay is Disney"s private island and the emotional highlight of most cruises. Here's how to make the most of it:
-"          </p>
+            Castaway Cay is Disney's private island and the emotional highlight of most cruises. Here's how to make the most of it:
+          </p>
 
           <ul className="font-inter text-slate-600 space-y-4">
             <li className="flex gap-3">

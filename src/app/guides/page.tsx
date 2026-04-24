@@ -40,7 +40,7 @@ const guides = [
   },
   {
     slug: 'disney-cruise-cost-guide',
-    title: 'The True Cost of a Disney Cruise (2025 Breakdown)',
+    title: 'The True Cost of a Disney Cruise (2026 Breakdown)',
     description: 'What a Disney cruise really costs beyond the sticker price — gratuities, excursions, drink packages, Wi-Fi, and every hidden fee explained.',
     category: 'Planning',
     readTime: '12 min read',

@@ -20,12 +20,12 @@ export default function DisneyCruiseWithToddlersGuide() {
             <Link href="/" className="text-blue-600 hover:underline text-sm">
               Home
             </Link>
-            <span className="text-white mx-2">/</span>
+            <span className="text-slate-400 mx-2">/</span>
             <Link href="/guides" className="text-blue-600 hover:underline text-sm">
               Guides
             </Link>
-            <span className="text-white mx-2">/</span>
-            <span className="text-gray-300 text-sm">Disney Cruise with Toddlers</span>
+            <span className="text-slate-400 mx-2">/</span>
+            <span className="text-slate-500 text-sm">Disney Cruise with Toddlers</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-fraunces font-bold mb-4">
             Disney Cruise with Toddlers: The Complete Parent's Guide
@@ -195,8 +195,8 @@ export default function DisneyCruiseWithToddlersGuide() {
               Verandah Cabins (Recommended for Toddlers)
             </h3>
             <p className="font-inter text-slate-600 mb-3">
-              The verandah cabin is ideal for families with toddlers, even though it"s pricier ($600-1,200+/night). Here's why:
-"            </p>
+              The verandah cabin is ideal for families with toddlers, even though it's pricier ($600-1,200+/night). Here's why:
+            </p>
             <ul className="font-inter text-slate-600 space-y-2 ml-4">
               <li>• <strong>Nap time darkness:</strong> The verandah allows you to move outside while toddler naps inside. Cabin gets dark and cool for quality sleep.</li>
               <li>• <strong>More space:</strong> Toddlers need room to move around. Verandah cabins are substantially larger (~200+ sq ft) than inside cabins (~160 sq ft).</li>
@@ -526,8 +526,8 @@ export default function DisneyCruiseWithToddlersGuide() {
               <li className="flex gap-3">
                 <span className="text-blue-600 font-bold">•</span>
                 <div>
-                  <strong>Baby Beach Area:</strong> There"s a dedicated beach area for babies and young toddlers with calm water and shallow wading. Perfect for toddlers who don't swim yet.
-"                </div>
+                  <strong>Baby Beach Area:</strong> There's a dedicated beach area for babies and young toddlers with calm water and shallow wading. Perfect for toddlers who don't swim yet.
+                </div>
               </li>
               <li className="flex gap-3">
                 <span className="text-blue-600 font-bold">•</span>

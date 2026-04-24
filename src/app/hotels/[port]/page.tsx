@@ -306,8 +306,8 @@ export default async function PortHotelGuidePage({ params }: PageProps) {
               Independent Alternatives
             </h2>
             <p className="text-slate-700 mb-6 max-w-2xl">
-              These aren"t Disney partners, but they're often cheaper, closer, or both.
-"            </p>
+              These aren't Disney partners, but they're often cheaper, closer, or both.
+            </p>
 
             <div className="grid lg:grid-cols-2 gap-6">
               {independentHotels.map(hotel => (

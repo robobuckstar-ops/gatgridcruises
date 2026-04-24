@@ -2,11 +2,11 @@ import { Metadata } from 'next'
 import { CruiseCostCalculator } from './cruise-cost-calculator'
 
 export const metadata: Metadata = {
-  title: 'Disney Cruise Cost Calculator 2025 | GatGridCruises',
+  title: 'Disney Cruise Cost Calculator 2026 | GatGridCruises',
   description:
     'Estimate the cost of a Disney cruise by guests, stateroom type, cruise length, and ship. See total cost, cost per person, and cost per person per night.',
   openGraph: {
-    title: 'Disney Cruise Cost Calculator 2025',
+    title: 'Disney Cruise Cost Calculator 2026',
     description:
       'Quickly estimate Disney cruise prices by stateroom type, ship, length, and party size. Includes tips to save money.',
     type: 'website',

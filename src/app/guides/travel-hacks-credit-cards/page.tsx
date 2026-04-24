@@ -212,8 +212,8 @@ export default function TravelHacksCreditCardsPage() {
         <h2 className="font-display text-3xl font-bold text-slate-900 mb-2">Travel Insurance: The Hidden Gem</h2>
         <p className="text-slate-700 mb-8">
           Every card on this list includes trip cancellation, trip delay, and baggage insurance. This is worth $100-500+
-          per year. Here"s what you're protected against:
-"        </p>
+          per year. Here's what you're protected against:
+        </p>
         <div className="grid md:grid-cols-2 gap-6">
           <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-6">
             <h3 className="font-semibold text-emerald-900 mb-3">Trip Cancellation</h3>
@@ -239,8 +239,8 @@ export default function TravelHacksCreditCardsPage() {
           <div className="bg-orange-50 border border-orange-200 rounded-lg p-6">
             <h3 className="font-semibold text-orange-900 mb-3">Travel Accident Insurance</h3>
             <p className="text-sm text-orange-800 leading-relaxed">
-              If you"re injured on a covered trip, you're covered for medical expenses up to $250,000. Peace of mind
-"              while traveling.
+              If you're injured on a covered trip, you're covered for medical expenses up to $250,000. Peace of mind
+              while traveling.
             </p>
           </div>
         </div>
@@ -288,8 +288,8 @@ export default function TravelHacksCreditCardsPage() {
       <section className="container mx-auto px-4 py-16 text-center">
         <h2 className="font-display text-3xl font-bold text-slate-900 mb-4">Ready to Start Earning?</h2>
         <p className="text-lg text-slate-700 mb-8 max-w-2xl mx-auto">
-          Use the links above to apply for your card. We"ve vetted each one personally. You've got this.
-"        </p>
+          Use the links above to apply for your card. We've vetted each one personally. You've got this.
+        </p>
         <Link
           href="/deals"
           className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold transition-colors"

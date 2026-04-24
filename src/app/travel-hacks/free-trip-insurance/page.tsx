@@ -185,8 +185,8 @@ export default function FreeTripInsurance() {
         {/* What's Covered vs Not */}
         <section className="prose prose-slate max-w-none mb-12">
           <h2 className="text-3xl font-fraunces font-bold text-slate-900 mb-6">
-            What"s Covered vs. What Isn't
-"          </h2>
+            What's Covered vs. What Isn't
+          </h2>
 
           <h3 className="text-2xl font-fraunces font-bold text-slate-900 mt-8 mb-4">
             Typically Covered (with most cards)
@@ -286,8 +286,8 @@ export default function FreeTripInsurance() {
           </ol>
 
           <p className="text-slate-600 leading-relaxed mb-4">
-            <strong>Pro tip:</strong> Look up your card"s insurance provider's phone number and
-"            save it in your phone before you cruise. This way you can call immediately if you need
+            <strong>Pro tip:</strong> Look up your card's insurance provider's phone number and
+            save it in your phone before you cruise. This way you can call immediately if you need
             to file a claim.
           </p>
 
@@ -319,8 +319,8 @@ export default function FreeTripInsurance() {
             <li className="flex gap-3">
               <span className="font-bold text-blue-600 flex-shrink-0">✓</span>
               <span>
-                <strong>High-cost cruise:</strong> If you"re spending $10,000+ and your card's
-"                limit ($5,000-10,000) won't fully cover it, add coverage
+                <strong>High-cost cruise:</strong> If you're spending $10,000+ and your card's
+                limit ($5,000-10,000) won't fully cover it, add coverage
               </span>
             </li>
             <li className="flex gap-3">

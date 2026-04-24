@@ -2,11 +2,11 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Best Business Credit Cards for Disney Cruises 2025 | GatGridCruises',
+  title: 'Best Business Credit Cards for Disney Cruises 2026 | GatGridCruises',
   description:
     'Compare the best business credit cards for Disney cruise bookings. Chase Ink, Capital One Spark, and Amex Business Platinum — earn points, get trip insurance, and save on your next cruise.',
   openGraph: {
-    title: 'Best Business Credit Cards for Disney Cruises 2025',
+    title: 'Best Business Credit Cards for Disney Cruises 2026',
     description:
       'Chase Ink vs Capital One Spark vs Amex Business Platinum — which business card earns the most on Disney cruise bookings?',
     type: 'article',
@@ -112,7 +112,7 @@ export default function BestCruiseCreditCardsPage() {
         <div className="max-w-4xl mx-auto">
           <div className="text-sm text-slate-400 mb-3 font-medium">Travel Hacks · Credit Cards</div>
           <h1 className="font-display text-4xl sm:text-5xl font-bold mb-4">
-            Best Business Credit Cards for Disney Cruises (2025)
+            Best Business Credit Cards for Disney Cruises (2026)
           </h1>
           <p className="text-lg text-slate-300 leading-relaxed max-w-2xl">
             The right business card can offset hundreds or thousands of dollars on your Disney cruise.

@@ -4,11 +4,11 @@ import { ArrowLeft, Gift, ExternalLink } from 'lucide-react'
 import { SpecialistCTA } from '@/components/ui/specialist-cta'
 
 export const metadata: Metadata = {
-  title: 'Best Fish Extender Gifts Under $10 (2025 List)',
+  title: 'Best Fish Extender Gifts Under $10 (2026 List)',
   description:
     '18 creative Fish Extender gift ideas under $10 with Amazon links. Perfect for Disney Cruise Line FE groups — small, lightweight gifts that delight kids and adults alike.',
   openGraph: {
-    title: 'Best Fish Extender Gifts Under $10 (2025 List)',
+    title: 'Best Fish Extender Gifts Under $10 (2026 List)',
     description:
       '18 creative Fish Extender gift ideas under $10 — fun for all ages, lightweight for your luggage.',
     url: 'https://gatgridcruises.com/blog/best-fish-extender-gifts',
@@ -168,7 +168,7 @@ export default function BestFishExtenderGifts() {
             </span>
           </div>
           <h1 className="font-fraunces text-3xl md:text-5xl font-bold mb-6 leading-tight">
-            Best Fish Extender Gifts Under $10 (2025)
+            Best Fish Extender Gifts Under $10 (2026)
           </h1>
           <p className="text-blue-200 text-lg leading-relaxed">
             18 crowd-pleasing FE gift ideas — all under $10, all available on Amazon, and
