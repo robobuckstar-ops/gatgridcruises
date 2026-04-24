@@ -282,7 +282,7 @@ export default async function Home() {
       </section>
 
       {/* OBC Value Proposition */}
-      <section className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] py-14 md:py-18" aria-labelledby="obc-heading">
+      <section className="bg-[#162d4a] border-y-2 border-[#D4AF37]/60 py-14 md:py-18" aria-labelledby="obc-heading">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="flex-1">
@@ -318,7 +318,7 @@ export default async function Home() {
       </section>
 
       {/* Email Signup Section */}
-      <section className="bg-[#1E3A5F] py-16 md:py-20" aria-labelledby="newsletter-heading">
+      <section className="bg-slate-900 py-16 md:py-20" aria-labelledby="newsletter-heading">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center gap-10">
             <div className="flex-1 text-center lg:text-left">
