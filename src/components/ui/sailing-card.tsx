@@ -74,6 +74,7 @@ export function SailingCard({ sailing, percentBelow }: SailingCardProps) {
             score={dealScore.score}
             label={dealScore.breakdown.final_score >= 80 ? '★' : undefined}
             size="md"
+            className="flex-shrink-0"
           />
 
           <div className="flex-1 flex items-center gap-1.5 justify-end flex-wrap">

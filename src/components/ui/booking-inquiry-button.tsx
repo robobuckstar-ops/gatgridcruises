@@ -57,16 +57,16 @@ export function BookingInquiryButton({ sailing, variant = 'inline', className }:
           <p className="text-[#D4AF37] text-xs font-bold uppercase tracking-wider">Free Booking Help</p>
         </div>
         <h3 className="font-display text-base font-bold text-white mb-2">
-          Let us help you book this sailing
+          Interested in this sailing?
         </h3>
         <p className="text-blue-200 text-xs mb-4 leading-relaxed">
-          Our team at Boardwalk Travel Agency will find you the best deal and perks — at no cost to you.
+          Talk to a Disney cruise specialist at Boardwalk Travel Agency — free concierge service, no pressure.
         </p>
         <a
           href={href}
           className="inline-flex items-center gap-2 w-full justify-center px-4 py-2.5 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm rounded-lg hover:bg-yellow-300 transition-colors"
         >
-          Get booking help <ArrowRight className="h-4 w-4" />
+          Get a Free Quote <ArrowRight className="h-4 w-4" />
         </a>
         <p className="text-blue-300 text-[10px] mt-2.5 text-center">
           Via Boardwalk Travel Agency · Free concierge service

@@ -69,7 +69,7 @@ export function getSailings(): Sailing[] {
 
 export function getSailingById(id: string): Sailing | undefined {
   const s = sailings.find(s => s.id === id)
-  if (!s) return undefined
+  if (!s || !isDisneySailing(s)) return undefined
   return {
     ...s,
     ship: getShipById(s.ship_id),
