@@ -42,9 +42,25 @@ export function getPortById(id: string): Port | undefined {
   return ports.find(p => p.id === id)
 }
 
+// Disney Cruise Line ship IDs — only these ships should ever appear on the site
+const DISNEY_SHIP_IDS = new Set([
+  'ship-0001', // Disney Magic
+  'ship-0002', // Disney Wonder
+  'ship-0003', // Disney Dream
+  'ship-0004', // Disney Fantasy
+  'ship-0005', // Disney Wish
+  'ship-0006', // Disney Treasure
+  'ship-0007', // Disney Destiny
+  'ship-0008', // Disney Adventure
+])
+
+function isDisneySailing(s: { ship_id: string }): boolean {
+  return DISNEY_SHIP_IDS.has(s.ship_id)
+}
+
 // Sailings
 export function getSailings(): Sailing[] {
-  return sailings.map(s => ({
+  return sailings.filter(isDisneySailing).map(s => ({
     ...s,
     ship: getShipById(s.ship_id),
     departure_port: getPortById(s.departure_port_id),
@@ -121,11 +137,11 @@ export function getLastMinuteDeals(): Sailing[] {
   const now = new Date()
   const ninetyDaysFromNow = new Date(now.getTime() + 90 * 24 * 60 * 60 * 1000)
 
-  // Combine last-minute sailings with regular sailings
+  // Combine last-minute sailings with regular sailings, filtering to Disney only
   const allSailings = [
     ...lastMinuteSailings,
     ...sailings
-  ]
+  ].filter(isDisneySailing)
 
   // Filter for sailings departing within 90 days
   const dealsWithin90 = allSailings.filter(s => {
