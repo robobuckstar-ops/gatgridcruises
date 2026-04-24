@@ -3,7 +3,6 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, DollarSign, TrendingUp } from 'lucide-react';
 import { GetQuoteCTA } from '@/components/get-quote-cta';
-import { AdSlot } from '@/components/ui/ad-slot';
 
 export const metadata: Metadata = {
   title: 'The True Cost of a Disney Cruise (2025 Breakdown)',
@@ -51,7 +50,6 @@ export default function DisneyVsCruiseCostGuide() {
                 <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
               </div>
             </a>
-      <AdSlot size="728x90" />
 
       {/* Main Content */}
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -82,8 +80,7 @@ export default function DisneyVsCruiseCostGuide() {
                 <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
               </div>
             </a>
-        <AdSlot size="728x90" />
-
+  
         <section className="mb-12">
           <h2 className="text-3xl font-fraunces font-bold text-slate-900 mb-6">
             The Hidden Costs That Add Up Fast
@@ -168,8 +165,7 @@ export default function DisneyVsCruiseCostGuide() {
                 <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
               </div>
             </a>
-        <AdSlot size="728x90" />
-
+  
         <section className="mb-12">
           <h2 className="text-3xl font-fraunces font-bold text-slate-900 mb-6">
             Sample Family of Four Budget Breakdown
@@ -279,8 +275,7 @@ export default function DisneyVsCruiseCostGuide() {
                 <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
               </div>
             </a>
-        <AdSlot size="728x90" />
-
+  
         <section className="mb-12">
           <h2 className="text-3xl font-fraunces font-bold text-slate-900 mb-6">
             Use Our Cost Calculator
@@ -380,7 +375,6 @@ export default function DisneyVsCruiseCostGuide() {
       {/* Ad Slot 5 */}
 
       <GetQuoteCTA />
-      <AdSlot size="728x90" />
 
       <GetQuoteCTA />
     </div>

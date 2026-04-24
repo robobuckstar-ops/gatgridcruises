@@ -7,7 +7,6 @@ import { GuestCountSelector } from '@/components/ui/guest-count-selector'
 import { Search, SlidersHorizontal, X, Bell, ArrowRight } from 'lucide-react'
 import { calculateDealScore } from '@/lib/deal-score'
 import Link from 'next/link'
-import { SpecialistCTA } from '@/components/ui/specialist-cta'
 import { ReportIssueForm } from '@/components/ui/report-issue-form'
 import { PRICES_LAST_UPDATED } from '@/lib/constants'
 
@@ -386,10 +385,6 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
           </div>
         )}
 
-        {/* Specialist CTA */}
-        <div className="mt-8">
-          <SpecialistCTA />
-        </div>
 
         {/* Report an Issue */}
         <div className="mt-8">

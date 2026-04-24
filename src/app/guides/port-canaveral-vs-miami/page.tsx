@@ -3,7 +3,6 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, MapPin, Clock, DollarSign } from 'lucide-react';
 import { GetQuoteCTA } from '@/components/get-quote-cta';
-import { AdSlot } from '@/components/ui/ad-slot';
 
 export const metadata: Metadata = {
   title: 'Port Canaveral vs. Miami: Which Disney Cruise Port Is Better?',
@@ -51,7 +50,6 @@ export default function PortCanaveralVsMiamiGuide() {
                 <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
               </div>
             </a>
-      <AdSlot size="728x90" />
 
       {/* Main Content */}
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -82,8 +80,7 @@ export default function PortCanaveralVsMiamiGuide() {
                 <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
               </div>
             </a>
-        <AdSlot size="728x90" />
-
+  
         <section className="mb-12">
           <h2 className="text-3xl font-fraunces font-bold text-slate-900 mb-6">
             Location & Driving Distance
@@ -207,8 +204,7 @@ export default function PortCanaveralVsMiamiGuide() {
                 <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
               </div>
             </a>
-        <AdSlot size="728x90" />
-
+  
         <section className="mb-12">
           <h2 className="text-3xl font-fraunces font-bold text-slate-900 mb-6">
             Terminal Facilities & Embarkation Experience
@@ -311,8 +307,7 @@ export default function PortCanaveralVsMiamiGuide() {
                 <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
               </div>
             </a>
-        <AdSlot size="728x90" />
-
+  
         <section className="mb-12">
           <h2 className="text-3xl font-fraunces font-bold text-slate-900 mb-6">
             Nearby Attractions & Pre-Cruise Activities
@@ -477,8 +472,7 @@ export default function PortCanaveralVsMiamiGuide() {
                 <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
               </div>
             </a>
-        <AdSlot size="728x90" />
-
+  
         <section className="mb-12">
           <h2 className="text-3xl font-fraunces font-bold text-slate-900 mb-6">
             Comparison Table: At a Glance
@@ -620,7 +614,6 @@ export default function PortCanaveralVsMiamiGuide() {
       {/* Ad Slot 6 */}
 
       <GetQuoteCTA />
-      <AdSlot size="728x90" />
 
       <GetQuoteCTA />
     </div>

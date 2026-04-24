@@ -2,7 +2,6 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { MapPin, Clock, DollarSign, AlertCircle, Anchor } from 'lucide-react';
 import { GetQuoteCTA } from '@/components/get-quote-cta';
-import { AdSlot } from '@/components/ui/ad-slot';
 
 export const metadata: Metadata = {
   title: "Castaway Cay: The Ultimate Guide to Disney's Private Island",
@@ -56,7 +55,6 @@ export default function CastawayCayGuide() {
                 <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
               </div>
             </a>
-        <AdSlot size="728x90" />
 
         {/* Overview Section */}
         <section className="mb-12">
@@ -109,7 +107,6 @@ export default function CastawayCayGuide() {
                 <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
               </div>
             </a>
-        <AdSlot size="728x90" />
 
         {/* Dining & Bars */}
         <section className="mb-12">
@@ -218,7 +215,6 @@ export default function CastawayCayGuide() {
                 <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
               </div>
             </a>
-        <AdSlot size="728x90" />
 
         {/* Practical Tips */}
         <section className="mb-12">

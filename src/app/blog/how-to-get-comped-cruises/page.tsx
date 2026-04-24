@@ -1,7 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft, Star, Shield, Anchor, Plane, DollarSign } from 'lucide-react'
-import { SpecialistCTA } from '@/components/ui/specialist-cta'
 
 export const metadata: Metadata = {
   title: 'How to Get Comped Cruises: 6 Proven Strategies',
@@ -249,10 +248,6 @@ export default function HowToGetCompedCruises() {
             </div>
           </div>
 
-          {/* Specialist CTA */}
-          <div className="mt-12">
-            <SpecialistCTA />
-          </div>
         </div>
       </article>
     </main>

@@ -2,7 +2,6 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { CheckCircle, AlertCircle, Printer, MapPin } from 'lucide-react';
 import { GetQuoteCTA } from '@/components/get-quote-cta';
-import { AdSlot } from '@/components/ui/ad-slot';
 
 export const metadata: Metadata = {
   title: 'The Ultimate Disney Cruise Packing List (Printable)',
@@ -56,7 +55,6 @@ export default function PackingListGuide() {
                 <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
               </div>
             </a>
-        <AdSlot size="728x90" />
 
         {/* Introduction */}
         <section className="mb-12">
@@ -221,7 +219,6 @@ export default function PackingListGuide() {
                 <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
               </div>
             </a>
-        <AdSlot size="728x90" />
 
         {/* Toiletries & Personal Care */}
         <section className="mb-12">
@@ -387,7 +384,6 @@ export default function PackingListGuide() {
                 <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
               </div>
             </a>
-        <AdSlot size="728x90" />
 
         {/* Beach & Pool Items */}
         <section className="mb-12">

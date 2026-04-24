@@ -1,7 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft, Gift, ExternalLink } from 'lucide-react'
-import { SpecialistCTA } from '@/components/ui/specialist-cta'
 
 export const metadata: Metadata = {
   title: 'Best Fish Extender Gifts Under $10 (2025 List)',
@@ -296,10 +295,6 @@ export default function BestFishExtenderGifts() {
             </ul>
           </div>
 
-          {/* Specialist CTA */}
-          <div className="mt-12">
-            <SpecialistCTA />
-          </div>
         </div>
       </article>
     </main>

@@ -4,7 +4,6 @@ import { useState, useMemo } from 'react'
 import Link from 'next/link'
 import { Users, SlidersHorizontal, X, ArrowRight } from 'lucide-react'
 import { SailingCard } from '@/components/ui/sailing-card'
-import { AdSlot } from '@/components/ui/ad-slot'
 import type { Sailing, Ship } from '@/types/database'
 
 interface HomeDealsProps {
@@ -176,11 +175,6 @@ export function HomeDeals({ sailings, ships }: HomeDealsProps) {
           {filtered.slice(0, 9).map((sailing, index) => (
             <div key={sailing.id}>
               <SailingCard sailing={sailing} guestCount={guestCount} />
-              {index === 5 && (
-                <div className="col-span-full mt-2">
-                  <AdSlot size="728x90" />
-                </div>
-              )}
             </div>
           ))}
         </div>

@@ -2,7 +2,6 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { BookOpen, ArrowRight } from 'lucide-react'
 import { GetQuoteCTA } from '@/components/get-quote-cta'
-import { SpecialistCTA } from '@/components/ui/specialist-cta'
 
 export const metadata: Metadata = {
   title: 'Disney Cruise Guides — In-Depth Planning Resources',
@@ -178,10 +177,6 @@ export default function GuidesPage() {
             ))}
           </div>
 
-          {/* Specialist CTA */}
-          <div className="mt-12">
-            <SpecialistCTA />
-          </div>
         </div>
       </section>
 

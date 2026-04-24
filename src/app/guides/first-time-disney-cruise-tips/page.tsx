@@ -3,7 +3,6 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, CheckCircle2, Lightbulb } from 'lucide-react';
 import { GetQuoteCTA } from '@/components/get-quote-cta';
-import { AdSlot } from '@/components/ui/ad-slot';
 
 export const metadata: Metadata = {
   title: '25 Things to Know Before Your First Disney Cruise',
@@ -204,7 +203,6 @@ export default function FirstTimeDisneyCruiseTipsGuide() {
                 <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
               </div>
             </a>
-      <AdSlot size="728x90" />
 
       {/* Main Content */}
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -235,8 +233,7 @@ export default function FirstTimeDisneyCruiseTipsGuide() {
                 <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
               </div>
             </a>
-        <AdSlot size="728x90" />
-
+  
         <section className="mb-12">
           <h2 className="text-3xl font-fraunces font-bold text-slate-900 mb-6">
             The Essential 25 Tips
@@ -281,8 +278,7 @@ export default function FirstTimeDisneyCruiseTipsGuide() {
                 <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
               </div>
             </a>
-        <AdSlot size="728x90" />
-
+  
         <section className="mb-12">
           <h2 className="text-3xl font-fraunces font-bold text-slate-900 mb-6">
             Dining Deep Dive: Understanding Your Options
@@ -392,8 +388,7 @@ export default function FirstTimeDisneyCruiseTipsGuide() {
                 <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
               </div>
             </a>
-        <AdSlot size="728x90" />
-
+  
         <section className="mb-12">
           <h2 className="text-3xl font-fraunces font-bold text-slate-900 mb-6">
             Castaway Cay Strategy: Maximizing Disney's Private Island
@@ -546,8 +541,7 @@ export default function FirstTimeDisneyCruiseTipsGuide() {
                 <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
               </div>
             </a>
-        <AdSlot size="728x90" />
-
+  
         <section className="mb-12">
           <h2 className="text-3xl font-fraunces font-bold text-slate-900 mb-6">
             Common First-Timer Mistakes to Avoid
@@ -648,7 +642,6 @@ export default function FirstTimeDisneyCruiseTipsGuide() {
       {/* Ad Slot 6 */}
 
       <GetQuoteCTA />
-      <AdSlot size="728x90" />
 
       <GetQuoteCTA />
     </div>
