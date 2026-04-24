@@ -175,7 +175,7 @@ export function ChatWidget() {
       {/* Floating button */}
       <button
         onClick={() => setIsOpen(prev => !prev)}
-        className="fixed bottom-6 right-6 w-14 h-14 bg-[#1E3A5F] text-[#D4AF37] rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-200 flex items-center justify-center z-40 focus:outline-2 focus:outline-offset-2 focus:outline-[#D4AF37]"
+        className="fixed bottom-24 right-6 sm:bottom-6 w-14 h-14 bg-[#1E3A5F] text-[#D4AF37] rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-200 flex items-center justify-center z-40 focus:outline-2 focus:outline-offset-2 focus:outline-[#D4AF37]"
         aria-label={isOpen ? 'Close cruise assistant chat' : 'Chat with our Disney cruise assistant'}
         aria-expanded={isOpen}
         aria-controls="chat-widget-panel"
@@ -191,8 +191,8 @@ export function ChatWidget() {
       {isOpen && (
         <div
           id="chat-widget-panel"
-          className="fixed bottom-24 right-4 sm:right-6 w-[calc(100vw-2rem)] sm:w-full sm:max-w-sm bg-white rounded-xl shadow-2xl flex flex-col z-50 animate-in fade-in slide-in-from-bottom-2 duration-200"
-          style={{ height: 'min(480px, calc(100svh - 120px))' }}
+          className="fixed bottom-44 right-4 sm:right-6 sm:bottom-24 w-[calc(100vw-2rem)] sm:w-full sm:max-w-sm bg-white rounded-xl shadow-2xl flex flex-col z-50 animate-in fade-in slide-in-from-bottom-2 duration-200"
+          style={{ height: 'min(480px, calc(100svh - 196px))' }}
           role="dialog"
           aria-labelledby="chat-widget-title"
           aria-modal="true"
