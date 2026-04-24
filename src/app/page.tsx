@@ -19,7 +19,6 @@ import {
 import { SailingCard } from '@/components/ui/sailing-card'
 import { EmailSignup } from '@/components/ui/email-signup'
 import { GetQuoteCTA } from '@/components/get-quote-cta'
-import { HeroSearch } from '@/components/ui/hero-search'
 import { HomeDeals } from '@/components/ui/home-deals'
 import {
   getBiggestPriceDrops,
@@ -61,12 +60,6 @@ export default async function Home() {
         </div>
 
         <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
-          {/* Trust signal pill */}
-          <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-blue-100 text-sm font-medium px-4 py-1.5 rounded-full mb-8 backdrop-blur-sm">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            Prices watched daily · No booking pressure · Free tools
-          </div>
-
           <h1 className="font-fraunces text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight leading-[1.05]">
             The Smarter Way to<br className="hidden md:block" /> Plan a Disney Cruise
           </h1>
@@ -76,22 +69,17 @@ export default async function Home() {
             before you book Disney Cruise Line.
           </p>
 
-          {/* AI Search Bar */}
-          <div className="mb-10 max-w-2xl mx-auto">
-            <HeroSearch />
-          </div>
-
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
             <Link
               href="/deals"
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-lg bg-[#D4AF37] text-slate-900 font-semibold hover:bg-yellow-300 transition-colors duration-200 shadow-lg shadow-yellow-900/20"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-lg bg-[#D4AF37] text-slate-900 font-semibold hover:bg-yellow-300 transition-colors duration-200 shadow-lg shadow-yellow-900/20 w-full sm:w-auto max-w-[280px]"
             >
               <TrendingDown className="w-4 h-4" aria-hidden="true" />
               View Current Deals
             </Link>
             <Link
               href="/tools/cost-calculator"
-              className="inline-flex items-center justify-center px-8 py-3.5 rounded-lg bg-white/10 border border-white/25 text-white font-semibold hover:bg-white/20 transition-colors duration-200 backdrop-blur-sm"
+              className="inline-flex items-center justify-center px-8 py-3.5 rounded-lg bg-white/10 border border-white/25 text-white font-semibold hover:bg-white/20 transition-colors duration-200 backdrop-blur-sm w-full sm:w-auto max-w-[280px]"
             >
               Calculate Trip Cost
             </Link>
