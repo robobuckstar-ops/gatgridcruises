@@ -6,7 +6,6 @@ import type { Sailing } from '@/types/database'
 import { formatPrice, formatDate, cn } from '@/lib/utils'
 import { calculateDealScore } from '@/lib/deal-score'
 import { getOutTheDoorTotal } from '@/lib/pricing'
-import { DealScoreBadge } from './deal-score-badge'
 import { Ship, Calendar, MapPin, ChevronDown, Bot, Gift } from 'lucide-react'
 import { getOBC } from '@/lib/obc'
 
@@ -68,36 +67,27 @@ export function SailingCard({ sailing, percentBelow }: SailingCardProps) {
       <div className="h-1.5 bg-gradient-to-r from-blue-600 to-blue-500 group-hover:from-[#D4AF37] group-hover:to-amber-400 transition-all duration-200" />
 
       <div className="p-5">
-        {/* Score badge + all label pills — single horizontal row */}
-        <div className="flex items-center gap-2 mb-3">
-          <DealScoreBadge
-            score={dealScore.score}
-            label={dealScore.breakdown.final_score >= 80 ? '★' : undefined}
-            size="md"
-            className="flex-shrink-0"
-          />
-
-          <div className="flex-1 flex items-center gap-1.5 justify-end flex-wrap">
-            {themeBadge && (
-              <span className={`inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-full border text-[10px] font-semibold whitespace-nowrap ${themeBadge.className}`}>
-                {themeBadge.emoji} {themeBadge.label}
-              </span>
-            )}
-            {(dealScore.recommendation === 'strong-buy' || dealScore.recommendation === 'buy') && (
-              <span className="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-full bg-violet-50 border border-violet-200 text-violet-700 text-[10px] font-semibold whitespace-nowrap">
-                <Bot className="w-3 h-3" aria-hidden="true" />
-                AI Pick
-              </span>
-            )}
-            <span
-              className={cn(
-                'inline-flex items-center px-1.5 py-0.5 rounded-full text-[10px] font-semibold border whitespace-nowrap',
-                recommendationColors[dealScore.recommendation]
-              )}
-            >
-              {recommendationLabels[dealScore.recommendation]}
+        {/* Label pills */}
+        <div className="flex items-center gap-1.5 flex-wrap mb-3">
+          {themeBadge && (
+            <span className={`inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-full border text-[10px] font-semibold whitespace-nowrap ${themeBadge.className}`}>
+              {themeBadge.emoji} {themeBadge.label}
             </span>
-          </div>
+          )}
+          {(dealScore.recommendation === 'strong-buy' || dealScore.recommendation === 'buy') && (
+            <span className="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-full bg-violet-50 border border-violet-200 text-violet-700 text-[10px] font-semibold whitespace-nowrap">
+              <Bot className="w-3 h-3" aria-hidden="true" />
+              AI Pick
+            </span>
+          )}
+          <span
+            className={cn(
+              'inline-flex items-center px-1.5 py-0.5 rounded-full text-[10px] font-semibold border whitespace-nowrap',
+              recommendationColors[dealScore.recommendation]
+            )}
+          >
+            {recommendationLabels[dealScore.recommendation]}
+          </span>
         </div>
 
         {/* Itinerary name */}

@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import { Calendar, MapPin, Ship, Clock, Flame } from 'lucide-react'
-import { DealScoreBadge } from './deal-score-badge'
 import { BookingInquiryButton } from './booking-inquiry-button'
 import type { FeaturedDealResult } from '@/lib/data'
 
@@ -51,16 +50,13 @@ export function FeaturedDealCard({ sailing, historicalAvgPrice, savingsAmount, s
           <div className="flex flex-col lg:flex-row gap-6 lg:gap-10">
             {/* Left: details */}
             <div className="flex-1 min-w-0">
-              <div className="flex items-start gap-4 mb-5">
-                <DealScoreBadge score={score} size="lg" showTooltip className="flex-shrink-0 mt-1" />
-                <div className="min-w-0">
-                  <h2 className="font-fraunces text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 leading-tight">
-                    {sailing.itinerary_name}
-                  </h2>
-                  <p className="text-slate-500 text-sm mt-1">
-                    {sailing.ship?.name ?? 'Disney Cruise Line'}
-                  </p>
-                </div>
+              <div className="mb-5">
+                <h2 className="font-fraunces text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 leading-tight">
+                  {sailing.itinerary_name}
+                </h2>
+                <p className="text-slate-500 text-sm mt-1">
+                  {sailing.ship?.name ?? 'Disney Cruise Line'}
+                </p>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-sm text-slate-600 mb-5">
