@@ -12,7 +12,7 @@ export default function CreditCardsPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-blue-50 to-indigo-50 py-16 border-b border-slate-200">
+      <section className="bg-gradient-to-br from-[#1E3A5F]/5 to-white py-16 border-b border-slate-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 bg-[#D4AF37]/20 text-[#8B6914] px-4 py-2 rounded-full text-sm font-semibold mb-4">
             <CreditCard className="w-4 h-4" aria-hidden="true" />
@@ -146,17 +146,17 @@ export default function CreditCardsPage() {
 
         {/* Card 2: Southwest */}
         <div className="mb-10 border border-slate-200 rounded-xl overflow-hidden">
-          <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-4">
+          <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4">
             <div className="flex items-center justify-between gap-4">
               <div>
-                <span className="text-blue-200 text-xs font-bold uppercase tracking-wide">
+                <span className="text-[#D4AF37] text-xs font-bold uppercase tracking-wide">
                   Card #2 — Flights
                 </span>
                 <h2 className="font-fraunces text-xl font-bold text-white mt-1">
                   Chase Southwest Card
                 </h2>
               </div>
-              <div className="flex-shrink-0 bg-white text-blue-700 text-xs font-bold px-3 py-1.5 rounded-lg">
+              <div className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] text-xs font-bold px-3 py-1.5 rounded-lg">
                 Best for flights
               </div>
             </div>
@@ -203,7 +203,7 @@ export default function CreditCardsPage() {
               href="https://www.referyourchasecard.com/226m/6ZT33F9TOQ"
               target="_blank"
               rel="noopener noreferrer sponsored"
-              className="inline-flex items-center gap-2 bg-blue-600 text-white font-bold px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+              className="inline-flex items-center gap-2 bg-[#1E3A5F] text-white font-bold px-6 py-3 rounded-lg hover:bg-[#2a4f7a] transition-colors"
             >
               Apply for Southwest Card <ArrowRight className="w-4 h-4" />
             </a>
@@ -215,17 +215,17 @@ export default function CreditCardsPage() {
 
         {/* Card 3: Capital One Spark */}
         <div className="mb-10 border border-slate-200 rounded-xl overflow-hidden">
-          <div className="bg-gradient-to-r from-emerald-700 to-emerald-800 px-6 py-4">
+          <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4">
             <div className="flex items-center justify-between gap-4">
               <div>
-                <span className="text-emerald-200 text-xs font-bold uppercase tracking-wide">
+                <span className="text-[#D4AF37] text-xs font-bold uppercase tracking-wide">
                   Card #3 — Everyday Spending
                 </span>
                 <h2 className="font-fraunces text-xl font-bold text-white mt-1">
                   Capital One Spark
                 </h2>
               </div>
-              <div className="flex-shrink-0 bg-white text-emerald-700 text-xs font-bold px-3 py-1.5 rounded-lg">
+              <div className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] text-xs font-bold px-3 py-1.5 rounded-lg">
                 Best for spending
               </div>
             </div>
@@ -271,7 +271,7 @@ export default function CreditCardsPage() {
               href="https://i.capitalone.com/JKlfRwN3f"
               target="_blank"
               rel="noopener noreferrer sponsored"
-              className="inline-flex items-center gap-2 bg-emerald-700 text-white font-bold px-6 py-3 rounded-lg hover:bg-emerald-800 transition-colors"
+              className="inline-flex items-center gap-2 bg-[#1E3A5F] text-white font-bold px-6 py-3 rounded-lg hover:bg-[#2a4f7a] transition-colors"
             >
               Apply for Capital One Spark <ArrowRight className="w-4 h-4" />
             </a>
@@ -300,7 +300,7 @@ export default function CreditCardsPage() {
               </div>
             </div>
             <div className="flex gap-4">
-              <div className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">
+              <div className="w-8 h-8 bg-[#1E3A5F] text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">
                 2
               </div>
               <div>
@@ -314,7 +314,7 @@ export default function CreditCardsPage() {
               </div>
             </div>
             <div className="flex gap-4">
-              <div className="w-8 h-8 bg-emerald-700 text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">
+              <div className="w-8 h-8 bg-[#1E3A5F] text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">
                 3
               </div>
               <div>
@@ -341,12 +341,12 @@ export default function CreditCardsPage() {
       </section>
 
       {/* Book CTA */}
-      <section className="bg-gradient-to-br from-blue-50 to-indigo-50 py-12 border-t border-slate-200">
+      <section className="bg-[#1E3A5F] py-12 border-t border-slate-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-fraunces text-2xl font-bold text-slate-900 mb-3">
+          <h2 className="font-fraunces text-2xl font-bold text-white mb-3">
             Ready to Book Your Disney Cruise?
           </h2>
-          <p className="text-slate-600 mb-6">
+          <p className="text-slate-300 mb-6">
             Get a free quote from our licensed travel advisors — they know how to stack these
             perks for maximum value.
           </p>

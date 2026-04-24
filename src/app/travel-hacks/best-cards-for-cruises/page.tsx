@@ -1,7 +1,7 @@
 
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowLeft, Clock, Tag } from 'lucide-react'
+import { ArrowLeft, ArrowRight, Clock, Tag } from 'lucide-react'
 import { CreditCardRecommendation } from '@/components/ui/credit-card-recommendation'
 import { getCardBySlug, getBestCardsFor } from '@/lib/credit-card-config'
 
@@ -26,19 +26,19 @@ export default function BestCardsForCruises() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-blue-50 to-indigo-50 py-12">
+      <section className="bg-gradient-to-br from-[#1E3A5F]/5 to-white py-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
             href="/travel-hacks"
-            className="inline-flex items-center gap-1 text-blue-600 hover:text-blue-700 text-sm font-medium mb-6"
+            className="inline-flex items-center gap-1 text-[#1E3A5F] hover:text-[#2a4f7a] text-sm font-medium mb-6"
           >
             <ArrowLeft className="h-4 w-4" />
             Back to Travel Hacks
           </Link>
 
           <div className="flex items-center gap-2 mb-4">
-            <Tag className="h-5 w-5 text-blue-600" />
-            <span className="text-sm font-semibold text-blue-700 uppercase tracking-wider">
+            <Tag className="h-5 w-5 text-[#1E3A5F]" />
+            <span className="text-sm font-semibold text-[#1E3A5F] uppercase tracking-wider">
               Travel Hacks
             </span>
           </div>
@@ -310,9 +310,24 @@ export default function BestCardsForCruises() {
           </div>
         </section>
 
+        {/* Planning CTA */}
+        <section className="mt-12 bg-[#1E3A5F] rounded-xl p-8 text-white flex flex-col sm:flex-row items-center gap-6">
+          <div className="flex-1">
+            <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-wider mb-1">Ready to sail?</p>
+            <p className="text-white font-fraunces text-xl font-bold mb-2">Put your card strategy to work</p>
+            <p className="text-slate-300 text-sm">Our advisors can help you find the right sailing and stateroom — and book it the smart way.</p>
+          </div>
+          <Link
+            href="/book"
+            className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3 bg-[#D4AF37] text-[#1E3A5F] font-semibold rounded-lg hover:bg-yellow-300 transition-colors"
+          >
+            Get a Free Quote <ArrowRight className="h-4 w-4" />
+          </Link>
+        </section>
+
         {/* Affiliate Disclosure */}
         <section className="mt-12 pt-8 border-t border-slate-200">
-          <div className="bg-amber-50 rounded-lg p-6 border border-amber-200">
+          <div className="bg-slate-50 rounded-lg p-6 border border-slate-200">
             <h3 className="font-semibold text-slate-900 mb-2">Affiliate Disclosure</h3>
             <p className="text-sm text-slate-700">
               This guide contains referral links to credit card offers. We may earn a commission if

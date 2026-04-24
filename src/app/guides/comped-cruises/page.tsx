@@ -11,10 +11,10 @@ export default function CompedCruisesGuide() {
   return (
     <article className="min-h-screen bg-white">
       {/* Hero */}
-      <div className="bg-gradient-to-br from-emerald-50 to-teal-50 border-b border-emerald-100 py-14">
+      <div className="bg-gradient-to-br from-[#1E3A5F]/5 to-white border-b border-slate-200 py-14">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
           <div className="flex items-center gap-2 mb-4 text-sm text-slate-500">
-            <Link href="/guides" className="hover:text-emerald-700 transition-colors">Guides</Link>
+            <Link href="/guides" className="hover:text-[#1E3A5F] transition-colors">Guides</Link>
             <span>/</span>
             <span>Comped Cruises</span>
           </div>
@@ -25,16 +25,16 @@ export default function CompedCruisesGuide() {
             A no-BS guide to the real strategies that get people on cruise ships for little to nothing — casino comps, loyalty tiers, repositioning hacks, travel agent perks, and more.
           </p>
           <div className="flex flex-wrap gap-3 mt-6">
-            <span className="inline-flex items-center gap-1.5 bg-white border border-emerald-200 text-emerald-700 text-xs font-medium px-3 py-1.5 rounded-full">
+            <span className="inline-flex items-center gap-1.5 bg-white border border-[#1E3A5F]/20 text-[#1E3A5F] text-xs font-medium px-3 py-1.5 rounded-full">
               <DollarSign className="h-3.5 w-3.5" /> Casino Comps
             </span>
-            <span className="inline-flex items-center gap-1.5 bg-white border border-emerald-200 text-emerald-700 text-xs font-medium px-3 py-1.5 rounded-full">
+            <span className="inline-flex items-center gap-1.5 bg-white border border-[#1E3A5F]/20 text-[#1E3A5F] text-xs font-medium px-3 py-1.5 rounded-full">
               <Star className="h-3.5 w-3.5" /> Loyalty Programs
             </span>
-            <span className="inline-flex items-center gap-1.5 bg-white border border-emerald-200 text-emerald-700 text-xs font-medium px-3 py-1.5 rounded-full">
+            <span className="inline-flex items-center gap-1.5 bg-white border border-[#1E3A5F]/20 text-[#1E3A5F] text-xs font-medium px-3 py-1.5 rounded-full">
               <Anchor className="h-3.5 w-3.5" /> Repositioning Hacks
             </span>
-            <span className="inline-flex items-center gap-1.5 bg-white border border-emerald-200 text-emerald-700 text-xs font-medium px-3 py-1.5 rounded-full">
+            <span className="inline-flex items-center gap-1.5 bg-white border border-[#1E3A5F]/20 text-[#1E3A5F] text-xs font-medium px-3 py-1.5 rounded-full">
               <Users className="h-3.5 w-3.5" /> Travel Agent FAM Trips
             </span>
           </div>
@@ -57,8 +57,8 @@ export default function CompedCruisesGuide() {
         {/* Section 1: Casino Comps */}
         <section>
           <div className="flex items-center gap-3 mb-5">
-            <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
-              <DollarSign className="h-5 w-5 text-emerald-700" />
+            <div className="w-10 h-10 bg-[#1E3A5F]/10 rounded-lg flex items-center justify-center flex-shrink-0">
+              <DollarSign className="h-5 w-5 text-[#1E3A5F]" />
             </div>
             <h2 className="font-fraunces text-2xl font-bold text-slate-900">Casino Cruise Comps</h2>
           </div>
@@ -81,7 +81,7 @@ export default function CompedCruisesGuide() {
               'Casino Host relationships matter — find your host on embarkation day and introduce yourself',
             ].map(item => (
               <li key={item} className="flex items-start gap-2 text-sm text-slate-700">
-                <CheckCircle2 className="h-4 w-4 text-emerald-500 mt-0.5 flex-shrink-0" />
+                <CheckCircle2 className="h-4 w-4 text-[#D4AF37] mt-0.5 flex-shrink-0" />
                 {item}
               </li>
             ))}
@@ -104,7 +104,7 @@ export default function CompedCruisesGuide() {
               'Link your loyalty number before you play — points don\'t retroactively apply',
             ].map(item => (
               <li key={item} className="flex items-start gap-2 text-sm text-slate-700">
-                <CheckCircle2 className="h-4 w-4 text-emerald-500 mt-0.5 flex-shrink-0" />
+                <CheckCircle2 className="h-4 w-4 text-[#D4AF37] mt-0.5 flex-shrink-0" />
                 {item}
               </li>
             ))}
@@ -123,7 +123,7 @@ export default function CompedCruisesGuide() {
               'Best value on Norwegian: casino rates plus Free at Sea deal = extremely cheap sailing',
             ].map(item => (
               <li key={item} className="flex items-start gap-2 text-sm text-slate-700">
-                <CheckCircle2 className="h-4 w-4 text-emerald-500 mt-0.5 flex-shrink-0" />
+                <CheckCircle2 className="h-4 w-4 text-[#D4AF37] mt-0.5 flex-shrink-0" />
                 {item}
               </li>
             ))}
@@ -401,7 +401,7 @@ export default function CompedCruisesGuide() {
         </section>
 
         {/* Summary */}
-        <section className="bg-emerald-50 border border-emerald-200 rounded-xl p-6">
+        <section className="bg-[#1E3A5F]/5 border border-[#1E3A5F]/20 rounded-xl p-6">
           <h2 className="font-fraunces text-xl font-bold text-slate-900 mb-3">The Realistic Summary</h2>
           <p className="text-slate-700 text-sm leading-relaxed mb-4">
             Truly &quot;free&quot; cruises are rare. But significantly discounted cruises are very achievable through a combination of these strategies. The players who extract the most value typically:
@@ -416,18 +416,34 @@ export default function CompedCruisesGuide() {
               'Always book repositioning sailings when flexible on timing',
             ].map((item, i) => (
               <li key={item} className="flex items-start gap-2.5">
-                <span className="flex-shrink-0 w-5 h-5 bg-emerald-200 text-emerald-800 rounded-full text-xs font-bold flex items-center justify-center mt-0.5">{i + 1}</span>
+                <span className="flex-shrink-0 w-5 h-5 bg-[#D4AF37]/30 text-[#1E3A5F] rounded-full text-xs font-bold flex items-center justify-center mt-0.5">{i + 1}</span>
                 {item}
               </li>
             ))}
           </ol>
         </section>
 
+        {/* Planning CTA */}
+        <div className="bg-[#1E3A5F] rounded-xl p-6 text-white flex flex-col sm:flex-row items-center gap-6">
+          <div className="flex-1">
+            <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-wider mb-1">Start planning</p>
+            <p className="text-white font-fraunces text-lg font-bold mb-1">Ready to book your next cruise?</p>
+            <p className="text-slate-300 text-sm">Our travel advisors can help you find the best sailing and apply all these strategies — at no extra cost to you.</p>
+          </div>
+          <Link
+            href="/book"
+            className="flex-shrink-0 inline-flex items-center gap-2 px-5 py-2.5 bg-[#D4AF37] text-[#1E3A5F] text-sm font-semibold rounded-lg hover:bg-yellow-300 transition-colors"
+          >
+            Get a Free Quote
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+
         {/* CTA */}
         <div className="border-t border-slate-200 pt-8 flex flex-col sm:flex-row gap-4">
           <Link
             href="/deals"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors text-sm"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-[#1E3A5F] text-white font-semibold rounded-lg hover:bg-[#2a4f7a] transition-colors text-sm"
           >
             Browse Current Disney Cruise Deals
             <ArrowRight className="h-4 w-4" />

@@ -179,11 +179,11 @@ export default function CompareCardsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 to-white">
+    <div className="min-h-screen bg-white">
       {/* Hero */}
-      <div className="bg-gradient-to-br from-amber-50 to-white border-b border-amber-200">
+      <div className="bg-[#1E3A5F]/5 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-          <Link href="/travel-hacks" className="inline-flex items-center gap-2 text-amber-700 hover:text-amber-900 mb-4 transition-colors text-sm font-medium">
+          <Link href="/travel-hacks" className="inline-flex items-center gap-2 text-[#1E3A5F] hover:text-[#2a4f7a] mb-4 transition-colors text-sm font-medium">
             <ArrowRight className="w-4 h-4 rotate-180" />
             Back to Travel Hacks
           </Link>
@@ -372,14 +372,19 @@ export default function CompareCardsPage() {
         </div>
 
         {/* CTA */}
-        <div className="mt-12 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg p-8">
-          <h2 className="text-2xl font-bold text-slate-900 mb-3">Ready to Make Your Move?</h2>
-          <p className="text-slate-600 mb-4 max-w-2xl">
-            See how to stack multiple cards for maximum value, what to do with all those points, and how to use them for your dream cruise.
+        <div className="mt-12 bg-[#1E3A5F] rounded-lg p-8 text-white">
+          <h2 className="text-2xl font-bold text-white mb-3">Ready to Make Your Move?</h2>
+          <p className="text-slate-300 mb-6 max-w-2xl">
+            Our travel advisors can help you book your Disney cruise the smart way — applying every point and perk for maximum value.
           </p>
-          <Link href="/travel-hacks/stack-points-free-cruise" className="inline-flex items-center gap-2 bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
-            Learn the stacking strategy <ArrowRight className="w-4 h-4" />
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <Link href="/book" className="inline-flex items-center gap-2 bg-[#D4AF37] text-[#1E3A5F] font-semibold px-6 py-3 rounded-lg hover:bg-yellow-300 transition-colors">
+              Get a Free Quote <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link href="/travel-hacks/stack-points-free-cruise" className="inline-flex items-center gap-2 bg-white/10 text-white font-semibold px-6 py-3 rounded-lg hover:bg-white/20 border border-white/20 transition-colors">
+              Learn the stacking strategy <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
         </div>
       </div>
     </div>

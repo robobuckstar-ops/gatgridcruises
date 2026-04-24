@@ -82,11 +82,11 @@ export default function TravelHacksHub() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-amber-50 via-white to-blue-50 text-slate-900 py-20">
+      <section className="relative bg-gradient-to-br from-[#1E3A5F]/5 via-white to-[#D4AF37]/10 text-slate-900 py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-6">
-            <Sparkles className="h-8 w-8 text-amber-500" aria-hidden="true" />
-            <span className="text-sm font-semibold text-amber-700 uppercase tracking-wider">
+            <Sparkles className="h-8 w-8 text-[#D4AF37]" aria-hidden="true" />
+            <span className="text-sm font-semibold text-[#1E3A5F] uppercase tracking-wider">
               Travel Hacks
             </span>
           </div>
@@ -101,13 +101,13 @@ export default function TravelHacksHub() {
           </p>
 
           {/* Quick Stats Banner */}
-          <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl p-6 text-white max-w-2xl">
+          <div className="bg-[#1E3A5F] rounded-xl p-6 text-white max-w-2xl">
             <div className="flex items-center gap-3 mb-2">
               <TrendingUp className="h-5 w-5" aria-hidden="true" />
               <p className="text-sm font-semibold">Average Savings</p>
             </div>
             <p className="text-3xl font-bold">$1,200+</p>
-            <p className="text-blue-100 text-sm mt-1">
+            <p className="text-[#D4AF37]/80 text-sm mt-1">
               The average GatGrid reader saves over $1,200 per cruise using these strategies
             </p>
           </div>
@@ -127,10 +127,10 @@ export default function TravelHacksHub() {
               <Link
                 key={strategy.id}
                 href={strategy.href}
-                className="group flex flex-col p-6 rounded-xl border border-slate-200 bg-white hover:border-blue-300 hover:shadow-lg hover:bg-blue-50/50 transition-all duration-200"
+                className="group flex flex-col p-6 rounded-xl border border-slate-200 bg-white hover:border-[#1E3A5F]/30 hover:shadow-lg hover:bg-[#1E3A5F]/5 transition-all duration-200"
               >
                 <div className="flex items-start justify-between mb-4">
-                  <div className="h-12 w-12 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center group-hover:bg-blue-200 transition-colors">
+                  <div className="h-12 w-12 rounded-lg bg-[#1E3A5F]/10 text-[#1E3A5F] flex items-center justify-center group-hover:bg-[#1E3A5F]/20 transition-colors">
                     <Icon className="h-6 w-6" aria-hidden="true" />
                   </div>
                   <span className="text-xs font-semibold text-slate-600 bg-slate-100 px-2.5 py-1 rounded">
@@ -138,7 +138,7 @@ export default function TravelHacksHub() {
                   </span>
                 </div>
 
-                <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-2 group-hover:text-blue-700 transition-colors">
+                <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-2 group-hover:text-[#1E3A5F] transition-colors">
                   {strategy.title}
                 </h3>
 
@@ -185,7 +185,7 @@ export default function TravelHacksHub() {
               <div key={idx} className="relative">
                 <div className="flex flex-col h-full">
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="h-12 w-12 rounded-full bg-blue-600 text-white flex items-center justify-center font-fraunces text-lg font-bold flex-shrink-0">
+                    <div className="h-12 w-12 rounded-full bg-[#1E3A5F] text-white flex items-center justify-center font-fraunces text-lg font-bold flex-shrink-0">
                       {item.step}
                     </div>
                     <h3 className="text-lg font-fraunces font-bold text-slate-900">
@@ -196,7 +196,7 @@ export default function TravelHacksHub() {
                 </div>
 
                 {idx < 2 && (
-                  <div className="hidden md:block absolute -right-4 top-6 text-blue-300">
+                  <div className="hidden md:block absolute -right-4 top-6 text-[#1E3A5F]/30">
                     <ArrowRight className="h-6 w-6" aria-hidden="true" />
                   </div>
                 )}
@@ -206,47 +206,29 @@ export default function TravelHacksHub() {
         </div>
       </section>
 
-      {/* Amex Business Platinum Spotlight */}
-      <section className="bg-gradient-to-br from-slate-900 to-slate-800 text-white py-16 border-y border-slate-700">
+      {/* Start Planning CTA */}
+      <section className="bg-[#1E3A5F] text-white py-16 border-y border-[#1E3A5F]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-start gap-8">
+          <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="flex-1">
-              <div className="inline-flex items-center gap-2 bg-yellow-400/20 border border-yellow-400/30 text-yellow-300 text-xs font-semibold px-3 py-1 rounded-full mb-4">
-                ★ Editor's Pick for Cruise Travelers
-              </div>
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-wider mb-3">
+                Ready to plan your cruise?
+              </p>
               <h2 className="text-2xl md:text-3xl font-fraunces font-bold mb-4">
-                Amex Business Platinum: The Premium Cruise Card
+                Turn these strategies into your actual cruise
               </h2>
-              <p className="text-slate-300 mb-6 leading-relaxed">
-                If you're spending $15K+ in the next 3 months, the Amex Business Platinum's
-                150,000-point bonus is worth $1,500+ — enough to cover flights to your cruise port
-                and then some.
+              <p className="text-slate-300 mb-6 leading-relaxed max-w-xl">
+                Once you've got your rewards plan in place, our travel advisors at Boardwalk Travel
+                Agency can help you find the best sailing, stateroom, and timing — at no extra cost
+                to you.
               </p>
-              <ul className="space-y-3 mb-8">
-                {[
-                  { label: '5x points on flights booked directly', icon: '✈️' },
-                  { label: 'Centurion Lounge access (best in the business)', icon: '🍸' },
-                  { label: 'Automatic trip cancellation & delay coverage', icon: '🛡️' },
-                  { label: '150,000 welcome points ($1,500+ value)', icon: '🎁' },
-                ].map((item) => (
-                  <li key={item.label} className="flex items-center gap-3 text-slate-200">
-                    <span className="text-lg">{item.icon}</span>
-                    <span className="text-sm">{item.label}</span>
-                  </li>
-                ))}
-              </ul>
-              <a
-                href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-                target="_blank"
-                rel="noopener noreferrer sponsored"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#D4AF37] text-slate-900 font-semibold rounded-lg hover:bg-yellow-300 transition-colors duration-200"
+              <Link
+                href="/book"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#D4AF37] text-[#1E3A5F] font-semibold rounded-lg hover:bg-yellow-300 transition-colors duration-200"
               >
-                Check Offer on Amex →
-              </a>
-              <p className="text-xs text-slate-500 mt-3">
-                Referral link — we may earn a commission at no cost to you.
-                Annual fee: $695.
-              </p>
+                Get a Free Quote
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
             </div>
           </div>
         </div>
@@ -269,7 +251,7 @@ export default function TravelHacksHub() {
           ))}
         </div>
 
-        <div className="mt-8 p-6 bg-blue-50 rounded-lg border border-blue-200">
+        <div className="mt-8 p-6 bg-[#1E3A5F]/5 rounded-lg border border-[#1E3A5F]/20">
           <p className="text-sm text-slate-700">
             <span className="font-semibold text-slate-900">Tip:</span> These are just our top
             three. Browse our full comparison of 8+ cards to find the best fit for your specific
@@ -279,7 +261,7 @@ export default function TravelHacksHub() {
       </section>
 
       {/* Key Principles */}
-      <section className="bg-indigo-50 py-16 border-t border-slate-200">
+      <section className="bg-slate-50 py-16 border-t border-slate-200">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-fraunces font-bold text-slate-900 mb-12">
             Key Principles
@@ -310,7 +292,7 @@ export default function TravelHacksHub() {
             ].map((principle, idx) => (
               <div
                 key={idx}
-                className="p-6 rounded-lg bg-white border border-indigo-200 hover:shadow-md transition-shadow"
+                className="p-6 rounded-lg bg-white border border-slate-200 hover:shadow-md transition-shadow"
               >
                 <h3 className="text-lg font-fraunces font-bold text-slate-900 mb-3">
                   {principle.title}
@@ -323,18 +305,25 @@ export default function TravelHacksHub() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-16">
+      <section className="bg-[#1E3A5F] text-white py-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-fraunces font-bold mb-4">Ready to Save on Your Cruise?</h2>
-          <p className="text-blue-100 mb-8 text-lg">
+          <p className="text-slate-300 mb-8 text-lg">
             Dive into any of our five strategy guides to start building your rewards plan.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/travel-hacks/fly-free-to-cruise-port"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors duration-200"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#D4AF37] text-[#1E3A5F] font-semibold rounded-lg hover:bg-yellow-300 transition-colors duration-200"
             >
               Start Reading
+              <ArrowRight className="h-5 w-5" />
+            </Link>
+            <Link
+              href="/book"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white/10 text-white font-semibold rounded-lg hover:bg-white/20 border border-white/20 transition-colors duration-200"
+            >
+              Get a Free Quote
               <ArrowRight className="h-5 w-5" />
             </Link>
           </div>
@@ -343,7 +332,7 @@ export default function TravelHacksHub() {
 
       {/* Affiliate Disclosure */}
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-slate-200">
-        <div className="bg-amber-50 rounded-lg p-6 border border-amber-200">
+        <div className="bg-slate-50 rounded-lg p-6 border border-slate-200">
           <h3 className="font-semibold text-slate-900 mb-2">Affiliate Disclosure</h3>
           <p className="text-sm text-slate-700">
             This guide contains referral links to credit card offers. We may earn a commission if
