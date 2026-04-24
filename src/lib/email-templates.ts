@@ -45,7 +45,7 @@ export function weeklyDigestTemplate(data: {
     <div class="header">
       <h1>⚓ GatGridCruises</h1>
       <p>Weekly Deal Digest — ${weekDate}</p>
-      <p style="color:#D4AF37;font-size:12px;margin:6px 0 0;">AI-curated by Grayson Starbuck</p>
+      <p style="color:#D4AF37;font-size:12px;margin:6px 0 0;">AI-curated by Dr. Grayson Starbuck, DPT</p>
     </div>
 
     <div class="stat">
@@ -96,7 +96,7 @@ export function weeklyDigestTemplate(data: {
     </div>
 
     <div class="footer">
-      <p>Sent by Grayson Starbuck · <a href="mailto:deals@gatgridcruises.com">deals@gatgridcruises.com</a></p>
+      <p>Sent by Dr. Grayson Starbuck, DPT · <a href="mailto:deals@gatgridcruises.com">deals@gatgridcruises.com</a></p>
       <p>You're receiving this because you subscribed at GatGridCruises.com</p>
       <p><a href="https://gatgridcruises.com/unsubscribe?token={{unsubscribe_token}}">Unsubscribe</a> · <a href="https://gatgridcruises.com/disclosures">Disclosures</a></p>
       <p style="margin-top: 12px;">Independently owned. Not affiliated with The Walt Disney Company.</p>
@@ -115,7 +115,7 @@ const BRAND_HEADER = `
       ⚓ GatGrid Cruises
     </h1>
     <p style="margin:6px 0 0;color:#93C5FD;font-family:Arial,sans-serif;font-size:13px;">
-      Grayson Starbuck · AI-Curated Disney Cruise Deals
+      Dr. Grayson Starbuck, DPT · AI-Curated Disney Cruise Deals
     </p>
   </div>
 `
@@ -123,7 +123,7 @@ const BRAND_HEADER = `
 const BRAND_FOOTER_HTML = `
   <div style="background-color:#F8FAFC;border-top:1px solid #E2E8F0;padding:24px 32px;text-align:center;margin-top:32px;">
     <p style="margin:0 0 6px;color:#64748B;font-family:Arial,sans-serif;font-size:12px;">
-      Grayson Starbuck · GatGrid Cruises · Booking services provided through Boardwalk Travel Agency
+      Dr. Grayson Starbuck, DPT · GatGrid Cruises · Booking services provided through Boardwalk Travel Agency
     </p>
     <p style="margin:0 0 4px;color:#94A3B8;font-family:Arial,sans-serif;font-size:11px;">
       Reply directly to reach Grayson when you're ready to book.
@@ -197,7 +197,7 @@ export function INQUIRY_RECEIVED(data: InquiryData): string {
     <h2 style="margin:0 0 8px;color:#1E3A5F;font-family:Georgia,serif;font-size:22px;">Hi ${data.fullName}!</h2>
     <p style="margin:0 0 16px;color:#334155;font-size:15px;line-height:1.6;">
 
-      I'm Grayson Starbuck — founder of GatGrid Cruises and a Disney cruise fanatic who has taken his family on more sailings than I care to admit. There's truly nothing like it, and I'd love to help your family experience that same magic.
+      I'm Dr. Grayson Starbuck, DPT — founder of GatGrid Cruises and a Disney cruise fanatic who has taken his family on more sailings than I care to admit. There's truly nothing like it, and I'd love to help your family experience that same magic.
     </p>
     <p style="margin:0 0 20px;color:#334155;font-size:15px;line-height:1.6;">
       I received your request and will personally review your preferences and get back to you within <strong>24 hours</strong> with hand-picked options that fit your family's needs and budget.
@@ -214,7 +214,7 @@ export function INQUIRY_RECEIVED(data: InquiryData): string {
       <li><a href="https://gatgridcruises.com/deals" style="color:#1E3A5F;">Current Deals</a></li>
     </ul>
 
-    <p style="margin:0;color:#64748B;font-size:13px;">Talk soon,<br><strong style="color:#1E3A5F;">Grayson Starbuck</strong><br>Grayson at GatGrid Cruises · Boardwalk Travel Agency</p>
+    <p style="margin:0;color:#64748B;font-size:13px;">Talk soon,<br><strong style="color:#1E3A5F;">Dr. Grayson Starbuck, DPT</strong><br>Grayson at GatGrid Cruises · Boardwalk Travel Agency</p>
   `)
 }
 
@@ -250,7 +250,7 @@ export function QUOTE_FOLLOW_UP(name: string, options: QuoteOption[]): string {
       <p style="margin:6px 0 0;color:#78350F;font-size:13px;">Earn points toward future upgrades. The <a href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS" style="color:#92400E;">Amex Business Platinum</a> and <a href="https://www.referyourchasecard.com/226m/6ZT33F9TOQ" style="color:#92400E;">Chase Ink Business Preferred</a> both earn excellent travel rewards.</p>
     </div>
 
-    <p style="margin:0;color:#64748B;font-size:13px;">Ready to move forward? Just reply.<br><br><strong style="color:#1E3A5F;">Grayson Starbuck</strong><br><span style="color:#64748B;">Grayson at GatGrid Cruises</span></p>
+    <p style="margin:0;color:#64748B;font-size:13px;">Ready to move forward? Just reply.<br><br><strong style="color:#1E3A5F;">Dr. Grayson Starbuck, DPT</strong><br><span style="color:#64748B;">Grayson at GatGrid Cruises</span></p>
   `)
 }
 
@@ -303,7 +303,7 @@ export function BOOKING_CONFIRMED(details: BookingDetails): string {
       <p style="margin:6px 0 0;color:#78350F;font-size:13px;">Consider paying your final balance with the <a href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS" style="color:#92400E;">Amex Business Platinum</a> (5× on flights, up to $200 airline fee credit) or <a href="https://www.referyourchasecard.com/226m/6ZT33F9TOQ" style="color:#92400E;">Chase Ink Business Preferred</a> (3× on travel, no foreign transaction fees).</p>
     </div>
 
-    <p style="margin:0;color:#64748B;font-size:13px;">Safe travels!<br><strong style="color:#1E3A5F;">Grayson Starbuck</strong><br>Grayson at GatGrid Cruises</p>
+    <p style="margin:0;color:#64748B;font-size:13px;">Safe travels!<br><strong style="color:#1E3A5F;">Dr. Grayson Starbuck, DPT</strong><br>Grayson at GatGrid Cruises</p>
   `)
 }
 
@@ -323,7 +323,7 @@ export function REMINDER_90_DAYS(name: string, shipName: string, sailDate: strin
       ${items.map(([title, desc], i) => `<div style="padding:14px 16px;${i > 0 ? 'border-top:1px solid #E2E8F0;' : ''}background-color:${i % 2 === 0 ? '#FFFFFF' : '#F8FAFC'};"><p style="margin:0 0 4px;color:#1E3A5F;font-weight:600;font-size:14px;">✓ ${title}</p><p style="margin:0;color:#64748B;font-size:13px;">${desc}</p></div>`).join('')}
     </div>
 
-    <p style="margin:0;color:#64748B;font-size:13px;">Reply with any questions!<br><strong style="color:#1E3A5F;">Grayson Starbuck</strong><br>Grayson at GatGrid Cruises</p>
+    <p style="margin:0;color:#64748B;font-size:13px;">Reply with any questions!<br><strong style="color:#1E3A5F;">Dr. Grayson Starbuck, DPT</strong><br>Grayson at GatGrid Cruises</p>
   `)
 }
 
@@ -343,7 +343,7 @@ export function REMINDER_60_DAYS(name: string, shipName: string, sailDate: strin
       ${items.map(([title, desc], i) => `<div style="padding:14px 16px;${i > 0 ? 'border-top:1px solid #E2E8F0;' : ''}background-color:${i % 2 === 0 ? '#FFFFFF' : '#F8FAFC'};"><p style="margin:0 0 4px;color:#1E3A5F;font-weight:600;font-size:14px;">✓ ${title}</p><p style="margin:0;color:#64748B;font-size:13px;">${desc}</p></div>`).join('')}
     </div>
 
-    <p style="margin:0;color:#64748B;font-size:13px;">Almost there!<br><strong style="color:#1E3A5F;">Grayson Starbuck</strong><br>Grayson at GatGrid Cruises</p>
+    <p style="margin:0;color:#64748B;font-size:13px;">Almost there!<br><strong style="color:#1E3A5F;">Dr. Grayson Starbuck, DPT</strong><br>Grayson at GatGrid Cruises</p>
   `)
 }
 
@@ -363,7 +363,7 @@ export function REMINDER_30_DAYS(name: string, shipName: string, sailDate: strin
       ${items.map(([title, desc], i) => `<div style="padding:14px 16px;${i > 0 ? 'border-top:1px solid #E2E8F0;' : ''}background-color:${i % 2 === 0 ? '#FFFFFF' : '#F8FAFC'};"><p style="margin:0 0 4px;color:#1E3A5F;font-weight:600;font-size:14px;">✓ ${title}</p><p style="margin:0;color:#64748B;font-size:13px;">${desc}</p></div>`).join('')}
     </div>
 
-    <p style="margin:0;color:#64748B;font-size:13px;">So close! Reply if you need anything.<br><strong style="color:#1E3A5F;">Grayson Starbuck</strong><br>Grayson at GatGrid Cruises</p>
+    <p style="margin:0;color:#64748B;font-size:13px;">So close! Reply if you need anything.<br><strong style="color:#1E3A5F;">Dr. Grayson Starbuck, DPT</strong><br>Grayson at GatGrid Cruises</p>
   `)
 }
 
@@ -382,7 +382,7 @@ export function POST_CRUISE(name: string, shipName: string, returnDate: string):
       <a href="https://gatgridcruises.com/book" style="display:inline-block;background-color:#D4AF37;color:#1E3A5F;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:bold;font-size:14px;">Plan My Next Cruise</a>
     </p>
 
-    <p style="margin:0;color:#64748B;font-size:13px;">Thank you for choosing GatGrid Cruises!<br><strong style="color:#1E3A5F;">Grayson Starbuck</strong><br>Grayson at GatGrid Cruises</p>
+    <p style="margin:0;color:#64748B;font-size:13px;">Thank you for choosing GatGrid Cruises!<br><strong style="color:#1E3A5F;">Dr. Grayson Starbuck, DPT</strong><br>Grayson at GatGrid Cruises</p>
   `)
 }
 
@@ -430,11 +430,11 @@ function dripWrap(subject: string, body: string, unsubToken: string): string {
   <div class="wrap">
     <div class="hdr">
       <h1>⚓ GatGrid Cruises</h1>
-      <p>Grayson Starbuck · AI-Curated Disney Cruise Deals</p>
+      <p>Dr. Grayson Starbuck, DPT · AI-Curated Disney Cruise Deals</p>
     </div>
     <div class="body">${body}</div>
     <div class="footer">
-      <p>Sent by Grayson Starbuck · <a href="mailto:bookings@gatgridcruises.com">bookings@gatgridcruises.com</a></p>
+      <p>Sent by Dr. Grayson Starbuck, DPT · <a href="mailto:bookings@gatgridcruises.com">bookings@gatgridcruises.com</a></p>
       <p>You're receiving this because you subscribed at GatGridCruises.com</p>
       <p><a href="https://gatgridcruises.com/unsubscribe?token=${unsubToken}">Unsubscribe</a> · <a href="https://gatgridcruises.com/privacy">Privacy Policy</a></p>
       <p style="margin-top: 10px;">Independently owned. Not affiliated with The Walt Disney Company.</p>
@@ -467,7 +467,7 @@ export function welcomeEmail1(name: string, unsubToken: string, topDeals: TopDea
 
   return dripWrap('Welcome to GatGrid Cruises!', `
     <h2>Welcome aboard, ${name || 'friend'}! 🎉</h2>
-    <p>I'm Grayson Starbuck — and I'm genuinely excited you're here. I built GatGrid Cruises because I got tired of watching Disney cruise prices fluctuate wildly and not knowing when to pull the trigger. So I built an AI system that watches them for me (and now for you).</p>
+    <p>I'm Dr. Grayson Starbuck, DPT — and I'm genuinely excited you're here. I built GatGrid Cruises because I got tired of watching Disney cruise prices fluctuate wildly and not knowing when to pull the trigger. So I built an AI system that watches them for me (and now for you).</p>
 
     <p><strong>Here's how GatGrid works in 3 steps:</strong></p>
     <ol class="checklist">
@@ -493,7 +493,7 @@ export function welcomeEmail1(name: string, unsubToken: string, topDeals: TopDea
 
     <p>Questions? Just reply — I personally read every email.</p>
 
-    <p class="sig">Talk soon,<br><strong style="color: #1E3A5F;">Grayson Starbuck</strong><br>GatGrid Cruises</p>
+    <p class="sig">Talk soon,<br><strong style="color: #1E3A5F;">Dr. Grayson Starbuck, DPT</strong><br>GatGrid Cruises</p>
   `, unsubToken)
 }
 
@@ -524,7 +524,7 @@ export function welcomeEmail2(name: string, unsubToken: string): string {
 
     <p>Tomorrow — well, not tomorrow, but in a few days — I'll share the credit card strategy that can save you hundreds (sometimes over $1,000) on a Disney cruise without changing which sailing you book.</p>
 
-    <p class="sig">Until then,<br><strong style="color: #1E3A5F;">Grayson Starbuck</strong><br>GatGrid Cruises</p>
+    <p class="sig">Until then,<br><strong style="color: #1E3A5F;">Dr. Grayson Starbuck, DPT</strong><br>GatGrid Cruises</p>
   `, unsubToken)
 }
 
@@ -563,7 +563,7 @@ export function welcomeEmail3(name: string, unsubToken: string): string {
 
     <p>Ready to book? Just reply to this email with your preferred dates and I'll pull up the best options.</p>
 
-    <p class="sig">To smarter travel,<br><strong style="color: #1E3A5F;">Grayson Starbuck</strong><br>GatGrid Cruises</p>
+    <p class="sig">To smarter travel,<br><strong style="color: #1E3A5F;">Dr. Grayson Starbuck, DPT</strong><br>GatGrid Cruises</p>
   `, unsubToken)
 }
 
@@ -612,7 +612,7 @@ export function dealAlertEmail(alert: PriceDropAlert, unsubToken: string): strin
       <p><strong>💳 Tip:</strong> Pay your deposit with a travel rewards card and you could earn enough points to offset a future trip. I recommend the <a href="https://www.referyourchasecard.com/226m/6ZT33F9TOQ" style="color: #92400E;">Chase Ink Business Preferred</a> or <a href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS" style="color: #92400E;">Amex Business Platinum</a>.</p>
     </div>
 
-    <p class="sig">Talk soon,<br><strong style="color: #1E3A5F;">Grayson Starbuck</strong><br>GatGrid Cruises · bookings@gatgridcruises.com</p>
+    <p class="sig">Talk soon,<br><strong style="color: #1E3A5F;">Dr. Grayson Starbuck, DPT</strong><br>GatGrid Cruises · bookings@gatgridcruises.com</p>
   `, unsubToken)
 }
 
@@ -649,7 +649,7 @@ export function preCruise60Days(name: string, shipName: string, sailDate: string
 
     <p>Also: if you haven't booked Palo or Remy reservations yet, do it now. At 75 days out they go fast.</p>
 
-    <p class="sig">60 days and counting!<br><strong style="color: #1E3A5F;">Grayson Starbuck</strong><br>GatGrid Cruises</p>
+    <p class="sig">60 days and counting!<br><strong style="color: #1E3A5F;">Dr. Grayson Starbuck, DPT</strong><br>GatGrid Cruises</p>
   `, unsubToken)
 }
 
@@ -690,7 +690,7 @@ export function preCruise30Days(name: string, shipName: string, sailDate: string
 
     <p>Reply if you have specific ports on your itinerary and I can give you personalized tips!</p>
 
-    <p class="sig">Almost there!<br><strong style="color: #1E3A5F;">Grayson Starbuck</strong><br>GatGrid Cruises</p>
+    <p class="sig">Almost there!<br><strong style="color: #1E3A5F;">Dr. Grayson Starbuck, DPT</strong><br>GatGrid Cruises</p>
   `, unsubToken)
 }
 
@@ -730,7 +730,7 @@ export function preCruise7Days(name: string, shipName: string, sailDate: string,
 
     <p>I hope your sailing is absolutely magical. If you have any last-minute questions before you go — just reply. I'm here.</p>
 
-    <p class="sig">Bon voyage!<br><strong style="color: #1E3A5F;">Grayson Starbuck</strong><br>GatGrid Cruises · bookings@gatgridcruises.com</p>
+    <p class="sig">Bon voyage!<br><strong style="color: #1E3A5F;">Dr. Grayson Starbuck, DPT</strong><br>GatGrid Cruises · bookings@gatgridcruises.com</p>
   `, unsubToken)
 }
 
@@ -755,14 +755,14 @@ export function confirmationEmailTemplate(email: string): string {
     <div class="body">
       <h2 style="color: #1E3A5F;">Welcome aboard!</h2>
       <p>You signed up for the GatGridCruises weekly deal digest with <strong>${email}</strong>.</p>
-      <p>I'm Grayson Starbuck — I use AI tools to monitor hundreds of Disney cruise prices and surface the deals actually worth booking. Every Sunday you'll get the biggest price drops, honest deal scores, and planning tips. No spam, no sales pressure.</p>
+      <p>I'm Dr. Grayson Starbuck, DPT — I use AI tools to monitor hundreds of Disney cruise prices and surface the deals actually worth booking. Every Sunday you'll get the biggest price drops, honest deal scores, and planning tips. No spam, no sales pressure.</p>
       <p>When you're serious about booking, just reply to any email and I'll personally help you through it.</p>
       <p style="text-align: center; margin: 24px 0;">
         <a href="https://gatgridcruises.com/confirm?email=${encodeURIComponent(email)}" class="cta">Confirm My Subscription</a>
       </p>
       <p style="color: #64748B; font-size: 14px;">If you didn't sign up, just ignore this email.</p>
     </div>
-    <div class="footer">Grayson Starbuck · GatGridCruises · Not affiliated with Disney</div>
+    <div class="footer">Dr. Grayson Starbuck, DPT · GatGridCruises · Not affiliated with Disney</div>
   </div>
 </body>
 </html>`

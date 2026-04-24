@@ -188,7 +188,7 @@ export default function BookPage() {
                   GS
                 </div>
                 <div>
-                  <p className="font-semibold text-slate-900">Grayson Starbuck, DPT</p>
+                  <p className="font-semibold text-slate-900">Dr. Grayson Starbuck, DPT</p>
                   <p className="text-sm text-slate-500">Disney cruise specialist &amp; founder of GatGridCruises</p>
                 </div>
               </div>

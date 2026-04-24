@@ -158,7 +158,7 @@ export default function OnboardCreditPage() {
           <div className="space-y-4">
             {[
               'Submit a booking inquiry through GatGrid Cruises (/book)',
-              'Work with Grayson Starbuck at Boardwalk Travel Agency to finalize your cruise reservation',
+              'Work with Dr. Grayson Starbuck, DPT at Boardwalk Travel Agency to finalize your cruise reservation',
               'Complete final payment for your cruise (typically 90 days before sailing)',
               'Your OBC is automatically applied to your onboard account — no code needed',
             ].map((step, i) => (

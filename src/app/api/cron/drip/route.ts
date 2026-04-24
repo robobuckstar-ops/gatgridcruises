@@ -28,7 +28,7 @@ export async function GET(request: NextRequest) {
     try {
       if (days === 3) {
         await resend.emails.send({
-          from: 'Grayson Starbuck <bookings@gatgridcruises.com>',
+          from: '"Dr. Grayson Starbuck, DPT" <bookings@gatgridcruises.com>',
           to: sub.email,
           subject: 'How we find deals most people miss',
           html: welcomeEmail2(sub.name || sub.email.split('@')[0], sub.unsubscribe_token),
@@ -36,7 +36,7 @@ export async function GET(request: NextRequest) {
         sent.push(`day3:${sub.email}`)
       } else if (days === 7) {
         await resend.emails.send({
-          from: 'Grayson Starbuck <bookings@gatgridcruises.com>',
+          from: '"Dr. Grayson Starbuck, DPT" <bookings@gatgridcruises.com>',
           to: sub.email,
           subject: 'The credit cards that save you $500+ on a Disney cruise',
           html: welcomeEmail3(sub.name || sub.email.split('@')[0], sub.unsubscribe_token),

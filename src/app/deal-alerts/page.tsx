@@ -5,7 +5,7 @@ import { DealAlertsForm } from './deal-alerts-form'
 
 export const metadata: Metadata = {
   title: 'Disney Cruise Deal Alerts — GatGrid Cruises',
-  description: 'Get notified when Disney cruise prices drop on your preferred dates. Free deal alerts from Grayson Starbuck, AI-curated cruise deals.',
+  description: 'Get notified when Disney cruise prices drop on your preferred dates. Free deal alerts from Dr. Grayson Starbuck, DPT — AI-curated cruise deals.',
 }
 
 const WHAT_YOU_GET = [
@@ -67,7 +67,7 @@ export default function DealAlertsPage() {
           </h1>
 
           <p className="text-lg md:text-xl text-blue-200 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Our AI monitors hundreds of Disney cruise sailings every day. When a price drops on your preferred dates, you hear about it first — directly from Grayson Starbuck.
+            Our AI monitors hundreds of Disney cruise sailings every day. When a price drops on your preferred dates, you hear about it first — directly from Dr. Grayson Starbuck, DPT.
           </p>
 
           <div className="max-w-lg mx-auto">
@@ -189,8 +189,8 @@ export default function DealAlertsPage() {
                 a: 'Yes. We earn money through travel booking commissions and affiliate links in some emails (always disclosed). The deal alerts themselves are completely free.',
               },
               {
-                q: 'Who is Grayson Starbuck?',
-                a: "Grayson is a Disney cruise specialist and travel advisor through Boardwalk Travel Agency. He built GatGrid because he was frustrated with how opaque Disney cruise pricing is — and now helps families book smarter.",
+                q: 'Who is Dr. Grayson Starbuck, DPT?',
+                a: "Grayson is a Doctor of Physical Therapy, Disney cruise specialist, and travel advisor through Boardwalk Travel Agency. He built GatGrid because he was frustrated with how opaque Disney cruise pricing is — and now helps families book smarter.",
               },
               {
                 q: 'Can I pick which ships or dates I want alerts for?',
