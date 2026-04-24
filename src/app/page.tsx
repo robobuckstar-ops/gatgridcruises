@@ -21,11 +21,13 @@ import { EmailSignup } from '@/components/ui/email-signup'
 import { GetQuoteCTA } from '@/components/get-quote-cta'
 import { HeroSearch } from '@/components/ui/hero-search'
 import { HomeDeals } from '@/components/ui/home-deals'
+import { FeaturedDealCard } from '@/components/ui/featured-deal-card'
 import {
   getBiggestPriceDrops,
   getShips,
   getSailings,
   getLastMinuteDeals,
+  getFeaturedDeal,
 } from '@/lib/data'
 
 export const metadata = {
@@ -45,6 +47,7 @@ export default async function Home() {
   const priceDrops = getBiggestPriceDrops()
   const ships = getShips()
   const lastMinuteDealsList = getLastMinuteDeals().slice(0, 3)
+  const featuredDeal = getFeaturedDeal()
 
   const priceDropsWithSnapshots = priceDrops.map((sailing) => {
     const drop = 'drop' in sailing ? (sailing as any).drop : 0
@@ -98,6 +101,15 @@ export default async function Home() {
           </div>
         </div>
       </section>
+
+      {/* Featured Deal */}
+      {featuredDeal && (
+        <section className="bg-white py-10 border-t border-slate-100">
+          <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+            <FeaturedDealCard sailing={featuredDeal} />
+          </div>
+        </section>
+      )}
 
       {/* Last-Minute Deals */}
       <section className="bg-gradient-to-br from-amber-50 to-yellow-50 py-16 md:py-20 border-t border-amber-100" aria-labelledby="last-minute-heading">

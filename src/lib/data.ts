@@ -66,6 +66,12 @@ export function getFeaturedSailings(): Sailing[] {
   return getSailings().filter(s => s.is_featured).slice(0, 12)
 }
 
+export function getFeaturedDeal(): Sailing | undefined {
+  return getSailings()
+    .filter(s => s.ship?.name.startsWith('Disney'))
+    .sort((a, b) => b.sailing_score - a.sailing_score)[0]
+}
+
 export function getBiggestPriceDrops(): Sailing[] {
   const allSailings = getSailings()
   return allSailings
