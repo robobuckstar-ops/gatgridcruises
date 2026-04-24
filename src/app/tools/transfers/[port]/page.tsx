@@ -23,7 +23,6 @@ export async function generateMetadata(
   }
 }
 
-export default async function PortTransfersPage({ params }: PageProps) {
 export default async function PortTransfersPage({ params }: { params: Promise<{ port: string }> }) {
   const { port: portSlug } = await params
   const port = getPortBySlug(portSlug)
