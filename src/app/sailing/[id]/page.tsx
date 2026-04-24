@@ -10,8 +10,34 @@ import { PriceChart } from '@/components/ui/price-chart'
 import { ScoreBadge } from '@/components/ui/score-badge'
 import { BuyWaitBadge } from '@/components/ui/buy-wait-badge'
 import { PriceTrend } from '@/components/ui/price-trend'
-import { Ship, Calendar, MapPin, Clock, DollarSign, Anchor, BedDouble, Car, Building2, ArrowRight, Check, X as XIcon, Info, TrendingDown, TrendingUp, ShoppingBag } from 'lucide-react'
+import { Ship, Calendar, MapPin, Clock, DollarSign, Anchor, BedDouble, Car, Building2, ArrowRight, Check, X as XIcon, Info, TrendingDown, TrendingUp, ShoppingBag, Flame } from 'lucide-react'
 import { BookingInquiryButton } from '@/components/ui/booking-inquiry-button'
+
+type AvailabilityStatus = 'available' | 'limited' | 'sold_out'
+
+function getCategoryAvailability(price: number | null | undefined, score: number, category: string): AvailabilityStatus {
+  if (!price) return 'sold_out'
+  const limitedThresholds: Record<string, number> = { inside: 80, oceanview: 74, verandah: 68, concierge: 62 }
+  return score >= (limitedThresholds[category] ?? 72) ? 'limited' : 'available'
+}
+
+function AvailabilityBadge({ status }: { status: AvailabilityStatus }) {
+  if (status === 'available') return (
+    <span className="inline-flex items-center gap-1 text-[10px] font-semibold px-1.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
+      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Available
+    </span>
+  )
+  if (status === 'limited') return (
+    <span className="inline-flex items-center gap-1 text-[10px] font-semibold px-1.5 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-200">
+      <span className="w-1.5 h-1.5 rounded-full bg-amber-500"></span>Limited
+    </span>
+  )
+  return (
+    <span className="inline-flex items-center gap-1 text-[10px] font-semibold px-1.5 py-0.5 rounded-full bg-red-50 text-red-600 border border-red-200">
+      <span className="w-1.5 h-1.5 rounded-full bg-red-500"></span>Sold Out
+    </span>
+  )
+}
 
 interface PageProps {
   params: Promise<{ id: string }>
@@ -38,6 +64,22 @@ export default async function SailingDetailPage({ params }: PageProps) {
   const staterooms = ship ? getStateroomsForShip(ship.id).slice(0, 5) : []
   const hotels = port ? getHotelsForPort(port.id).slice(0, 5) : []
   const transfers = port ? getTransfersForPort(port.id) : []
+
+  const stateroomCategories = [
+    { key: 'inside', label: 'Interior', price: sailing.current_inside_price },
+    { key: 'oceanview', label: 'Oceanview', price: sailing.current_oceanview_price },
+    { key: 'verandah', label: 'Verandah', price: sailing.current_verandah_price },
+    { key: 'concierge', label: 'Concierge', price: sailing.current_concierge_price },
+  ]
+  const categoryAvailabilities = stateroomCategories.map(cat => ({
+    ...cat,
+    status: getCategoryAvailability(cat.price, sailing.sailing_score, cat.key),
+  }))
+  const limitedOrSoldOutCount = categoryAvailabilities.filter(a => a.status !== 'available').length
+  const soldOutCount = categoryAvailabilities.filter(a => a.status === 'sold_out').length
+  const isSellingFast = limitedOrSoldOutCount >= 2
+  const showOnlyXRemaining = soldOutCount >= 3
+  const remainingCategories = categoryAvailabilities.filter(a => a.status !== 'sold_out').length
 
   // Calculate average price from snapshots
   const avgPrice = snapshots.length > 0
@@ -91,20 +133,33 @@ export default async function SailingDetailPage({ params }: PageProps) {
                 )}
               </div>
               <p className="text-xs text-slate-500 mb-3">per stateroom</p>
-              {/* Price by category */}
-              <div className="space-y-1.5 text-sm border-t border-blue-100 pt-3">
-                {sailing.current_inside_price && (
-                  <div className="flex justify-between"><span className="text-slate-600">Inside</span><span className="font-medium">{formatPrice(sailing.current_inside_price)}</span></div>
-                )}
-                {sailing.current_oceanview_price && (
-                  <div className="flex justify-between"><span className="text-slate-600">Oceanview</span><span className="font-medium">{formatPrice(sailing.current_oceanview_price)}</span></div>
-                )}
-                {sailing.current_verandah_price && (
-                  <div className="flex justify-between"><span className="text-slate-600">Verandah</span><span className="font-medium">{formatPrice(sailing.current_verandah_price)}</span></div>
-                )}
-                {sailing.current_concierge_price && (
-                  <div className="flex justify-between"><span className="text-slate-600">Concierge</span><span className="font-medium">{formatPrice(sailing.current_concierge_price)}</span></div>
-                )}
+              {/* Price by category with availability */}
+              {isSellingFast && (
+                <div className="flex items-center gap-1.5 mb-3 bg-orange-50 border border-orange-200 rounded-lg px-2.5 py-1.5">
+                  <Flame className="h-3.5 w-3.5 text-orange-500 flex-shrink-0" />
+                  <span className="text-xs font-bold text-orange-700">Selling Fast</span>
+                </div>
+              )}
+              {showOnlyXRemaining && (
+                <div className="flex items-center gap-1.5 mb-3 bg-red-50 border border-red-200 rounded-lg px-2.5 py-1.5">
+                  <Info className="h-3.5 w-3.5 text-red-500 flex-shrink-0" />
+                  <span className="text-xs font-semibold text-red-700">Only {remainingCategories} {remainingCategories === 1 ? 'category' : 'categories'} left</span>
+                </div>
+              )}
+              <div className="space-y-2 text-sm border-t border-blue-100 pt-3">
+                {categoryAvailabilities.map(cat => (
+                  <div key={cat.key} className="flex items-center justify-between gap-2">
+                    <div className="flex items-center gap-1.5 flex-wrap">
+                      <span className="text-slate-600">{cat.label}</span>
+                      <AvailabilityBadge status={cat.status} />
+                    </div>
+                    {cat.price ? (
+                      <span className="font-medium flex-shrink-0">{formatPrice(cat.price)}</span>
+                    ) : (
+                      <span className="text-xs text-slate-400 flex-shrink-0">—</span>
+                    )}
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -136,6 +191,44 @@ export default async function SailingDetailPage({ params }: PageProps) {
                 </div>
               </div>
             </div>
+
+            {/* Stateroom Availability */}
+            <section>
+              <h2 className="font-display text-2xl font-bold text-slate-900 mb-4">Stateroom Availability</h2>
+              {isSellingFast && (
+                <div className="flex items-center gap-3 mb-4 bg-orange-50 border border-orange-200 rounded-xl px-4 py-3">
+                  <Flame className="h-5 w-5 text-orange-500 flex-shrink-0" />
+                  <div>
+                    <p className="font-semibold text-orange-900 text-sm">This Sailing Is Selling Fast</p>
+                    <p className="text-xs text-orange-700 mt-0.5">Multiple stateroom categories have limited availability. Book soon to lock in your preferred room type.</p>
+                  </div>
+                </div>
+              )}
+              {showOnlyXRemaining && (
+                <div className="flex items-center gap-3 mb-4 bg-red-50 border border-red-100 rounded-xl px-4 py-3">
+                  <Info className="h-5 w-5 text-red-500 flex-shrink-0" />
+                  <p className="text-sm font-semibold text-red-800">
+                    Only {remainingCategories} {remainingCategories === 1 ? 'stateroom category' : 'stateroom categories'} remaining — most types are sold out.
+                  </p>
+                </div>
+              )}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {categoryAvailabilities.map(cat => (
+                  <div key={cat.key} className={`rounded-xl border p-4 text-center ${
+                    cat.status === 'available' ? 'bg-emerald-50 border-emerald-200' :
+                    cat.status === 'limited' ? 'bg-amber-50 border-amber-200' :
+                    'bg-red-50 border-red-200'
+                  }`}>
+                    <p className="text-xs font-semibold text-slate-700 mb-2">{cat.label}</p>
+                    {cat.price && <p className="text-sm font-bold text-slate-900 mb-2">{formatPrice(cat.price)}</p>}
+                    <AvailabilityBadge status={cat.status} />
+                  </div>
+                ))}
+              </div>
+              <p className="text-xs text-slate-400 mt-3">
+                Availability indicators are estimates based on current demand signals. Contact us to confirm actual availability before booking.
+              </p>
+            </section>
 
             {/* Price History Chart and Buy/Wait Badge */}
             <section>

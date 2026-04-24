@@ -15,6 +15,9 @@ import {
   Trophy,
   Bot,
   Gift,
+  ShieldCheck,
+  Anchor,
+  Star,
 } from 'lucide-react'
 import { SailingCard } from '@/components/ui/sailing-card'
 import { EmailSignup } from '@/components/ui/email-signup'
@@ -86,6 +89,30 @@ export default async function Home() {
             >
               Calculate Trip Cost
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Badges */}
+      <section className="bg-slate-800 border-y border-white/5 py-5">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
+            {([
+              { icon: ShieldCheck, text: 'Authorized Disney Vacation Planner', sub: 'via Boardwalk Travel' },
+              { icon: TrendingDown, text: 'Price Drop Protection Guarantee' },
+              { icon: Star, text: 'Personal Concierge Service' },
+              { icon: Anchor, text: 'Powered by Real Cruise Experience' },
+            ] as const).map(({ icon: Icon, text, sub }) => (
+              <div key={text} className="flex items-center gap-2.5">
+                <div className="w-8 h-8 rounded-full bg-[#D4AF37]/15 flex items-center justify-center flex-shrink-0">
+                  <Icon className="w-4 h-4 text-[#D4AF37]" />
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-white leading-tight">{text}</p>
+                  {sub && <p className="text-xs text-blue-400">{sub}</p>}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

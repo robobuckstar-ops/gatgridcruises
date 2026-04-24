@@ -394,6 +394,116 @@ export default function ConciergePage() {
         </div>
       </section>
 
+      {/* Price Drop Protection */}
+      <section className="py-16 md:py-24 bg-gradient-to-br from-slate-900 to-[#1E3A5F]">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 bg-[#D4AF37]/10 border border-[#D4AF37]/30 rounded-full px-4 py-1.5 mb-6">
+              <ShieldCheck className="w-3.5 h-3.5 text-[#D4AF37]" />
+              <span className="text-[#D4AF37] text-xs font-bold uppercase tracking-widest">Price Drop Guarantee</span>
+            </div>
+            <h2 className="font-fraunces text-3xl md:text-4xl font-bold text-white mb-4">
+              We Monitor Your Price Until Final Payment
+            </h2>
+            <p className="font-inter text-lg text-blue-200 max-w-2xl mx-auto leading-relaxed">
+              Disney doesn&rsquo;t offer automatic price adjustments — if the price drops, you have to cancel and rebook yourself. We watch your cruise fare from booking day to your final payment deadline so you never leave money on the table.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12">
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
+              <div className="w-10 h-10 rounded-full bg-[#D4AF37]/15 border border-[#D4AF37]/25 flex items-center justify-center mb-4">
+                <TrendingDown className="w-5 h-5 text-[#D4AF37]" />
+              </div>
+              <h3 className="font-fraunces text-base font-bold text-white mb-2">We Watch, You Relax</h3>
+              <p className="font-inter text-sm text-blue-200 leading-relaxed">
+                From the day you book, we track your cruise fare. If the price drops into your penalty-free window, we alert you immediately and handle the rebooking.
+              </p>
+            </div>
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
+              <div className="w-10 h-10 rounded-full bg-[#D4AF37]/15 border border-[#D4AF37]/25 flex items-center justify-center mb-4">
+                <RefreshCw className="w-5 h-5 text-[#D4AF37]" />
+              </div>
+              <h3 className="font-fraunces text-base font-bold text-white mb-2">Rebook at the Lower Rate</h3>
+              <p className="font-inter text-sm text-blue-200 leading-relaxed">
+                When a qualifying price drop is found, we cancel and rebook at the new price — same ship, same sailing, same stateroom category. Your OBC is preserved.
+              </p>
+            </div>
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
+              <div className="w-10 h-10 rounded-full bg-[#D4AF37]/15 border border-[#D4AF37]/25 flex items-center justify-center mb-4">
+                <CheckCircle className="w-5 h-5 text-[#D4AF37]" />
+              </div>
+              <h3 className="font-fraunces text-base font-bold text-white mb-2">Zero Risk, Pure Savings</h3>
+              <p className="font-inter text-sm text-blue-200 leading-relaxed">
+                Rebooking only happens inside the penalty-free window — no cancellation fees, no risk to your trip. Outside that window, we flag it for future awareness.
+              </p>
+            </div>
+          </div>
+
+          {/* Rebooking Windows */}
+          <div className="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 mb-10">
+            <h3 className="font-fraunces text-xl font-bold text-white text-center mb-6">Penalty-Free Rebooking Windows</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="bg-[#D4AF37]/10 border border-[#D4AF37]/20 rounded-xl p-5">
+                <div className="flex items-center gap-2 mb-3">
+                  <Clock className="w-4 h-4 text-[#D4AF37]" />
+                  <span className="text-[#D4AF37] text-xs font-bold uppercase tracking-wider">Short Cruises · 1–5 Nights</span>
+                </div>
+                <div className="flex items-end gap-2 mb-2">
+                  <span className="font-fraunces text-4xl font-bold text-white">90+</span>
+                  <span className="text-blue-200 text-sm mb-1">days before sailing</span>
+                </div>
+                <p className="font-inter text-xs text-blue-300 leading-relaxed">
+                  If you&rsquo;re 90+ days out from your short cruise, a price drop qualifies for a penalty-free rebook at the lower rate.
+                </p>
+              </div>
+              <div className="bg-[#D4AF37]/10 border border-[#D4AF37]/20 rounded-xl p-5">
+                <div className="flex items-center gap-2 mb-3">
+                  <Clock className="w-4 h-4 text-[#D4AF37]" />
+                  <span className="text-[#D4AF37] text-xs font-bold uppercase tracking-wider">Longer Cruises · 6+ Nights</span>
+                </div>
+                <div className="flex items-end gap-2 mb-2">
+                  <span className="font-fraunces text-4xl font-bold text-white">120+</span>
+                  <span className="text-blue-200 text-sm mb-1">days before sailing</span>
+                </div>
+                <p className="font-inter text-xs text-blue-300 leading-relaxed">
+                  For sailings 6 nights or longer, the safe zone is 120+ days out. We watch the price all the way up to that deadline.
+                </p>
+              </div>
+            </div>
+
+            {/* Simple timeline visual */}
+            <div className="mt-6 px-2">
+              <div className="relative h-2 bg-white/10 rounded-full overflow-hidden">
+                <div className="absolute left-0 top-0 bottom-0 w-[67%] bg-emerald-500/60 rounded-full" />
+                <div className="absolute left-[67%] top-0 bottom-0 right-0 bg-red-500/40 rounded-full" />
+              </div>
+              <div className="flex justify-between mt-2 text-xs text-blue-400">
+                <span>Booking day</span>
+                <span className="text-emerald-400 font-semibold">← Penalty-free window →</span>
+                <span>Sail date</span>
+              </div>
+            </div>
+
+            <p className="font-inter text-xs text-blue-400 text-center mt-5">
+              Disney Cruise Line cancellation policies vary and are subject to change. We confirm the exact window for your specific booking.
+            </p>
+          </div>
+
+          <div className="text-center">
+            <p className="font-inter text-sm text-blue-300 mb-5">
+              Price Drop Protection is included free when you book through GatGrid via Boardwalk Travel.
+            </p>
+            <a
+              href="mailto:bookings@gatgridcruises.com?subject=Disney%20Cruise%20Inquiry%20-%20Price%20Drop%20Protection"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#D4AF37] text-[#1E3A5F] font-bold rounded-xl hover:bg-yellow-300 transition-colors shadow-lg text-base"
+            >
+              Book Through GatGrid <ArrowRight className="w-4 h-4" />
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Social Proof */}
       <section className="py-16 md:py-20 bg-[#1E3A5F]">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
