@@ -272,7 +272,7 @@ export default async function Home() {
             <div className="w-full lg:w-auto lg:min-w-[400px]">
               <div className="bg-white/10 border border-white/20 rounded-2xl p-6 sm:p-8">
                 <p className="text-[#D4AF37] font-semibold text-sm mb-1">Free deal alerts</p>
-                <p className="text-white font-fraunces text-xl font-bold mb-5">Join thousands of Disney cruise fans</p>
+                <p className="text-white font-fraunces text-xl font-bold mb-5">Join Our Disney Cruise Community</p>
                 <EmailSignup />
                 <p className="text-blue-300 text-xs mt-3 text-center">
                   No spam. Unsubscribe anytime. Sent by Grayson, not a bot.
