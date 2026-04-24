@@ -209,6 +209,51 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* Concierge Service Promo */}
+      <section className="bg-gradient-to-b from-slate-900 to-[#1E3A5F] py-16 md:py-20" aria-labelledby="concierge-heading">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <div className="inline-flex items-center gap-2 bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-[#D4AF37] text-sm font-semibold px-4 py-1.5 rounded-full mb-5 uppercase tracking-widest">
+              <Trophy className="w-3.5 h-3.5" aria-hidden="true" />
+              For GatGrid Clients
+            </div>
+            <h2 id="concierge-heading" className="font-fraunces text-3xl md:text-4xl font-bold text-white mb-4">
+              Your Personal Cruise Concierge
+            </h2>
+            <p className="text-blue-200 text-lg max-w-2xl mx-auto">
+              Book through GatGrid and you get more than a great deal — a dedicated guide for every step of your trip, at no extra cost.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
+            {[
+              { icon: Clock, title: 'Milestone Reminders', desc: 'We ping you when booking windows, payment deadlines, and activity reservations open — so you never miss a beat.' },
+              { icon: Plane, title: 'Flight Monitoring', desc: 'We watch your flights for price drops and alert you to schedule changes before they cause trip-day chaos.' },
+              { icon: MapPin, title: 'Personal Prep Guidance', desc: 'Port tips, what to pack, when to arrive — tailored advice specific to your ship, dates, and ports.' },
+              { icon: Gift, title: 'Free Onboard Credit', desc: 'Every booking includes up to $400 in OBC added to your stateroom account. Spend it on spa, dining, or excursions.' },
+            ].map(({ icon: Icon, title, desc }) => (
+              <div key={title} className="bg-white/5 border border-white/10 rounded-xl p-5 hover:bg-white/10 transition-colors">
+                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-[#D4AF37]/15 border border-[#D4AF37]/25 mb-4">
+                  <Icon className="w-5 h-5 text-[#D4AF37]" aria-hidden="true" />
+                </div>
+                <h3 className="font-fraunces text-base font-bold text-white mb-2">{title}</h3>
+                <p className="text-blue-200 text-sm leading-relaxed">{desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Link
+              href="/concierge"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-lg bg-[#D4AF37] text-[#1E3A5F] font-bold hover:bg-yellow-300 transition-colors shadow-lg shadow-yellow-900/20"
+            >
+              Learn About Our Concierge Service
+              <ArrowRight className="w-4 h-4" aria-hidden="true" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* OBC Value Proposition */}
       <section className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] py-14 md:py-18" aria-labelledby="obc-heading">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
