@@ -66,6 +66,42 @@ export function getFeaturedSailings(): Sailing[] {
   return getSailings().filter(s => s.is_featured).slice(0, 12)
 }
 
+export interface FeaturedDealResult {
+  sailing: Sailing
+  historicalAvgPrice: number | null
+  savingsAmount: number | null
+  savingsPct: number | null
+}
+
+export function getFeaturedDeal(): FeaturedDealResult | null {
+  const allSailings = getSailings()
+  if (allSailings.length === 0) return null
+
+  const sorted = [...allSailings].sort((a, b) => (b.sailing_score ?? 0) - (a.sailing_score ?? 0))
+  const best = sorted[0]
+
+  const snapshots = getSnapshotsForSailing(best.id)
+  let historicalAvgPrice: number | null = null
+  let savingsAmount: number | null = null
+  let savingsPct: number | null = null
+
+  if (snapshots.length >= 2) {
+    const avg = snapshots.reduce((sum, s) => sum + s.lowest_price, 0) / snapshots.length
+    if (avg > best.current_lowest_price * 1.05) {
+      historicalAvgPrice = Math.round(avg)
+      savingsAmount = Math.round(avg - best.current_lowest_price)
+      savingsPct = Math.round(((avg - best.current_lowest_price) / avg) * 100)
+    }
+  }
+
+  return {
+    sailing: { ...best, price_snapshots: snapshots },
+    historicalAvgPrice,
+    savingsAmount,
+    savingsPct,
+  }
+}
+
 export function getBiggestPriceDrops(): Sailing[] {
   const allSailings = getSailings()
   return allSailings
