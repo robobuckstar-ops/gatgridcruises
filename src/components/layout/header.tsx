@@ -153,13 +153,21 @@ export function Header() {
             </span>
           </Link>
 
-          {/* Get a Quote CTA — desktop */}
-          <Link
-            href="/book"
-            className="hidden md:inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#D4AF37] text-[#1E3A5F] text-sm font-bold hover:bg-yellow-300 transition-colors duration-200 shadow-sm"
-          >
-            Get a Quote
-          </Link>
+          {/* Desktop CTAs */}
+          <div className="hidden md:flex items-center gap-2">
+            <Link
+              href="/my-trip"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-navy text-navy text-sm font-semibold hover:bg-navy hover:text-white transition-colors duration-200"
+            >
+              ⚓ My Trip
+            </Link>
+            <Link
+              href="/book"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#D4AF37] text-[#1E3A5F] text-sm font-bold hover:bg-yellow-300 transition-colors duration-200 shadow-sm"
+            >
+              Get a Quote
+            </Link>
+          </div>
 
           {/* Desktop nav */}
           <nav aria-label="Main navigation" className="hidden md:flex items-center gap-1">
@@ -254,9 +262,16 @@ export function Header() {
             <Link
               href="/book"
               onClick={() => { setMobileOpen(false); announceMenuState(false) }}
-              className="block px-3 py-2.5 text-base font-bold rounded-lg bg-[#D4AF37] text-[#1E3A5F] text-center mb-3"
+              className="block px-3 py-2.5 text-base font-bold rounded-lg bg-[#D4AF37] text-[#1E3A5F] text-center mb-2"
             >
               Get a Free Quote
+            </Link>
+            <Link
+              href="/my-trip"
+              onClick={() => { setMobileOpen(false); announceMenuState(false) }}
+              className="block px-3 py-2.5 text-base font-semibold rounded-lg border-2 border-navy text-navy text-center mb-3"
+            >
+              ⚓ My Trip
             </Link>
 
             {navItems.map((item) => (
