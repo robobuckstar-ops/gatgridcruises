@@ -83,7 +83,9 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
 
     switch (sortBy) {
       case 'score':
-        results.sort((a, b) => b.sailing_score - a.sailing_score)
+        results.sort((a, b) =>
+          calculateDealScore(b, b.price_snapshots).score - calculateDealScore(a, a.price_snapshots).score
+        )
         break
       case 'price_asc':
         results.sort((a, b) => a.current_lowest_price - b.current_lowest_price)
@@ -205,7 +207,7 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
               onChange={e => setSortBy(e.target.value as SortOption)}
               className="px-3 py-2.5 border border-slate-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-200"
             >
-              <option value="score">Deal Score</option>
+              <option value="score">Best Deal Score</option>
               <option value="price_per_night">$/Person/Night</option>
               <option value="price_asc">Price: Low → High</option>
               <option value="price_desc">Price: High → Low</option>

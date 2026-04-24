@@ -72,6 +72,7 @@ export interface Sailing {
   deal_recommendation?: 'strong-buy' | 'buy' | 'fair' | 'wait' | 'overpriced'
   deal_label?: string
   region?: 'caribbean' | 'bahamas' | 'alaska' | 'pacific' | 'europe' | 'other'
+  theme?: 'halloween' | 'merrytime' | 'starwars' | 'marvel'
   // Joined fields
   ship?: Ship
   departure_port?: Port

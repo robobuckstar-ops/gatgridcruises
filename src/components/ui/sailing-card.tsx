@@ -52,11 +52,25 @@ export function SailingCard({ sailing, percentBelow }: SailingCardProps) {
     overpriced: 'Skip',
   }
 
+  const themeBadge = sailing.theme ? {
+    halloween: { emoji: '🎃', label: 'Halloween on the High Seas', className: 'bg-orange-100 text-orange-800 border-orange-300' },
+    merrytime:  { emoji: '🎄', label: 'Very Merrytime',           className: 'bg-red-100 text-red-800 border-red-300' },
+    starwars:   { emoji: '⭐', label: 'Star Wars Day at Sea',      className: 'bg-blue-100 text-blue-800 border-blue-300' },
+    marvel:     { emoji: '🦸', label: 'Marvel Day at Sea',         className: 'bg-red-100 text-red-900 border-red-400' },
+  }[sailing.theme] : null
+
   return (
     <Link
       href={`/sailing/${sailing.id}`}
-      className="group block bg-white rounded-xl border border-slate-200 hover:border-blue-300 hover:shadow-lg transition-all duration-200 overflow-hidden"
+      className="group relative block bg-white rounded-xl border border-slate-200 hover:border-blue-300 hover:shadow-lg transition-all duration-200 overflow-hidden"
     >
+      {/* Theme badge — top-right corner pill */}
+      {themeBadge && (
+        <span className={`absolute top-3 right-3 z-10 inline-flex items-center gap-1 px-2 py-0.5 rounded-full border text-[10px] font-semibold whitespace-nowrap shadow-sm ${themeBadge.className}`}>
+          {themeBadge.emoji} {themeBadge.label}
+        </span>
+      )}
+
       {/* Ship color bar at top */}
       <div className="h-1.5 bg-gradient-to-r from-blue-600 to-blue-500 group-hover:from-[#D4AF37] group-hover:to-amber-400 transition-all duration-200" />
 
