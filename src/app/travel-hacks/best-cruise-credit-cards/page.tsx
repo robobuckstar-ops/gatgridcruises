@@ -1,115 +1,5 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowLeft, CreditCard, Star, CheckCircle } from 'lucide-react'
-
-interface CardProps {
-  rank: number
-  name: string
-  issuer: string
-  referralUrl: string
-  signUpBonus: string
-  bonusSpend: string
-  annualFee: string
-  rewardRate: string
-  keyBenefits: string[]
-  cruisePros: string[]
-  bestFor: string
-  badge?: string
-}
-
-function CreditCardCard({
-  card,
-}: {
-  card: CardProps
-}) {
-  return (
-    <div className="border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
-      <div className="bg-gradient-to-r from-slate-800 to-slate-700 px-6 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <div className="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center text-slate-900 font-bold text-sm">
-            {card.rank}
-          </div>
-          <div>
-            <p className="text-white font-bold">{card.name}</p>
-            <p className="text-slate-300 text-xs">{card.issuer}</p>
-          </div>
-        </div>
-        {card.badge && (
-          <span className="bg-yellow-400 text-slate-900 text-xs font-bold px-3 py-1 rounded-full">
-            {card.badge}
-          </span>
-        )}
-      </div>
-
-      <div className="p-6">
-        <div className="grid sm:grid-cols-3 gap-4 mb-6">
-          <div className="bg-green-50 rounded-lg p-3 text-center">
-            <p className="text-xs text-slate-500 mb-1">Sign-Up Bonus</p>
-            <p className="font-bold text-green-700 text-sm">{card.signUpBonus}</p>
-          </div>
-          <div className="bg-blue-50 rounded-lg p-3 text-center">
-            <p className="text-xs text-slate-500 mb-1">Annual Fee</p>
-            <p className="font-bold text-blue-700 text-sm">{card.annualFee}</p>
-          </div>
-          <div className="bg-purple-50 rounded-lg p-3 text-center">
-            <p className="text-xs text-slate-500 mb-1">Earn Rate</p>
-            <p className="font-bold text-purple-700 text-sm">{card.rewardRate}</p>
-          </div>
-        </div>
-
-        <div className="mb-4">
-          <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">
-            Bonus Requirement
-          </p>
-          <p className="text-slate-700 text-sm">{card.bonusSpend}</p>
-        </div>
-
-        <div className="mb-4">
-          <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">
-            Key Benefits
-          </p>
-          <ul className="space-y-1.5">
-            {card.keyBenefits.map((b) => (
-              <li key={b} className="flex items-start gap-2 text-sm text-slate-700">
-                <CheckCircle className="h-4 w-4 text-emerald-500 flex-shrink-0 mt-0.5" />
-                {b}
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="mb-6">
-          <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">
-            Why It Works for Disney Cruises
-          </p>
-          <ul className="space-y-1.5">
-            {card.cruisePros.map((p) => (
-              <li key={p} className="flex items-start gap-2 text-sm text-slate-700">
-                <Star className="h-3.5 w-3.5 text-yellow-500 flex-shrink-0 mt-0.5" />
-                {p}
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="flex items-center justify-between gap-4">
-          <p className="text-xs text-slate-500">
-            <strong className="text-slate-700">Best for:</strong> {card.bestFor}
-          </p>
-          <a
-            href={card.referralUrl}
-            target="_blank"
-            rel="noopener noreferrer sponsored"
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition text-sm whitespace-nowrap"
-          >
-            View Deal
-            <span aria-hidden>→</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  )
-}
 
 export const metadata: Metadata = {
   title: 'Best Business Credit Cards for Disney Cruises 2025 | GatGridCruises',
@@ -204,6 +94,16 @@ const badgeColors: Record<string, string> = {
   purple: 'bg-purple-100 text-purple-700',
 }
 
+const comparisonRows = [
+  { feature: 'Annual Fee', chase: '$95', capOne: '$150 (refunded at $150K+ spend)', amex: '$695' },
+  { feature: 'Sign-Up Bonus', chase: '90,000 UR pts (~$1,125)', capOne: 'Up to $1,000 cash', amex: '150,000 MR pts' },
+  { feature: 'Cruise Earning Rate', chase: '3x on travel', capOne: '2% flat', amex: '1.5x on $5K+ charges' },
+  { feature: 'Trip Cancellation Coverage', chase: 'Up to $5,000/trip', capOne: 'Included', amex: 'Included' },
+  { feature: 'No Foreign Transaction Fee', chase: '✓', capOne: '✓', amex: '✓' },
+  { feature: 'Lounge Access', chase: '—', capOne: '—', amex: 'Priority Pass + Centurion' },
+  { feature: 'Transfer Partners', chase: 'United, Hyatt, SW…', capOne: '—', amex: 'Delta, Marriott…' },
+]
+
 export default function BestCruiseCreditCardsPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
@@ -253,12 +153,6 @@ export default function BestCruiseCreditCardsPage() {
           </p>
         </section>
 
-        {/* Card listings */}
-        <section className="space-y-8 mb-14">
-          {cards.map((card) => (
-            <CreditCardCard key={card.name} card={card} />
-          ))}
-        </section>
 
         {/* Comparison table */}
         <section className="mb-14">
@@ -333,7 +227,7 @@ export default function BestCruiseCreditCardsPage() {
                 {card.name}
               </p>
               <p className="text-blue-600 group-hover:text-white font-semibold text-lg">
-                {card.signUpBonus.split(' ').slice(0, 2).join(' ')}
+                {card.signupBonus.split(' ').slice(0, 2).join(' ')}
               </p>
               <p className="text-blue-700 group-hover:text-blue-100 text-xs mt-2">
                 View Deal →
