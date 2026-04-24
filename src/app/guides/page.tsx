@@ -17,6 +17,14 @@ export const metadata: Metadata = {
 
 const guides = [
   {
+    slug: 'cruise-countdown',
+    title: 'Disney Cruise Countdown Timeline: Every Deadline & Booking Window',
+    description:
+      'The complete interactive countdown from booking to post-cruise — every Castaway Club booking window, specialty dining deadline, check-in date, and pro tip from Grayson. Includes timezone alerts so you never miss midnight ET.',
+    category: 'Planning',
+    readTime: '15 min read',
+  },
+  {
     slug: 'packing-gear',
     title: 'The Ultimate Disney Cruise Packing List (With Our Top Picks)',
     description: 'The 30 Amazon picks that veteran Disney cruisers swear by — from magnetic hooks and non-surge power strips to reef-safe sunscreen and Sea-Band wristbands.',
