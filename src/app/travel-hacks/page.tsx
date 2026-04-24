@@ -101,7 +101,7 @@ export default function TravelHacksHub() {
           </p>
 
           {/* Quick Stats Banner */}
-          <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl p-6 text-white max-w-2xl">
+          <div className="bg-[#1E3A5F] border border-[#D4AF37]/30 rounded-xl p-6 text-white max-w-2xl">
             <div className="flex items-center gap-3 mb-2">
               <TrendingUp className="h-5 w-5" aria-hidden="true" />
               <p className="text-sm font-semibold">Average Savings</p>
@@ -206,49 +206,24 @@ export default function TravelHacksHub() {
         </div>
       </section>
 
-      {/* Amex Business Platinum Spotlight */}
-      <section className="bg-gradient-to-br from-slate-900 to-slate-800 text-white py-16 border-y border-slate-700">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-start gap-8">
-            <div className="flex-1">
-              <div className="inline-flex items-center gap-2 bg-yellow-400/20 border border-yellow-400/30 text-yellow-300 text-xs font-semibold px-3 py-1 rounded-full mb-4">
-                ★ Editor's Pick for Cruise Travelers
-              </div>
-              <h2 className="text-2xl md:text-3xl font-fraunces font-bold mb-4">
-                Amex Business Platinum: The Premium Cruise Card
-              </h2>
-              <p className="text-slate-300 mb-6 leading-relaxed">
-                If you're spending $15K+ in the next 3 months, the Amex Business Platinum's
-                150,000-point bonus is worth $1,500+ — enough to cover flights to your cruise port
-                and then some.
-              </p>
-              <ul className="space-y-3 mb-8">
-                {[
-                  { label: '5x points on flights booked directly', icon: '✈️' },
-                  { label: 'Centurion Lounge access (best in the business)', icon: '🍸' },
-                  { label: 'Automatic trip cancellation & delay coverage', icon: '🛡️' },
-                  { label: '150,000 welcome points ($1,500+ value)', icon: '🎁' },
-                ].map((item) => (
-                  <li key={item.label} className="flex items-center gap-3 text-slate-200">
-                    <span className="text-lg">{item.icon}</span>
-                    <span className="text-sm">{item.label}</span>
-                  </li>
-                ))}
-              </ul>
-              <a
-                href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-                target="_blank"
-                rel="noopener noreferrer sponsored"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#D4AF37] text-slate-900 font-semibold rounded-lg hover:bg-yellow-300 transition-colors duration-200"
-              >
-                Check Offer on Amex →
-              </a>
-              <p className="text-xs text-slate-500 mt-3">
-                Referral link — we may earn a commission at no cost to you.
-                Annual fee: $695.
-              </p>
-            </div>
+      {/* Planning CTA */}
+      <section className="bg-[#1E3A5F] text-white py-12 border-y border-[#D4AF37]/20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex-1">
+            <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-wide mb-2">Free Service · No Obligation</p>
+            <h2 className="text-2xl md:text-3xl font-fraunces font-bold mb-3">
+              Ready to Start Planning Your Cruise?
+            </h2>
+            <p className="text-blue-200 leading-relaxed max-w-xl">
+              Our specialists help you apply these savings strategies and find the best available pricing on Disney Cruise Line sailings.
+            </p>
           </div>
+          <Link
+            href="/concierge"
+            className="flex-shrink-0 inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#D4AF37] text-[#1E3A5F] font-semibold rounded-lg hover:bg-yellow-300 transition-colors duration-200 whitespace-nowrap"
+          >
+            Start Planning Your Cruise →
+          </Link>
         </div>
       </section>
 
@@ -279,7 +254,7 @@ export default function TravelHacksHub() {
       </section>
 
       {/* Key Principles */}
-      <section className="bg-indigo-50 py-16 border-t border-slate-200">
+      <section className="bg-slate-50 py-16 border-t border-slate-200">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-fraunces font-bold text-slate-900 mb-12">
             Key Principles
@@ -323,16 +298,16 @@ export default function TravelHacksHub() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-16">
+      <section className="bg-[#1E3A5F] text-white py-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-fraunces font-bold mb-4">Ready to Save on Your Cruise?</h2>
-          <p className="text-blue-100 mb-8 text-lg">
+          <p className="text-blue-200 mb-8 text-lg">
             Dive into any of our five strategy guides to start building your rewards plan.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/travel-hacks/fly-free-to-cruise-port"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors duration-200"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#D4AF37] text-[#1E3A5F] font-semibold rounded-lg hover:bg-yellow-300 transition-colors duration-200"
             >
               Start Reading
               <ArrowRight className="h-5 w-5" />

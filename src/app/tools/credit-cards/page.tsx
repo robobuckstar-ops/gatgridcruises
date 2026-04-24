@@ -12,16 +12,16 @@ export default function CreditCardsPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-blue-50 to-indigo-50 py-16 border-b border-slate-200">
+      <section className="bg-gradient-to-br from-[#1E3A5F] to-[#2a4f7a] py-16 border-b border-[#D4AF37]/20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 bg-[#D4AF37]/20 text-[#8B6914] px-4 py-2 rounded-full text-sm font-semibold mb-4">
+          <div className="inline-flex items-center gap-2 bg-[#D4AF37]/20 text-[#D4AF37] px-4 py-2 rounded-full text-sm font-semibold mb-4">
             <CreditCard className="w-4 h-4" aria-hidden="true" />
             Travel Hack
           </div>
-          <h1 className="font-fraunces text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+          <h1 className="font-fraunces text-4xl md:text-5xl font-bold text-white mb-4">
             The Disney Cruise Wallet
           </h1>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+          <p className="text-xl text-blue-200 max-w-2xl mx-auto">
             The 3-card strategy that pays for your flights, covers your trip insurance, and earns
             points toward your next cruise — automatically.
           </p>
@@ -130,17 +130,12 @@ export default function CreditCardsPage() {
                 </div>
               </div>
             </div>
-            <a
-              href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
+            <Link
+              href="/concierge"
               className="inline-flex items-center gap-2 bg-[#D4AF37] text-[#1E3A5F] font-bold px-6 py-3 rounded-lg hover:bg-yellow-300 transition-colors"
             >
-              Apply for Amex Business Platinum <ArrowRight className="w-4 h-4" />
-            </a>
-            <p className="text-xs text-slate-400 mt-2">
-              Affiliate link — we may earn a commission at no cost to you.
-            </p>
+              Start Planning Your Cruise <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
 
@@ -199,17 +194,12 @@ export default function CreditCardsPage() {
                 </div>
               </div>
             </div>
-            <a
-              href="https://www.referyourchasecard.com/226m/6ZT33F9TOQ"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
-              className="inline-flex items-center gap-2 bg-blue-600 text-white font-bold px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+            <Link
+              href="/concierge"
+              className="inline-flex items-center gap-2 bg-[#1E3A5F] text-[#D4AF37] font-bold px-6 py-3 rounded-lg hover:bg-[#2a4f7a] transition-colors"
             >
-              Apply for Southwest Card <ArrowRight className="w-4 h-4" />
-            </a>
-            <p className="text-xs text-slate-400 mt-2">
-              Affiliate link — we may earn a commission at no cost to you.
-            </p>
+              Start Planning Your Cruise <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
 
@@ -267,17 +257,12 @@ export default function CreditCardsPage() {
                 </div>
               </div>
             </div>
-            <a
-              href="https://i.capitalone.com/JKlfRwN3f"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
-              className="inline-flex items-center gap-2 bg-emerald-700 text-white font-bold px-6 py-3 rounded-lg hover:bg-emerald-800 transition-colors"
+            <Link
+              href="/concierge"
+              className="inline-flex items-center gap-2 bg-[#1E3A5F] text-[#D4AF37] font-bold px-6 py-3 rounded-lg hover:bg-[#2a4f7a] transition-colors"
             >
-              Apply for Capital One Spark <ArrowRight className="w-4 h-4" />
-            </a>
-            <p className="text-xs text-slate-400 mt-2">
-              Affiliate link — we may earn a commission at no cost to you.
-            </p>
+              Start Planning Your Cruise <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
 
@@ -341,20 +326,19 @@ export default function CreditCardsPage() {
       </section>
 
       {/* Book CTA */}
-      <section className="bg-gradient-to-br from-blue-50 to-indigo-50 py-12 border-t border-slate-200">
+      <section className="bg-[#1E3A5F] py-12 border-t border-[#D4AF37]/20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-fraunces text-2xl font-bold text-slate-900 mb-3">
-            Ready to Book Your Disney Cruise?
+          <h2 className="font-fraunces text-2xl font-bold text-white mb-3">
+            Ready to Start Planning Your Disney Cruise?
           </h2>
-          <p className="text-slate-600 mb-6">
-            Get a free quote from our licensed travel advisors — they know how to stack these
-            perks for maximum value.
+          <p className="text-blue-200 mb-6">
+            Our specialists help you apply these strategies and find the best available pricing — free service, no obligation.
           </p>
           <Link
-            href="/book"
+            href="/concierge"
             className="inline-flex items-center gap-2 bg-[#D4AF37] text-[#1E3A5F] font-bold px-8 py-3 rounded-lg hover:bg-yellow-300 transition-colors"
           >
-            Get a Free Quote <ArrowRight className="w-4 h-4" />
+            Start Planning Your Cruise <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </section>

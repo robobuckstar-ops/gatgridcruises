@@ -213,27 +213,21 @@ export default function BestCruiseCreditCardsPage() {
           </p>
         </section>
 
-        {/* CTAs */}
-        <section className="grid sm:grid-cols-3 gap-4 mb-14">
-          {cards.map((card) => (
-            <a
-              key={card.name}
-              href={card.referralUrl}
-              target="_blank"
-              rel="noopener noreferrer sponsored"
-              className="block text-center p-5 border-2 border-blue-600 rounded-xl hover:bg-blue-600 hover:text-white transition group"
+        {/* CTA */}
+        <section className="mb-14">
+          <div className="bg-[#1E3A5F] rounded-xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+              <p className="text-[#D4AF37] text-sm font-semibold uppercase tracking-wide mb-1">Ready to Book?</p>
+              <p className="text-white font-bold text-lg">Start Planning Your Cruise</p>
+              <p className="text-blue-200 text-sm mt-1">Our specialists help you find the best pricing and availability — free service.</p>
+            </div>
+            <Link
+              href="/concierge"
+              className="flex-shrink-0 inline-flex items-center gap-2 bg-[#D4AF37] text-[#1E3A5F] font-bold px-6 py-3 rounded-lg hover:bg-yellow-300 transition-colors whitespace-nowrap"
             >
-              <p className="font-bold text-slate-900 group-hover:text-white text-sm mb-1">
-                {card.name}
-              </p>
-              <p className="text-blue-600 group-hover:text-white font-semibold text-lg">
-                {card.signupBonus.split(' ').slice(0, 2).join(' ')}
-              </p>
-              <p className="text-blue-700 group-hover:text-blue-100 text-xs mt-2">
-                View Deal →
-              </p>
-            </a>
-          ))}
+              Start Planning →
+            </Link>
+          </div>
         </section>
 
         {/* Related guides */}
@@ -299,14 +293,12 @@ export default function BestCruiseCreditCardsPage() {
                     <h2 className="font-display text-2xl font-bold text-slate-900">{card.name}</h2>
                     <p className="text-slate-500 text-sm mt-1">Annual fee: <span className="font-semibold text-slate-700">{card.annualFee}</span></p>
                   </div>
-                  <a
-                    href={card.referralUrl}
-                    target="_blank"
-                    rel="noopener noreferrer nofollow"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm transition-colors whitespace-nowrap"
+                  <Link
+                    href="/concierge"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#1E3A5F] hover:bg-[#2a4f7a] text-[#D4AF37] font-semibold text-sm transition-colors whitespace-nowrap"
                   >
-                    Check Current Offer →
-                  </a>
+                    Start Planning →
+                  </Link>
                 </div>
 
                 {/* Signup bonus */}
@@ -367,17 +359,12 @@ export default function BestCruiseCreditCardsPage() {
 
               {/* CTA */}
               <div className="px-6 pb-6">
-                <a
-                  href={card.referralUrl}
-                  target="_blank"
-                  rel="noopener noreferrer nofollow"
-                  className="block w-full text-center py-3 rounded-lg bg-slate-900 hover:bg-slate-700 text-white font-semibold transition-colors"
+                <Link
+                  href="/concierge"
+                  className="block w-full text-center py-3 rounded-lg bg-[#D4AF37] hover:bg-yellow-300 text-[#1E3A5F] font-semibold transition-colors"
                 >
-                  Apply for {card.name} →
-                </a>
-                <p className="text-xs text-slate-400 text-center mt-2">
-                  Affiliate link — we may earn a commission at no cost to you.
-                </p>
+                  Start Planning Your Cruise →
+                </Link>
               </div>
             </section>
           ))}

@@ -27,39 +27,39 @@ export default function CruisePortLoungeAccess() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-blue-50 to-indigo-50 py-12">
+      <section className="bg-gradient-to-br from-[#1E3A5F] to-[#2a4f7a] py-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
             href="/travel-hacks"
-            className="inline-flex items-center gap-1 text-blue-600 hover:text-blue-700 text-sm font-medium mb-6"
+            className="inline-flex items-center gap-1 text-[#D4AF37] hover:text-yellow-300 text-sm font-medium mb-6"
           >
             <ArrowLeft className="h-4 w-4" />
             Back to Travel Hacks
           </Link>
 
           <div className="flex items-center gap-2 mb-4">
-            <Tag className="h-5 w-5 text-blue-600" />
-            <span className="text-sm font-semibold text-blue-700 uppercase tracking-wider">
+            <Tag className="h-5 w-5 text-[#D4AF37]" />
+            <span className="text-sm font-semibold text-[#D4AF37] uppercase tracking-wider">
               Travel Hacks
             </span>
           </div>
 
-          <h1 className="text-4xl md:text-5xl font-fraunces font-bold text-slate-900 mb-4">
+          <h1 className="text-4xl md:text-5xl font-fraunces font-bold text-white mb-4">
             Cruise Port Lounge Access
           </h1>
 
-          <p className="text-lg text-slate-600 mb-6">
+          <p className="text-lg text-blue-200 mb-6">
             Most cruisers wait in airport terminals. With the right credit card, you can access
             premium lounges at major cruise ports—free drinks, meals, Wi-Fi, and a quiet place to
             relax before boarding.
           </p>
 
           <div className="flex flex-wrap gap-4 text-sm">
-            <div className="flex items-center gap-2 text-slate-600">
+            <div className="flex items-center gap-2 text-blue-300">
               <Clock className="h-4 w-4" />
               <span>4 min read</span>
             </div>
-            <div className="flex items-center gap-2 text-emerald-600 font-semibold">
+            <div className="flex items-center gap-2 text-[#D4AF37] font-semibold">
               <span>💰</span>
               <span>Save up to $200</span>
             </div>

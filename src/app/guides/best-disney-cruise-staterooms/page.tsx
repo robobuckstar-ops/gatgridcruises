@@ -19,11 +19,11 @@ export default function BestDisneyCruiseStateroomsGuide() {
             <Link href="/" className="text-blue-600 hover:underline text-sm">
               Home
             </Link>
-            <span className="text-white mx-2">/</span>
+            <span className="text-slate-400 mx-2">/</span>
             <Link href="/guides" className="text-blue-600 hover:underline text-sm">
               Guides
             </Link>
-            <span className="text-white mx-2">/</span>
+            <span className="text-slate-400 mx-2">/</span>
             <span className="text-gray-300 text-sm">Best Disney Cruise Staterooms</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-fraunces font-bold mb-4">
@@ -34,22 +34,6 @@ export default function BestDisneyCruiseStateroomsGuide() {
           </p>
         </div>
       </section>
-
-      {/* Ad Slot 1 */}
-      <a
-              href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
-              className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow"
-            >
-              <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4 flex items-center justify-between gap-4">
-                <div>
-                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Earn 150K+ Membership Rewards Points</p>
-                  <p className="text-blue-200 text-sm mt-0.5">Enough for your next Disney cruise upgrade — Amex Business Platinum</p>
-                </div>
-                <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
-              </div>
-            </a>
 
       {/* Main Content */}
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -65,22 +49,6 @@ export default function BestDisneyCruiseStateroomsGuide() {
           </p>
         </section>
 
-        {/* Ad Slot 2 */}
-        <a
-              href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
-              className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow"
-            >
-              <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4 flex items-center justify-between gap-4">
-                <div>
-                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Earn 150K+ Membership Rewards Points</p>
-                  <p className="text-blue-200 text-sm mt-0.5">Enough for your next Disney cruise upgrade — Amex Business Platinum</p>
-                </div>
-                <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
-              </div>
-            </a>
-  
         <section className="mb-12">
           <h2 className="text-3xl font-fraunces font-bold text-slate-900 mb-6">
             Inside Cabins (Categories 11A, 11B, 11C)
@@ -166,22 +134,6 @@ export default function BestDisneyCruiseStateroomsGuide() {
           </div>
         </section>
 
-        {/* Ad Slot 3 */}
-        <a
-              href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
-              className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow"
-            >
-              <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4 flex items-center justify-between gap-4">
-                <div>
-                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Earn 150K+ Membership Rewards Points</p>
-                  <p className="text-blue-200 text-sm mt-0.5">Enough for your next Disney cruise upgrade — Amex Business Platinum</p>
-                </div>
-                <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
-              </div>
-            </a>
-  
         <section className="mb-12">
           <h2 className="text-3xl font-fraunces font-bold text-slate-900 mb-6">
             Verandah Cabins (Categories 4A-7A)
@@ -343,22 +295,6 @@ export default function BestDisneyCruiseStateroomsGuide() {
           </div>
         </section>
 
-        {/* Ad Slot 4 */}
-        <a
-              href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
-              className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow"
-            >
-              <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4 flex items-center justify-between gap-4">
-                <div>
-                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Earn 150K+ Membership Rewards Points</p>
-                  <p className="text-blue-200 text-sm mt-0.5">Enough for your next Disney cruise upgrade — Amex Business Platinum</p>
-                </div>
-                <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
-              </div>
-            </a>
-  
         <section className="mb-12">
           <h2 className="text-3xl font-fraunces font-bold text-slate-900 mb-6">
             Ship-Specific Stateroom Features
@@ -478,13 +414,13 @@ export default function BestDisneyCruiseStateroomsGuide() {
         </section>
 
         {/* CTA Section */}
-        <section className="bg-gradient-to-r from-blue-50 to-indigo-50 p-8 rounded-lg mb-12">
-          <h2 className="text-2xl font-fraunces font-bold mb-4">Ready to Find Your Perfect Cruise?</h2>
-          <p className="font-inter mb-6">
-            Use our stateroom finder to compare cabin categories, view pricing, and discover the best options for your vacation style and budget.
+        <section className="bg-[#1E3A5F] p-8 rounded-xl mb-12">
+          <h2 className="text-2xl font-fraunces font-bold text-white mb-3">Ready to Start Planning Your Cruise?</h2>
+          <p className="text-blue-200 mb-6">
+            Our specialists help you compare stateroom categories, find the best pricing, and book the perfect cabin for your family — free service, no obligation.
           </p>
-          <Link href="/tools/cost-calculator" className="inline-flex items-center gap-2 bg-blue-600 text-slate-900 font-bold py-3 px-6 rounded-lg hover:bg-yellow-300 transition">
-            Browse Deals <ArrowRight size={20} />
+          <Link href="/concierge" className="inline-flex items-center gap-2 bg-[#D4AF37] text-[#1E3A5F] font-bold py-3 px-6 rounded-lg hover:bg-yellow-300 transition">
+            Start Planning Your Cruise <ArrowRight size={20} />
           </Link>
         </section>
 
@@ -525,10 +461,6 @@ export default function BestDisneyCruiseStateroomsGuide() {
           </div>
         </section>
       </article>
-
-      {/* Ad Slot 5 */}
-
-      <GetQuoteCTA />
 
       <GetQuoteCTA />
     </div>

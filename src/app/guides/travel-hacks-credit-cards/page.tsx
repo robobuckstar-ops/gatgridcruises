@@ -24,26 +24,26 @@ export default function TravelHacksCreditCardsPage() {
   const loungeAccessCards = getBestCardsFor('lounge-access')
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-indigo-50">
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-12 sm:py-16">
-        <div className="max-w-3xl">
-          <h1 className="font-display text-4xl sm:text-5xl font-bold text-slate-900 mb-4">
+      <section className="bg-gradient-to-br from-[#1E3A5F] to-[#2a4f7a] px-4 py-12 sm:py-16">
+        <div className="container mx-auto max-w-3xl">
+          <h1 className="font-display text-4xl sm:text-5xl font-bold text-white mb-4">
             Travel Hacks: Credit Cards for Cruise Rewards
           </h1>
-          <p className="text-lg text-slate-700 mb-6 leading-relaxed">
+          <p className="text-lg text-blue-200 mb-6 leading-relaxed">
             The insider guide to maximizing rewards on your Disney cruise. Whether you're looking for a
             big welcome bonus, free lounge access, or travel insurance, we've analyzed the market so you
             don't have to.
           </p>
           <div className="flex flex-wrap gap-3">
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 text-emerald-700 text-sm font-medium">
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-blue-100 text-sm font-medium">
               <span>✓</span> 8 Cards Compared
             </div>
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-medium">
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-blue-100 text-sm font-medium">
               <span>✓</span> Honest Reviews
             </div>
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-purple-100 text-purple-700 text-sm font-medium">
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#D4AF37]/20 text-[#D4AF37] text-sm font-medium">
               <span>✓</span> No BS
             </div>
           </div>
@@ -286,15 +286,15 @@ export default function TravelHacksCreditCardsPage() {
 
       {/* CTA Section */}
       <section className="container mx-auto px-4 py-16 text-center">
-        <h2 className="font-display text-3xl font-bold text-slate-900 mb-4">Ready to Start Earning?</h2>
+        <h2 className="font-display text-3xl font-bold text-slate-900 mb-4">Ready to Plan Your Cruise?</h2>
         <p className="text-lg text-slate-700 mb-8 max-w-2xl mx-auto">
-          Use the links above to apply for your card. We"ve vetted each one personally. You've got this.
-"        </p>
+          Our specialists help you find the best pricing and availability — free service, no obligation.
+        </p>
         <Link
-          href="/deals"
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold transition-colors"
+          href="/concierge"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#1E3A5F] hover:bg-[#2a4f7a] text-[#D4AF37] font-semibold transition-colors"
         >
-          Browse Our Favorite Deals
+          Start Planning Your Cruise
         </Link>
       </section>
 

@@ -181,14 +181,14 @@ export default function CompareCardsPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-amber-50 to-white">
       {/* Hero */}
-      <div className="bg-gradient-to-br from-amber-50 to-white border-b border-amber-200">
+      <div className="bg-gradient-to-br from-[#1E3A5F] to-[#2a4f7a] border-b border-[#D4AF37]/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-          <Link href="/travel-hacks" className="inline-flex items-center gap-2 text-amber-700 hover:text-amber-900 mb-4 transition-colors text-sm font-medium">
+          <Link href="/travel-hacks" className="inline-flex items-center gap-2 text-[#D4AF37] hover:text-yellow-300 mb-4 transition-colors text-sm font-medium">
             <ArrowRight className="w-4 h-4 rotate-180" />
             Back to Travel Hacks
           </Link>
-          <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-4">Compare Travel Credit Cards</h1>
-          <p className="text-lg text-slate-600 max-w-2xl">
+          <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">Compare Travel Credit Cards</h1>
+          <p className="text-lg text-blue-200 max-w-2xl">
             Find the right card for your cruise strategy. Compare annual fees, signup bonuses, earning rates, and benefits side by side.
           </p>
         </div>
