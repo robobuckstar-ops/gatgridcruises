@@ -274,9 +274,13 @@ export function Footer() {
           </div>
 
           {/* Copyright */}
-          <div className="border-t border-slate-200 pt-8 text-center text-slate-500">
+          <div className="border-t border-slate-200 pt-8 text-center text-slate-500 space-y-1">
             <p>
-              &copy; {currentYear} GatGridCruises. All rights reserved.
+              &copy; {currentYear} GatGrid Cruises. All rights reserved.
+            </p>
+            <p className="text-xs text-slate-400">
+              All content, deal scores, pricing analysis, and AI-generated recommendations on this site are proprietary and protected by copyright law.
+              Unauthorized scraping, reproduction, or distribution of any content is strictly prohibited and may result in legal action.
             </p>
           </div>
         </div>

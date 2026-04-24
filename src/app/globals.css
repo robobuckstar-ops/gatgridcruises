@@ -248,3 +248,49 @@ html {
 a {
   @apply transition-colors duration-200;
 }
+
+/* ── Anti-scraping / copy protection ─────────────────────────────────────── */
+
+/* Disable text selection site-wide; JS (CopyProtection) handles the same */
+body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Re-enable selection for form controls so UX is unaffected */
+input,
+textarea,
+select,
+[contenteditable],
+[role="textbox"],
+[role="searchbox"],
+[role="combobox"] {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+/* Prevent drag-to-save on images */
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+  /* Pointer events kept on so links/buttons still work */
+}
+
+/* Honeypot links – off-screen, invisible to real visitors, readable by scrapers */
+.gg-trap {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  pointer-events: none;
+}
+/* ──────────────────────────────────────────────────────────────────────────── */

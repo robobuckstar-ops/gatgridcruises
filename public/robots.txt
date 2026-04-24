@@ -4,5 +4,13 @@ Disallow: /admin/
 Disallow: /api/
 Disallow: /_next/
 Disallow: /private/
+Disallow: /honeypot/
+Disallow: /honeypot
+
+# Crawl-delay to limit aggressive scrapers
+Crawl-delay: 10
 
 Sitemap: https://gatgridcruises.com/sitemap.xml
+
+# GatGrid Cruises – Unauthorized automated scraping of this site is prohibited.
+# See Terms of Service at https://gatgridcruises.com/terms

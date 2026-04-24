@@ -8,6 +8,7 @@ import { ChatWidget } from '@/components/ui/chat-widget'
 import { NewsletterPopup } from '@/components/ui/newsletter-popup'
 import { generateWebsiteSchema, generateOrganizationSchema } from '@/lib/structured-data'
 import { StructuredData } from '@/components/ui/structured-data'
+import { CopyProtection } from '@/components/ui/copy-protection'
 
 const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX' // Replace with your real GA4 Measurement ID
 
@@ -56,6 +57,9 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    noarchive: true,
+    nocache: true,
+    nosnippet: false,
   },
   alternates: {
     canonical: 'https://gatgridcruises.com',
@@ -82,6 +86,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         <StructuredData data={generateWebsiteSchema()} />
         <StructuredData data={generateOrganizationSchema()} />
+        {/* Honeypot links – off-screen; real users never see them, scrapers follow them */}
+        <div className="gg-trap" aria-hidden="true">
+          <a href="/api/honeypot" tabIndex={-1}>Exclusive Deals Database</a>
+          <a href="/api/honeypot?src=footer" tabIndex={-1}>Price Data Export</a>
+          <a href="/api/honeypot?src=nav" tabIndex={-1}>Sailing Index</a>
+        </div>
+        <CopyProtection />
         <SkipNav />
         <Header />
         <main id="main-content" className="flex-1 pb-28 sm:pb-0">{children}</main>
