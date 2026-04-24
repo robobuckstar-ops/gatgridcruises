@@ -248,7 +248,7 @@ export default async function Home() {
               Your Personal Cruise Concierge
             </h2>
             <p className="text-blue-200 text-lg max-w-2xl mx-auto">
-              Book through GatGrid and you get more than a great deal — a dedicated guide for every step of your trip, at no extra cost.
+              Connect through GatGrid and get more than expert research — a dedicated concierge from our partner Boardwalk Travel for every step of your trip, at no extra cost.
             </p>
           </div>
 
@@ -257,7 +257,7 @@ export default async function Home() {
               { icon: Clock, title: 'Milestone Reminders', desc: 'We ping you when booking windows, payment deadlines, and activity reservations open — so you never miss a beat.' },
               { icon: Plane, title: 'Flight Monitoring', desc: 'We watch your flights for price drops and alert you to schedule changes before they cause trip-day chaos.' },
               { icon: MapPin, title: 'Personal Prep Guidance', desc: 'Port tips, what to pack, when to arrive — tailored advice specific to your ship, dates, and ports.' },
-              { icon: Gift, title: 'Free Onboard Credit', desc: 'Every booking includes up to $400 in OBC added to your stateroom account. Spend it on spa, dining, or excursions.' },
+              { icon: Gift, title: 'Free Onboard Credit', desc: 'GatGrid clients receive up to $400 in OBC added to their stateroom account through Boardwalk Travel. Spend it on spa, dining, or excursions.' },
             ].map(({ icon: Icon, title, desc }) => (
               <div key={title} className="bg-white/5 border border-white/10 rounded-xl p-5 hover:bg-white/10 transition-colors">
                 <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-[#D4AF37]/15 border border-[#D4AF37]/25 mb-4">
@@ -294,7 +294,7 @@ export default async function Home() {
                 Get Up to $400 in Free Onboard Credit
               </h2>
               <p className="text-blue-200 text-base max-w-xl">
-                Book your Disney cruise through GatGrid and we&rsquo;ll add free spending money to your onboard account — for spa, dining, excursions, and more. Zero extra cost to you.
+                Connect through GatGrid and our partner Boardwalk Travel will add free spending money to your onboard account — for spa, dining, excursions, and more. Zero extra cost to you.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">

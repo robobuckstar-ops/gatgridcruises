@@ -53,10 +53,10 @@ export function SailingCard({ sailing, percentBelow }: SailingCardProps) {
   }
 
   const themeBadge = sailing.theme ? {
-    halloween: { emoji: '🎃', label: 'Halloween on the High Seas', className: 'bg-orange-100 text-orange-800 border-orange-300' },
-    merrytime:  { emoji: '🎄', label: 'Very Merrytime',           className: 'bg-red-100 text-red-800 border-red-300' },
-    starwars:   { emoji: '⭐', label: 'Star Wars Day at Sea',      className: 'bg-blue-100 text-blue-800 border-blue-300' },
-    marvel:     { emoji: '🦸', label: 'Marvel Day at Sea',         className: 'bg-red-100 text-red-900 border-red-400' },
+    halloween: { emoji: '🎃', label: 'Halloween',  className: 'bg-orange-100 text-orange-800 border-orange-300' },
+    merrytime:  { emoji: '🎄', label: 'Merrytime',  className: 'bg-red-100 text-red-800 border-red-300' },
+    starwars:   { emoji: '⭐', label: 'Star Wars',  className: 'bg-blue-100 text-blue-800 border-blue-300' },
+    marvel:     { emoji: '🦸', label: 'Marvel',     className: 'bg-red-100 text-red-900 border-red-400' },
   }[sailing.theme] : null
 
   return (
@@ -64,37 +64,33 @@ export function SailingCard({ sailing, percentBelow }: SailingCardProps) {
       href={`/sailing/${sailing.id}`}
       className="group relative block bg-white rounded-xl border border-slate-200 hover:border-blue-300 hover:shadow-lg transition-all duration-200 overflow-hidden"
     >
-      {/* Theme badge — top-right corner pill */}
-      {themeBadge && (
-        <span className={`absolute top-3 right-3 z-10 inline-flex items-center gap-1 px-2 py-0.5 rounded-full border text-[10px] font-semibold whitespace-nowrap shadow-sm ${themeBadge.className}`}>
-          {themeBadge.emoji} {themeBadge.label}
-        </span>
-      )}
-
       {/* Ship color bar at top */}
       <div className="h-1.5 bg-gradient-to-r from-blue-600 to-blue-500 group-hover:from-[#D4AF37] group-hover:to-amber-400 transition-all duration-200" />
 
       <div className="p-5">
-        {/* Score badge + recommendation pill */}
-        <div className="flex items-center justify-between gap-3 mb-3">
-          {/* Deal Score Badge - Circular */}
+        {/* Score badge + all label pills — single horizontal row */}
+        <div className="flex items-center gap-2 mb-3">
           <DealScoreBadge
             score={dealScore.score}
             label={dealScore.breakdown.final_score >= 80 ? '★' : undefined}
             size="md"
           />
 
-          {/* Recommendation Pill + AI Pick badge */}
-          <div className="flex-1 flex items-center justify-end gap-2">
+          <div className="flex-1 flex items-center gap-1.5 justify-end flex-wrap">
+            {themeBadge && (
+              <span className={`inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-full border text-[10px] font-semibold whitespace-nowrap ${themeBadge.className}`}>
+                {themeBadge.emoji} {themeBadge.label}
+              </span>
+            )}
             {(dealScore.recommendation === 'strong-buy' || dealScore.recommendation === 'buy') && (
-              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-violet-50 border border-violet-200 text-violet-700 text-xs font-semibold">
+              <span className="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-full bg-violet-50 border border-violet-200 text-violet-700 text-[10px] font-semibold whitespace-nowrap">
                 <Bot className="w-3 h-3" aria-hidden="true" />
                 AI Pick
               </span>
             )}
             <span
               className={cn(
-                'inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold border',
+                'inline-flex items-center px-1.5 py-0.5 rounded-full text-[10px] font-semibold border whitespace-nowrap',
                 recommendationColors[dealScore.recommendation]
               )}
             >
@@ -164,14 +160,14 @@ export function SailingCard({ sailing, percentBelow }: SailingCardProps) {
               <div className="flex items-center gap-1.5">
                 <Gift className="w-3.5 h-3.5 text-amber-600 flex-shrink-0" aria-hidden="true" />
                 <span className="text-xs font-semibold text-amber-800">
-                  Book through GatGrid: ~${obcAmount} in free onboard credit*
+                  GatGrid clients get ~${obcAmount} in free onboard credit*
                 </span>
               </div>
               <p className="text-[10px] text-amber-700/70 mt-0.5 leading-tight">
                 *Estimated OBC based on listed fare. Actual amount determined at booking and may vary. Applied after final payment.{' '}
                 <span
                   className="underline cursor-pointer"
-                  title="Onboard credit (OBC) is provided as a booking incentive when you book through GatGrid Cruises / Boardwalk Travel Agency. OBC has no cash value; unused credit is forfeited at voyage end. OBC amounts subject to change. See gatgridcruises.com/onboard-credit for full terms."
+                  title="Onboard credit (OBC) is provided as a booking incentive through Boardwalk Travel Agency for GatGrid clients. OBC has no cash value; unused credit is forfeited at voyage end. OBC amounts subject to change. See gatgridcruises.com/onboard-credit for full terms."
                 >
                   See full terms.
                 </span>
