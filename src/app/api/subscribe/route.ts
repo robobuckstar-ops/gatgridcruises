@@ -96,7 +96,7 @@ export async function POST(request: NextRequest) {
         const resend = new Resend(process.env.RESEND_API_KEY)
         const topDeals = getTopDeals()
         await resend.emails.send({
-          from: 'Grayson Starbuck <bookings@gatgridcruises.com>',
+          from: '"Dr. Grayson Starbuck, DPT" <bookings@gatgridcruises.com>',
           to: sanitizedEmail,
           subject: 'Welcome to GatGrid Cruises — your first deal alert is ready',
           html: welcomeEmail1(name || sanitizedEmail.split('@')[0], unsubscribe_token, topDeals),

@@ -1,7 +1,7 @@
 /**
  * Boardwalk Travel Agency Compliance Email Draft
  *
- * This email is to be sent from Grayson Starbuck to Boardwalk Travel Agency
+ * This email is to be sent from Dr. Grayson Starbuck, DPT to Boardwalk Travel Agency
  * confirming that GatGridCruises.com operates as an independent media/content
  * website and is NOT a travel agency or booking platform.
  *
@@ -92,7 +92,7 @@ export function boardwalkComplianceEmailHTML(): string {
   <p>Thank you for your time and consideration.</p>
 
   <div class="signature">
-    <p class="name">Grayson Starbuck</p>
+    <p class="name">Dr. Grayson Starbuck, DPT</p>
     <p>Operator, GatGridCruises.com<br>
     Email: robobuckstar@gmail.com</p>
   </div>
@@ -155,7 +155,7 @@ The site is live at https://gatgridcruises.com and I encourage you to review it 
 
 Thank you for your time and consideration.
 
-Grayson Starbuck
+Dr. Grayson Starbuck, DPT
 Operator, GatGridCruises.com
 Email: robobuckstar@gmail.com
 

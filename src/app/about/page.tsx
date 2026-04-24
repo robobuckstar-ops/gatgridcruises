@@ -3,12 +3,31 @@ import Link from 'next/link'
 import { Gift } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'About GatGridCruises',
-  description: 'Learn about GatGridCruises — an independent Disney cruise planning resource built for families who want transparent, honest information.',
+  title: 'About GatGridCruises — Dr. Grayson Starbuck, DPT',
+  description: 'Learn about GatGridCruises — founded by Dr. Grayson Starbuck, DPT. An independent Disney cruise planning resource built for families who want transparent, honest information.',
+}
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Dr. Grayson Starbuck, DPT',
+  jobTitle: 'Doctor of Physical Therapy & Disney Cruise Specialist',
+  url: 'https://gatgridcruises.com/about',
+  email: 'grayson@gatgridcruises.com',
+  worksFor: {
+    '@type': 'Organization',
+    name: 'GatGridCruises',
+    url: 'https://gatgridcruises.com',
+  },
 }
 
 export default function AboutPage() {
   return (
+    <>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+    />
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-50 to-indigo-50 text-slate-900 py-16 md:py-20 border-b border-slate-200">
@@ -41,8 +60,7 @@ export default function AboutPage() {
             </div>
             <div>
               <p className="font-inter text-lg text-gray-700 leading-relaxed mb-4">
-                Hi — I'm Grayson Starbuck. By day I'm a Doctor of Physical Therapy; my wife Crystal and I run{' '}
-                <strong>Kinito Physical Therapy</strong> together. But when we're not at the clinic, we're plotting our next Disney cruise.
+                Hi — I&rsquo;m Grayson Starbuck. By day I&rsquo;m a Doctor of Physical Therapy; my wife Crystal (a Nurse Practitioner) and I run medical businesses. But when we&rsquo;re not at the clinic, we&rsquo;re plotting our next Disney cruise.
               </p>
               <p className="font-inter text-lg text-gray-700 leading-relaxed mb-4">
                 Disney cruises hit differently for our family. There's something about stepping onto that ship — the nostalgia, the magic, the way our kids light up — that nothing else quite matches. We've sailed several times now, and every trip we find ourselves wishing we had better tools to find the right sailing at the right price.
@@ -190,5 +208,6 @@ export default function AboutPage() {
         </section>
       </div>
     </main>
+    </>
   )
 }

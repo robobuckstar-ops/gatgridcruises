@@ -38,7 +38,7 @@ export async function GET(request: NextRequest) {
   for (const sub of confirmedSubs) {
     try {
       await resend.emails.send({
-        from: 'Grayson Starbuck <bookings@gatgridcruises.com>',
+        from: '"Dr. Grayson Starbuck, DPT" <bookings@gatgridcruises.com>',
         replyTo: 'bookings@gatgridcruises.com',
         to: sub.email,
         subject: `Price drop: ${topDrop.itinerary_name} — ${drop}% below average`,
