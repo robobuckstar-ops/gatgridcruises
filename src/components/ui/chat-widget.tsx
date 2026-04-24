@@ -4,13 +4,59 @@ import { useState, useRef, useEffect } from 'react'
 import { Send, X, MessageCircle } from 'lucide-react'
 
 interface Message {
-  role: 'user' | 'assistant'
+  role: 'user' | 'assistant' | 'transition'
   content: string
   id: string
+  isGrayson?: boolean
 }
 
 const WELCOME_MESSAGE =
   "Hi! I'm GatGrid's Disney cruise assistant. Ask me anything about Disney cruises — sailings, itineraries, staterooms, onboard credit, or how to book!"
+
+function renderMarkdown(raw: string): string {
+  // Escape HTML first to prevent XSS, then apply markdown transforms
+  const escaped = raw
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+
+  const lines = escaped.split('\n')
+  const parts: string[] = []
+  let inList = false
+
+  const applyInline = (text: string) =>
+    text
+      .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\*(.+?)\*/g, '<em>$1</em>')
+      .replace(
+        /\[([^\]]+)\]\(([^)]+)\)/g,
+        '<a href="$2" class="underline text-[#1E3A5F] hover:opacity-80" target="_blank" rel="noopener noreferrer">$1</a>'
+      )
+
+  for (const line of lines) {
+    const trimmed = line.trim()
+    if (/^[-*] /.test(trimmed)) {
+      if (!inList) {
+        parts.push('<ul class="my-1 space-y-0.5">')
+        inList = true
+      }
+      parts.push(`<li class="flex gap-1.5"><span>•</span><span>${applyInline(trimmed.slice(2))}</span></li>`)
+    } else {
+      if (inList) {
+        parts.push('</ul>')
+        inList = false
+      }
+      if (trimmed === '') {
+        parts.push('<div class="h-1" />')
+      } else {
+        parts.push(`<p>${applyInline(trimmed)}</p>`)
+      }
+    }
+  }
+  if (inList) parts.push('</ul>')
+
+  return parts.join('')
+}
 
 export function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false)
@@ -19,6 +65,8 @@ export function ChatWidget() {
   ])
   const [input, setInput] = useState('')
   const [isLoading, setIsLoading] = useState(false)
+  const [exchangeCount, setExchangeCount] = useState(0)
+  const [graysonJoined, setGraysonJoined] = useState(false)
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
 
@@ -43,15 +91,22 @@ export function ChatWidget() {
     }
 
     const history = messages
-      .filter(m => m.id !== 'welcome' && m.content)
-      .map(m => ({ role: m.role, content: m.content }))
+      .filter(m => m.id !== 'welcome' && m.content && m.role !== 'transition')
+      .map(m => ({ role: m.role as 'user' | 'assistant', content: m.content }))
 
     setMessages(prev => [...prev, userMessage])
     setInput('')
     setIsLoading(true)
 
+    const newExchangeCount = exchangeCount + 1
+    setExchangeCount(newExchangeCount)
+
     const assistantId = `assistant-${Date.now()}`
-    setMessages(prev => [...prev, { role: 'assistant', content: '', id: assistantId }])
+    // Messages created after Grayson joined get his styling
+    setMessages(prev => [
+      ...prev,
+      { role: 'assistant', content: '', id: assistantId, isGrayson: graysonJoined },
+    ])
 
     try {
       const response = await fetch('/api/chat', {
@@ -91,6 +146,20 @@ export function ChatWidget() {
       )
     } finally {
       setIsLoading(false)
+      // After the 3rd exchange, Grayson "joins" the chat
+      if (newExchangeCount === 3 && !graysonJoined) {
+        setGraysonJoined(true)
+        setTimeout(() => {
+          setMessages(prev => [
+            ...prev,
+            {
+              role: 'transition',
+              content: 'Grayson, your cruise concierge, has joined the chat.',
+              id: 'grayson-transition',
+            },
+          ])
+        }, 900)
+      }
     }
   }
 
@@ -131,14 +200,23 @@ export function ChatWidget() {
           {/* Header */}
           <div className="bg-[#1E3A5F] text-white px-4 py-3 rounded-t-xl flex items-center justify-between shrink-0">
             <div className="flex items-center gap-2.5">
-              <span className="text-[#D4AF37] text-xl leading-none" aria-hidden="true">
-                ⚓
-              </span>
+              {graysonJoined ? (
+                <span
+                  className="w-8 h-8 rounded-full bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm flex items-center justify-center shrink-0"
+                  aria-hidden="true"
+                >
+                  G
+                </span>
+              ) : (
+                <span className="text-[#D4AF37] text-xl leading-none" aria-hidden="true">
+                  ⚓
+                </span>
+              )}
               <div>
                 <h2 id="chat-widget-title" className="font-semibold text-sm leading-tight">
-                  GatGrid Cruise Assistant
+                  {graysonJoined ? 'Grayson' : 'GatGrid Cruise Assistant'}
                 </h2>
-                <p className="text-xs text-blue-200 leading-tight">Powered by AI</p>
+                <p className="text-xs text-blue-200 leading-tight">Your Disney Cruise Concierge</p>
               </div>
             </div>
             <button
@@ -157,35 +235,69 @@ export function ChatWidget() {
             aria-live="polite"
             aria-label="Chat messages"
           >
-            {messages.map(msg => (
-              <div
-                key={msg.id}
-                className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
-              >
+            {messages.map(msg => {
+              if (msg.role === 'transition') {
+                return (
+                  <div key={msg.id} className="flex items-center gap-2 my-3">
+                    <div className="flex-1 h-px bg-slate-200" />
+                    <span className="text-xs text-slate-400 italic whitespace-nowrap px-1">
+                      ⚓ {msg.content}
+                    </span>
+                    <div className="flex-1 h-px bg-slate-200" />
+                  </div>
+                )
+              }
+
+              return (
                 <div
-                  className={`max-w-[85%] px-3.5 py-2.5 rounded-2xl text-sm leading-relaxed ${
-                    msg.role === 'user'
-                      ? 'bg-[#1E3A5F] text-white rounded-br-sm'
-                      : 'bg-white text-slate-800 border border-slate-200 rounded-bl-sm shadow-sm'
-                  }`}
+                  key={msg.id}
+                  className={`flex items-end gap-1.5 ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
                 >
-                  {msg.content ? (
-                    <p className="whitespace-pre-wrap">{msg.content}</p>
-                  ) : (
-                    <div className="flex gap-1 items-center py-0.5" aria-label="Assistant is typing">
-                      {[0, 150, 300].map(delay => (
-                        <span
-                          key={delay}
-                          className="w-2 h-2 bg-slate-400 rounded-full animate-bounce"
-                          style={{ animationDelay: `${delay}ms` }}
-                          aria-hidden="true"
-                        />
-                      ))}
-                    </div>
+                  {msg.role === 'assistant' && msg.isGrayson && (
+                    <span
+                      className="w-6 h-6 rounded-full bg-[#D4AF37] text-[#1E3A5F] font-bold text-xs flex items-center justify-center shrink-0 mb-0.5"
+                      aria-hidden="true"
+                    >
+                      G
+                    </span>
                   )}
+                  <div
+                    className={`max-w-[85%] px-3.5 py-2.5 rounded-2xl text-sm leading-relaxed ${
+                      msg.role === 'user'
+                        ? 'bg-[#1E3A5F] text-white rounded-br-sm'
+                        : msg.isGrayson
+                          ? 'bg-amber-50 text-slate-800 border border-amber-200 rounded-bl-sm shadow-sm'
+                          : 'bg-white text-slate-800 border border-slate-200 rounded-bl-sm shadow-sm'
+                    }`}
+                  >
+                    {msg.content ? (
+                      msg.role === 'user' ? (
+                        <p className="whitespace-pre-wrap">{msg.content}</p>
+                      ) : (
+                        <div
+                          className="space-y-1 [&_strong]:font-semibold [&_em]:italic [&_a]:underline [&_ul]:pl-0 [&_li]:flex [&_li]:gap-1"
+                          dangerouslySetInnerHTML={{ __html: renderMarkdown(msg.content) }}
+                        />
+                      )
+                    ) : (
+                      <div
+                        className="flex gap-1 items-center py-0.5"
+                        aria-label="Assistant is typing"
+                      >
+                        {[0, 150, 300].map(delay => (
+                          <span
+                            key={delay}
+                            className="w-2 h-2 bg-slate-400 rounded-full animate-bounce"
+                            style={{ animationDelay: `${delay}ms` }}
+                            aria-hidden="true"
+                          />
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
+              )
+            })}
             <div ref={messagesEndRef} />
           </div>
 
