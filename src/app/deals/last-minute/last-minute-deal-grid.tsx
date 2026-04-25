@@ -23,6 +23,7 @@ export function LastMinuteDealGrid({ deals: initialDeals, ships, ports }: LastMi
   const [selectedShips, setSelectedShips] = useState<string[]>([])
   const [selectedNights, setSelectedNights] = useState<string[]>([])
   const [selectedRegions, setSelectedRegions] = useState<string[]>([])
+  const [privateIsland, setPrivateIsland] = useState(false)
   const [sortBy, setSortBy] = useState<'soonest' | 'savings' | 'score'>('soonest')
   const [showFilters, setShowFilters] = useState(false)
 
@@ -61,6 +62,16 @@ export function LastMinuteDealGrid({ deals: initialDeals, ships, ports }: LastMi
       results = results.filter(s => s.region && selectedRegions.includes(s.region))
     }
 
+    // Private island filter
+    if (privateIsland) {
+      results = results.filter(s =>
+        s.itinerary_details?.some(day =>
+          day.port?.toLowerCase().includes('castaway cay') ||
+          day.port?.toLowerCase().includes('lighthouse point')
+        )
+      )
+    }
+
     // Sort
     switch (sortBy) {
       case 'soonest':
@@ -79,18 +90,20 @@ export function LastMinuteDealGrid({ deals: initialDeals, ships, ports }: LastMi
     }
 
     return results
-  }, [initialDeals, search, selectedShips, selectedNights, selectedRegions, sortBy])
+  }, [initialDeals, search, selectedShips, selectedNights, selectedRegions, privateIsland, sortBy])
 
   const activeFilterCount = [
     selectedShips.length > 0,
     selectedNights.length > 0,
     selectedRegions.length > 0,
+    privateIsland,
   ].filter(Boolean).length
 
   const handleClearFilters = () => {
     setSelectedShips([])
     setSelectedNights([])
     setSelectedRegions([])
+    setPrivateIsland(false)
     setSearch('')
   }
 
@@ -247,6 +260,21 @@ export function LastMinuteDealGrid({ deals: initialDeals, ships, ports }: LastMi
                     </label>
                   ))}
                 </div>
+              </div>
+
+              {/* Private Island Filter */}
+              <div>
+                <h3 className="font-semibold text-slate-900 mb-3">Special Stops</h3>
+                <label className="flex items-center gap-3 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={privateIsland}
+                    onChange={() => setPrivateIsland(prev => !prev)}
+                    className="w-4 h-4 rounded border-slate-300 text-blue-600 focus:ring-blue-600"
+                  />
+                  <span className="text-sm text-slate-700">🏝️ Private Island</span>
+                </label>
+                <p className="text-xs text-slate-400 mt-1 ml-7">Castaway Cay or Lighthouse Point</p>
               </div>
             </div>
           )}

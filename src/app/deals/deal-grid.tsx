@@ -26,6 +26,7 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
   const [lengthFilter, setLengthFilter] = useState<number[]>([])
   const [minScore, setMinScore] = useState(0)
   const [maxPrice, setMaxPrice] = useState(0)
+  const [privateIsland, setPrivateIsland] = useState(false)
   const [sortBy, setSortBy] = useState<SortOption>('score')
   const [showFilters, setShowFilters] = useState(false)
   const [guestCount, setGuestCount] = useState(2)
@@ -81,6 +82,15 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
       results = results.filter(s => s.current_lowest_price <= maxPrice)
     }
 
+    if (privateIsland) {
+      results = results.filter(s =>
+        s.itinerary_details?.some(day =>
+          day.port?.toLowerCase().includes('castaway cay') ||
+          day.port?.toLowerCase().includes('lighthouse point')
+        )
+      )
+    }
+
     switch (sortBy) {
       case 'score':
         results.sort((a, b) =>
@@ -110,7 +120,7 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
     }
 
     return results
-  }, [sailings, search, selectedCruiseLines, selectedPorts, lengthFilter, minScore, maxPrice, sortBy])
+  }, [sailings, search, selectedCruiseLines, selectedPorts, lengthFilter, minScore, maxPrice, privateIsland, sortBy])
 
   const activeFilterCount = [
     selectedCruiseLines.length > 0,
@@ -118,6 +128,7 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
     lengthFilter.length > 0,
     minScore > 0,
     maxPrice > 0,
+    privateIsland,
   ].filter(Boolean).length
 
   const clearFilters = () => {
@@ -126,6 +137,7 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
     setLengthFilter([])
     setMinScore(0)
     setMaxPrice(0)
+    setPrivateIsland(false)
     setSearch('')
   }
 
@@ -318,6 +330,25 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
                   className="w-full accent-blue-600"
                 />
               </div>
+            </div>
+
+            {/* Private Island */}
+            <div>
+              <label className="block text-sm font-semibold text-slate-700 mb-2">
+                Special Stops
+              </label>
+              <button
+                onClick={() => setPrivateIsland(prev => !prev)}
+                className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium border transition-colors ${
+                  privateIsland
+                    ? 'bg-blue-600 text-white border-blue-600'
+                    : 'bg-white text-slate-600 border-slate-300 hover:border-blue-600'
+                }`}
+              >
+                <span>🏝️</span>
+                Private Island
+              </button>
+              <p className="text-xs text-slate-400 mt-1">Castaway Cay or Lighthouse Point</p>
             </div>
 
             {activeFilterCount > 0 && (
