@@ -187,8 +187,8 @@ export default function CompareCardsPage() {
             <ArrowRight className="w-4 h-4 rotate-180" />
             Back to Travel Hacks
           </Link>
-          <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-4">Compare Travel Credit Cards</h1>
-          <p className="text-lg text-slate-600 max-w-2xl">
+          <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">Compare Travel Credit Cards</h1>
+          <p className="text-lg text-blue-100 max-w-2xl">
             Find the right card for your cruise strategy. Compare annual fees, signup bonuses, earning rates, and benefits side by side.
           </p>
         </div>

@@ -26,7 +26,7 @@ export default function DisneyVsCruiseCostGuide() {
             <span className="text-white/50 mx-2">/</span>
             <span className="text-gray-300 text-sm">The True Cost of a Disney Cruise</span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-fraunces font-bold mb-4">
+          <h1 className="text-4xl md:text-5xl font-fraunces font-bold mb-4 text-white">
             The True Cost of a Disney Cruise (2026 Breakdown)
           </h1>
           <p className="text-lg text-white/80">

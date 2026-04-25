@@ -166,23 +166,23 @@ export default function FirstTimeDisneyCruiseTipsGuide() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-50 to-indigo-50 py-16">
+      <section className="relative bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-6">
-            <Link href="/" className="text-blue-600 hover:underline text-sm">
+            <Link href="/" className="text-blue-300 hover:text-[#D4AF37] text-sm">
               Home
             </Link>
             <span className="text-white mx-2">/</span>
-            <Link href="/guides" className="text-blue-600 hover:underline text-sm">
+            <Link href="/guides" className="text-blue-300 hover:text-[#D4AF37] text-sm">
               Guides
             </Link>
             <span className="text-white mx-2">/</span>
             <span className="text-gray-300 text-sm">25 First-Time Cruise Tips</span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-fraunces font-bold mb-4">
+          <h1 className="text-4xl md:text-5xl font-fraunces font-bold mb-4 text-white">
             25 Things to Know Before Your First Disney Cruise
           </h1>
-          <p className="text-lg text-slate-600">
+          <p className="text-lg text-blue-100">
             Everything a first-time cruiser needs to know, from dining options and kids clubs to Castaway Cay strategy and debarkation tips.
           </p>
         </div>
@@ -576,7 +576,7 @@ export default function FirstTimeDisneyCruiseTipsGuide() {
         </section>
 
         {/* CTA Section */}
-        <section className="bg-gradient-to-r from-blue-50 to-indigo-50 p-8 rounded-lg mb-12">
+        <section className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] p-8 rounded-lg mb-12 text-white">
           <h2 className="text-2xl font-fraunces font-bold mb-4">Ready to Start Planning?</h2>
           <p className="font-inter mb-6">
             Now that you're armed with essential tips, start planning! Use our guides to choose your port, stateroom category, and budget.

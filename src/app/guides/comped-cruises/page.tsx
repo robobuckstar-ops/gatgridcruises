@@ -18,10 +18,10 @@ export default function CompedCruisesGuide() {
             <span>/</span>
             <span>Comped Cruises</span>
           </div>
-          <h1 className="font-fraunces text-4xl sm:text-5xl font-bold text-slate-900 mb-4">
+          <h1 className="font-fraunces text-4xl sm:text-5xl font-bold text-white mb-4">
             How to Get a Free (or Nearly Free) Cruise
           </h1>
-          <p className="text-xl text-slate-600 leading-relaxed">
+          <p className="text-xl text-blue-100 leading-relaxed">
             A no-BS guide to the real strategies that get people on cruise ships for little to nothing — casino comps, loyalty tiers, repositioning hacks, travel agent perks, and more.
           </p>
           <div className="flex flex-wrap gap-3 mt-6">

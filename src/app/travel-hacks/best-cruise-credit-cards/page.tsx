@@ -106,9 +106,9 @@ const comparisonRows = [
 
 export default function BestCruiseCreditCardsPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+    <div className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="bg-gradient-to-b from-slate-900 to-slate-800 text-white py-16 px-4">
+      <section className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] text-white py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-sm text-slate-400 mb-3 font-medium">Travel Hacks · Credit Cards</div>
           <h1 className="font-display text-4xl sm:text-5xl font-bold mb-4">
@@ -319,7 +319,7 @@ export default function BestCruiseCreditCardsPage() {
                   <ul className="space-y-2">
                     {card.highlights.map((h) => (
                       <li key={h} className="flex items-start gap-2 text-sm text-slate-700">
-                        <span className="text-blue-500 mt-0.5 flex-shrink-0">✓</span>
+                        <span className="text-[#1E3A5F] mt-0.5 flex-shrink-0">✓</span>
                         {h}
                       </li>
                     ))}
@@ -355,9 +355,9 @@ export default function BestCruiseCreditCardsPage() {
 
               {/* Cruise tip */}
               <div className="px-6 pb-6">
-                <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg">
-                  <div className="text-xs font-semibold text-blue-700 uppercase tracking-wide mb-1">⚓ Cruise Strategy</div>
-                  <p className="text-sm text-blue-900">{card.cruiseTip}</p>
+                <div className="p-4 bg-[#1E3A5F]/5 border border-[#1E3A5F]/20 rounded-lg">
+                  <div className="text-xs font-semibold text-[#1E3A5F] uppercase tracking-wide mb-1">⚓ Cruise Strategy</div>
+                  <p className="text-sm text-slate-700">{card.cruiseTip}</p>
                 </div>
               </div>
 
