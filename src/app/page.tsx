@@ -130,11 +130,11 @@ export default async function Home() {
       )}
 
       {/* Last-Minute Deals */}
-      <section className="bg-gradient-to-br from-amber-50 to-yellow-50 py-16 md:py-20 border-t border-amber-100" aria-labelledby="last-minute-heading">
+      <section className="bg-gradient-to-br from-slate-900 to-[#1E3A5F] py-16 md:py-20" aria-labelledby="last-minute-heading">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-12">
-            <Zap className="w-8 h-8 text-amber-600" aria-hidden="true" />
-            <h2 id="last-minute-heading" className="font-fraunces text-3xl md:text-4xl font-bold text-slate-900">
+            <Zap className="w-8 h-8 text-[#D4AF37]" aria-hidden="true" />
+            <h2 id="last-minute-heading" className="font-fraunces text-3xl md:text-4xl font-bold text-white">
               Last-Minute Steals
             </h2>
           </div>
@@ -148,7 +148,7 @@ export default async function Home() {
           <div className="text-center">
             <Link
               href="/deals/last-minute"
-              className="inline-flex items-center gap-2 text-amber-700 font-semibold hover:text-amber-900 transition-colors"
+              className="inline-flex items-center gap-2 text-[#D4AF37] font-semibold hover:text-yellow-300 transition-colors"
             >
               View All Last-Minute Deals <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </Link>
@@ -359,24 +359,24 @@ export default async function Home() {
       </section>
 
       {/* Solo Cruising CTA Banner */}
-      <section className="bg-gradient-to-r from-purple-50 via-white to-purple-50 py-16 md:py-20 border-t border-purple-100" aria-labelledby="solo-heading">
+      <section className="bg-[#0a1628] border-y border-white/5 py-16 md:py-20" aria-labelledby="solo-heading">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="flex-1">
               <div className="flex items-center gap-3 mb-4">
-                <Users className="w-8 h-8 text-purple-600" aria-hidden="true" />
-                <h2 id="solo-heading" className="font-fraunces text-3xl md:text-4xl font-bold text-slate-900">
+                <Users className="w-8 h-8 text-[#D4AF37]" aria-hidden="true" />
+                <h2 id="solo-heading" className="font-fraunces text-3xl md:text-4xl font-bold text-white">
                   Cruising Solo?
                 </h2>
               </div>
-              <p className="text-gray-600 text-lg">
+              <p className="text-blue-200 text-lg">
                 Discover our dedicated solo traveler hub with tips, deals, and community
               </p>
             </div>
             <div>
               <Link
                 href="/solo-cruising"
-                className="inline-flex items-center justify-center px-8 py-3 rounded-lg bg-purple-600 text-white font-semibold hover:bg-purple-700 transition-colors duration-200"
+                className="inline-flex items-center justify-center px-8 py-3 rounded-lg bg-[#D4AF37] text-[#1E3A5F] font-bold hover:bg-yellow-300 transition-colors duration-200"
               >
                 Explore Solo Cruising
               </Link>

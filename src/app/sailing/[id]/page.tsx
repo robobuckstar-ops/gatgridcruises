@@ -7,7 +7,6 @@ import { generateSailingSchema } from '@/lib/structured-data'
 import { calculateOutTheDoorPrice } from '@/lib/pricing'
 import { StructuredData } from '@/components/ui/structured-data'
 import { PriceChart } from '@/components/ui/price-chart'
-import { ScoreBadge } from '@/components/ui/score-badge'
 import { BuyWaitBadge } from '@/components/ui/buy-wait-badge'
 import { PriceTrend } from '@/components/ui/price-trend'
 import { Ship, Calendar, MapPin, Clock, DollarSign, Anchor, BedDouble, Car, Building2, ArrowRight, Check, X as XIcon, Info, TrendingDown, TrendingUp, ShoppingBag, Flame } from 'lucide-react'
@@ -95,12 +94,13 @@ export default async function SailingDetailPage({ params }: PageProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
           <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
             <div>
-              <div className="flex items-center gap-3 mb-3">
-                <ScoreBadge score={sailing.sailing_score} size="lg" showTooltip />
-                {percentBelow > 0 && (
-                  <span className="text-sm text-emerald-600 font-medium">{percentBelow}% below average</span>
-                )}
+              {percentBelow > 0 && (
+              <div className="flex items-center gap-2 mb-3">
+                <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-600 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full">
+                  ↓ {percentBelow}% below average
+                </span>
               </div>
+            )}
               <h1 className="font-display text-3xl sm:text-4xl font-bold mb-3">{sailing.itinerary_name}</h1>
               <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-slate-600">
                 {ship && (

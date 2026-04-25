@@ -4,8 +4,6 @@ import { getBlogPosts, getFeaturedBlogPost } from '@/lib/data'
 import { BlogList } from './blog-list'
 
 export const metadata = {
-  title: 'Disney Cruise News, Tips & Deals',
-  description: 'Disney cruise news, tips, deals, and reviews from the crew at GatGridCruises.',
   title: 'Blog — Disney Cruise Tips, Deals & News',
   description:
     'Disney cruise news, money-saving tips, deal analyses, and first-hand reviews. Practical advice for planning the perfect Disney Cruise Line vacation.',
@@ -125,17 +123,17 @@ export default function BlogPage() {
       </div>
 
       {/* Newsletter CTA */}
-      <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-16 sm:py-20 mt-24">
+      <div className="bg-gradient-to-br from-slate-900 to-[#1E3A5F] text-white py-16 sm:py-20 mt-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-display text-3xl sm:text-4xl font-bold mb-4">
             Stay Updated
           </h2>
-          <p className="text-lg text-blue-100 mb-8">
+          <p className="text-lg text-blue-200 mb-8">
             Get the latest Disney cruise news and exclusive tips delivered to your inbox
           </p>
-          <button className="inline-block px-8 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors duration-200">
+          <a href="/newsletter" className="inline-block px-8 py-3 bg-[#D4AF37] text-[#1E3A5F] font-bold rounded-lg hover:bg-yellow-300 transition-colors duration-200">
             Subscribe to Our Newsletter
-          </button>
+          </a>
         </div>
       </div>
     </main>

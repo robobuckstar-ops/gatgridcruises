@@ -227,7 +227,7 @@ export default async function ShipDetailPage({ params }: PageProps) {
                 Browse stateroom reviews, noise ratings, and our honest recommendations for the best cabins on this ship.
               </p>
               <Link
-                href="/tools/stateroom-finder"
+                href="/tools/staterooms"
                 className="inline-flex items-center gap-2 px-4 py-2.5 bg-blue-600 text-white font-semibold text-sm rounded-lg hover:bg-blue-700 transition-colors w-full justify-center"
               >
                 Stateroom Finder

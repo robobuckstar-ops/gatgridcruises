@@ -5,7 +5,6 @@ import Link from 'next/link'
 import type { Sailing, Ship, Port } from '@/types/database'
 import { formatPrice, formatDate, daysUntil, cn } from '@/lib/utils'
 import { CountdownTimer } from '@/components/ui/countdown-timer'
-import { DealScoreBadge } from '@/components/ui/deal-score-badge'
 import { GuestSelector } from '@/components/ui/guest-selector'
 import { Search, SlidersHorizontal, X, ArrowRight, Zap } from 'lucide-react'
 
@@ -358,13 +357,6 @@ export function LastMinuteDealGrid({ deals: initialDeals, ships, ports }: LastMi
                           )}
                         </div>
 
-                        {/* Deal Score */}
-                        <div className="border-t border-slate-100 pt-3">
-                          <div className="flex items-center justify-between">
-                            <span className="text-xs text-slate-500 font-medium">Deal Score</span>
-                            <DealScoreBadge score={sailing.sailing_score || 80} size="md" />
-                          </div>
-                        </div>
                       </div>
 
                       {/* CTA Button */}
