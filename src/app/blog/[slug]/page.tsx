@@ -90,11 +90,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         { name: post.title, url: `${baseUrl}/blog/${post.slug}` },
       ])} />
       {/* Hero Section */}
-      <div className="bg-gradient-to-br from-blue-50 via-white to-indigo-50 pt-8 pb-16">
+      <div className="bg-gradient-to-br from-[#0a1628] to-[#1E3A5F] pt-8 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 mb-8 font-medium"
+            className="inline-flex items-center gap-2 text-blue-300 hover:text-blue-200 mb-8 font-medium"
           >
             <ArrowLeft className="h-4 w-4" />
             Back to Blog
@@ -107,11 +107,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               </span>
             </div>
 
-            <h1 className="font-display text-4xl sm:text-5xl font-bold text-slate-900 mb-6">
+            <h1 className="font-display text-4xl sm:text-5xl font-bold text-white mb-6">
               {post.title}
             </h1>
 
-            <div className="flex flex-wrap items-center gap-6 text-slate-600 border-t border-slate-200 pt-6">
+            <div className="flex flex-wrap items-center gap-6 text-blue-100 border-t border-blue-800 pt-6">
               <div className="flex items-center gap-3">
                 {post.author_avatar && (
                   <img
@@ -121,8 +121,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   />
                 )}
                 <div>
-                  <div className="font-semibold text-slate-900">{post.author}</div>
-                  <div className="text-sm text-slate-500">Author</div>
+                  <div className="font-semibold text-white">{post.author}</div>
+                  <div className="text-sm text-blue-200">Author</div>
                 </div>
               </div>
 

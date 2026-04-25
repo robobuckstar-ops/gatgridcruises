@@ -80,8 +80,8 @@ export default function LoginPage() {
           <h1 className="text-3xl font-bold text-slate-900 mb-1" style={{ fontFamily: 'Georgia, serif' }}>
             ⚓
           </h1>
-          <h1 className="text-2xl font-bold text-slate-900">Sign In</h1>
-          <p className="text-slate-600 text-sm mt-1">Welcome back to GatGridCruises</p>
+          <h1 className="text-2xl font-bold text-white">Sign In</h1>
+          <p className="text-blue-100 text-sm mt-1">Welcome back to GatGridCruises</p>
         </div>
 
         {/* Tabs */}

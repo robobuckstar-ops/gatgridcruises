@@ -94,8 +94,8 @@ export default function SignupPage() {
           <h1 className="text-3xl font-bold text-slate-900 mb-1" style={{ fontFamily: 'Georgia, serif' }}>
             ⚓
           </h1>
-          <h1 className="text-2xl font-bold text-slate-900">Create Account</h1>
-          <p className="text-slate-600 text-sm mt-1">Join GatGridCruises today</p>
+          <h1 className="text-2xl font-bold text-white">Create Account</h1>
+          <p className="text-blue-100 text-sm mt-1">Join GatGridCruises today</p>
         </div>
 
         {/* Content */}
