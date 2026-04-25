@@ -236,7 +236,7 @@ export default function ConciergePage() {
             Your Personal Disney<br className="hidden sm:block" /> Cruise Concierge
           </h1>
           <p className="font-inter text-lg md:text-xl text-blue-200 max-w-2xl mx-auto mb-10 leading-relaxed">
-            From the moment you book to the moment you step off the ship — and beyond — we're in your
+            From the moment you book to the moment you step off the ship — and beyond — we&apos;re in your
             corner every step of the way. Free onboard credit. Zero extra cost. Expert guidance.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -281,8 +281,8 @@ export default function ConciergePage() {
               Why Book Through GatGrid Instead of Directly?
             </h2>
             <p className="font-inter text-lg text-slate-600 max-w-2xl mx-auto">
-              Disney's price is Disney's price — you can't beat it. But you can get more out of it.
-              Here's what booking through us adds.
+              Disney&apos;s price is Disney&apos;s price — you can&apos;t beat it. But you can get more out of it.
+              Here&apos;s what booking through us adds.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -365,7 +365,7 @@ export default function ConciergePage() {
               Everything Included in Your Concierge
             </h2>
             <p className="font-inter text-lg text-slate-600 max-w-2xl mx-auto">
-              These aren't upsells — they're all part of the service, at no charge.
+              These aren&apos;t upsells — they&apos;re all part of the service, at no charge.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
