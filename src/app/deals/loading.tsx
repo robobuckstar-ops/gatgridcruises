@@ -2,7 +2,7 @@ export default function DealsLoading() {
   return (
     <div className="min-h-screen animate-pulse">
       {/* Search bar skeleton */}
-      <div className="bg-gradient-to-br from-blue-50 via-white to-indigo-50 py-12">
+      <div className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] py-12">
         <div className="mx-auto max-w-7xl px-4">
           <div className="h-8 bg-slate-200 rounded-lg w-1/2 mx-auto mb-6" />
           <div className="h-12 bg-slate-200 rounded-lg mx-auto max-w-md" />

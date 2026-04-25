@@ -146,7 +146,7 @@ export default function TravelHacksHub() {
 
                 <div className="flex items-center justify-between pt-4 border-t border-slate-100">
                   <span className="text-sm font-semibold text-emerald-600">{strategy.savings}</span>
-                  <ArrowRight className="h-5 w-5 text-slate-400 group-hover:text-blue-600 transition-colors" />
+                  <ArrowRight className="h-5 w-5 text-slate-400 group-hover:text-[#D4AF37] transition-colors" />
                 </div>
               </Link>
             )

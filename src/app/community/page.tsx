@@ -39,7 +39,7 @@ export default function CommunityPage() {
               className="group p-8 rounded-2xl border border-slate-200 bg-white hover:border-blue-300 hover:shadow-lg transition-all duration-200"
             >
               <div className="flex items-start justify-between mb-4">
-                <div className="inline-flex items-center justify-center h-12 w-12 rounded-lg bg-blue-100 group-hover:bg-blue-200 transition-colors">
+                <div className="inline-flex items-center justify-center h-12 w-12 rounded-lg bg-[#1E3A5F]/20 group-hover:bg-blue-200 transition-colors">
                   <Users className="h-6 w-6 text-blue-600" />
                 </div>
                 <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
@@ -47,7 +47,7 @@ export default function CommunityPage() {
                 </span>
               </div>
 
-              <h2 className="font-display text-2xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
+              <h2 className="font-display text-2xl font-bold text-slate-900 mb-2 group-hover:text-[#D4AF37] transition-colors">
                 Sail Together
               </h2>
 

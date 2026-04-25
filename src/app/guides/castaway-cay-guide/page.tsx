@@ -12,7 +12,7 @@ export default function CastawayCayGuide() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-50 via-white to-indigo-50">
+      <section className="relative py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#0a1628] to-[#1E3A5F]">
         <div className="max-w-4xl mx-auto">
           <h1 className="font-fraunces text-4xl sm:text-5xl font-bold text-white mb-4">
             Castaway Cay: The Ultimate Guide to Disney's Private Island
@@ -45,7 +45,7 @@ export default function CastawayCayGuide() {
               href="/concierge"
               className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow"
             >
-              <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4 flex items-center justify-between gap-4">
+              <div className="bg-gradient-to-r from-[#0a1628] to-[#1E3A5F] px-6 py-4 flex items-center justify-between gap-4">
                 <div>
                   <p className="text-[#D4AF37] font-bold text-base leading-tight">Plan Your Disney Cruise</p>
                   <p className="text-blue-200 text-sm mt-0.5">Connect with our concierge team for expert cruise planning</p>
@@ -95,7 +95,7 @@ export default function CastawayCayGuide() {
               href="/concierge"
               className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow"
             >
-              <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4 flex items-center justify-between gap-4">
+              <div className="bg-gradient-to-r from-[#0a1628] to-[#1E3A5F] px-6 py-4 flex items-center justify-between gap-4">
                 <div>
                   <p className="text-[#D4AF37] font-bold text-base leading-tight">Plan Your Disney Cruise</p>
                   <p className="text-blue-200 text-sm mt-0.5">Connect with our concierge team for expert cruise planning</p>
@@ -127,7 +127,7 @@ export default function CastawayCayGuide() {
         <section className="mb-12">
           <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-4">Activities & Water Sports</h2>
 
-          <div className="mb-6 p-4 bg-blue-50 border-l-4 border-blue-600">
+          <div className="mb-6 p-4 bg-[#1E3A5F]/10 border-l-4 border-[#D4AF37]">
             <p className="font-inter text-sm text-slate-600">
               <strong>Pro Tip:</strong> Most water sports require advance sign-ups at the beach. Head straight to the activity booth upon arrival to secure your preferred time slot, especially for parasailing and the stingray encounter.
             </p>
@@ -201,7 +201,7 @@ export default function CastawayCayGuide() {
               href="/concierge"
               className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow"
             >
-              <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4 flex items-center justify-between gap-4">
+              <div className="bg-gradient-to-r from-[#0a1628] to-[#1E3A5F] px-6 py-4 flex items-center justify-between gap-4">
                 <div>
                   <p className="text-[#D4AF37] font-bold text-base leading-tight">Plan Your Disney Cruise</p>
                   <p className="text-blue-200 text-sm mt-0.5">Connect with our concierge team for expert cruise planning</p>
@@ -261,7 +261,7 @@ export default function CastawayCayGuide() {
         <section className="mb-12">
           <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-4">Weather & Special Considerations</h2>
 
-          <div className="mb-6 p-4 bg-amber-50 border-l-4 border-blue-600 flex gap-3">
+          <div className="mb-6 p-4 bg-amber-50 border-l-4 border-[#D4AF37] flex gap-3">
             <AlertCircle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
             <div>
               <p className="font-inter text-slate-600">
@@ -284,7 +284,7 @@ export default function CastawayCayGuide() {
         </section>
 
         {/* CTA Section */}
-        <section className="my-12 p-8 bg-gradient-to-r from-blue-50 to-blue-900 text-white rounded-lg">
+        <section className="my-12 p-8 bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] text-white rounded-lg">
           <h2 className="font-fraunces text-3xl font-bold mb-4">Plan Your Castaway Cay Adventure</h2>
           <p className="font-inter text-lg mb-6">
             Ready to explore Disney's private island? Use our cruise planning tools to calculate your costs, find the best deals, and compare cruise options.

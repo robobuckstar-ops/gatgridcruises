@@ -94,7 +94,7 @@ export function NewsletterSignup({ variant = 'card', className = '' }: Newslette
 
   // default: card
   return (
-    <div className={`bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-8 border border-blue-100 ${className}`}>
+    <div className={`bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] rounded-xl p-8 border border-blue-100 ${className}`}>
       <div className="flex items-center gap-3 mb-3">
         <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
           <Bell className="h-5 w-5 text-white" />

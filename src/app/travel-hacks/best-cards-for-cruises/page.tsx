@@ -111,7 +111,7 @@ export default function BestCardsForCruises() {
             for each spending category:
           </p>
 
-          <div className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded my-6">
+          <div className="bg-[#1E3A5F]/10 border-l-4 border-[#D4AF37] p-6 rounded my-6">
             <p className="text-sm text-slate-700 mb-3">
               <strong>Example: $6,000 Disney Cruise for Family of 2</strong>
             </p>

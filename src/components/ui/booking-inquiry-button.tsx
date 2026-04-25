@@ -109,7 +109,7 @@ export function BookingInquiryButton({ sailing, variant = 'inline', className }:
   }
 
   return (
-    <div className={`border border-blue-200 bg-blue-50 rounded-xl p-5 ${className ?? ''}`}>
+    <div className={`border border-blue-200 bg-[#1E3A5F]/10 rounded-xl p-5 ${className ?? ''}`}>
       <div className="flex flex-col sm:flex-row sm:items-center gap-4">
         <div className="flex-1">
           <p className="text-blue-600 text-xs font-bold uppercase tracking-wider mb-1">

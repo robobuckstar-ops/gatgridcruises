@@ -13,14 +13,14 @@ export default function BestDisneyCruiseStateroomsGuide() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-50 to-indigo-50 py-16">
+      <section className="relative bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-6">
-            <Link href="/" className="text-blue-600 hover:underline text-sm">
+            <Link href="/" className="text-[#D4AF37] hover:underline text-sm">
               Home
             </Link>
             <span className="text-white mx-2">/</span>
-            <Link href="/guides" className="text-blue-600 hover:underline text-sm">
+            <Link href="/guides" className="text-[#D4AF37] hover:underline text-sm">
               Guides
             </Link>
             <span className="text-white mx-2">/</span>
@@ -29,7 +29,7 @@ export default function BestDisneyCruiseStateroomsGuide() {
           <h1 className="text-4xl md:text-5xl font-fraunces font-bold mb-4">
             Best Disney Cruise Staterooms: Category-by-Category Guide
           </h1>
-          <p className="text-lg text-slate-600">
+          <p className="text-lg text-white/80">
             Understand every cabin type, from budget inside cabins to luxury concierge suites. Find the perfect stateroom for your budget and vacation style.
           </p>
         </div>
@@ -82,7 +82,7 @@ export default function BestDisneyCruiseStateroomsGuide() {
             Inside Cabins (Categories 11A, 11B, 11C)
           </h2>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               What You Get
             </h3>
@@ -94,7 +94,7 @@ export default function BestDisneyCruiseStateroomsGuide() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Best For
             </h3>
@@ -103,7 +103,7 @@ export default function BestDisneyCruiseStateroomsGuide() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Pros & Cons
             </h3>
@@ -123,7 +123,7 @@ export default function BestDisneyCruiseStateroomsGuide() {
             Oceanview Cabins (Categories 9A, 9B, 9C, 9D)
           </h2>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               What You Get
             </h3>
@@ -138,7 +138,7 @@ export default function BestDisneyCruiseStateroomsGuide() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Best For
             </h3>
@@ -147,7 +147,7 @@ export default function BestDisneyCruiseStateroomsGuide() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Pros & Cons
             </h3>
@@ -181,7 +181,7 @@ export default function BestDisneyCruiseStateroomsGuide() {
             Verandah Cabins (Categories 4A-7A)
           </h2>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               What You Get
             </h3>
@@ -199,7 +199,7 @@ export default function BestDisneyCruiseStateroomsGuide() {
             </ul>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Location Strategy: Understanding Cabin Position
             </h3>
@@ -246,7 +246,7 @@ export default function BestDisneyCruiseStateroomsGuide() {
             </ul>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Best For
             </h3>
@@ -255,7 +255,7 @@ export default function BestDisneyCruiseStateroomsGuide() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Pros & Cons
             </h3>
@@ -277,7 +277,7 @@ export default function BestDisneyCruiseStateroomsGuide() {
             Concierge Suites (Categories 1, 2, 3)
           </h2>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               What You Get
             </h3>
@@ -294,7 +294,7 @@ export default function BestDisneyCruiseStateroomsGuide() {
             </ul>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Concierge Perks (Beyond the Cabin)
             </h3>
@@ -312,7 +312,7 @@ export default function BestDisneyCruiseStateroomsGuide() {
             </ul>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Best For
             </h3>
@@ -321,7 +321,7 @@ export default function BestDisneyCruiseStateroomsGuide() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Pros & Cons
             </h3>
@@ -356,7 +356,7 @@ export default function BestDisneyCruiseStateroomsGuide() {
             Ship-Specific Stateroom Features
           </h2>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Disney Wish & Disney Treasure (Newest Ships)
             </h3>
@@ -371,7 +371,7 @@ export default function BestDisneyCruiseStateroomsGuide() {
             </ul>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Disney Dream & Disney Fantasy (Older Ships)
             </h3>
@@ -387,7 +387,7 @@ export default function BestDisneyCruiseStateroomsGuide() {
           </h2>
 
           <div className="space-y-6">
-            <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg">
+            <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg">
               <h3 className="text-lg font-fraunces font-bold text-slate-900 mb-3">
                 Inside Cabin If:
               </h3>
@@ -399,7 +399,7 @@ export default function BestDisneyCruiseStateroomsGuide() {
               </ul>
             </div>
 
-            <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg">
+            <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg">
               <h3 className="text-lg font-fraunces font-bold text-slate-900 mb-3">
                 Oceanview If:
               </h3>
@@ -411,7 +411,7 @@ export default function BestDisneyCruiseStateroomsGuide() {
               </ul>
             </div>
 
-            <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg">
+            <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg">
               <h3 className="text-lg font-fraunces font-bold text-slate-900 mb-3">
                 Verandah If:
               </h3>
@@ -423,7 +423,7 @@ export default function BestDisneyCruiseStateroomsGuide() {
               </ul>
             </div>
 
-            <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg">
+            <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg">
               <h3 className="text-lg font-fraunces font-bold text-slate-900 mb-3">
                 Concierge Suite If:
               </h3>
@@ -470,7 +470,7 @@ export default function BestDisneyCruiseStateroomsGuide() {
         </section>
 
         {/* CTA Section */}
-        <section className="bg-gradient-to-r from-blue-50 to-indigo-50 p-8 rounded-lg mb-12">
+        <section className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] p-8 rounded-lg mb-12">
           <h2 className="text-2xl font-fraunces font-bold mb-4">Ready to Find Your Perfect Cruise?</h2>
           <p className="font-inter mb-6">
             Use our stateroom finder to compare cabin categories, view pricing, and discover the best options for your vacation style and budget.
@@ -485,8 +485,8 @@ export default function BestDisneyCruiseStateroomsGuide() {
           <h2 className="text-2xl font-fraunces font-bold text-slate-900 mb-6">Related Guides</h2>
           <div className="grid md:grid-cols-3 gap-6">
             <Link href="/guides/disney-cruise-cost-guide" className="group">
-              <div className="bg-gray-50 p-6 rounded-lg hover:bg-blue-50 transition">
-                <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-blue-600">
+              <div className="bg-gray-50 p-6 rounded-lg hover:bg-[#1E3A5F]/10 transition">
+                <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-[#D4AF37]">
                   The True Cost of a Disney Cruise
                 </h3>
                 <p className="font-inter text-gray-600 text-sm">
@@ -495,8 +495,8 @@ export default function BestDisneyCruiseStateroomsGuide() {
               </div>
             </Link>
             <Link href="/guides/port-canaveral-vs-miami" className="group">
-              <div className="bg-gray-50 p-6 rounded-lg hover:bg-blue-50 transition">
-                <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-blue-600">
+              <div className="bg-gray-50 p-6 rounded-lg hover:bg-[#1E3A5F]/10 transition">
+                <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-[#D4AF37]">
                   Port Canaveral vs. Miami
                 </h3>
                 <p className="font-inter text-gray-600 text-sm">
@@ -505,8 +505,8 @@ export default function BestDisneyCruiseStateroomsGuide() {
               </div>
             </Link>
             <Link href="/guides/first-time-disney-cruise-tips" className="group">
-              <div className="bg-gray-50 p-6 rounded-lg hover:bg-blue-50 transition">
-                <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-blue-600">
+              <div className="bg-gray-50 p-6 rounded-lg hover:bg-[#1E3A5F]/10 transition">
+                <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-[#D4AF37]">
                   25 First-Time Cruise Tips
                 </h3>
                 <p className="font-inter text-gray-600 text-sm">

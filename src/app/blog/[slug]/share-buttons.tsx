@@ -15,7 +15,7 @@ export function ShareButtons({ title, slug }: ShareButtonsProps) {
         href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100 transition-colors font-medium"
+        className="inline-flex items-center gap-2 px-4 py-2 bg-[#1E3A5F]/10 text-blue-600 rounded-lg hover:bg-[#1E3A5F]/20 transition-colors font-medium"
       >
         <Twitter className="h-4 w-4" />
         Twitter
@@ -24,7 +24,7 @@ export function ShareButtons({ title, slug }: ShareButtonsProps) {
         href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100 transition-colors font-medium"
+        className="inline-flex items-center gap-2 px-4 py-2 bg-[#1E3A5F]/10 text-blue-600 rounded-lg hover:bg-[#1E3A5F]/20 transition-colors font-medium"
       >
         <Facebook className="h-4 w-4" />
         Facebook

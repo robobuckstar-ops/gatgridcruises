@@ -270,7 +270,7 @@ export function FlightFinder({
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       {/* Header */}
       <div
-        className="py-12 px-6 sm:px-8 bg-gradient-to-br from-blue-50 via-white to-indigo-50"
+        className="py-12 px-6 sm:px-8 bg-gradient-to-b from-[#0a1628] to-[#1E3A5F]"
       >
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center gap-3 mb-3">
@@ -337,7 +337,7 @@ export function FlightFinder({
                     <li key={airport.code}>
                       <button
                         type="button"
-                        className="w-full flex items-center gap-3 px-4 py-2.5 text-left hover:bg-blue-50 transition-colors"
+                        className="w-full flex items-center gap-3 px-4 py-2.5 text-left hover:bg-[#1E3A5F]/10 transition-colors"
                         onMouseDown={e => {
                           e.preventDefault()
                           setHomeAirport(airport.code)
@@ -418,7 +418,7 @@ export function FlightFinder({
           <div className="space-y-8">
             {/* Arrival Time Recommendation */}
             <div
-              className="rounded-lg border-l-4 border-blue-600 p-6 bg-blue-50"
+              className="rounded-lg border-l-4 border-[#D4AF37] p-6 bg-[#1E3A5F]/10"
             >
               <div className="flex gap-4">
                 <AlertCircle
@@ -781,7 +781,7 @@ function SouthwestAlerts({ homeAirport }: { homeAirport: string }) {
   }
 
   return (
-    <div className="mt-12 bg-gradient-to-br from-[#1E3A5F] to-[#2a4f7a] rounded-2xl overflow-hidden">
+    <div className="mt-12 bg-gradient-to-br from-[#0a1628] to-[#1E3A5F] rounded-2xl overflow-hidden">
       <div className="p-8">
         <div className="flex items-start gap-4 mb-6">
           <div className="flex-shrink-0 w-12 h-12 bg-[#D4AF37]/20 rounded-xl flex items-center justify-center">
@@ -866,7 +866,7 @@ function SouthwestAlerts({ homeAirport }: { homeAirport: string }) {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="px-5 py-3 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm rounded-xl hover:bg-yellow-300 transition-colors whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                    className="px-5 py-3 bg-[#D4AF37] text-[#0a1628] font-bold text-sm rounded-xl hover:bg-yellow-300 transition-colors whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
                   >
                     {loading ? 'Saving…' : (
                       <>Alert Me <ArrowRight className="w-4 h-4" aria-hidden="true" /></>

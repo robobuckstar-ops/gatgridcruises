@@ -24,7 +24,7 @@ export default function TravelHacksCreditCardsPage() {
   const loungeAccessCards = getBestCardsFor('lounge-access')
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-indigo-50">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-12 sm:py-16">
         <div className="max-w-3xl">
@@ -40,7 +40,7 @@ export default function TravelHacksCreditCardsPage() {
             <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 text-emerald-700 text-sm font-medium">
               <span>✓</span> 8 Cards Compared
             </div>
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-medium">
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#1E3A5F]/20 text-blue-700 text-sm font-medium">
               <span>✓</span> Honest Reviews
             </div>
             <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-purple-100 text-purple-700 text-sm font-medium">
@@ -112,7 +112,7 @@ export default function TravelHacksCreditCardsPage() {
           Arriving early for your cruise? Pre-cruise lounges offer free food, drinks, showers, and Wi-Fi. These cards
           give you access:
         </p>
-        <div className="mb-8 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+        <div className="mb-8 p-4 bg-[#1E3A5F]/10 border border-blue-200 rounded-lg">
           <p className="text-sm text-blue-900">
             <strong>Priority Pass</strong> includes 1,000+ lounges globally, not just airport lounges. Many cruise
             terminals (Port Canaveral, Miami) have Priority Pass partners nearby.
@@ -222,7 +222,7 @@ export default function TravelHacksCreditCardsPage() {
               Game-changer if unexpected life happens.
             </p>
           </div>
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+          <div className="bg-[#1E3A5F]/10 border border-blue-200 rounded-lg p-6">
             <h3 className="font-semibold text-blue-900 mb-3">Trip Delay</h3>
             <p className="text-sm text-blue-800 leading-relaxed">
               Miss your cruise due to a flight delay? You're reimbursed for hotel and meals up to $500. Common scenario

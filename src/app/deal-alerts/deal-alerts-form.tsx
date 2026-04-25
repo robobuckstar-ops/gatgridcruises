@@ -88,7 +88,7 @@ export function DealAlertsForm({ dark = false }: DealAlertsFormProps) {
         <button
           type="submit"
           disabled={loading}
-          className="inline-flex items-center gap-2 px-6 py-3 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm rounded-lg hover:bg-yellow-300 transition-colors whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed"
+          className="inline-flex items-center gap-2 px-6 py-3 bg-[#D4AF37] text-[#0a1628] font-bold text-sm rounded-lg hover:bg-yellow-300 transition-colors whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {loading ? 'Subscribing…' : 'Get Alerts'}
           {!loading && <ArrowRight className="w-4 h-4" aria-hidden="true" />}

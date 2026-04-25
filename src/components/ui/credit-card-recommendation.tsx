@@ -22,7 +22,7 @@ export function CreditCardRecommendation({
 }: CreditCardRecommendationProps) {
   // Issuer badge colors
   const issuerColors: Record<string, string> = {
-    chase: 'bg-blue-100 text-blue-700',
+    chase: 'bg-[#1E3A5F]/20 text-blue-700',
     amex: 'bg-indigo-100 text-indigo-700',
     'capital-one': 'bg-orange-100 text-orange-700',
     citi: 'bg-sky-100 text-sky-700',
@@ -46,7 +46,7 @@ export function CreditCardRecommendation({
           {card.signupBonus} bonus (~${card.signupBonusValue})
         </p>
       </div>
-      <ChevronRight className="h-5 w-5 text-slate-400 group-hover:text-blue-600 flex-shrink-0 transition-colors" />
+      <ChevronRight className="h-5 w-5 text-slate-400 group-hover:text-[#D4AF37] flex-shrink-0 transition-colors" />
     </>
   )
 
@@ -127,12 +127,12 @@ export function CreditCardRecommendation({
           {/* Travel insurance badges */}
           <div className="mb-4 flex flex-wrap gap-2">
             {card.tripCancellation && (
-              <span className="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-blue-50 text-blue-700 text-xs font-medium">
+              <span className="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-[#1E3A5F]/10 text-blue-700 text-xs font-medium">
                 <span>✓</span> Trip Cancellation
               </span>
             )}
             {card.tripDelay && (
-              <span className="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-blue-50 text-blue-700 text-xs font-medium">
+              <span className="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-[#1E3A5F]/10 text-blue-700 text-xs font-medium">
                 <span>✓</span> Trip Delay
               </span>
             )}

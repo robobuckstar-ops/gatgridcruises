@@ -56,7 +56,7 @@ export default function WatchlistPage() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50">
+      <div className="min-h-screen bg-gradient-to-b from-[#0a1628] to-[#1E3A5F]">
         <div className="max-w-6xl mx-auto px-4 py-16">
           <p className="text-slate-600">Loading...</p>
         </div>
@@ -66,7 +66,7 @@ export default function WatchlistPage() {
 
   if (!isLoggedIn) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50">
+      <div className="min-h-screen bg-gradient-to-b from-[#0a1628] to-[#1E3A5F]">
         <div className="max-w-6xl mx-auto px-4 py-16">
           <div className="text-center py-16">
             <Heart className="h-16 w-16 text-blue-600 mx-auto mb-6 opacity-50" />
@@ -87,7 +87,7 @@ export default function WatchlistPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50">
+    <div className="min-h-screen bg-gradient-to-b from-[#0a1628] to-[#1E3A5F]">
       <div className="max-w-6xl mx-auto px-4 py-12">
         <div className="mb-12">
           <h1 className="text-4xl font-bold text-slate-900 mb-2">Your Watchlist</h1>

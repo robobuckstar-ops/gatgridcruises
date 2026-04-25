@@ -30,7 +30,7 @@ export function SpecialistCTA({ variant = 'default' }: SpecialistCTAProps) {
   }
 
   return (
-    <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-2xl p-6 md:p-8">
+    <div className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] border border-blue-200 rounded-2xl p-6 md:p-8">
       <div className="flex flex-col md:flex-row md:items-center gap-6">
         <div className="flex items-center justify-center w-14 h-14 bg-blue-600 rounded-2xl flex-shrink-0">
           <PhoneCall className="w-7 h-7 text-white" />

@@ -127,7 +127,7 @@ export function StateroomFinder({ ships, stateroomsByShip }: StateroomFinderProp
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       {/* Header */}
       <div
-        className="py-12 px-6 sm:px-8 bg-gradient-to-br from-blue-50 via-white to-indigo-50"
+        className="py-12 px-6 sm:px-8 bg-gradient-to-b from-[#0a1628] to-[#1E3A5F]"
       >
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center gap-3 mb-3">
@@ -147,7 +147,7 @@ export function StateroomFinder({ ships, stateroomsByShip }: StateroomFinderProp
 
       <div className="max-w-6xl mx-auto px-6 sm:px-8 py-12">
         {/* Info Box */}
-        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8 flex gap-3">
+        <div className="bg-[#1E3A5F]/10 border border-blue-200 rounded-lg p-4 mb-8 flex gap-3">
           <Info className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
           <p className="text-sm text-blue-900">
             <strong>How ratings work:</strong> Stateroom ratings are based on location analysis, not guest reviews. Noise ratings consider proximity to elevators, restaurants, pools, and engines. View ratings consider obstructions and sight lines. Your experience may vary.

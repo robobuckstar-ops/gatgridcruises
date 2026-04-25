@@ -44,7 +44,7 @@ export function CountdownTimer({ sailDate, size = 'md' }: CountdownTimerProps) {
   }
 
   // Determine color based on days remaining
-  let colorClass = 'text-blue-600 bg-blue-50 border-blue-200'
+  let colorClass = 'text-blue-600 bg-[#1E3A5F]/10 border-blue-200'
   if (timeLeft.days < 7) {
     colorClass = 'text-red-700 bg-red-50 border-red-200 animate-pulse'
   } else if (timeLeft.days < 14) {

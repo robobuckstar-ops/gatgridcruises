@@ -53,14 +53,14 @@ const ports = [
 ]
 
 const colorMap: Record<string, string> = {
-  blue: 'bg-blue-50 border-blue-200 text-blue-700',
+  blue: 'bg-[#1E3A5F]/10 border-blue-200 text-blue-700',
   cyan: 'bg-cyan-50 border-cyan-200 text-cyan-700',
   emerald: 'bg-emerald-50 border-emerald-200 text-emerald-700',
   orange: 'bg-orange-50 border-orange-200 text-orange-700',
 }
 
 const badgeMap: Record<string, string> = {
-  blue: 'bg-blue-100 text-blue-800',
+  blue: 'bg-[#1E3A5F]/20 text-blue-800',
   cyan: 'bg-cyan-100 text-cyan-800',
   emerald: 'bg-emerald-100 text-emerald-800',
   orange: 'bg-orange-100 text-orange-800',
@@ -194,7 +194,7 @@ export default function PortsHubPage() {
             href="/concierge"
             className="block rounded-2xl overflow-hidden border border-[#D4AF37] shadow-md hover:shadow-lg transition-shadow"
           >
-            <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div className="bg-gradient-to-r from-[#0a1628] to-[#1E3A5F] px-6 py-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div>
                 <p className="text-[#D4AF37] font-bold text-lg leading-tight">Plan Your Disney Cruise</p>
                 <p className="text-blue-200 text-sm mt-1">Connect with our concierge team to find the perfect sailing</p>

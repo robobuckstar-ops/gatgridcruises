@@ -91,7 +91,7 @@ export function CompareTool({ sailings }: CompareToolProps) {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-blue-50 via-white to-indigo-50 text-slate-900 py-16 border-b border-slate-200">
+      <div className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] text-slate-900 py-16 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="font-fraunces text-4xl sm:text-5xl font-bold mb-4">
             Compare Cruises Side by Side
@@ -152,7 +152,7 @@ export function CompareTool({ sailings }: CompareToolProps) {
                           key={sailing.id}
                           onClick={() => handleSelectSailing(idx, sailing.id)}
                           disabled={selectedIds.includes(sailing.id) && sailing.id !== id}
-                          className="w-full px-4 py-3 text-left border-b border-slate-100 hover:bg-blue-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm"
+                          className="w-full px-4 py-3 text-left border-b border-slate-100 hover:bg-[#1E3A5F]/10 transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm"
                         >
                           <div className="font-semibold text-slate-900">
                             {sailing.ship?.name} • {sailing.itinerary_name}
@@ -229,7 +229,7 @@ export function CompareTool({ sailings }: CompareToolProps) {
                             score.score.score >= 85
                               ? 'bg-emerald-100 text-emerald-700'
                               : score.score.score >= 70
-                                ? 'bg-blue-100 text-blue-700'
+                                ? 'bg-[#1E3A5F]/20 text-blue-700'
                                 : score.score.score >= 55
                                   ? 'bg-amber-100 text-amber-700'
                                   : 'bg-red-100 text-red-700'
@@ -367,7 +367,7 @@ export function CompareTool({ sailings }: CompareToolProps) {
                         key={sailing.id}
                         className={`rounded-lg p-4 border-2 ${
                           isLowest
-                            ? 'bg-blue-50 border-blue-300'
+                            ? 'bg-[#1E3A5F]/10 border-blue-300'
                             : 'bg-white border-slate-200'
                         }`}
                       >
@@ -379,7 +379,7 @@ export function CompareTool({ sailings }: CompareToolProps) {
                           {formatPrice(pricing.perPerson)} per person
                         </p>
                         {isLowest && (
-                          <span className="inline-block text-xs font-bold px-2 py-1 bg-blue-100 text-blue-700 rounded">
+                          <span className="inline-block text-xs font-bold px-2 py-1 bg-[#1E3A5F]/20 text-blue-700 rounded">
                             Best Value
                           </span>
                         )}

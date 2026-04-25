@@ -68,11 +68,11 @@ export default function BlogPage() {
                 {/* Content */}
                 <div className="p-8 md:p-10 flex flex-col justify-between">
                   <div>
-                    <span className="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold uppercase tracking-wide mb-4">
+                    <span className="inline-block px-4 py-2 bg-[#1E3A5F]/20 text-blue-700 rounded-full text-sm font-semibold uppercase tracking-wide mb-4">
                       {featuredPost.category}
                     </span>
 
-                    <h3 className="font-display text-3xl font-bold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors">
+                    <h3 className="font-display text-3xl font-bold text-slate-900 mb-4 group-hover:text-[#D4AF37] transition-colors">
                       {featuredPost.title}
                     </h3>
 

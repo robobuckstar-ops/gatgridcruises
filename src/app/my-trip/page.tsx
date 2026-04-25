@@ -20,7 +20,7 @@ export default function MyTripPage() {
   }
 
   return (
-    <div className="min-h-[calc(100vh-64px)] bg-gradient-to-br from-navy via-[#1a3356] to-[#0f2744] flex items-center justify-center px-4 py-12">
+    <div className="min-h-[calc(100vh-64px)] bg-gradient-to-br from-[#0a1628] to-[#1E3A5F] flex items-center justify-center px-4 py-12">
       <div className="w-full max-w-md">
         {/* Brand lockup */}
         <div className="text-center mb-8">
@@ -68,7 +68,7 @@ export default function MyTripPage() {
                   <button
                     type="submit"
                     disabled={loading || !email}
-                    className="w-full flex items-center justify-center gap-2 py-3 px-4 bg-[#D4AF37] text-[#1E3A5F] font-bold rounded-xl hover:bg-yellow-400 transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed shadow-sm"
+                    className="w-full flex items-center justify-center gap-2 py-3 px-4 bg-[#D4AF37] text-[#0a1628] font-bold rounded-xl hover:bg-yellow-400 transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed shadow-sm"
                   >
                     {loading ? (
                       <>

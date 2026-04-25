@@ -352,7 +352,7 @@ export default function CompareCardsPage() {
               </tr>
 
               {/* Best For */}
-              <tr className="bg-blue-50 hover:bg-blue-100">
+              <tr className="bg-[#1E3A5F]/10 hover:bg-[#1E3A5F]/20">
                 <td className="px-4 py-3 font-medium text-slate-900">Best For</td>
                 {activeCards.map(card => (
                   <td key={card.id} className="px-4 py-3 border-l border-blue-200 text-slate-700 italic">

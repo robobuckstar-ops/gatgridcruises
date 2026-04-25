@@ -142,21 +142,21 @@ export default function GuidesPage() {
               <div key={guide.slug}>
                 <Link
                   href={`/guides/${guide.slug}`}
-                  className="group block p-6 rounded-xl border-2 border-slate-200 hover:border-blue-400 hover:shadow-lg transition-all duration-200"
+                  className="group block p-6 rounded-xl border-2 border-slate-200 hover:border-[#D4AF37] hover:shadow-lg transition-all duration-200"
                 >
                   <div className="flex items-center gap-3 mb-3">
-                    <span className="text-xs font-semibold uppercase tracking-wider text-blue-600 bg-blue-50 px-3 py-1 rounded-full">
+                    <span className="text-xs font-semibold uppercase tracking-wider text-blue-600 bg-[#1E3A5F]/10 px-3 py-1 rounded-full">
                       {guide.category}
                     </span>
                     <span className="text-xs text-slate-400">{guide.readTime}</span>
                   </div>
-                  <h2 className="font-fraunces text-xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
+                  <h2 className="font-fraunces text-xl font-bold text-slate-900 mb-2 group-hover:text-[#D4AF37] transition-colors">
                     {guide.title}
                   </h2>
                   <p className="text-slate-600 text-sm leading-relaxed mb-4">
                     {guide.description}
                   </p>
-                  <span className="inline-flex items-center gap-1 text-sm font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">
+                  <span className="inline-flex items-center gap-1 text-sm font-semibold text-slate-900 group-hover:text-[#D4AF37] transition-colors">
                     Read Guide <ArrowRight className="w-4 h-4" />
                   </span>
                 </Link>
@@ -167,7 +167,7 @@ export default function GuidesPage() {
                       href="/concierge"
                       className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow"
                     >
-                      <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4 flex items-center justify-between gap-4">
+                      <div className="bg-gradient-to-r from-[#0a1628] to-[#1E3A5F] px-6 py-4 flex items-center justify-between gap-4">
                         <div>
                           <p className="text-[#D4AF37] font-bold text-base leading-tight">Plan Your Disney Cruise</p>
                           <p className="text-blue-200 text-sm mt-0.5">Connect with our concierge team for expert cruise planning</p>

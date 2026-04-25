@@ -203,7 +203,7 @@ export default function ReviewsPage() {
 
         {/* Review Form */}
         {showForm && (
-          <div className="bg-blue-50 rounded-lg border border-blue-200 p-8 mb-12">
+          <div className="bg-[#1E3A5F]/10 rounded-lg border border-blue-200 p-8 mb-12">
             <h2 className="text-2xl font-bold text-slate-900 mb-6">Share Your Experience</h2>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

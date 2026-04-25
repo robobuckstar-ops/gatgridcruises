@@ -64,7 +64,7 @@ const phases: Phase[] = [
     timeframe: 'Day of Booking',
     emoji: '⚓',
     headerBg: 'bg-blue-950',
-    cardBg: 'bg-blue-50',
+    cardBg: 'bg-[#1E3A5F]/10',
     cardBorder: 'border-blue-100',
     dotBg: 'bg-blue-950',
     milestones: [
@@ -245,7 +245,7 @@ const phases: Phase[] = [
     timeframe: '45–30 Days Out',
     emoji: '📋',
     headerBg: 'bg-indigo-600',
-    cardBg: 'bg-indigo-50',
+    cardBg: 'bg-[#1E3A5F]/10',
     cardBorder: 'border-indigo-100',
     dotBg: 'bg-indigo-600',
     milestones: [
@@ -586,7 +586,7 @@ const phases: Phase[] = [
     emoji: '📸',
     headerBg: 'bg-purple-700',
     cardBg: 'bg-purple-50',
-    cardBorder: 'border-purple-100',
+    cardBorder: 'border-[#1E3A5F]',
     dotBg: 'bg-purple-700',
     milestones: [
       {
@@ -677,7 +677,7 @@ const castawayTiers = [
     bookingDays: 120,
     icon: '💎',
     colorClass: 'text-blue-700',
-    bg: 'bg-blue-100',
+    bg: 'bg-[#1E3A5F]/20',
     border: 'border-blue-200',
     description:
       "120 days out — you'll almost always get your first choice for excursions and specialty dining. Welcome to the easy booking life.",
@@ -842,7 +842,7 @@ export function CruiseCountdownTimeline() {
                 <button
                   onClick={() => setCruiseCount(Math.max(0, cruiseCount - 1))}
                   aria-label="Decrease cruise count"
-                  className="w-10 h-10 rounded-full bg-blue-100 hover:bg-blue-200 text-blue-900 font-bold text-xl flex items-center justify-center transition-colors flex-shrink-0"
+                  className="w-10 h-10 rounded-full bg-[#1E3A5F]/20 hover:bg-blue-200 text-blue-900 font-bold text-xl flex items-center justify-center transition-colors flex-shrink-0"
                 >
                   −
                 </button>
@@ -852,7 +852,7 @@ export function CruiseCountdownTimeline() {
                 <button
                   onClick={() => setCruiseCount(cruiseCount + 1)}
                   aria-label="Increase cruise count"
-                  className="w-10 h-10 rounded-full bg-blue-100 hover:bg-blue-200 text-blue-900 font-bold text-xl flex items-center justify-center transition-colors flex-shrink-0"
+                  className="w-10 h-10 rounded-full bg-[#1E3A5F]/20 hover:bg-blue-200 text-blue-900 font-bold text-xl flex items-center justify-center transition-colors flex-shrink-0"
                 >
                   +
                 </button>
@@ -918,7 +918,7 @@ export function CruiseCountdownTimeline() {
                 <div className="mt-4 overflow-x-auto rounded-xl border border-blue-100">
                   <table className="w-full text-sm">
                     <thead>
-                      <tr className="bg-blue-50">
+                      <tr className="bg-[#1E3A5F]/10">
                         <th className="text-left px-4 py-2.5 text-blue-900 font-semibold">
                           Tier
                         </th>
@@ -935,7 +935,7 @@ export function CruiseCountdownTimeline() {
                         <tr
                           key={tier.name}
                           className={`
-                            ${i % 2 === 0 ? 'bg-white' : 'bg-blue-50/40'}
+                            ${i % 2 === 0 ? 'bg-white' : 'bg-[#1E3A5F]/10/40'}
                             ${currentTier.name === tier.name ? 'outline outline-2 outline-blue-400 outline-offset-[-2px]' : ''}
                           `}
                         >

@@ -157,7 +157,7 @@ export function TransferRecommender({ transfers, portName }: TransferRecommender
       </div>
 
       {topRecommendation && (
-        <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 text-slate-900 rounded-xl p-6 mb-8">
+        <div className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] border border-blue-200 text-slate-900 rounded-xl p-6 mb-8">
           <div className="flex items-start gap-4 mb-4">
             <div className="flex-shrink-0">
               <Check className="h-6 w-6 text-blue-600" />
