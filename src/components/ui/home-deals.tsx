@@ -2,8 +2,9 @@
 
 import { useState, useMemo } from 'react'
 import Link from 'next/link'
-import { Users, SlidersHorizontal, X, ArrowRight } from 'lucide-react'
+import { SlidersHorizontal, X, ArrowRight } from 'lucide-react'
 import { SailingCard } from '@/components/ui/sailing-card'
+import { GuestCountSelector } from '@/components/ui/guest-count-selector'
 import type { Sailing, Ship } from '@/types/database'
 
 interface HomeDealsProps {
@@ -18,12 +19,6 @@ const DURATION_OPTIONS = [
   { label: '7+ nights', value: 7 },
 ]
 
-const GUEST_OPTIONS = [
-  { label: '1', value: 1 },
-  { label: '2', value: 2 },
-  { label: '3', value: 3 },
-  { label: '4+', value: 4 },
-]
 
 export function HomeDeals({ sailings, ships }: HomeDealsProps) {
   const [selectedShip, setSelectedShip] = useState<string>('')
@@ -103,28 +98,11 @@ export function HomeDeals({ sailings, ships }: HomeDealsProps) {
           </div>
 
           {/* Guests */}
-          <div>
+          <div className="col-span-1 md:col-span-2 lg:col-span-1">
             <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">
-              <span className="flex items-center gap-1.5">
-                <Users className="w-3.5 h-3.5" /> Guests
-              </span>
+              Guests
             </label>
-            <div className="flex gap-1.5">
-              {GUEST_OPTIONS.map(opt => (
-                <button
-                  key={opt.value}
-                  onClick={() => setGuestCount(opt.value)}
-                  className={`flex-1 py-1.5 rounded-lg text-xs font-semibold border transition-colors ${
-                    guestCount === opt.value
-                      ? 'bg-blue-600 text-white border-blue-600'
-                      : 'bg-white text-slate-600 border-slate-200 hover:border-blue-400'
-                  }`}
-                >
-                  {opt.label}
-                </button>
-              ))}
-            </div>
-            <p className="text-[11px] text-slate-400 mt-1">Prices update per guest</p>
+            <GuestCountSelector value={guestCount} onChange={setGuestCount} />
           </div>
 
           {/* Min Deal Score */}

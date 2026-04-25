@@ -346,6 +346,7 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
                   <SailingCard
                     sailing={sailing}
                     percentBelow={sailing.percentBelow}
+                    guestCount={guestCount}
                   />
                   {/* Insert ad after 6th card */}
                 </div>

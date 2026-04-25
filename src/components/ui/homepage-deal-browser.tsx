@@ -212,7 +212,7 @@ export function HomepageDealBrowser({ sailings, ships, ports }: HomepageDealBrow
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filtered.map(sailing => (
-            <SailingCard key={sailing.id} sailing={sailing} percentBelow={sailing.percentBelow} />
+            <SailingCard key={sailing.id} sailing={sailing} percentBelow={sailing.percentBelow} guestCount={guests} />
           ))}
         </div>
       )}

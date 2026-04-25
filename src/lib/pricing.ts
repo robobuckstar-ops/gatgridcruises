@@ -160,7 +160,7 @@ export function getOutTheDoorTotalForGuests(
   nights: number,
   guestCount: number,
   region: string = 'other'
-): { total: number; perPerson: number; perPersonPerNight: number } {
+): { total: number; perPerson: number; perPersonPerNight: number; adjustedBase: number; portFees: number; gratuities: number; guests: number } {
   const adjustedBase = getPriceForGuests(basePrice, guestCount)
   const guests = Math.min(guestCount, 4)
   const portFees = getPortFees(region, nights, guests)
@@ -170,5 +170,5 @@ export function getOutTheDoorTotalForGuests(
   const perPerson = Math.round(total / guests)
   const perPersonPerNight = Math.round(perPerson / nights)
 
-  return { total, perPerson, perPersonPerNight }
+  return { total, perPerson, perPersonPerNight, adjustedBase, portFees, gratuities, guests }
 }
