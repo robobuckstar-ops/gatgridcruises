@@ -5,14 +5,12 @@ import { GetQuoteCTA } from '@/components/get-quote-cta'
 
 export const metadata: Metadata = {
   title: 'The Ultimate Disney Cruise Packing List (With Our Top Picks)',
-  description: 'The best gear for Disney cruises — luggage, cruise essentials, sun & beach, kids gear, formal night, and health must-haves. Amazon picks with affiliate links.',
+  description: 'The best gear for Disney cruises — luggage, cruise essentials, sun & beach, kids gear, formal night, and health must-haves. Honest picks for every budget.',
   keywords: ['disney cruise packing list', 'what to pack disney cruise', 'cruise essentials', 'disney cruise gear', 'cruise packing tips'],
 }
 
-const AFFILIATE_TAG = 'thm1230b0300-20'
-
 function amazonLink(asin: string) {
-  return `https://www.amazon.com/dp/${asin}?tag=${AFFILIATE_TAG}`
+  return `https://www.amazon.com/dp/${asin}`
 }
 
 interface Product {
@@ -352,24 +350,19 @@ export default function PackingGearPage() {
       <section className="py-8">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <a
-            href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-            target="_blank"
-            rel="noopener noreferrer sponsored"
+            href="/concierge"
             className="block rounded-2xl overflow-hidden border border-[#D4AF37] shadow-md hover:shadow-lg transition-shadow"
           >
             <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div>
-                <p className="text-[#D4AF37] font-bold text-lg leading-tight">Earn 150K+ Points with Amex Business Platinum</p>
-                <p className="text-blue-200 text-sm mt-1">Use points to upgrade your Disney cruise stateroom or book flights to Port Canaveral</p>
+                <p className="text-[#D4AF37] font-bold text-lg leading-tight">Plan Your Disney Cruise</p>
+                <p className="text-blue-200 text-sm mt-1">Connect with our concierge team to find the perfect sailing</p>
               </div>
               <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-5 py-2.5 rounded-xl whitespace-nowrap">
-                Apply Now →
+                Get Started →
               </span>
             </div>
           </a>
-          <p className="text-xs text-slate-400 mt-2">
-            Sponsored. Terms apply. See our <Link href="/disclosures" className="underline hover:text-slate-600">affiliate disclosures</Link>.
-          </p>
         </div>
       </section>
 

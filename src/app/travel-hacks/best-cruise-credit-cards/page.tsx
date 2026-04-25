@@ -22,7 +22,7 @@ const cards = [
     annualFee: '$95',
     earningRate: '3x on travel, shipping, internet, & phone',
     signupBonus: '90,000 points after $8,000 spend in 3 months (~$1,125 value)',
-    referralUrl: 'https://www.referyourchasecard.com/226m/6ZT33F9TOQ',
+    referralUrl: '/concierge',
     highlights: [
       '3x Ultimate Rewards points on travel (including cruise bookings)',
       'Points transfer 1:1 to United, Hyatt, Southwest, and more',
@@ -45,7 +45,7 @@ const cards = [
     annualFee: '$150 (rebated if you spend $150K+)',
     earningRate: '2% unlimited cash back on everything',
     signupBonus: 'Up to $1,000 cash back — $500 at $5K, $500 more at $50K in first 6 months',
-    referralUrl: 'https://i.capitalone.com/JKlfRwN3f',
+    referralUrl: '/concierge',
     highlights: [
       'Flat 2% cash back on every purchase — no categories to track',
       'No spending caps or limits on cash back',
@@ -68,7 +68,7 @@ const cards = [
     annualFee: '$695',
     earningRate: '5x on flights & hotels booked via Amex Travel; 1.5x on purchases $5K+',
     signupBonus: '150,000 Membership Rewards points after $20,000 spend in first 3 months',
-    referralUrl: 'https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS',
+    referralUrl: '/concierge',
     highlights: [
       '$200 airline fee credit per year (incidental fees)',
       '$189 CLEAR Plus credit per year',
@@ -123,7 +123,7 @@ export default function BestCruiseCreditCardsPage() {
               ✓ 3 cards compared
             </div>
             <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 text-slate-200 text-sm">
-              ✓ Real referral links
+              ✓ Cruise expert tips
             </div>
             <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 text-slate-200 text-sm">
               ✓ Cruise-specific tips
@@ -219,18 +219,16 @@ export default function BestCruiseCreditCardsPage() {
             <a
               key={card.name}
               href={card.referralUrl}
-              target="_blank"
-              rel="noopener noreferrer sponsored"
-              className="block text-center p-5 border-2 border-blue-600 rounded-xl hover:bg-blue-600 hover:text-white transition group"
+              className="block text-center p-5 border-2 border-[#1E3A5F] rounded-xl hover:bg-[#1E3A5F] hover:text-white transition group"
             >
               <p className="font-bold text-slate-900 group-hover:text-white text-sm mb-1">
                 {card.name}
               </p>
-              <p className="text-blue-600 group-hover:text-white font-semibold text-lg">
+              <p className="text-[#1E3A5F] group-hover:text-[#D4AF37] font-semibold text-lg">
                 {card.signupBonus.split(' ').slice(0, 2).join(' ')}
               </p>
-              <p className="text-blue-700 group-hover:text-blue-100 text-xs mt-2">
-                View Deal →
+              <p className="text-slate-600 group-hover:text-white text-xs mt-2">
+                Learn More →
               </p>
             </a>
           ))}
@@ -301,11 +299,9 @@ export default function BestCruiseCreditCardsPage() {
                   </div>
                   <a
                     href={card.referralUrl}
-                    target="_blank"
-                    rel="noopener noreferrer nofollow"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm transition-colors whitespace-nowrap"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#1E3A5F] hover:bg-[#2a4f7a] text-white font-semibold text-sm transition-colors whitespace-nowrap"
                   >
-                    Check Current Offer →
+                    Learn More →
                   </a>
                 </div>
 
@@ -369,15 +365,10 @@ export default function BestCruiseCreditCardsPage() {
               <div className="px-6 pb-6">
                 <a
                   href={card.referralUrl}
-                  target="_blank"
-                  rel="noopener noreferrer nofollow"
-                  className="block w-full text-center py-3 rounded-lg bg-slate-900 hover:bg-slate-700 text-white font-semibold transition-colors"
+                  className="block w-full text-center py-3 rounded-lg bg-[#1E3A5F] hover:bg-[#2a4f7a] text-white font-semibold transition-colors"
                 >
-                  Apply for {card.name} →
+                  Plan Your Disney Cruise →
                 </a>
-                <p className="text-xs text-slate-400 text-center mt-2">
-                  Affiliate link — we may earn a commission at no cost to you.
-                </p>
               </div>
             </section>
           ))}

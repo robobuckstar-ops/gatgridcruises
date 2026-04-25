@@ -130,17 +130,12 @@ export default function CreditCardsPage() {
                 </div>
               </div>
             </div>
-            <a
-              href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
+            <Link
+              href="/concierge"
               className="inline-flex items-center gap-2 bg-[#D4AF37] text-[#1E3A5F] font-bold px-6 py-3 rounded-lg hover:bg-yellow-300 transition-colors"
             >
-              Apply for Amex Business Platinum <ArrowRight className="w-4 h-4" />
-            </a>
-            <p className="text-xs text-slate-400 mt-2">
-              Affiliate link — we may earn a commission at no cost to you.
-            </p>
+              Plan Your Disney Cruise <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
 
@@ -199,17 +194,12 @@ export default function CreditCardsPage() {
                 </div>
               </div>
             </div>
-            <a
-              href="https://www.referyourchasecard.com/226m/6ZT33F9TOQ"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
+            <Link
+              href="/concierge"
               className="inline-flex items-center gap-2 bg-[#1E3A5F] text-white font-bold px-6 py-3 rounded-lg hover:bg-[#2a4f7a] transition-colors"
             >
-              Apply for Southwest Card <ArrowRight className="w-4 h-4" />
-            </a>
-            <p className="text-xs text-slate-400 mt-2">
-              Affiliate link — we may earn a commission at no cost to you.
-            </p>
+              Connect with an Advisor <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
 
@@ -267,17 +257,12 @@ export default function CreditCardsPage() {
                 </div>
               </div>
             </div>
-            <a
-              href="https://i.capitalone.com/JKlfRwN3f"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
+            <Link
+              href="/concierge"
               className="inline-flex items-center gap-2 bg-[#1E3A5F] text-white font-bold px-6 py-3 rounded-lg hover:bg-[#2a4f7a] transition-colors"
             >
-              Apply for Capital One Spark <ArrowRight className="w-4 h-4" />
-            </a>
-            <p className="text-xs text-slate-400 mt-2">
-              Affiliate link — we may earn a commission at no cost to you.
-            </p>
+              Connect with an Advisor <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
 
@@ -351,10 +336,10 @@ export default function CreditCardsPage() {
             perks for maximum value.
           </p>
           <Link
-            href="/book"
+            href="/concierge"
             className="inline-flex items-center gap-2 bg-[#D4AF37] text-[#1E3A5F] font-bold px-8 py-3 rounded-lg hover:bg-yellow-300 transition-colors"
           >
-            Get a Free Quote <ArrowRight className="w-4 h-4" />
+            Plan Your Disney Cruise <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </section>
@@ -362,11 +347,9 @@ export default function CreditCardsPage() {
       {/* Disclaimer */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <p className="text-xs text-slate-400 border-t border-slate-200 pt-6">
-          Affiliate disclosure: Some links on this page are referral links. We may earn a
-          commission if you apply and are approved for a card. This does not affect our
-          recommendations — we only feature cards we genuinely use or recommend for Disney cruise
-          planning. Card offers and terms change frequently; always verify current offers before
-          applying.
+          Card information is provided for educational purposes. GatGridCruises does not provide
+          financial advice. Card offers and terms change frequently; always verify current offers
+          before applying.
         </p>
       </div>
     </main>

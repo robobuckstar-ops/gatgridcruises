@@ -116,7 +116,7 @@ const sections = [
       Points transfer to Delta, Air France/KLM, and others. Lounge access a bonus during embarkation.
       Apply here → [Amex Biz Plat link below]
     — Capital One Spark Miles: 2x on all purchases, flexible redemption.
-      [Apply here](https://i.capitalone.com/JKlfRwN3f)
+      Visit our concierge page for cruise planning help.
 
     Strategy: Use credit card points for flights and hotels. Pay for the cruise with a card
     that earns 2–3x on travel purchases. The Amex Biz Plat earns 5x on flights booked direct.`,
@@ -187,28 +187,23 @@ export default function HowToGetCompedCruises() {
               })}
             </div>
 
-            {/* Amex CTA */}
-            <div className="mt-12 p-6 bg-gradient-to-r from-[#006FCF] to-[#0077CC] rounded-2xl text-white">
-              <p className="text-xs uppercase tracking-widest text-blue-200 font-semibold mb-2">
-                American Express Business Platinum
+            {/* Concierge CTA */}
+            <div className="mt-12 p-6 bg-gradient-to-r from-[#1E3A5F] to-[#0a1628] rounded-2xl text-white">
+              <p className="text-xs uppercase tracking-widest text-[#D4AF37] font-semibold mb-2">
+                GatGrid Concierge
               </p>
               <h3 className="font-bold text-xl mb-2">
-                Earn 150,000 points — enough for two round-trip flights to any cruise port
+                Ready to plan your Disney cruise?
               </h3>
               <p className="text-blue-200 text-sm mb-4">
-                Use points for airfare, reducing your Disney cruise&apos;s total cost by $1,000+.
+                Our concierge team partners with Boardwalk Travel Agency to find the perfect sailing for your family.
               </p>
-              <a
-                href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-                target="_blank"
-                rel="noopener noreferrer sponsored"
-                className="inline-flex items-center gap-2 bg-white text-[#006FCF] font-bold px-6 py-3 rounded-xl hover:bg-blue-50 transition-colors text-sm"
+              <Link
+                href="/concierge"
+                className="inline-flex items-center gap-2 bg-[#D4AF37] text-[#1E3A5F] font-bold px-6 py-3 rounded-xl hover:bg-yellow-300 transition-colors text-sm"
               >
-                Learn More →
-              </a>
-              <p className="text-[11px] text-blue-300 mt-3">
-                Affiliate disclosure: GatGridCruises may earn a commission if you apply via our link, at no cost to you.
-              </p>
+                Plan Your Cruise →
+              </Link>
             </div>
 
             {/* Bottom section */}
