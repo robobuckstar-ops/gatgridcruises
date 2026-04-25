@@ -35,6 +35,7 @@ export function HomepageDealBrowser({ sailings, ships, ports }: HomepageDealBrow
   const [selectedPort, setSelectedPort] = useState<string | null>(null)
   const [guests, setGuests] = useState(2)
   const [minScore, setMinScore] = useState(0)
+  const [privateIsland, setPrivateIsland] = useState(false)
 
   const filtered = useMemo(() => {
     return sailings.filter(s => {
@@ -43,9 +44,13 @@ export function HomepageDealBrowser({ sailings, ships, ports }: HomepageDealBrow
       if (selectedShip && s.ship_id !== selectedShip) return false
       if (selectedPort && s.departure_port_id !== selectedPort) return false
       if (minScore > 0 && (s.sailing_score ?? 0) < minScore) return false
+      if (privateIsland && !s.itinerary_details?.some(day =>
+        day.port?.toLowerCase().includes('castaway cay') ||
+        day.port?.toLowerCase().includes('lighthouse point')
+      )) return false
       return true
     })
-  }, [sailings, destination, duration, selectedShip, selectedPort, minScore])
+  }, [sailings, destination, duration, selectedShip, selectedPort, minScore, privateIsland])
 
   const activeDest = destination
   const activeDur = duration
@@ -173,8 +178,24 @@ export function HomepageDealBrowser({ sailings, ships, ports }: HomepageDealBrow
             />
           </div>
 
+          {/* Private Island toggle */}
+          <div>
+            <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2">Special</p>
+            <button
+              onClick={() => setPrivateIsland(prev => !prev)}
+              className={`inline-flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium border transition-colors ${
+                privateIsland
+                  ? 'bg-blue-600 text-white border-blue-600'
+                  : 'bg-white text-slate-700 border-slate-300 hover:border-blue-400 hover:text-blue-600'
+              }`}
+            >
+              <span>🏝️</span>
+              Private Island
+            </button>
+          </div>
+
           {/* Clear filters */}
-          {(destination || duration || selectedShip || selectedPort || minScore > 0) && (
+          {(destination || duration || selectedShip || selectedPort || minScore > 0 || privateIsland) && (
             <button
               onClick={() => {
                 setDestination(null)
@@ -182,6 +203,7 @@ export function HomepageDealBrowser({ sailings, ships, ports }: HomepageDealBrow
                 setSelectedShip(null)
                 setSelectedPort(null)
                 setMinScore(0)
+                setPrivateIsland(false)
               }}
               className="text-sm text-slate-500 hover:text-slate-700 underline"
             >
@@ -203,7 +225,7 @@ export function HomepageDealBrowser({ sailings, ships, ports }: HomepageDealBrow
           <div className="text-4xl mb-3">🚢</div>
           <p className="font-semibold text-slate-700 mb-2">No sailings match your filters</p>
           <button
-            onClick={() => { setDestination(null); setDuration(null); setSelectedShip(null); setSelectedPort(null); setMinScore(0) }}
+            onClick={() => { setDestination(null); setDuration(null); setSelectedShip(null); setSelectedPort(null); setMinScore(0); setPrivateIsland(false) }}
             className="text-sm text-blue-600 hover:underline"
           >
             Clear all filters

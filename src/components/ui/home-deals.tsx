@@ -25,6 +25,7 @@ export function HomeDeals({ sailings, ships }: HomeDealsProps) {
   const [selectedDurations, setSelectedDurations] = useState<number[]>([])
   const [minScore, setMinScore] = useState(0)
   const [guestCount, setGuestCount] = useState(2)
+  const [privateIsland, setPrivateIsland] = useState(false)
 
   const filtered = useMemo(() => {
     let results = [...sailings]
@@ -36,8 +37,16 @@ export function HomeDeals({ sailings, ships }: HomeDealsProps) {
       })
     }
     if (minScore > 0) results = results.filter(s => s.sailing_score >= minScore)
+    if (privateIsland) {
+      results = results.filter(s =>
+        s.itinerary_details?.some(day =>
+          day.port?.toLowerCase().includes('castaway cay') ||
+          day.port?.toLowerCase().includes('lighthouse point')
+        )
+      )
+    }
     return results.sort((a, b) => b.sailing_score - a.sailing_score)
-  }, [sailings, selectedShip, selectedDurations, minScore])
+  }, [sailings, selectedShip, selectedDurations, minScore, privateIsland])
 
   const toggleDuration = (val: number) => {
     setSelectedDurations(prev =>
@@ -49,9 +58,10 @@ export function HomeDeals({ sailings, ships }: HomeDealsProps) {
     setSelectedShip('')
     setSelectedDurations([])
     setMinScore(0)
+    setPrivateIsland(false)
   }
 
-  const hasFilters = selectedShip || selectedDurations.length > 0 || minScore > 0
+  const hasFilters = selectedShip || selectedDurations.length > 0 || minScore > 0 || privateIsland
 
   return (
     <div>
@@ -123,6 +133,22 @@ export function HomeDeals({ sailings, ships }: HomeDealsProps) {
               <span>Any</span><span>90+</span>
             </div>
           </div>
+        </div>
+
+        {/* Private Island */}
+        <div className="mt-4 pt-4 border-t border-slate-100">
+          <button
+            onClick={() => setPrivateIsland(prev => !prev)}
+            className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium border transition-colors ${
+              privateIsland
+                ? 'bg-blue-600 text-white border-blue-600'
+                : 'bg-white text-slate-600 border-slate-200 hover:border-blue-400'
+            }`}
+          >
+            <span>🏝️</span>
+            Private Island Stop
+          </button>
+          <p className="text-[11px] text-slate-400 mt-1">Includes Castaway Cay or Lighthouse Point</p>
         </div>
 
         {hasFilters && (
