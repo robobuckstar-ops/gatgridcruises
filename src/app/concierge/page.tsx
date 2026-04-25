@@ -1,11 +1,11 @@
 import { Metadata } from 'next'
+import { Suspense } from 'react'
 import {
   Gift,
   Bell,
   Plane,
   CheckCircle,
   MessageSquare,
-  Calendar,
   Utensils,
   Anchor,
   Camera,
@@ -22,7 +22,7 @@ import {
   TrendingDown,
   MapPin,
 } from 'lucide-react'
-import { BookingInquiryButton } from '@/components/ui/booking-inquiry-button'
+import { ConciergeForm } from './ConciergeForm'
 
 export const metadata: Metadata = {
   title: 'Your Personal Disney Cruise Concierge | GatGridCruises',
@@ -241,7 +241,7 @@ export default function ConciergePage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="mailto:bookings@gatgridcruises.com?subject=Disney%20Cruise%20Concierge%20Inquiry"
+              href="#get-started"
               className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#D4AF37] text-[#1E3A5F] font-bold rounded-xl hover:bg-yellow-300 transition-colors shadow-lg text-base"
             >
               Start Planning <ArrowRight className="w-4 h-4" />
@@ -534,19 +534,30 @@ export default function ConciergePage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-slate-900 via-[#1E3A5F] to-slate-900 border-y border-white/10">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-          <Sparkles className="w-10 h-10 text-[#D4AF37] mx-auto mb-4" />
-          <h2 className="font-fraunces text-3xl md:text-4xl font-bold text-white mb-4">
-            Ready to Cruise with a Concierge?
-          </h2>
-          <p className="font-inter text-lg text-blue-200 mb-10 max-w-xl mx-auto">
-            Reach out and we&apos;ll get your trip set up. It takes 5 minutes and costs nothing —
-            and you&apos;ll have us by your side for every step of the journey.
-          </p>
-          <BookingInquiryButton variant="banner" />
-          <p className="font-inter text-xs text-blue-400 mt-6">
+      {/* Inquiry Form */}
+      <section id="get-started" className="py-16 md:py-24 bg-gradient-to-br from-[#0a1628] via-[#1E3A5F] to-[#0a1628] border-y border-white/10">
+        <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <div className="inline-flex items-center gap-2 bg-[#D4AF37]/10 border border-[#D4AF37]/30 rounded-full px-4 py-1.5 mb-5">
+              <Sparkles className="w-3.5 h-3.5 text-[#D4AF37]" />
+              <span className="text-[#D4AF37] text-xs font-bold uppercase tracking-widest">
+                Get Started Free
+              </span>
+            </div>
+            <h2 className="font-fraunces text-3xl md:text-4xl font-bold text-white mb-4">
+              Ready to Cruise with a Concierge?
+            </h2>
+            <p className="font-inter text-lg text-blue-200 max-w-xl mx-auto leading-relaxed">
+              Fill out the form below and Grayson will be in touch within 1 business day. No
+              cost, no pressure — just a real person helping you plan an amazing trip.
+            </p>
+          </div>
+          <div className="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8">
+            <Suspense fallback={<div className="h-64 flex items-center justify-center text-blue-300 text-sm">Loading form…</div>}>
+              <ConciergeForm />
+            </Suspense>
+          </div>
+          <p className="font-inter text-xs text-blue-400 mt-5 text-center">
             Via Boardwalk Travel Agency · Same Disney price · Free onboard credit included
           </p>
         </div>
