@@ -23,24 +23,13 @@ export async function GET(
   let redirectUrl: string | null = null
 
   // Handle card referral redirects: /go/cards/chase-sapphire-preferred
-  if (provider === 'cards' && target) {
-    redirectUrl = getCardReferralLink(target)
-    if (!redirectUrl) {
-      // No referral link configured — redirect to the travel hacks page
-      redirectUrl = '/travel-hacks/best-cards-for-cruises'
-    }
-    return NextResponse.redirect(new URL(redirectUrl, request.url), { status: 302 })
+  if (provider === 'cards') {
+    return NextResponse.redirect(new URL('/concierge', request.url), { status: 302 })
   }
 
-  // Handle Amazon redirects: /go/amazon/dp/B09V3KXJPB
+  // Handle Amazon redirects: redirect to concierge
   if (provider === 'amazon') {
-    const amazonPath = target || ''
-    const searchParams = request.nextUrl.searchParams.toString()
-    redirectUrl = `${AMAZON_CONFIG.baseUrl}/${amazonPath}`
-    const separator = redirectUrl.includes('?') ? '&' : '?'
-    redirectUrl += `${separator}tag=${AMAZON_CONFIG.tag}`
-    if (searchParams) redirectUrl += `&${searchParams}`
-    return NextResponse.redirect(redirectUrl, { status: 302 })
+    return NextResponse.redirect(new URL('/concierge', request.url), { status: 302 })
   }
 
   // Handle travel affiliate redirects: /go/skyscanner, /go/booking, etc.

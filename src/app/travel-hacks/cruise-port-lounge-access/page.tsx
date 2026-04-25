@@ -258,35 +258,35 @@ export default function CruisePortLoungeAccess() {
 
           <ul className="text-slate-600 space-y-3 mb-6">
             <li className="flex gap-3">
-              <span className="text-blue-600 font-bold">•</span>
+              <span className="text-[#1E3A5F] font-bold">•</span>
               <span>
                 <strong>Arrive early enough to use the lounge:</strong> International flights / early
                 morning departures give you the most time to enjoy lounge amenities
               </span>
             </li>
             <li className="flex gap-3">
-              <span className="text-blue-600 font-bold">•</span>
+              <span className="text-[#1E3A5F] font-bold">•</span>
               <span>
                 <strong>Check lounge policies on children:</strong> Most lounges allow kids free with
                 an adult; some charge for ages 13+
               </span>
             </li>
             <li className="flex gap-3">
-              <span className="text-blue-600 font-bold">•</span>
+              <span className="text-[#1E3A5F] font-bold">•</span>
               <span>
                 <strong>Download the Priority Pass app:</strong> Shows lounge locations, amenities,
                 and hours before you travel
               </span>
             </li>
             <li className="flex gap-3">
-              <span className="text-blue-600 font-bold">•</span>
+              <span className="text-[#1E3A5F] font-bold">•</span>
               <span>
                 <strong>Guest policies vary:</strong> Chase Sapphire Reserve includes 1 guest free;
                 Amex varies; Capital One includes guests. Check your card's benefits.
               </span>
             </li>
             <li className="flex gap-3">
-              <span className="text-blue-600 font-bold">•</span>
+              <span className="text-[#1E3A5F] font-bold">•</span>
               <span>
                 <strong>Use lounge day passes strategically:</strong> If cruising solo or without
                 card access, most lounges sell day passes ($35-50)—cheaper than meals in the terminal
@@ -325,54 +325,43 @@ export default function CruisePortLoungeAccess() {
           <div className="grid md:grid-cols-2 gap-4">
             <Link
               href="/travel-hacks/fly-free-to-cruise-port"
-              className="flex items-center justify-between p-4 rounded-lg bg-white border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all"
+              className="flex items-center justify-between p-4 rounded-lg bg-white border border-slate-200 hover:border-[#1E3A5F]/30 hover:shadow-md transition-all"
             >
               <span className="font-semibold text-slate-900">
                 How to Fly Free to Your Cruise Port
               </span>
-              <span className="text-blue-600">→</span>
+              <span className="text-[#1E3A5F]">→</span>
             </Link>
             <Link
               href="/travel-hacks/free-trip-insurance"
-              className="flex items-center justify-between p-4 rounded-lg bg-white border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all"
+              className="flex items-center justify-between p-4 rounded-lg bg-white border border-slate-200 hover:border-[#1E3A5F]/30 hover:shadow-md transition-all"
             >
               <span className="font-semibold text-slate-900">
                 Free Trip Insurance You Already Have
               </span>
-              <span className="text-blue-600">→</span>
+              <span className="text-[#1E3A5F]">→</span>
             </Link>
             <Link
               href="/travel-hacks/best-cards-for-cruises"
-              className="flex items-center justify-between p-4 rounded-lg bg-white border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all"
+              className="flex items-center justify-between p-4 rounded-lg bg-white border border-slate-200 hover:border-[#1E3A5F]/30 hover:shadow-md transition-all"
             >
               <span className="font-semibold text-slate-900">
                 Best Credit Cards for Cruise Purchases
               </span>
-              <span className="text-blue-600">→</span>
+              <span className="text-[#1E3A5F]">→</span>
             </Link>
             <Link
               href="/travel-hacks/stack-points-free-cruise"
-              className="flex items-center justify-between p-4 rounded-lg bg-white border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all"
+              className="flex items-center justify-between p-4 rounded-lg bg-white border border-slate-200 hover:border-[#1E3A5F]/30 hover:shadow-md transition-all"
             >
               <span className="font-semibold text-slate-900">
                 How to Stack Points for a Free Cruise
               </span>
-              <span className="text-blue-600">→</span>
+              <span className="text-[#1E3A5F]">→</span>
             </Link>
           </div>
         </section>
 
-        {/* Affiliate Disclosure */}
-        <section className="mt-12 pt-8 border-t border-slate-200">
-          <div className="bg-amber-50 rounded-lg p-6 border border-amber-200">
-            <h3 className="font-semibold text-slate-900 mb-2">Affiliate Disclosure</h3>
-            <p className="text-sm text-slate-700">
-              This guide contains referral links to credit card offers. We may earn a commission if
-              you apply through our links at no additional cost to you. We only recommend cards we
-              genuinely believe offer value for cruise travelers.
-            </p>
-          </div>
-        </section>
       </article>
     </div>
   )

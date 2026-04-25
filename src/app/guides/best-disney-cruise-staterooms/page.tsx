@@ -475,7 +475,7 @@ export default function BestDisneyCruiseStateroomsGuide() {
           <p className="font-inter mb-6">
             Use our stateroom finder to compare cabin categories, view pricing, and discover the best options for your vacation style and budget.
           </p>
-          <Link href="/tools/cost-calculator" className="inline-flex items-center gap-2 bg-blue-600 text-slate-900 font-bold py-3 px-6 rounded-lg hover:bg-yellow-300 transition">
+          <Link href="/tools/cost-calculator" className="inline-flex items-center gap-2 bg-[#D4AF37] text-slate-900 font-bold py-3 px-6 rounded-lg hover:bg-yellow-300 transition">
             Browse Deals <ArrowRight size={20} />
           </Link>
         </section>

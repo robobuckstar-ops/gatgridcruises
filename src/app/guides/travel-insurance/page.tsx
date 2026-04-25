@@ -306,8 +306,8 @@ export default function TravelInsurancePage() {
               {/* TODO: Replace with actual Allianz affiliate link */}
               <a
                 href="https://www.allianztravelinsurance.com"
-                target="_blank"
-                rel="noopener noreferrer sponsored"
+                
+                
                 className="block w-full text-center bg-[#1E3A5F] text-white font-semibold rounded-xl py-2.5 text-sm hover:bg-blue-900 transition-colors"
               >
                 Get Allianz Quote →
@@ -350,8 +350,8 @@ export default function TravelInsurancePage() {
               {/* TODO: Replace with actual World Nomads affiliate link */}
               <a
                 href="https://www.worldnomads.com"
-                target="_blank"
-                rel="noopener noreferrer sponsored"
+                
+                
                 className="block w-full text-center bg-[#1E3A5F] text-white font-semibold rounded-xl py-2.5 text-sm hover:bg-blue-900 transition-colors"
               >
                 Get World Nomads Quote →
@@ -394,8 +394,8 @@ export default function TravelInsurancePage() {
               {/* TODO: Replace with actual Travel Guard affiliate link */}
               <a
                 href="https://www.travelguard.com"
-                target="_blank"
-                rel="noopener noreferrer sponsored"
+                
+                
                 className="block w-full text-center bg-[#D4AF37] text-[#1E3A5F] font-bold rounded-xl py-2.5 text-sm hover:bg-yellow-300 transition-colors"
               >
                 Get Travel Guard Quote → <span className="text-xs font-normal">(Our Pick)</span>

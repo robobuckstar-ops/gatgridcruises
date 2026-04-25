@@ -408,7 +408,7 @@ export default function PackingListPage() {
           <div className="flex flex-wrap gap-3 justify-center">
             <Link
               href="/tools/cruise-cost-calculator"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold transition-colors"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#1E3A5F] hover:bg-[#2a4f7a] text-white font-semibold transition-colors"
             >
               Cost Calculator
             </Link>

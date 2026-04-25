@@ -463,7 +463,7 @@ export default function BestTimeToBookGuide() {
           <div className="flex flex-wrap gap-4">
             <Link
               href="/deals"
-              className="inline-block px-6 py-3 bg-blue-600 text-slate-900 font-inter font-bold rounded hover:bg-yellow-300 transition"
+              className="inline-block px-6 py-3 bg-[#D4AF37] text-slate-900 font-inter font-bold rounded hover:bg-yellow-300 transition"
             >
               Browse Current Deals
             </Link>
@@ -488,21 +488,21 @@ export default function BestTimeToBookGuide() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Link
               href="/guides/disney-cruise-vs-royal-caribbean"
-              className="p-6 border border-gray-200 rounded-lg hover:border-blue-600 hover:shadow-md transition"
+              className="p-6 border border-gray-200 rounded-lg hover:border-[#1E3A5F] hover:shadow-md transition"
             >
               <h3 className="font-fraunces font-bold text-slate-900 mb-2">Disney Cruise vs. Royal Caribbean</h3>
               <p className="font-inter text-gray-600 text-sm">Compare cruise lines and see if Disney or Royal Caribbean fits your budget and preferences.</p>
             </Link>
             <Link
               href="/guides/disney-cruise-packing-list"
-              className="p-6 border border-gray-200 rounded-lg hover:border-blue-600 hover:shadow-md transition"
+              className="p-6 border border-gray-200 rounded-lg hover:border-[#1E3A5F] hover:shadow-md transition"
             >
               <h3 className="font-fraunces font-bold text-slate-900 mb-2">The Ultimate Disney Cruise Packing List</h3>
               <p className="font-inter text-gray-600 text-sm">Complete checklist of what to pack for your Disney cruise.</p>
             </Link>
             <Link
               href="/guides/castaway-cay-guide"
-              className="p-6 border border-gray-200 rounded-lg hover:border-blue-600 hover:shadow-md transition"
+              className="p-6 border border-gray-200 rounded-lg hover:border-[#1E3A5F] hover:shadow-md transition"
             >
               <h3 className="font-fraunces font-bold text-slate-900 mb-2">Castaway Cay: The Ultimate Guide</h3>
               <p className="font-inter text-gray-600 text-sm">Make the most of Disney's private island with activities and tips.</p>

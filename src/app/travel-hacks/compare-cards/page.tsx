@@ -223,7 +223,7 @@ export default function CompareCardsPage() {
                           checked={selectedCards.includes(card.id as CardId)}
                           onChange={() => handleCardToggle(card.id as CardId)}
                           disabled={!selectedCards.includes(card.id as CardId) && selectedCards.length >= 4}
-                          className="w-4 h-4 text-blue-600 rounded border-slate-300"
+                          className="w-4 h-4 text-[#1E3A5F] rounded border-slate-300"
                         />
                         <span className="ml-3 text-sm text-slate-700">{card.name}</span>
                       </label>
@@ -355,7 +355,7 @@ export default function CompareCardsPage() {
               <tr className="bg-[#1E3A5F]/10 hover:bg-[#1E3A5F]/20">
                 <td className="px-4 py-3 font-medium text-slate-900">Best For</td>
                 {activeCards.map(card => (
-                  <td key={card.id} className="px-4 py-3 border-l border-blue-200 text-slate-700 italic">
+                  <td key={card.id} className="px-4 py-3 border-l border-slate-200 text-slate-700 italic">
                     {card.bestFor}
                   </td>
                 ))}
@@ -364,12 +364,6 @@ export default function CompareCardsPage() {
           </table>
         </div>
 
-        {/* Affiliate Disclosure */}
-        <div className="mt-12 border-t border-slate-200 pt-8">
-          <p className="text-xs text-slate-500">
-            <strong>Affiliate Disclosure:</strong> Some links on this page are referral links. We earn a small commission if you apply through our links at no extra cost to you. We only recommend cards we believe offer genuine value to Disney cruisers. All information is accurate as of April 2026 but may change — always verify current terms with the card issuer.
-          </p>
-        </div>
 
         {/* CTA */}
         <div className="mt-12 bg-[#1E3A5F] rounded-lg p-8 text-white">

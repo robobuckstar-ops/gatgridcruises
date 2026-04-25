@@ -29,28 +29,16 @@ export const AMAZON_CONFIG = {
  * Usage: amazonLink('https://www.amazon.com/dp/B09V3KXJPB')
  *   → 'https://www.amazon.com/dp/B09V3KXJPB?tag=thm1230b0300-20'
  */
-export function amazonLink(url: string): string {
-  const separator = url.includes('?') ? '&' : '?'
-  return `${url}${separator}tag=${AMAZON_CONFIG.tag}`
+export function amazonLink(_url: string): string {
+  return '/concierge'
 }
 
-/**
- * Build an Amazon product link from just an ASIN.
- * Usage: amazonProductLink('B09V3KXJPB')
- *   → 'https://www.amazon.com/dp/B09V3KXJPB?tag=thm1230b0300-20'
- */
-export function amazonProductLink(asin: string): string {
-  return `${AMAZON_CONFIG.baseUrl}/dp/${asin}?tag=${AMAZON_CONFIG.tag}`
+export function amazonProductLink(_asin: string): string {
+  return '/concierge'
 }
 
-/**
- * Build an Amazon search link with your affiliate tag.
- * Usage: amazonSearchLink('cruise packing cubes')
- *   → 'https://www.amazon.com/s?k=cruise+packing+cubes&tag=thm1230b0300-20'
- */
-export function amazonSearchLink(query: string): string {
-  const encoded = encodeURIComponent(query).replace(/%20/g, '+')
-  return `${AMAZON_CONFIG.baseUrl}/s?k=${encoded}&tag=${AMAZON_CONFIG.tag}`
+export function amazonSearchLink(_query: string): string {
+  return '/concierge'
 }
 
 

@@ -85,7 +85,7 @@ export default function FlyFreeToCruisePort() {
             account. You can then redeem those points for flights, hotel stays, or even cash back.
           </p>
 
-          <div className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded my-6">
+          <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded my-6">
             <p className="text-sm text-slate-700">
               <span className="font-semibold">Key insight:</span> The Chase Sapphire Preferred
               offers 60,000 points worth roughly $750 via the Chase Travel Portal—enough to cover
@@ -287,54 +287,43 @@ export default function FlyFreeToCruisePort() {
           <div className="grid md:grid-cols-2 gap-4">
             <Link
               href="/travel-hacks/best-cards-for-cruises"
-              className="flex items-center justify-between p-4 rounded-lg bg-white border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all"
+              className="flex items-center justify-between p-4 rounded-lg bg-white border border-slate-200 hover:border-[#1E3A5F]/30 hover:shadow-md transition-all"
             >
               <span className="font-semibold text-slate-900">
                 Best Credit Cards for Cruise Purchases
               </span>
-              <span className="text-blue-600">→</span>
+              <span className="text-[#1E3A5F]">→</span>
             </Link>
             <Link
               href="/travel-hacks/stack-points-free-cruise"
-              className="flex items-center justify-between p-4 rounded-lg bg-white border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all"
+              className="flex items-center justify-between p-4 rounded-lg bg-white border border-slate-200 hover:border-[#1E3A5F]/30 hover:shadow-md transition-all"
             >
               <span className="font-semibold text-slate-900">
                 How to Stack Points for a Free Cruise
               </span>
-              <span className="text-blue-600">→</span>
+              <span className="text-[#1E3A5F]">→</span>
             </Link>
             <Link
               href="/travel-hacks/free-trip-insurance"
-              className="flex items-center justify-between p-4 rounded-lg bg-white border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all"
+              className="flex items-center justify-between p-4 rounded-lg bg-white border border-slate-200 hover:border-[#1E3A5F]/30 hover:shadow-md transition-all"
             >
               <span className="font-semibold text-slate-900">
                 Free Trip Insurance You Already Have
               </span>
-              <span className="text-blue-600">→</span>
+              <span className="text-[#1E3A5F]">→</span>
             </Link>
             <Link
               href="/travel-hacks/cruise-port-lounge-access"
-              className="flex items-center justify-between p-4 rounded-lg bg-white border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all"
+              className="flex items-center justify-between p-4 rounded-lg bg-white border border-slate-200 hover:border-[#1E3A5F]/30 hover:shadow-md transition-all"
             >
               <span className="font-semibold text-slate-900">
                 Cruise Port Lounge Access
               </span>
-              <span className="text-blue-600">→</span>
+              <span className="text-[#1E3A5F]">→</span>
             </Link>
           </div>
         </section>
 
-        {/* Affiliate Disclosure */}
-        <section className="mt-12 pt-8 border-t border-slate-200">
-          <div className="bg-amber-50 rounded-lg p-6 border border-amber-200">
-            <h3 className="font-semibold text-slate-900 mb-2">Affiliate Disclosure</h3>
-            <p className="text-sm text-slate-700">
-              This guide contains referral links to credit card offers. We may earn a commission if
-              you apply through our links at no additional cost to you. We only recommend cards we
-              genuinely believe offer value for cruise travelers.
-            </p>
-          </div>
-        </section>
       </article>
     </div>
   )

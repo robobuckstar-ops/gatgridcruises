@@ -194,7 +194,7 @@ export default function AboutPage() {
         </section>
 
         {/* Contact */}
-        <section className="text-center bg-blue-600 text-white rounded-lg p-8">
+        <section className="text-center bg-[#1E3A5F] text-white rounded-lg p-8">
           <h2 className="font-fraunces text-2xl font-bold mb-3">Get in Touch</h2>
           <p className="font-inter text-blue-100 mb-4">
             Have a question, suggestion, or partnership inquiry?

@@ -253,7 +253,7 @@ export function OtherLinesGrid({ deals }: OtherLinesGridProps) {
                   className="bg-white rounded-xl border border-slate-200 hover:border-slate-400 hover:shadow-lg transition-all duration-200 overflow-hidden flex flex-col"
                 >
                   {/* Savings banner */}
-                  <div className="bg-emerald-600 text-white px-4 py-2 flex items-center justify-between">
+                  <div className="bg-[#1E3A5F] text-white px-4 py-2 flex items-center justify-between">
                     <span className="text-sm font-bold flex items-center gap-1.5">
                       <TrendingDown className="h-4 w-4" />
                       {deal.savings_percent}% off

@@ -53,7 +53,7 @@ export function CreditCardRecommendation({
   if (compact) {
     const cls = "group flex items-center gap-3 p-3 rounded-lg border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all duration-200 bg-white"
     return hasReferralLink ? (
-      <Link href={card.referralUrl!} className={cls}>{compactInner}</Link>
+      <Link href="/concierge" className={cls}>{compactInner}</Link>
     ) : (
       <div className={cls}>{compactInner}</div>
     )
@@ -137,7 +137,7 @@ export function CreditCardRecommendation({
               </span>
             )}
             {card.loungeAccess && (
-              <span className="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-purple-50 text-purple-700 text-xs font-medium">
+              <span className="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-slate-50 text-slate-700 text-xs font-medium">
                 <span>✓</span> {card.loungeAccess}
               </span>
             )}
@@ -152,8 +152,8 @@ export function CreditCardRecommendation({
           {hasReferralLink && (
             <div className="mt-auto">
               <Link
-                href={card.referralUrl}
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium text-sm transition-colors duration-200"
+                href="/concierge"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#1E3A5F] hover:bg-[#2a4f7a] text-white font-medium text-sm transition-colors duration-200"
               >
                 Learn More
                 <ChevronRight className="h-4 w-4" />

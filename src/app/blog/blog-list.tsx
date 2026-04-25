@@ -47,7 +47,7 @@ export function BlogList({ posts }: BlogListProps) {
               onClick={() => setActiveCategory(category.value)}
               className={`px-4 py-2 rounded-full font-medium transition-all duration-200 ${
                 activeCategory === category.value
-                  ? 'bg-blue-600 text-white shadow-md'
+                  ? 'bg-[#1E3A5F] text-white shadow-md'
                   : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
               }`}
             >

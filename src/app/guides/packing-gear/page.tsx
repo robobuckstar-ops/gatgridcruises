@@ -328,15 +328,13 @@ export default function PackingGearPage() {
                       <p className="text-slate-600 text-sm leading-relaxed">{product.why}</p>
                     </div>
                     <div className="px-6 pb-6">
-                      <a
-                        href={amazonLink(product.asin)}
-                        target="_blank"
-                        rel="noopener noreferrer sponsored"
+                      <Link
+                        href="/concierge"
                         className="flex items-center justify-center gap-2 w-full bg-[#D4AF37] hover:bg-yellow-400 text-[#1E3A5F] font-bold text-sm py-3 px-4 rounded-xl transition-colors duration-200"
                       >
-                        <span>View on Amazon</span>
+                        <span>Learn More</span>
                         <ExternalLink className="w-4 h-4" />
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 ))}

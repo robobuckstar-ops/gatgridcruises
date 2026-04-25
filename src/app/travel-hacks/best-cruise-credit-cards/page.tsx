@@ -187,7 +187,7 @@ export default function BestCruiseCreditCardsPage() {
         </section>
 
         {/* Strategy */}
-        <section className="bg-blue-50 rounded-xl p-8 mb-14 border border-blue-100">
+        <section className="bg-slate-50 rounded-xl p-8 mb-14 border border-slate-200">
           <h2 className="font-fraunces text-2xl font-bold text-slate-900 mb-4">
             The Smart Strategy: Stack Multiple Cards
           </h2>
@@ -196,15 +196,15 @@ export default function BestCruiseCreditCardsPage() {
           </p>
           <ol className="space-y-3 text-slate-700">
             <li className="flex gap-3">
-              <span className="bg-blue-600 text-white font-bold text-xs w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">1</span>
+              <span className="bg-[#1E3A5F] text-white font-bold text-xs w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">1</span>
               <span>Apply for <strong>Chase Ink Preferred</strong> and put the full cruise fare on it (3x on travel + 100k bonus).</span>
             </li>
             <li className="flex gap-3">
-              <span className="bg-blue-600 text-white font-bold text-xs w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">2</span>
+              <span className="bg-[#1E3A5F] text-white font-bold text-xs w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">2</span>
               <span>Use <strong>Amex Business Platinum</strong> for any pre/post-cruise hotel stays through Amex Travel (5x points + fine hotel credits).</span>
             </li>
             <li className="flex gap-3">
-              <span className="bg-blue-600 text-white font-bold text-xs w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">3</span>
+              <span className="bg-[#1E3A5F] text-white font-bold text-xs w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">3</span>
               <span>Keep <strong>Capital One Spark</strong> as a backup for all miscellaneous spend (2x on everything, no annual fee year one).</span>
             </li>
           </ol>
@@ -216,7 +216,7 @@ export default function BestCruiseCreditCardsPage() {
         {/* CTAs */}
         <section className="grid sm:grid-cols-3 gap-4 mb-14">
           {cards.map((card) => (
-            <a
+            <Link
               key={card.name}
               href={card.referralUrl}
               className="block text-center p-5 border-2 border-[#1E3A5F] rounded-xl hover:bg-[#1E3A5F] hover:text-white transition group"
@@ -230,7 +230,7 @@ export default function BestCruiseCreditCardsPage() {
               <p className="text-slate-600 group-hover:text-white text-xs mt-2">
                 Learn More →
               </p>
-            </a>
+            </Link>
           ))}
         </section>
 
@@ -434,8 +434,8 @@ export default function BestCruiseCreditCardsPage() {
         </section>
 
         {/* Internal links */}
-        <section className="mt-12 bg-blue-50 border border-blue-200 rounded-xl p-6">
-          <h2 className="font-display text-lg font-bold text-blue-900 mb-3">More Travel Hacks</h2>
+        <section className="mt-12 bg-slate-50 border border-slate-200 rounded-xl p-6">
+          <h2 className="font-display text-lg font-bold text-slate-900 mb-3">More Travel Hacks</h2>
           <div className="grid sm:grid-cols-2 gap-3">
             {[
               { label: 'Fly Free to Your Cruise Port', href: '/travel-hacks/fly-free-to-cruise-port' },
@@ -448,7 +448,7 @@ export default function BestCruiseCreditCardsPage() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="flex items-center gap-2 text-sm text-blue-700 hover:text-blue-900 font-medium"
+                className="flex items-center gap-2 text-sm text-[#1E3A5F] hover:text-[#2a4f7a] font-medium"
               >
                 → {link.label}
               </Link>
@@ -456,19 +456,6 @@ export default function BestCruiseCreditCardsPage() {
           </div>
         </section>
 
-        {/* Disclosure */}
-        <section className="pt-8 border-t border-slate-200">
-          <div className="bg-amber-50 rounded-lg p-5 border border-amber-200">
-            <h3 className="font-semibold text-slate-900 mb-1 text-sm">Affiliate Disclosure</h3>
-            <p className="text-xs text-slate-600">
-              This page contains referral links to credit card offers. We may earn a commission if
-              you apply through our links. Rates, bonuses, and terms change frequently — always
-              verify current offers on the issuer's website before applying. Approval is not
-              guaranteed and depends on individual creditworthiness. We only feature cards we
-              believe offer genuine value for cruise travelers.
-            </p>
-          </div>
-        </section>
       </article>
     </div>
   )

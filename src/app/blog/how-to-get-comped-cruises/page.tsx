@@ -114,7 +114,7 @@ const sections = [
       The sign-up bonus alone ($750–$1,000 value) can cover flights for two.
     — American Express Business Platinum: 150,000-point welcome offer after meeting spend.
       Points transfer to Delta, Air France/KLM, and others. Lounge access a bonus during embarkation.
-      Apply here → [Amex Biz Plat link below]
+      Talk to our advisors to learn more.
     — Capital One Spark Miles: 2x on all purchases, flexible redemption.
       Visit our concierge page for cruise planning help.
 

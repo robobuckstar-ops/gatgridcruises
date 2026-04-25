@@ -82,7 +82,7 @@ export default function PortCanaveralVsMiamiGuide() {
             Location & Driving Distance
           </h2>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3 flex items-center gap-2">
               <Clock size={24} className="text-blue-600" />
               Port Canaveral
@@ -105,7 +105,7 @@ export default function PortCanaveralVsMiamiGuide() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3 flex items-center gap-2">
               <Clock size={24} className="text-blue-600" />
               Miami (PortMiami)
@@ -135,7 +135,7 @@ export default function PortCanaveralVsMiamiGuide() {
             Parking & Transportation Costs
           </h2>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3 flex items-center gap-2">
               <DollarSign size={24} className="text-blue-600" />
               Port Canaveral Parking
@@ -156,7 +156,7 @@ export default function PortCanaveralVsMiamiGuide() {
             </ul>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3 flex items-center gap-2">
               <DollarSign size={24} className="text-blue-600" />
               Miami Parking
@@ -204,7 +204,7 @@ export default function PortCanaveralVsMiamiGuide() {
             Terminal Facilities & Embarkation Experience
           </h2>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Port Canaveral Terminals
             </h3>
@@ -220,7 +220,7 @@ export default function PortCanaveralVsMiamiGuide() {
             </ul>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Miami (PortMiami) Terminals
             </h3>
@@ -242,7 +242,7 @@ export default function PortCanaveralVsMiamiGuide() {
             Pre-Cruise Hotel Options & Pricing
           </h2>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Port Canaveral Area
             </h3>
@@ -260,7 +260,7 @@ export default function PortCanaveralVsMiamiGuide() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Miami Area
             </h3>
@@ -305,7 +305,7 @@ export default function PortCanaveralVsMiamiGuide() {
             Nearby Attractions & Pre-Cruise Activities
           </h2>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Port Canaveral Nearby Attractions
             </h3>
@@ -337,7 +337,7 @@ export default function PortCanaveralVsMiamiGuide() {
             </ul>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Miami Nearby Attractions
             </h3>
@@ -381,7 +381,7 @@ export default function PortCanaveralVsMiamiGuide() {
             Ships & Itineraries by Port
           </h2>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Port Canaveral Ships & Itineraries
             </h3>
@@ -398,7 +398,7 @@ export default function PortCanaveralVsMiamiGuide() {
             </ul>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Miami Ships & Itineraries
             </h3>
@@ -421,7 +421,7 @@ export default function PortCanaveralVsMiamiGuide() {
             Airport Proximity & Fly-In Logistics
           </h2>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Port Canaveral Airports
             </h3>
@@ -435,7 +435,7 @@ export default function PortCanaveralVsMiamiGuide() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Miami Airports
             </h3>
@@ -524,7 +524,7 @@ export default function PortCanaveralVsMiamiGuide() {
           </h2>
 
           <div className="space-y-6">
-            <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg">
+            <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg">
               <h3 className="text-lg font-fraunces font-bold text-slate-900 mb-3">
                 Choose Port Canaveral If:
               </h3>
@@ -537,7 +537,7 @@ export default function PortCanaveralVsMiamiGuide() {
               </ul>
             </div>
 
-            <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg">
+            <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg">
               <h3 className="text-lg font-fraunces font-bold text-slate-900 mb-3">
                 Choose Miami If:
               </h3>
@@ -558,7 +558,7 @@ export default function PortCanaveralVsMiamiGuide() {
           <p className="font-inter mb-6">
             Now that you've chosen your port, use our cost calculator to compare pricing and find the best deals on your Disney cruise.
           </p>
-          <Link href="/tools/cost-calculator" className="inline-flex items-center gap-2 bg-blue-600 text-slate-900 font-bold py-3 px-6 rounded-lg hover:bg-yellow-300 transition">
+          <Link href="/tools/cost-calculator" className="inline-flex items-center gap-2 bg-[#D4AF37] text-slate-900 font-bold py-3 px-6 rounded-lg hover:bg-yellow-300 transition">
             Browse Deals <ArrowRight size={20} />
           </Link>
         </section>
