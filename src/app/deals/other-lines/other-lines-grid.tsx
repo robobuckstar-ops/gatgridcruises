@@ -355,7 +355,7 @@ export function OtherLinesGrid({ deals }: OtherLinesGridProps) {
           </p>
           <Link
             href="/deals"
-            className="inline-flex items-center gap-2 px-6 py-2.5 bg-blue-600 text-white font-semibold text-sm rounded-lg hover:bg-blue-700 transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#1E3A5F] text-white font-semibold text-sm rounded-lg hover:bg-[#0a1628] transition-colors"
           >
             View Disney Cruise Deals
           </Link>

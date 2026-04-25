@@ -557,24 +557,19 @@ export default function TravelInsurancePage() {
           </div>
 
           <a
-            href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-            target="_blank"
-            rel="noopener noreferrer sponsored"
+            href="/concierge"
             className="block rounded-2xl overflow-hidden border border-[#D4AF37] shadow-md hover:shadow-lg transition-shadow"
           >
             <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div>
-                <p className="text-[#D4AF37] font-bold text-lg leading-tight">Earn 150,000 Membership Rewards Points</p>
-                <p className="text-blue-200 text-sm mt-1">Amex Business Platinum — includes trip cancellation, delay, and baggage coverage on charged travel</p>
+                <p className="text-[#D4AF37] font-bold text-lg leading-tight">Plan Your Disney Cruise</p>
+                <p className="text-blue-200 text-sm mt-1">Connect with our concierge team to find the perfect sailing</p>
               </div>
               <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-5 py-2.5 rounded-xl whitespace-nowrap">
-                Apply Now →
+                Get Started →
               </span>
             </div>
           </a>
-          <p className="text-xs text-slate-400 mt-2">
-            Sponsored. Terms apply. See our <Link href="/disclosures" className="underline hover:text-slate-600">affiliate disclosure</Link>.
-          </p>
         </div>
       </section>
 

@@ -119,7 +119,7 @@ export function TransferRecommender({ transfers, portName }: TransferRecommender
                 onClick={() => setPartySize(n)}
                 className={`w-10 h-10 rounded-lg font-medium transition-colors ${
                   partySize === n
-                    ? 'bg-blue-600 text-white'
+                    ? 'bg-[#1E3A5F] text-white'
                     : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
                 }`}
               >

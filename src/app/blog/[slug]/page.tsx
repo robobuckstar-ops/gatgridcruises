@@ -244,7 +244,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         </div>
       )}
 
-      <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-16 mt-20">
+      <div className="bg-gradient-to-r from-[#1E3A5F] to-[#0a1628] text-white py-16 mt-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-display text-3xl font-bold mb-4">
             Don&apos;t miss future articles
@@ -252,7 +252,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <p className="text-lg text-blue-100 mb-8">
             Subscribe to get the latest Disney cruise news and tips delivered to your inbox
           </p>
-          <button className="inline-block px-8 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors duration-200">
+          <button className="inline-block px-8 py-3 bg-[#D4AF37] text-[#0a1628] font-semibold rounded-lg hover:bg-yellow-300 transition-colors duration-200">
             Subscribe Now
           </button>
         </div>

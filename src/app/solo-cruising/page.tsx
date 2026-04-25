@@ -377,7 +377,7 @@ export default function SoloCruisingPage() {
 
       {/* Community CTA Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] rounded-lg p-12 text-center text-white">
+        <div className="max-w-3xl mx-auto bg-gradient-to-r from-[#1E3A5F] to-[#0a1628] rounded-lg p-12 text-center text-white">
           <Users className="w-16 h-16 mx-auto mb-6 text-[#D4AF37]" />
           <h2 className="font-fraunces text-3xl font-bold mb-4">
             Join the Sail Together Community

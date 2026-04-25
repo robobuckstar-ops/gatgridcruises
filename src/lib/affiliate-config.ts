@@ -17,8 +17,8 @@
 
 // ─── AMAZON ASSOCIATES ───────────────────────────────────────
 export const AMAZON_CONFIG = {
-  /** Your Amazon Associates Store ID / Tracking ID */
-  tag: 'thm1230b0300-20',
+  /** Amazon Associates tag (not active) */
+  tag: '',
 
   /** Base URL for Amazon product links (don't change this) */
   baseUrl: 'https://www.amazon.com',
@@ -66,7 +66,7 @@ export function amazonSearchLink(query: string): string {
 export const CARD_REFERRAL_LINKS: Record<string, string | null> = {
   // ── Chase ──────────────────────────────────────────────────
   /** Chase Ink Business Preferred referral */
-  'chase-ink-business-preferred': 'https://www.referyourchasecard.com/226m/6ZT33F9TOQ',
+  'chase-ink-business-preferred': null,
 
   /** Chase Ink Business Unlimited — uses Ink Business Preferred link */
   'chase-ink-business-unlimited': null,
@@ -79,14 +79,14 @@ export const CARD_REFERRAL_LINKS: Record<string, string | null> = {
 
   // ── American Express ───────────────────────────────────────
   /** Amex Business Platinum referral */
-  'amex-business-platinum':    'https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS',
+  'amex-business-platinum':    null,
 
   /** Amex Gold — add your link when you have it */
   'amex-gold':                 null,
 
   // ── Capital One ────────────────────────────────────────────
   /** Capital One Spark Cash Plus referral */
-  'capital-one-spark-cash-plus':   'https://i.capitalone.com/JKlfRwN3f',
+  'capital-one-spark-cash-plus':   null,
 
   /** Capital One Spark Cash Select — uses Spark Cash Plus link */
   'capital-one-spark-cash-select': null,
