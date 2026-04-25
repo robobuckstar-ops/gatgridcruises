@@ -266,7 +266,7 @@ export function CostCalculator({ sailings }: CostCalculatorProps) {
         </div>
 
         {/* Travel Hack CTA Banner */}
-        <div className="bg-gradient-to-r from-amber-50 to-yellow-50 border border-amber-200 rounded-lg p-6 mb-12 shadow-sm">
+        <div className="bg-[#D4AF37]/10 border border-[#D4AF37]/40 rounded-lg p-6 mb-12 shadow-sm">
           <div className="flex items-start gap-3">
             <div className="text-2xl mt-0.5">✨</div>
             <div>
@@ -853,7 +853,7 @@ export function CostCalculator({ sailings }: CostCalculatorProps) {
                     <div className="flex items-start gap-3">
                       <span className="text-lg">✈️</span>
                       <div className="flex-1">
-                        <p className="font-medium text-sm text-slate-900 group-hover:text-blue-600">Cover your flights with a signup bonus</p>
+                        <p className="font-medium text-sm text-slate-900 group-hover:text-[#D4AF37]">Cover your flights with a signup bonus</p>
                         <p className="text-xs text-slate-600 mt-0.5">The Chase Sapphire Preferred 60K bonus is worth ~$750 in travel</p>
                       </div>
                     </div>
@@ -862,7 +862,7 @@ export function CostCalculator({ sailings }: CostCalculatorProps) {
                     <div className="flex items-start gap-3">
                       <span className="text-lg">🛡️</span>
                       <div className="flex-1">
-                        <p className="font-medium text-sm text-slate-900 group-hover:text-blue-600">Skip trip insurance purchases</p>
+                        <p className="font-medium text-sm text-slate-900 group-hover:text-[#D4AF37]">Skip trip insurance purchases</p>
                         <p className="text-xs text-slate-600 mt-0.5">Premium travel cards include free cancellation and baggage coverage</p>
                       </div>
                     </div>
@@ -871,7 +871,7 @@ export function CostCalculator({ sailings }: CostCalculatorProps) {
                     <div className="flex items-start gap-3">
                       <span className="text-lg">💳</span>
                       <div className="flex-1">
-                        <p className="font-medium text-sm text-slate-900 group-hover:text-blue-600">Earn 3–5x points on your cruise</p>
+                        <p className="font-medium text-sm text-slate-900 group-hover:text-[#D4AF37]">Earn 3–5x points on your cruise</p>
                         <p className="text-xs text-slate-600 mt-0.5">The right card covers your fare while you earn bonus points</p>
                       </div>
                     </div>
@@ -880,7 +880,7 @@ export function CostCalculator({ sailings }: CostCalculatorProps) {
                     <div className="flex items-start gap-3">
                       <span className="text-lg">🎯</span>
                       <div className="flex-1">
-                        <p className="font-medium text-sm text-slate-900 group-hover:text-blue-600">Stack bonuses for a free cruise</p>
+                        <p className="font-medium text-sm text-slate-900 group-hover:text-[#D4AF37]">Stack bonuses for a free cruise</p>
                         <p className="text-xs text-slate-600 mt-0.5">With 2–3 card strategy, your next cruise could cost $0</p>
                       </div>
                     </div>
@@ -906,7 +906,7 @@ export function CostCalculator({ sailings }: CostCalculatorProps) {
 
               {/* Price Comparison */}
               {baseCruiseFare > 0 && (
-                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+                <div className="bg-[#1E3A5F]/10 border border-blue-200 rounded-lg p-4 mb-6">
                   <p className="text-sm text-slate-700 mb-2">
                     <span className="font-semibold text-blue-900">Disney advertises</span> this cruise from{' '}
                     <span className="font-bold text-blue-900">${(baseCruiseFare * partySize).toLocaleString('en-US', { minimumFractionDigits: 2 })}</span>

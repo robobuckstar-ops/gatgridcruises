@@ -12,7 +12,7 @@ export default function BestTimeToBookGuide() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-50 via-white to-indigo-50">
+      <section className="relative py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#0a1628] to-[#1E3A5F]">
         <div className="max-w-4xl mx-auto">
           <h1 className="font-fraunces text-4xl sm:text-5xl font-bold text-white mb-4">
             Best Time to Book a Disney Cruise
@@ -42,17 +42,15 @@ export default function BestTimeToBookGuide() {
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
         <a
-              href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
+              href="/concierge"
               className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow"
             >
-              <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4 flex items-center justify-between gap-4">
+              <div className="bg-gradient-to-r from-[#0a1628] to-[#1E3A5F] px-6 py-4 flex items-center justify-between gap-4">
                 <div>
-                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Earn 150K+ Membership Rewards Points</p>
-                  <p className="text-blue-200 text-sm mt-0.5">Enough for your next Disney cruise upgrade — Amex Business Platinum</p>
+                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Ready to Plan Your Disney Cruise?</p>
+                  <p className="text-slate-300 text-sm mt-0.5">Our Boardwalk Travel Agency specialists offer free planning and quotes</p>
                 </div>
-                <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
+                <span className="flex-shrink-0 bg-[#D4AF37] text-[#0a1628] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Get a Free Quote →</span>
               </div>
             </a>
 
@@ -75,7 +73,7 @@ export default function BestTimeToBookGuide() {
             Disney opens cruises for booking approximately 18 months in advance. For example, cruises departing in October 2026 open for booking around April 2025. This isn't a hard rule—Disney occasionally opens farther out (up to 24 months) or closer (12 months), but 18 months is the standard.
           </p>
 
-          <div className="p-6 bg-blue-50 border-l-4 border-blue-600 mb-6">
+          <div className="p-6 bg-[#1E3A5F]/10 border-l-4 border-[#D4AF37] mb-6">
             <h3 className="font-fraunces text-xl font-bold text-slate-900 mb-3">Example Timeline:</h3>
             <ul className="space-y-2 font-inter text-slate-600">
               <li className="flex gap-2"><span className="text-blue-600 font-bold">April 2025:</span> Disney opens October 2026 cruises for booking (18 months out)</li>
@@ -94,7 +92,7 @@ export default function BestTimeToBookGuide() {
         <section className="mb-12">
           <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-4">Wave Season: The Prime Booking Period</h2>
 
-          <div className="mb-6 p-6 bg-amber-50 border-l-4 border-blue-600">
+          <div className="mb-6 p-6 bg-amber-50 border-l-4 border-[#D4AF37]">
             <h3 className="font-fraunces text-xl font-bold text-slate-900 mb-3">What Is Wave Season?</h3>
             <p className="font-inter text-slate-600">
               "Wave season" (January through March, sometimes extending into April) is when Disney and other cruise lines offer aggressive promotions, price drops, and discounts to drive bookings. Travel agencies see heightened commission opportunities, and passengers benefit from special onboard credits and reduced fares. It"s the single best time to book a cruise if you're flexible on itineraries.
@@ -135,17 +133,15 @@ export default function BestTimeToBookGuide() {
         </section>
 
         <a
-              href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
+              href="/concierge"
               className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow"
             >
-              <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4 flex items-center justify-between gap-4">
+              <div className="bg-gradient-to-r from-[#0a1628] to-[#1E3A5F] px-6 py-4 flex items-center justify-between gap-4">
                 <div>
-                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Earn 150K+ Membership Rewards Points</p>
-                  <p className="text-blue-200 text-sm mt-0.5">Enough for your next Disney cruise upgrade — Amex Business Platinum</p>
+                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Ready to Plan Your Disney Cruise?</p>
+                  <p className="text-slate-300 text-sm mt-0.5">Our Boardwalk Travel Agency specialists offer free planning and quotes</p>
                 </div>
-                <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
+                <span className="flex-shrink-0 bg-[#D4AF37] text-[#0a1628] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Get a Free Quote →</span>
               </div>
             </a>
 
@@ -179,7 +175,7 @@ export default function BestTimeToBookGuide() {
             </div>
           </div>
 
-          <div className="p-4 bg-blue-50 rounded">
+          <div className="p-4 bg-[#1E3A5F]/10 rounded">
             <p className="font-inter text-slate-600">
               <strong>Key Takeaway:</strong> The best prices are usually found during wave season (Jan-Mar), roughly 12-18 months before your target sailing date. Booking 6+ months in advance is risky; you pay higher prices with little benefit.
             </p>
@@ -256,7 +252,7 @@ export default function BestTimeToBookGuide() {
             Disney offers "Guaranteed Rate" (GTY) bookings where you select a category (e.g., "inside cabin") instead of a specific cabin. Your assigned cabin is guaranteed to be that category or better, at a discounted rate. GTY cabins are typically 10-15% cheaper than selecting a specific cabin upfront.
           </p>
 
-          <div className="p-6 bg-blue-50 border-l-4 border-blue-600">
+          <div className="p-6 bg-[#1E3A5F]/10 border-l-4 border-[#D4AF37]">
             <h3 className="font-fraunces text-xl font-bold text-slate-900 mb-4">How GTY Works:</h3>
             <ul className="space-y-3 font-inter text-slate-600">
               <li className="flex gap-2"><span className="text-blue-600 font-bold">1.</span> Book a cabin category without a specific cabin assignment</li>
@@ -272,17 +268,15 @@ export default function BestTimeToBookGuide() {
         </section>
 
         <a
-              href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
+              href="/concierge"
               className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow"
             >
-              <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4 flex items-center justify-between gap-4">
+              <div className="bg-gradient-to-r from-[#0a1628] to-[#1E3A5F] px-6 py-4 flex items-center justify-between gap-4">
                 <div>
-                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Earn 150K+ Membership Rewards Points</p>
-                  <p className="text-blue-200 text-sm mt-0.5">Enough for your next Disney cruise upgrade — Amex Business Platinum</p>
+                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Ready to Plan Your Disney Cruise?</p>
+                  <p className="text-slate-300 text-sm mt-0.5">Our Boardwalk Travel Agency specialists offer free planning and quotes</p>
                 </div>
-                <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
+                <span className="flex-shrink-0 bg-[#D4AF37] text-[#0a1628] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Get a Free Quote →</span>
               </div>
             </a>
 
@@ -342,17 +336,17 @@ export default function BestTimeToBookGuide() {
           </p>
 
           <div className="space-y-4 mb-6">
-            <div className="p-4 bg-blue-50 rounded">
+            <div className="p-4 bg-[#1E3A5F]/10 rounded">
               <p className="font-inter font-bold text-slate-900 mb-2">Cancellation Window (~114 days before sailing):</p>
               <p className="font-inter text-slate-600 text-sm">Guests can cancel with a full refund (or rebook at no cost) up to ~114 days before sailing. This is a generous window that lets you rebook if prices drop.</p>
             </div>
 
-            <div className="p-4 bg-blue-50 rounded">
+            <div className="p-4 bg-[#1E3A5F]/10 rounded">
               <p className="font-inter font-bold text-slate-900 mb-2">After 114 Days:</p>
               <p className="font-inter text-slate-600 text-sm">Cancellations result in onboard credits (vs. cash refunds). You can rebook a future cruise with the credit.</p>
             </div>
 
-            <div className="p-4 bg-blue-50 rounded">
+            <div className="p-4 bg-[#1E3A5F]/10 rounded">
               <p className="font-inter font-bold text-slate-900 mb-2">Price Reduction Rebook:</p>
               <p className="font-inter text-slate-600 text-sm">If prices drop after you book, you can cancel and rebook at the lower price within the 114-day window. The change is free.</p>
             </div>
@@ -453,7 +447,7 @@ export default function BestTimeToBookGuide() {
             </li>
           </ul>
 
-          <div className="p-4 bg-blue-50 rounded">
+          <div className="p-4 bg-[#1E3A5F]/10 rounded">
             <p className="font-inter text-slate-600">
               Rather than wondering if you got a good deal, our tools provide data-driven insights to confirm you're booking at the optimal time.
             </p>
@@ -461,7 +455,7 @@ export default function BestTimeToBookGuide() {
         </section>
 
         {/* CTA Section */}
-        <section className="my-12 p-8 bg-gradient-to-r from-blue-50 to-blue-900 text-white rounded-lg">
+        <section className="my-12 p-8 bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] text-white rounded-lg">
           <h2 className="font-fraunces text-3xl font-bold mb-4">Ready to Book at the Best Price?</h2>
           <p className="font-inter text-lg mb-6">
             Use our price tracking, cost calculator, and deal finder to secure the lowest fares on your Disney cruise.

@@ -62,7 +62,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const relatedPosts = getRelatedPosts(post.id, post.category, 3)
 
   const categoryColors: Record<string, { bg: string; text: string }> = {
-    news: { bg: 'bg-blue-100', text: 'text-blue-700' },
+    news: { bg: 'bg-[#1E3A5F]/20', text: 'text-blue-700' },
     tips: { bg: 'bg-emerald-100', text: 'text-emerald-700' },
     deals: { bg: 'bg-amber-100', text: 'text-amber-700' },
     reviews: { bg: 'bg-purple-100', text: 'text-purple-700' },
@@ -90,7 +90,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         { name: post.title, url: `${baseUrl}/blog/${post.slug}` },
       ])} />
       {/* Hero Section */}
-      <div className="bg-gradient-to-br from-blue-50 via-white to-indigo-50 pt-8 pb-16">
+      <div className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] pt-8 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
             href="/blog"
@@ -220,7 +220,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                           {relatedPost.category}
                         </span>
 
-                        <h3 className="font-display text-base font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors line-clamp-2">
+                        <h3 className="font-display text-base font-bold text-slate-900 mb-2 group-hover:text-[#D4AF37] transition-colors line-clamp-2">
                           {relatedPost.title}
                         </h3>
 
@@ -244,7 +244,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         </div>
       )}
 
-      <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-16 mt-20">
+      <div className="bg-gradient-to-r from-[#0a1628] to-[#1E3A5F] text-white py-16 mt-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-display text-3xl font-bold mb-4">
             Don&apos;t miss future articles
@@ -252,7 +252,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <p className="text-lg text-blue-100 mb-8">
             Subscribe to get the latest Disney cruise news and tips delivered to your inbox
           </p>
-          <button className="inline-block px-8 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors duration-200">
+          <button className="inline-block px-8 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-[#1E3A5F]/10 transition-colors duration-200">
             Subscribe Now
           </button>
         </div>

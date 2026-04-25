@@ -351,7 +351,7 @@ export default function StateRoomsCRUD() {
                       </td>
                     </tr>
                     {editingId === r.id && editForm && (
-                      <tr className="bg-blue-50">
+                      <tr className="bg-[#1E3A5F]/10">
                         <td colSpan={9} className="px-5 py-4">
                           <div className="space-y-3">
                             <h4 className="font-semibold text-navy mb-3">Edit Stateroom</h4>

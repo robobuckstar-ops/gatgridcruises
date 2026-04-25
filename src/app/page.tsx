@@ -59,10 +59,10 @@ export default async function Home() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-slate-900 via-blue-950 to-slate-900 text-white py-24 md:py-36">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#0a1628] via-[#1E3A5F] to-[#0a1628] text-white py-24 md:py-36">
         <div className="absolute inset-0 opacity-20 pointer-events-none">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500 rounded-full blur-[120px]"></div>
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-500 rounded-full blur-[120px]"></div>
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#1E3A5F]/100 rounded-full blur-[120px]"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#1E3A5F]/100 rounded-full blur-[120px]"></div>
         </div>
 
         <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
@@ -223,10 +223,10 @@ export default async function Home() {
                 href={href}
                 className="group p-5 rounded-xl border-2 border-slate-200 hover:border-blue-500 hover:shadow-md transition-all duration-200"
               >
-                <div className="flex items-center justify-center w-11 h-11 rounded-xl bg-blue-50 group-hover:bg-blue-600 mb-3 transition-colors">
+                <div className="flex items-center justify-center w-11 h-11 rounded-xl bg-[#1E3A5F]/10 group-hover:bg-blue-600 mb-3 transition-colors">
                   <Icon className="w-5 h-5 text-blue-600 group-hover:text-white" aria-hidden="true" />
                 </div>
-                <h3 className="font-fraunces text-base font-bold text-slate-900 mb-1 group-hover:text-blue-600 transition-colors">
+                <h3 className="font-fraunces text-base font-bold text-slate-900 mb-1 group-hover:text-[#D4AF37] transition-colors">
                   {label}
                 </h3>
                 <p className="text-slate-500 text-xs leading-snug">{desc}</p>
@@ -272,7 +272,7 @@ export default async function Home() {
           <div className="text-center">
             <Link
               href="/concierge"
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-lg bg-[#D4AF37] text-[#1E3A5F] font-bold hover:bg-yellow-300 transition-colors shadow-lg shadow-yellow-900/20"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-lg bg-[#D4AF37] text-[#0a1628] font-bold hover:bg-yellow-300 transition-colors shadow-lg shadow-yellow-900/20"
             >
               Learn About Our Concierge Service
               <ArrowRight className="w-4 h-4" aria-hidden="true" />
@@ -300,7 +300,7 @@ export default async function Home() {
             <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
               <Link
                 href="/tools/obc-calculator"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-[#D4AF37] text-[#1E3A5F] font-bold hover:bg-yellow-300 transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-[#D4AF37] text-[#0a1628] font-bold hover:bg-yellow-300 transition-colors"
               >
                 <Gift className="w-4 h-4" aria-hidden="true" />
                 Calculate My OBC
@@ -359,12 +359,12 @@ export default async function Home() {
       </section>
 
       {/* Solo Cruising CTA Banner */}
-      <section className="bg-gradient-to-r from-purple-50 via-white to-purple-50 py-16 md:py-20 border-t border-purple-100" aria-labelledby="solo-heading">
+      <section className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] py-16 md:py-20 border-t border-[#1E3A5F]" aria-labelledby="solo-heading">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="flex-1">
               <div className="flex items-center gap-3 mb-4">
-                <Users className="w-8 h-8 text-purple-600" aria-hidden="true" />
+                <Users className="w-8 h-8 text-[#D4AF37]" aria-hidden="true" />
                 <h2 id="solo-heading" className="font-fraunces text-3xl md:text-4xl font-bold text-slate-900">
                   Cruising Solo?
                 </h2>
@@ -376,7 +376,7 @@ export default async function Home() {
             <div>
               <Link
                 href="/solo-cruising"
-                className="inline-flex items-center justify-center px-8 py-3 rounded-lg bg-purple-600 text-white font-semibold hover:bg-purple-700 transition-colors duration-200"
+                className="inline-flex items-center justify-center px-8 py-3 rounded-lg bg-[#D4AF37] text-[#0a1628] font-semibold hover:bg-[#c9a430] transition-colors duration-200"
               >
                 Explore Solo Cruising
               </Link>

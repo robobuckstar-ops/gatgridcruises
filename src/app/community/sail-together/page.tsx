@@ -13,12 +13,12 @@ export default function SailTogetherPage() {
   const groups = getSailTogetherGroups()
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-cyan-50 via-white to-blue-50">
+    <main className="min-h-screen bg-gradient-to-b from-[#0a1628] to-[#1E3A5F]">
       {/* Hero Section */}
       <section className="relative py-16 md:py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto text-center">
           <div className="flex justify-center mb-6">
-            <div className="inline-flex items-center justify-center h-16 w-16 rounded-full bg-blue-100">
+            <div className="inline-flex items-center justify-center h-16 w-16 rounded-full bg-[#1E3A5F]/20">
               <Users className="h-8 w-8 text-blue-600" />
             </div>
           </div>
@@ -41,7 +41,7 @@ export default function SailTogetherPage() {
             </a>
             <a
               href="/auth/signup"
-              className="inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold text-blue-600 border-2 border-blue-600 hover:bg-blue-50 transition-colors"
+              className="inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold text-blue-600 border-2 border-blue-600 hover:bg-[#1E3A5F]/10 transition-colors"
             >
               Create Account
             </a>
@@ -59,7 +59,7 @@ export default function SailTogetherPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Step 1 */}
             <div className="text-center">
-              <div className="inline-flex items-center justify-center h-14 w-14 rounded-full bg-blue-100 text-blue-600 font-display font-bold text-lg mb-4">
+              <div className="inline-flex items-center justify-center h-14 w-14 rounded-full bg-[#1E3A5F]/20 text-blue-600 font-display font-bold text-lg mb-4">
                 1
               </div>
               <h3 className="font-display text-xl font-semibold text-slate-900 mb-2">
@@ -150,7 +150,7 @@ export default function SailTogetherPage() {
             <div className="p-6 rounded-xl border border-slate-200 bg-white hover:shadow-md transition-shadow">
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0">
-                  <Heart className="h-6 w-6 text-rose-500 mt-1" />
+                  <Heart className="h-6 w-6 text-[#D4AF37] mt-1" />
                 </div>
                 <div>
                   <h3 className="font-display font-semibold text-slate-900 mb-1">
@@ -168,7 +168,7 @@ export default function SailTogetherPage() {
             <div className="p-6 rounded-xl border border-slate-200 bg-white hover:shadow-md transition-shadow">
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0">
-                  <Gift className="h-6 w-6 text-purple-600 mt-1" />
+                  <Gift className="h-6 w-6 text-[#D4AF37] mt-1" />
                 </div>
                 <div>
                   <h3 className="font-display font-semibold text-slate-900 mb-1">
@@ -238,7 +238,7 @@ export default function SailTogetherPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-50 to-cyan-50">
+      <section className="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#0a1628] to-[#1E3A5F]">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="font-display text-3xl md:text-4xl font-bold text-slate-900 mb-4">
             Ready to Join Your Crew?
@@ -257,7 +257,7 @@ export default function SailTogetherPage() {
             </Link>
             <Link
               href="/auth/login"
-              className="inline-flex items-center justify-center px-8 py-3 rounded-lg font-semibold text-blue-600 border-2 border-blue-600 hover:bg-blue-50 transition-colors"
+              className="inline-flex items-center justify-center px-8 py-3 rounded-lg font-semibold text-blue-600 border-2 border-blue-600 hover:bg-[#1E3A5F]/10 transition-colors"
             >
               Sign In
             </Link>

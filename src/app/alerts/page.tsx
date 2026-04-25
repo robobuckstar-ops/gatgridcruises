@@ -236,7 +236,7 @@ export default function AlertsPage() {
           {/* Ships */}
           <section className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
             <div className="flex items-center gap-3 mb-5">
-              <div className="flex items-center justify-center w-9 h-9 bg-blue-50 rounded-lg">
+              <div className="flex items-center justify-center w-9 h-9 bg-[#1E3A5F]/10 rounded-lg">
                 <Ship className="w-5 h-5 text-blue-600" aria-hidden="true" />
               </div>
               <div>
@@ -272,7 +272,7 @@ export default function AlertsPage() {
           {/* Cabin Type */}
           <section className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
             <div className="flex items-center gap-3 mb-5">
-              <div className="flex items-center justify-center w-9 h-9 bg-blue-50 rounded-lg">
+              <div className="flex items-center justify-center w-9 h-9 bg-[#1E3A5F]/10 rounded-lg">
                 <Anchor className="w-5 h-5 text-blue-600" aria-hidden="true" />
               </div>
               <div>
@@ -305,7 +305,7 @@ export default function AlertsPage() {
           {/* Destinations */}
           <section className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
             <div className="flex items-center gap-3 mb-5">
-              <div className="flex items-center justify-center w-9 h-9 bg-blue-50 rounded-lg">
+              <div className="flex items-center justify-center w-9 h-9 bg-[#1E3A5F]/10 rounded-lg">
                 <MapPin className="w-5 h-5 text-blue-600" aria-hidden="true" />
               </div>
               <div>
@@ -335,7 +335,7 @@ export default function AlertsPage() {
           {/* Travel Window */}
           <section className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
             <div className="flex items-center gap-3 mb-5">
-              <div className="flex items-center justify-center w-9 h-9 bg-blue-50 rounded-lg">
+              <div className="flex items-center justify-center w-9 h-9 bg-[#1E3A5F]/10 rounded-lg">
                 <Calendar className="w-5 h-5 text-blue-600" aria-hidden="true" />
               </div>
               <div>
@@ -420,7 +420,7 @@ export default function AlertsPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-4 bg-[#D4AF37] text-[#1E3A5F] font-bold text-lg rounded-2xl hover:bg-yellow-300 transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-sm"
+            className="w-full py-4 bg-[#D4AF37] text-[#0a1628] font-bold text-lg rounded-2xl hover:bg-yellow-300 transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-sm"
           >
             {loading ? 'Setting up your alerts…' : '🔔 Set My Deal Alerts'}
           </button>

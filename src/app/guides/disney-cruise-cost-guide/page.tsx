@@ -13,43 +13,38 @@ export default function DisneyVsCruiseCostGuide() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-50 to-indigo-50 text-slate-900 py-16">
+      <section className="relative bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] text-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-6">
-            <Link href="/" className="text-blue-600 hover:underline text-sm">
+            <Link href="/" className="text-[#D4AF37] hover:underline text-sm">
               Home
             </Link>
-            <span className="text-slate-900 mx-2">/</span>
-            <Link href="/guides" className="text-blue-600 hover:underline text-sm">
+            <span className="text-white/50 mx-2">/</span>
+            <Link href="/guides" className="text-[#D4AF37] hover:underline text-sm">
               Guides
             </Link>
-            <span className="text-slate-900 mx-2">/</span>
+            <span className="text-white/50 mx-2">/</span>
             <span className="text-gray-300 text-sm">The True Cost of a Disney Cruise</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-fraunces font-bold mb-4">
             The True Cost of a Disney Cruise (2026 Breakdown)
           </h1>
-          <p className="text-lg text-slate-600">
+          <p className="text-lg text-white/80">
             Base fare is just the start. Here"s exactly what you'll pay for a family Disney cruise, with hidden costs and real-world examples.
 "          </p>
         </div>
       </section>
 
-      {/* Ad Slot 1 */}
-      <a
-              href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
-              className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow"
-            >
-              <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4 flex items-center justify-between gap-4">
-                <div>
-                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Earn 150K+ Membership Rewards Points</p>
-                  <p className="text-blue-200 text-sm mt-0.5">Enough for your next Disney cruise upgrade — Amex Business Platinum</p>
-                </div>
-                <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
-              </div>
-            </a>
+      {/* Planning CTA */}
+      <Link href="/concierge" className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow">
+        <div className="bg-gradient-to-r from-[#0a1628] to-[#1E3A5F] px-6 py-4 flex items-center justify-between gap-4">
+          <div>
+            <p className="text-[#D4AF37] font-bold text-base leading-tight">Ready to Plan Your Disney Cruise?</p>
+            <p className="text-slate-300 text-sm mt-0.5">Our Boardwalk Travel Agency specialists offer free expert planning and quotes</p>
+          </div>
+          <span className="flex-shrink-0 bg-[#D4AF37] text-[#0a1628] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Get a Free Quote →</span>
+        </div>
+      </Link>
 
       {/* Main Content */}
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -65,28 +60,23 @@ export default function DisneyVsCruiseCostGuide() {
           </p>
         </section>
 
-        {/* Ad Slot 2 */}
-        <a
-              href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
-              className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow"
-            >
-              <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4 flex items-center justify-between gap-4">
-                <div>
-                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Earn 150K+ Membership Rewards Points</p>
-                  <p className="text-blue-200 text-sm mt-0.5">Enough for your next Disney cruise upgrade — Amex Business Platinum</p>
-                </div>
-                <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
-              </div>
-            </a>
+        {/* Planning CTA */}
+      <Link href="/concierge" className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow">
+        <div className="bg-gradient-to-r from-[#0a1628] to-[#1E3A5F] px-6 py-4 flex items-center justify-between gap-4">
+          <div>
+            <p className="text-[#D4AF37] font-bold text-base leading-tight">Ready to Plan Your Disney Cruise?</p>
+            <p className="text-slate-300 text-sm mt-0.5">Our Boardwalk Travel Agency specialists offer free expert planning and quotes</p>
+          </div>
+          <span className="flex-shrink-0 bg-[#D4AF37] text-[#0a1628] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Get a Free Quote →</span>
+        </div>
+      </Link>
   
         <section className="mb-12">
           <h2 className="text-3xl font-fraunces font-bold text-slate-900 mb-6">
             The Hidden Costs That Add Up Fast
           </h2>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-8">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-8">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-4">
               Gratuities (Automatic Service Charges)
             </h3>
@@ -95,7 +85,7 @@ export default function DisneyVsCruiseCostGuide() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-8">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-8">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-4">
               Beverage Packages
             </h3>
@@ -104,7 +94,7 @@ export default function DisneyVsCruiseCostGuide() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-8">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-8">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-4">
               Internet (Wi-Fi)
             </h3>
@@ -113,7 +103,7 @@ export default function DisneyVsCruiseCostGuide() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-8">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-8">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-4">
               Port Excursions (Shore Activities)
             </h3>
@@ -122,7 +112,7 @@ export default function DisneyVsCruiseCostGuide() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-8">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-8">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-4">
               Specialty Dining
             </h3>
@@ -131,7 +121,7 @@ export default function DisneyVsCruiseCostGuide() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-8">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-8">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-4">
               Onboard Experiences & Activities
             </h3>
@@ -140,7 +130,7 @@ export default function DisneyVsCruiseCostGuide() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-8">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-8">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-4">
               Getting to the Port
             </h3>
@@ -150,21 +140,16 @@ export default function DisneyVsCruiseCostGuide() {
           </div>
         </section>
 
-        {/* Ad Slot 3 */}
-        <a
-              href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
-              className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow"
-            >
-              <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4 flex items-center justify-between gap-4">
-                <div>
-                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Earn 150K+ Membership Rewards Points</p>
-                  <p className="text-blue-200 text-sm mt-0.5">Enough for your next Disney cruise upgrade — Amex Business Platinum</p>
-                </div>
-                <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
-              </div>
-            </a>
+        {/* Planning CTA */}
+      <Link href="/concierge" className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow">
+        <div className="bg-gradient-to-r from-[#0a1628] to-[#1E3A5F] px-6 py-4 flex items-center justify-between gap-4">
+          <div>
+            <p className="text-[#D4AF37] font-bold text-base leading-tight">Ready to Plan Your Disney Cruise?</p>
+            <p className="text-slate-300 text-sm mt-0.5">Our Boardwalk Travel Agency specialists offer free expert planning and quotes</p>
+          </div>
+          <span className="flex-shrink-0 bg-[#D4AF37] text-[#0a1628] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Get a Free Quote →</span>
+        </div>
+      </Link>
   
         <section className="mb-12">
           <h2 className="text-3xl font-fraunces font-bold text-slate-900 mb-6">
@@ -260,27 +245,22 @@ export default function DisneyVsCruiseCostGuide() {
           </ul>
         </section>
 
-        {/* Ad Slot 4 */}
-        <a
-              href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
-              className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow"
-            >
-              <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4 flex items-center justify-between gap-4">
-                <div>
-                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Earn 150K+ Membership Rewards Points</p>
-                  <p className="text-blue-200 text-sm mt-0.5">Enough for your next Disney cruise upgrade — Amex Business Platinum</p>
-                </div>
-                <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
-              </div>
-            </a>
+        {/* Planning CTA */}
+      <Link href="/concierge" className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow">
+        <div className="bg-gradient-to-r from-[#0a1628] to-[#1E3A5F] px-6 py-4 flex items-center justify-between gap-4">
+          <div>
+            <p className="text-[#D4AF37] font-bold text-base leading-tight">Ready to Plan Your Disney Cruise?</p>
+            <p className="text-slate-300 text-sm mt-0.5">Our Boardwalk Travel Agency specialists offer free expert planning and quotes</p>
+          </div>
+          <span className="flex-shrink-0 bg-[#D4AF37] text-[#0a1628] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Get a Free Quote →</span>
+        </div>
+      </Link>
   
         <section className="mb-12">
           <h2 className="text-3xl font-fraunces font-bold text-slate-900 mb-6">
             Use Our Cost Calculator
           </h2>
-          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 text-slate-900 p-8 rounded-lg">
+          <div className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] text-slate-900 p-8 rounded-lg">
             <p className="font-inter mb-6">
               Stop guessing at your cruise budget. Our interactive cost calculator lets you input your stateroom category, sailing length, family size, and preferred add-ons to generate a personalized total cost estimate.
             </p>
@@ -319,7 +299,7 @@ export default function DisneyVsCruiseCostGuide() {
         </section>
 
         {/* CTA Section */}
-        <section className="bg-gradient-to-r from-blue-50 to-indigo-50 text-slate-900 p-8 rounded-lg mb-12">
+        <section className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] text-slate-900 p-8 rounded-lg mb-12">
           <h2 className="text-2xl font-fraunces font-bold mb-4">Ready to Plan Your Disney Cruise?</h2>
           <p className="font-inter mb-6">
             Use our tools to compare prices, calculate realistic budgets, and find the best deals on your next sailing.
@@ -339,8 +319,8 @@ export default function DisneyVsCruiseCostGuide() {
           <h2 className="text-2xl font-fraunces font-bold text-slate-900 mb-6">Related Guides</h2>
           <div className="grid md:grid-cols-3 gap-6">
             <Link href="/guides/best-disney-cruise-staterooms" className="group">
-              <div className="bg-gray-50 p-6 rounded-lg hover:bg-blue-50 transition">
-                <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-blue-600">
+              <div className="bg-gray-50 p-6 rounded-lg hover:bg-[#1E3A5F]/10 transition">
+                <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-[#D4AF37]">
                   Best Disney Cruise Staterooms
                 </h3>
                 <p className="font-inter text-gray-600 text-sm">
@@ -349,8 +329,8 @@ export default function DisneyVsCruiseCostGuide() {
               </div>
             </Link>
             <Link href="/guides/disney-cruise-with-toddlers" className="group">
-              <div className="bg-gray-50 p-6 rounded-lg hover:bg-blue-50 transition">
-                <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-blue-600">
+              <div className="bg-gray-50 p-6 rounded-lg hover:bg-[#1E3A5F]/10 transition">
+                <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-[#D4AF37]">
                   Disney Cruise with Toddlers
                 </h3>
                 <p className="font-inter text-gray-600 text-sm">
@@ -359,8 +339,8 @@ export default function DisneyVsCruiseCostGuide() {
               </div>
             </Link>
             <Link href="/guides/first-time-disney-cruise-tips" className="group">
-              <div className="bg-gray-50 p-6 rounded-lg hover:bg-blue-50 transition">
-                <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-blue-600">
+              <div className="bg-gray-50 p-6 rounded-lg hover:bg-[#1E3A5F]/10 transition">
+                <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-[#D4AF37]">
                   25 First-Time Cruise Tips
                 </h3>
                 <p className="font-inter text-gray-600 text-sm">

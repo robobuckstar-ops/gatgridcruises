@@ -257,7 +257,7 @@ export default function PackingListPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="bg-gradient-to-b from-blue-950 to-blue-900 text-white py-16 px-4">
+      <section className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] text-white py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-sm text-blue-300 mb-3 font-medium">Blog · Packing Guide</div>
           <h1 className="font-display text-4xl sm:text-5xl font-bold mb-4">
@@ -279,14 +279,14 @@ export default function PackingListPage() {
 
       <div className="max-w-4xl mx-auto px-4 py-10">
         {/* Quick links */}
-        <div className="p-5 bg-blue-50 border border-blue-200 rounded-xl">
+        <div className="p-5 bg-[#1E3A5F]/10 border border-blue-200 rounded-xl">
           <h2 className="font-display text-lg font-semibold text-blue-900 mb-3">Jump to Section</h2>
           <div className="flex flex-wrap gap-2">
             {[...categories, { title: 'What Disney Provides', icon: '✅' }, { title: 'What NOT to Bring', icon: '🚫' }].map((cat) => (
               <a
                 key={cat.title}
                 href={`#${cat.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-blue-200 text-blue-700 text-sm hover:bg-blue-100 transition-colors"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-blue-200 text-blue-700 text-sm hover:bg-[#1E3A5F]/20 transition-colors"
               >
                 <span>{cat.icon}</span>
                 <span>{cat.title}</span>
@@ -311,7 +311,7 @@ export default function PackingListPage() {
                 {category.items.map((item) => (
                   <div
                     key={item.name}
-                    className="flex items-start gap-3 p-3 rounded-lg border border-slate-100 hover:border-blue-200 hover:bg-blue-50 transition-colors group"
+                    className="flex items-start gap-3 p-3 rounded-lg border border-slate-100 hover:border-blue-200 hover:bg-[#1E3A5F]/10 transition-colors group"
                   >
                     <div className="mt-0.5 w-4 h-4 rounded border-2 border-slate-300 flex-shrink-0 group-hover:border-blue-400" />
                     <div className="flex-1 min-w-0">

@@ -21,7 +21,7 @@ const REGIONS = [
 ]
 
 const LINE_COLORS: Record<string, string> = {
-  'Royal Caribbean': 'bg-blue-100 text-blue-800',
+  'Royal Caribbean': 'bg-[#1E3A5F]/20 text-blue-800',
   'Carnival': 'bg-red-100 text-red-800',
   'Norwegian': 'bg-sky-100 text-sky-800',
   'MSC Cruises': 'bg-navy/10 text-slate-800',
@@ -346,7 +346,7 @@ export function OtherLinesGrid({ deals }: OtherLinesGridProps) {
         )}
 
         {/* Disney CTA */}
-        <div className="mt-12 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-xl p-6 text-center">
+        <div className="mt-12 bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] border border-blue-200 rounded-xl p-6 text-center">
           <h2 className="font-display text-xl font-bold text-slate-900 mb-2">
             Looking for Disney Cruises?
           </h2>

@@ -13,14 +13,14 @@ export default function DisneyCruiseWithToddlersGuide() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-50 to-indigo-50 py-16">
+      <section className="relative bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-6">
-            <Link href="/" className="text-blue-600 hover:underline text-sm">
+            <Link href="/" className="text-[#D4AF37] hover:underline text-sm">
               Home
             </Link>
             <span className="text-white mx-2">/</span>
-            <Link href="/guides" className="text-blue-600 hover:underline text-sm">
+            <Link href="/guides" className="text-[#D4AF37] hover:underline text-sm">
               Guides
             </Link>
             <span className="text-white mx-2">/</span>
@@ -29,27 +29,22 @@ export default function DisneyCruiseWithToddlersGuide() {
           <h1 className="text-4xl md:text-5xl font-fraunces font-bold mb-4">
             Disney Cruise with Toddlers: The Complete Parent's Guide
           </h1>
-          <p className="text-lg text-slate-600">
+          <p className="text-lg text-white/80">
             Everything parents need to know about cruising with young children: nursery care, cabin choices, packing, dining, and managing nap times at sea.
           </p>
         </div>
       </section>
 
-      {/* Ad Slot 1 */}
-      <a
-              href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
-              className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow"
-            >
-              <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4 flex items-center justify-between gap-4">
-                <div>
-                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Earn 150K+ Membership Rewards Points</p>
-                  <p className="text-blue-200 text-sm mt-0.5">Enough for your next Disney cruise upgrade — Amex Business Platinum</p>
-                </div>
-                <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
-              </div>
-            </a>
+      {/* Planning CTA */}
+      <Link href="/concierge" className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow">
+        <div className="bg-gradient-to-r from-[#0a1628] to-[#1E3A5F] px-6 py-4 flex items-center justify-between gap-4">
+          <div>
+            <p className="text-[#D4AF37] font-bold text-base leading-tight">Ready to Plan Your Disney Cruise?</p>
+            <p className="text-slate-300 text-sm mt-0.5">Our Boardwalk Travel Agency specialists offer free expert planning and quotes</p>
+          </div>
+          <span className="flex-shrink-0 bg-[#D4AF37] text-[#0a1628] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Get a Free Quote →</span>
+        </div>
+      </Link>
 
       {/* Main Content */}
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -65,28 +60,23 @@ export default function DisneyCruiseWithToddlersGuide() {
           </p>
         </section>
 
-        {/* Ad Slot 2 */}
-        <a
-              href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
-              className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow"
-            >
-              <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4 flex items-center justify-between gap-4">
-                <div>
-                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Earn 150K+ Membership Rewards Points</p>
-                  <p className="text-blue-200 text-sm mt-0.5">Enough for your next Disney cruise upgrade — Amex Business Platinum</p>
-                </div>
-                <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
-              </div>
-            </a>
+        {/* Planning CTA */}
+      <Link href="/concierge" className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow">
+        <div className="bg-gradient-to-r from-[#0a1628] to-[#1E3A5F] px-6 py-4 flex items-center justify-between gap-4">
+          <div>
+            <p className="text-[#D4AF37] font-bold text-base leading-tight">Ready to Plan Your Disney Cruise?</p>
+            <p className="text-slate-300 text-sm mt-0.5">Our Boardwalk Travel Agency specialists offer free expert planning and quotes</p>
+          </div>
+          <span className="flex-shrink-0 bg-[#D4AF37] text-[#0a1628] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Get a Free Quote →</span>
+        </div>
+      </Link>
   
         <section className="mb-12">
           <h2 className="text-3xl font-fraunces font-bold text-slate-900 mb-6">
             It's a Small World Nursery: Childcare for the Youngest
           </h2>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Ages & Requirements
             </h3>
@@ -95,7 +85,7 @@ export default function DisneyCruiseWithToddlersGuide() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Cost & Booking
             </h3>
@@ -107,7 +97,7 @@ export default function DisneyCruiseWithToddlersGuide() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               What Happens in the Nursery
             </h3>
@@ -124,7 +114,7 @@ export default function DisneyCruiseWithToddlersGuide() {
             </ul>
           </div>
 
-          <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg mb-6">
+          <div className="bg-[#1E3A5F]/10 border-l-4 border-blue-500 p-6 rounded-lg mb-6">
             <p className="font-inter text-slate-600 mb-2">
               <strong>Pro Tip:</strong> Book nursery time for the first evening after embarkation when your toddler is acclimating. Skip the early evening chaos and book 8pm-10pm when kids are sleepy anyway. You get adult time and your toddler might even fall asleep there.
             </p>
@@ -140,7 +130,7 @@ export default function DisneyCruiseWithToddlersGuide() {
             Once your toddler is potty trained and reaches age 3, they can transition to Oceaneer Club (free kids club). This is a big upgrade—instead of $9/hour nursery care, your 3-year-old gets access to a full themed clubhouse with activities, character meet-and-greets, story time, water play, and group activities. It's free and typically operates 9am-midnight with flexible check-in/check-out.
           </p>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Preparing Your 3-Year-Old for Oceaneer Club
             </h3>
@@ -165,28 +155,23 @@ export default function DisneyCruiseWithToddlersGuide() {
           </div>
         </section>
 
-        {/* Ad Slot 3 */}
-        <a
-              href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
-              className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow"
-            >
-              <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4 flex items-center justify-between gap-4">
-                <div>
-                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Earn 150K+ Membership Rewards Points</p>
-                  <p className="text-blue-200 text-sm mt-0.5">Enough for your next Disney cruise upgrade — Amex Business Platinum</p>
-                </div>
-                <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
-              </div>
-            </a>
+        {/* Planning CTA */}
+      <Link href="/concierge" className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow">
+        <div className="bg-gradient-to-r from-[#0a1628] to-[#1E3A5F] px-6 py-4 flex items-center justify-between gap-4">
+          <div>
+            <p className="text-[#D4AF37] font-bold text-base leading-tight">Ready to Plan Your Disney Cruise?</p>
+            <p className="text-slate-300 text-sm mt-0.5">Our Boardwalk Travel Agency specialists offer free expert planning and quotes</p>
+          </div>
+          <span className="flex-shrink-0 bg-[#D4AF37] text-[#0a1628] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Get a Free Quote →</span>
+        </div>
+      </Link>
   
         <section className="mb-12">
           <h2 className="text-3xl font-fraunces font-bold text-slate-900 mb-6">
             Cabin Choices for Toddler Families
           </h2>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Verandah Cabins (Recommended for Toddlers)
             </h3>
@@ -202,7 +187,7 @@ export default function DisneyCruiseWithToddlersGuide() {
             </ul>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Oceanview & Inside Cabins (Budget Option)
             </h3>
@@ -217,7 +202,7 @@ export default function DisneyCruiseWithToddlersGuide() {
             </ul>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Connecting Rooms (Family Suite Option)
             </h3>
@@ -226,7 +211,7 @@ export default function DisneyCruiseWithToddlersGuide() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Newest Ships: Disney Wish & Disney Treasure
             </h3>
@@ -241,7 +226,7 @@ export default function DisneyCruiseWithToddlersGuide() {
             Dining with Toddlers: What to Expect & Plan
           </h2>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               High Chairs & Special Seating
             </h3>
@@ -250,7 +235,7 @@ export default function DisneyCruiseWithToddlersGuide() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Rotational Dining vs. Buffet for Toddler Families
             </h3>
@@ -262,7 +247,7 @@ export default function DisneyCruiseWithToddlersGuide() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Kids Menus & Food Options
             </h3>
@@ -275,7 +260,7 @@ export default function DisneyCruiseWithToddlersGuide() {
             </ul>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Bringing Baby Food & Special Items
             </h3>
@@ -291,28 +276,23 @@ export default function DisneyCruiseWithToddlersGuide() {
           </div>
         </section>
 
-        {/* Ad Slot 4 */}
-        <a
-              href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
-              className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow"
-            >
-              <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4 flex items-center justify-between gap-4">
-                <div>
-                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Earn 150K+ Membership Rewards Points</p>
-                  <p className="text-blue-200 text-sm mt-0.5">Enough for your next Disney cruise upgrade — Amex Business Platinum</p>
-                </div>
-                <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
-              </div>
-            </a>
+        {/* Planning CTA */}
+      <Link href="/concierge" className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow">
+        <div className="bg-gradient-to-r from-[#0a1628] to-[#1E3A5F] px-6 py-4 flex items-center justify-between gap-4">
+          <div>
+            <p className="text-[#D4AF37] font-bold text-base leading-tight">Ready to Plan Your Disney Cruise?</p>
+            <p className="text-slate-300 text-sm mt-0.5">Our Boardwalk Travel Agency specialists offer free expert planning and quotes</p>
+          </div>
+          <span className="flex-shrink-0 bg-[#D4AF37] text-[#0a1628] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Get a Free Quote →</span>
+        </div>
+      </Link>
   
         <section className="mb-12">
           <h2 className="text-3xl font-fraunces font-bold text-slate-900 mb-6">
             Toddler-Friendly Onboard Amenities
           </h2>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Splash Zones & Water Areas
             </h3>
@@ -324,7 +304,7 @@ export default function DisneyCruiseWithToddlersGuide() {
             </ul>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Diaper Dash & Toddler Events
             </h3>
@@ -333,7 +313,7 @@ export default function DisneyCruiseWithToddlersGuide() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Stroller Policy Onboard
             </h3>
@@ -349,7 +329,7 @@ export default function DisneyCruiseWithToddlersGuide() {
           </h2>
 
           <div className="grid md:grid-cols-2 gap-6 mb-6">
-            <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg">
+            <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg">
               <h3 className="text-lg font-fraunces font-bold text-slate-900 mb-3">
                 Essentials to Pack
               </h3>
@@ -381,7 +361,7 @@ export default function DisneyCruiseWithToddlersGuide() {
               </ul>
             </div>
 
-            <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg">
+            <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg">
               <h3 className="text-lg font-fraunces font-bold text-slate-900 mb-3">
                 Other Helpful Items
               </h3>
@@ -410,7 +390,7 @@ export default function DisneyCruiseWithToddlersGuide() {
             </div>
           </div>
 
-          <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
+          <div className="bg-[#1E3A5F]/10 border-l-4 border-blue-500 p-6 rounded-lg">
             <p className="font-inter text-slate-600 mb-2">
               <strong>Packing Reality:</strong> Cabins are compact. Pack efficiently—bring minimal clothing (wash clothes in cabin sink if needed), and maximize essential items (diapers, formula, medications). Luggage can be stored under the bed.
             </p>
@@ -423,7 +403,7 @@ export default function DisneyCruiseWithToddlersGuide() {
           </h2>
 
           <div className="space-y-6">
-            <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg">
+            <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg">
               <h3 className="text-lg font-fraunces font-bold text-slate-900 mb-3">
                 3-4 Night Cruises (Best for Toddlers)
               </h3>
@@ -432,7 +412,7 @@ export default function DisneyCruiseWithToddlersGuide() {
               </p>
             </div>
 
-            <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg">
+            <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg">
               <h3 className="text-lg font-fraunces font-bold text-slate-900 mb-3">
                 5-7 Night Cruises (Doable)
               </h3>
@@ -441,7 +421,7 @@ export default function DisneyCruiseWithToddlersGuide() {
               </p>
             </div>
 
-            <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg">
+            <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg">
               <h3 className="text-lg font-fraunces font-bold text-slate-900 mb-3">
                 10+ Night Cruises (Not Recommended)
               </h3>
@@ -452,28 +432,23 @@ export default function DisneyCruiseWithToddlersGuide() {
           </div>
         </section>
 
-        {/* Ad Slot 5 */}
-        <a
-              href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
-              className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow"
-            >
-              <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4 flex items-center justify-between gap-4">
-                <div>
-                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Earn 150K+ Membership Rewards Points</p>
-                  <p className="text-blue-200 text-sm mt-0.5">Enough for your next Disney cruise upgrade — Amex Business Platinum</p>
-                </div>
-                <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
-              </div>
-            </a>
+        {/* Planning CTA */}
+      <Link href="/concierge" className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow">
+        <div className="bg-gradient-to-r from-[#0a1628] to-[#1E3A5F] px-6 py-4 flex items-center justify-between gap-4">
+          <div>
+            <p className="text-[#D4AF37] font-bold text-base leading-tight">Ready to Plan Your Disney Cruise?</p>
+            <p className="text-slate-300 text-sm mt-0.5">Our Boardwalk Travel Agency specialists offer free expert planning and quotes</p>
+          </div>
+          <span className="flex-shrink-0 bg-[#D4AF37] text-[#0a1628] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Get a Free Quote →</span>
+        </div>
+      </Link>
   
         <section className="mb-12">
           <h2 className="text-3xl font-fraunces font-bold text-slate-900 mb-6">
             Nap Schedule & Cabin Management
           </h2>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Maintaining Nap Routines at Sea
             </h3>
@@ -490,7 +465,7 @@ export default function DisneyCruiseWithToddlersGuide() {
             </ul>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Dealing with Sleep Regression
             </h3>
@@ -512,7 +487,7 @@ export default function DisneyCruiseWithToddlersGuide() {
             Castaway Cay with Toddlers
           </h2>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Island Tips for Young Children
             </h3>
@@ -595,7 +570,7 @@ export default function DisneyCruiseWithToddlersGuide() {
         </section>
 
         {/* CTA Section */}
-        <section className="bg-gradient-to-r from-blue-50 to-indigo-50 p-8 rounded-lg mb-12">
+        <section className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] p-8 rounded-lg mb-12">
           <h2 className="text-2xl font-fraunces font-bold mb-4">Ready to Find Your Perfect Cruise?</h2>
           <p className="font-inter mb-6">
             Use our cost calculator to explore cabin options, pricing, and see which ships and itineraries work best for your family with young children.
@@ -610,8 +585,8 @@ export default function DisneyCruiseWithToddlersGuide() {
           <h2 className="text-2xl font-fraunces font-bold text-slate-900 mb-6">Related Guides</h2>
           <div className="grid md:grid-cols-3 gap-6">
             <Link href="/guides/first-time-disney-cruise-tips" className="group">
-              <div className="bg-gray-50 p-6 rounded-lg hover:bg-blue-50 transition">
-                <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-blue-600">
+              <div className="bg-gray-50 p-6 rounded-lg hover:bg-[#1E3A5F]/10 transition">
+                <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-[#D4AF37]">
                   25 First-Time Cruise Tips
                 </h3>
                 <p className="font-inter text-gray-600 text-sm">
@@ -620,8 +595,8 @@ export default function DisneyCruiseWithToddlersGuide() {
               </div>
             </Link>
             <Link href="/guides/best-disney-cruise-staterooms" className="group">
-              <div className="bg-gray-50 p-6 rounded-lg hover:bg-blue-50 transition">
-                <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-blue-600">
+              <div className="bg-gray-50 p-6 rounded-lg hover:bg-[#1E3A5F]/10 transition">
+                <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-[#D4AF37]">
                   Best Disney Cruise Staterooms
                 </h3>
                 <p className="font-inter text-gray-600 text-sm">
@@ -630,8 +605,8 @@ export default function DisneyCruiseWithToddlersGuide() {
               </div>
             </Link>
             <Link href="/guides/disney-cruise-cost-guide" className="group">
-              <div className="bg-gray-50 p-6 rounded-lg hover:bg-blue-50 transition">
-                <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-blue-600">
+              <div className="bg-gray-50 p-6 rounded-lg hover:bg-[#1E3A5F]/10 transition">
+                <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-[#D4AF37]">
                   The True Cost of a Disney Cruise
                 </h3>
                 <p className="font-inter text-gray-600 text-sm">

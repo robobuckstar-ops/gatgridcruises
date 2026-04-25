@@ -855,7 +855,7 @@ Many teens who are skeptical before boarding return home having had a genuinely 
 <li>Purchase protection and extended warranty on eligible purchases</li>
 <li>No foreign transaction fees</li>
 </ul>
-<p><a href="https://www.referyourchasecard.com/226m/6ZT33F9TOQ" rel="nofollow sponsored" target="_blank"><strong>Apply for the Chase Ink Business Preferred</strong></a></p>
+<p><a href="/concierge"><strong>Apply for the Chase Ink Business Preferred</strong></a></p>
 <p><em>Terms apply. Verify current welcome offers and coverage details directly with Chase before applying.</em></p>
 
 <h2>Amex Business Platinum: Best for Lounge Access and Maximum Coverage</h2>
@@ -879,7 +879,7 @@ Many teens who are skeptical before boarding return home having had a genuinely 
 
 <h3>Annual Fee and Offsets</h3>
 <p>The $695 annual fee comes with credits that offset much of it for active travelers: $200 airline fee credit, $189 CLEAR Plus credit, $100 Global Entry/TSA PreCheck credit, and up to $400 in Dell Business credits. Fine Hotels &amp; Resorts benefits apply at 1,000+ properties — useful for pre-cruise hotel nights near Port Canaveral or Miami.</p>
-<p><a href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS" rel="nofollow sponsored" target="_blank"><strong>Apply for the Amex Business Platinum</strong></a></p>
+<p><a href="/concierge"><strong>Apply for the Amex Business Platinum</strong></a></p>
 <p><em>Terms apply. Welcome offers change frequently. Verify current details directly with American Express before applying.</em></p>
 
 <h2>Capital One Spark Business: Best Simple High-Value Earner</h2>
@@ -896,7 +896,7 @@ Many teens who are skeptical before boarding return home having had a genuinely 
 
 <h3>Annual Fee</h3>
 <p>$150/year, rebated if you spend $150,000+ annually.</p>
-<p><a href="https://i.capitalone.com/JKlfRwN3f" rel="nofollow sponsored" target="_blank"><strong>Apply for the Capital One Spark Business</strong></a></p>
+<p><a href="/concierge"><strong>Apply for the Capital One Spark Business</strong></a></p>
 <p><em>Terms apply. Verify current welcome offers and card details with Capital One before applying.</em></p>
 
 <h2>Strategy: How to Use These Cards Together</h2>

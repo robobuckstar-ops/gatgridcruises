@@ -237,7 +237,7 @@ export default function TravelInsurancePage() {
                   <h3 className="font-bold text-slate-900 text-lg">{type}</h3>
                   <span className={`text-xs font-bold px-3 py-1 rounded-full ${
                     priority === 'Critical' ? 'bg-red-100 text-red-700' :
-                    priority === 'Essential' ? 'bg-blue-100 text-blue-700' :
+                    priority === 'Essential' ? 'bg-[#1E3A5F]/20 text-blue-700' :
                     priority === 'Nice to Have' ? 'bg-green-100 text-green-700' :
                     'bg-slate-200 text-slate-600'
                   }`}>
@@ -396,7 +396,7 @@ export default function TravelInsurancePage() {
                 href="https://www.travelguard.com"
                 target="_blank"
                 rel="noopener noreferrer sponsored"
-                className="block w-full text-center bg-[#D4AF37] text-[#1E3A5F] font-bold rounded-xl py-2.5 text-sm hover:bg-yellow-300 transition-colors"
+                className="block w-full text-center bg-[#D4AF37] text-[#0a1628] font-bold rounded-xl py-2.5 text-sm hover:bg-yellow-300 transition-colors"
               >
                 Get Travel Guard Quote → <span className="text-xs font-normal">(Our Pick)</span>
               </a>
@@ -501,7 +501,7 @@ export default function TravelInsurancePage() {
                     <p className="font-semibold text-slate-900 text-sm">{item}</p>
                     <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${
                       priority === 'Critical' ? 'bg-red-100 text-red-700' :
-                      priority === 'Essential' ? 'bg-blue-100 text-blue-700' :
+                      priority === 'Essential' ? 'bg-[#1E3A5F]/20 text-blue-700' :
                       priority === 'Recommended' ? 'bg-green-100 text-green-700' :
                       'bg-slate-200 text-slate-600'
                     }`}>
@@ -557,17 +557,15 @@ export default function TravelInsurancePage() {
           </div>
 
           <a
-            href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-            target="_blank"
-            rel="noopener noreferrer sponsored"
+            href="/concierge"
             className="block rounded-2xl overflow-hidden border border-[#D4AF37] shadow-md hover:shadow-lg transition-shadow"
           >
-            <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div className="bg-gradient-to-r from-[#0a1628] to-[#1E3A5F] px-6 py-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div>
                 <p className="text-[#D4AF37] font-bold text-lg leading-tight">Earn 150,000 Membership Rewards Points</p>
                 <p className="text-blue-200 text-sm mt-1">Amex Business Platinum — includes trip cancellation, delay, and baggage coverage on charged travel</p>
               </div>
-              <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-5 py-2.5 rounded-xl whitespace-nowrap">
+              <span className="flex-shrink-0 bg-[#D4AF37] text-[#0a1628] font-bold text-sm px-5 py-2.5 rounded-xl whitespace-nowrap">
                 Apply Now →
               </span>
             </div>

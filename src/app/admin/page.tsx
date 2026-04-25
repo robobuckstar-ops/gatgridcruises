@@ -60,7 +60,7 @@ export default function AdminDashboard() {
           </div>
           <div className="bg-white rounded-xl border border-slate-200 p-5">
             <div className="flex items-center gap-3 mb-2">
-              <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-[#1E3A5F]/10 rounded-lg flex items-center justify-center">
                 <MapPin className="h-5 w-5 text-blue-600" />
               </div>
               <span className="text-2xl font-bold text-navy">{ports.length}</span>
@@ -72,49 +72,49 @@ export default function AdminDashboard() {
         {/* Quick actions */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
           <Link href="/admin/sailings" className="bg-white rounded-xl border border-slate-200 p-5 hover:border-navy transition-colors group">
-            <h3 className="font-semibold text-navy group-hover:text-blue-600 transition-colors flex items-center gap-2">
+            <h3 className="font-semibold text-navy group-hover:text-[#D4AF37] transition-colors flex items-center gap-2">
               <Anchor className="h-4 w-4" /> Manage Sailings
             </h3>
             <p className="text-sm text-slate-500 mt-1">Create, edit, and manage cruise sailings and prices</p>
           </Link>
           <Link href="/admin/ships" className="bg-white rounded-xl border border-slate-200 p-5 hover:border-navy transition-colors group">
-            <h3 className="font-semibold text-navy group-hover:text-blue-600 transition-colors flex items-center gap-2">
+            <h3 className="font-semibold text-navy group-hover:text-[#D4AF37] transition-colors flex items-center gap-2">
               <Ship className="h-4 w-4" /> Manage Ships
             </h3>
             <p className="text-sm text-slate-500 mt-1">Create, edit, and manage cruise ships</p>
           </Link>
           <Link href="/admin/ports" className="bg-white rounded-xl border border-slate-200 p-5 hover:border-navy transition-colors group">
-            <h3 className="font-semibold text-navy group-hover:text-blue-600 transition-colors flex items-center gap-2">
+            <h3 className="font-semibold text-navy group-hover:text-[#D4AF37] transition-colors flex items-center gap-2">
               <MapPin className="h-4 w-4" /> Manage Ports
             </h3>
             <p className="text-sm text-slate-500 mt-1">Create, edit, and manage cruise ports</p>
           </Link>
           <Link href="/admin/hotels" className="bg-white rounded-xl border border-slate-200 p-5 hover:border-navy transition-colors group">
-            <h3 className="font-semibold text-navy group-hover:text-blue-600 transition-colors flex items-center gap-2">
+            <h3 className="font-semibold text-navy group-hover:text-[#D4AF37] transition-colors flex items-center gap-2">
               <MapPin className="h-4 w-4" /> Manage Hotels
             </h3>
             <p className="text-sm text-slate-500 mt-1">Manage pre-cruise hotel options</p>
           </Link>
           <Link href="/admin/transfers" className="bg-white rounded-xl border border-slate-200 p-5 hover:border-navy transition-colors group">
-            <h3 className="font-semibold text-navy group-hover:text-blue-600 transition-colors flex items-center gap-2">
+            <h3 className="font-semibold text-navy group-hover:text-[#D4AF37] transition-colors flex items-center gap-2">
               <MapPin className="h-4 w-4" /> Manage Transfers
             </h3>
             <p className="text-sm text-slate-500 mt-1">Manage airport and port transfers</p>
           </Link>
           <Link href="/admin/staterooms" className="bg-white rounded-xl border border-slate-200 p-5 hover:border-navy transition-colors group">
-            <h3 className="font-semibold text-navy group-hover:text-blue-600 transition-colors flex items-center gap-2">
+            <h3 className="font-semibold text-navy group-hover:text-[#D4AF37] transition-colors flex items-center gap-2">
               <Ship className="h-4 w-4" /> Manage Staterooms
             </h3>
             <p className="text-sm text-slate-500 mt-1">Manage ship staterooms and cabins</p>
           </Link>
           <Link href="/admin/subscribers" className="bg-white rounded-xl border border-slate-200 p-5 hover:border-navy transition-colors group">
-            <h3 className="font-semibold text-navy group-hover:text-blue-600 transition-colors flex items-center gap-2">
+            <h3 className="font-semibold text-navy group-hover:text-[#D4AF37] transition-colors flex items-center gap-2">
               <Users className="h-4 w-4" /> Manage Subscribers
             </h3>
             <p className="text-sm text-slate-500 mt-1">View and manage your email subscribers</p>
           </Link>
           <Link href="/admin/ads" className="bg-white rounded-xl border border-slate-200 p-5 hover:border-navy transition-colors group">
-            <h3 className="font-semibold text-navy group-hover:text-blue-600 transition-colors flex items-center gap-2">
+            <h3 className="font-semibold text-navy group-hover:text-[#D4AF37] transition-colors flex items-center gap-2">
               <BarChart2 className="h-4 w-4" /> Ad Management
             </h3>
             <p className="text-sm text-slate-500 mt-1">Manage ad slots and track performance</p>

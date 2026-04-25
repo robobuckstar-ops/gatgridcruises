@@ -36,7 +36,7 @@ export default function PortsIndexPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <div className="bg-gradient-to-br from-blue-50 to-indigo-50 text-slate-900 border-b border-slate-200">
+      <div className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] text-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
           <div className="max-w-3xl">
             <h1 className="font-display text-4xl sm:text-5xl font-bold mb-4 leading-tight text-slate-900">
@@ -73,13 +73,13 @@ export default function PortsIndexPage() {
                   <Link
                     key={port.id}
                     href={`/hotels/${port.slug}`}
-                    className="group border border-slate-300 rounded-lg p-6 hover:border-blue-400 hover:shadow-lg transition-all"
+                    className="group border border-slate-300 rounded-lg p-6 hover:border-[#D4AF37] hover:shadow-lg transition-all"
                   >
                     {/* Header */}
                     <div className="mb-4">
                       <div className="flex items-start justify-between mb-2">
                         <div>
-                          <h3 className="font-display text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                          <h3 className="font-display text-xl font-bold text-slate-900 group-hover:text-[#D4AF37] transition-colors">
                             {port.name}
                           </h3>
                           <p className="text-sm text-slate-500">
@@ -89,7 +89,7 @@ export default function PortsIndexPage() {
                       </div>
 
                       {/* Code Badge */}
-                      <div className="inline-block bg-blue-100 text-blue-700 px-2.5 py-1 rounded text-xs font-semibold">
+                      <div className="inline-block bg-[#1E3A5F]/20 text-blue-700 px-2.5 py-1 rounded text-xs font-semibold">
                         {port.code}
                       </div>
                     </div>
@@ -133,7 +133,7 @@ export default function PortsIndexPage() {
                     {/* CTA */}
                     <div className="flex items-center justify-between pt-3 border-t border-slate-200">
                       <span className="text-sm font-semibold text-slate-900">Explore port guide</span>
-                      <svg className="w-5 h-5 text-slate-900 group-hover:translate-x-1 group-hover:text-blue-600 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5 text-slate-900 group-hover:translate-x-1 group-hover:text-[#D4AF37] transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
                     </div>

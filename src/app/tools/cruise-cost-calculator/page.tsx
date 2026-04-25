@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function CruiseCostCalculatorPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-950 to-slate-900">
+    <div className="min-h-screen bg-gradient-to-b from-[#0a1628] to-[#1E3A5F]">
       <div className="max-w-4xl mx-auto px-4 py-12">
         <div className="text-center mb-10">
           <div className="text-sm text-blue-300 font-medium mb-3">Tools</div>

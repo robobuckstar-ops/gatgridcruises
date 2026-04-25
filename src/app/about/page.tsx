@@ -30,7 +30,7 @@ export default function AboutPage() {
     />
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-indigo-50 text-slate-900 py-16 md:py-20 border-b border-slate-200">
+      <section className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] text-white py-16 md:py-20 border-b border-slate-200">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="font-fraunces text-4xl md:text-5xl font-bold mb-4">About GatGridCruises</h1>
           <p className="font-inter text-lg text-slate-600">
@@ -94,15 +94,15 @@ export default function AboutPage() {
             When a deal scores well, it surfaces in our weekly digest, deal alerts, and on the site's front page. When prices are elevated, we say so. The AI doesn't have an opinion on which cruise agency gets your booking — it just finds the deals.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <div className="bg-blue-50 border border-blue-100 rounded-lg p-5">
+            <div className="bg-[#1E3A5F]/10 border border-blue-100 rounded-lg p-5">
               <p className="font-fraunces font-bold text-slate-900 mb-1">Price Monitoring</p>
               <p className="text-sm text-gray-600">AI tracks prices daily and compares them against historical baselines to spot real drops.</p>
             </div>
-            <div className="bg-blue-50 border border-blue-100 rounded-lg p-5">
+            <div className="bg-[#1E3A5F]/10 border border-blue-100 rounded-lg p-5">
               <p className="font-fraunces font-bold text-slate-900 mb-1">Deal Scoring</p>
               <p className="text-sm text-gray-600">Every sailing gets a score based on value, timing, and demand — not gut feelings.</p>
             </div>
-            <div className="bg-blue-50 border border-blue-100 rounded-lg p-5">
+            <div className="bg-[#1E3A5F]/10 border border-blue-100 rounded-lg p-5">
               <p className="font-fraunces font-bold text-slate-900 mb-1">Smart Alerts</p>
               <p className="text-sm text-gray-600">AI-curated deal alerts go out when something genuinely worth acting on appears.</p>
             </div>
@@ -123,7 +123,7 @@ export default function AboutPage() {
           <p className="font-inter text-lg text-gray-700 leading-relaxed mb-6">
             When you're ready to book, GatGrid Cruises offers something Disney won't: free onboard credit just for booking through us. We share part of our travel agent commission back with you as spending money loaded directly onto your stateroom folio.
           </p>
-          <div className="flex items-start gap-4 bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] rounded-xl p-6 text-white">
+          <div className="flex items-start gap-4 bg-gradient-to-r from-[#0a1628] to-[#1E3A5F] rounded-xl p-6 text-white">
             <Gift className="w-8 h-8 text-[#D4AF37] flex-shrink-0 mt-0.5" aria-hidden="true" />
             <div>
               <p className="font-fraunces font-bold text-lg mb-1 text-[#D4AF37]">Up to $400 in Free Onboard Credit</p>
@@ -152,7 +152,7 @@ export default function AboutPage() {
         </section>
 
         {/* Disclaimers */}
-        <section className="mb-16 bg-slate-50 border-l-4 border-blue-600 p-6 rounded">
+        <section className="mb-16 bg-slate-50 border-l-4 border-[#D4AF37] p-6 rounded">
           <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-6">Disclaimers & Disclosures</h2>
 
           <div className="space-y-4 font-inter text-gray-700">

@@ -18,7 +18,7 @@ export default function FirstTimeDisneyCruisePage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="bg-gradient-to-b from-blue-950 to-blue-900 text-white py-16 px-4">
+      <section className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] text-white py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-sm text-blue-300 mb-3 font-medium">Guides · First-Time Cruisers</div>
           <h1 className="font-display text-4xl sm:text-5xl font-bold mb-4">
@@ -51,7 +51,7 @@ export default function FirstTimeDisneyCruisePage() {
 
       <div className="max-w-4xl mx-auto px-4 py-10">
         {/* Table of Contents */}
-        <nav className="bg-blue-50 border border-blue-200 rounded-xl p-5 mb-10">
+        <nav className="bg-[#1E3A5F]/10 border border-blue-200 rounded-xl p-5 mb-10">
           <h2 className="font-display text-base font-bold text-blue-900 mb-3">In This Guide</h2>
           <ol className="space-y-1.5">
             {[
@@ -425,7 +425,7 @@ export default function FirstTimeDisneyCruisePage() {
               <div key={room.type} className="p-5 bg-white border border-slate-200 rounded-xl">
                 <div className="flex items-baseline gap-3 flex-wrap mb-2">
                   <h3 className="font-bold text-slate-900">{room.type}</h3>
-                  <span className="text-xs font-semibold text-blue-600 bg-blue-50 px-2 py-0.5 rounded">{room.sqft}</span>
+                  <span className="text-xs font-semibold text-blue-600 bg-[#1E3A5F]/10 px-2 py-0.5 rounded">{room.sqft}</span>
                   <span className="text-xs font-semibold text-amber-700 bg-amber-50 px-2 py-0.5 rounded">Price: {room.price}</span>
                 </div>
                 <p className="text-xs text-slate-500 mb-3">Best for: {room.best}</p>
@@ -496,7 +496,7 @@ export default function FirstTimeDisneyCruisePage() {
                 </tbody>
               </table>
             </div>
-            <div className="mt-5 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+            <div className="mt-5 p-4 bg-[#1E3A5F]/10 border border-blue-200 rounded-lg">
               <h3 className="font-semibold text-blue-900 text-sm mb-1">Should you tip extra?</h3>
               <p className="text-xs text-blue-800 leading-relaxed">
                 Yes, if service was great. Cash envelopes are distributed on the last night — bring $10–$20 per exceptional crew member.

@@ -93,7 +93,7 @@ export default function DealAlertsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {WHAT_YOU_GET.map(({ icon: Icon, title, desc }) => (
               <div key={title} className="flex gap-4 p-6 rounded-xl border border-slate-200 hover:border-[#1E3A5F] transition-colors">
-                <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-blue-50 flex items-center justify-center">
+                <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-[#1E3A5F]/10 flex items-center justify-center">
                   <Icon className="w-6 h-6 text-[#1E3A5F]" aria-hidden="true" />
                 </div>
                 <div>

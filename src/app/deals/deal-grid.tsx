@@ -150,7 +150,7 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
   return (
     <div className="min-h-screen bg-white">
       {/* Page header */}
-      <div className="bg-gradient-to-br from-blue-50 to-indigo-50 text-slate-900 border-b border-slate-200 py-12">
+      <div className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] text-white border-b border-slate-200 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="font-display text-3xl sm:text-4xl font-bold mb-2">
             Cruise Deals
@@ -352,7 +352,7 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
                 {/* Email CTA after 11th card (0-indexed) */}
                 {index === 11 && (
                   <div className="col-span-1 md:col-span-2 lg:col-span-3">
-                    <div className="rounded-xl bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-6">
+                    <div className="rounded-xl bg-gradient-to-r from-[#0a1628] to-[#1E3A5F] p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-6">
                       <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#D4AF37]/20 flex items-center justify-center">
                         <Bell className="w-6 h-6 text-[#D4AF37]" aria-hidden="true" />
                       </div>
@@ -362,7 +362,7 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
                       </div>
                       <Link
                         href="/deal-alerts"
-                        className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3 bg-[#D4AF37] text-[#1E3A5F] font-bold rounded-lg hover:bg-yellow-300 transition-colors text-sm whitespace-nowrap"
+                        className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3 bg-[#D4AF37] text-[#0a1628] font-bold rounded-lg hover:bg-yellow-300 transition-colors text-sm whitespace-nowrap"
                       >
                         Get Free Alerts
                         <ArrowRight className="w-4 h-4" aria-hidden="true" />

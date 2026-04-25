@@ -253,7 +253,7 @@ export default function DashboardPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
 
         {/* ── Countdown Hero ── */}
-        <section className="rounded-2xl bg-gradient-to-br from-[#1E3A5F] via-[#1a3a6b] to-[#0f2744] text-white p-6 md:p-10 relative overflow-hidden">
+        <section className="rounded-2xl bg-gradient-to-br from-[#0a1628] to-[#1E3A5F] text-white p-6 md:p-10 relative overflow-hidden">
           {/* Decorative circles */}
           <div className="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-white/[0.03] pointer-events-none" />
           <div className="absolute -left-12 -bottom-12 w-72 h-72 rounded-full bg-gold/[0.05] pointer-events-none" />
@@ -343,7 +343,7 @@ export default function DashboardPage() {
               </div>
               <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
                 <div
-                  className="h-full bg-gradient-to-r from-green-400 to-green-500 rounded-full transition-all duration-700"
+                  className="h-full bg-gradient-to-r from-green-400 to-[#D4AF37] rounded-full transition-all duration-700"
                   style={{ width: `${progressPct}%` }}
                 />
               </div>
@@ -590,7 +590,7 @@ export default function DashboardPage() {
               {DOCUMENTS.map((doc) => (
                 <button
                   key={doc.name}
-                  className="group flex items-start gap-3 p-3.5 rounded-xl border border-slate-200 hover:border-navy hover:bg-blue-50/50 transition-all text-left"
+                  className="group flex items-start gap-3 p-3.5 rounded-xl border border-slate-200 hover:border-navy hover:bg-[#1E3A5F]/10/50 transition-all text-left"
                 >
                   <span className="text-2xl leading-none mt-0.5">{doc.emoji}</span>
                   <div className="flex-1 min-w-0">
@@ -649,7 +649,7 @@ export default function DashboardPage() {
               </div>
             </div>
 
-            <div className="mt-5 p-3.5 bg-blue-50 border border-blue-100 rounded-xl flex items-start gap-2.5">
+            <div className="mt-5 p-3.5 bg-[#1E3A5F]/10 border border-blue-100 rounded-xl flex items-start gap-2.5">
               <Info className="w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5" />
               <p className="text-xs text-blue-700 leading-relaxed">
                 Regardless of your settings, Grayson will personally reach out before every major booking window — especially excursions and dining. You won&apos;t miss a thing.

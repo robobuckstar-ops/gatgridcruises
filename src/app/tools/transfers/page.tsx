@@ -15,7 +15,7 @@ export default function TransfersPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <div className="bg-gradient-to-br from-blue-50 to-indigo-50 text-slate-900 py-12 border-b border-slate-200">
+      <div className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] text-white py-12 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="font-display text-3xl sm:text-4xl font-bold mb-2 text-slate-900">Transfer Guide</h1>
           <p className="text-slate-600 text-lg">How to get from the airport to your Disney cruise port — honestly compared.</p>
@@ -32,10 +32,10 @@ export default function TransfersPage() {
             const cheapest = transfers.reduce((min, t) => t.cost_estimate_min < min.cost_estimate_min ? t : min, transfers[0])
             return (
               <Link key={port.id} href={`/tools/transfers/${port.slug}`}
-                className="group bg-white border border-slate-300 rounded-xl p-6 hover:border-blue-400 hover:shadow-lg transition-all">
+                className="group bg-white border border-slate-300 rounded-xl p-6 hover:border-[#D4AF37] hover:shadow-lg transition-all">
                 <div className="flex items-center gap-3 mb-3">
                   <Car className="h-5 w-5 text-blue-600" />
-                  <h2 className="font-display text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">{port.name}</h2>
+                  <h2 className="font-display text-xl font-bold text-slate-900 group-hover:text-[#D4AF37] transition-colors">{port.name}</h2>
                 </div>
                 <p className="text-sm text-slate-600 mb-3">{transfers.length} transfer options compared</p>
                 <p className="text-sm text-slate-600">Cheapest option from <strong className="text-slate-900">${cheapest.cost_estimate_min}</strong></p>

@@ -242,7 +242,7 @@ export default function ConciergePage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="mailto:bookings@gatgridcruises.com?subject=Disney%20Cruise%20Concierge%20Inquiry"
-              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#D4AF37] text-[#1E3A5F] font-bold rounded-xl hover:bg-yellow-300 transition-colors shadow-lg text-base"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#D4AF37] text-[#0a1628] font-bold rounded-xl hover:bg-yellow-300 transition-colors shadow-lg text-base"
             >
               Start Planning <ArrowRight className="w-4 h-4" />
             </a>
@@ -496,7 +496,7 @@ export default function ConciergePage() {
             </p>
             <a
               href="mailto:bookings@gatgridcruises.com?subject=Disney%20Cruise%20Inquiry%20-%20Price%20Drop%20Protection"
-              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#D4AF37] text-[#1E3A5F] font-bold rounded-xl hover:bg-yellow-300 transition-colors shadow-lg text-base"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#D4AF37] text-[#0a1628] font-bold rounded-xl hover:bg-yellow-300 transition-colors shadow-lg text-base"
             >
               Book Through GatGrid <ArrowRight className="w-4 h-4" />
             </a>
@@ -535,7 +535,7 @@ export default function ConciergePage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-blue-50 to-indigo-50 border-y border-slate-200">
+      <section className="py-16 md:py-24 bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] border-y border-slate-200">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
           <Sparkles className="w-10 h-10 text-[#D4AF37] mx-auto mb-4" />
           <h2 className="font-fraunces text-3xl md:text-4xl font-bold text-[#1E3A5F] mb-4">

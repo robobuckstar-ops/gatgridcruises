@@ -163,7 +163,7 @@ export function LastMinuteDealGrid({ deals: initialDeals, ships, ports }: LastMi
               <SlidersHorizontal className="h-4 w-4" />
               Filters
               {activeFilterCount > 0 && (
-                <span className="ml-1 inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-blue-100 text-blue-700">
+                <span className="ml-1 inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-[#1E3A5F]/20 text-blue-700">
                   {activeFilterCount}
                 </span>
               )}

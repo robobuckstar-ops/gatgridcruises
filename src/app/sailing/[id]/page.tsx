@@ -91,7 +91,7 @@ export default async function SailingDetailPage({ params }: PageProps) {
     <div className="min-h-screen bg-white">
       <StructuredData data={generateSailingSchema(sailing)} />
       {/* Hero */}
-      <div className="bg-gradient-to-br from-blue-50 to-indigo-50 text-slate-900 border-b border-slate-200">
+      <div className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] text-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
           <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
             <div>
@@ -122,7 +122,7 @@ export default async function SailingDetailPage({ params }: PageProps) {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-xl p-5 min-w-[240px]">
+            <div className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] border border-blue-200 rounded-xl p-5 min-w-[240px]">
               <p className="text-xs text-slate-500 mb-1">Starting from</p>
               <div className="flex items-baseline gap-2 mb-1">
                 <p className="text-4xl font-bold text-blue-600">{formatPrice(sailing.current_lowest_price)}</p>
@@ -177,7 +177,7 @@ export default async function SailingDetailPage({ params }: PageProps) {
             <BookingInquiryButton sailing={sailing} variant="inline" />
 
             {/* Travel Hack Tip */}
-            <div className="bg-gradient-to-r from-amber-50 to-yellow-50 border-l-4 border-amber-400 rounded-r-lg p-4 mb-6">
+            <div className="bg-gradient-to-r from-[#D4AF37]/10 to-[#D4AF37]/20 border-l-4 border-[#D4AF37] rounded-r-lg p-4 mb-6">
               <div className="flex items-start gap-3">
                 <span className="text-xl mt-0.5">💡</span>
                 <div className="flex-1">
@@ -412,7 +412,7 @@ export default async function SailingDetailPage({ params }: PageProps) {
             {/* Packing guide promo */}
             <section className="border border-slate-200 rounded-xl p-5 bg-slate-50/60">
               <div className="flex items-start gap-3 mb-4">
-                <div className="flex-shrink-0 w-9 h-9 bg-blue-50 border border-blue-100 rounded-lg flex items-center justify-center">
+                <div className="flex-shrink-0 w-9 h-9 bg-[#1E3A5F]/10 border border-blue-100 rounded-lg flex items-center justify-center">
                   <ShoppingBag className="h-5 w-5 text-blue-500" />
                 </div>
                 <div>

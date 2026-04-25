@@ -41,7 +41,7 @@ export function CompareSailings({ sailings }: CompareSailingsProps) {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <div className="bg-gradient-to-br from-blue-50 to-indigo-50 text-slate-900 py-12 border-b border-slate-200">
+      <div className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] text-white py-12 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="font-display text-3xl sm:text-4xl font-bold mb-2 text-slate-900">Compare Sailings</h1>
           <p className="text-slate-600 text-lg">Choose two sailings to see how they stack up side by side</p>
@@ -107,10 +107,10 @@ export function CompareSailings({ sailings }: CompareSailingsProps) {
                 <tbody>
                   <tr className="bg-white border-b border-slate-200">
                     <td className="px-4 py-4 font-bold text-slate-900">Ship</td>
-                    <td className={`px-4 py-4 text-center font-medium ${comparison.sailingA.ship!.year_launched > comparison.sailingB.ship!.year_launched ? 'bg-blue-50 text-slate-900 font-bold' : 'text-slate-700'}`}>
+                    <td className={`px-4 py-4 text-center font-medium ${comparison.sailingA.ship!.year_launched > comparison.sailingB.ship!.year_launched ? 'bg-[#1E3A5F]/10 text-slate-900 font-bold' : 'text-slate-700'}`}>
                       {comparison.sailingA.ship?.name} ({comparison.sailingA.ship?.year_launched})
                     </td>
-                    <td className={`px-4 py-4 text-center font-medium ${comparison.sailingB.ship!.year_launched > comparison.sailingA.ship!.year_launched ? 'bg-blue-50 text-slate-900 font-bold' : 'text-slate-700'}`}>
+                    <td className={`px-4 py-4 text-center font-medium ${comparison.sailingB.ship!.year_launched > comparison.sailingA.ship!.year_launched ? 'bg-[#1E3A5F]/10 text-slate-900 font-bold' : 'text-slate-700'}`}>
                       {comparison.sailingB.ship?.name} ({comparison.sailingB.ship?.year_launched})
                     </td>
                   </tr>
@@ -141,10 +141,10 @@ export function CompareSailings({ sailings }: CompareSailingsProps) {
 
                   <tr className="bg-slate-50 border-b border-slate-200">
                     <td className="px-4 py-4 font-bold text-slate-900">Current Lowest Price</td>
-                    <td className={`px-4 py-4 text-center font-bold text-lg ${comparison.cheaperSailing === 'A' ? 'bg-blue-50 text-blue-600' : 'text-slate-700'}`}>
+                    <td className={`px-4 py-4 text-center font-bold text-lg ${comparison.cheaperSailing === 'A' ? 'bg-[#1E3A5F]/10 text-blue-600' : 'text-slate-700'}`}>
                       ${comparison.sailingA.current_lowest_price.toLocaleString()}
                     </td>
-                    <td className={`px-4 py-4 text-center font-bold text-lg ${comparison.cheaperSailing === 'B' ? 'bg-blue-50 text-blue-600' : 'text-slate-700'}`}>
+                    <td className={`px-4 py-4 text-center font-bold text-lg ${comparison.cheaperSailing === 'B' ? 'bg-[#1E3A5F]/10 text-blue-600' : 'text-slate-700'}`}>
                       ${comparison.sailingB.current_lowest_price.toLocaleString()}
                     </td>
                   </tr>
@@ -157,11 +157,11 @@ export function CompareSailings({ sailings }: CompareSailingsProps) {
 
                   <tr className="bg-slate-50 border-b border-slate-200">
                     <td className="px-4 py-4 font-bold text-slate-900">% Below Average</td>
-                    <td className={`px-4 py-4 text-center font-bold ${comparison.betterDeal === 'A' ? 'bg-blue-50 text-blue-600 flex items-center justify-center gap-1' : 'text-slate-700'}`}>
+                    <td className={`px-4 py-4 text-center font-bold ${comparison.betterDeal === 'A' ? 'bg-[#1E3A5F]/10 text-blue-600 flex items-center justify-center gap-1' : 'text-slate-700'}`}>
                       {comparison.betterDeal === 'A' && <TrendingDown className="h-4 w-4" />}
                       {formatPctBelowAvg(comparison.sailingA.current_lowest_price, comparison.sailingA.avgPrice)}
                     </td>
-                    <td className={`px-4 py-4 text-center font-bold ${comparison.betterDeal === 'B' ? 'bg-blue-50 text-blue-600 flex items-center justify-center gap-1' : 'text-slate-700'}`}>
+                    <td className={`px-4 py-4 text-center font-bold ${comparison.betterDeal === 'B' ? 'bg-[#1E3A5F]/10 text-blue-600 flex items-center justify-center gap-1' : 'text-slate-700'}`}>
                       {comparison.betterDeal === 'B' && <TrendingDown className="h-4 w-4" />}
                       {formatPctBelowAvg(comparison.sailingB.current_lowest_price, comparison.sailingB.avgPrice)}
                     </td>
@@ -169,10 +169,10 @@ export function CompareSailings({ sailings }: CompareSailingsProps) {
 
                   <tr className="bg-white border-b border-slate-200">
                     <td className="px-4 py-4 font-bold text-slate-900">Sailing Score</td>
-                    <td className={`px-4 py-4 text-center font-bold text-lg ${comparison.betterScore === 'A' ? 'bg-blue-50 text-blue-600' : 'text-slate-700'}`}>
+                    <td className={`px-4 py-4 text-center font-bold text-lg ${comparison.betterScore === 'A' ? 'bg-[#1E3A5F]/10 text-blue-600' : 'text-slate-700'}`}>
                       {comparison.sailingA.sailing_score}/100
                     </td>
-                    <td className={`px-4 py-4 text-center font-bold text-lg ${comparison.betterScore === 'B' ? 'bg-blue-50 text-blue-600' : 'text-slate-700'}`}>
+                    <td className={`px-4 py-4 text-center font-bold text-lg ${comparison.betterScore === 'B' ? 'bg-[#1E3A5F]/10 text-blue-600' : 'text-slate-700'}`}>
                       {comparison.sailingB.sailing_score}/100
                     </td>
                   </tr>

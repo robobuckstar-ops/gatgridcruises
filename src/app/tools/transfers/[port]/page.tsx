@@ -59,7 +59,7 @@ export default async function PortTransfersPage({ params }: { params: Promise<{ 
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <div className="bg-gradient-to-br from-blue-50 to-indigo-50 text-slate-900 py-12 border-b border-slate-200">
+      <div className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] text-white py-12 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="font-display text-3xl sm:text-4xl font-bold mb-2 text-slate-900">{port.name} Transfer Options</h1>
           <p className="text-slate-600 text-lg">How to get from the airport to your Disney cruise — {transfers.length} options compared</p>
@@ -191,7 +191,7 @@ export default async function PortTransfersPage({ params }: { params: Promise<{ 
         </div>
 
         {/* Disclaimers */}
-        <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
+        <div className="bg-[#1E3A5F]/10 border border-blue-200 rounded-xl p-6">
           <div className="flex gap-3">
             <AlertCircle className="h-5 w-5 text-blue-600 flex-shrink-0 mt-0.5" />
             <div className="text-sm text-blue-900">

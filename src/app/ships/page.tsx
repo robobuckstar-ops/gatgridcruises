@@ -21,7 +21,7 @@ export default function ShipsPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 via-white to-indigo-50 text-slate-900 py-16 md:py-24 border-b border-slate-200">
+      <section className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] text-white py-16 md:py-24 border-b border-slate-200">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-6">
             <Ship className="w-10 h-10 text-blue-600" />
@@ -50,7 +50,7 @@ export default function ShipsPage() {
                 </div>
 
                 <div className="p-6">
-                  <h3 className="font-fraunces text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">
+                  <h3 className="font-fraunces text-xl font-bold text-slate-900 mb-3 group-hover:text-[#D4AF37] transition-colors">
                     {ship.name.replace('Disney ', '')}
                   </h3>
 
@@ -68,7 +68,7 @@ export default function ShipsPage() {
                     ))}
                   </div>
 
-                  <div className="flex items-center gap-2 text-slate-900 font-semibold group-hover:text-blue-600 transition-colors">
+                  <div className="flex items-center gap-2 text-slate-900 font-semibold group-hover:text-[#D4AF37] transition-colors">
                     Learn More
                     <ArrowRight className="w-4 h-4" />
                   </div>

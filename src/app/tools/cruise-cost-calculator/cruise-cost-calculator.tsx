@@ -263,7 +263,7 @@ export function CruiseCostCalculator() {
               onClick={() => setStateroomId(s.id)}
               className={`text-left p-4 rounded-xl border-2 transition-colors ${
                 stateroomId === s.id
-                  ? 'border-blue-500 bg-blue-50'
+                  ? 'border-blue-500 bg-[#1E3A5F]/10'
                   : 'border-slate-200 hover:border-blue-300'
               }`}
             >
@@ -303,7 +303,7 @@ export function CruiseCostCalculator() {
       </div>
 
       {/* Full calculator link */}
-      <div className="bg-blue-50 border border-blue-200 rounded-xl p-5 text-center">
+      <div className="bg-[#1E3A5F]/10 border border-blue-200 rounded-xl p-5 text-center">
         <p className="text-sm text-blue-800 mb-3">
           Want to include flights, hotels, onboard extras, and gratuities?
         </p>

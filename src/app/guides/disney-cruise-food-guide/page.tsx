@@ -12,7 +12,7 @@ export default function DisneyCruiseFoodGuide() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-50 via-white to-indigo-50">
+      <section className="relative py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#0a1628] to-[#1E3A5F]">
         <div className="max-w-4xl mx-auto">
           <h1 className="font-fraunces text-4xl sm:text-5xl font-bold text-white mb-4">
             Disney Cruise Food Guide: Every Restaurant Ranked
@@ -42,17 +42,15 @@ export default function DisneyCruiseFoodGuide() {
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
         <a
-              href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
+              href="/concierge"
               className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow"
             >
-              <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4 flex items-center justify-between gap-4">
+              <div className="bg-gradient-to-r from-[#0a1628] to-[#1E3A5F] px-6 py-4 flex items-center justify-between gap-4">
                 <div>
-                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Earn 150K+ Membership Rewards Points</p>
-                  <p className="text-blue-200 text-sm mt-0.5">Enough for your next Disney cruise upgrade — Amex Business Platinum</p>
+                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Ready to Plan Your Disney Cruise?</p>
+                  <p className="text-slate-300 text-sm mt-0.5">Our Boardwalk Travel Agency specialists offer free planning and quotes</p>
                 </div>
-                <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
+                <span className="flex-shrink-0 bg-[#D4AF37] text-[#0a1628] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Get a Free Quote →</span>
               </div>
             </a>
 
@@ -75,7 +73,7 @@ export default function DisneyCruiseFoodGuide() {
             Disney"s rotational dining system is unique among cruise lines. Here's how it works: you're assigned to three main dining rooms, and each night of your cruise, you rotate to a different restaurant with your assigned servers. Your servers (who become familiar friends) deliver consistent, personalized service while you experience varied menus and themed decor across three different restaurants.
 "          </p>
 
-          <div className="p-6 bg-blue-50 border-l-4 border-blue-600 mb-6">
+          <div className="p-6 bg-[#1E3A5F]/10 border-l-4 border-[#D4AF37] mb-6">
             <h3 className="font-fraunces text-xl font-bold text-slate-900 mb-3">Example 7-Night Rotation:</h3>
             <ul className="space-y-2 font-inter text-slate-600">
               <li>Night 1: Enchanted Garden (dinner)</li>
@@ -100,15 +98,15 @@ export default function DisneyCruiseFoodGuide() {
           <div className="mb-8">
             <h3 className="font-fraunces text-2xl font-bold text-slate-900 mb-4">Disney Wish</h3>
             <div className="space-y-4">
-              <div className="p-4 bg-gray-50 rounded border-l-4 border-blue-600">
+              <div className="p-4 bg-gray-50 rounded border-l-4 border-[#D4AF37]">
                 <p className="font-inter font-bold text-slate-900 mb-1">Arendelle</p>
                 <p className="font-inter text-slate-600 text-sm">Frozen-themed with Scandinavian cuisine. Elegant, upscale atmosphere. Best for: trying Nordic flavors and enjoying the gorgeous decor. Try: Arctic Char, reindeer ragout.</p>
               </div>
-              <div className="p-4 bg-gray-50 rounded border-l-4 border-blue-600">
+              <div className="p-4 bg-gray-50 rounded border-l-4 border-[#D4AF37]">
                 <p className="font-inter font-bold text-slate-900 mb-1">Worlds of Marvel</p>
                 <p className="font-inter text-slate-600 text-sm">Marvel-themed restaurant with dynamic, comic-book-style decor. Interactive elements. Best for: Marvel fans and those seeking contemporary cuisine. Try: Smoked beef ribs, Black Widow cocktail presentation.</p>
               </div>
-              <div className="p-4 bg-gray-50 rounded border-l-4 border-blue-600">
+              <div className="p-4 bg-gray-50 rounded border-l-4 border-[#D4AF37]">
                 <p className="font-inter font-bold text-slate-900 mb-1">1923</p>
                 <p className="font-inter text-slate-600 text-sm">Elegant art-deco themed restaurant celebrating classic Hollywood. Sophisticated menu. Best for: Upscale dining experience and fine cuisine. Try: Duck breast, California lobster.</p>
               </div>
@@ -118,15 +116,15 @@ export default function DisneyCruiseFoodGuide() {
           <div className="mb-8">
             <h3 className="font-fraunces text-2xl font-bold text-slate-900 mb-4">Disney Treasure</h3>
             <div className="space-y-4">
-              <div className="p-4 bg-gray-50 rounded border-l-4 border-blue-600">
+              <div className="p-4 bg-gray-50 rounded border-l-4 border-[#D4AF37]">
                 <p className="font-inter font-bold text-slate-900 mb-1">Plaza de Coco</p>
                 <p className="font-inter text-slate-600 text-sm">Coco-themed with vibrant Mexican/Latin design. Colorful, celebratory atmosphere. Best for: Caribbean/Latin cuisine lovers. Try: Chile relleno, tamales, ceviche.</p>
               </div>
-              <div className="p-4 bg-gray-50 rounded border-l-4 border-blue-600">
+              <div className="p-4 bg-gray-50 rounded border-l-4 border-[#D4AF37]">
                 <p className="font-inter font-bold text-slate-900 mb-1">Worlds of Marvel</p>
                 <p className="font-inter text-slate-600 text-sm">Same as Wish—Marvel-themed with dynamic decor. Best for: Action-packed atmosphere and global cuisine.</p>
               </div>
-              <div className="p-4 bg-gray-50 rounded border-l-4 border-blue-600">
+              <div className="p-4 bg-gray-50 rounded border-l-4 border-[#D4AF37]">
                 <p className="font-inter font-bold text-slate-900 mb-1">1923</p>
                 <p className="font-inter text-slate-600 text-sm">Same art-deco theme as Wish. Elegant, refined dining. Best for: Upscale experience.</p>
               </div>
@@ -136,15 +134,15 @@ export default function DisneyCruiseFoodGuide() {
           <div className="mb-8">
             <h3 className="font-fraunces text-2xl font-bold text-slate-900 mb-4">Disney Fantasy & Dream</h3>
             <div className="space-y-4">
-              <div className="p-4 bg-gray-50 rounded border-l-4 border-blue-600">
+              <div className="p-4 bg-gray-50 rounded border-l-4 border-[#D4AF37]">
                 <p className="font-inter font-bold text-slate-900 mb-1">Animator's Palate</p>
                 <p className="font-inter text-slate-600 text-sm">Animated art-themed with large digital screens that come alive during dinner. Creative, whimsical decor. Best for: Disney magic and enjoying the tech-forward environment. Try: Pan-seared scallops, short ribs.</p>
               </div>
-              <div className="p-4 bg-gray-50 rounded border-l-4 border-blue-600">
+              <div className="p-4 bg-gray-50 rounded border-l-4 border-[#D4AF37]">
                 <p className="font-inter font-bold text-slate-900 mb-1">Enchanted Garden</p>
                 <p className="font-inter text-slate-600 text-sm">Lush garden-themed with multiple levels and botanical decor. Bright, uplifting atmosphere. Best for: Beautiful ambiance and diverse, approachable cuisine. Try: Lobster tail, herb-crusted lamb.</p>
               </div>
-              <div className="p-4 bg-gray-50 rounded border-l-4 border-blue-600">
+              <div className="p-4 bg-gray-50 rounded border-l-4 border-[#D4AF37]">
                 <p className="font-inter font-bold text-slate-900 mb-1">Royal Palace or Royal Court</p>
                 <p className="font-inter text-slate-600 text-sm">Elegant, formal dining with regal decor inspired by Disney Princesses. Most upscale of the three. Best for: Special occasions and fine dining. Try: Filet mignon, lobster risotto.</p>
               </div>
@@ -154,15 +152,15 @@ export default function DisneyCruiseFoodGuide() {
           <div className="mb-8">
             <h3 className="font-fraunces text-2xl font-bold text-slate-900 mb-4">Disney Magic & Wonder (Older Ships)</h3>
             <div className="space-y-4">
-              <div className="p-4 bg-gray-50 rounded border-l-4 border-blue-600">
+              <div className="p-4 bg-gray-50 rounded border-l-4 border-[#D4AF37]">
                 <p className="font-inter font-bold text-slate-900 mb-1">Animator's Palate</p>
                 <p className="font-inter text-slate-600 text-sm">Animated art-themed (similar to Fantasy/Dream). Creative and whimsical.</p>
               </div>
-              <div className="p-4 bg-gray-50 rounded border-l-4 border-blue-600">
+              <div className="p-4 bg-gray-50 rounded border-l-4 border-[#D4AF37]">
                 <p className="font-inter font-bold text-slate-900 mb-1">Enchanted Garden</p>
                 <p className="font-inter text-slate-600 text-sm">Botanical garden theme with multiple levels.</p>
               </div>
-              <div className="p-4 bg-gray-50 rounded border-l-4 border-blue-600">
+              <div className="p-4 bg-gray-50 rounded border-l-4 border-[#D4AF37]">
                 <p className="font-inter font-bold text-slate-900 mb-1">Goofy"s Galley or Lumiere's</p>
 "                <p className="font-inter text-slate-600 text-sm">Character-themed casual dining (varies by ship).</p>
               </div>
@@ -171,17 +169,15 @@ export default function DisneyCruiseFoodGuide() {
         </section>
 
         <a
-              href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
+              href="/concierge"
               className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow"
             >
-              <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4 flex items-center justify-between gap-4">
+              <div className="bg-gradient-to-r from-[#0a1628] to-[#1E3A5F] px-6 py-4 flex items-center justify-between gap-4">
                 <div>
-                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Earn 150K+ Membership Rewards Points</p>
-                  <p className="text-blue-200 text-sm mt-0.5">Enough for your next Disney cruise upgrade — Amex Business Platinum</p>
+                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Ready to Plan Your Disney Cruise?</p>
+                  <p className="text-slate-300 text-sm mt-0.5">Our Boardwalk Travel Agency specialists offer free planning and quotes</p>
                 </div>
-                <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
+                <span className="flex-shrink-0 bg-[#D4AF37] text-[#0a1628] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Get a Free Quote →</span>
               </div>
             </a>
 
@@ -237,7 +233,7 @@ export default function DisneyCruiseFoodGuide() {
             <p className="font-inter text-slate-600 leading-relaxed mb-4">
               Each Disney ship has a main buffet (called Marceline Market on Wish/Treasure, Cabanas on older ships) offering breakfast, lunch, and dinner spreads. The buffet is included with your cruise and offers casual, self-serve dining with international cuisine selections, salads, carving stations, and desserts.
             </p>
-            <div className="p-4 bg-blue-50 rounded">
+            <div className="p-4 bg-[#1E3A5F]/10 rounded">
               <p className="font-inter text-slate-600 text-sm">
                 <strong>Pro Tip:</strong> Breakfast buffet is underrated and less crowded than lunch/dinner. Dinner buffet can be extremely crowded; consider quick-service or main dining room to avoid waits.
               </p>
@@ -299,17 +295,15 @@ export default function DisneyCruiseFoodGuide() {
         </section>
 
         <a
-              href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
+              href="/concierge"
               className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow"
             >
-              <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4 flex items-center justify-between gap-4">
+              <div className="bg-gradient-to-r from-[#0a1628] to-[#1E3A5F] px-6 py-4 flex items-center justify-between gap-4">
                 <div>
-                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Earn 150K+ Membership Rewards Points</p>
-                  <p className="text-blue-200 text-sm mt-0.5">Enough for your next Disney cruise upgrade — Amex Business Platinum</p>
+                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Ready to Plan Your Disney Cruise?</p>
+                  <p className="text-slate-300 text-sm mt-0.5">Our Boardwalk Travel Agency specialists offer free planning and quotes</p>
                 </div>
-                <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
+                <span className="flex-shrink-0 bg-[#D4AF37] text-[#0a1628] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Get a Free Quote →</span>
               </div>
             </a>
 
@@ -345,7 +339,7 @@ export default function DisneyCruiseFoodGuide() {
           <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-4">Must-Try Dishes & Dining Recommendations</h2>
 
           <div className="space-y-4">
-            <div className="p-4 bg-blue-50 rounded">
+            <div className="p-4 bg-[#1E3A5F]/10 rounded">
               <p className="font-inter font-bold text-slate-900 mb-2">From Main Dining Rooms:</p>
               <ul className="list-disc list-inside font-inter text-slate-600 text-sm space-y-1">
                 <li>Short ribs (offered on multiple menus)</li>
@@ -357,7 +351,7 @@ export default function DisneyCruiseFoodGuide() {
               </ul>
             </div>
 
-            <div className="p-4 bg-blue-50 rounded">
+            <div className="p-4 bg-[#1E3A5F]/10 rounded">
               <p className="font-inter font-bold text-slate-900 mb-2">From Specialty Restaurants (Palo, Remy, etc.):</p>
               <ul className="list-disc list-inside font-inter text-slate-600 text-sm space-y-1">
                 <li>Handmade pappardelle with truffle (Palo)</li>
@@ -368,7 +362,7 @@ export default function DisneyCruiseFoodGuide() {
               </ul>
             </div>
 
-            <div className="p-4 bg-blue-50 rounded">
+            <div className="p-4 bg-[#1E3A5F]/10 rounded">
               <p className="font-inter font-bold text-slate-900 mb-2">From Buffets & Quick Service:</p>
               <ul className="list-disc list-inside font-inter text-slate-600 text-sm space-y-1">
                 <li>Carving station (prime rib, turkey)</li>
@@ -429,7 +423,7 @@ export default function DisneyCruiseFoodGuide() {
         </section>
 
         {/* CTA Section */}
-        <section className="my-12 p-8 bg-gradient-to-r from-blue-50 to-blue-900 text-white rounded-lg">
+        <section className="my-12 p-8 bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] text-white rounded-lg">
           <h2 className="font-fraunces text-3xl font-bold mb-4">Ready to Experience Disney Dining?</h2>
           <p className="font-inter text-lg mb-6">
             Explore cruise options, compare ships, and calculate your total trip cost including dining experiences.

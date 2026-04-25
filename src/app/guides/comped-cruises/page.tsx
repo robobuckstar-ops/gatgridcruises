@@ -137,7 +137,7 @@ export default function CompedCruisesGuide() {
         {/* Section 2: Loyalty Programs */}
         <section>
           <div className="flex items-center gap-3 mb-5">
-            <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+            <div className="w-10 h-10 bg-[#1E3A5F]/20 rounded-lg flex items-center justify-center flex-shrink-0">
               <Star className="h-5 w-5 text-blue-700" />
             </div>
             <h2 className="font-fraunces text-2xl font-bold text-slate-900">Loyalty Program Strategies</h2>
@@ -184,7 +184,7 @@ export default function CompedCruisesGuide() {
               </tbody>
             </table>
           </div>
-          <div className="bg-blue-50 rounded-lg p-4 text-sm text-slate-700">
+          <div className="bg-[#1E3A5F]/10 rounded-lg p-4 text-sm text-slate-700">
             <strong>Disney strategy:</strong> Book short 3-night or 4-night Bahamian cruises to build cruise count faster. Each sailing counts as 1 toward tier regardless of length. Silver → Platinum in 10 cruises with 3-nighters is more achievable than waiting for 7-night sailings.
           </div>
 
@@ -377,7 +377,7 @@ export default function CompedCruisesGuide() {
               'Chase Sapphire Reserve: Travel Portal bookings include cruises at 1.5 cents/point value',
             ].map(item => (
               <li key={item} className="flex items-start gap-2 text-sm text-slate-700">
-                <CheckCircle2 className="h-4 w-4 text-rose-500 mt-0.5 flex-shrink-0" />
+                <CheckCircle2 className="h-4 w-4 text-[#D4AF37] mt-0.5 flex-shrink-0" />
                 {item}
               </li>
             ))}
@@ -393,7 +393,7 @@ export default function CompedCruisesGuide() {
               'Onboard credit from credit cards can offset gratuities, specialty dining, or excursions',
             ].map(item => (
               <li key={item} className="flex items-start gap-2 text-sm text-slate-700">
-                <CheckCircle2 className="h-4 w-4 text-rose-500 mt-0.5 flex-shrink-0" />
+                <CheckCircle2 className="h-4 w-4 text-[#D4AF37] mt-0.5 flex-shrink-0" />
                 {item}
               </li>
             ))}

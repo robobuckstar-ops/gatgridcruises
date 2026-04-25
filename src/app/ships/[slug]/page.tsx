@@ -40,7 +40,7 @@ export default async function ShipDetailPage({ params }: PageProps) {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <div className="bg-gradient-to-br from-blue-50 to-indigo-50 text-slate-900 border-b border-slate-200">
+      <div className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] text-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
           <h1 className="font-fraunces text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
             {ship.name}
@@ -48,15 +48,15 @@ export default async function ShipDetailPage({ params }: PageProps) {
 
           {/* Ship Stats */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-8">
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+            <div className="bg-[#1E3A5F]/10 border border-blue-200 rounded-lg p-4">
               <p className="text-sm text-slate-600 mb-1">Year Launched</p>
               <p className="font-fraunces text-2xl font-bold text-blue-600">{ship.year_launched}</p>
             </div>
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+            <div className="bg-[#1E3A5F]/10 border border-blue-200 rounded-lg p-4">
               <p className="text-sm text-slate-600 mb-1">Guest Capacity</p>
               <p className="font-fraunces text-2xl font-bold text-blue-600">{ship.capacity.toLocaleString()}</p>
             </div>
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+            <div className="bg-[#1E3A5F]/10 border border-blue-200 rounded-lg p-4">
               <p className="text-sm text-slate-600 mb-1">Gross Tonnage</p>
               <p className="font-fraunces text-2xl font-bold text-blue-600">{ship.tonnage.toLocaleString()}</p>
             </div>
@@ -133,7 +133,7 @@ export default async function ShipDetailPage({ params }: PageProps) {
             {/* Editorial Take */}
             <section>
               <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-6">Our Take</h2>
-              <div className="bg-slate-50 border-l-4 border-blue-600 p-6 rounded">
+              <div className="bg-slate-50 border-l-4 border-[#D4AF37] p-6 rounded">
                 <p className="font-inter text-lg text-gray-700 leading-relaxed">
                   {ship.editorial_take}
                 </p>
@@ -153,7 +153,7 @@ export default async function ShipDetailPage({ params }: PageProps) {
                     >
                       <div className="flex items-start justify-between gap-4 mb-2">
                         <div>
-                          <h3 className="font-fraunces text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                          <h3 className="font-fraunces text-lg font-bold text-slate-900 group-hover:text-[#D4AF37] transition-colors">
                             {sailing.itinerary_name}
                           </h3>
                           <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mt-2 text-sm text-gray-600">
@@ -178,7 +178,7 @@ export default async function ShipDetailPage({ params }: PageProps) {
                           <p className="text-xs text-gray-500">per stateroom</p>
                         </div>
                       </div>
-                      <div className="flex items-center gap-1 text-slate-900 font-semibold text-sm group-hover:text-blue-600 transition-colors">
+                      <div className="flex items-center gap-1 text-slate-900 font-semibold text-sm group-hover:text-[#D4AF37] transition-colors">
                         View Details
                         <ArrowRight className="w-3 h-3" />
                       </div>
@@ -221,7 +221,7 @@ export default async function ShipDetailPage({ params }: PageProps) {
             </div>
 
             {/* Stateroom Finder CTA */}
-            <div className="bg-gradient-to-br from-blue-100 to-blue-50 rounded-xl p-6 border border-blue-200">
+            <div className="bg-[#1E3A5F]/10 rounded-xl p-6 border border-[#D4AF37]/30">
               <h3 className="font-fraunces text-lg font-bold text-slate-900 mb-3">Find Your Stateroom</h3>
               <p className="font-inter text-sm text-gray-600 mb-4">
                 Browse stateroom reviews, noise ratings, and our honest recommendations for the best cabins on this ship.

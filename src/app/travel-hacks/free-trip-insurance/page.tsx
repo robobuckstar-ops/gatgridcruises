@@ -25,7 +25,7 @@ export default function FreeTripInsurance() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-indigo-50 py-12">
+      <section className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] py-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
             href="/travel-hacks"
@@ -130,7 +130,7 @@ export default function FreeTripInsurance() {
             </li>
           </ul>
 
-          <div className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded my-6">
+          <div className="bg-[#1E3A5F]/10 border-l-4 border-[#D4AF37] p-6 rounded my-6">
             <p className="text-sm text-slate-700">
               <strong>Important:</strong> The card must have been used to purchase the cruise fare
               for the benefits to apply. If you booked with a debit card or someone else's card,

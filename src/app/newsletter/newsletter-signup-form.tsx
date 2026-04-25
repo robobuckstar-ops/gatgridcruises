@@ -86,7 +86,7 @@ export function NewsletterSignupForm({ source }: { source: string }) {
         <button
           type="submit"
           disabled={loading}
-          className="px-5 py-3.5 bg-[#D4AF37] text-[#1E3A5F] font-bold rounded-xl hover:bg-yellow-300 transition-colors whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+          className="px-5 py-3.5 bg-[#D4AF37] text-[#0a1628] font-bold rounded-xl hover:bg-yellow-300 transition-colors whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
         >
           {loading ? 'Joining…' : (
             <>Subscribe <ArrowRight className="w-4 h-4" aria-hidden="true" /></>

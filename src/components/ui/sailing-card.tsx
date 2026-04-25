@@ -37,7 +37,7 @@ export function SailingCard({ sailing, percentBelow }: SailingCardProps) {
   // Recommendation color
   const recommendationColors = {
     'strong-buy': 'bg-emerald-50 text-emerald-700 border-emerald-200',
-    buy: 'bg-blue-50 text-blue-700 border-blue-200',
+    buy: 'bg-[#1E3A5F]/10 text-blue-700 border-blue-200',
     fair: 'bg-slate-50 text-slate-700 border-slate-200',
     wait: 'bg-amber-50 text-amber-700 border-amber-200',
     overpriced: 'bg-red-50 text-red-700 border-red-200',
@@ -54,7 +54,7 @@ export function SailingCard({ sailing, percentBelow }: SailingCardProps) {
   const themeBadge = sailing.theme ? {
     halloween: { emoji: '🎃', label: 'Halloween',  className: 'bg-orange-100 text-orange-800 border-orange-300' },
     merrytime:  { emoji: '🎄', label: 'Merrytime',  className: 'bg-red-100 text-red-800 border-red-300' },
-    starwars:   { emoji: '⭐', label: 'Star Wars',  className: 'bg-blue-100 text-blue-800 border-blue-300' },
+    starwars:   { emoji: '⭐', label: 'Star Wars',  className: 'bg-[#1E3A5F]/20 text-blue-800 border-blue-300' },
     marvel:     { emoji: '🦸', label: 'Marvel',     className: 'bg-red-100 text-red-900 border-red-400' },
   }[sailing.theme] : null
 
@@ -91,7 +91,7 @@ export function SailingCard({ sailing, percentBelow }: SailingCardProps) {
         </div>
 
         {/* Itinerary name */}
-        <h3 className="font-display text-lg font-semibold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors line-clamp-2">
+        <h3 className="font-display text-lg font-semibold text-slate-900 mb-2 group-hover:text-[#D4AF37] transition-colors line-clamp-2">
           {sailing.itinerary_name}
         </h3>
 

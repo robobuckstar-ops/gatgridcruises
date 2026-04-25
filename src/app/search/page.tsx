@@ -40,7 +40,7 @@ export default function SearchPage() {
   }
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-blue-50 via-indigo-50 to-white">
+    <main className="min-h-screen bg-gradient-to-b from-[#0a1628] to-[#1E3A5F]">
       {/* Hero Section */}
       <div className="pt-16 pb-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
@@ -65,7 +65,7 @@ export default function SearchPage() {
                   <button
                     key={suggestion}
                     onClick={() => handleSuggestedSearch(suggestion)}
-                    className="px-4 py-2 rounded-full bg-white border border-slate-300 text-slate-700 text-sm font-inter hover:border-blue-400 hover:bg-blue-50 transition-all duration-200"
+                    className="px-4 py-2 rounded-full bg-white border border-slate-300 text-slate-700 text-sm font-inter hover:border-blue-400 hover:bg-[#1E3A5F]/10 transition-all duration-200"
                   >
                     {suggestion}
                   </button>
@@ -101,9 +101,9 @@ export default function SearchPage() {
                     href={`/sailing/${sailing.id}`}
                     className="group"
                   >
-                    <div className="h-full bg-white rounded-lg border border-slate-200 hover:border-blue-400 hover:shadow-lg transition-all duration-200 overflow-hidden flex flex-col">
+                    <div className="h-full bg-white rounded-lg border border-slate-200 hover:border-[#D4AF37] hover:shadow-lg transition-all duration-200 overflow-hidden flex flex-col">
                       {/* Card Header */}
-                      <div className="p-6 border-b border-slate-200 bg-gradient-to-r from-blue-50 to-indigo-50">
+                      <div className="p-6 border-b border-slate-200 bg-gradient-to-b from-[#0a1628] to-[#1E3A5F]">
                         <div className="flex items-start justify-between mb-3">
                           <div>
                             <h3 className="font-fraunces text-xl font-bold text-slate-900">
@@ -192,7 +192,7 @@ export default function SearchPage() {
                       </div>
 
                       {/* Card Footer */}
-                      <div className="p-6 border-t border-slate-200 bg-slate-50 group-hover:bg-blue-50 transition-colors">
+                      <div className="p-6 border-t border-slate-200 bg-slate-50 group-hover:bg-[#1E3A5F]/10 transition-colors">
                         <button className="w-full bg-blue-600 text-white font-inter font-semibold py-2 rounded-lg hover:bg-blue-700 transition-colors">
                           View Details
                         </button>
@@ -224,7 +224,7 @@ export default function SearchPage() {
 
             {/* Email CTA below results */}
             {results.length > 0 && (
-              <div className="mt-12 rounded-xl bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-6">
+              <div className="mt-12 rounded-xl bg-gradient-to-r from-[#0a1628] to-[#1E3A5F] p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-6">
                 <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#D4AF37]/20 flex items-center justify-center">
                   <Bell className="w-6 h-6 text-[#D4AF37]" aria-hidden="true" />
                 </div>
@@ -234,7 +234,7 @@ export default function SearchPage() {
                 </div>
                 <Link
                   href="/deal-alerts"
-                  className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3 bg-[#D4AF37] text-[#1E3A5F] font-bold rounded-lg hover:bg-yellow-300 transition-colors text-sm whitespace-nowrap"
+                  className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3 bg-[#D4AF37] text-[#0a1628] font-bold rounded-lg hover:bg-yellow-300 transition-colors text-sm whitespace-nowrap"
                 >
                   Get Free Alerts
                   <ArrowRight className="w-4 h-4" aria-hidden="true" />

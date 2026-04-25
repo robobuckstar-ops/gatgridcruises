@@ -106,7 +106,7 @@ export function CardComparisonTable({ cardIds }: CardComparisonTableProps) {
           <tbody className="divide-y divide-slate-200">
             {/* Annual Fee */}
             <tr>
-              <td className="py-3 px-4 text-sm font-medium text-slate-900 bg-blue-50 sticky left-0 z-10">
+              <td className="py-3 px-4 text-sm font-medium text-slate-900 bg-[#1E3A5F]/10 sticky left-0 z-10">
                 Annual Fee
               </td>
               {cards.map((card) => (
@@ -121,7 +121,7 @@ export function CardComparisonTable({ cardIds }: CardComparisonTableProps) {
 
             {/* Signup Bonus */}
             <tr>
-              <td className="py-3 px-4 text-sm font-medium text-slate-900 bg-blue-50 sticky left-0 z-10">
+              <td className="py-3 px-4 text-sm font-medium text-slate-900 bg-[#1E3A5F]/10 sticky left-0 z-10">
                 Signup Bonus
               </td>
               {cards.map((card) => {
@@ -144,7 +144,7 @@ export function CardComparisonTable({ cardIds }: CardComparisonTableProps) {
 
             {/* Bonus Requirement */}
             <tr>
-              <td className="py-3 px-4 text-sm font-medium text-slate-900 bg-blue-50 sticky left-0 z-10">
+              <td className="py-3 px-4 text-sm font-medium text-slate-900 bg-[#1E3A5F]/10 sticky left-0 z-10">
                 Minimum Spend
               </td>
               {cards.map((card) => (
@@ -159,7 +159,7 @@ export function CardComparisonTable({ cardIds }: CardComparisonTableProps) {
 
             {/* Travel Points */}
             <tr>
-              <td className="py-3 px-4 text-sm font-medium text-slate-900 bg-blue-50 sticky left-0 z-10">
+              <td className="py-3 px-4 text-sm font-medium text-slate-900 bg-[#1E3A5F]/10 sticky left-0 z-10">
                 Travel Points/Dollar
               </td>
               {cards.map((card) => {
@@ -181,7 +181,7 @@ export function CardComparisonTable({ cardIds }: CardComparisonTableProps) {
 
             {/* Dining Points */}
             <tr>
-              <td className="py-3 px-4 text-sm font-medium text-slate-900 bg-blue-50 sticky left-0 z-10">
+              <td className="py-3 px-4 text-sm font-medium text-slate-900 bg-[#1E3A5F]/10 sticky left-0 z-10">
                 Dining Points/Dollar
               </td>
               {cards.map((card) => {
@@ -203,7 +203,7 @@ export function CardComparisonTable({ cardIds }: CardComparisonTableProps) {
 
             {/* Trip Cancellation */}
             <tr>
-              <td className="py-3 px-4 text-sm font-medium text-slate-900 bg-blue-50 sticky left-0 z-10">
+              <td className="py-3 px-4 text-sm font-medium text-slate-900 bg-[#1E3A5F]/10 sticky left-0 z-10">
                 Trip Cancellation
               </td>
               {cards.map((card) => (
@@ -225,7 +225,7 @@ export function CardComparisonTable({ cardIds }: CardComparisonTableProps) {
 
             {/* Trip Delay */}
             <tr>
-              <td className="py-3 px-4 text-sm font-medium text-slate-900 bg-blue-50 sticky left-0 z-10">
+              <td className="py-3 px-4 text-sm font-medium text-slate-900 bg-[#1E3A5F]/10 sticky left-0 z-10">
                 Trip Delay
               </td>
               {cards.map((card) => (
@@ -247,7 +247,7 @@ export function CardComparisonTable({ cardIds }: CardComparisonTableProps) {
 
             {/* Lounge Access */}
             <tr>
-              <td className="py-3 px-4 text-sm font-medium text-slate-900 bg-blue-50 sticky left-0 z-10">
+              <td className="py-3 px-4 text-sm font-medium text-slate-900 bg-[#1E3A5F]/10 sticky left-0 z-10">
                 Lounge Access
               </td>
               {cards.map((card) => (
@@ -269,7 +269,7 @@ export function CardComparisonTable({ cardIds }: CardComparisonTableProps) {
 
             {/* Best For */}
             <tr>
-              <td className="py-3 px-4 text-sm font-medium text-slate-900 bg-blue-50 sticky left-0 z-10">
+              <td className="py-3 px-4 text-sm font-medium text-slate-900 bg-[#1E3A5F]/10 sticky left-0 z-10">
                 Best For
               </td>
               {cards.map((card) => (

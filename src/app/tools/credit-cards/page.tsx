@@ -30,7 +30,7 @@ export default function CreditCardsPage() {
 
       {/* Strategy Overview */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="bg-gradient-to-r from-amber-50 to-yellow-50 border border-amber-200 rounded-xl p-8 mb-12">
+        <div className="bg-[#D4AF37]/10 border border-[#D4AF37]/40 rounded-xl p-8 mb-12">
           <h2 className="font-fraunces text-2xl font-bold text-slate-900 mb-4">
             The Strategy at a Glance
           </h2>
@@ -66,7 +66,7 @@ export default function CreditCardsPage() {
 
         {/* Card 1: Amex Biz Plat */}
         <div className="mb-10 border border-slate-200 rounded-xl overflow-hidden">
-          <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4">
+          <div className="bg-gradient-to-r from-[#0a1628] to-[#1E3A5F] px-6 py-4">
             <div className="flex items-center justify-between gap-4">
               <div>
                 <span className="text-[#D4AF37] text-xs font-bold uppercase tracking-wide">
@@ -131,10 +131,8 @@ export default function CreditCardsPage() {
               </div>
             </div>
             <a
-              href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
-              className="inline-flex items-center gap-2 bg-[#D4AF37] text-[#1E3A5F] font-bold px-6 py-3 rounded-lg hover:bg-yellow-300 transition-colors"
+              href="/concierge"
+              className="inline-flex items-center gap-2 bg-[#D4AF37] text-[#0a1628] font-bold px-6 py-3 rounded-lg hover:bg-yellow-300 transition-colors"
             >
               Apply for Amex Business Platinum <ArrowRight className="w-4 h-4" />
             </a>
@@ -146,7 +144,7 @@ export default function CreditCardsPage() {
 
         {/* Card 2: Southwest */}
         <div className="mb-10 border border-slate-200 rounded-xl overflow-hidden">
-          <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4">
+          <div className="bg-gradient-to-r from-[#0a1628] to-[#1E3A5F] px-6 py-4">
             <div className="flex items-center justify-between gap-4">
               <div>
                 <span className="text-[#D4AF37] text-xs font-bold uppercase tracking-wide">
@@ -200,9 +198,7 @@ export default function CreditCardsPage() {
               </div>
             </div>
             <a
-              href="https://www.referyourchasecard.com/226m/6ZT33F9TOQ"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
+              href="/concierge"
               className="inline-flex items-center gap-2 bg-[#1E3A5F] text-white font-bold px-6 py-3 rounded-lg hover:bg-[#2a4f7a] transition-colors"
             >
               Apply for Southwest Card <ArrowRight className="w-4 h-4" />
@@ -215,7 +211,7 @@ export default function CreditCardsPage() {
 
         {/* Card 3: Capital One Spark */}
         <div className="mb-10 border border-slate-200 rounded-xl overflow-hidden">
-          <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4">
+          <div className="bg-gradient-to-r from-[#0a1628] to-[#1E3A5F] px-6 py-4">
             <div className="flex items-center justify-between gap-4">
               <div>
                 <span className="text-[#D4AF37] text-xs font-bold uppercase tracking-wide">
@@ -268,9 +264,7 @@ export default function CreditCardsPage() {
               </div>
             </div>
             <a
-              href="https://i.capitalone.com/JKlfRwN3f"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
+              href="/concierge"
               className="inline-flex items-center gap-2 bg-[#1E3A5F] text-white font-bold px-6 py-3 rounded-lg hover:bg-[#2a4f7a] transition-colors"
             >
               Apply for Capital One Spark <ArrowRight className="w-4 h-4" />
@@ -352,7 +346,7 @@ export default function CreditCardsPage() {
           </p>
           <Link
             href="/book"
-            className="inline-flex items-center gap-2 bg-[#D4AF37] text-[#1E3A5F] font-bold px-8 py-3 rounded-lg hover:bg-yellow-300 transition-colors"
+            className="inline-flex items-center gap-2 bg-[#D4AF37] text-[#0a1628] font-bold px-8 py-3 rounded-lg hover:bg-yellow-300 transition-colors"
           >
             Get a Free Quote <ArrowRight className="w-4 h-4" />
           </Link>

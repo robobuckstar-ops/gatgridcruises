@@ -44,7 +44,7 @@ export function CompareButton({ sailing, size = 'md' }: CompareButtonProps) {
               ? 'bg-blue-600 text-white hover:bg-blue-700'
               : isFull
                 ? 'bg-slate-200 text-slate-400 cursor-not-allowed'
-                : 'bg-slate-100 text-slate-700 hover:bg-blue-100 hover:text-blue-700'
+                : 'bg-slate-100 text-slate-700 hover:bg-[#1E3A5F]/20 hover:text-blue-700'
           }`}
         >
           {isSelected ? (
@@ -78,7 +78,7 @@ export function CompareButton({ sailing, size = 'md' }: CompareButtonProps) {
             ? 'bg-blue-600 text-white hover:bg-blue-700'
             : isFull
               ? 'bg-slate-200 text-slate-400 cursor-not-allowed'
-              : 'bg-blue-50 text-blue-700 hover:bg-blue-100 border border-blue-200'
+              : 'bg-[#1E3A5F]/10 text-blue-700 hover:bg-[#1E3A5F]/20 border border-blue-200'
         }`}
       >
         {isSelected ? (

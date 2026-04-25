@@ -120,7 +120,7 @@ const guides = [
 export default function GuidesPage() {
   return (
     <main>
-      <section className="bg-gradient-to-br from-blue-50 via-white to-indigo-50 py-16 md:py-20">
+      <section className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex items-center justify-center gap-3 mb-6">
             <BookOpen className="w-8 h-8 text-blue-600" />
@@ -142,21 +142,21 @@ export default function GuidesPage() {
               <div key={guide.slug}>
                 <Link
                   href={`/guides/${guide.slug}`}
-                  className="group block p-6 rounded-xl border-2 border-slate-200 hover:border-blue-400 hover:shadow-lg transition-all duration-200"
+                  className="group block p-6 rounded-xl border-2 border-slate-200 hover:border-[#D4AF37] hover:shadow-lg transition-all duration-200"
                 >
                   <div className="flex items-center gap-3 mb-3">
-                    <span className="text-xs font-semibold uppercase tracking-wider text-blue-600 bg-blue-50 px-3 py-1 rounded-full">
+                    <span className="text-xs font-semibold uppercase tracking-wider text-blue-600 bg-[#1E3A5F]/10 px-3 py-1 rounded-full">
                       {guide.category}
                     </span>
                     <span className="text-xs text-slate-400">{guide.readTime}</span>
                   </div>
-                  <h2 className="font-fraunces text-xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
+                  <h2 className="font-fraunces text-xl font-bold text-slate-900 mb-2 group-hover:text-[#D4AF37] transition-colors">
                     {guide.title}
                   </h2>
                   <p className="text-slate-600 text-sm leading-relaxed mb-4">
                     {guide.description}
                   </p>
-                  <span className="inline-flex items-center gap-1 text-sm font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">
+                  <span className="inline-flex items-center gap-1 text-sm font-semibold text-slate-900 group-hover:text-[#D4AF37] transition-colors">
                     Read Guide <ArrowRight className="w-4 h-4" />
                   </span>
                 </Link>
@@ -164,18 +164,16 @@ export default function GuidesPage() {
                 {index === 3 && (
                   <div className="mt-8 mb-4">
                     <a
-                      href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-                      target="_blank"
-                      rel="noopener noreferrer sponsored"
+                      href="/concierge"
                       className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow"
                     >
-                      <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4 flex items-center justify-between gap-4">
+                      <div className="bg-gradient-to-r from-[#0a1628] to-[#1E3A5F] px-6 py-4 flex items-center justify-between gap-4">
                         <div>
-                          <p className="text-[#D4AF37] font-bold text-base leading-tight">Earn 150K+ Membership Rewards Points</p>
-                          <p className="text-blue-200 text-sm mt-0.5">Enough for your next Disney cruise upgrade — Amex Business Platinum</p>
+                          <p className="text-[#D4AF37] font-bold text-base leading-tight">Ready to Plan Your Disney Cruise?</p>
+                          <p className="text-slate-300 text-sm mt-0.5">Our Boardwalk Travel Agency specialists offer free planning and quotes</p>
                         </div>
-                        <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">
-                          Learn More →
+                        <span className="flex-shrink-0 bg-[#D4AF37] text-[#0a1628] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">
+                          Get a Free Quote →
                         </span>
                       </div>
                     </a>

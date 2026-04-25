@@ -116,7 +116,7 @@ const sections = [
       Points transfer to Delta, Air France/KLM, and others. Lounge access a bonus during embarkation.
       Apply here → [Amex Biz Plat link below]
     — Capital One Spark Miles: 2x on all purchases, flexible redemption.
-      [Apply here](https://i.capitalone.com/JKlfRwN3f)
+      [contact our concierge](/concierge)
 
     Strategy: Use credit card points for flights and hotels. Pay for the cruise with a card
     that earns 2–3x on travel purchases. The Amex Biz Plat earns 5x on flights booked direct.`,
@@ -127,7 +127,7 @@ export default function HowToGetCompedCruises() {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#0A1628] via-[#0D2145] to-[#1a3a6e] text-white py-16 md:py-24">
+      <section className="bg-gradient-to-br from-[#0a1628] to-[#1E3A5F] text-white py-16 md:py-24">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <Link
             href="/blog"
@@ -170,9 +170,9 @@ export default function HowToGetCompedCruises() {
               {sections.map((section) => {
                 const Icon = section.icon
                 return (
-                  <div key={section.title} className="border-l-4 border-blue-600 pl-6">
+                  <div key={section.title} className="border-l-4 border-[#D4AF37] pl-6">
                     <div className="flex items-center gap-3 mb-3">
-                      <div className="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <div className="w-8 h-8 bg-[#1E3A5F]/10 rounded-lg flex items-center justify-center flex-shrink-0">
                         <Icon className="w-4 h-4 text-blue-600" />
                       </div>
                       <h2 className="font-fraunces text-xl font-bold text-slate-900">
@@ -199,10 +199,8 @@ export default function HowToGetCompedCruises() {
                 Use points for airfare, reducing your Disney cruise&apos;s total cost by $1,000+.
               </p>
               <a
-                href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-                target="_blank"
-                rel="noopener noreferrer sponsored"
-                className="inline-flex items-center gap-2 bg-white text-[#006FCF] font-bold px-6 py-3 rounded-xl hover:bg-blue-50 transition-colors text-sm"
+                href="/concierge"
+                className="inline-flex items-center gap-2 bg-white text-[#006FCF] font-bold px-6 py-3 rounded-xl hover:bg-[#1E3A5F]/10 transition-colors text-sm"
               >
                 Learn More →
               </a>

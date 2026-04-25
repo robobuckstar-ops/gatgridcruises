@@ -26,7 +26,7 @@ export default function FlyFreeToCruisePort() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-indigo-50 py-12">
+      <section className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] py-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
             href="/travel-hacks"
@@ -85,7 +85,7 @@ export default function FlyFreeToCruisePort() {
             account. You can then redeem those points for flights, hotel stays, or even cash back.
           </p>
 
-          <div className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded my-6">
+          <div className="bg-[#1E3A5F]/10 border-l-4 border-[#D4AF37] p-6 rounded my-6">
             <p className="text-sm text-slate-700">
               <span className="font-semibold">Key insight:</span> The Chase Sapphire Preferred
               offers 60,000 points worth roughly $750 via the Chase Travel Portal—enough to cover

@@ -12,7 +12,7 @@ export default function PackingListGuide() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-50 via-white to-indigo-50">
+      <section className="relative py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#0a1628] to-[#1E3A5F]">
         <div className="max-w-4xl mx-auto">
           <h1 className="font-fraunces text-4xl sm:text-5xl font-bold text-white mb-4">
             The Ultimate Disney Cruise Packing List
@@ -42,17 +42,15 @@ export default function PackingListGuide() {
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
         <a
-              href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
+              href="/concierge"
               className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow"
             >
-              <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4 flex items-center justify-between gap-4">
+              <div className="bg-gradient-to-r from-[#0a1628] to-[#1E3A5F] px-6 py-4 flex items-center justify-between gap-4">
                 <div>
-                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Earn 150K+ Membership Rewards Points</p>
-                  <p className="text-blue-200 text-sm mt-0.5">Enough for your next Disney cruise upgrade — Amex Business Platinum</p>
+                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Ready to Plan Your Disney Cruise?</p>
+                  <p className="text-slate-300 text-sm mt-0.5">Our Boardwalk Travel Agency specialists offer free planning and quotes</p>
                 </div>
-                <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
+                <span className="flex-shrink-0 bg-[#D4AF37] text-[#0a1628] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Get a Free Quote →</span>
               </div>
             </a>
 
@@ -71,43 +69,43 @@ export default function PackingListGuide() {
         <section className="mb-12">
           <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-4">Critical Documents (Don't Forget!)</h2>
           <div className="space-y-3 mb-6">
-            <div className="flex gap-3 p-3 bg-blue-50 rounded">
+            <div className="flex gap-3 p-3 bg-[#1E3A5F]/10 rounded">
               <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
               <div className="font-inter text-slate-600">
                 <strong>Passport or government-issued ID</strong> — Required for Caribbean/international cruises; driver's license or passport for domestic cruises
               </div>
             </div>
-            <div className="flex gap-3 p-3 bg-blue-50 rounded">
+            <div className="flex gap-3 p-3 bg-[#1E3A5F]/10 rounded">
               <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
               <div className="font-inter text-slate-600">
                 <strong>Cruise documents</strong> — Booking confirmation, reservation number, cruise itinerary, and pre-check-in confirmation (available in Disney Cruise Line app or via email)
               </div>
             </div>
-            <div className="flex gap-3 p-3 bg-blue-50 rounded">
+            <div className="flex gap-3 p-3 bg-[#1E3A5F]/10 rounded">
               <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
               <div className="font-inter text-slate-600">
                 <strong>Insurance documents</strong> — Travel insurance papers (if purchased), policy numbers, and contact info
               </div>
             </div>
-            <div className="flex gap-3 p-3 bg-blue-50 rounded">
+            <div className="flex gap-3 p-3 bg-[#1E3A5F]/10 rounded">
               <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
               <div className="font-inter text-slate-600">
                 <strong>Key to the World Card</strong> — Your onboard key card (often arrives in advance; print or save digitally)
               </div>
             </div>
-            <div className="flex gap-3 p-3 bg-blue-50 rounded">
+            <div className="flex gap-3 p-3 bg-[#1E3A5F]/10 rounded">
               <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
               <div className="font-inter text-slate-600">
                 <strong>Vaccination records or health documentation</strong> — If required by your itinerary
               </div>
             </div>
-            <div className="flex gap-3 p-3 bg-blue-50 rounded">
+            <div className="flex gap-3 p-3 bg-[#1E3A5F]/10 rounded">
               <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
               <div className="font-inter text-slate-600">
                 <strong>Credit card and backup payment method</strong> — For onboard charging and emergencies
               </div>
             </div>
-            <div className="flex gap-3 p-3 bg-blue-50 rounded">
+            <div className="flex gap-3 p-3 bg-[#1E3A5F]/10 rounded">
               <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
               <div className="font-inter text-slate-600">
                 <strong>Copies of important documents</strong> — Keep digital copies (email to yourself or cloud storage) in case originals are lost
@@ -206,17 +204,15 @@ export default function PackingListGuide() {
         </section>
 
         <a
-              href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
+              href="/concierge"
               className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow"
             >
-              <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4 flex items-center justify-between gap-4">
+              <div className="bg-gradient-to-r from-[#0a1628] to-[#1E3A5F] px-6 py-4 flex items-center justify-between gap-4">
                 <div>
-                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Earn 150K+ Membership Rewards Points</p>
-                  <p className="text-blue-200 text-sm mt-0.5">Enough for your next Disney cruise upgrade — Amex Business Platinum</p>
+                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Ready to Plan Your Disney Cruise?</p>
+                  <p className="text-slate-300 text-sm mt-0.5">Our Boardwalk Travel Agency specialists offer free planning and quotes</p>
                 </div>
-                <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
+                <span className="flex-shrink-0 bg-[#D4AF37] text-[#0a1628] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Get a Free Quote →</span>
               </div>
             </a>
 
@@ -371,17 +367,15 @@ export default function PackingListGuide() {
         </section>
 
         <a
-              href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
+              href="/concierge"
               className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow"
             >
-              <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4 flex items-center justify-between gap-4">
+              <div className="bg-gradient-to-r from-[#0a1628] to-[#1E3A5F] px-6 py-4 flex items-center justify-between gap-4">
                 <div>
-                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Earn 150K+ Membership Rewards Points</p>
-                  <p className="text-blue-200 text-sm mt-0.5">Enough for your next Disney cruise upgrade — Amex Business Platinum</p>
+                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Ready to Plan Your Disney Cruise?</p>
+                  <p className="text-slate-300 text-sm mt-0.5">Our Boardwalk Travel Agency specialists offer free planning and quotes</p>
                 </div>
-                <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
+                <span className="flex-shrink-0 bg-[#D4AF37] text-[#0a1628] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Get a Free Quote →</span>
               </div>
             </a>
 
@@ -390,37 +384,37 @@ export default function PackingListGuide() {
           <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-4">Beach & Pool Essentials</h2>
 
           <div className="space-y-3">
-            <div className="flex gap-3 p-3 bg-blue-50 rounded">
+            <div className="flex gap-3 p-3 bg-[#1E3A5F]/10 rounded">
               <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
               <div className="font-inter text-slate-600">
                 <strong>Water shoes</strong> — Essential for Castaway Cay's rocky areas and hot sand
               </div>
             </div>
-            <div className="flex gap-3 p-3 bg-blue-50 rounded">
+            <div className="flex gap-3 p-3 bg-[#1E3A5F]/10 rounded">
               <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
               <div className="font-inter text-slate-600">
                 <strong>Snorkel gear (optional)</strong> — Bring your own to save $12/person at Castaway Cay
               </div>
             </div>
-            <div className="flex gap-3 p-3 bg-blue-50 rounded">
+            <div className="flex gap-3 p-3 bg-[#1E3A5F]/10 rounded">
               <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
               <div className="font-inter text-slate-600">
                 <strong>Waterproof phone case</strong> — Protect devices near water
               </div>
             </div>
-            <div className="flex gap-3 p-3 bg-blue-50 rounded">
+            <div className="flex gap-3 p-3 bg-[#1E3A5F]/10 rounded">
               <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
               <div className="font-inter text-slate-600">
                 <strong>Beach towel (optional)</strong> — Ships provide towels, but some prefer their own
               </div>
             </div>
-            <div className="flex gap-3 p-3 bg-blue-50 rounded">
+            <div className="flex gap-3 p-3 bg-[#1E3A5F]/10 rounded">
               <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
               <div className="font-inter text-slate-600">
                 <strong>Goggles (optional)</strong> — For snorkeling enthusiasts
               </div>
             </div>
-            <div className="flex gap-3 p-3 bg-blue-50 rounded">
+            <div className="flex gap-3 p-3 bg-[#1E3A5F]/10 rounded">
               <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
               <div className="font-inter text-slate-600">
                 <strong>Underwater camera (optional)</strong> — Capture beach memories
@@ -435,43 +429,43 @@ export default function PackingListGuide() {
 
           <div className="space-y-3">
             <div className="flex gap-3 p-3 bg-purple-50 rounded">
-              <CheckCircle className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
+              <CheckCircle className="w-5 h-5 text-[#D4AF37] flex-shrink-0 mt-0.5" />
               <div className="font-inter text-slate-600">
                 <strong>Glow sticks</strong> — Fun for Pirate Night parade and evening events
               </div>
             </div>
             <div className="flex gap-3 p-3 bg-purple-50 rounded">
-              <CheckCircle className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
+              <CheckCircle className="w-5 h-5 text-[#D4AF37] flex-shrink-0 mt-0.5" />
               <div className="font-inter text-slate-600">
                 <strong>Autograph book</strong> — For collecting character signatures
               </div>
             </div>
             <div className="flex gap-3 p-3 bg-purple-50 rounded">
-              <CheckCircle className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
+              <CheckCircle className="w-5 h-5 text-[#D4AF37] flex-shrink-0 mt-0.5" />
               <div className="font-inter text-slate-600">
                 <strong>Disney-themed clothing or costumes</strong> — Many kids love wearing their favorite character outfits
               </div>
             </div>
             <div className="flex gap-3 p-3 bg-purple-50 rounded">
-              <CheckCircle className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
+              <CheckCircle className="w-5 h-5 text-[#D4AF37] flex-shrink-0 mt-0.5" />
               <div className="font-inter text-slate-600">
                 <strong>Motion sickness aids</strong> — Sea-Bands or ginger candies if kids get seasick
               </div>
             </div>
             <div className="flex gap-3 p-3 bg-purple-50 rounded">
-              <CheckCircle className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
+              <CheckCircle className="w-5 h-5 text-[#D4AF37] flex-shrink-0 mt-0.5" />
               <div className="font-inter text-slate-600">
                 <strong>Swim diapers (if needed)</strong> — Required for pools if not toilet trained
               </div>
             </div>
             <div className="flex gap-3 p-3 bg-purple-50 rounded">
-              <CheckCircle className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
+              <CheckCircle className="w-5 h-5 text-[#D4AF37] flex-shrink-0 mt-0.5" />
               <div className="font-inter text-slate-600">
                 <strong>Favorite snacks from home</strong> — Reduces onboard spending; helps picky eaters
               </div>
             </div>
             <div className="flex gap-3 p-3 bg-purple-50 rounded">
-              <CheckCircle className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
+              <CheckCircle className="w-5 h-5 text-[#D4AF37] flex-shrink-0 mt-0.5" />
               <div className="font-inter text-slate-600">
                 <strong>Activity books or travel games</strong> — For cabin time or port days
               </div>
@@ -522,7 +516,7 @@ export default function PackingListGuide() {
             </ul>
           </div>
 
-          <div className="p-4 bg-amber-50 border-l-4 border-blue-600">
+          <div className="p-4 bg-amber-50 border-l-4 border-[#D4AF37]">
             <p className="font-inter text-slate-600 font-bold mb-3">Not Recommended (But Not Prohibited):</p>
             <ul className="space-y-2 font-inter text-slate-600 text-sm">
               <li className="flex gap-2"><span className="text-amber-600">!</span> Excessive formal wear (one or two dressy outfits is enough)</li>
@@ -540,49 +534,49 @@ export default function PackingListGuide() {
           <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-4">Packing Pro Tips</h2>
 
           <div className="space-y-4">
-            <div className="p-4 bg-blue-50 rounded">
+            <div className="p-4 bg-[#1E3A5F]/10 rounded">
               <p className="font-inter text-slate-600 mb-2">
                 <strong>Roll, Don't Fold:</strong> Rolling clothes saves space and reduces wrinkles compared to folding. Use the KonMari method or packing cubes to maximize luggage space.
               </p>
             </div>
 
-            <div className="p-4 bg-blue-50 rounded">
+            <div className="p-4 bg-[#1E3A5F]/10 rounded">
               <p className="font-inter text-slate-600 mb-2">
                 <strong>Wear Your Bulkiest Item:</strong> If packing a heavy jacket or boots, wear them onboard to save luggage space.
               </p>
             </div>
 
-            <div className="p-4 bg-blue-50 rounded">
+            <div className="p-4 bg-[#1E3A5F]/10 rounded">
               <p className="font-inter text-slate-600 mb-2">
                 <strong>Check Your Itinerary:</strong> Know which ports you're visiting and what dress codes apply. Research weather patterns for your cruise dates.
               </p>
             </div>
 
-            <div className="p-4 bg-blue-50 rounded">
+            <div className="p-4 bg-[#1E3A5F]/10 rounded">
               <p className="font-inter text-slate-600 mb-2">
                 <strong>Use Packing Cubes:</strong> Organize items by category (casual, formal, beach, etc.) in separate packing cubes for easy access and space efficiency.
               </p>
             </div>
 
-            <div className="p-4 bg-blue-50 rounded">
+            <div className="p-4 bg-[#1E3A5F]/10 rounded">
               <p className="font-inter text-slate-600 mb-2">
                 <strong>Ship Your Luggage:</strong> For longer cruises, consider shipping luggage to your port destination to avoid baggage fees and excess weight.
               </p>
             </div>
 
-            <div className="p-4 bg-blue-50 rounded">
+            <div className="p-4 bg-[#1E3A5F]/10 rounded">
               <p className="font-inter text-slate-600 mb-2">
                 <strong>Prepare a Day-Bag:</strong> Pack a separate small bag with essentials (medications, phone chargers, toiletries) that you'll access immediately upon embarkation before your cabin is ready.
               </p>
             </div>
 
-            <div className="p-4 bg-blue-50 rounded">
+            <div className="p-4 bg-[#1E3A5F]/10 rounded">
               <p className="font-inter text-slate-600 mb-2">
                 <strong>Verify Baggage Allowance:</strong> Check your cruise line's baggage policy. Disney Cruise Line typically allows 2 standard suitcases + carry-on per person; fees apply for excess.
               </p>
             </div>
 
-            <div className="p-4 bg-blue-50 rounded">
+            <div className="p-4 bg-[#1E3A5F]/10 rounded">
               <p className="font-inter text-slate-600 mb-2">
                 <strong>Leave Room for Souvenirs:</strong> Pack slightly lighter than your baggage limit allows to have room for purchases made onboard and at ports.
               </p>
@@ -591,7 +585,7 @@ export default function PackingListGuide() {
         </section>
 
         {/* CTA Section */}
-        <section className="my-12 p-8 bg-gradient-to-r from-blue-50 to-blue-900 text-white rounded-lg">
+        <section className="my-12 p-8 bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] text-white rounded-lg">
           <h2 className="font-fraunces text-3xl font-bold mb-4">Ready to Set Sail?</h2>
           <p className="font-inter text-lg mb-6">
             Use this packing list to prepare for your Disney cruise, then explore our other guides to plan the perfect voyage.

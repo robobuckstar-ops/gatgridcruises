@@ -13,14 +13,14 @@ export default function PortCanaveralVsMiamiGuide() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-50 to-indigo-50 py-16">
+      <section className="relative bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-6">
-            <Link href="/" className="text-blue-600 hover:underline text-sm">
+            <Link href="/" className="text-[#D4AF37] hover:underline text-sm">
               Home
             </Link>
             <span className="text-white mx-2">/</span>
-            <Link href="/guides" className="text-blue-600 hover:underline text-sm">
+            <Link href="/guides" className="text-[#D4AF37] hover:underline text-sm">
               Guides
             </Link>
             <span className="text-white mx-2">/</span>
@@ -29,27 +29,22 @@ export default function PortCanaveralVsMiamiGuide() {
           <h1 className="text-4xl md:text-5xl font-fraunces font-bold mb-4">
             Port Canaveral vs. Miami: Which Disney Cruise Port Is Better?
           </h1>
-          <p className="text-lg text-slate-600">
+          <p className="text-lg text-white/80">
             Comparing driving distance, parking, facilities, nearby attractions, and which port is the perfect starting point for your Disney cruise.
           </p>
         </div>
       </section>
 
-      {/* Ad Slot 1 */}
-      <a
-              href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
-              className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow"
-            >
-              <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4 flex items-center justify-between gap-4">
-                <div>
-                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Earn 150K+ Membership Rewards Points</p>
-                  <p className="text-blue-200 text-sm mt-0.5">Enough for your next Disney cruise upgrade — Amex Business Platinum</p>
-                </div>
-                <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
-              </div>
-            </a>
+      {/* Planning CTA */}
+      <Link href="/concierge" className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow">
+        <div className="bg-gradient-to-r from-[#0a1628] to-[#1E3A5F] px-6 py-4 flex items-center justify-between gap-4">
+          <div>
+            <p className="text-[#D4AF37] font-bold text-base leading-tight">Ready to Plan Your Disney Cruise?</p>
+            <p className="text-slate-300 text-sm mt-0.5">Our Boardwalk Travel Agency specialists offer free expert planning and quotes</p>
+          </div>
+          <span className="flex-shrink-0 bg-[#D4AF37] text-[#0a1628] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Get a Free Quote →</span>
+        </div>
+      </Link>
 
       {/* Main Content */}
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -65,28 +60,23 @@ export default function PortCanaveralVsMiamiGuide() {
           </p>
         </section>
 
-        {/* Ad Slot 2 */}
-        <a
-              href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
-              className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow"
-            >
-              <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4 flex items-center justify-between gap-4">
-                <div>
-                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Earn 150K+ Membership Rewards Points</p>
-                  <p className="text-blue-200 text-sm mt-0.5">Enough for your next Disney cruise upgrade — Amex Business Platinum</p>
-                </div>
-                <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
-              </div>
-            </a>
+        {/* Planning CTA */}
+      <Link href="/concierge" className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow">
+        <div className="bg-gradient-to-r from-[#0a1628] to-[#1E3A5F] px-6 py-4 flex items-center justify-between gap-4">
+          <div>
+            <p className="text-[#D4AF37] font-bold text-base leading-tight">Ready to Plan Your Disney Cruise?</p>
+            <p className="text-slate-300 text-sm mt-0.5">Our Boardwalk Travel Agency specialists offer free expert planning and quotes</p>
+          </div>
+          <span className="flex-shrink-0 bg-[#D4AF37] text-[#0a1628] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Get a Free Quote →</span>
+        </div>
+      </Link>
   
         <section className="mb-12">
           <h2 className="text-3xl font-fraunces font-bold text-slate-900 mb-6">
             Location & Driving Distance
           </h2>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3 flex items-center gap-2">
               <Clock size={24} className="text-blue-600" />
               Port Canaveral
@@ -109,7 +99,7 @@ export default function PortCanaveralVsMiamiGuide() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3 flex items-center gap-2">
               <Clock size={24} className="text-blue-600" />
               Miami (PortMiami)
@@ -139,7 +129,7 @@ export default function PortCanaveralVsMiamiGuide() {
             Parking & Transportation Costs
           </h2>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3 flex items-center gap-2">
               <DollarSign size={24} className="text-blue-600" />
               Port Canaveral Parking
@@ -160,7 +150,7 @@ export default function PortCanaveralVsMiamiGuide() {
             </ul>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3 flex items-center gap-2">
               <DollarSign size={24} className="text-blue-600" />
               Miami Parking
@@ -182,35 +172,30 @@ export default function PortCanaveralVsMiamiGuide() {
             </ul>
           </div>
 
-          <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg mb-6">
+          <div className="bg-[#1E3A5F]/10 border-l-4 border-blue-500 p-6 rounded-lg mb-6">
             <p className="font-inter text-slate-600">
               <strong>Cost Comparison for Orlando-Based Families:</strong> Driving to Port Canaveral ($175 parking) is significantly cheaper than driving to Miami ($231+ parking plus gas) or flying and renting a car at Miami ($70-80/day rental + $25-35 ride-share).
             </p>
           </div>
         </section>
 
-        {/* Ad Slot 3 */}
-        <a
-              href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
-              className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow"
-            >
-              <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4 flex items-center justify-between gap-4">
-                <div>
-                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Earn 150K+ Membership Rewards Points</p>
-                  <p className="text-blue-200 text-sm mt-0.5">Enough for your next Disney cruise upgrade — Amex Business Platinum</p>
-                </div>
-                <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
-              </div>
-            </a>
+        {/* Planning CTA */}
+      <Link href="/concierge" className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow">
+        <div className="bg-gradient-to-r from-[#0a1628] to-[#1E3A5F] px-6 py-4 flex items-center justify-between gap-4">
+          <div>
+            <p className="text-[#D4AF37] font-bold text-base leading-tight">Ready to Plan Your Disney Cruise?</p>
+            <p className="text-slate-300 text-sm mt-0.5">Our Boardwalk Travel Agency specialists offer free expert planning and quotes</p>
+          </div>
+          <span className="flex-shrink-0 bg-[#D4AF37] text-[#0a1628] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Get a Free Quote →</span>
+        </div>
+      </Link>
   
         <section className="mb-12">
           <h2 className="text-3xl font-fraunces font-bold text-slate-900 mb-6">
             Terminal Facilities & Embarkation Experience
           </h2>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Port Canaveral Terminals
             </h3>
@@ -226,7 +211,7 @@ export default function PortCanaveralVsMiamiGuide() {
             </ul>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Miami (PortMiami) Terminals
             </h3>
@@ -248,7 +233,7 @@ export default function PortCanaveralVsMiamiGuide() {
             Pre-Cruise Hotel Options & Pricing
           </h2>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Port Canaveral Area
             </h3>
@@ -266,7 +251,7 @@ export default function PortCanaveralVsMiamiGuide() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Miami Area
             </h3>
@@ -285,35 +270,30 @@ export default function PortCanaveralVsMiamiGuide() {
             </p>
           </div>
 
-          <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg mb-6">
+          <div className="bg-[#1E3A5F]/10 border-l-4 border-blue-500 p-6 rounded-lg mb-6">
             <p className="font-inter text-slate-600 mb-3">
               <strong>Cost Consideration:</strong> If you're driving from Orlando, skip the pre-cruise hotel in Canaveral and arrive morning-of (saves $100-150). If flying into Miami, budget $100-150/night for one pre-cruise hotel night.
             </p>
           </div>
         </section>
 
-        {/* Ad Slot 4 */}
-        <a
-              href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
-              className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow"
-            >
-              <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4 flex items-center justify-between gap-4">
-                <div>
-                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Earn 150K+ Membership Rewards Points</p>
-                  <p className="text-blue-200 text-sm mt-0.5">Enough for your next Disney cruise upgrade — Amex Business Platinum</p>
-                </div>
-                <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
-              </div>
-            </a>
+        {/* Planning CTA */}
+      <Link href="/concierge" className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow">
+        <div className="bg-gradient-to-r from-[#0a1628] to-[#1E3A5F] px-6 py-4 flex items-center justify-between gap-4">
+          <div>
+            <p className="text-[#D4AF37] font-bold text-base leading-tight">Ready to Plan Your Disney Cruise?</p>
+            <p className="text-slate-300 text-sm mt-0.5">Our Boardwalk Travel Agency specialists offer free expert planning and quotes</p>
+          </div>
+          <span className="flex-shrink-0 bg-[#D4AF37] text-[#0a1628] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Get a Free Quote →</span>
+        </div>
+      </Link>
   
         <section className="mb-12">
           <h2 className="text-3xl font-fraunces font-bold text-slate-900 mb-6">
             Nearby Attractions & Pre-Cruise Activities
           </h2>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Port Canaveral Nearby Attractions
             </h3>
@@ -345,7 +325,7 @@ export default function PortCanaveralVsMiamiGuide() {
             </ul>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Miami Nearby Attractions
             </h3>
@@ -389,7 +369,7 @@ export default function PortCanaveralVsMiamiGuide() {
             Ships & Itineraries by Port
           </h2>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Port Canaveral Ships & Itineraries
             </h3>
@@ -406,7 +386,7 @@ export default function PortCanaveralVsMiamiGuide() {
             </ul>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Miami Ships & Itineraries
             </h3>
@@ -429,7 +409,7 @@ export default function PortCanaveralVsMiamiGuide() {
             Airport Proximity & Fly-In Logistics
           </h2>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Port Canaveral Airports
             </h3>
@@ -443,7 +423,7 @@ export default function PortCanaveralVsMiamiGuide() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Miami Airports
             </h3>
@@ -457,21 +437,16 @@ export default function PortCanaveralVsMiamiGuide() {
           </div>
         </section>
 
-        {/* Ad Slot 5 */}
-        <a
-              href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
-              className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow"
-            >
-              <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4 flex items-center justify-between gap-4">
-                <div>
-                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Earn 150K+ Membership Rewards Points</p>
-                  <p className="text-blue-200 text-sm mt-0.5">Enough for your next Disney cruise upgrade — Amex Business Platinum</p>
-                </div>
-                <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
-              </div>
-            </a>
+        {/* Planning CTA */}
+      <Link href="/concierge" className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow">
+        <div className="bg-gradient-to-r from-[#0a1628] to-[#1E3A5F] px-6 py-4 flex items-center justify-between gap-4">
+          <div>
+            <p className="text-[#D4AF37] font-bold text-base leading-tight">Ready to Plan Your Disney Cruise?</p>
+            <p className="text-slate-300 text-sm mt-0.5">Our Boardwalk Travel Agency specialists offer free expert planning and quotes</p>
+          </div>
+          <span className="flex-shrink-0 bg-[#D4AF37] text-[#0a1628] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Get a Free Quote →</span>
+        </div>
+      </Link>
   
         <section className="mb-12">
           <h2 className="text-3xl font-fraunces font-bold text-slate-900 mb-6">
@@ -534,7 +509,7 @@ export default function PortCanaveralVsMiamiGuide() {
           </h2>
 
           <div className="space-y-6">
-            <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg">
+            <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg">
               <h3 className="text-lg font-fraunces font-bold text-slate-900 mb-3">
                 Choose Port Canaveral If:
               </h3>
@@ -547,7 +522,7 @@ export default function PortCanaveralVsMiamiGuide() {
               </ul>
             </div>
 
-            <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg">
+            <div className="bg-[#1E3A5F]/5 border-l-4 border-[#D4AF37] p-6 rounded-lg">
               <h3 className="text-lg font-fraunces font-bold text-slate-900 mb-3">
                 Choose Miami If:
               </h3>
@@ -563,7 +538,7 @@ export default function PortCanaveralVsMiamiGuide() {
         </section>
 
         {/* CTA Section */}
-        <section className="bg-gradient-to-r from-blue-50 to-indigo-50 p-8 rounded-lg mb-12">
+        <section className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] p-8 rounded-lg mb-12">
           <h2 className="text-2xl font-fraunces font-bold mb-4">Ready to Find Your Perfect Cruise?</h2>
           <p className="font-inter mb-6">
             Now that you've chosen your port, use our cost calculator to compare pricing and find the best deals on your Disney cruise.
@@ -578,8 +553,8 @@ export default function PortCanaveralVsMiamiGuide() {
           <h2 className="text-2xl font-fraunces font-bold text-slate-900 mb-6">Related Guides</h2>
           <div className="grid md:grid-cols-3 gap-6">
             <Link href="/guides/disney-cruise-cost-guide" className="group">
-              <div className="bg-gray-50 p-6 rounded-lg hover:bg-blue-50 transition">
-                <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-blue-600">
+              <div className="bg-gray-50 p-6 rounded-lg hover:bg-[#1E3A5F]/10 transition">
+                <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-[#D4AF37]">
                   The True Cost of a Disney Cruise
                 </h3>
                 <p className="font-inter text-gray-600 text-sm">
@@ -588,8 +563,8 @@ export default function PortCanaveralVsMiamiGuide() {
               </div>
             </Link>
             <Link href="/guides/first-time-disney-cruise-tips" className="group">
-              <div className="bg-gray-50 p-6 rounded-lg hover:bg-blue-50 transition">
-                <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-blue-600">
+              <div className="bg-gray-50 p-6 rounded-lg hover:bg-[#1E3A5F]/10 transition">
+                <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-[#D4AF37]">
                   25 First-Time Cruise Tips
                 </h3>
                 <p className="font-inter text-gray-600 text-sm">
@@ -598,8 +573,8 @@ export default function PortCanaveralVsMiamiGuide() {
               </div>
             </Link>
             <Link href="/guides/best-disney-cruise-staterooms" className="group">
-              <div className="bg-gray-50 p-6 rounded-lg hover:bg-blue-50 transition">
-                <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-blue-600">
+              <div className="bg-gray-50 p-6 rounded-lg hover:bg-[#1E3A5F]/10 transition">
+                <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-[#D4AF37]">
                   Best Disney Cruise Staterooms
                 </h3>
                 <p className="font-inter text-gray-600 text-sm">

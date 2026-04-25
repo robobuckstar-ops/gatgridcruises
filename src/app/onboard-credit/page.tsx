@@ -53,7 +53,7 @@ export default function OnboardCreditPage() {
     <main className="min-h-screen bg-white">
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#1E3A5F] to-[#2a4f7a] py-16 md:py-24">
+      <section className="bg-gradient-to-br from-[#0a1628] to-[#1E3A5F] py-16 md:py-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#D4AF37]/20 border border-[#D4AF37]/40 text-[#D4AF37] text-xs font-semibold tracking-wide mb-5">
             <Gift className="w-3.5 h-3.5" aria-hidden="true" />
@@ -68,7 +68,7 @@ export default function OnboardCreditPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/tools/obc-calculator"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#D4AF37] text-[#1E3A5F] font-bold text-base hover:bg-yellow-300 transition-colors shadow-lg"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#D4AF37] text-[#0a1628] font-bold text-base hover:bg-yellow-300 transition-colors shadow-lg"
             >
               <Gift className="w-5 h-5" aria-hidden="true" />
               Calculate My OBC
@@ -153,7 +153,7 @@ export default function OnboardCreditPage() {
         </section>
 
         {/* How to Qualify */}
-        <section className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8">
+        <section className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] rounded-2xl p-8">
           <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-6">How to Qualify</h2>
           <div className="space-y-4">
             {[

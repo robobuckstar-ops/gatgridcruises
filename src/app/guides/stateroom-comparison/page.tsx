@@ -225,7 +225,7 @@ const staterooms = [
 
 const colorMap: Record<string, { bg: string; border: string; badge: string; badgeText: string }> = {
   slate: { bg: 'bg-slate-50', border: 'border-slate-200', badge: 'bg-slate-100', badgeText: 'text-slate-700' },
-  blue: { bg: 'bg-blue-50', border: 'border-blue-200', badge: 'bg-blue-100', badgeText: 'text-blue-700' },
+  blue: { bg: 'bg-[#1E3A5F]/10', border: 'border-blue-200', badge: 'bg-[#1E3A5F]/20', badgeText: 'text-blue-700' },
   emerald: { bg: 'bg-emerald-50', border: 'border-emerald-200', badge: 'bg-emerald-100', badgeText: 'text-emerald-700' },
   purple: { bg: 'bg-purple-50', border: 'border-purple-200', badge: 'bg-purple-100', badgeText: 'text-purple-700' },
 }
@@ -238,7 +238,7 @@ function RatingBar({ label, value }: { label: string; value: number }) {
         <span className="font-medium text-slate-700">{value}/5</span>
       </div>
       <div className="h-1.5 bg-slate-200 rounded-full overflow-hidden">
-        <div className="h-full bg-blue-500 rounded-full" style={{ width: `${(value / 5) * 100}%` }} />
+        <div className="h-full bg-[#1E3A5F]/100 rounded-full" style={{ width: `${(value / 5) * 100}%` }} />
       </div>
     </div>
   )
@@ -248,7 +248,7 @@ export default function StateroomComparisonPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="bg-gradient-to-b from-blue-950 to-blue-900 text-white py-16 px-4">
+      <section className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] text-white py-16 px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-sm text-blue-300 mb-3 font-medium">Guides · Staterooms</div>
           <h1 className="font-display text-4xl sm:text-5xl font-bold mb-4">
@@ -301,7 +301,7 @@ export default function StateroomComparisonPage() {
         </section>
 
         {/* Decision guide */}
-        <section className="bg-blue-50 rounded-2xl p-8 border border-blue-100 mb-14">
+        <section className="bg-[#1E3A5F]/10 rounded-2xl p-8 border border-blue-100 mb-14">
           <h2 className="font-display text-2xl font-bold text-slate-900 mb-6">
             How to Choose: Quick Decision Guide
           </h2>

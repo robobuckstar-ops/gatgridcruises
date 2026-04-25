@@ -25,7 +25,7 @@ export function FeaturedDealCard({ sailing, historicalAvgPrice, savingsAmount, s
 
   const recommendationColor =
     score >= 85 ? 'bg-emerald-100 text-emerald-700' :
-    score >= 70 ? 'bg-blue-100 text-blue-700' :
+    score >= 70 ? 'bg-[#1E3A5F]/20 text-blue-700' :
     'bg-amber-100 text-amber-700'
 
   return (
@@ -35,7 +35,7 @@ export function FeaturedDealCard({ sailing, historicalAvgPrice, savingsAmount, s
 
       <div className="relative m-[2px] bg-white rounded-[14px] overflow-hidden shadow-xl">
         {/* Header bar */}
-        <div className="bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 px-5 py-3 flex items-center justify-between">
+        <div className="bg-gradient-to-r from-[#0a1628] via-[#1E3A5F] to-[#0a1628] px-5 py-3 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Flame className="w-4 h-4 text-[#D4AF37] fill-[#D4AF37]" aria-hidden="true" />
             <span className="text-white font-bold text-sm tracking-wider uppercase">Featured Deal</span>

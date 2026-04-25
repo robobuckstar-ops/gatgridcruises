@@ -22,7 +22,7 @@ const cards = [
     annualFee: '$95',
     earningRate: '3x on travel, shipping, internet, & phone',
     signupBonus: '90,000 points after $8,000 spend in 3 months (~$1,125 value)',
-    referralUrl: 'https://www.referyourchasecard.com/226m/6ZT33F9TOQ',
+    referralUrl: '/concierge',
     highlights: [
       '3x Ultimate Rewards points on travel (including cruise bookings)',
       'Points transfer 1:1 to United, Hyatt, Southwest, and more',
@@ -45,7 +45,7 @@ const cards = [
     annualFee: '$150 (rebated if you spend $150K+)',
     earningRate: '2% unlimited cash back on everything',
     signupBonus: 'Up to $1,000 cash back — $500 at $5K, $500 more at $50K in first 6 months',
-    referralUrl: 'https://i.capitalone.com/JKlfRwN3f',
+    referralUrl: '/concierge',
     highlights: [
       'Flat 2% cash back on every purchase — no categories to track',
       'No spending caps or limits on cash back',
@@ -68,7 +68,7 @@ const cards = [
     annualFee: '$695',
     earningRate: '5x on flights & hotels booked via Amex Travel; 1.5x on purchases $5K+',
     signupBonus: '150,000 Membership Rewards points after $20,000 spend in first 3 months',
-    referralUrl: 'https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS',
+    referralUrl: '/concierge',
     highlights: [
       '$200 airline fee credit per year (incidental fees)',
       '$189 CLEAR Plus credit per year',
@@ -89,7 +89,7 @@ const cards = [
 ]
 
 const badgeColors: Record<string, string> = {
-  blue: 'bg-blue-100 text-blue-700',
+  blue: 'bg-[#1E3A5F]/20 text-blue-700',
   emerald: 'bg-emerald-100 text-emerald-700',
   purple: 'bg-purple-100 text-purple-700',
 }
@@ -187,7 +187,7 @@ export default function BestCruiseCreditCardsPage() {
         </section>
 
         {/* Strategy */}
-        <section className="bg-blue-50 rounded-xl p-8 mb-14 border border-blue-100">
+        <section className="bg-[#1E3A5F]/10 rounded-xl p-8 mb-14 border border-blue-100">
           <h2 className="font-fraunces text-2xl font-bold text-slate-900 mb-4">
             The Smart Strategy: Stack Multiple Cards
           </h2>
@@ -219,8 +219,6 @@ export default function BestCruiseCreditCardsPage() {
             <a
               key={card.name}
               href={card.referralUrl}
-              target="_blank"
-              rel="noopener noreferrer sponsored"
               className="block text-center p-5 border-2 border-blue-600 rounded-xl hover:bg-blue-600 hover:text-white transition group"
             >
               <p className="font-bold text-slate-900 group-hover:text-white text-sm mb-1">
@@ -359,7 +357,7 @@ export default function BestCruiseCreditCardsPage() {
 
               {/* Cruise tip */}
               <div className="px-6 pb-6">
-                <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                <div className="p-4 bg-[#1E3A5F]/10 border border-blue-200 rounded-lg">
                   <div className="text-xs font-semibold text-blue-700 uppercase tracking-wide mb-1">⚓ Cruise Strategy</div>
                   <p className="text-sm text-blue-900">{card.cruiseTip}</p>
                 </div>
@@ -443,7 +441,7 @@ export default function BestCruiseCreditCardsPage() {
         </section>
 
         {/* Internal links */}
-        <section className="mt-12 bg-blue-50 border border-blue-200 rounded-xl p-6">
+        <section className="mt-12 bg-[#1E3A5F]/10 border border-blue-200 rounded-xl p-6">
           <h2 className="font-display text-lg font-bold text-blue-900 mb-3">More Travel Hacks</h2>
           <div className="grid sm:grid-cols-2 gap-3">
             {[

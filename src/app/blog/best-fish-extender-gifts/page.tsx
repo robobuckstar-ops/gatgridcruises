@@ -153,7 +153,7 @@ export default function BestFishExtenderGifts() {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#0A1628] via-[#0D2145] to-[#1a3a6e] text-white py-16 md:py-24">
+      <section className="bg-gradient-to-br from-[#0a1628] to-[#1E3A5F] text-white py-16 md:py-24">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <Link
             href="/blog"
@@ -185,7 +185,7 @@ export default function BestFishExtenderGifts() {
       <article className="py-12 md:py-16">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           {/* What is FE? */}
-          <div className="bg-blue-50 border border-blue-200 rounded-xl p-6 mb-10">
+          <div className="bg-[#1E3A5F]/10 border border-blue-200 rounded-xl p-6 mb-10">
             <div className="flex items-start gap-3">
               <Gift className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
               <div>

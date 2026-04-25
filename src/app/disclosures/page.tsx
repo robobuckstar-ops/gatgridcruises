@@ -9,7 +9,7 @@ export default function DisclosuresPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-indigo-50 text-slate-900 py-16 md:py-20 border-b border-slate-200">
+      <section className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] text-white py-16 md:py-20 border-b border-slate-200">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="font-fraunces text-4xl md:text-5xl font-bold mb-4">Disclosures</h1>
           <p className="font-inter text-lg text-slate-600">
@@ -129,7 +129,7 @@ export default function DisclosuresPage() {
         </section>
 
         {/* Changes to Disclosures */}
-        <section className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded">
+        <section className="bg-[#1E3A5F]/10 border-l-4 border-[#D4AF37] p-6 rounded">
           <h2 className="font-fraunces text-2xl font-bold text-slate-900 mb-3">Changes to This Page</h2>
           <p className="font-inter text-gray-700">
             We may update these disclosures periodically as our business relationships and practices evolve. The most current version is always available on this page. Please check back regularly.

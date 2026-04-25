@@ -150,7 +150,7 @@ export default function SoloCruisingPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-purple-50 via-white to-blue-50 py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-gradient-to-b from-[#0a1628] via-[#1E3A5F] to-[#0a1628] py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="font-fraunces text-4xl sm:text-5xl font-bold text-slate-900 mb-4">
             Solo Cruising: Your Guide to Sailing Alone (and Loving It)
@@ -174,11 +174,11 @@ export default function SoloCruisingPage() {
               return (
                 <div
                   key={idx}
-                  className="bg-white rounded-lg border border-slate-200 p-8 hover:border-blue-400 hover:shadow-lg transition-all duration-200"
+                  className="bg-white rounded-lg border border-slate-200 p-8 hover:border-[#D4AF37] hover:shadow-lg transition-all duration-200"
                 >
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0">
-                      <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-blue-100">
+                      <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-[#1E3A5F]/20">
                         <Icon className="w-6 h-6 text-blue-600" />
                       </div>
                     </div>
@@ -199,7 +199,7 @@ export default function SoloCruisingPage() {
       </section>
 
       {/* Solo-Friendly Sailings Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-blue-50">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#1E3A5F]/10">
         <div className="max-w-5xl mx-auto">
           <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-3 text-center">
             Perfect Solo-Friendly Sailings
@@ -217,9 +217,9 @@ export default function SoloCruisingPage() {
                   href={`/sailing/${sailing.id}`}
                   className="group"
                 >
-                  <div className="h-full bg-white rounded-lg border border-slate-200 hover:border-blue-400 hover:shadow-lg transition-all duration-200 overflow-hidden flex flex-col">
+                  <div className="h-full bg-white rounded-lg border border-slate-200 hover:border-[#D4AF37] hover:shadow-lg transition-all duration-200 overflow-hidden flex flex-col">
                     {/* Card Header */}
-                    <div className="p-5 border-b border-slate-200 bg-gradient-to-r from-blue-50 to-indigo-50">
+                    <div className="p-5 border-b border-slate-200 bg-gradient-to-b from-[#0a1628] to-[#1E3A5F]">
                       <h3 className="font-fraunces text-lg font-bold text-slate-900 mb-2">
                         {sailing.itinerary_name}
                       </h3>
@@ -260,7 +260,7 @@ export default function SoloCruisingPage() {
                     </div>
 
                     {/* Footer */}
-                    <div className="p-5 bg-slate-50 border-t border-slate-200 group-hover:bg-blue-50 transition-colors">
+                    <div className="p-5 bg-slate-50 border-t border-slate-200 group-hover:bg-[#1E3A5F]/10 transition-colors">
                       <button className="w-full inline-flex items-center justify-center gap-2 text-blue-600 font-inter font-semibold hover:text-blue-700 transition-colors">
                         View Details
                         <ArrowRight className="w-4 h-4" />
@@ -296,7 +296,7 @@ export default function SoloCruisingPage() {
       </section>
 
       {/* Solo Cost Calculator Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-indigo-50">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#1E3A5F]/10">
         <div className="max-w-3xl mx-auto">
           <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-3 text-center">
             Solo Cost Calculator
@@ -332,7 +332,7 @@ export default function SoloCruisingPage() {
                   </div>
                 </div>
 
-                <div className="bg-blue-50 border border-blue-200 rounded p-4">
+                <div className="bg-[#1E3A5F]/10 border border-blue-200 rounded p-4">
                   <p className="text-sm text-slate-700 font-inter">
                     <strong>Compare:</strong> Resort stay (luxury) = {formatPrice(200)}/night | Hotel + flights = ~{formatPrice(250)}/day | All-inclusive = ~{formatPrice(300)}/day
                   </p>
@@ -377,7 +377,7 @@ export default function SoloCruisingPage() {
 
       {/* Community CTA Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg p-12 text-center text-white">
+        <div className="max-w-3xl mx-auto bg-gradient-to-r from-[#0a1628] to-[#1E3A5F] rounded-lg p-12 text-center text-white">
           <Users className="w-16 h-16 mx-auto mb-6 opacity-80" />
           <h2 className="font-fraunces text-3xl font-bold mb-4">
             Join the Sail Together Community
@@ -385,7 +385,7 @@ export default function SoloCruisingPage() {
           <p className="text-lg opacity-95 mb-8 font-inter">
             Find cruise buddies, share experiences, and never sail alone. Connect with other solo cruisers who understand the freedom and joy of solo travel.
           </p>
-          <button className="px-8 py-3 bg-white text-blue-600 font-inter font-semibold rounded-lg hover:bg-blue-50 transition-colors">
+          <button className="px-8 py-3 bg-white text-blue-600 font-inter font-semibold rounded-lg hover:bg-[#1E3A5F]/10 transition-colors">
             Find Your Cruise Squad
           </button>
         </div>

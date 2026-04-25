@@ -12,7 +12,7 @@ export default function DisneyCruiseVsRoyalCaribbeanGuide() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-50 via-white to-indigo-50">
+      <section className="relative py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#0a1628] to-[#1E3A5F]">
         <div className="max-w-4xl mx-auto">
           <h1 className="font-fraunces text-4xl sm:text-5xl font-bold text-white mb-4">
             Disney Cruise vs. Royal Caribbean: Honest Comparison
@@ -42,17 +42,15 @@ export default function DisneyCruiseVsRoyalCaribbeanGuide() {
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
         <a
-              href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
+              href="/concierge"
               className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow"
             >
-              <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4 flex items-center justify-between gap-4">
+              <div className="bg-gradient-to-r from-[#0a1628] to-[#1E3A5F] px-6 py-4 flex items-center justify-between gap-4">
                 <div>
-                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Earn 150K+ Membership Rewards Points</p>
-                  <p className="text-blue-200 text-sm mt-0.5">Enough for your next Disney cruise upgrade — Amex Business Platinum</p>
+                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Ready to Plan Your Disney Cruise?</p>
+                  <p className="text-slate-300 text-sm mt-0.5">Our Boardwalk Travel Agency specialists offer free planning and quotes</p>
                 </div>
-                <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
+                <span className="flex-shrink-0 bg-[#D4AF37] text-[#0a1628] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Get a Free Quote →</span>
               </div>
             </a>
 
@@ -71,7 +69,7 @@ export default function DisneyCruiseVsRoyalCaribbeanGuide() {
         <section className="mb-12">
           <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-4">Pricing & Value</h2>
 
-          <div className="mb-8 p-6 bg-amber-50 border-l-4 border-blue-600">
+          <div className="mb-8 p-6 bg-amber-50 border-l-4 border-[#D4AF37]">
             <h3 className="font-fraunces text-xl font-bold text-slate-900 mb-3">Winner: Royal Caribbean (by cost)</h3>
             <p className="font-inter text-slate-600">
               <strong>Royal Caribbean is 2-3x cheaper than Disney.</strong> For a 7-night Eastern Caribbean cruise, expect to pay $600-1,200 per person for Royal Caribbean vs. $1,800-4,000+ per person for Disney Cruise Line. This dramatic price difference is the biggest deciding factor for budget-conscious cruisers.
@@ -104,7 +102,7 @@ export default function DisneyCruiseVsRoyalCaribbeanGuide() {
             </ul>
           </div>
 
-          <div className="p-4 bg-blue-50 rounded">
+          <div className="p-4 bg-[#1E3A5F]/10 rounded">
             <p className="font-inter text-slate-600">
               <strong>Value Verdict:</strong> If price is your primary concern, Royal Caribbean wins decisively. If you value Disney theming and character experiences as worth the premium, Disney offers excellent value for what you receive.
             </p>
@@ -115,7 +113,7 @@ export default function DisneyCruiseVsRoyalCaribbeanGuide() {
         <section className="mb-12">
           <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-4">Ship Size & Capacity</h2>
 
-          <div className="mb-8 p-6 bg-amber-50 border-l-4 border-blue-600">
+          <div className="mb-8 p-6 bg-amber-50 border-l-4 border-[#D4AF37]">
             <h3 className="font-fraunces text-xl font-bold text-slate-900 mb-3">Winner: Royal Caribbean (bigger ships)</h3>
             <p className="font-inter text-slate-600">
               Royal Caribbean operates some of the world"s largest cruise ships (Icon, Wonder of the Seas, Symphony of the Seas), with 5,500-6,700+ passengers. Disney's largest ships (Dream, Wish) carry 4,000-4,500 passengers. Royal Caribbean's bigger ships mean more amenities and pools but also more crowded common areas.
@@ -136,17 +134,15 @@ export default function DisneyCruiseVsRoyalCaribbeanGuide() {
         </section>
 
         <a
-              href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
+              href="/concierge"
               className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow"
             >
-              <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4 flex items-center justify-between gap-4">
+              <div className="bg-gradient-to-r from-[#0a1628] to-[#1E3A5F] px-6 py-4 flex items-center justify-between gap-4">
                 <div>
-                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Earn 150K+ Membership Rewards Points</p>
-                  <p className="text-blue-200 text-sm mt-0.5">Enough for your next Disney cruise upgrade — Amex Business Platinum</p>
+                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Ready to Plan Your Disney Cruise?</p>
+                  <p className="text-slate-300 text-sm mt-0.5">Our Boardwalk Travel Agency specialists offer free planning and quotes</p>
                 </div>
-                <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
+                <span className="flex-shrink-0 bg-[#D4AF37] text-[#0a1628] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Get a Free Quote →</span>
               </div>
             </a>
 
@@ -154,7 +150,7 @@ export default function DisneyCruiseVsRoyalCaribbeanGuide() {
         <section className="mb-12">
           <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-4">Kids' Clubs & Activities</h2>
 
-          <div className="mb-8 p-6 bg-amber-50 border-l-4 border-blue-600">
+          <div className="mb-8 p-6 bg-amber-50 border-l-4 border-[#D4AF37]">
             <h3 className="font-fraunces text-xl font-bold text-slate-900 mb-3">Winner: Disney (for theme fans)</h3>
             <p className="font-inter text-slate-600">
               <strong>Disney's kids' clubs are themed and character-centric.</strong> The Oceaneers Club features Marvel, Frozen, and other Disney IP. Activities are wrapped in Disney storytelling, which appeals deeply to Disney-obsessed kids. Royal Caribbean's Adventure Ocean is excellent but generic—more traditional kids' camp activities without the Disney magic.
@@ -162,7 +158,7 @@ export default function DisneyCruiseVsRoyalCaribbeanGuide() {
           </div>
 
           <div className="space-y-4 font-inter text-slate-600">
-            <div className="p-4 bg-blue-50 rounded">
+            <div className="p-4 bg-[#1E3A5F]/10 rounded">
               <p className="font-bold mb-2">Disney Kids' Clubs:</p>
               <ul className="list-disc list-inside mt-2 space-y-1">
                 <li>Theme-based programming (Marvel, Frozen, Encanto, etc.)</li>
@@ -172,7 +168,7 @@ export default function DisneyCruiseVsRoyalCaribbeanGuide() {
               </ul>
             </div>
 
-            <div className="p-4 bg-blue-50 rounded">
+            <div className="p-4 bg-[#1E3A5F]/10 rounded">
               <p className="font-bold mb-2">Royal Caribbean Adventure Ocean:</p>
               <ul className="list-disc list-inside mt-2 space-y-1">
                 <li>Diversified programming (sports, crafts, competitions, learning)</li>
@@ -192,7 +188,7 @@ export default function DisneyCruiseVsRoyalCaribbeanGuide() {
         <section className="mb-12">
           <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-4">Dining & Food</h2>
 
-          <div className="mb-8 p-6 bg-amber-50 border-l-4 border-blue-600">
+          <div className="mb-8 p-6 bg-amber-50 border-l-4 border-[#D4AF37]">
             <h3 className="font-fraunces text-xl font-bold text-slate-900 mb-3">Winner: Tie (Different philosophies)</h3>
             <p className="font-inter text-slate-600">
               Disney offers rotational dining (you move to a new restaurant each night with your assigned servers) while Royal Caribbean uses My Time Dining (you eat whenever/wherever you want). Both have advantages; your preference determines the winner.
@@ -200,7 +196,7 @@ export default function DisneyCruiseVsRoyalCaribbeanGuide() {
           </div>
 
           <div className="space-y-4 font-inter text-slate-600">
-            <div className="p-4 bg-blue-50 rounded">
+            <div className="p-4 bg-[#1E3A5F]/10 rounded">
               <p className="font-bold mb-2">Disney Rotational Dining:</p>
               <ul className="list-disc list-inside mt-2 space-y-1">
                 <li>Three different dining rooms; servers accompany you nightly</li>
@@ -211,7 +207,7 @@ export default function DisneyCruiseVsRoyalCaribbeanGuide() {
               </ul>
             </div>
 
-            <div className="p-4 bg-blue-50 rounded">
+            <div className="p-4 bg-[#1E3A5F]/10 rounded">
               <p className="font-bold mb-2">Royal Caribbean My Time Dining:</p>
               <ul className="list-disc list-inside mt-2 space-y-1">
                 <li>Eat whenever you want, wherever you want (24/7)</li>
@@ -232,7 +228,7 @@ export default function DisneyCruiseVsRoyalCaribbeanGuide() {
         <section className="mb-12">
           <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-4">Entertainment & Shows</h2>
 
-          <div className="mb-8 p-6 bg-amber-50 border-l-4 border-blue-600">
+          <div className="mb-8 p-6 bg-amber-50 border-l-4 border-[#D4AF37]">
             <h3 className="font-fraunces text-xl font-bold text-slate-900 mb-3">Winner: Disney (quality) vs. Royal Caribbean (variety)</h3>
             <p className="font-inter text-slate-600">
               <strong>Disney:</strong> Broadway-quality original shows featuring Disney, Pixar, Marvel, and Star Wars content. Production values are exceptionally high. <strong>Royal Caribbean:</strong> Diverse shows including ice skating, acrobatics, magic, comedy, and live bands. More variety, though perhaps not as polished as Disney's offerings.
@@ -272,7 +268,7 @@ export default function DisneyCruiseVsRoyalCaribbeanGuide() {
         <section className="mb-12">
           <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-4">Private Islands</h2>
 
-          <div className="mb-8 p-6 bg-amber-50 border-l-4 border-blue-600">
+          <div className="mb-8 p-6 bg-amber-50 border-l-4 border-[#D4AF37]">
             <h3 className="font-fraunces text-xl font-bold text-slate-900 mb-3">Winner: Tie (Both excellent, different vibes)</h3>
             <p className="font-inter text-slate-600">
               <strong>Disney:</strong> Castaway Cay is an exclusive private island with excellent beach areas, free lunch, and premium activities (parasailing, stingray encounter, waterslide, jet skis). <strong>Royal Caribbean:</strong> Perfect Day at CocoCay (exclusive to RCCL) features similar activities plus the Caribbean's only overwater bungalows and the waterpark FlowRider. Both islands are phenomenal.
@@ -312,7 +308,7 @@ export default function DisneyCruiseVsRoyalCaribbeanGuide() {
         <section className="mb-12">
           <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-4">Cabin Quality & Accommodations</h2>
 
-          <div className="mb-8 p-6 bg-amber-50 border-l-4 border-blue-600">
+          <div className="mb-8 p-6 bg-amber-50 border-l-4 border-[#D4AF37]">
             <h3 className="font-fraunces text-xl font-bold text-slate-900 mb-3">Winner: Disney (slightly larger cabins)</h3>
             <p className="font-inter text-slate-600">
               <strong>Disney cabins are 10-15% larger on average than comparable Royal Caribbean cabins.</strong> Disney cabins feature split bathrooms (toilet area separated from sink/shower), which is practical for families. Royal Caribbean cabins are smaller but efficiently designed. Both cruise lines offer quality furnishings and cleanliness.
@@ -331,17 +327,15 @@ export default function DisneyCruiseVsRoyalCaribbeanGuide() {
         </section>
 
         <a
-              href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
+              href="/concierge"
               className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow"
             >
-              <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4 flex items-center justify-between gap-4">
+              <div className="bg-gradient-to-r from-[#0a1628] to-[#1E3A5F] px-6 py-4 flex items-center justify-between gap-4">
                 <div>
-                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Earn 150K+ Membership Rewards Points</p>
-                  <p className="text-blue-200 text-sm mt-0.5">Enough for your next Disney cruise upgrade — Amex Business Platinum</p>
+                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Ready to Plan Your Disney Cruise?</p>
+                  <p className="text-slate-300 text-sm mt-0.5">Our Boardwalk Travel Agency specialists offer free planning and quotes</p>
                 </div>
-                <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
+                <span className="flex-shrink-0 bg-[#D4AF37] text-[#0a1628] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Get a Free Quote →</span>
               </div>
             </a>
 
@@ -349,7 +343,7 @@ export default function DisneyCruiseVsRoyalCaribbeanGuide() {
         <section className="mb-12">
           <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-4">Water Features & Thrill Factor</h2>
 
-          <div className="mb-8 p-6 bg-amber-50 border-l-4 border-blue-600">
+          <div className="mb-8 p-6 bg-amber-50 border-l-4 border-[#D4AF37]">
             <h3 className="font-fraunces text-xl font-bold text-slate-900 mb-3">Winner: Royal Caribbean (hands down)</h3>
             <p className="font-inter text-slate-600">
               Royal Caribbean"s megaships feature water slides, FlowRiders (surfing simulators), splash pads, and aquatic attractions that Disney's ships simply don't match. If water features and thrill activities are important, Royal Caribbean delivers far more.
@@ -435,7 +429,7 @@ export default function DisneyCruiseVsRoyalCaribbeanGuide() {
         <section className="mb-12">
           <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-4">Itinerary Variety & Destinations</h2>
 
-          <div className="mb-8 p-6 bg-amber-50 border-l-4 border-blue-600">
+          <div className="mb-8 p-6 bg-amber-50 border-l-4 border-[#D4AF37]">
             <h3 className="font-fraunces text-xl font-bold text-slate-900 mb-3">Winner: Royal Caribbean (far more variety)</h3>
             <p className="font-inter text-slate-600">
               <strong>Royal Caribbean sails to 240+ destinations worldwide:</strong> Mediterranean, Asia, Australia, Northern Europe, Alaska, Caribbean, and more. <strong>Disney sails primarily to Caribbean, Alaska, and occasionally transatlantic.</strong> RCCL offers far more geographic variety.
@@ -456,7 +450,7 @@ export default function DisneyCruiseVsRoyalCaribbeanGuide() {
           <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-4">The Verdict: Which Should You Choose?</h2>
 
           <div className="space-y-6">
-            <div className="p-6 bg-blue-50 rounded-lg border-l-4 border-blue-600">
+            <div className="p-6 bg-[#1E3A5F]/10 rounded-lg border-l-4 border-[#D4AF37]">
               <h3 className="font-fraunces text-xl font-bold text-slate-900 mb-3">Choose Disney if:</h3>
               <ul className="space-y-2 font-inter text-slate-600">
                 <li className="flex gap-2"><span className="text-blue-600 font-bold">→</span> Your kids are obsessed with Disney, Pixar, or Marvel</li>
@@ -484,7 +478,7 @@ export default function DisneyCruiseVsRoyalCaribbeanGuide() {
         </section>
 
         {/* CTA Section */}
-        <section className="my-12 p-8 bg-gradient-to-r from-blue-50 to-blue-900 text-white rounded-lg">
+        <section className="my-12 p-8 bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] text-white rounded-lg">
           <h2 className="font-fraunces text-3xl font-bold mb-4">Ready to Start Planning?</h2>
           <p className="font-inter text-lg mb-6">
             Explore deals and pricing for both cruise lines, use our cost calculator, and compare ships to find your perfect match.

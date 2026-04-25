@@ -169,7 +169,7 @@ export function PriceTrackerClient({ sailings, ships, regions }: Props) {
                   <div className="flex items-start justify-between gap-2 mb-2">
                     <div className="min-w-0">
                       <p className="text-xs text-slate-400 font-medium mb-0.5 truncate">{s.ship_name}</p>
-                      <h3 className="text-sm font-semibold text-slate-900 group-hover:text-blue-600 transition-colors leading-snug line-clamp-2">
+                      <h3 className="text-sm font-semibold text-slate-900 group-hover:text-[#D4AF37] transition-colors leading-snug line-clamp-2">
                         {s.itinerary_name}
                       </h3>
                     </div>

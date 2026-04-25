@@ -246,7 +246,7 @@ export default function PortsCRUD() {
                       </td>
                     </tr>
                     {editingId === p.id && editForm && (
-                      <tr className="bg-blue-50">
+                      <tr className="bg-[#1E3A5F]/10">
                         <td colSpan={6} className="px-5 py-4">
                           <div className="space-y-3">
                             <h4 className="font-semibold text-navy mb-3">Edit Port</h4>

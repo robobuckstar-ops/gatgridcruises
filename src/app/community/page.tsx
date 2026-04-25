@@ -9,12 +9,12 @@ export const metadata: Metadata = {
 
 export default function CommunityPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-indigo-50">
+    <main className="min-h-screen bg-white">
       {/* Hero */}
       <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center">
           <div className="flex justify-center mb-6">
-            <div className="inline-flex items-center justify-center h-16 w-16 rounded-full bg-blue-100">
+            <div className="inline-flex items-center justify-center h-16 w-16 rounded-full bg-[#1E3A5F]/20">
               <Users className="h-8 w-8 text-blue-600" />
             </div>
           </div>
@@ -39,7 +39,7 @@ export default function CommunityPage() {
               className="group p-8 rounded-2xl border border-slate-200 bg-white hover:border-blue-300 hover:shadow-lg transition-all duration-200"
             >
               <div className="flex items-start justify-between mb-4">
-                <div className="inline-flex items-center justify-center h-12 w-12 rounded-lg bg-blue-100 group-hover:bg-blue-200 transition-colors">
+                <div className="inline-flex items-center justify-center h-12 w-12 rounded-lg bg-[#1E3A5F]/20 group-hover:bg-blue-200 transition-colors">
                   <Users className="h-6 w-6 text-blue-600" />
                 </div>
                 <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
@@ -47,7 +47,7 @@ export default function CommunityPage() {
                 </span>
               </div>
 
-              <h2 className="font-display text-2xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
+              <h2 className="font-display text-2xl font-bold text-slate-900 mb-2 group-hover:text-[#D4AF37] transition-colors">
                 Sail Together
               </h2>
 
@@ -113,7 +113,7 @@ export default function CommunityPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-50 to-cyan-50">
+      <section className="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#0a1628] to-[#1E3A5F]">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="font-display text-3xl font-bold text-slate-900 mb-4">
             Join the Community
@@ -132,7 +132,7 @@ export default function CommunityPage() {
             </Link>
             <Link
               href="/auth/login"
-              className="inline-flex items-center justify-center px-8 py-3 rounded-lg font-semibold text-blue-600 border-2 border-blue-600 hover:bg-blue-50 transition-colors"
+              className="inline-flex items-center justify-center px-8 py-3 rounded-lg font-semibold text-blue-600 border-2 border-blue-600 hover:bg-[#1E3A5F]/10 transition-colors"
             >
               Sign In
             </Link>

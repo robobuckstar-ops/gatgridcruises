@@ -119,7 +119,7 @@ export default function AdManagement() {
       case 'direct_sold':
         return 'bg-emerald-100 text-emerald-800'
       case 'adsense':
-        return 'bg-blue-100 text-blue-800'
+        return 'bg-[#1E3A5F]/20 text-blue-800'
       default:
         return 'bg-slate-100 text-slate-800'
     }
@@ -155,7 +155,7 @@ export default function AdManagement() {
           </div>
           <div className="bg-white rounded-xl border border-slate-200 p-5">
             <div className="flex items-center gap-3 mb-2">
-              <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-[#1E3A5F]/20 rounded-lg flex items-center justify-center">
                 <TrendingUp className="h-5 w-5 text-blue-600" />
               </div>
               <span className="text-2xl font-bold text-navy">{activePlacements}</span>
