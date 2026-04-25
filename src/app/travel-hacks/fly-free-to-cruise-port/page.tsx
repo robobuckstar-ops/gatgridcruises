@@ -26,11 +26,11 @@ export default function FlyFreeToCruisePort() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-indigo-50 py-12">
+      <section className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] py-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
             href="/travel-hacks"
-            className="inline-flex items-center gap-1 text-blue-600 hover:text-blue-700 text-sm font-medium mb-6"
+            className="inline-flex items-center gap-1 text-blue-300 hover:text-[#D4AF37] text-sm font-medium mb-6"
           >
             <ArrowLeft className="h-4 w-4" />
             Back to Travel Hacks
@@ -38,22 +38,22 @@ export default function FlyFreeToCruisePort() {
 
           <div className="flex items-center gap-2 mb-4">
             <Tag className="h-5 w-5 text-blue-600" />
-            <span className="text-sm font-semibold text-blue-700 uppercase tracking-wider">
+            <span className="text-sm font-semibold text-[#D4AF37] uppercase tracking-wider">
               Travel Hacks
             </span>
           </div>
 
-          <h1 className="text-4xl md:text-5xl font-fraunces font-bold text-slate-900 mb-4">
+          <h1 className="text-4xl md:text-5xl font-fraunces font-bold text-white mb-4">
             How to Fly Free to Your Cruise Port
           </h1>
 
-          <p className="text-lg text-slate-600 mb-6">
+          <p className="text-lg text-blue-100 mb-6">
             Turn credit card signup bonuses into enough points for free flights. We show you
             exactly which cards work best and how to maximize their value.
           </p>
 
           <div className="flex flex-wrap gap-4 text-sm">
-            <div className="flex items-center gap-2 text-slate-600">
+            <div className="flex items-center gap-2 text-blue-100">
               <Clock className="h-4 w-4" />
               <span>5 min read</span>
             </div>

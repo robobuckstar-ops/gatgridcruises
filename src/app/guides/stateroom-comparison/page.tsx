@@ -248,7 +248,7 @@ export default function StateroomComparisonPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="bg-gradient-to-b from-blue-950 to-blue-900 text-white py-16 px-4">
+      <section className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] text-white py-16 px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-sm text-blue-300 mb-3 font-medium">Guides · Staterooms</div>
           <h1 className="font-display text-4xl sm:text-5xl font-bold mb-4">

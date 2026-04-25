@@ -13,43 +13,32 @@ export default function BestDisneyCruiseStateroomsGuide() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-50 to-indigo-50 py-16">
+      <section className="relative bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-6">
-            <Link href="/" className="text-blue-600 hover:underline text-sm">
+            <Link href="/" className="text-blue-300 hover:text-[#D4AF37] text-sm">
               Home
             </Link>
             <span className="text-white mx-2">/</span>
-            <Link href="/guides" className="text-blue-600 hover:underline text-sm">
+            <Link href="/guides" className="text-blue-300 hover:text-[#D4AF37] text-sm">
               Guides
             </Link>
             <span className="text-white mx-2">/</span>
             <span className="text-gray-300 text-sm">Best Disney Cruise Staterooms</span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-fraunces font-bold mb-4">
+          <h1 className="text-4xl md:text-5xl font-fraunces font-bold mb-4 text-white">
             Best Disney Cruise Staterooms: Category-by-Category Guide
           </h1>
-          <p className="text-lg text-slate-600">
+          <p className="text-lg text-blue-100">
             Understand every cabin type, from budget inside cabins to luxury concierge suites. Find the perfect stateroom for your budget and vacation style.
           </p>
         </div>
       </section>
-
-      {/* Ad Slot 1 */}
-      <a
-              href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
-              className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow"
-            >
-              <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4 flex items-center justify-between gap-4">
-                <div>
-                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Earn 150K+ Membership Rewards Points</p>
-                  <p className="text-blue-200 text-sm mt-0.5">Enough for your next Disney cruise upgrade — Amex Business Platinum</p>
-                </div>
-                <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
-              </div>
-            </a>
+      <div className="my-6 text-center">
+        <Link href="/concierge" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-[#D4AF37] text-[#1E3A5F] font-semibold text-sm hover:bg-[#1E3A5F] hover:text-[#D4AF37] transition-colors duration-200">
+          Start Planning Your Cruise →
+        </Link>
+      </div>
 
       {/* Main Content */}
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -64,22 +53,11 @@ export default function BestDisneyCruiseStateroomsGuide() {
             Pricing varies significantly based on sailing date, ship, itinerary, and demand. Inside cabins start around $250-400 per night, while concierge suites can exceed $800-2,000+ per night. Let's break down each category in detail.
           </p>
         </section>
-
-        {/* Ad Slot 2 */}
-        <a
-              href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
-              className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow"
-            >
-              <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4 flex items-center justify-between gap-4">
-                <div>
-                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Earn 150K+ Membership Rewards Points</p>
-                  <p className="text-blue-200 text-sm mt-0.5">Enough for your next Disney cruise upgrade — Amex Business Platinum</p>
-                </div>
-                <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
-              </div>
-            </a>
+      <div className="my-6 text-center">
+        <Link href="/concierge" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-[#D4AF37] text-[#1E3A5F] font-semibold text-sm hover:bg-[#1E3A5F] hover:text-[#D4AF37] transition-colors duration-200">
+          Start Planning Your Cruise →
+        </Link>
+      </div>
   
         <section className="mb-12">
           <h2 className="text-3xl font-fraunces font-bold text-slate-900 mb-6">
@@ -165,22 +143,11 @@ export default function BestDisneyCruiseStateroomsGuide() {
             </ul>
           </div>
         </section>
-
-        {/* Ad Slot 3 */}
-        <a
-              href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
-              className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow"
-            >
-              <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4 flex items-center justify-between gap-4">
-                <div>
-                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Earn 150K+ Membership Rewards Points</p>
-                  <p className="text-blue-200 text-sm mt-0.5">Enough for your next Disney cruise upgrade — Amex Business Platinum</p>
-                </div>
-                <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
-              </div>
-            </a>
+      <div className="my-6 text-center">
+        <Link href="/concierge" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-[#D4AF37] text-[#1E3A5F] font-semibold text-sm hover:bg-[#1E3A5F] hover:text-[#D4AF37] transition-colors duration-200">
+          Start Planning Your Cruise →
+        </Link>
+      </div>
   
         <section className="mb-12">
           <h2 className="text-3xl font-fraunces font-bold text-slate-900 mb-6">
@@ -342,22 +309,11 @@ export default function BestDisneyCruiseStateroomsGuide() {
             </ul>
           </div>
         </section>
-
-        {/* Ad Slot 4 */}
-        <a
-              href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
-              className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow"
-            >
-              <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4 flex items-center justify-between gap-4">
-                <div>
-                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Earn 150K+ Membership Rewards Points</p>
-                  <p className="text-blue-200 text-sm mt-0.5">Enough for your next Disney cruise upgrade — Amex Business Platinum</p>
-                </div>
-                <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
-              </div>
-            </a>
+      <div className="my-6 text-center">
+        <Link href="/concierge" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-[#D4AF37] text-[#1E3A5F] font-semibold text-sm hover:bg-[#1E3A5F] hover:text-[#D4AF37] transition-colors duration-200">
+          Start Planning Your Cruise →
+        </Link>
+      </div>
   
         <section className="mb-12">
           <h2 className="text-3xl font-fraunces font-bold text-slate-900 mb-6">
@@ -478,12 +434,12 @@ export default function BestDisneyCruiseStateroomsGuide() {
         </section>
 
         {/* CTA Section */}
-        <section className="bg-gradient-to-r from-blue-50 to-indigo-50 p-8 rounded-lg mb-12">
-          <h2 className="text-2xl font-fraunces font-bold mb-4">Ready to Find Your Perfect Cruise?</h2>
+        <section className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] p-8 rounded-lg mb-12 text-white">
+          <h2 className="text-2xl font-fraunces font-bold mb-4 text-white">Ready to Find Your Perfect Cruise?</h2>
           <p className="font-inter mb-6">
             Use our stateroom finder to compare cabin categories, view pricing, and discover the best options for your vacation style and budget.
           </p>
-          <Link href="/tools/cost-calculator" className="inline-flex items-center gap-2 bg-blue-600 text-slate-900 font-bold py-3 px-6 rounded-lg hover:bg-yellow-300 transition">
+          <Link href="/tools/cost-calculator" className="inline-flex items-center gap-2 bg-[#D4AF37] text-[#1E3A5F] font-bold py-3 px-6 rounded-lg hover:bg-yellow-300 transition">
             Browse Deals <ArrowRight size={20} />
           </Link>
         </section>

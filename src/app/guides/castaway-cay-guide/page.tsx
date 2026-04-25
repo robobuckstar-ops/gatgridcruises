@@ -12,7 +12,7 @@ export default function CastawayCayGuide() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-50 via-white to-indigo-50">
+      <section className="relative py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#0a1628] to-[#1E3A5F]">
         <div className="max-w-4xl mx-auto">
           <h1 className="font-fraunces text-4xl sm:text-5xl font-bold text-white mb-4">
             Castaway Cay: The Ultimate Guide to Disney's Private Island
@@ -40,21 +40,11 @@ export default function CastawayCayGuide() {
 
       {/* Main Content */}
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-
-        <a
-              href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
-              className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow"
-            >
-              <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4 flex items-center justify-between gap-4">
-                <div>
-                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Earn 150K+ Membership Rewards Points</p>
-                  <p className="text-blue-200 text-sm mt-0.5">Enough for your next Disney cruise upgrade — Amex Business Platinum</p>
-                </div>
-                <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
-              </div>
-            </a>
+      <div className="my-6 text-center">
+        <Link href="/concierge" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-[#D4AF37] text-[#1E3A5F] font-semibold text-sm hover:bg-[#1E3A5F] hover:text-[#D4AF37] transition-colors duration-200">
+          Start Planning Your Cruise →
+        </Link>
+      </div>
 
         {/* Overview Section */}
         <section className="mb-12">
@@ -92,21 +82,11 @@ export default function CastawayCayGuide() {
             </p>
           </div>
         </section>
-
-        <a
-              href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
-              className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow"
-            >
-              <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4 flex items-center justify-between gap-4">
-                <div>
-                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Earn 150K+ Membership Rewards Points</p>
-                  <p className="text-blue-200 text-sm mt-0.5">Enough for your next Disney cruise upgrade — Amex Business Platinum</p>
-                </div>
-                <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
-              </div>
-            </a>
+      <div className="my-6 text-center">
+        <Link href="/concierge" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-[#D4AF37] text-[#1E3A5F] font-semibold text-sm hover:bg-[#1E3A5F] hover:text-[#D4AF37] transition-colors duration-200">
+          Start Planning Your Cruise →
+        </Link>
+      </div>
 
         {/* Dining & Bars */}
         <section className="mb-12">
@@ -200,21 +180,11 @@ export default function CastawayCayGuide() {
             </p>
           </div>
         </section>
-
-        <a
-              href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
-              className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow"
-            >
-              <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4 flex items-center justify-between gap-4">
-                <div>
-                  <p className="text-[#D4AF37] font-bold text-base leading-tight">Earn 150K+ Membership Rewards Points</p>
-                  <p className="text-blue-200 text-sm mt-0.5">Enough for your next Disney cruise upgrade — Amex Business Platinum</p>
-                </div>
-                <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-4 py-2 rounded-lg whitespace-nowrap">Learn More →</span>
-              </div>
-            </a>
+      <div className="my-6 text-center">
+        <Link href="/concierge" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-[#D4AF37] text-[#1E3A5F] font-semibold text-sm hover:bg-[#1E3A5F] hover:text-[#D4AF37] transition-colors duration-200">
+          Start Planning Your Cruise →
+        </Link>
+      </div>
 
         {/* Practical Tips */}
         <section className="mb-12">

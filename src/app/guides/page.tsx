@@ -120,15 +120,15 @@ const guides = [
 export default function GuidesPage() {
   return (
     <main>
-      <section className="bg-gradient-to-br from-blue-50 via-white to-indigo-50 py-16 md:py-20">
+      <section className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex items-center justify-center gap-3 mb-6">
-            <BookOpen className="w-8 h-8 text-blue-600" />
-            <h1 className="font-fraunces text-4xl md:text-5xl font-bold text-slate-900">
+            <BookOpen className="w-8 h-8 text-[#D4AF37]" />
+            <h1 className="font-fraunces text-4xl md:text-5xl font-bold text-white">
               Disney Cruise Guides
             </h1>
           </div>
-          <p className="font-inter text-lg text-slate-600 max-w-2xl mx-auto">
+          <p className="font-inter text-lg text-blue-100 max-w-2xl mx-auto">
             In-depth, honest guides to help you plan the perfect Disney cruise.
             No fluff, no affiliate pressure — just the information you need.
           </p>
@@ -142,15 +142,15 @@ export default function GuidesPage() {
               <div key={guide.slug}>
                 <Link
                   href={`/guides/${guide.slug}`}
-                  className="group block p-6 rounded-xl border-2 border-slate-200 hover:border-blue-400 hover:shadow-lg transition-all duration-200"
+                  className="group block p-6 rounded-xl border-2 border-slate-200 hover:border-[#D4AF37] hover:shadow-lg transition-all duration-200"
                 >
                   <div className="flex items-center gap-3 mb-3">
-                    <span className="text-xs font-semibold uppercase tracking-wider text-blue-600 bg-blue-50 px-3 py-1 rounded-full">
+                    <span className="text-xs font-semibold uppercase tracking-wider text-[#1E3A5F] bg-[#D4AF37]/20 px-3 py-1 rounded-full">
                       {guide.category}
                     </span>
                     <span className="text-xs text-slate-400">{guide.readTime}</span>
                   </div>
-                  <h2 className="font-fraunces text-xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
+                  <h2 className="font-fraunces text-xl font-bold text-slate-900 mb-2 group-hover:text-[#1E3A5F] transition-colors">
                     {guide.title}
                   </h2>
                   <p className="text-slate-600 text-sm leading-relaxed mb-4">

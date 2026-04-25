@@ -24,7 +24,7 @@ export default function TravelHacksCreditCardsPage() {
   const loungeAccessCards = getBestCardsFor('lounge-access')
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-indigo-50">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-12 sm:py-16">
         <div className="max-w-3xl">
@@ -37,13 +37,13 @@ export default function TravelHacksCreditCardsPage() {
             don't have to.
           </p>
           <div className="flex flex-wrap gap-3">
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 text-emerald-700 text-sm font-medium">
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#1E3A5F]/10 text-[#1E3A5F] text-sm font-medium">
               <span>✓</span> 8 Cards Compared
             </div>
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-medium">
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#1E3A5F]/10 text-[#1E3A5F] text-sm font-medium">
               <span>✓</span> Honest Reviews
             </div>
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-purple-100 text-purple-700 text-sm font-medium">
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#D4AF37]/20 text-[#1E3A5F] text-sm font-medium">
               <span>✓</span> No BS
             </div>
           </div>

@@ -106,9 +106,9 @@ const comparisonRows = [
 
 export default function BestCruiseCreditCardsPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+    <div className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="bg-gradient-to-b from-slate-900 to-slate-800 text-white py-16 px-4">
+      <section className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] text-white py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-sm text-slate-400 mb-3 font-medium">Travel Hacks · Credit Cards</div>
           <h1 className="font-display text-4xl sm:text-5xl font-bold mb-4">
@@ -221,15 +221,15 @@ export default function BestCruiseCreditCardsPage() {
               href={card.referralUrl}
               target="_blank"
               rel="noopener noreferrer sponsored"
-              className="block text-center p-5 border-2 border-blue-600 rounded-xl hover:bg-blue-600 hover:text-white transition group"
+              className="block text-center p-5 border-2 border-[#D4AF37] rounded-xl hover:bg-[#1E3A5F] hover:text-white transition group"
             >
               <p className="font-bold text-slate-900 group-hover:text-white text-sm mb-1">
                 {card.name}
               </p>
-              <p className="text-blue-600 group-hover:text-white font-semibold text-lg">
+              <p className="text-[#1E3A5F] group-hover:text-[#D4AF37] font-semibold text-lg">
                 {card.signupBonus.split(' ').slice(0, 2).join(' ')}
               </p>
-              <p className="text-blue-700 group-hover:text-blue-100 text-xs mt-2">
+              <p className="text-[#1E3A5F] group-hover:text-blue-100 text-xs mt-2">
                 View Deal →
               </p>
             </a>
@@ -303,7 +303,7 @@ export default function BestCruiseCreditCardsPage() {
                     href={card.referralUrl}
                     target="_blank"
                     rel="noopener noreferrer nofollow"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm transition-colors whitespace-nowrap"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#1E3A5F] hover:bg-[#0a1628] text-[#D4AF37] font-semibold text-sm transition-colors whitespace-nowrap"
                   >
                     Check Current Offer →
                   </a>
@@ -323,7 +323,7 @@ export default function BestCruiseCreditCardsPage() {
                   <ul className="space-y-2">
                     {card.highlights.map((h) => (
                       <li key={h} className="flex items-start gap-2 text-sm text-slate-700">
-                        <span className="text-blue-500 mt-0.5 flex-shrink-0">✓</span>
+                        <span className="text-[#1E3A5F] mt-0.5 flex-shrink-0">✓</span>
                         {h}
                       </li>
                     ))}
@@ -359,9 +359,9 @@ export default function BestCruiseCreditCardsPage() {
 
               {/* Cruise tip */}
               <div className="px-6 pb-6">
-                <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg">
-                  <div className="text-xs font-semibold text-blue-700 uppercase tracking-wide mb-1">⚓ Cruise Strategy</div>
-                  <p className="text-sm text-blue-900">{card.cruiseTip}</p>
+                <div className="p-4 bg-[#1E3A5F]/5 border border-[#1E3A5F]/20 rounded-lg">
+                  <div className="text-xs font-semibold text-[#1E3A5F] uppercase tracking-wide mb-1">⚓ Cruise Strategy</div>
+                  <p className="text-sm text-slate-700">{card.cruiseTip}</p>
                 </div>
               </div>
 
@@ -371,7 +371,7 @@ export default function BestCruiseCreditCardsPage() {
                   href={card.referralUrl}
                   target="_blank"
                   rel="noopener noreferrer nofollow"
-                  className="block w-full text-center py-3 rounded-lg bg-slate-900 hover:bg-slate-700 text-white font-semibold transition-colors"
+                  className="block w-full text-center py-3 rounded-lg bg-[#1E3A5F] hover:bg-[#0a1628] text-[#D4AF37] font-semibold transition-colors"
                 >
                   Apply for {card.name} →
                 </a>

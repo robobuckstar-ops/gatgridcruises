@@ -82,26 +82,26 @@ export default function TravelHacksHub() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-amber-50 via-white to-blue-50 text-slate-900 py-20">
+      <section className="relative bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-6">
-            <Sparkles className="h-8 w-8 text-amber-500" aria-hidden="true" />
-            <span className="text-sm font-semibold text-amber-700 uppercase tracking-wider">
+            <Sparkles className="h-8 w-8 text-[#D4AF37]" aria-hidden="true" />
+            <span className="text-sm font-semibold text-[#D4AF37] uppercase tracking-wider">
               Travel Hacks
             </span>
           </div>
 
-          <h1 className="text-4xl md:text-5xl font-fraunces font-bold mb-6 max-w-3xl">
+          <h1 className="text-4xl md:text-5xl font-fraunces font-bold mb-6 max-w-3xl text-white">
             Travel Hacks: Make Your Disney Cruise Cheaper (or Free)
           </h1>
 
-          <p className="text-xl text-slate-600 max-w-2xl leading-relaxed mb-8">
+          <p className="text-xl text-blue-100 max-w-2xl leading-relaxed mb-8">
             Insider strategies for using credit card rewards, points, and perks to dramatically
             reduce your cruise vacation costs.
           </p>
 
           {/* Quick Stats Banner */}
-          <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl p-6 text-white max-w-2xl">
+          <div className="bg-[#0a1628] border border-[#D4AF37]/30 rounded-xl p-6 text-white max-w-2xl">
             <div className="flex items-center gap-3 mb-2">
               <TrendingUp className="h-5 w-5" aria-hidden="true" />
               <p className="text-sm font-semibold">Average Savings</p>
@@ -207,7 +207,7 @@ export default function TravelHacksHub() {
       </section>
 
       {/* Amex Business Platinum Spotlight */}
-      <section className="bg-gradient-to-br from-slate-900 to-slate-800 text-white py-16 border-y border-slate-700">
+      <section className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] text-white py-16 border-y border-[#D4AF37]/20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-start gap-8">
             <div className="flex-1">
@@ -323,7 +323,7 @@ export default function TravelHacksHub() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-16">
+      <section className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] text-white py-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-fraunces font-bold mb-4">Ready to Save on Your Cruise?</h2>
           <p className="text-blue-100 mb-8 text-lg">
@@ -332,7 +332,7 @@ export default function TravelHacksHub() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/travel-hacks/fly-free-to-cruise-port"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors duration-200"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#D4AF37] text-[#1E3A5F] font-semibold rounded-lg hover:bg-yellow-300 transition-colors duration-200"
             >
               Start Reading
               <ArrowRight className="h-5 w-5" />

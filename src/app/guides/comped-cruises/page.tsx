@@ -11,30 +11,30 @@ export default function CompedCruisesGuide() {
   return (
     <article className="min-h-screen bg-white">
       {/* Hero */}
-      <div className="bg-gradient-to-br from-emerald-50 to-teal-50 border-b border-emerald-100 py-14">
+      <div className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] border-b border-[#D4AF37]/20 py-14">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
-          <div className="flex items-center gap-2 mb-4 text-sm text-slate-500">
-            <Link href="/guides" className="hover:text-emerald-700 transition-colors">Guides</Link>
+          <div className="flex items-center gap-2 mb-4 text-sm text-blue-300">
+            <Link href="/guides" className="hover:text-[#D4AF37] transition-colors">Guides</Link>
             <span>/</span>
             <span>Comped Cruises</span>
           </div>
-          <h1 className="font-fraunces text-4xl sm:text-5xl font-bold text-slate-900 mb-4">
+          <h1 className="font-fraunces text-4xl sm:text-5xl font-bold text-white mb-4">
             How to Get a Free (or Nearly Free) Cruise
           </h1>
-          <p className="text-xl text-slate-600 leading-relaxed">
+          <p className="text-xl text-blue-100 leading-relaxed">
             A no-BS guide to the real strategies that get people on cruise ships for little to nothing — casino comps, loyalty tiers, repositioning hacks, travel agent perks, and more.
           </p>
           <div className="flex flex-wrap gap-3 mt-6">
-            <span className="inline-flex items-center gap-1.5 bg-white border border-emerald-200 text-emerald-700 text-xs font-medium px-3 py-1.5 rounded-full">
+            <span className="inline-flex items-center gap-1.5 bg-white/10 border border-[#D4AF37]/50 text-[#D4AF37] text-xs font-medium px-3 py-1.5 rounded-full">
               <DollarSign className="h-3.5 w-3.5" /> Casino Comps
             </span>
-            <span className="inline-flex items-center gap-1.5 bg-white border border-emerald-200 text-emerald-700 text-xs font-medium px-3 py-1.5 rounded-full">
+            <span className="inline-flex items-center gap-1.5 bg-white/10 border border-[#D4AF37]/50 text-[#D4AF37] text-xs font-medium px-3 py-1.5 rounded-full">
               <Star className="h-3.5 w-3.5" /> Loyalty Programs
             </span>
-            <span className="inline-flex items-center gap-1.5 bg-white border border-emerald-200 text-emerald-700 text-xs font-medium px-3 py-1.5 rounded-full">
+            <span className="inline-flex items-center gap-1.5 bg-white/10 border border-[#D4AF37]/50 text-[#D4AF37] text-xs font-medium px-3 py-1.5 rounded-full">
               <Anchor className="h-3.5 w-3.5" /> Repositioning Hacks
             </span>
-            <span className="inline-flex items-center gap-1.5 bg-white border border-emerald-200 text-emerald-700 text-xs font-medium px-3 py-1.5 rounded-full">
+            <span className="inline-flex items-center gap-1.5 bg-white/10 border border-[#D4AF37]/50 text-[#D4AF37] text-xs font-medium px-3 py-1.5 rounded-full">
               <Users className="h-3.5 w-3.5" /> Travel Agent FAM Trips
             </span>
           </div>
