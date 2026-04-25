@@ -365,11 +365,11 @@ export default async function Home() {
             <div className="flex-1">
               <div className="flex items-center gap-3 mb-4">
                 <Users className="w-8 h-8 text-[#D4AF37]" aria-hidden="true" />
-                <h2 id="solo-heading" className="font-fraunces text-3xl md:text-4xl font-bold text-slate-900">
+                <h2 id="solo-heading" className="font-fraunces text-3xl md:text-4xl font-bold text-white">
                   Cruising Solo?
                 </h2>
               </div>
-              <p className="text-gray-600 text-lg">
+              <p className="text-white/80 text-lg">
                 Discover our dedicated solo traveler hub with tips, deals, and community
               </p>
             </div>

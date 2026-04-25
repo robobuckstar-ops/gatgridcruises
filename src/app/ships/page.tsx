@@ -24,12 +24,12 @@ export default function ShipsPage() {
       <section className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] text-white py-16 md:py-24 border-b border-slate-200">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-6">
-            <Ship className="w-10 h-10 text-blue-600" />
+            <Ship className="w-10 h-10 text-[#D4AF37]" />
             <h1 className="font-fraunces text-4xl md:text-5xl lg:text-6xl font-bold">
               Disney's Fleet
             </h1>
           </div>
-          <p className="font-inter text-lg md:text-xl text-slate-600 max-w-2xl">
+          <p className="font-inter text-lg md:text-xl text-white/80 max-w-2xl">
             Each ship in Disney's fleet has its own personality. Whether you prefer the intimate charm of the Magic or the modern innovations of the Wish, find the perfect ship for your family.
           </p>
         </div>

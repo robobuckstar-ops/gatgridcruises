@@ -179,7 +179,7 @@ export default function SoloCruisingPage() {
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0">
                       <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-[#1E3A5F]/20">
-                        <Icon className="w-6 h-6 text-blue-600" />
+                        <Icon className="w-6 h-6 text-[#D4AF37]" />
                       </div>
                     </div>
                     <div>
@@ -250,7 +250,7 @@ export default function SoloCruisingPage() {
                         <p className="text-xs text-slate-600 uppercase tracking-wide mb-1 font-inter">
                           From per night
                         </p>
-                        <p className="font-fraunces text-2xl font-bold text-blue-600">
+                        <p className="font-fraunces text-2xl font-bold text-[#D4AF37]">
                           {formatPrice(Math.round(perNightCost))}
                         </p>
                         <p className="text-xs text-slate-600 mt-1 font-inter">
@@ -261,7 +261,7 @@ export default function SoloCruisingPage() {
 
                     {/* Footer */}
                     <div className="p-5 bg-slate-50 border-t border-slate-200 group-hover:bg-[#1E3A5F]/10 transition-colors">
-                      <button className="w-full inline-flex items-center justify-center gap-2 text-blue-600 font-inter font-semibold hover:text-blue-700 transition-colors">
+                      <button className="w-full inline-flex items-center justify-center gap-2 text-[#D4AF37] font-inter font-semibold hover:text-blue-700 transition-colors">
                         View Details
                         <ArrowRight className="w-4 h-4" />
                       </button>
@@ -275,7 +275,7 @@ export default function SoloCruisingPage() {
           <div className="mt-10 text-center">
             <Link
               href="/search"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white font-inter font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#D4AF37] text-[#0a1628] font-inter font-semibold rounded-lg hover:bg-[#c9a430] transition-colors"
             >
               Browse All Solo-Friendly Sailings
               <ArrowRight className="w-4 h-4" />
@@ -326,7 +326,7 @@ export default function SoloCruisingPage() {
                     <p className="text-xs text-slate-600 uppercase tracking-wide mb-1 font-inter">
                       Per Night
                     </p>
-                    <p className="font-fraunces text-2xl font-bold text-blue-600">
+                    <p className="font-fraunces text-2xl font-bold text-[#D4AF37]">
                       {formatPrice(Math.round(6384 / 7))}
                     </p>
                   </div>
@@ -358,7 +358,7 @@ export default function SoloCruisingPage() {
                     <p className="text-xs text-slate-600 uppercase tracking-wide mb-1 font-inter">
                       Per Night
                     </p>
-                    <p className="font-fraunces text-2xl font-bold text-blue-600">
+                    <p className="font-fraunces text-2xl font-bold text-[#D4AF37]">
                       {formatPrice(Math.round((4288 * 1.1) / 4))}
                     </p>
                   </div>
@@ -385,7 +385,7 @@ export default function SoloCruisingPage() {
           <p className="text-lg opacity-95 mb-8 font-inter">
             Find cruise buddies, share experiences, and never sail alone. Connect with other solo cruisers who understand the freedom and joy of solo travel.
           </p>
-          <button className="px-8 py-3 bg-white text-blue-600 font-inter font-semibold rounded-lg hover:bg-[#1E3A5F]/10 transition-colors">
+          <button className="px-8 py-3 bg-[#D4AF37] text-[#0a1628] font-inter font-semibold rounded-lg hover:bg-[#c9a430] transition-colors">
             Find Your Cruise Squad
           </button>
         </div>

@@ -538,15 +538,15 @@ export default function ConciergePage() {
       <section className="py-16 md:py-24 bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] border-y border-slate-200">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
           <Sparkles className="w-10 h-10 text-[#D4AF37] mx-auto mb-4" />
-          <h2 className="font-fraunces text-3xl md:text-4xl font-bold text-[#1E3A5F] mb-4">
+          <h2 className="font-fraunces text-3xl md:text-4xl font-bold text-white mb-4">
             Ready to Cruise with a Concierge?
           </h2>
-          <p className="font-inter text-lg text-slate-600 mb-10 max-w-xl mx-auto">
+          <p className="font-inter text-lg text-white/80 mb-10 max-w-xl mx-auto">
             Reach out and we'll get your trip set up. It takes 5 minutes and costs nothing —
             and you'll have us by your side for every step of the journey.
           </p>
           <BookingInquiryButton variant="banner" />
-          <p className="font-inter text-xs text-slate-400 mt-6">
+          <p className="font-inter text-xs text-white/50 mt-6">
             Via Boardwalk Travel Agency · Same Disney price · Free onboard credit included
           </p>
         </div>

@@ -115,24 +115,24 @@ export default function CommunityPage() {
       {/* Call to Action */}
       <section className="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#0a1628] to-[#1E3A5F]">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="font-display text-3xl font-bold text-slate-900 mb-4">
+          <h2 className="font-display text-3xl font-bold text-white mb-4">
             Join the Community
           </h2>
 
-          <p className="text-lg text-slate-600 mb-8">
+          <p className="text-lg text-white/80 mb-8">
             Create your free GatGrid Cruises account to start connecting with fellow Disney cruisers.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/auth/signup"
-              className="inline-flex items-center justify-center px-8 py-3 rounded-lg font-semibold text-white bg-blue-600 hover:bg-blue-700 transition-colors"
+              className="inline-flex items-center justify-center px-8 py-3 rounded-lg font-semibold text-[#0a1628] bg-[#D4AF37] hover:bg-[#c9a430] transition-colors"
             >
               Create Account
             </Link>
             <Link
               href="/auth/login"
-              className="inline-flex items-center justify-center px-8 py-3 rounded-lg font-semibold text-blue-600 border-2 border-blue-600 hover:bg-[#1E3A5F]/10 transition-colors"
+              className="inline-flex items-center justify-center px-8 py-3 rounded-lg font-semibold text-[#D4AF37] border-2 border-[#D4AF37] hover:bg-white/10 transition-colors"
             >
               Sign In
             </Link>

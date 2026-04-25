@@ -13,13 +13,13 @@ export default function SailTogetherPage() {
   const groups = getSailTogetherGroups()
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-[#0a1628] to-[#1E3A5F]">
+    <main className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative py-16 md:py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto text-center">
           <div className="flex justify-center mb-6">
             <div className="inline-flex items-center justify-center h-16 w-16 rounded-full bg-[#1E3A5F]/20">
-              <Users className="h-8 w-8 text-blue-600" />
+              <Users className="h-8 w-8 text-[#D4AF37]" />
             </div>
           </div>
 
@@ -240,24 +240,24 @@ export default function SailTogetherPage() {
       {/* CTA Section */}
       <section className="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#0a1628] to-[#1E3A5F]">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
             Ready to Join Your Crew?
           </h2>
 
-          <p className="text-lg text-slate-600 mb-8">
+          <p className="text-lg text-white/80 mb-8">
             Create a free account to start connecting with fellow Disney cruisers sailing on your dates.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/auth/signup"
-              className="inline-flex items-center justify-center px-8 py-3 rounded-lg font-semibold text-white bg-blue-600 hover:bg-blue-700 transition-colors"
+              className="inline-flex items-center justify-center px-8 py-3 rounded-lg font-semibold text-[#0a1628] bg-[#D4AF37] hover:bg-[#c9a430] transition-colors"
             >
               Create Free Account
             </Link>
             <Link
               href="/auth/login"
-              className="inline-flex items-center justify-center px-8 py-3 rounded-lg font-semibold text-blue-600 border-2 border-blue-600 hover:bg-[#1E3A5F]/10 transition-colors"
+              className="inline-flex items-center justify-center px-8 py-3 rounded-lg font-semibold text-[#D4AF37] border-2 border-[#D4AF37] hover:bg-white/10 transition-colors"
             >
               Sign In
             </Link>

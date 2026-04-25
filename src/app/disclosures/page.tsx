@@ -12,7 +12,7 @@ export default function DisclosuresPage() {
       <section className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] text-white py-16 md:py-20 border-b border-slate-200">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="font-fraunces text-4xl md:text-5xl font-bold mb-4">Disclosures</h1>
-          <p className="font-inter text-lg text-slate-600">
+          <p className="font-inter text-lg text-white/80">
             Complete transparency about our relationships and how we earn revenue.
           </p>
         </div>
