@@ -15,10 +15,10 @@ export default function TransfersPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <div className="bg-gradient-to-br from-blue-50 to-indigo-50 text-slate-900 py-12 border-b border-slate-200">
+      <div className="bg-gradient-to-br from-slate-900 via-[#1E3A5F] to-slate-900 py-12 border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="font-display text-3xl sm:text-4xl font-bold mb-2 text-slate-900">Transfer Guide</h1>
-          <p className="text-slate-600 text-lg">How to get from the airport to your Disney cruise port — honestly compared.</p>
+          <h1 className="font-display text-3xl sm:text-4xl font-bold mb-2 text-white">Transfer Guide</h1>
+          <p className="text-blue-200 text-lg">How to get from the airport to your Disney cruise port — honestly compared.</p>
         </div>
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

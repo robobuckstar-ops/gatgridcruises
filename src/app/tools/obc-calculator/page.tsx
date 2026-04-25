@@ -29,7 +29,7 @@ export default function OBCCalculatorPage() {
     : -1
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+    <main className="min-h-screen bg-white">
       {/* Header */}
       <section className="bg-[#1E3A5F] py-14 md:py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">

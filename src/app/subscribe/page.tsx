@@ -11,17 +11,17 @@ export default function SubscribePage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 via-white to-indigo-50 text-slate-900 py-16 md:py-24 border-b border-slate-200">
+      <section className="bg-gradient-to-br from-slate-900 via-[#1E3A5F] to-slate-900 py-16 md:py-24 border-b border-white/10">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-6">
-            <Mail className="w-8 h-8 text-blue-600" />
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-white/10 rounded-full mb-6">
+            <Mail className="w-8 h-8 text-[#D4AF37]" />
           </div>
 
-          <h1 className="font-fraunces text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+          <h1 className="font-fraunces text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
             Never Miss a Disney Cruise Deal
           </h1>
 
-          <p className="font-inter text-lg md:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="font-inter text-lg md:text-xl text-blue-200 max-w-2xl mx-auto leading-relaxed">
             Get the best Disney cruise price drops, travel tips, and planning insights delivered to your inbox every Sunday. Free, no spam, unsubscribe anytime.
           </p>
         </div>
