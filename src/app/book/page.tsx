@@ -62,7 +62,7 @@ export default function BookPage() {
 
   if (submitted) {
     return (
-      <main className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 py-20">
+      <main className="min-h-screen bg-slate-50 py-20">
         <div className="mx-auto max-w-2xl px-4 sm:px-6 text-center">
           <div className="bg-white rounded-2xl shadow-lg p-10 border border-slate-200">
             <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -84,7 +84,7 @@ export default function BookPage() {
   }
 
   return (
-    <main className="bg-gradient-to-br from-blue-50 via-white to-indigo-50 py-12 md:py-20">
+    <main className="bg-slate-50 py-12 md:py-20">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
 
         {/* Header */}

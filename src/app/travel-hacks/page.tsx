@@ -82,32 +82,32 @@ export default function TravelHacksHub() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#1E3A5F]/5 via-white to-[#D4AF37]/10 text-slate-900 py-20">
+      <section className="bg-gradient-to-br from-slate-900 via-[#1E3A5F] to-slate-900 py-20 border-b border-white/10">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-6">
             <Sparkles className="h-8 w-8 text-[#D4AF37]" aria-hidden="true" />
-            <span className="text-sm font-semibold text-[#1E3A5F] uppercase tracking-wider">
+            <span className="text-sm font-semibold text-[#D4AF37] uppercase tracking-wider">
               Travel Hacks
             </span>
           </div>
 
-          <h1 className="text-4xl md:text-5xl font-fraunces font-bold mb-6 max-w-3xl">
+          <h1 className="text-4xl md:text-5xl font-fraunces font-bold mb-6 max-w-3xl text-white">
             Travel Hacks: Make Your Disney Cruise Cheaper (or Free)
           </h1>
 
-          <p className="text-xl text-slate-600 max-w-2xl leading-relaxed mb-8">
+          <p className="text-xl text-blue-200 max-w-2xl leading-relaxed mb-8">
             Insider strategies for using credit card rewards, points, and perks to dramatically
             reduce your cruise vacation costs.
           </p>
 
           {/* Quick Stats Banner */}
-          <div className="bg-[#1E3A5F] rounded-xl p-6 text-white max-w-2xl">
+          <div className="bg-white/10 border border-white/20 rounded-xl p-6 text-white max-w-2xl">
             <div className="flex items-center gap-3 mb-2">
               <TrendingUp className="h-5 w-5" aria-hidden="true" />
               <p className="text-sm font-semibold">Average Savings</p>
             </div>
             <p className="text-3xl font-bold">$1,200+</p>
-            <p className="text-[#D4AF37]/80 text-sm mt-1">
+            <p className="text-blue-300 text-sm mt-1">
               The average GatGrid reader saves over $1,200 per cruise using these strategies
             </p>
           </div>

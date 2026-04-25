@@ -13,21 +13,21 @@ export default function SailTogetherPage() {
   const groups = getSailTogetherGroups()
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-cyan-50 via-white to-blue-50">
+    <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+      <section className="bg-gradient-to-br from-slate-900 via-[#1E3A5F] to-slate-900 relative py-16 md:py-24 px-4 sm:px-6 lg:px-8 border-b border-white/10">
         <div className="max-w-5xl mx-auto text-center">
           <div className="flex justify-center mb-6">
-            <div className="inline-flex items-center justify-center h-16 w-16 rounded-full bg-blue-100">
-              <Users className="h-8 w-8 text-blue-600" />
+            <div className="inline-flex items-center justify-center h-16 w-16 rounded-full bg-white/10">
+              <Users className="h-8 w-8 text-[#D4AF37]" />
             </div>
           </div>
 
-          <h1 className="font-display text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+          <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-4">
             Sail Together
           </h1>
 
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto mb-8">
+          <p className="text-xl text-blue-200 max-w-2xl mx-auto mb-8">
             Find your cruise crew. Connect with fellow passengers sailing on the same dates, share excursion
             recommendations, coordinate Fish Extender gifts, and make lifelong friends.
           </p>
@@ -35,13 +35,13 @@ export default function SailTogetherPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <a
               href="#browse-groups"
-              className="inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold text-white bg-blue-600 hover:bg-blue-700 transition-colors"
+              className="inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold text-[#1E3A5F] bg-[#D4AF37] hover:bg-yellow-300 transition-colors"
             >
               Browse Groups
             </a>
             <a
               href="/auth/signup"
-              className="inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold text-blue-600 border-2 border-blue-600 hover:bg-blue-50 transition-colors"
+              className="inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold text-white border-2 border-white/30 hover:bg-white/10 transition-colors"
             >
               Create Account
             </a>
@@ -238,32 +238,32 @@ export default function SailTogetherPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-50 to-cyan-50">
+      <section className="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-900 to-[#1E3A5F]">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
             Ready to Join Your Crew?
           </h2>
 
-          <p className="text-lg text-slate-600 mb-8">
+          <p className="text-lg text-blue-200 mb-8">
             Create a free account to start connecting with fellow Disney cruisers sailing on your dates.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/auth/signup"
-              className="inline-flex items-center justify-center px-8 py-3 rounded-lg font-semibold text-white bg-blue-600 hover:bg-blue-700 transition-colors"
+              className="inline-flex items-center justify-center px-8 py-3 rounded-lg font-semibold text-[#1E3A5F] bg-[#D4AF37] hover:bg-yellow-300 transition-colors"
             >
               Create Free Account
             </Link>
             <Link
               href="/auth/login"
-              className="inline-flex items-center justify-center px-8 py-3 rounded-lg font-semibold text-blue-600 border-2 border-blue-600 hover:bg-blue-50 transition-colors"
+              className="inline-flex items-center justify-center px-8 py-3 rounded-lg font-semibold text-white border-2 border-white/30 hover:bg-white/10 transition-colors"
             >
               Sign In
             </Link>
           </div>
 
-          <p className="text-sm text-slate-500 mt-6">
+          <p className="text-sm text-blue-400 mt-6">
             No credit card required. Join thousands of cruise friends already planning their next voyage.
           </p>
         </div>

@@ -150,12 +150,12 @@ export default function SoloCruisingPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-purple-50 via-white to-blue-50 py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-gradient-to-br from-slate-900 via-[#1E3A5F] to-slate-900 py-16 px-4 sm:px-6 lg:px-8 border-b border-white/10">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="font-fraunces text-4xl sm:text-5xl font-bold text-slate-900 mb-4">
+          <h1 className="font-fraunces text-4xl sm:text-5xl font-bold text-white mb-4">
             Solo Cruising: Your Guide to Sailing Alone (and Loving It)
           </h1>
-          <p className="text-lg text-slate-600 font-inter mb-6 max-w-2xl mx-auto">
+          <p className="text-lg text-blue-200 font-inter mb-6 max-w-2xl mx-auto">
             Discover the freedom, friendship, and adventure waiting for you on a solo cruise. You&rsquo;ll never feel alone when you&rsquo;re surrounded by thousands of possibilities.
           </p>
         </div>
@@ -377,17 +377,17 @@ export default function SoloCruisingPage() {
 
       {/* Community CTA Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg p-12 text-center text-white">
-          <Users className="w-16 h-16 mx-auto mb-6 opacity-80" />
+        <div className="max-w-3xl mx-auto bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] rounded-lg p-12 text-center text-white">
+          <Users className="w-16 h-16 mx-auto mb-6 text-[#D4AF37]" />
           <h2 className="font-fraunces text-3xl font-bold mb-4">
             Join the Sail Together Community
           </h2>
-          <p className="text-lg opacity-95 mb-8 font-inter">
+          <p className="text-lg text-blue-200 mb-8 font-inter">
             Find cruise buddies, share experiences, and never sail alone. Connect with other solo cruisers who understand the freedom and joy of solo travel.
           </p>
-          <button className="px-8 py-3 bg-white text-blue-600 font-inter font-semibold rounded-lg hover:bg-blue-50 transition-colors">
+          <Link href="/community/sail-together" className="px-8 py-3 bg-[#D4AF37] text-[#1E3A5F] font-inter font-bold rounded-lg hover:bg-yellow-300 transition-colors">
             Find Your Cruise Squad
-          </button>
+          </Link>
         </div>
       </section>
     </main>

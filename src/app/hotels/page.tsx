@@ -40,13 +40,13 @@ export default function HotelsIndexPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <div className="bg-gradient-to-br from-blue-50 to-indigo-50 text-slate-900 border-b border-slate-200">
+      <div className="bg-gradient-to-br from-slate-900 via-[#1E3A5F] to-slate-900 border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
           <div className="max-w-3xl">
-            <h1 className="font-display text-4xl sm:text-5xl font-bold mb-4 leading-tight text-slate-900">
+            <h1 className="font-display text-4xl sm:text-5xl font-bold mb-4 leading-tight text-white">
               Pre-Cruise Hotel Guide
             </h1>
-            <p className="text-lg sm:text-xl text-slate-600">
+            <p className="text-lg sm:text-xl text-blue-200">
               Where to stay the night before your Disney cruise — honest picks for every port.
             </p>
           </div>

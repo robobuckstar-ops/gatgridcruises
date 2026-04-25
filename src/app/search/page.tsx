@@ -40,14 +40,14 @@ export default function SearchPage() {
   }
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-blue-50 via-indigo-50 to-white">
+    <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <div className="pt-16 pb-12 px-4 sm:px-6 lg:px-8">
+      <div className="bg-gradient-to-br from-slate-900 via-[#1E3A5F] to-slate-900 pt-16 pb-12 px-4 sm:px-6 lg:px-8 border-b border-white/10">
         <div className="max-w-4xl mx-auto">
-          <h1 className="font-fraunces text-4xl sm:text-5xl font-bold text-slate-900 mb-4 text-center">
+          <h1 className="font-fraunces text-4xl sm:text-5xl font-bold text-white mb-4 text-center">
             Find Your Perfect Cruise
           </h1>
-          <p className="text-center text-slate-600 mb-8 text-lg">
+          <p className="text-center text-blue-200 mb-8 text-lg">
             Describe what you&rsquo;re looking for in natural language
           </p>
 
@@ -114,14 +114,6 @@ export default function SearchPage() {
                             </p>
                           </div>
 
-                          {/* Sailing Score Badge */}
-                          {sailing.sailing_score && (
-                            <div className="flex-shrink-0">
-                              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-600 text-white font-fraunces font-bold text-lg">
-                                {sailing.sailing_score}
-                              </div>
-                            </div>
-                          )}
                         </div>
 
                         {/* Details Row */}
