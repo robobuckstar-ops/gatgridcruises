@@ -150,15 +150,15 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
   return (
     <div className="min-h-screen bg-white">
       {/* Page header */}
-      <div className="bg-gradient-to-br from-blue-50 to-indigo-50 text-slate-900 border-b border-slate-200 py-12">
+      <div className="bg-gradient-to-br from-slate-900 via-[#1E3A5F] to-slate-900 text-white border-b border-white/10 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="font-display text-3xl sm:text-4xl font-bold mb-2">
             Cruise Deals
           </h1>
-          <p className="text-slate-600 text-lg">
+          <p className="text-blue-200 text-lg">
             {sailings.length} sailings tracked · Prices approximate, verify at cruise line
           </p>
-          <p className="text-slate-400 text-sm mt-1">
+          <p className="text-blue-400 text-sm mt-1">
             Prices last updated: {PRICES_LAST_UPDATED}
           </p>
         </div>

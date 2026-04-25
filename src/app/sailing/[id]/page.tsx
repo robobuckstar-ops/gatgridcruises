@@ -90,19 +90,19 @@ export default async function SailingDetailPage({ params }: PageProps) {
     <div className="min-h-screen bg-white">
       <StructuredData data={generateSailingSchema(sailing)} />
       {/* Hero */}
-      <div className="bg-gradient-to-br from-blue-50 to-indigo-50 text-slate-900 border-b border-slate-200">
+      <div className="bg-gradient-to-br from-slate-900 via-[#1E3A5F] to-slate-900 text-white border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
           <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
             <div>
               {percentBelow > 0 && (
               <div className="flex items-center gap-2 mb-3">
-                <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-600 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full">
+                <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-400 bg-emerald-400/10 border border-emerald-400/30 px-3 py-1 rounded-full">
                   ↓ {percentBelow}% below average
                 </span>
               </div>
             )}
               <h1 className="font-display text-3xl sm:text-4xl font-bold mb-3">{sailing.itinerary_name}</h1>
-              <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-slate-600">
+              <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-blue-200">
                 {ship && (
                   <span className="flex items-center gap-1.5">
                     <Ship className="h-4 w-4" /> Disney {ship.name.replace('Disney ', '')}
@@ -122,17 +122,17 @@ export default async function SailingDetailPage({ params }: PageProps) {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-xl p-5 min-w-[240px]">
-              <p className="text-xs text-slate-500 mb-1">Starting from</p>
+            <div className="bg-white/5 border border-white/15 rounded-xl p-5 min-w-[240px]">
+              <p className="text-xs text-blue-300 mb-1">Starting from</p>
               <div className="flex items-baseline gap-2 mb-1">
-                <p className="text-4xl font-bold text-blue-600">{formatPrice(sailing.current_lowest_price)}</p>
+                <p className="text-4xl font-bold text-white">{formatPrice(sailing.current_lowest_price)}</p>
                 {snapshots.length > 0 && (
                   <span className="text-xs">
                     <PriceTrend snapshots={snapshots} />
                   </span>
                 )}
               </div>
-              <p className="text-xs text-slate-500 mb-3">per stateroom</p>
+              <p className="text-xs text-blue-300 mb-3">per stateroom</p>
               {/* Price by category with availability */}
               {isSellingFast && (
                 <div className="flex items-center gap-1.5 mb-3 bg-orange-50 border border-orange-200 rounded-lg px-2.5 py-1.5">
@@ -146,17 +146,17 @@ export default async function SailingDetailPage({ params }: PageProps) {
                   <span className="text-xs font-semibold text-red-700">Only {remainingCategories} {remainingCategories === 1 ? 'category' : 'categories'} left</span>
                 </div>
               )}
-              <div className="space-y-2 text-sm border-t border-blue-100 pt-3">
+              <div className="space-y-2 text-sm border-t border-white/10 pt-3">
                 {categoryAvailabilities.map(cat => (
                   <div key={cat.key} className="flex items-center justify-between gap-2">
                     <div className="flex items-center gap-1.5 flex-wrap">
-                      <span className="text-slate-600">{cat.label}</span>
+                      <span className="text-blue-200">{cat.label}</span>
                       <AvailabilityBadge status={cat.status} />
                     </div>
                     {cat.price ? (
-                      <span className="font-medium flex-shrink-0">{formatPrice(cat.price)}</span>
+                      <span className="font-medium flex-shrink-0 text-white">{formatPrice(cat.price)}</span>
                     ) : (
-                      <span className="text-xs text-slate-400 flex-shrink-0">—</span>
+                      <span className="text-xs text-blue-400 flex-shrink-0">—</span>
                     )}
                   </div>
                 ))}

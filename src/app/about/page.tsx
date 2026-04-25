@@ -30,10 +30,10 @@ export default function AboutPage() {
     />
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-indigo-50 text-slate-900 py-16 md:py-20 border-b border-slate-200">
+      <section className="bg-gradient-to-br from-slate-900 via-[#1E3A5F] to-slate-900 text-white py-16 md:py-20 border-b border-white/10">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="font-fraunces text-4xl md:text-5xl font-bold mb-4">About GatGridCruises</h1>
-          <p className="font-inter text-lg text-slate-600">
+          <p className="font-inter text-lg text-blue-200">
             Independent Disney cruise planning. Honest advice. No booking pressure.
           </p>
         </div>

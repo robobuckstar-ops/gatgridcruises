@@ -119,30 +119,24 @@ export function LastMinuteDealGrid({ deals: initialDeals, ships, ports }: LastMi
     .sort() as string[]
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-amber-50 via-white to-blue-50">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <div className="relative overflow-hidden pt-12 pb-12">
-        {/* Animated pulse background */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 right-20 w-72 h-72 bg-amber-300 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 left-20 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
-        </div>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="bg-gradient-to-br from-slate-900 via-[#1E3A5F] to-slate-900 pt-12 pb-12 border-b border-white/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex justify-center mb-4">
-            <div className="inline-flex items-center gap-2 bg-red-100 text-red-700 px-4 py-2 rounded-full">
-              <Zap className="h-5 w-5" />
-              <span className="font-semibold text-sm">FLASH DEALS</span>
+            <div className="inline-flex items-center gap-2 bg-[#D4AF37]/15 border border-[#D4AF37]/30 text-[#D4AF37] px-4 py-2 rounded-full">
+              <Zap className="h-4 w-4" />
+              <span className="font-semibold text-sm tracking-wider uppercase">Flash Deals</span>
             </div>
           </div>
-          <h1 className="font-fraunces text-5xl md:text-6xl font-bold text-slate-900 mb-4">
-            ⚡ Flash Deals
+          <h1 className="font-fraunces text-5xl md:text-6xl font-bold text-white mb-4">
+            Flash Deals
           </h1>
-          <p className="text-xl text-slate-700 mb-2 max-w-2xl mx-auto">
+          <p className="text-xl text-blue-200 mb-2 max-w-2xl mx-auto">
             Sailings within 90 days at steep discounts
           </p>
-          <p className="text-base text-slate-600 max-w-2xl mx-auto">
-            Prices can change any moment — act fast on these incredible limited-time offers
+          <p className="text-base text-blue-300 max-w-2xl mx-auto">
+            Limited availability — prices update daily
           </p>
           <div className="flex justify-center mt-6">
             <GuestSelector />

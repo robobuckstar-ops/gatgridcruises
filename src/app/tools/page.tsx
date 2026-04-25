@@ -82,14 +82,18 @@ const tools = [
 
 export default function ToolsPage() {
   return (
-    <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div className="mb-10">
-        <h1 className="text-3xl sm:text-4xl font-bold text-navy mb-3">Disney Cruise Planning Tools</h1>
-        <p className="text-lg text-slate-600 max-w-2xl">
-          Free calculators and finders to help you plan the perfect Disney cruise — from budgeting to booking.
-        </p>
-      </div>
+    <main className="min-h-screen bg-white">
+      {/* Hero */}
+      <section className="bg-gradient-to-br from-slate-900 via-[#1E3A5F] to-slate-900 py-16 md:py-20 border-b border-white/10">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="font-fraunces text-4xl md:text-5xl font-bold text-white mb-4">Disney Cruise Planning Tools</h1>
+          <p className="text-lg text-blue-200 max-w-2xl mx-auto">
+            Free calculators and finders to help you plan the perfect Disney cruise — from budgeting to booking.
+          </p>
+        </div>
+      </section>
 
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {tools.map((tool) => {
           const Icon = tool.icon
@@ -112,6 +116,7 @@ export default function ToolsPage() {
             </Link>
           )
         })}
+      </div>
       </div>
     </main>
   )

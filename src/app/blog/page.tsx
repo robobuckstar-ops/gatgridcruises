@@ -22,25 +22,20 @@ export default function BlogPage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-indigo-50 py-20 sm:py-32">
-        <div className="absolute inset-0 opacity-30 pointer-events-none">
-          <div className="absolute top-20 right-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl"></div>
-          <div className="absolute bottom-20 left-10 w-72 h-72 bg-indigo-200 rounded-full mix-blend-multiply filter blur-3xl"></div>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="bg-gradient-to-br from-slate-900 via-[#1E3A5F] to-slate-900 py-20 sm:py-28 border-b border-white/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="flex justify-center mb-6">
-              <div className="p-3 bg-blue-100 rounded-full">
-                <Newspaper className="h-8 w-8 text-blue-600" />
+              <div className="p-3 bg-[#D4AF37]/15 border border-[#D4AF37]/30 rounded-full">
+                <Newspaper className="h-8 w-8 text-[#D4AF37]" />
               </div>
             </div>
 
-            <h1 className="font-display text-5xl sm:text-6xl font-bold text-slate-900 mb-6">
+            <h1 className="font-display text-5xl sm:text-6xl font-bold text-white mb-6">
               The GatGrid Blog
             </h1>
 
-            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+            <p className="text-xl text-blue-200 max-w-2xl mx-auto">
               Disney cruise news, tips, and deals from the crew at GatGridCruises
             </p>
           </div>

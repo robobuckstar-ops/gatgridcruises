@@ -120,15 +120,15 @@ const guides = [
 export default function GuidesPage() {
   return (
     <main>
-      <section className="bg-gradient-to-br from-blue-50 via-white to-indigo-50 py-16 md:py-20">
+      <section className="bg-gradient-to-br from-slate-900 via-[#1E3A5F] to-slate-900 py-16 md:py-20 border-b border-white/10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex items-center justify-center gap-3 mb-6">
-            <BookOpen className="w-8 h-8 text-blue-600" />
-            <h1 className="font-fraunces text-4xl md:text-5xl font-bold text-slate-900">
+            <BookOpen className="w-8 h-8 text-[#D4AF37]" />
+            <h1 className="font-fraunces text-4xl md:text-5xl font-bold text-white">
               Disney Cruise Guides
             </h1>
           </div>
-          <p className="font-inter text-lg text-slate-600 max-w-2xl mx-auto">
+          <p className="font-inter text-lg text-blue-200 max-w-2xl mx-auto">
             In-depth, honest guides to help you plan the perfect Disney cruise.
             No fluff, no affiliate pressure — just the information you need.
           </p>

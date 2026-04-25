@@ -21,16 +21,16 @@ export default function ShipsPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 via-white to-indigo-50 text-slate-900 py-16 md:py-24 border-b border-slate-200">
+      <section className="bg-gradient-to-br from-slate-900 via-[#1E3A5F] to-slate-900 text-white py-16 md:py-24 border-b border-white/10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-6">
-            <Ship className="w-10 h-10 text-blue-600" />
+            <Ship className="w-10 h-10 text-[#D4AF37]" />
             <h1 className="font-fraunces text-4xl md:text-5xl lg:text-6xl font-bold">
-              Disney's Fleet
+              Disney&apos;s Fleet
             </h1>
           </div>
-          <p className="font-inter text-lg md:text-xl text-slate-600 max-w-2xl">
-            Each ship in Disney's fleet has its own personality. Whether you prefer the intimate charm of the Magic or the modern innovations of the Wish, find the perfect ship for your family.
+          <p className="font-inter text-lg md:text-xl text-blue-200 max-w-2xl">
+            Each ship in Disney&apos;s fleet has its own personality. Whether you prefer the intimate charm of the Magic or the modern innovations of the Wish, find the perfect ship for your family.
           </p>
         </div>
       </section>

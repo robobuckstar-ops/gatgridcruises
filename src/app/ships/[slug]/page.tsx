@@ -40,7 +40,7 @@ export default async function ShipDetailPage({ params }: PageProps) {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <div className="bg-gradient-to-br from-blue-50 to-indigo-50 text-slate-900 border-b border-slate-200">
+      <div className="bg-gradient-to-br from-slate-900 via-[#1E3A5F] to-slate-900 text-white border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
           <h1 className="font-fraunces text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
             {ship.name}
@@ -48,17 +48,17 @@ export default async function ShipDetailPage({ params }: PageProps) {
 
           {/* Ship Stats */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-8">
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-              <p className="text-sm text-slate-600 mb-1">Year Launched</p>
-              <p className="font-fraunces text-2xl font-bold text-blue-600">{ship.year_launched}</p>
+            <div className="bg-white/5 border border-white/10 rounded-lg p-4">
+              <p className="text-sm text-blue-300 mb-1">Year Launched</p>
+              <p className="font-fraunces text-2xl font-bold text-[#D4AF37]">{ship.year_launched}</p>
             </div>
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-              <p className="text-sm text-slate-600 mb-1">Guest Capacity</p>
-              <p className="font-fraunces text-2xl font-bold text-blue-600">{ship.capacity.toLocaleString()}</p>
+            <div className="bg-white/5 border border-white/10 rounded-lg p-4">
+              <p className="text-sm text-blue-300 mb-1">Guest Capacity</p>
+              <p className="font-fraunces text-2xl font-bold text-[#D4AF37]">{ship.capacity.toLocaleString()}</p>
             </div>
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-              <p className="text-sm text-slate-600 mb-1">Gross Tonnage</p>
-              <p className="font-fraunces text-2xl font-bold text-blue-600">{ship.tonnage.toLocaleString()}</p>
+            <div className="bg-white/5 border border-white/10 rounded-lg p-4">
+              <p className="text-sm text-blue-300 mb-1">Gross Tonnage</p>
+              <p className="font-fraunces text-2xl font-bold text-[#D4AF37]">{ship.tonnage.toLocaleString()}</p>
             </div>
           </div>
         </div>
