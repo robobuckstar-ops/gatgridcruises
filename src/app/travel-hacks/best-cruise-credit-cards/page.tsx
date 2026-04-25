@@ -112,7 +112,7 @@ export default function BestCruiseCreditCardsPage() {
         <div className="max-w-4xl mx-auto">
           <div className="text-sm text-slate-400 mb-3 font-medium">Travel Hacks · Credit Cards</div>
           <h1 className="font-display text-4xl sm:text-5xl font-bold mb-4">
-            Best Business Credit Cards for Disney Cruises (2025)
+            Best Business Credit Cards for Disney Cruises (2026)
           </h1>
           <p className="text-lg text-slate-300 leading-relaxed max-w-2xl">
             The right business card can offset hundreds or thousands of dollars on your Disney cruise.

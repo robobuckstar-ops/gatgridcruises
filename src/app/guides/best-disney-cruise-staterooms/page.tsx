@@ -87,8 +87,8 @@ export default function BestDisneyCruiseStateroomsGuide() {
               What You Get
             </h3>
             <p className="font-inter text-slate-600 mb-4">
-              Inside cabins offer the most budget-friendly option at $250-400 per person per night for a family. These compact staterooms feature no window—instead, you"ll find enhanced theming, artwork, and modern furnishings to maximize the sense of space. All inside cabins include beds (convertible sofa, queen, or split beds depending on configuration), a bathroom with shower, storage, and complimentary Wi-Fi (though you'll still need to purchase additional data if desired).
-"            </p>
+              Inside cabins offer the most budget-friendly option at $250-400 per person per night for a family. These compact staterooms feature no window—instead, you'll find enhanced theming, artwork, and modern furnishings to maximize the sense of space. All inside cabins include beds (convertible sofa, queen, or split beds depending on configuration), a bathroom with shower, storage, and complimentary Wi-Fi (though you'll still need to purchase additional data if desired).
+            </p>
             <p className="font-inter text-slate-600">
               Inside cabins sleep 2-4 people depending on size. Larger inside cabins (11C) offer slightly more square footage and are ideal for families. All inside cabins are identical in amenities—the price difference between categories reflects location and size nuances.
             </p>

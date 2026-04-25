@@ -23,8 +23,8 @@ export default function PortCanaveralVsMiamiGuide() {
             <Link href="/guides" className="text-blue-300 hover:text-[#D4AF37] text-sm">
               Guides
             </Link>
-            <span className="text-white mx-2">/</span>
-            <span className="text-gray-300 text-sm">Port Canaveral vs. Miami</span>
+            <span className="text-slate-400 mx-2">/</span>
+            <span className="text-slate-500 text-sm">Port Canaveral vs. Miami</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-fraunces font-bold mb-4 text-white">
             Port Canaveral vs. Miami: Which Disney Cruise Port Is Better?

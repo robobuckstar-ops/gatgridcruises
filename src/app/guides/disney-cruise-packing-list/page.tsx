@@ -58,8 +58,8 @@ export default function PackingListGuide() {
         <section className="mb-12">
           <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-4">Introduction</h2>
           <p className="font-inter text-slate-600 leading-relaxed mb-4">
-            Packing for a Disney cruise can feel overwhelming. Unlike land-based vacations where you can run to the store if you forget something, cruise ships sail away—forgetting items can leave you stuck without essentials. That"s why we've created this comprehensive packing list covering everything from documents to dining attire, beach gear to cabin organization, and special items for themed nights.
-"          </p>
+            Packing for a Disney cruise can feel overwhelming. Unlike land-based vacations where you can run to the store if you forget something, cruise ships sail away—forgetting items can leave you stuck without essentials. That's why we've created this comprehensive packing list covering everything from documents to dining attire, beach gear to cabin organization, and special items for themed nights.
+          </p>
           <p className="font-inter text-slate-600 leading-relaxed">
             This guide is designed for cruises of any length, from short 3-night voyages to extended 7+ day itineraries. We've organized items by category and included pro tips throughout to help you pack efficiently and avoid unnecessary baggage fees.
           </p>

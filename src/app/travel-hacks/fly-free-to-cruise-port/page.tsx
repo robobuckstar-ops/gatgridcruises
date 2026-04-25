@@ -98,8 +98,8 @@ export default function FlyFreeToCruisePort() {
           </h3>
 
           <p className="text-slate-600 leading-relaxed mb-4">
-            Let"s say you're a family of two flying from Orlando (MCO) to Miami for a 7-night
-"            cruise. Direct flights typically cost $100-150 per person each way, totaling roughly
+            Let's say you're a family of two flying from Orlando (MCO) to Miami for a 7-night
+            cruise. Direct flights typically cost $100-150 per person each way, totaling roughly
             $400-600 for both of you.
           </p>
 

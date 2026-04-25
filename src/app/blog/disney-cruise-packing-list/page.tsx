@@ -260,7 +260,7 @@ export default function PackingListPage() {
         <div className="max-w-4xl mx-auto">
           <div className="text-sm text-blue-300 mb-3 font-medium">Blog · Packing Guide</div>
           <h1 className="font-display text-4xl sm:text-5xl font-bold mb-4">
-            The Ultimate Disney Cruise Packing List (2025)
+            The Ultimate Disney Cruise Packing List (2026)
           </h1>
           <p className="text-lg text-blue-100 leading-relaxed max-w-2xl">
             Everything you need for a Disney cruise, organized by category. Includes Amazon links,

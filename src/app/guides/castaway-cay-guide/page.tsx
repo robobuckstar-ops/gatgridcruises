@@ -72,14 +72,14 @@ export default function CastawayCayGuide() {
           <div className="mb-8">
             <h3 className="font-fraunces text-2xl font-bold text-slate-900 mb-3">Family Beach</h3>
             <p className="font-inter text-slate-600 leading-relaxed">
-              The largest and most active beach, Family Beach is where most guests spend their day. The beautiful white sand stretches for hundreds of yards, with calm, clear turquoise waters perfect for swimming. This is where you"ll find the main facilities: Cookies BBQ (free lunch included with your cruise), Conched Out Bar for adult beverages, and the beach's central hub with tram stops, bike rentals, and activity sign-ups. Family Beach also features the largest selection of lounge chairs and cabanas (premium rental available). It's the perfect base for families with young children due to the calm waters and shallow entry points.
-"            </p>
+              The largest and most active beach, Family Beach is where most guests spend their day. The beautiful white sand stretches for hundreds of yards, with calm, clear turquoise waters perfect for swimming. This is where you'll find the main facilities: Cookies BBQ (free lunch included with your cruise), Conched Out Bar for adult beverages, and the beach's central hub with tram stops, bike rentals, and activity sign-ups. Family Beach also features the largest selection of lounge chairs and cabanas (premium rental available). It's the perfect base for families with young children due to the calm waters and shallow entry points.
+            </p>
           </div>
 
           <div className="mb-8">
             <h3 className="font-fraunces text-2xl font-bold text-slate-900 mb-3">Serenity Bay (Adults-Only)</h3>
             <p className="font-inter text-slate-600 leading-relaxed">
-              If you"re seeking peace and quiet, Serenity Bay is your sanctuary. This exclusive adults-only beach is located on the far side of the island and offers a serene alternative to the hustle of Family Beach. You'll find fewer people, premium lounge seating, and a sophisticated atmosphere. Serenity Bay has its own bar and restaurant (Cookies Too, which also serves free lunch) and private cabanas. The water is equally beautiful and calm. Most families with young kids bypass this area, making it ideal for relaxation, couples" time, or seasoned cruisers seeking tranquility. A short tram ride from the main dock whisks you here in minutes.
+              If you're seeking peace and quiet, Serenity Bay is your sanctuary. This exclusive adults-only beach is located on the far side of the island and offers a serene alternative to the hustle of Family Beach. You'll find fewer people, premium lounge seating, and a sophisticated atmosphere. Serenity Bay has its own bar and restaurant (Cookies Too, which also serves free lunch) and private cabanas. The water is equally beautiful and calm. Most families with young kids bypass this area, making it ideal for relaxation, couples" time, or seasoned cruisers seeking tranquility. A short tram ride from the main dock whisks you here in minutes.
             </p>
           </div>
 
@@ -157,8 +157,8 @@ export default function CastawayCayGuide() {
           <div className="mb-8">
             <h3 className="font-fraunces text-2xl font-bold text-slate-900 mb-3">Flying Dutchman Waterslide</h3>
             <p className="font-inter text-slate-600 leading-relaxed">
-              One of Castaway Cay"s signature attractions, this 300-foot-long waterslide twists and turns through the island, ending with a splash in the shallow lagoon. It's thrilling yet accessible to most ages (height and age restrictions apply—typically 5+ years old). The line moves quickly, and it's completely free. This is an absolute must-do for families with kids, and even adults enjoy the adrenaline rush and novelty.
-"            </p>
+              One of Castaway Cay's signature attractions, this 300-foot-long waterslide twists and turns through the island, ending with a splash in the shallow lagoon. It's thrilling yet accessible to most ages (height and age restrictions apply—typically 5+ years old). The line moves quickly, and it's completely free. This is an absolute must-do for families with kids, and even adults enjoy the adrenaline rush and novelty.
+            </p>
           </div>
 
           <div className="mb-8">
@@ -217,8 +217,8 @@ export default function CastawayCayGuide() {
           <div className="mb-6">
             <h3 className="font-fraunces text-2xl font-bold text-slate-900 mb-3">Get Off the Ship Fast</h3>
             <p className="font-inter text-slate-600 leading-relaxed">
-              The ship begins disembarkation at 8:00 AM, but not all decks exit simultaneously. Deck 1 guests (and crew exits) disembark first, followed by others in order. Check your Key to the World card or the ship"s app to see your optimal time. Arriving at the beach by 8:30 AM gives you nearly a full eight hours. If you have an early departure time, you'll have the island almost to yourself for the first hour—perfect for photos and choosing the best lounge chairs.
-"            </p>
+              The ship begins disembarkation at 8:00 AM, but not all decks exit simultaneously. Deck 1 guests (and crew exits) disembark first, followed by others in order. Check your Key to the World card or the ship's app to see your optimal time. Arriving at the beach by 8:30 AM gives you nearly a full eight hours. If you have an early departure time, you'll have the island almost to yourself for the first hour—perfect for photos and choosing the best lounge chairs.
+            </p>
           </div>
 
           <div className="mb-6">
