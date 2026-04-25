@@ -13,8 +13,8 @@ export const metadata: Metadata = {
   },
 }
 
-function amazonLink(searchTerm: string) {
-  return `https://www.amazon.com/s?k=${encodeURIComponent(searchTerm)}`
+function amazonLink(_searchTerm: string) {
+  return '/concierge'
 }
 
 interface PackingItem {

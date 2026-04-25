@@ -6,6 +6,6 @@ export const PRICES_DISCLAIMER =
 
 export const AFFILIATE_TAGS = {
   amazon: '',
-  chase_referral: '',
-  capital_one_referral: '',
+  chase_referral: '/concierge',
+  capital_one_referral: '/concierge',
 }
