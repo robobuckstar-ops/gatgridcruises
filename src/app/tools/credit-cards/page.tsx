@@ -14,14 +14,14 @@ export default function CreditCardsPage() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-[#1E3A5F]/5 to-white py-16 border-b border-slate-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 bg-[#D4AF37]/20 text-[#8B6914] px-4 py-2 rounded-full text-sm font-semibold mb-4">
+          <div className="inline-flex items-center gap-2 bg-[#D4AF37]/20 text-[#D4AF37] px-4 py-2 rounded-full text-sm font-semibold mb-4">
             <CreditCard className="w-4 h-4" aria-hidden="true" />
             Travel Hack
           </div>
-          <h1 className="font-fraunces text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+          <h1 className="font-fraunces text-4xl md:text-5xl font-bold text-white mb-4">
             The Disney Cruise Wallet
           </h1>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+          <p className="text-xl text-blue-200 max-w-2xl mx-auto">
             The 3-card strategy that pays for your flights, covers your trip insurance, and earns
             points toward your next cruise — automatically.
           </p>

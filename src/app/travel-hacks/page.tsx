@@ -231,6 +231,12 @@ export default function TravelHacksHub() {
               </Link>
             </div>
           </div>
+          <Link
+            href="/concierge"
+            className="flex-shrink-0 inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#D4AF37] text-[#1E3A5F] font-semibold rounded-lg hover:bg-yellow-300 transition-colors duration-200 whitespace-nowrap"
+          >
+            Start Planning Your Cruise →
+          </Link>
         </div>
       </section>
 

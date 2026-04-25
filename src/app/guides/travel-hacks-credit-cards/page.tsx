@@ -26,12 +26,12 @@ export default function TravelHacksCreditCardsPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-12 sm:py-16">
-        <div className="max-w-3xl">
-          <h1 className="font-display text-4xl sm:text-5xl font-bold text-slate-900 mb-4">
+      <section className="bg-gradient-to-br from-[#1E3A5F] to-[#2a4f7a] px-4 py-12 sm:py-16">
+        <div className="container mx-auto max-w-3xl">
+          <h1 className="font-display text-4xl sm:text-5xl font-bold text-white mb-4">
             Travel Hacks: Credit Cards for Cruise Rewards
           </h1>
-          <p className="text-lg text-slate-700 mb-6 leading-relaxed">
+          <p className="text-lg text-blue-200 mb-6 leading-relaxed">
             The insider guide to maximizing rewards on your Disney cruise. Whether you're looking for a
             big welcome bonus, free lounge access, or travel insurance, we've analyzed the market so you
             don't have to.
@@ -286,15 +286,15 @@ export default function TravelHacksCreditCardsPage() {
 
       {/* CTA Section */}
       <section className="container mx-auto px-4 py-16 text-center">
-        <h2 className="font-display text-3xl font-bold text-slate-900 mb-4">Ready to Start Earning?</h2>
+        <h2 className="font-display text-3xl font-bold text-slate-900 mb-4">Ready to Plan Your Cruise?</h2>
         <p className="text-lg text-slate-700 mb-8 max-w-2xl mx-auto">
-          Use the links above to apply for your card. We"ve vetted each one personally. You've got this.
-"        </p>
+          Our specialists help you find the best pricing and availability — free service, no obligation.
+        </p>
         <Link
           href="/deals"
           className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#1E3A5F] hover:bg-[#0a1628] text-white font-semibold transition-colors"
         >
-          Browse Our Favorite Deals
+          Start Planning Your Cruise
         </Link>
       </section>
 

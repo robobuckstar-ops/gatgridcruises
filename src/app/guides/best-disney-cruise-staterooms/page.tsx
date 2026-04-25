@@ -23,7 +23,7 @@ export default function BestDisneyCruiseStateroomsGuide() {
             <Link href="/guides" className="text-[#D4AF37] hover:underline text-sm">
               Guides
             </Link>
-            <span className="text-white mx-2">/</span>
+            <span className="text-slate-400 mx-2">/</span>
             <span className="text-gray-300 text-sm">Best Disney Cruise Staterooms</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-fraunces font-bold mb-4 text-white">
@@ -517,10 +517,6 @@ export default function BestDisneyCruiseStateroomsGuide() {
           </div>
         </section>
       </article>
-
-      {/* Ad Slot 5 */}
-
-      <GetQuoteCTA />
 
       <GetQuoteCTA />
     </div>

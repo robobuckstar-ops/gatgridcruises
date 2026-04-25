@@ -58,7 +58,7 @@ export default function BestCardsForCruises() {
               <Clock className="h-4 w-4" />
               <span>5 min read</span>
             </div>
-            <div className="flex items-center gap-2 text-emerald-600 font-semibold">
+            <div className="flex items-center gap-2 text-[#D4AF37] font-semibold">
               <span>💰</span>
               <span>Save up to $400</span>
             </div>
