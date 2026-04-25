@@ -14,10 +14,8 @@ export const metadata: Metadata = {
   },
 }
 
-const AMAZON_TAG = 'thm1230b0300-20'
-
-function amzLink(searchTerm: string) {
-  return `https://www.amazon.com/s?k=${encodeURIComponent(searchTerm)}&tag=${AMAZON_TAG}`
+function amzLink(_searchTerm: string) {
+  return '/concierge'
 }
 
 const gifts = [

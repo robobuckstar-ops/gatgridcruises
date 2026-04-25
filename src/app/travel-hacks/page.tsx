@@ -146,7 +146,7 @@ export default function TravelHacksHub() {
 
                 <div className="flex items-center justify-between pt-4 border-t border-slate-100">
                   <span className="text-sm font-semibold text-emerald-600">{strategy.savings}</span>
-                  <ArrowRight className="h-5 w-5 text-slate-400 group-hover:text-blue-600 transition-colors" />
+                  <ArrowRight className="h-5 w-5 text-slate-400 group-hover:text-[#1E3A5F] transition-colors" />
                 </div>
               </Link>
             )
@@ -330,18 +330,6 @@ export default function TravelHacksHub() {
         </div>
       </section>
 
-      {/* Affiliate Disclosure */}
-      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-slate-200">
-        <div className="bg-slate-50 rounded-lg p-6 border border-slate-200">
-          <h3 className="font-semibold text-slate-900 mb-2">Affiliate Disclosure</h3>
-          <p className="text-sm text-slate-700">
-            This guide contains referral links to credit card offers. We may earn a commission if
-            you apply through our links at no additional cost to you. We only recommend cards we
-            genuinely believe offer value for cruise travelers. Always compare offers and apply for
-            the card that best matches your situation and spending patterns.
-          </p>
-        </div>
-      </section>
     </div>
   )
 }

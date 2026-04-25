@@ -9,10 +9,8 @@ export const metadata: Metadata = {
   keywords: ['disney cruise packing list', 'what to pack disney cruise', 'cruise essentials', 'disney cruise gear', 'cruise packing tips'],
 }
 
-const AFFILIATE_TAG = 'thm1230b0300-20'
-
-function amazonLink(asin: string) {
-  return `https://www.amazon.com/dp/${asin}?tag=${AFFILIATE_TAG}`
+function amazonLink(_asin: string) {
+  return '/concierge'
 }
 
 interface Product {
@@ -330,15 +328,13 @@ export default function PackingGearPage() {
                       <p className="text-slate-600 text-sm leading-relaxed">{product.why}</p>
                     </div>
                     <div className="px-6 pb-6">
-                      <a
-                        href={amazonLink(product.asin)}
-                        target="_blank"
-                        rel="noopener noreferrer sponsored"
+                      <Link
+                        href="/concierge"
                         className="flex items-center justify-center gap-2 w-full bg-[#D4AF37] hover:bg-yellow-400 text-[#1E3A5F] font-bold text-sm py-3 px-4 rounded-xl transition-colors duration-200"
                       >
-                        <span>View on Amazon</span>
+                        <span>Learn More</span>
                         <ExternalLink className="w-4 h-4" />
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 ))}
@@ -351,25 +347,20 @@ export default function PackingGearPage() {
       {/* Mid-page Amex CTA */}
       <section className="py-8">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <a
-            href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-            target="_blank"
-            rel="noopener noreferrer sponsored"
+          <Link
+            href="/concierge"
             className="block rounded-2xl overflow-hidden border border-[#D4AF37] shadow-md hover:shadow-lg transition-shadow"
           >
             <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div>
-                <p className="text-[#D4AF37] font-bold text-lg leading-tight">Earn 150K+ Points with Amex Business Platinum</p>
-                <p className="text-blue-200 text-sm mt-1">Use points to upgrade your Disney cruise stateroom or book flights to Port Canaveral</p>
+                <p className="text-[#D4AF37] font-bold text-lg leading-tight">Plan Your Disney Cruise with Expert Guidance</p>
+                <p className="text-blue-200 text-sm mt-1">Our advisors help you find the right sailing and make the most of your rewards points.</p>
               </div>
               <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-5 py-2.5 rounded-xl whitespace-nowrap">
-                Apply Now →
+                Start Planning →
               </span>
             </div>
-          </a>
-          <p className="text-xs text-slate-400 mt-2">
-            Sponsored. Terms apply. See our <Link href="/disclosures" className="underline hover:text-slate-600">affiliate disclosures</Link>.
-          </p>
+          </Link>
         </div>
       </section>
 

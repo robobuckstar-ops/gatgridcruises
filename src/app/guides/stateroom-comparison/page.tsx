@@ -457,7 +457,7 @@ export default function StateroomComparisonPage() {
             </Link>
             <a
               href="https://www.disneycruise.disney.go.com/"
-              target="_blank"
+              
               rel="noopener noreferrer"
               className="block text-center px-6 py-4 border-2 border-slate-300 text-slate-700 font-semibold rounded-xl hover:border-blue-400 transition"
             >

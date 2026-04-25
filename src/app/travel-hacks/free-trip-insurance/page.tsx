@@ -25,19 +25,19 @@ export default function FreeTripInsurance() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-indigo-50 py-12">
+      <section className="bg-gradient-to-br from-[#1E3A5F]/5 to-white py-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
             href="/travel-hacks"
-            className="inline-flex items-center gap-1 text-blue-600 hover:text-blue-700 text-sm font-medium mb-6"
+            className="inline-flex items-center gap-1 text-[#1E3A5F] hover:text-[#2a4f7a] text-sm font-medium mb-6"
           >
             <ArrowLeft className="h-4 w-4" />
             Back to Travel Hacks
           </Link>
 
           <div className="flex items-center gap-2 mb-4">
-            <Tag className="h-5 w-5 text-blue-600" />
-            <span className="text-sm font-semibold text-blue-700 uppercase tracking-wider">
+            <Tag className="h-5 w-5 text-[#1E3A5F]" />
+            <span className="text-sm font-semibold text-[#1E3A5F] uppercase tracking-wider">
               Travel Hacks
             </span>
           </div>
@@ -130,7 +130,7 @@ export default function FreeTripInsurance() {
             </li>
           </ul>
 
-          <div className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded my-6">
+          <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded my-6">
             <p className="text-sm text-slate-700">
               <strong>Important:</strong> The card must have been used to purchase the cruise fare
               for the benefits to apply. If you booked with a debit card or someone else's card,
@@ -258,26 +258,26 @@ export default function FreeTripInsurance() {
 
           <ol className="text-slate-600 space-y-3 mb-6">
             <li className="flex gap-3">
-              <span className="font-bold text-blue-600 flex-shrink-0">1.</span>
+              <span className="font-bold text-[#1E3A5F] flex-shrink-0">1.</span>
               <span>
                 Contact your credit card company's insurance administrator as soon as you need to
                 cancel
               </span>
             </li>
             <li className="flex gap-3">
-              <span className="font-bold text-blue-600 flex-shrink-0">2.</span>
+              <span className="font-bold text-[#1E3A5F] flex-shrink-0">2.</span>
               <span>
                 Provide proof of the covered reason (medical documentation, death certificate, etc.)
               </span>
             </li>
             <li className="flex gap-3">
-              <span className="font-bold text-blue-600 flex-shrink-0">3.</span>
+              <span className="font-bold text-[#1E3A5F] flex-shrink-0">3.</span>
               <span>
                 Submit original receipts and booking confirmations for the cruise and flights
               </span>
             </li>
             <li className="flex gap-3">
-              <span className="font-bold text-blue-600 flex-shrink-0">4.</span>
+              <span className="font-bold text-[#1E3A5F] flex-shrink-0">4.</span>
               <span>
                 Wait for approval—typically 15-30 days for a decision, then reimbursement within
                 60 days
@@ -302,7 +302,7 @@ export default function FreeTripInsurance() {
 
           <ul className="text-slate-600 space-y-3 mb-6">
             <li className="flex gap-3">
-              <span className="font-bold text-blue-600 flex-shrink-0">✓</span>
+              <span className="font-bold text-[#1E3A5F] flex-shrink-0">✓</span>
               <span>
                 <strong>Pre-existing conditions:</strong> If you or a traveling family member has a
                 known medical condition that might require cancellation, buy cancel-for-any-reason
@@ -310,28 +310,28 @@ export default function FreeTripInsurance() {
               </span>
             </li>
             <li className="flex gap-3">
-              <span className="font-bold text-blue-600 flex-shrink-0">✓</span>
+              <span className="font-bold text-[#1E3A5F] flex-shrink-0">✓</span>
               <span>
                 <strong>No credit card coverage:</strong> If you booked the cruise with a debit
                 card or didn't use a credit card, buy trip insurance
               </span>
             </li>
             <li className="flex gap-3">
-              <span className="font-bold text-blue-600 flex-shrink-0">✓</span>
+              <span className="font-bold text-[#1E3A5F] flex-shrink-0">✓</span>
               <span>
                 <strong>High-cost cruise:</strong> If you"re spending $10,000+ and your card's
 "                limit ($5,000-10,000) won't fully cover it, add coverage
               </span>
             </li>
             <li className="flex gap-3">
-              <span className="font-bold text-blue-600 flex-shrink-0">✓</span>
+              <span className="font-bold text-[#1E3A5F] flex-shrink-0">✓</span>
               <span>
                 <strong>Extended travel:</strong> If you're adding multi-week land tours before or
                 after the cruise, card coverage might not extend there
               </span>
             </li>
             <li className="flex gap-3">
-              <span className="font-bold text-blue-600 flex-shrink-0">✓</span>
+              <span className="font-bold text-[#1E3A5F] flex-shrink-0">✓</span>
               <span>
                 <strong>Pregnancy (3rd trimester):</strong> Cruise lines and many insurance policies
                 restrict pregnant travelers—buy pregnancy-specific coverage if applicable
@@ -361,54 +361,43 @@ export default function FreeTripInsurance() {
           <div className="grid md:grid-cols-2 gap-4">
             <Link
               href="/travel-hacks/fly-free-to-cruise-port"
-              className="flex items-center justify-between p-4 rounded-lg bg-white border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all"
+              className="flex items-center justify-between p-4 rounded-lg bg-white border border-slate-200 hover:border-[#1E3A5F]/30 hover:shadow-md transition-all"
             >
               <span className="font-semibold text-slate-900">
                 How to Fly Free to Your Cruise Port
               </span>
-              <span className="text-blue-600">→</span>
+              <span className="text-[#1E3A5F]">→</span>
             </Link>
             <Link
               href="/travel-hacks/best-cards-for-cruises"
-              className="flex items-center justify-between p-4 rounded-lg bg-white border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all"
+              className="flex items-center justify-between p-4 rounded-lg bg-white border border-slate-200 hover:border-[#1E3A5F]/30 hover:shadow-md transition-all"
             >
               <span className="font-semibold text-slate-900">
                 Best Credit Cards for Cruise Purchases
               </span>
-              <span className="text-blue-600">→</span>
+              <span className="text-[#1E3A5F]">→</span>
             </Link>
             <Link
               href="/travel-hacks/stack-points-free-cruise"
-              className="flex items-center justify-between p-4 rounded-lg bg-white border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all"
+              className="flex items-center justify-between p-4 rounded-lg bg-white border border-slate-200 hover:border-[#1E3A5F]/30 hover:shadow-md transition-all"
             >
               <span className="font-semibold text-slate-900">
                 How to Stack Points for a Free Cruise
               </span>
-              <span className="text-blue-600">→</span>
+              <span className="text-[#1E3A5F]">→</span>
             </Link>
             <Link
               href="/travel-hacks/cruise-port-lounge-access"
-              className="flex items-center justify-between p-4 rounded-lg bg-white border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all"
+              className="flex items-center justify-between p-4 rounded-lg bg-white border border-slate-200 hover:border-[#1E3A5F]/30 hover:shadow-md transition-all"
             >
               <span className="font-semibold text-slate-900">
                 Cruise Port Lounge Access
               </span>
-              <span className="text-blue-600">→</span>
+              <span className="text-[#1E3A5F]">→</span>
             </Link>
           </div>
         </section>
 
-        {/* Affiliate Disclosure */}
-        <section className="mt-12 pt-8 border-t border-slate-200">
-          <div className="bg-amber-50 rounded-lg p-6 border border-amber-200">
-            <h3 className="font-semibold text-slate-900 mb-2">Affiliate Disclosure</h3>
-            <p className="text-sm text-slate-700">
-              This guide contains referral links to credit card offers. We may earn a commission if
-              you apply through our links at no additional cost to you. We only recommend cards we
-              genuinely believe offer value for cruise travelers.
-            </p>
-          </div>
-        </section>
       </article>
     </div>
   )

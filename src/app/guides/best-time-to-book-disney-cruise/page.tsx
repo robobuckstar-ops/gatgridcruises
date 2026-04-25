@@ -42,9 +42,9 @@ export default function BestTimeToBookGuide() {
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
         <a
-              href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
+              href="/concierge"
+              
+              
               className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow"
             >
               <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4 flex items-center justify-between gap-4">
@@ -135,9 +135,9 @@ export default function BestTimeToBookGuide() {
         </section>
 
         <a
-              href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
+              href="/concierge"
+              
+              
               className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow"
             >
               <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4 flex items-center justify-between gap-4">
@@ -272,9 +272,9 @@ export default function BestTimeToBookGuide() {
         </section>
 
         <a
-              href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
+              href="/concierge"
+              
+              
               className="block rounded-xl overflow-hidden border border-[#D4AF37] shadow-sm hover:shadow-md transition-shadow"
             >
               <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-4 flex items-center justify-between gap-4">

@@ -637,13 +637,13 @@ Many teens who are skeptical before boarding return home having had a genuinely 
 
 <h3>Formal Night (1–2 nights per sailing)</h3>
 <p>Most itineraries include one or two formal nights in the main dining rooms. You don't have to dress up, but most guests do and the photos are some of the best trip mementos. Men typically wear suits or sport coats; women wear cocktail dresses or gowns. One dress outfit per person is sufficient.</p>
-<p>Packing tip: <a href="https://www.amazon.com/s?k=compression+packing+cubes+travel&tag=thm1230b0300-20" rel="nofollow sponsored">compression packing cubes</a> dramatically reduce the space formal clothes take up and prevent wrinkles.</p>
+<p>Packing tip: <a href="/concierge" rel="nofollow sponsored">compression packing cubes</a> dramatically reduce the space formal clothes take up and prevent wrinkles.</p>
 
 <h3>Pirate Night (every sailing)</h3>
 <p>Every Disney cruise includes a Pirate Night deck party. Buy gear before you board — onboard pricing for themed merchandise is a significant premium. A bandana, eye patch, and striped shirt from Amazon costs a few dollars and is more than sufficient.</p>
 
 <h3>Swimwear</h3>
-<p>Bring more swimwear than you think you need. Two swimsuits per person minimum — they won't fully dry overnight. A <a href="https://www.amazon.com/s?k=rashguard+upf+50+swim+shirt&tag=thm1230b0300-20" rel="nofollow sponsored">UPF 50 rashguard</a> adds meaningful sun protection at Castaway Cay and beach ports.</p>
+<p>Bring more swimwear than you think you need. Two swimsuits per person minimum — they won't fully dry overnight. A <a href="/concierge" rel="nofollow sponsored">UPF 50 rashguard</a> adds meaningful sun protection at Castaway Cay and beach ports.</p>
 
 <h3>Port and Shore Excursion Clothes</h3>
 <p>At Castaway Cay and beach ports: water shoes, rashguard, and beach cover-up. At historic or walking ports like Nassau: closed-toe, well-cushioned walking shoes. Sandals cause blisters on port days that involve significant walking.</p>
@@ -651,36 +651,36 @@ Many teens who are skeptical before boarding return home having had a genuinely 
 <h2>Must-Have Cruise Gear</h2>
 
 <h3>Surge-Protected Power Strip</h3>
-<p>The single most-recommended item on every Disney cruise forum. Staterooms have limited outlets — a surge-protected power strip fixes this immediately. <a href="https://www.amazon.com/s?k=travel+power+strip+surge+protected+usb&tag=thm1230b0300-20" rel="nofollow sponsored">Look for compact travel models with USB ports</a>. It must say "surge protected" on the box.</p>
+<p>The single most-recommended item on every Disney cruise forum. Staterooms have limited outlets — a surge-protected power strip fixes this immediately. <a href="/concierge" rel="nofollow sponsored">Look for compact travel models with USB ports</a>. It must say "surge protected" on the box.</p>
 
 <h3>Magnetic Hooks (Pack 4–8)</h3>
-<p>Disney stateroom walls and doors are magnetic. <a href="https://www.amazon.com/s?k=heavy+duty+magnetic+hooks+strong&tag=thm1230b0300-20" rel="nofollow sponsored">Heavy-duty magnetic hooks</a> let you hang wet swimwear, towels, bags, and accessories without using drawer or closet space. This is the Disney cruise hack that nearly every veteran cruiser swears by.</p>
+<p>Disney stateroom walls and doors are magnetic. <a href="/concierge" rel="nofollow sponsored">Heavy-duty magnetic hooks</a> let you hang wet swimwear, towels, bags, and accessories without using drawer or closet space. This is the Disney cruise hack that nearly every veteran cruiser swears by.</p>
 
 <h3>Over-the-Door Shoe Organizer</h3>
 <p>Hangs on the magnetic back of your stateroom door and provides 12–20 pockets for sunscreen, toiletries, charging cables, and daily essentials. Especially valuable in inside and oceanview cabins where counter space is limited.</p>
 
 <h3>Dry Bag (2–5L)</h3>
-<p>Essential at Castaway Cay. You need somewhere waterproof for your phone, Key to the World card, and cash when swimming. A <a href="https://www.amazon.com/s?k=waterproof+dry+bag+small+swimming&tag=thm1230b0300-20" rel="nofollow sponsored">small dry bag</a> costs under $15 and could save your phone.</p>
+<p>Essential at Castaway Cay. You need somewhere waterproof for your phone, Key to the World card, and cash when swimming. A <a href="/concierge" rel="nofollow sponsored">small dry bag</a> costs under $15 and could save your phone.</p>
 
 <h3>Portable Battery Pack</h3>
-<p>Castaway Cay has no public charging stations. A <a href="https://www.amazon.com/s?k=portable+charger+10000mah+lightweight&tag=thm1230b0300-20" rel="nofollow sponsored">compact 10,000mAh power bank</a> keeps your phone alive through full port days.</p>
+<p>Castaway Cay has no public charging stations. A <a href="/concierge" rel="nofollow sponsored">compact 10,000mAh power bank</a> keeps your phone alive through full port days.</p>
 
 <h3>Waterproof Phone Pouch with Lanyard</h3>
-<p>For snorkeling and water activities, a <a href="https://www.amazon.com/s?k=waterproof+phone+pouch+lanyard+underwater&tag=thm1230b0300-20" rel="nofollow sponsored">waterproof phone pouch with lanyard</a> lets you take photos in the water and keep your phone safe. These run $10–$20.</p>
+<p>For snorkeling and water activities, a <a href="/concierge" rel="nofollow sponsored">waterproof phone pouch with lanyard</a> lets you take photos in the water and keep your phone safe. These run $10–$20.</p>
 
 <h2>Castaway Cay Specific Packing</h2>
 <p>Castaway Cay is Disney's private island in the Bahamas — usually the trip highlight. Bring these specifically for island day:</p>
 <ul>
 <li><strong>Reef-safe sunscreen</strong> — Castaway Cay protects its coral reef; sunscreens containing oxybenzone and octinoxate are discouraged</li>
 <li><strong>Water shoes</strong> — the dock area and some beach entries have rocky sections</li>
-<li><strong>Snorkeling gear</strong> — rentable on the island, but bringing your own saves money. A <a href="https://www.amazon.com/s?k=snorkel+set+adult+dry+top&tag=thm1230b0300-20" rel="nofollow sponsored">dry-top snorkel set</a> runs $30–$50</li>
+<li><strong>Snorkeling gear</strong> — rentable on the island, but bringing your own saves money. A <a href="/concierge" rel="nofollow sponsored">dry-top snorkel set</a> runs $30–$50</li>
 <li><strong>Reusable water bottle</strong> — the island has water stations</li>
 </ul>
 <p>See our full <a href="/guides/ports/castaway-cay">Castaway Cay guide</a> for beach tips, dining, and activity recommendations.</p>
 
 <h2>Kids' Extras</h2>
 <ul>
-<li><strong>Autograph books and Sharpie markers</strong> — Sharpies write more clearly on glossy photo prints than felt-tip pens. <a href="https://www.amazon.com/s?k=disney+autograph+book+cruise&tag=thm1230b0300-20" rel="nofollow sponsored">Disney-themed autograph books on Amazon</a> cost less than onboard prices.</li>
+<li><strong>Autograph books and Sharpie markers</strong> — Sharpies write more clearly on glossy photo prints than felt-tip pens. <a href="/concierge" rel="nofollow sponsored">Disney-themed autograph books on Amazon</a> cost less than onboard prices.</li>
 <li><strong>USB night light</strong> — Inside staterooms are completely dark; small USB-powered night lights are essential for kids who can't sleep in the dark</li>
 <li><strong>Tablet with downloaded content</strong> — Onboard WiFi packages are expensive. Download movies, shows, and games before boarding.</li>
 <li><strong>Glow sticks or LED wristbands</strong> — Very popular at the Pirate Night deck party; cheap from Amazon, premium prices onboard</li>
@@ -690,7 +690,7 @@ Many teens who are skeptical before boarding return home having had a genuinely 
 <ul>
 <li><strong>Motion sickness medication</strong> — Dramamine, Bonine, or scopolamine patches. Buying onboard is very expensive.</li>
 <li><strong>Sunscreen and after-sun gel</strong> — You will get more sun than you expect. SPF 50+ minimum; one of the most expensive items onboard.</li>
-<li><strong>Compact first aid kit</strong> — Band-aids, blister pads, antacids, pain reliever. A <a href="https://www.amazon.com/s?k=travel+first+aid+kit+compact&tag=thm1230b0300-20" rel="nofollow sponsored">travel first aid kit</a> handles 90% of minor issues for under $20.</li>
+<li><strong>Compact first aid kit</strong> — Band-aids, blister pads, antacids, pain reliever. A <a href="/concierge" rel="nofollow sponsored">travel first aid kit</a> handles 90% of minor issues for under $20.</li>
 <li><strong>Prescriptions in original containers</strong> — Important for Customs inspection on international sailings</li>
 </ul>
 
@@ -855,7 +855,7 @@ Many teens who are skeptical before boarding return home having had a genuinely 
 <li>Purchase protection and extended warranty on eligible purchases</li>
 <li>No foreign transaction fees</li>
 </ul>
-<p><a href="https://www.referyourchasecard.com/226m/6ZT33F9TOQ" rel="nofollow sponsored" target="_blank"><strong>Apply for the Chase Ink Business Preferred</strong></a></p>
+<p><a href="/concierge"><strong>Learn More About Chase Ink Business Preferred</strong></a></p>
 <p><em>Terms apply. Verify current welcome offers and coverage details directly with Chase before applying.</em></p>
 
 <h2>Amex Business Platinum: Best for Lounge Access and Maximum Coverage</h2>
@@ -879,7 +879,7 @@ Many teens who are skeptical before boarding return home having had a genuinely 
 
 <h3>Annual Fee and Offsets</h3>
 <p>The $695 annual fee comes with credits that offset much of it for active travelers: $200 airline fee credit, $189 CLEAR Plus credit, $100 Global Entry/TSA PreCheck credit, and up to $400 in Dell Business credits. Fine Hotels &amp; Resorts benefits apply at 1,000+ properties — useful for pre-cruise hotel nights near Port Canaveral or Miami.</p>
-<p><a href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS" rel="nofollow sponsored" target="_blank"><strong>Apply for the Amex Business Platinum</strong></a></p>
+<p><a href="/concierge"><strong>Learn More About the Amex Business Platinum</strong></a></p>
 <p><em>Terms apply. Welcome offers change frequently. Verify current details directly with American Express before applying.</em></p>
 
 <h2>Capital One Spark Business: Best Simple High-Value Earner</h2>
@@ -896,7 +896,7 @@ Many teens who are skeptical before boarding return home having had a genuinely 
 
 <h3>Annual Fee</h3>
 <p>$150/year, rebated if you spend $150,000+ annually.</p>
-<p><a href="https://i.capitalone.com/JKlfRwN3f" rel="nofollow sponsored" target="_blank"><strong>Apply for the Capital One Spark Business</strong></a></p>
+<p><a href="/concierge"><strong>Learn More About Capital One Spark Business</strong></a></p>
 <p><em>Terms apply. Verify current welcome offers and card details with Capital One before applying.</em></p>
 
 <h2>Strategy: How to Use These Cards Together</h2>

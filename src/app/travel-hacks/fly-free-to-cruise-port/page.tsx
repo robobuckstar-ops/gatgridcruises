@@ -26,19 +26,19 @@ export default function FlyFreeToCruisePort() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-indigo-50 py-12">
+      <section className="bg-gradient-to-br from-[#1E3A5F]/5 to-white py-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
             href="/travel-hacks"
-            className="inline-flex items-center gap-1 text-blue-600 hover:text-blue-700 text-sm font-medium mb-6"
+            className="inline-flex items-center gap-1 text-[#1E3A5F] hover:text-[#2a4f7a] text-sm font-medium mb-6"
           >
             <ArrowLeft className="h-4 w-4" />
             Back to Travel Hacks
           </Link>
 
           <div className="flex items-center gap-2 mb-4">
-            <Tag className="h-5 w-5 text-blue-600" />
-            <span className="text-sm font-semibold text-blue-700 uppercase tracking-wider">
+            <Tag className="h-5 w-5 text-[#1E3A5F]" />
+            <span className="text-sm font-semibold text-[#1E3A5F] uppercase tracking-wider">
               Travel Hacks
             </span>
           </div>
@@ -85,7 +85,7 @@ export default function FlyFreeToCruisePort() {
             account. You can then redeem those points for flights, hotel stays, or even cash back.
           </p>
 
-          <div className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded my-6">
+          <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded my-6">
             <p className="text-sm text-slate-700">
               <span className="font-semibold">Key insight:</span> The Chase Sapphire Preferred
               offers 60,000 points worth roughly $750 via the Chase Travel Portal—enough to cover
@@ -287,54 +287,43 @@ export default function FlyFreeToCruisePort() {
           <div className="grid md:grid-cols-2 gap-4">
             <Link
               href="/travel-hacks/best-cards-for-cruises"
-              className="flex items-center justify-between p-4 rounded-lg bg-white border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all"
+              className="flex items-center justify-between p-4 rounded-lg bg-white border border-slate-200 hover:border-[#1E3A5F]/30 hover:shadow-md transition-all"
             >
               <span className="font-semibold text-slate-900">
                 Best Credit Cards for Cruise Purchases
               </span>
-              <span className="text-blue-600">→</span>
+              <span className="text-[#1E3A5F]">→</span>
             </Link>
             <Link
               href="/travel-hacks/stack-points-free-cruise"
-              className="flex items-center justify-between p-4 rounded-lg bg-white border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all"
+              className="flex items-center justify-between p-4 rounded-lg bg-white border border-slate-200 hover:border-[#1E3A5F]/30 hover:shadow-md transition-all"
             >
               <span className="font-semibold text-slate-900">
                 How to Stack Points for a Free Cruise
               </span>
-              <span className="text-blue-600">→</span>
+              <span className="text-[#1E3A5F]">→</span>
             </Link>
             <Link
               href="/travel-hacks/free-trip-insurance"
-              className="flex items-center justify-between p-4 rounded-lg bg-white border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all"
+              className="flex items-center justify-between p-4 rounded-lg bg-white border border-slate-200 hover:border-[#1E3A5F]/30 hover:shadow-md transition-all"
             >
               <span className="font-semibold text-slate-900">
                 Free Trip Insurance You Already Have
               </span>
-              <span className="text-blue-600">→</span>
+              <span className="text-[#1E3A5F]">→</span>
             </Link>
             <Link
               href="/travel-hacks/cruise-port-lounge-access"
-              className="flex items-center justify-between p-4 rounded-lg bg-white border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all"
+              className="flex items-center justify-between p-4 rounded-lg bg-white border border-slate-200 hover:border-[#1E3A5F]/30 hover:shadow-md transition-all"
             >
               <span className="font-semibold text-slate-900">
                 Cruise Port Lounge Access
               </span>
-              <span className="text-blue-600">→</span>
+              <span className="text-[#1E3A5F]">→</span>
             </Link>
           </div>
         </section>
 
-        {/* Affiliate Disclosure */}
-        <section className="mt-12 pt-8 border-t border-slate-200">
-          <div className="bg-amber-50 rounded-lg p-6 border border-amber-200">
-            <h3 className="font-semibold text-slate-900 mb-2">Affiliate Disclosure</h3>
-            <p className="text-sm text-slate-700">
-              This guide contains referral links to credit card offers. We may earn a commission if
-              you apply through our links at no additional cost to you. We only recommend cards we
-              genuinely believe offer value for cruise travelers.
-            </p>
-          </div>
-        </section>
       </article>
     </div>
   )

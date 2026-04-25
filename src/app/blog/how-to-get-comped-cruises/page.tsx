@@ -114,9 +114,8 @@ const sections = [
       The sign-up bonus alone ($750–$1,000 value) can cover flights for two.
     — American Express Business Platinum: 150,000-point welcome offer after meeting spend.
       Points transfer to Delta, Air France/KLM, and others. Lounge access a bonus during embarkation.
-      Apply here → [Amex Biz Plat link below]
+      Talk to our advisors to learn more.
     — Capital One Spark Miles: 2x on all purchases, flexible redemption.
-      [Apply here](https://i.capitalone.com/JKlfRwN3f)
 
     Strategy: Use credit card points for flights and hotels. Pay for the cruise with a card
     that earns 2–3x on travel purchases. The Amex Biz Plat earns 5x on flights booked direct.`,
@@ -198,17 +197,12 @@ export default function HowToGetCompedCruises() {
               <p className="text-blue-200 text-sm mb-4">
                 Use points for airfare, reducing your Disney cruise&apos;s total cost by $1,000+.
               </p>
-              <a
-                href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-                target="_blank"
-                rel="noopener noreferrer sponsored"
-                className="inline-flex items-center gap-2 bg-white text-[#006FCF] font-bold px-6 py-3 rounded-xl hover:bg-blue-50 transition-colors text-sm"
+              <Link
+                href="/concierge"
+                className="inline-flex items-center gap-2 bg-white text-[#1E3A5F] font-bold px-6 py-3 rounded-xl hover:bg-blue-50 transition-colors text-sm"
               >
-                Learn More →
-              </a>
-              <p className="text-[11px] text-blue-300 mt-3">
-                Affiliate disclosure: GatGridCruises may earn a commission if you apply via our link, at no cost to you.
-              </p>
+                Start Planning Your Cruise →
+              </Link>
             </div>
 
             {/* Bottom section */}

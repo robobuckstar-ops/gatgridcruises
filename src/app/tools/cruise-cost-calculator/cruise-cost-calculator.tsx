@@ -241,7 +241,7 @@ export function CruiseCostCalculator() {
         <div className="p-6">
           <a
             href="https://disneycruise.disney.go.com"
-            target="_blank"
+            
             rel="noopener noreferrer"
             className="block w-full text-center py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold transition-colors"
           >

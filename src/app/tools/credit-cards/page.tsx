@@ -131,9 +131,9 @@ export default function CreditCardsPage() {
               </div>
             </div>
             <a
-              href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
+              href="/concierge"
+              
+              
               className="inline-flex items-center gap-2 bg-[#D4AF37] text-[#1E3A5F] font-bold px-6 py-3 rounded-lg hover:bg-yellow-300 transition-colors"
             >
               Apply for Amex Business Platinum <ArrowRight className="w-4 h-4" />
@@ -200,9 +200,9 @@ export default function CreditCardsPage() {
               </div>
             </div>
             <a
-              href="https://www.referyourchasecard.com/226m/6ZT33F9TOQ"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
+              href="/concierge"
+              
+              
               className="inline-flex items-center gap-2 bg-[#1E3A5F] text-white font-bold px-6 py-3 rounded-lg hover:bg-[#2a4f7a] transition-colors"
             >
               Apply for Southwest Card <ArrowRight className="w-4 h-4" />
@@ -268,9 +268,9 @@ export default function CreditCardsPage() {
               </div>
             </div>
             <a
-              href="https://i.capitalone.com/JKlfRwN3f"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
+              href="/concierge"
+              
+              
               className="inline-flex items-center gap-2 bg-[#1E3A5F] text-white font-bold px-6 py-3 rounded-lg hover:bg-[#2a4f7a] transition-colors"
             >
               Apply for Capital One Spark <ArrowRight className="w-4 h-4" />

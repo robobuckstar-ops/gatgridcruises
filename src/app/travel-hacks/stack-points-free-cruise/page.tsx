@@ -29,19 +29,19 @@ export default function StackPointsForFreeCruise() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-blue-50 to-indigo-50 py-12">
+      <section className="bg-gradient-to-br from-[#1E3A5F]/5 to-white py-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
             href="/travel-hacks"
-            className="inline-flex items-center gap-1 text-blue-600 hover:text-blue-700 text-sm font-medium mb-6"
+            className="inline-flex items-center gap-1 text-[#1E3A5F] hover:text-[#2a4f7a] text-sm font-medium mb-6"
           >
             <ArrowLeft className="h-4 w-4" />
             Back to Travel Hacks
           </Link>
 
           <div className="flex items-center gap-2 mb-4">
-            <Tag className="h-5 w-5 text-blue-600" />
-            <span className="text-sm font-semibold text-blue-700 uppercase tracking-wider">
+            <Tag className="h-5 w-5 text-[#1E3A5F]" />
+            <span className="text-sm font-semibold text-[#1E3A5F] uppercase tracking-wider">
               Travel Hacks
             </span>
           </div>
@@ -114,7 +114,7 @@ export default function StackPointsForFreeCruise() {
             </li>
           </ul>
 
-          <div className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded my-6">
+          <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded my-6">
             <p className="text-sm text-slate-700 mb-2">
               <strong>Chase Trifecta Total Bonuses:</strong> 60K + 150K + 90K = 300K points
             </p>
@@ -148,7 +148,7 @@ export default function StackPointsForFreeCruise() {
             </li>
           </ul>
 
-          <div className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded my-6">
+          <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded my-6">
             <p className="text-sm text-slate-700 mb-2">
               <strong>Amex Ecosystem Total Bonuses:</strong> 150K + 60K + 250K = 460K Amex points
             </p>
@@ -180,7 +180,7 @@ export default function StackPointsForFreeCruise() {
             </li>
           </ul>
 
-          <div className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded my-6">
+          <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded my-6">
             <p className="text-sm text-slate-700 mb-2">
               <strong>Hybrid Mix Total Bonuses:</strong> 60K + 75K + 60K = 195K points/miles
             </p>
@@ -202,37 +202,37 @@ export default function StackPointsForFreeCruise() {
 
           <div className="space-y-3 mb-6">
             <div className="flex gap-4">
-              <span className="font-bold text-blue-600 flex-shrink-0">Month 1:</span>
+              <span className="font-bold text-[#1E3A5F] flex-shrink-0">Month 1:</span>
               <span className="text-slate-600">
                 Apply for Card 1 (e.g., Chase Sapphire Preferred)
               </span>
             </div>
             <div className="flex gap-4">
-              <span className="font-bold text-blue-600 flex-shrink-0">Month 2-3:</span>
+              <span className="font-bold text-[#1E3A5F] flex-shrink-0">Month 2-3:</span>
               <span className="text-slate-600">
                 Hit minimum spend on Card 1; bonus posts mid-Month 3
               </span>
             </div>
             <div className="flex gap-4">
-              <span className="font-bold text-blue-600 flex-shrink-0">Month 3:</span>
+              <span className="font-bold text-[#1E3A5F] flex-shrink-0">Month 3:</span>
               <span className="text-slate-600">
                 Apply for Card 2 (space 2-3 months apart from Card 1)
               </span>
             </div>
             <div className="flex gap-4">
-              <span className="font-bold text-blue-600 flex-shrink-0">Month 5-6:</span>
+              <span className="font-bold text-[#1E3A5F] flex-shrink-0">Month 5-6:</span>
               <span className="text-slate-600">
                 Hit minimum spend on Card 2; bonus posts; apply for Card 3
               </span>
             </div>
             <div className="flex gap-4">
-              <span className="font-bold text-blue-600 flex-shrink-0">Month 8-9:</span>
+              <span className="font-bold text-[#1E3A5F] flex-shrink-0">Month 8-9:</span>
               <span className="text-slate-600">
                 Hit minimum spend on Card 3; bonus posts; you now have 3 signup bonuses in hand
               </span>
             </div>
             <div className="flex gap-4">
-              <span className="font-bold text-blue-600 flex-shrink-0">Month 9-12:</span>
+              <span className="font-bold text-[#1E3A5F] flex-shrink-0">Month 9-12:</span>
               <span className="text-slate-600">
                 Book your cruise with the accumulated points
               </span>
@@ -298,35 +298,35 @@ export default function StackPointsForFreeCruise() {
 
           <ul className="text-slate-600 space-y-3 mb-6">
             <li className="flex gap-3">
-              <span className="text-blue-600 font-bold">•</span>
+              <span className="text-[#1E3A5F] font-bold">•</span>
               <span>
                 <strong>Only apply for cards if you meet spend naturally:</strong> Don't artificially
                 inflate spending just to qualify for bonuses
               </span>
             </li>
             <li className="flex gap-3">
-              <span className="text-blue-600 font-bold">•</span>
+              <span className="text-[#1E3A5F] font-bold">•</span>
               <span>
                 <strong>Pay your balance monthly:</strong> Interest charges erase all rewards value;
                 only apply if you can pay in full
               </span>
             </li>
             <li className="flex gap-3">
-              <span className="text-blue-600 font-bold">•</span>
+              <span className="text-[#1E3A5F] font-bold">•</span>
               <span>
                 <strong>Space applications 2-3 months apart:</strong> Multiple applications in a short
                 window can hurt your credit score
               </span>
             </li>
             <li className="flex gap-3">
-              <span className="text-blue-600 font-bold">•</span>
+              <span className="text-[#1E3A5F] font-bold">•</span>
               <span>
                 <strong>Account for annual fees:</strong> If cards charge $95-550/year, ensure your
                 earning and benefits justify it
               </span>
             </li>
             <li className="flex gap-3">
-              <span className="text-blue-600 font-bold">•</span>
+              <span className="text-[#1E3A5F] font-bold">•</span>
               <span>
                 <strong>Keep cards open after earning bonuses:</strong> Closing accounts hurts your
                 credit score and average age of accounts
@@ -343,54 +343,43 @@ export default function StackPointsForFreeCruise() {
           <div className="grid md:grid-cols-2 gap-4">
             <Link
               href="/travel-hacks/fly-free-to-cruise-port"
-              className="flex items-center justify-between p-4 rounded-lg bg-white border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all"
+              className="flex items-center justify-between p-4 rounded-lg bg-white border border-slate-200 hover:border-[#1E3A5F]/30 hover:shadow-md transition-all"
             >
               <span className="font-semibold text-slate-900">
                 How to Fly Free to Your Cruise Port
               </span>
-              <span className="text-blue-600">→</span>
+              <span className="text-[#1E3A5F]">→</span>
             </Link>
             <Link
               href="/travel-hacks/best-cards-for-cruises"
-              className="flex items-center justify-between p-4 rounded-lg bg-white border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all"
+              className="flex items-center justify-between p-4 rounded-lg bg-white border border-slate-200 hover:border-[#1E3A5F]/30 hover:shadow-md transition-all"
             >
               <span className="font-semibold text-slate-900">
                 Best Credit Cards for Cruise Purchases
               </span>
-              <span className="text-blue-600">→</span>
+              <span className="text-[#1E3A5F]">→</span>
             </Link>
             <Link
               href="/travel-hacks/free-trip-insurance"
-              className="flex items-center justify-between p-4 rounded-lg bg-white border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all"
+              className="flex items-center justify-between p-4 rounded-lg bg-white border border-slate-200 hover:border-[#1E3A5F]/30 hover:shadow-md transition-all"
             >
               <span className="font-semibold text-slate-900">
                 Free Trip Insurance You Already Have
               </span>
-              <span className="text-blue-600">→</span>
+              <span className="text-[#1E3A5F]">→</span>
             </Link>
             <Link
               href="/travel-hacks/cruise-port-lounge-access"
-              className="flex items-center justify-between p-4 rounded-lg bg-white border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all"
+              className="flex items-center justify-between p-4 rounded-lg bg-white border border-slate-200 hover:border-[#1E3A5F]/30 hover:shadow-md transition-all"
             >
               <span className="font-semibold text-slate-900">
                 Cruise Port Lounge Access
               </span>
-              <span className="text-blue-600">→</span>
+              <span className="text-[#1E3A5F]">→</span>
             </Link>
           </div>
         </section>
 
-        {/* Affiliate Disclosure */}
-        <section className="mt-12 pt-8 border-t border-slate-200">
-          <div className="bg-amber-50 rounded-lg p-6 border border-amber-200">
-            <h3 className="font-semibold text-slate-900 mb-2">Affiliate Disclosure</h3>
-            <p className="text-sm text-slate-700">
-              This guide contains referral links to credit card offers. We may earn a commission if
-              you apply through our links at no additional cost to you. We only recommend cards we
-              genuinely believe offer value for cruise travelers.
-            </p>
-          </div>
-        </section>
       </article>
     </div>
   )

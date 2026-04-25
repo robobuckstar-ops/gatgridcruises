@@ -29,28 +29,16 @@ export const AMAZON_CONFIG = {
  * Usage: amazonLink('https://www.amazon.com/dp/B09V3KXJPB')
  *   → 'https://www.amazon.com/dp/B09V3KXJPB?tag=thm1230b0300-20'
  */
-export function amazonLink(url: string): string {
-  const separator = url.includes('?') ? '&' : '?'
-  return `${url}${separator}tag=${AMAZON_CONFIG.tag}`
+export function amazonLink(_url: string): string {
+  return '/concierge'
 }
 
-/**
- * Build an Amazon product link from just an ASIN.
- * Usage: amazonProductLink('B09V3KXJPB')
- *   → 'https://www.amazon.com/dp/B09V3KXJPB?tag=thm1230b0300-20'
- */
-export function amazonProductLink(asin: string): string {
-  return `${AMAZON_CONFIG.baseUrl}/dp/${asin}?tag=${AMAZON_CONFIG.tag}`
+export function amazonProductLink(_asin: string): string {
+  return '/concierge'
 }
 
-/**
- * Build an Amazon search link with your affiliate tag.
- * Usage: amazonSearchLink('cruise packing cubes')
- *   → 'https://www.amazon.com/s?k=cruise+packing+cubes&tag=thm1230b0300-20'
- */
-export function amazonSearchLink(query: string): string {
-  const encoded = encodeURIComponent(query).replace(/%20/g, '+')
-  return `${AMAZON_CONFIG.baseUrl}/s?k=${encoded}&tag=${AMAZON_CONFIG.tag}`
+export function amazonSearchLink(_query: string): string {
+  return '/concierge'
 }
 
 
@@ -64,42 +52,17 @@ export function amazonSearchLink(query: string): string {
 // online account under "Refer a Friend" or similar.
 //
 export const CARD_REFERRAL_LINKS: Record<string, string | null> = {
-  // ── Chase ──────────────────────────────────────────────────
-  /** Chase Ink Business Preferred referral */
-  'chase-ink-business-preferred': 'https://www.referyourchasecard.com/226m/6ZT33F9TOQ',
-
-  /** Chase Ink Business Unlimited — uses Ink Business Preferred link */
-  'chase-ink-business-unlimited': null,
-
-  /** Chase Sapphire Preferred — add your link when you have it */
-  'chase-sapphire-preferred':  null,
-
-  /** Chase Sapphire Reserve — add your link when you have it */
-  'chase-sapphire-reserve':    null,
-
-  // ── American Express ───────────────────────────────────────
-  /** Amex Business Platinum referral */
-  'amex-business-platinum':    'https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS',
-
-  /** Amex Gold — add your link when you have it */
-  'amex-gold':                 null,
-
-  // ── Capital One ────────────────────────────────────────────
-  /** Capital One Spark Cash Plus referral */
-  'capital-one-spark-cash-plus':   'https://i.capitalone.com/JKlfRwN3f',
-
-  /** Capital One Spark Cash Select — uses Spark Cash Plus link */
-  'capital-one-spark-cash-select': null,
-
-  /** Capital One Venture X — uses Spark Cash Plus link as fallback */
-  'capital-one-venture-x':     null,
-
-  /** Capital One Venture — uses Spark Cash Plus link as fallback */
-  'capital-one-venture':       null,
-
-  // ── Citi ───────────────────────────────────────────────────
-  /** Citi Premier — add your link when you have it */
-  'citi-premier':              null,
+  'chase-ink-business-preferred': '/concierge',
+  'chase-ink-business-unlimited': '/concierge',
+  'chase-sapphire-preferred':     '/concierge',
+  'chase-sapphire-reserve':       '/concierge',
+  'amex-business-platinum':       '/concierge',
+  'amex-gold':                    '/concierge',
+  'capital-one-spark-cash-plus':  '/concierge',
+  'capital-one-spark-cash-select':'/concierge',
+  'capital-one-venture-x':        '/concierge',
+  'capital-one-venture':          '/concierge',
+  'citi-premier':                 '/concierge',
 }
 
 /**
