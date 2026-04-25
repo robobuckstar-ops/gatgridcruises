@@ -1,6 +1,8 @@
+import Link from 'next/link'
 import { ArrowRight, Mail } from 'lucide-react'
 
 interface SailingDetails {
+  id?: string
   itinerary_name?: string
   sail_date?: string
   length_nights?: number
@@ -14,40 +16,13 @@ interface BookingInquiryButtonProps {
   className?: string
 }
 
-function buildMailtoHref(sailing?: SailingDetails): string {
-  const email = 'bookings@gatgridcruises.com'
-
-  if (!sailing) {
-    return `mailto:${email}?subject=Disney%20Cruise%20Booking%20Inquiry`
-  }
-
-  const ship = sailing.ship?.name ? sailing.ship.name.replace('Disney ', '') : ''
-  const rawDate = sailing.sail_date
-  const date = rawDate
-    ? new Date(rawDate).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
-    : ''
-  const itinerary = sailing.itinerary_name || ''
-  const nights = sailing.length_nights || ''
-  const price = sailing.current_lowest_price ? `$${sailing.current_lowest_price.toLocaleString()}` : ''
-
-  const subject = encodeURIComponent(
-    `Booking inquiry: ${itinerary}${ship ? ` on Disney ${ship}` : ''}`
-  )
-  const body = encodeURIComponent(
-    `Hi GatGrid team,\n\nI'm interested in booking the following sailing and would love your help:\n\n` +
-      `Itinerary: ${itinerary}\n` +
-      (ship ? `Ship: Disney ${ship}\n` : '') +
-      (date ? `Sail Date: ${date}\n` : '') +
-      (nights ? `Length: ${nights} nights\n` : '') +
-      (price ? `Starting from: ${price} per stateroom\n` : '') +
-      `\nPlease reach out so we can discuss options!\n\nThanks`
-  )
-
-  return `mailto:${email}?subject=${subject}&body=${body}`
+function buildConciergeHref(sailing?: SailingDetails): string {
+  if (!sailing?.id) return '/concierge'
+  return `/concierge?sailing=${sailing.id}`
 }
 
 export function BookingInquiryButton({ sailing, variant = 'inline', className }: BookingInquiryButtonProps) {
-  const href = buildMailtoHref(sailing)
+  const href = buildConciergeHref(sailing)
 
   if (variant === 'sidebar') {
     return (
@@ -62,12 +37,12 @@ export function BookingInquiryButton({ sailing, variant = 'inline', className }:
         <p className="text-blue-200 text-xs mb-4 leading-relaxed">
           Talk to a Disney cruise specialist at Boardwalk Travel Agency — free concierge service, no pressure.
         </p>
-        <a
+        <Link
           href={href}
           className="inline-flex items-center gap-2 w-full justify-center px-4 py-2.5 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm rounded-lg hover:bg-yellow-300 transition-colors"
         >
           Get a Free Quote <ArrowRight className="h-4 w-4" />
-        </a>
+        </Link>
         <p className="text-blue-300 text-[10px] mt-2.5 text-center">
           Via Boardwalk Travel Agency · Free concierge service
         </p>
@@ -92,13 +67,13 @@ export function BookingInquiryButton({ sailing, variant = 'inline', className }:
             </p>
           </div>
           <div className="flex-shrink-0 text-center">
-            <a
+            <Link
               href={href}
               className="inline-flex items-center gap-2 px-6 py-3 bg-[#D4AF37] text-[#1E3A5F] font-bold rounded-xl hover:bg-yellow-300 transition-colors whitespace-nowrap shadow-sm"
             >
               <Mail className="w-4 h-4" />
               Let us help you book
-            </a>
+            </Link>
             <p className="text-blue-300 text-[10px] mt-2">
               Via Boardwalk Travel Agency · Free service
             </p>
@@ -122,12 +97,12 @@ export function BookingInquiryButton({ sailing, variant = 'inline', className }:
             Our team finds the best price and perks — free concierge service via Boardwalk Travel Agency.
           </p>
         </div>
-        <a
+        <Link
           href={href}
           className="flex-shrink-0 inline-flex items-center gap-2 px-5 py-2.5 bg-[#1E3A5F] text-white font-semibold text-sm rounded-lg hover:bg-[#162d4a] transition-colors whitespace-nowrap"
         >
           Get booking help <ArrowRight className="h-4 w-4" />
-        </a>
+        </Link>
       </div>
     </div>
   )
