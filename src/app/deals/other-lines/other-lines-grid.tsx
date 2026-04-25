@@ -253,7 +253,7 @@ export function OtherLinesGrid({ deals }: OtherLinesGridProps) {
                   className="bg-white rounded-xl border border-slate-200 hover:border-slate-400 hover:shadow-lg transition-all duration-200 overflow-hidden flex flex-col"
                 >
                   {/* Savings banner */}
-                  <div className="bg-emerald-600 text-white px-4 py-2 flex items-center justify-between">
+                  <div className="bg-[#1E3A5F] text-white px-4 py-2 flex items-center justify-between">
                     <span className="text-sm font-bold flex items-center gap-1.5">
                       <TrendingDown className="h-4 w-4" />
                       {deal.savings_percent}% off
@@ -346,7 +346,7 @@ export function OtherLinesGrid({ deals }: OtherLinesGridProps) {
         )}
 
         {/* Disney CTA */}
-        <div className="mt-12 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-xl p-6 text-center">
+        <div className="mt-12 bg-[#1E3A5F]/5 border border-[#1E3A5F]/20 rounded-xl p-6 text-center">
           <h2 className="font-display text-xl font-bold text-slate-900 mb-2">
             Looking for Disney Cruises?
           </h2>
@@ -355,7 +355,7 @@ export function OtherLinesGrid({ deals }: OtherLinesGridProps) {
           </p>
           <Link
             href="/deals"
-            className="inline-flex items-center gap-2 px-6 py-2.5 bg-blue-600 text-white font-semibold text-sm rounded-lg hover:bg-blue-700 transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#1E3A5F] text-white font-semibold text-sm rounded-lg hover:bg-[#2a4f7a] transition-colors"
           >
             View Disney Cruise Deals
           </Link>

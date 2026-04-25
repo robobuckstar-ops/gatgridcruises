@@ -285,7 +285,7 @@ export function LastMinuteDealGrid({ deals: initialDeals, ships, ports }: LastMi
             </p>
             <button
               onClick={handleClearFilters}
-              className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#1E3A5F] text-white font-semibold rounded-lg hover:bg-[#2a4f7a] transition-colors"
             >
               View All Deals
               <ArrowRight className="h-4 w-4" />

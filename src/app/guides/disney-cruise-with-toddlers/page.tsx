@@ -86,7 +86,7 @@ export default function DisneyCruiseWithToddlersGuide() {
             It's a Small World Nursery: Childcare for the Youngest
           </h2>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Ages & Requirements
             </h3>
@@ -95,7 +95,7 @@ export default function DisneyCruiseWithToddlersGuide() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Cost & Booking
             </h3>
@@ -107,7 +107,7 @@ export default function DisneyCruiseWithToddlersGuide() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               What Happens in the Nursery
             </h3>
@@ -140,7 +140,7 @@ export default function DisneyCruiseWithToddlersGuide() {
             Once your toddler is potty trained and reaches age 3, they can transition to Oceaneer Club (free kids club). This is a big upgrade—instead of $9/hour nursery care, your 3-year-old gets access to a full themed clubhouse with activities, character meet-and-greets, story time, water play, and group activities. It's free and typically operates 9am-midnight with flexible check-in/check-out.
           </p>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Preparing Your 3-Year-Old for Oceaneer Club
             </h3>
@@ -186,7 +186,7 @@ export default function DisneyCruiseWithToddlersGuide() {
             Cabin Choices for Toddler Families
           </h2>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Verandah Cabins (Recommended for Toddlers)
             </h3>
@@ -202,7 +202,7 @@ export default function DisneyCruiseWithToddlersGuide() {
             </ul>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Oceanview & Inside Cabins (Budget Option)
             </h3>
@@ -217,7 +217,7 @@ export default function DisneyCruiseWithToddlersGuide() {
             </ul>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Connecting Rooms (Family Suite Option)
             </h3>
@@ -226,7 +226,7 @@ export default function DisneyCruiseWithToddlersGuide() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Newest Ships: Disney Wish & Disney Treasure
             </h3>
@@ -241,7 +241,7 @@ export default function DisneyCruiseWithToddlersGuide() {
             Dining with Toddlers: What to Expect & Plan
           </h2>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               High Chairs & Special Seating
             </h3>
@@ -250,7 +250,7 @@ export default function DisneyCruiseWithToddlersGuide() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Rotational Dining vs. Buffet for Toddler Families
             </h3>
@@ -262,7 +262,7 @@ export default function DisneyCruiseWithToddlersGuide() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Kids Menus & Food Options
             </h3>
@@ -275,7 +275,7 @@ export default function DisneyCruiseWithToddlersGuide() {
             </ul>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Bringing Baby Food & Special Items
             </h3>
@@ -312,7 +312,7 @@ export default function DisneyCruiseWithToddlersGuide() {
             Toddler-Friendly Onboard Amenities
           </h2>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Splash Zones & Water Areas
             </h3>
@@ -324,7 +324,7 @@ export default function DisneyCruiseWithToddlersGuide() {
             </ul>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Diaper Dash & Toddler Events
             </h3>
@@ -333,7 +333,7 @@ export default function DisneyCruiseWithToddlersGuide() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Stroller Policy Onboard
             </h3>
@@ -349,7 +349,7 @@ export default function DisneyCruiseWithToddlersGuide() {
           </h2>
 
           <div className="grid md:grid-cols-2 gap-6 mb-6">
-            <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg">
+            <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg">
               <h3 className="text-lg font-fraunces font-bold text-slate-900 mb-3">
                 Essentials to Pack
               </h3>
@@ -381,7 +381,7 @@ export default function DisneyCruiseWithToddlersGuide() {
               </ul>
             </div>
 
-            <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg">
+            <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg">
               <h3 className="text-lg font-fraunces font-bold text-slate-900 mb-3">
                 Other Helpful Items
               </h3>
@@ -423,7 +423,7 @@ export default function DisneyCruiseWithToddlersGuide() {
           </h2>
 
           <div className="space-y-6">
-            <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg">
+            <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg">
               <h3 className="text-lg font-fraunces font-bold text-slate-900 mb-3">
                 3-4 Night Cruises (Best for Toddlers)
               </h3>
@@ -432,7 +432,7 @@ export default function DisneyCruiseWithToddlersGuide() {
               </p>
             </div>
 
-            <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg">
+            <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg">
               <h3 className="text-lg font-fraunces font-bold text-slate-900 mb-3">
                 5-7 Night Cruises (Doable)
               </h3>
@@ -441,7 +441,7 @@ export default function DisneyCruiseWithToddlersGuide() {
               </p>
             </div>
 
-            <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg">
+            <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg">
               <h3 className="text-lg font-fraunces font-bold text-slate-900 mb-3">
                 10+ Night Cruises (Not Recommended)
               </h3>
@@ -473,7 +473,7 @@ export default function DisneyCruiseWithToddlersGuide() {
             Nap Schedule & Cabin Management
           </h2>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Maintaining Nap Routines at Sea
             </h3>
@@ -490,7 +490,7 @@ export default function DisneyCruiseWithToddlersGuide() {
             </ul>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Dealing with Sleep Regression
             </h3>
@@ -512,7 +512,7 @@ export default function DisneyCruiseWithToddlersGuide() {
             Castaway Cay with Toddlers
           </h2>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3">
               Island Tips for Young Children
             </h3>
@@ -600,7 +600,7 @@ export default function DisneyCruiseWithToddlersGuide() {
           <p className="font-inter mb-6">
             Use our cost calculator to explore cabin options, pricing, and see which ships and itineraries work best for your family with young children.
           </p>
-          <Link href="/tools/cost-calculator" className="inline-flex items-center gap-2 bg-blue-600 text-slate-900 font-bold py-3 px-6 rounded-lg hover:bg-yellow-300 transition">
+          <Link href="/tools/cost-calculator" className="inline-flex items-center gap-2 bg-[#D4AF37] text-slate-900 font-bold py-3 px-6 rounded-lg hover:bg-yellow-300 transition">
             Browse Deals <ArrowRight size={20} />
           </Link>
         </section>

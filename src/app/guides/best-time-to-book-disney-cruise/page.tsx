@@ -75,7 +75,7 @@ export default function BestTimeToBookGuide() {
             Disney opens cruises for booking approximately 18 months in advance. For example, cruises departing in October 2026 open for booking around April 2025. This isn't a hard rule—Disney occasionally opens farther out (up to 24 months) or closer (12 months), but 18 months is the standard.
           </p>
 
-          <div className="p-6 bg-blue-50 border-l-4 border-blue-600 mb-6">
+          <div className="p-6 bg-slate-50 border-l-4 border-[#1E3A5F] mb-6">
             <h3 className="font-fraunces text-xl font-bold text-slate-900 mb-3">Example Timeline:</h3>
             <ul className="space-y-2 font-inter text-slate-600">
               <li className="flex gap-2"><span className="text-blue-600 font-bold">April 2025:</span> Disney opens October 2026 cruises for booking (18 months out)</li>
@@ -94,7 +94,7 @@ export default function BestTimeToBookGuide() {
         <section className="mb-12">
           <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-4">Wave Season: The Prime Booking Period</h2>
 
-          <div className="mb-6 p-6 bg-amber-50 border-l-4 border-blue-600">
+          <div className="mb-6 p-6 bg-amber-50 border-l-4 border-[#1E3A5F]">
             <h3 className="font-fraunces text-xl font-bold text-slate-900 mb-3">What Is Wave Season?</h3>
             <p className="font-inter text-slate-600">
               "Wave season" (January through March, sometimes extending into April) is when Disney and other cruise lines offer aggressive promotions, price drops, and discounts to drive bookings. Travel agencies see heightened commission opportunities, and passengers benefit from special onboard credits and reduced fares. It"s the single best time to book a cruise if you're flexible on itineraries.
@@ -256,7 +256,7 @@ export default function BestTimeToBookGuide() {
             Disney offers "Guaranteed Rate" (GTY) bookings where you select a category (e.g., "inside cabin") instead of a specific cabin. Your assigned cabin is guaranteed to be that category or better, at a discounted rate. GTY cabins are typically 10-15% cheaper than selecting a specific cabin upfront.
           </p>
 
-          <div className="p-6 bg-blue-50 border-l-4 border-blue-600">
+          <div className="p-6 bg-slate-50 border-l-4 border-[#1E3A5F]">
             <h3 className="font-fraunces text-xl font-bold text-slate-900 mb-4">How GTY Works:</h3>
             <ul className="space-y-3 font-inter text-slate-600">
               <li className="flex gap-2"><span className="text-blue-600 font-bold">1.</span> Book a cabin category without a specific cabin assignment</li>
@@ -469,7 +469,7 @@ export default function BestTimeToBookGuide() {
           <div className="flex flex-wrap gap-4">
             <Link
               href="/deals"
-              className="inline-block px-6 py-3 bg-blue-600 text-slate-900 font-inter font-bold rounded hover:bg-yellow-300 transition"
+              className="inline-block px-6 py-3 bg-[#D4AF37] text-slate-900 font-inter font-bold rounded hover:bg-yellow-300 transition"
             >
               Browse Current Deals
             </Link>
@@ -494,21 +494,21 @@ export default function BestTimeToBookGuide() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Link
               href="/guides/disney-cruise-vs-royal-caribbean"
-              className="p-6 border border-gray-200 rounded-lg hover:border-blue-600 hover:shadow-md transition"
+              className="p-6 border border-gray-200 rounded-lg hover:border-[#1E3A5F] hover:shadow-md transition"
             >
               <h3 className="font-fraunces font-bold text-slate-900 mb-2">Disney Cruise vs. Royal Caribbean</h3>
               <p className="font-inter text-gray-600 text-sm">Compare cruise lines and see if Disney or Royal Caribbean fits your budget and preferences.</p>
             </Link>
             <Link
               href="/guides/disney-cruise-packing-list"
-              className="p-6 border border-gray-200 rounded-lg hover:border-blue-600 hover:shadow-md transition"
+              className="p-6 border border-gray-200 rounded-lg hover:border-[#1E3A5F] hover:shadow-md transition"
             >
               <h3 className="font-fraunces font-bold text-slate-900 mb-2">The Ultimate Disney Cruise Packing List</h3>
               <p className="font-inter text-gray-600 text-sm">Complete checklist of what to pack for your Disney cruise.</p>
             </Link>
             <Link
               href="/guides/castaway-cay-guide"
-              className="p-6 border border-gray-200 rounded-lg hover:border-blue-600 hover:shadow-md transition"
+              className="p-6 border border-gray-200 rounded-lg hover:border-[#1E3A5F] hover:shadow-md transition"
             >
               <h3 className="font-fraunces font-bold text-slate-900 mb-2">Castaway Cay: The Ultimate Guide</h3>
               <p className="font-inter text-gray-600 text-sm">Make the most of Disney's private island with activities and tips.</p>

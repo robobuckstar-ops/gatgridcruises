@@ -24,10 +24,10 @@ export default function BlogPage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-indigo-50 py-20 sm:py-32">
+      <div className="relative overflow-hidden bg-gradient-to-br from-[#1E3A5F]/5 via-white to-slate-50 py-20 sm:py-32">
         <div className="absolute inset-0 opacity-30 pointer-events-none">
-          <div className="absolute top-20 right-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl"></div>
-          <div className="absolute bottom-20 left-10 w-72 h-72 bg-indigo-200 rounded-full mix-blend-multiply filter blur-3xl"></div>
+          <div className="absolute top-20 right-10 w-72 h-72 bg-[#1E3A5F]/20 rounded-full mix-blend-multiply filter blur-3xl"></div>
+          <div className="absolute bottom-20 left-10 w-72 h-72 bg-[#D4AF37]/20 rounded-full mix-blend-multiply filter blur-3xl"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

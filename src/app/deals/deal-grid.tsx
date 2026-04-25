@@ -189,7 +189,7 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
               onClick={() => setShowFilters(!showFilters)}
               className={`inline-flex items-center gap-2 px-4 py-2.5 border rounded-lg text-sm font-medium transition-colors ${
                 showFilters || activeFilterCount > 0
-                  ? 'bg-blue-600 text-white border-blue-600'
+                  ? 'bg-[#1E3A5F] text-white border-[#1E3A5F]'
                   : 'bg-white text-slate-700 border-slate-300 hover:bg-slate-50'
               }`}
             >
@@ -233,7 +233,7 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
                     onClick={() => toggleCruiseLine(line)}
                     className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-colors ${
                       selectedCruiseLines.includes(line)
-                        ? 'bg-blue-600 text-white border-blue-600'
+                        ? 'bg-[#1E3A5F] text-white border-[#1E3A5F]'
                         : 'bg-white text-slate-600 border-slate-300 hover:border-blue-600'
                     }`}
                   >
@@ -257,7 +257,7 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
                       onClick={() => togglePort(port.id)}
                       className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-colors ${
                         selectedPorts.includes(port.id)
-                          ? 'bg-blue-600 text-white border-blue-600'
+                          ? 'bg-[#1E3A5F] text-white border-[#1E3A5F]'
                           : 'bg-white text-slate-600 border-slate-300 hover:border-blue-600'
                       }`}
                     >
@@ -279,7 +279,7 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
                     onClick={() => toggleLength(len)}
                     className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-colors ${
                       lengthFilter.includes(len)
-                        ? 'bg-blue-600 text-white border-blue-600'
+                        ? 'bg-[#1E3A5F] text-white border-[#1E3A5F]'
                         : 'bg-white text-slate-600 border-slate-300 hover:border-blue-600'
                     }`}
                   >

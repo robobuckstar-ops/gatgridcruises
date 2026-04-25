@@ -214,7 +214,7 @@ export default function BestFishExtenderGifts() {
             {gifts.map((gift, index) => (
               <div key={gift.name} className="border border-slate-200 rounded-xl p-5 hover:border-blue-300 transition-colors">
                 <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                  <div className="flex-shrink-0 w-8 h-8 bg-[#1E3A5F] rounded-lg flex items-center justify-center text-white font-bold text-sm">
                     {index + 1}
                   </div>
                   <div className="flex-1">

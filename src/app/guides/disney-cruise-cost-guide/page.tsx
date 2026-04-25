@@ -86,7 +86,7 @@ export default function DisneyVsCruiseCostGuide() {
             The Hidden Costs That Add Up Fast
           </h2>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-8">
+          <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg mb-8">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-4">
               Gratuities (Automatic Service Charges)
             </h3>
@@ -95,7 +95,7 @@ export default function DisneyVsCruiseCostGuide() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-8">
+          <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg mb-8">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-4">
               Beverage Packages
             </h3>
@@ -104,7 +104,7 @@ export default function DisneyVsCruiseCostGuide() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-8">
+          <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg mb-8">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-4">
               Internet (Wi-Fi)
             </h3>
@@ -113,7 +113,7 @@ export default function DisneyVsCruiseCostGuide() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-8">
+          <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg mb-8">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-4">
               Port Excursions (Shore Activities)
             </h3>
@@ -122,7 +122,7 @@ export default function DisneyVsCruiseCostGuide() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-8">
+          <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg mb-8">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-4">
               Specialty Dining
             </h3>
@@ -131,7 +131,7 @@ export default function DisneyVsCruiseCostGuide() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-8">
+          <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg mb-8">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-4">
               Onboard Experiences & Activities
             </h3>
@@ -140,7 +140,7 @@ export default function DisneyVsCruiseCostGuide() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-8">
+          <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg mb-8">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-4">
               Getting to the Port
             </h3>
@@ -284,7 +284,7 @@ export default function DisneyVsCruiseCostGuide() {
             <p className="font-inter mb-6">
               Stop guessing at your cruise budget. Our interactive cost calculator lets you input your stateroom category, sailing length, family size, and preferred add-ons to generate a personalized total cost estimate.
             </p>
-            <Link href="/tools/cost-calculator" className="inline-flex items-center gap-2 bg-blue-600 text-slate-900 font-bold py-3 px-6 rounded-lg hover:bg-yellow-300 transition">
+            <Link href="/tools/cost-calculator" className="inline-flex items-center gap-2 bg-[#D4AF37] text-slate-900 font-bold py-3 px-6 rounded-lg hover:bg-yellow-300 transition">
               Try the Cost Calculator <ArrowRight size={20} />
             </Link>
           </div>
@@ -325,10 +325,10 @@ export default function DisneyVsCruiseCostGuide() {
             Use our tools to compare prices, calculate realistic budgets, and find the best deals on your next sailing.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link href="/deals" className="inline-flex items-center justify-center gap-2 bg-blue-600 text-slate-900 font-bold py-3 px-6 rounded-lg hover:bg-yellow-300 transition">
+            <Link href="/deals" className="inline-flex items-center justify-center gap-2 bg-[#D4AF37] text-slate-900 font-bold py-3 px-6 rounded-lg hover:bg-yellow-300 transition">
               View Current Deals <ArrowRight size={20} />
             </Link>
-            <Link href="/tools/cost-calculator" className="inline-flex items-center justify-center gap-2 border-2 border-blue-600 text-slate-900 font-bold py-3 px-6 rounded-lg hover:bg-blue-600 hover:text-slate-900 transition">
+            <Link href="/tools/cost-calculator" className="inline-flex items-center justify-center gap-2 border-2 border-[#1E3A5F] text-slate-900 font-bold py-3 px-6 rounded-lg hover:bg-[#1E3A5F] hover:text-white transition">
               Calculate Your Cost <TrendingUp size={20} />
             </Link>
           </div>

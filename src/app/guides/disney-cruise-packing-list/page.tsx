@@ -522,7 +522,7 @@ export default function PackingListGuide() {
             </ul>
           </div>
 
-          <div className="p-4 bg-amber-50 border-l-4 border-blue-600">
+          <div className="p-4 bg-amber-50 border-l-4 border-[#1E3A5F]">
             <p className="font-inter text-slate-600 font-bold mb-3">Not Recommended (But Not Prohibited):</p>
             <ul className="space-y-2 font-inter text-slate-600 text-sm">
               <li className="flex gap-2"><span className="text-amber-600">!</span> Excessive formal wear (one or two dressy outfits is enough)</li>
@@ -599,7 +599,7 @@ export default function PackingListGuide() {
           <div className="flex flex-wrap gap-4">
             <Link
               href="/deals"
-              className="inline-block px-6 py-3 bg-blue-600 text-slate-900 font-inter font-bold rounded hover:bg-yellow-300 transition"
+              className="inline-block px-6 py-3 bg-[#D4AF37] text-slate-900 font-inter font-bold rounded hover:bg-yellow-300 transition"
             >
               Find Cruise Deals
             </Link>
@@ -624,21 +624,21 @@ export default function PackingListGuide() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Link
               href="/guides/castaway-cay-guide"
-              className="p-6 border border-gray-200 rounded-lg hover:border-blue-600 hover:shadow-md transition"
+              className="p-6 border border-gray-200 rounded-lg hover:border-[#1E3A5F] hover:shadow-md transition"
             >
               <h3 className="font-fraunces font-bold text-slate-900 mb-2">Castaway Cay: The Ultimate Guide</h3>
               <p className="font-inter text-gray-600 text-sm">Maximize your island day with activities, dining, and expert tips for Castaway Cay.</p>
             </Link>
             <Link
               href="/guides/disney-cruise-food-guide"
-              className="p-6 border border-gray-200 rounded-lg hover:border-blue-600 hover:shadow-md transition"
+              className="p-6 border border-gray-200 rounded-lg hover:border-[#1E3A5F] hover:shadow-md transition"
             >
               <h3 className="font-fraunces font-bold text-slate-900 mb-2">Disney Cruise Food Guide</h3>
               <p className="font-inter text-gray-600 text-sm">Explore every restaurant, ranking all dining options across the Disney fleet.</p>
             </Link>
             <Link
               href="/guides/best-time-to-book-disney-cruise"
-              className="p-6 border border-gray-200 rounded-lg hover:border-blue-600 hover:shadow-md transition"
+              className="p-6 border border-gray-200 rounded-lg hover:border-[#1E3A5F] hover:shadow-md transition"
             >
               <h3 className="font-fraunces font-bold text-slate-900 mb-2">Best Time to Book a Disney Cruise</h3>
               <p className="font-inter text-gray-600 text-sm">Learn pricing patterns and strategies to book your cruise at the lowest possible price.</p>

@@ -243,11 +243,11 @@ export default function FirstTimeDisneyCruiseTipsGuide() {
             {tips.map((tip) => (
               <div
                 key={tip.number}
-                className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg hover:shadow-md transition"
+                className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg hover:shadow-md transition"
               >
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-8 w-8 rounded-lg bg-blue-600 text-slate-900 font-fraunces font-bold">
+                    <div className="flex items-center justify-center h-8 w-8 rounded-lg bg-[#D4AF37] text-slate-900 font-fraunces font-bold">
                       {tip.number}
                     </div>
                   </div>
@@ -288,7 +288,7 @@ export default function FirstTimeDisneyCruiseTipsGuide() {
             One of the most confusing aspects of a first Disney cruise is understanding the dining system. Here's the breakdown:
           </p>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-4">
               Rotational Dining (Included)
             </h3>
@@ -297,7 +297,7 @@ export default function FirstTimeDisneyCruiseTipsGuide() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-4">
               Buffet (Included)
             </h3>
@@ -306,7 +306,7 @@ export default function FirstTimeDisneyCruiseTipsGuide() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-4">
               Specialty Restaurants (Extra Cost: $30-75/person)
             </h3>
@@ -315,7 +315,7 @@ export default function FirstTimeDisneyCruiseTipsGuide() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg mb-6">
+          <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-4">
               Quick Service Venues (Free)
             </h3>
@@ -335,7 +335,7 @@ export default function FirstTimeDisneyCruiseTipsGuide() {
 "          </p>
 
           <div className="space-y-6">
-            <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg">
+            <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg">
               <h3 className="text-lg font-fraunces font-bold text-slate-900 mb-3">
                 Oceaneer Club (Ages 3-12, Potty Trained)
               </h3>
@@ -344,7 +344,7 @@ export default function FirstTimeDisneyCruiseTipsGuide() {
               </p>
             </div>
 
-            <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg">
+            <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg">
               <h3 className="text-lg font-fraunces font-bold text-slate-900 mb-3">
                 Nursery (Ages 6 months-3 years, Not Potty Trained)
               </h3>
@@ -353,7 +353,7 @@ export default function FirstTimeDisneyCruiseTipsGuide() {
               </p>
             </div>
 
-            <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg">
+            <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg">
               <h3 className="text-lg font-fraunces font-bold text-slate-900 mb-3">
                 Edge Club (Ages 11-14)
               </h3>
@@ -362,7 +362,7 @@ export default function FirstTimeDisneyCruiseTipsGuide() {
               </p>
             </div>
 
-            <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg">
+            <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg">
               <h3 className="text-lg font-fraunces font-bold text-slate-900 mb-3">
                 Vibe Club (Ages 14-17)
               </h3>
@@ -444,7 +444,7 @@ export default function FirstTimeDisneyCruiseTipsGuide() {
           </h2>
 
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg">
+            <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg">
               <h3 className="text-lg font-fraunces font-bold text-slate-900 mb-3">
                 Tech Prep
               </h3>
@@ -464,7 +464,7 @@ export default function FirstTimeDisneyCruiseTipsGuide() {
               </ul>
             </div>
 
-            <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg">
+            <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg">
               <h3 className="text-lg font-fraunces font-bold text-slate-900 mb-3">
                 Packing Smarts
               </h3>
@@ -484,7 +484,7 @@ export default function FirstTimeDisneyCruiseTipsGuide() {
               </ul>
             </div>
 
-            <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg">
+            <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg">
               <h3 className="text-lg font-fraunces font-bold text-slate-900 mb-3">
                 Dining Tips
               </h3>
@@ -504,7 +504,7 @@ export default function FirstTimeDisneyCruiseTipsGuide() {
               </ul>
             </div>
 
-            <div className="bg-gradient-to-r from-blue-50/5 to-indigo-100 border-l-4 border-blue-600 p-6 rounded-lg">
+            <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg">
               <h3 className="text-lg font-fraunces font-bold text-slate-900 mb-3">
                 Onboard Culture
               </h3>
@@ -592,10 +592,10 @@ export default function FirstTimeDisneyCruiseTipsGuide() {
             Now that you're armed with essential tips, start planning! Use our guides to choose your port, stateroom category, and budget.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link href="/deals" className="inline-flex items-center justify-center gap-2 bg-blue-600 text-slate-900 font-bold py-3 px-6 rounded-lg hover:bg-yellow-300 transition">
+            <Link href="/deals" className="inline-flex items-center justify-center gap-2 bg-[#D4AF37] text-slate-900 font-bold py-3 px-6 rounded-lg hover:bg-yellow-300 transition">
               Browse Deals <ArrowRight size={20} />
             </Link>
-            <Link href="/tools/cost-calculator" className="inline-flex items-center justify-center gap-2 border-2 border-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-600 hover:text-slate-900 transition">
+            <Link href="/tools/cost-calculator" className="inline-flex items-center justify-center gap-2 border-2 border-[#1E3A5F] text-white font-bold py-3 px-6 rounded-lg hover:bg-[#1E3A5F] hover:text-slate-900 transition">
               Calculate Your Cost <ArrowRight size={20} />
             </Link>
           </div>

@@ -131,7 +131,7 @@ export default function CastawayCayGuide() {
         <section className="mb-12">
           <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-4">Activities & Water Sports</h2>
 
-          <div className="mb-6 p-4 bg-blue-50 border-l-4 border-blue-600">
+          <div className="mb-6 p-4 bg-slate-50 border-l-4 border-[#1E3A5F]">
             <p className="font-inter text-sm text-slate-600">
               <strong>Pro Tip:</strong> Most water sports require advance sign-ups at the beach. Head straight to the activity booth upon arrival to secure your preferred time slot, especially for parasailing and the stingray encounter.
             </p>
@@ -267,7 +267,7 @@ export default function CastawayCayGuide() {
         <section className="mb-12">
           <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-4">Weather & Special Considerations</h2>
 
-          <div className="mb-6 p-4 bg-amber-50 border-l-4 border-blue-600 flex gap-3">
+          <div className="mb-6 p-4 bg-amber-50 border-l-4 border-[#1E3A5F] flex gap-3">
             <AlertCircle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
             <div>
               <p className="font-inter text-slate-600">
@@ -298,7 +298,7 @@ export default function CastawayCayGuide() {
           <div className="flex flex-wrap gap-4">
             <Link
               href="/deals"
-              className="inline-block px-6 py-3 bg-blue-600 text-slate-900 font-inter font-bold rounded hover:bg-yellow-300 transition"
+              className="inline-block px-6 py-3 bg-[#D4AF37] text-slate-900 font-inter font-bold rounded hover:bg-yellow-300 transition"
             >
               Browse Deals
             </Link>
@@ -323,21 +323,21 @@ export default function CastawayCayGuide() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Link
               href="/guides/disney-cruise-packing-list"
-              className="p-6 border border-gray-200 rounded-lg hover:border-blue-600 hover:shadow-md transition"
+              className="p-6 border border-gray-200 rounded-lg hover:border-[#1E3A5F] hover:shadow-md transition"
             >
               <h3 className="font-fraunces font-bold text-slate-900 mb-2">The Ultimate Disney Cruise Packing List</h3>
               <p className="font-inter text-gray-600 text-sm">Complete checklist for what to bring on your cruise, including Castaway Cay essentials.</p>
             </Link>
             <Link
               href="/guides/disney-cruise-food-guide"
-              className="p-6 border border-gray-200 rounded-lg hover:border-blue-600 hover:shadow-md transition"
+              className="p-6 border border-gray-200 rounded-lg hover:border-[#1E3A5F] hover:shadow-md transition"
             >
               <h3 className="font-fraunces font-bold text-slate-900 mb-2">Disney Cruise Food Guide</h3>
               <p className="font-inter text-gray-600 text-sm">Explore dining options across Disney ships and ports, including Castaway Cay restaurants.</p>
             </Link>
             <Link
               href="/guides/best-time-to-book-disney-cruise"
-              className="p-6 border border-gray-200 rounded-lg hover:border-blue-600 hover:shadow-md transition"
+              className="p-6 border border-gray-200 rounded-lg hover:border-[#1E3A5F] hover:shadow-md transition"
             >
               <h3 className="font-fraunces font-bold text-slate-900 mb-2">Best Time to Book a Disney Cruise</h3>
               <p className="font-inter text-gray-600 text-sm">Learn pricing trends and strategies to find the best rates on your dream cruise.</p>
