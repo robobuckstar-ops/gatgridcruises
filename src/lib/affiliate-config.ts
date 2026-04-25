@@ -52,42 +52,17 @@ export function amazonSearchLink(_query: string): string {
 // online account under "Refer a Friend" or similar.
 //
 export const CARD_REFERRAL_LINKS: Record<string, string | null> = {
-  // ── Chase ──────────────────────────────────────────────────
-  /** Chase Ink Business Preferred referral */
-  'chase-ink-business-preferred': null,
-
-  /** Chase Ink Business Unlimited — uses Ink Business Preferred link */
-  'chase-ink-business-unlimited': null,
-
-  /** Chase Sapphire Preferred — add your link when you have it */
-  'chase-sapphire-preferred':  null,
-
-  /** Chase Sapphire Reserve — add your link when you have it */
-  'chase-sapphire-reserve':    null,
-
-  // ── American Express ───────────────────────────────────────
-  /** Amex Business Platinum referral */
-  'amex-business-platinum':    null,
-
-  /** Amex Gold — add your link when you have it */
-  'amex-gold':                 null,
-
-  // ── Capital One ────────────────────────────────────────────
-  /** Capital One Spark Cash Plus referral */
-  'capital-one-spark-cash-plus':   null,
-
-  /** Capital One Spark Cash Select — uses Spark Cash Plus link */
-  'capital-one-spark-cash-select': null,
-
-  /** Capital One Venture X — uses Spark Cash Plus link as fallback */
-  'capital-one-venture-x':     null,
-
-  /** Capital One Venture — uses Spark Cash Plus link as fallback */
-  'capital-one-venture':       null,
-
-  // ── Citi ───────────────────────────────────────────────────
-  /** Citi Premier — add your link when you have it */
-  'citi-premier':              null,
+  'chase-ink-business-preferred': '/concierge',
+  'chase-ink-business-unlimited': '/concierge',
+  'chase-sapphire-preferred':     '/concierge',
+  'chase-sapphire-reserve':       '/concierge',
+  'amex-business-platinum':       '/concierge',
+  'amex-gold':                    '/concierge',
+  'capital-one-spark-cash-plus':  '/concierge',
+  'capital-one-spark-cash-select':'/concierge',
+  'capital-one-venture-x':        '/concierge',
+  'capital-one-venture':          '/concierge',
+  'citi-premier':                 '/concierge',
 }
 
 /**

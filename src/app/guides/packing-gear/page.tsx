@@ -9,8 +9,8 @@ export const metadata: Metadata = {
   keywords: ['disney cruise packing list', 'what to pack disney cruise', 'cruise essentials', 'disney cruise gear', 'cruise packing tips'],
 }
 
-function amazonLink(asin: string) {
-  return `https://www.amazon.com/dp/${asin}`
+function amazonLink(_asin: string) {
+  return '/concierge'
 }
 
 interface Product {
