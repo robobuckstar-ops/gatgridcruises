@@ -228,7 +228,7 @@ export default async function ShipDetailPage({ params }: PageProps) {
               </p>
               <Link
                 href="/tools/stateroom-finder"
-                className="inline-flex items-center gap-2 px-4 py-2.5 bg-blue-600 text-white font-semibold text-sm rounded-lg hover:bg-blue-700 transition-colors w-full justify-center"
+                className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#1E3A5F] text-white font-semibold text-sm rounded-lg hover:bg-[#0a1628] transition-colors w-full justify-center"
               >
                 Stateroom Finder
                 <ArrowRight className="w-4 h-4" />

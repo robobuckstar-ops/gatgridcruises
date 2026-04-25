@@ -126,7 +126,7 @@ export default function CommunityPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/auth/signup"
-              className="inline-flex items-center justify-center px-8 py-3 rounded-lg font-semibold text-white bg-blue-600 hover:bg-blue-700 transition-colors"
+              className="inline-flex items-center justify-center px-8 py-3 rounded-lg font-semibold text-white bg-[#1E3A5F] hover:bg-[#0a1628] transition-colors"
             >
               Create Account
             </Link>

@@ -76,7 +76,7 @@ export default function WatchlistPage() {
             </p>
             <Link
               href="/auth/login"
-              className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors"
+              className="inline-block bg-[#1E3A5F] hover:bg-[#0a1628] text-white font-semibold py-3 px-8 rounded-lg transition-colors"
             >
               Sign In
             </Link>
@@ -105,7 +105,7 @@ export default function WatchlistPage() {
             </p>
             <Link
               href="/deals"
-              className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors"
+              className="inline-block bg-[#1E3A5F] hover:bg-[#0a1628] text-white font-semibold py-3 px-8 rounded-lg transition-colors"
             >
               Browse Deals
             </Link>

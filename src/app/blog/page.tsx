@@ -125,7 +125,7 @@ export default function BlogPage() {
       </div>
 
       {/* Newsletter CTA */}
-      <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-16 sm:py-20 mt-24">
+      <div className="bg-gradient-to-r from-[#1E3A5F] to-[#0a1628] text-white py-16 sm:py-20 mt-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-display text-3xl sm:text-4xl font-bold mb-4">
             Stay Updated
@@ -133,7 +133,7 @@ export default function BlogPage() {
           <p className="text-lg text-blue-100 mb-8">
             Get the latest Disney cruise news and exclusive tips delivered to your inbox
           </p>
-          <button className="inline-block px-8 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors duration-200">
+          <button className="inline-block px-8 py-3 bg-[#D4AF37] text-[#0a1628] font-semibold rounded-lg hover:bg-yellow-300 transition-colors duration-200">
             Subscribe to Our Newsletter
           </button>
         </div>

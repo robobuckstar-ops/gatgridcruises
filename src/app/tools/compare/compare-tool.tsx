@@ -112,7 +112,7 @@ export function CompareTool({ sailings }: CompareToolProps) {
             {selectedIds.length < 4 && (
               <button
                 onClick={handleAddSlot}
-                className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+                className="flex items-center gap-2 px-4 py-2 bg-[#1E3A5F] text-white rounded-lg hover:bg-[#0a1628] transition-colors font-semibold"
               >
                 <Plus className="w-4 h-4" />
                 Add Sailing
@@ -175,7 +175,7 @@ export function CompareTool({ sailings }: CompareToolProps) {
               <p className="text-slate-600 text-lg mb-4">Start by selecting sailings to compare them side by side.</p>
               <button
                 onClick={handleAddSlot}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#1E3A5F] text-white rounded-lg hover:bg-[#0a1628] transition-colors font-semibold"
               >
                 <Plus className="w-4 h-4" />
                 Add First Sailing
@@ -477,7 +477,7 @@ export function CompareTool({ sailings }: CompareToolProps) {
                     <Link
                       key={sailing.id}
                       href={`/sailing/${sailing.id}`}
-                      className="flex items-center justify-center gap-2 px-4 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold text-sm"
+                      className="flex items-center justify-center gap-2 px-4 py-3 bg-[#1E3A5F] text-white rounded-lg hover:bg-[#0a1628] transition-colors font-semibold text-sm"
                     >
                       {sailing.itinerary_name}
                       <ArrowRight className="w-4 h-4" />

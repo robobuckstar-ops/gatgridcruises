@@ -292,7 +292,7 @@ export default function TravelHacksCreditCardsPage() {
 "        </p>
         <Link
           href="/deals"
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold transition-colors"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#1E3A5F] hover:bg-[#0a1628] text-white font-semibold transition-colors"
         >
           Browse Our Favorite Deals
         </Link>

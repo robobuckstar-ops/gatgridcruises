@@ -486,7 +486,7 @@ export default function DisneyCruiseVsRoyalCaribbeanGuide() {
           <div className="flex flex-wrap gap-4">
             <Link
               href="/deals"
-              className="inline-block px-6 py-3 bg-blue-600 text-slate-900 font-inter font-bold rounded hover:bg-yellow-300 transition"
+              className="inline-block px-6 py-3 bg-[#D4AF37] text-[#0a1628] font-inter font-bold rounded hover:bg-yellow-300 transition"
             >
               Browse Deals
             </Link>

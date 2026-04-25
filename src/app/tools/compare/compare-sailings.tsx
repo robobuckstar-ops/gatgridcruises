@@ -263,13 +263,13 @@ export function CompareSailings({ sailings }: CompareSailingsProps) {
             <div className="flex flex-col sm:flex-row gap-4 mt-12">
               <Link
                 href={`/sailing/${sailingAId}`}
-                className="flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg font-bold hover:bg-blue-700 transition-colors"
+                className="flex items-center justify-center gap-2 px-6 py-3 bg-[#1E3A5F] text-white rounded-lg font-bold hover:bg-[#0a1628] transition-colors"
               >
                 View Sailing A Details <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
                 href={`/sailing/${sailingBId}`}
-                className="flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg font-bold hover:bg-blue-700 transition-colors"
+                className="flex items-center justify-center gap-2 px-6 py-3 bg-[#1E3A5F] text-white rounded-lg font-bold hover:bg-[#0a1628] transition-colors"
               >
                 View Sailing B Details <ArrowRight className="h-4 w-4" />
               </Link>

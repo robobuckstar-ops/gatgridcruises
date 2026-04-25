@@ -24,7 +24,7 @@ export default function NotFound() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             href="/"
-            className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-colors duration-200"
+            className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg bg-[#1E3A5F] text-white font-semibold hover:bg-blue-700 transition-colors duration-200"
           >
             Return Home
             <ArrowRight className="w-4 h-4" />
@@ -32,7 +32,7 @@ export default function NotFound() {
 
           <Link
             href="/deals"
-            className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg border-2 border-blue-600 text-blue-600 font-semibold hover:bg-blue-600 hover:text-white transition-colors duration-200"
+            className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg border-2 border-[#1E3A5F] text-[#1E3A5F] font-semibold hover:bg-[#1E3A5F] hover:text-white transition-colors duration-200"
           >
             Browse Deals
             <ArrowRight className="w-4 h-4" />

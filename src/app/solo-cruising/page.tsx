@@ -377,7 +377,7 @@ export default function SoloCruisingPage() {
 
       {/* Community CTA Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg p-12 text-center text-white">
+        <div className="max-w-3xl mx-auto bg-gradient-to-r from-[#1E3A5F] to-[#0a1628] rounded-lg p-12 text-center text-white">
           <Users className="w-16 h-16 mx-auto mb-6 opacity-80" />
           <h2 className="font-fraunces text-3xl font-bold mb-4">
             Join the Sail Together Community
@@ -385,7 +385,7 @@ export default function SoloCruisingPage() {
           <p className="text-lg opacity-95 mb-8 font-inter">
             Find cruise buddies, share experiences, and never sail alone. Connect with other solo cruisers who understand the freedom and joy of solo travel.
           </p>
-          <button className="px-8 py-3 bg-white text-blue-600 font-inter font-semibold rounded-lg hover:bg-blue-50 transition-colors">
+          <button className="px-8 py-3 bg-[#D4AF37] text-[#0a1628] font-inter font-semibold rounded-lg hover:bg-yellow-300 transition-colors">
             Find Your Cruise Squad
           </button>
         </div>

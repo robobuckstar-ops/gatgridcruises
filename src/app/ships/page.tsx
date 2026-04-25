@@ -87,7 +87,7 @@ export default function ShipsPage() {
           </p>
           <Link
             href="/deals"
-            className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-colors"
+            className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-[#1E3A5F] text-white font-semibold hover:bg-[#0a1628] transition-colors"
           >
             Browse All Sailings
             <ArrowRight className="w-4 h-4" />
