@@ -76,12 +76,12 @@ export default function LoginPage() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center px-4">
       <div className="w-full max-w-md bg-white rounded-lg shadow-lg overflow-hidden">
         {/* Header */}
-        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 px-8 py-8 text-center border-b border-slate-200">
-          <h1 className="text-3xl font-bold text-slate-900 mb-1" style={{ fontFamily: 'Georgia, serif' }}>
+        <div className="bg-gradient-to-r from-[#0a1628] to-[#1E3A5F] px-8 py-8 text-center border-b border-blue-900">
+          <h1 className="text-3xl font-bold text-white mb-1" style={{ fontFamily: 'Georgia, serif' }}>
             ⚓
           </h1>
-          <h1 className="text-2xl font-bold text-slate-900">Sign In</h1>
-          <p className="text-slate-600 text-sm mt-1">Welcome back to GatGridCruises</p>
+          <h1 className="text-2xl font-bold text-white">Sign In</h1>
+          <p className="text-blue-100 text-sm mt-1">Welcome back to GatGridCruises</p>
         </div>
 
         {/* Tabs */}

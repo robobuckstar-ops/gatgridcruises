@@ -13,23 +13,23 @@ export default function PortCanaveralVsMiamiGuide() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-50 to-indigo-50 py-16">
+      <section className="relative bg-gradient-to-br from-[#0a1628] to-[#1E3A5F] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-6">
-            <Link href="/" className="text-blue-600 hover:underline text-sm">
+            <Link href="/" className="text-blue-300 hover:underline text-sm">
               Home
             </Link>
             <span className="text-white mx-2">/</span>
-            <Link href="/guides" className="text-blue-600 hover:underline text-sm">
+            <Link href="/guides" className="text-blue-300 hover:underline text-sm">
               Guides
             </Link>
             <span className="text-white mx-2">/</span>
             <span className="text-gray-300 text-sm">Port Canaveral vs. Miami</span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-fraunces font-bold mb-4">
+          <h1 className="text-4xl md:text-5xl font-fraunces font-bold mb-4 text-white">
             Port Canaveral vs. Miami: Which Disney Cruise Port Is Better?
           </h1>
-          <p className="text-lg text-slate-600">
+          <p className="text-lg text-white">
             Comparing driving distance, parking, facilities, nearby attractions, and which port is the perfect starting point for your Disney cruise.
           </p>
         </div>

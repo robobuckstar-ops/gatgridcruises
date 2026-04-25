@@ -24,27 +24,29 @@ export default function TravelHacksCreditCardsPage() {
   const loungeAccessCards = getBestCardsFor('lounge-access')
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-indigo-50">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-12 sm:py-16">
-        <div className="max-w-3xl">
-          <h1 className="font-display text-4xl sm:text-5xl font-bold text-slate-900 mb-4">
-            Travel Hacks: Credit Cards for Cruise Rewards
-          </h1>
-          <p className="text-lg text-slate-700 mb-6 leading-relaxed">
-            The insider guide to maximizing rewards on your Disney cruise. Whether you're looking for a
-            big welcome bonus, free lounge access, or travel insurance, we've analyzed the market so you
-            don't have to.
-          </p>
-          <div className="flex flex-wrap gap-3">
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 text-emerald-700 text-sm font-medium">
-              <span>✓</span> 8 Cards Compared
-            </div>
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-medium">
-              <span>✓</span> Honest Reviews
-            </div>
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-purple-100 text-purple-700 text-sm font-medium">
-              <span>✓</span> No BS
+      <section className="bg-gradient-to-r from-[#0a1628] to-[#1E3A5F] py-12 sm:py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl">
+            <h1 className="font-display text-4xl sm:text-5xl font-bold text-white mb-4">
+              Travel Hacks: Credit Cards for Cruise Rewards
+            </h1>
+            <p className="text-lg text-blue-100 mb-6 leading-relaxed">
+              The insider guide to maximizing rewards on your Disney cruise. Whether you're looking for a
+              big welcome bonus, free lounge access, or travel insurance, we've analyzed the market so you
+              don't have to.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 text-white text-sm font-medium">
+                <span>✓</span> 8 Cards Compared
+              </div>
+              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 text-white text-sm font-medium">
+                <span>✓</span> Honest Reviews
+              </div>
+              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 text-white text-sm font-medium">
+                <span>✓</span> No BS
+              </div>
             </div>
           </div>
         </div>

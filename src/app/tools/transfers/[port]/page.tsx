@@ -59,10 +59,10 @@ export default async function PortTransfersPage({ params }: { params: Promise<{ 
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <div className="bg-gradient-to-br from-blue-50 to-indigo-50 text-slate-900 py-12 border-b border-slate-200">
+      <div className="bg-gradient-to-br from-[#0a1628] to-[#1E3A5F] py-12 border-b border-blue-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="font-display text-3xl sm:text-4xl font-bold mb-2 text-slate-900">{port.name} Transfer Options</h1>
-          <p className="text-slate-600 text-lg">How to get from the airport to your Disney cruise — {transfers.length} options compared</p>
+          <h1 className="font-display text-3xl sm:text-4xl font-bold mb-2 text-white">{port.name} Transfer Options</h1>
+          <p className="text-blue-100 text-lg">How to get from the airport to your Disney cruise — {transfers.length} options compared</p>
         </div>
       </div>
 

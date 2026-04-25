@@ -12,7 +12,7 @@ export default function DisneyCruiseVsRoyalCaribbeanGuide() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-50 via-white to-indigo-50">
+      <section className="relative py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#0a1628] to-[#1E3A5F]">
         <div className="max-w-4xl mx-auto">
           <h1 className="font-fraunces text-4xl sm:text-5xl font-bold text-white mb-4">
             Disney Cruise vs. Royal Caribbean: Honest Comparison
