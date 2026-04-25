@@ -5,16 +5,17 @@ import Link from 'next/link'
 import type { Sailing } from '@/types/database'
 import { formatPrice, formatDate, cn } from '@/lib/utils'
 import { calculateDealScore } from '@/lib/deal-score'
-import { getOutTheDoorTotal } from '@/lib/pricing'
+import { getOutTheDoorTotalForGuests } from '@/lib/pricing'
 import { Ship, Calendar, MapPin, ChevronDown, Bot, Gift } from 'lucide-react'
 import { getOBC } from '@/lib/obc'
 
 interface SailingCardProps {
   sailing: Sailing
   percentBelow?: number
+  guestCount?: number
 }
 
-export function SailingCard({ sailing, percentBelow }: SailingCardProps) {
+export function SailingCard({ sailing, percentBelow, guestCount = 2 }: SailingCardProps) {
   const [expandedPrice, setExpandedPrice] = useState(false)
 
   // Calculate deal score
@@ -23,11 +24,10 @@ export function SailingCard({ sailing, percentBelow }: SailingCardProps) {
   // OBC based on base cruise fare (current_lowest_price = total fare for all guests)
   const obcAmount = getOBC(sailing.current_lowest_price)
 
-  // Calculate out-the-door pricing (for 2 guests by default)
-  const outTheDoor = getOutTheDoorTotal(
+  const outTheDoor = getOutTheDoorTotalForGuests(
     sailing.current_lowest_price,
     sailing.length_nights,
-    2,
+    guestCount,
     sailing.region
   )
 
@@ -121,7 +121,7 @@ export function SailingCard({ sailing, percentBelow }: SailingCardProps) {
           <div className="space-y-1">
             <div className="flex items-baseline justify-between">
               <span className="text-sm text-slate-600 font-medium">Total Per Person</span>
-              <span className="text-xs text-slate-500">(all-in, 2 guests)</span>
+              <span className="text-xs text-slate-500">(all-in, {outTheDoor.guests === 1 ? '1 guest' : `${outTheDoor.guests} guests`})</span>
             </div>
             <div className="flex items-baseline justify-between">
               <span className="text-2xl font-bold text-slate-900">
@@ -188,18 +188,22 @@ export function SailingCard({ sailing, percentBelow }: SailingCardProps) {
             <div className="space-y-1.5 px-3 py-2 bg-slate-50 rounded-lg text-xs text-slate-700">
               <div className="flex justify-between">
                 <span>Base Fare (per person)</span>
-                <span className="font-semibold">{formatPrice(sailing.current_lowest_price / 2)}</span>
+                <span className="font-semibold">{formatPrice(Math.round(outTheDoor.adjustedBase / outTheDoor.guests))}</span>
               </div>
               <div className="flex justify-between">
                 <span>Port Fees & Taxes</span>
-                <span className="font-semibold">{formatPrice(outTheDoor.total - sailing.current_lowest_price - (sailing.length_nights * 14.5 * 2))}</span>
+                <span className="font-semibold">{formatPrice(outTheDoor.portFees)}</span>
               </div>
               <div className="flex justify-between">
                 <span>Gratuities ({sailing.length_nights} nights)</span>
-                <span className="font-semibold">{formatPrice(sailing.length_nights * 14.5 * 2)}</span>
+                <span className="font-semibold">{formatPrice(outTheDoor.gratuities)}</span>
               </div>
               <div className="border-t border-slate-200 pt-1.5 flex justify-between font-semibold text-slate-900">
-                <span>Total Per Person</span>
+                <span>Total (all {outTheDoor.guests === 1 ? '1 guest' : `${outTheDoor.guests} guests`})</span>
+                <span>{formatPrice(outTheDoor.total)}</span>
+              </div>
+              <div className="flex justify-between font-semibold text-blue-700">
+                <span>Per Person</span>
                 <span>{formatPrice(outTheDoor.perPerson)}</span>
               </div>
             </div>
