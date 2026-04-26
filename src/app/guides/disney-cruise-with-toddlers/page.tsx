@@ -7,6 +7,18 @@ import { GetQuoteCTA } from '@/components/get-quote-cta';
 export const metadata: Metadata = {
   title: "Disney Cruise with Toddlers: Complete Parent's Guide",
   description: 'Expert guide for cruising with toddlers: nursery, dining, stroller policy, packing, best itineraries, and Castaway Cay with young kids.',
+  openGraph: {
+    title: "Disney Cruise with Toddlers: Complete Parent's Guide",
+    description: 'Nursery, dining, stroller policy, packing, best itineraries, and Castaway Cay tips for cruising with toddlers.',
+    url: 'https://gatgridcruises.com/guides/disney-cruise-with-toddlers',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Disney Cruise with Toddlers: Complete Parent's Guide",
+    description: 'Nursery, dining, packing, and tips for a magical Disney cruise with young kids.',
+    images: ['https://gatgridcruises.com/og-image.png'],
+  },
 };
 
 export default function DisneyCruiseWithToddlersGuide() {

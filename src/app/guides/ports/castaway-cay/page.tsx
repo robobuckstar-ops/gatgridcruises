@@ -7,6 +7,18 @@ export const metadata: Metadata = {
   title: "Castaway Cay Guide — Disney's Private Island Insider Tips",
   description: "The ultimate guide to Castaway Cay — Disney Cruise Line's private Bahamian island. Serenity Bay, Cookies BBQ, snorkeling, excursions, and insider tips to maximize your day.",
   keywords: ['castaway cay guide', 'castaway cay tips', 'disney private island', 'castaway cay serenity bay', 'cookies bbq castaway cay', 'castaway cay snorkeling'],
+  openGraph: {
+    title: "Castaway Cay Guide — Disney's Private Island Insider Tips",
+    description: "The ultimate guide to Castaway Cay — Serenity Bay, Cookies BBQ, snorkeling, excursions, and tips to maximize your day.",
+    url: 'https://gatgridcruises.com/guides/ports/castaway-cay',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Castaway Cay Guide — Disney's Private Island",
+    description: "Serenity Bay, Cookies BBQ, snorkeling, and insider tips to maximize your Castaway Cay day.",
+    images: ['https://gatgridcruises.com/og-image.png'],
+  },
 }
 
 export default function CastawayCayPage() {

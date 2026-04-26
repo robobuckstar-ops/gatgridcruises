@@ -11,6 +11,13 @@ export const metadata: Metadata = {
     description:
       '18 creative Fish Extender gift ideas under $10 — fun for all ages, lightweight for your luggage.',
     url: 'https://gatgridcruises.com/blog/best-fish-extender-gifts',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Best Fish Extender Gifts Under $10 (2026 List)',
+    description: '18 creative Fish Extender gift ideas under $10 — fun for all ages, lightweight for your luggage.',
+    images: ['https://gatgridcruises.com/og-image.png'],
   },
 }
 

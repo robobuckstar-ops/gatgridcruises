@@ -7,6 +7,18 @@ export const metadata: Metadata = {
   title: 'Do You Need Travel Insurance for a Disney Cruise?',
   description: 'Disney cruise travel insurance explained — medical at sea, trip cancellation, missed ports, Disney\'s own plan vs. third-party options, and how Amex Business Platinum helps.',
   keywords: ['disney cruise travel insurance', 'cruise travel insurance', 'disney cruise cancellation', 'medical at sea insurance', 'trip cancellation cruise'],
+  openGraph: {
+    title: 'Do You Need Travel Insurance for a Disney Cruise?',
+    description: "Disney cruise travel insurance explained — medical at sea, trip cancellation, Disney's plan vs. third-party options.",
+    url: 'https://gatgridcruises.com/guides/travel-insurance',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Do You Need Travel Insurance for a Disney Cruise?',
+    description: "Medical at sea, trip cancellation, and Disney's own plan vs. third-party insurance compared.",
+    images: ['https://gatgridcruises.com/og-image.png'],
+  },
 }
 
 export default function TravelInsurancePage() {

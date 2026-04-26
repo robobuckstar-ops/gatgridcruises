@@ -5,6 +5,18 @@ import { ArrowRight, CheckCircle2, DollarSign, Star, Anchor, Users, Gift } from 
 export const metadata: Metadata = {
   title: 'How to Get a Free or Comped Cruise | GatGridCruises',
   description: 'A complete guide to getting comped cruises through casino programs, loyalty tiers, repositioning sailings, travel agent FAM trips, and credit card strategies.',
+  openGraph: {
+    title: 'How to Get a Free or Comped Cruise | GatGridCruises',
+    description: 'Complete guide to getting comped cruises through casino programs, loyalty tiers, FAM trips, and credit card strategies.',
+    url: 'https://gatgridcruises.com/guides/comped-cruises',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'How to Get a Free or Comped Cruise',
+    description: 'Casino programs, loyalty tiers, FAM trips, and credit card strategies for getting a free cruise.',
+    images: ['https://gatgridcruises.com/og-image.png'],
+  },
 }
 
 export default function CompedCruisesGuide() {

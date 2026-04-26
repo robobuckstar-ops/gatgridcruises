@@ -13,9 +13,23 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params
   const ship = getShipBySlug(slug)
   if (!ship) return { title: 'Ship Not Found' }
+  const title = `${ship.name} — Disney Cruise Line`
+  const description = `Explore the ${ship.name}. Launched ${ship.year_launched}, capacity ${ship.capacity.toLocaleString()} guests. Read our complete ship guide, reviews, and available sailings.`
   return {
-    title: `${ship.name} — Disney Cruise Line`,
-    description: `Explore the ${ship.name}. Launched ${ship.year_launched}, capacity ${ship.capacity.toLocaleString()} guests. Read our complete ship guide, reviews, and available sailings.`,
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url: `https://gatgridcruises.com/ships/${ship.slug}`,
+      images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: title }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: ['https://gatgridcruises.com/og-image.png'],
+    },
   }
 }
 

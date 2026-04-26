@@ -6,6 +6,18 @@ import { MapPin, Home, Heart } from 'lucide-react'
 export const metadata: Metadata = {
   title: 'Pre-Cruise Hotel Guide',
   description: 'Honest hotel recommendations near Disney cruise ports. Find the best places to stay the night before your departure.',
+  openGraph: {
+    title: 'Pre-Cruise Hotel Guide',
+    description: 'Honest hotel recommendations near Disney cruise ports. Find the best places to stay before your departure.',
+    url: 'https://gatgridcruises.com/hotels',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Pre-Cruise Hotel Guide',
+    description: 'Honest hotel recommendations near Disney cruise ports — the best places to stay before your departure.',
+    images: ['https://gatgridcruises.com/og-image.png'],
+  },
 }
 
 export default function HotelsIndexPage() {

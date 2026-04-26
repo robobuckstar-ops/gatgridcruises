@@ -7,6 +7,18 @@ export const metadata: Metadata = {
   title: 'Port Canaveral Cruise Guide — Disney Cruise Departure Tips',
   description: 'Everything you need to know about departing from Port Canaveral on Disney Cruise Line — parking, pre-cruise hotels, getting there, Kennedy Space Center, and embarkation tips.',
   keywords: ['port canaveral disney cruise', 'port canaveral cruise guide', 'disney cruise embarkation', 'port canaveral parking', 'pre-cruise hotel port canaveral'],
+  openGraph: {
+    title: 'Port Canaveral Cruise Guide — Disney Cruise Departure Tips',
+    description: 'Everything you need to know about Port Canaveral — parking, pre-cruise hotels, Kennedy Space Center, and embarkation tips.',
+    url: 'https://gatgridcruises.com/guides/ports/port-canaveral',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Port Canaveral Cruise Guide',
+    description: 'Parking, pre-cruise hotels, and embarkation tips for Disney Cruise Line at Port Canaveral.',
+    images: ['https://gatgridcruises.com/og-image.png'],
+  },
 }
 
 export default function PortCanaveralPage() {

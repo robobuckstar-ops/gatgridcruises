@@ -5,6 +5,18 @@ import { FlightFinder } from './flight-finder'
 export const metadata: Metadata = {
   title: 'Flight Finder — Find Flights to Your Cruise Port',
   description: 'Find the best flights to your Disney cruise departure port. Get arrival time recommendations and booking links.',
+  openGraph: {
+    title: 'Flight Finder — Find Flights to Your Cruise Port',
+    description: 'Find the best flights to your Disney cruise departure port. Arrival time recommendations and booking links.',
+    url: 'https://gatgridcruises.com/tools/flights',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Flight Finder — Disney Cruise Ports',
+    description: 'Find the best flights to your Disney cruise departure port with arrival time recommendations.',
+    images: ['https://gatgridcruises.com/og-image.png'],
+  },
 }
 
 export default function FlightsPage() {

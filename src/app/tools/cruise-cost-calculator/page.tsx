@@ -10,6 +10,14 @@ export const metadata: Metadata = {
     description:
       'Quickly estimate Disney cruise prices by stateroom type, ship, length, and party size. Includes tips to save money.',
     type: 'website',
+    url: 'https://gatgridcruises.com/tools/cruise-cost-calculator',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Disney Cruise Cost Calculator 2026',
+    description: 'Quickly estimate Disney cruise prices by stateroom type, ship, length, and party size. Includes tips to save money.',
+    images: ['https://gatgridcruises.com/og-image.png'],
   },
 }
 

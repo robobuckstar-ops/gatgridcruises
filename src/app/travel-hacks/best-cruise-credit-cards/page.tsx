@@ -10,6 +10,14 @@ export const metadata: Metadata = {
     description:
       'Chase Ink vs Capital One Spark vs Amex Business Platinum — which business card earns the most on Disney cruise bookings?',
     type: 'article',
+    url: 'https://gatgridcruises.com/travel-hacks/best-cruise-credit-cards',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Best Business Credit Cards for Disney Cruises 2026',
+    description: 'Chase Ink vs Capital One Spark vs Amex Business Platinum — which business card earns the most on Disney cruise bookings?',
+    images: ['https://gatgridcruises.com/og-image.png'],
   },
 }
 

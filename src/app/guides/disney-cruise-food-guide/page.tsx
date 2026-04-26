@@ -6,6 +6,18 @@ import { GetQuoteCTA } from '@/components/get-quote-cta';
 export const metadata: Metadata = {
   title: 'Disney Cruise Food Guide: Every Restaurant Ranked',
   description: 'Complete guide to every Disney cruise restaurant. Ranked reviews of rotational dining, buffets, specialty restaurants, and the best dishes to order.',
+  openGraph: {
+    title: 'Disney Cruise Food Guide: Every Restaurant Ranked',
+    description: 'Ranked reviews of every Disney cruise restaurant — rotational dining, buffets, specialty restaurants, and best dishes.',
+    url: 'https://gatgridcruises.com/guides/disney-cruise-food-guide',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Disney Cruise Food Guide: Every Restaurant Ranked',
+    description: 'Ranked reviews of rotational dining, buffets, and specialty restaurants on Disney cruises.',
+    images: ['https://gatgridcruises.com/og-image.png'],
+  },
 };
 
 export default function DisneyCruiseFoodGuide() {

@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     description:
       'What\'s included in the fare, what costs extra, embarkation tips, Pirate Night, Castaway Cay, stateroom comparisons, and gratuity guide.',
     type: 'article',
+    url: 'https://gatgridcruises.com/guides/first-time-disney-cruise',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "First-Timer's Complete Guide to Disney Cruises (2026)",
+    description: "What's included in the fare, what costs extra, embarkation tips, Pirate Night, Castaway Cay, stateroom comparisons, and gratuity guide.",
+    images: ['https://gatgridcruises.com/og-image.png'],
   },
 }
 

@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     description:
       'Inside vs Oceanview vs Verandah vs Concierge — which Disney cruise stateroom is right for you? Full comparison with price ranges and honest advice.',
     type: 'article',
+    url: 'https://gatgridcruises.com/guides/stateroom-comparison',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Disney Cruise Stateroom Comparison 2026',
+    description: 'Inside vs Oceanview vs Verandah vs Concierge — which Disney cruise stateroom is right for you? Full comparison with price ranges.',
+    images: ['https://gatgridcruises.com/og-image.png'],
   },
 }
 

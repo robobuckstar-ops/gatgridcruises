@@ -6,6 +6,18 @@ import { MapPin, Plane, DollarSign, Calendar } from 'lucide-react'
 export const metadata: Metadata = {
   title: 'Disney Cruise Ports',
   description: 'Explore all Disney Cruise Line departure ports. Complete guides with parking, weather, activities, and pre-cruise hotel recommendations for every port.',
+  openGraph: {
+    title: 'Disney Cruise Ports',
+    description: 'Explore all Disney Cruise Line departure ports. Complete guides with parking, weather, activities, and hotel recommendations.',
+    url: 'https://gatgridcruises.com/ports',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Disney Cruise Ports',
+    description: 'Complete guides for every Disney Cruise Line departure port — parking, hotels, activities, and tips.',
+    images: ['https://gatgridcruises.com/og-image.png'],
+  },
 }
 
 // Map port IDs to estimated sailings per year (approximate)

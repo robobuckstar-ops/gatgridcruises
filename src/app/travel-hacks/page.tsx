@@ -26,6 +26,18 @@ export const metadata: Metadata = {
     'disney cruise deals',
     'credit card strategy',
   ],
+  openGraph: {
+    title: 'Travel Hacks: Make Your Disney Cruise Cheaper (or Free)',
+    description: 'Insider strategies for using credit card rewards to reduce cruise vacation costs. Fly free, get trip insurance, and stack points.',
+    url: 'https://gatgridcruises.com/travel-hacks',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Travel Hacks: Make Your Disney Cruise Cheaper (or Free)',
+    description: 'Insider strategies for using credit card rewards to dramatically reduce your cruise vacation costs.',
+    images: ['https://gatgridcruises.com/og-image.png'],
+  },
 }
 
 const strategies = [

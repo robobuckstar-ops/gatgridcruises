@@ -6,6 +6,18 @@ import { GetQuoteCTA } from '@/components/get-quote-cta';
 export const metadata: Metadata = {
   title: "Castaway Cay: The Ultimate Guide to Disney's Private Island",
   description: "Complete guide to Disney's private island paradise. Learn about beaches, activities, restaurants, snorkeling, parasailing, and how to maximize your 8+ hours on the island.",
+  openGraph: {
+    title: "Castaway Cay: The Ultimate Guide to Disney's Private Island",
+    description: "Complete guide to Castaway Cay — beaches, activities, restaurants, snorkeling, and how to maximize your day.",
+    url: 'https://gatgridcruises.com/guides/castaway-cay-guide',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Castaway Cay: Disney's Private Island Guide",
+    description: "Beaches, activities, restaurants, snorkeling, and tips to maximize your Castaway Cay day.",
+    images: ['https://gatgridcruises.com/og-image.png'],
+  },
 };
 
 export default function CastawayCayGuide() {

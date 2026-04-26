@@ -15,6 +15,18 @@ export const metadata: Metadata = {
     'signup bonuses',
     'travel rewards',
   ],
+  openGraph: {
+    title: 'How to Stack Points for a Free Cruise | Travel Hacks',
+    description: 'Learn the math of earning 200K+ points to cover a $6,000 Disney cruise. Three proven strategies using Chase, Amex, and Capital One.',
+    url: 'https://gatgridcruises.com/travel-hacks/stack-points-free-cruise',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'How to Stack Points for a Free Cruise',
+    description: 'Earn 200K+ points to cover a $6,000 Disney cruise with Chase, Amex, and Capital One strategies.',
+    images: ['https://gatgridcruises.com/og-image.png'],
+  },
 }
 
 export default function StackPointsForFreeCruise() {

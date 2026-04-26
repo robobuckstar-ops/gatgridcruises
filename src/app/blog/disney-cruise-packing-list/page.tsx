@@ -10,6 +10,14 @@ export const metadata: Metadata = {
     description:
       'Everything you need for a Disney cruise, organized by category with Amazon links. Plus what NOT to bring and what Disney already provides.',
     type: 'article',
+    url: 'https://gatgridcruises.com/blog/disney-cruise-packing-list',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'The Ultimate Disney Cruise Packing List 2026',
+    description: 'Everything you need for a Disney cruise, organized by category with Amazon links. Plus what NOT to bring.',
+    images: ['https://gatgridcruises.com/og-image.png'],
   },
 }
 

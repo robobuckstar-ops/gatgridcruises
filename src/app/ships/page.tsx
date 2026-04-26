@@ -12,6 +12,13 @@ export const metadata: Metadata = {
     description:
       'Compare every Disney Cruise Line ship. Specs, stateroom categories, highlights, and current deals.',
     url: 'https://gatgridcruises.com/ships',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Disney Cruise Line Ships — Fleet Guide & Comparison',
+    description: 'Compare every Disney Cruise Line ship. Specs, stateroom categories, highlights, and current deals.',
+    images: ['https://gatgridcruises.com/og-image.png'],
   },
 }
 

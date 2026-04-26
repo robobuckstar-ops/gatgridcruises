@@ -15,6 +15,18 @@ export const metadata: Metadata = {
     'credit card benefits',
     'cruise insurance',
   ],
+  openGraph: {
+    title: 'Free Trip Insurance You Already Have | Travel Hacks',
+    description: "Your credit card may already cover your cruise. Learn what's actually covered and when to buy separate insurance.",
+    url: 'https://gatgridcruises.com/travel-hacks/free-trip-insurance',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Free Trip Insurance You Already Have',
+    description: "Your credit card may already cover your cruise. Learn what's covered and when to buy extra.",
+    images: ['https://gatgridcruises.com/og-image.png'],
+  },
 }
 
 export default function FreeTripInsurance() {

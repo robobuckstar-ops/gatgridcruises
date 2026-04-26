@@ -7,6 +7,18 @@ import { GetQuoteCTA } from '@/components/get-quote-cta';
 export const metadata: Metadata = {
   title: '25 Things to Know Before Your First Disney Cruise',
   description: 'Complete first-time Disney cruiser guide covering rotational dining, Navigator app, Pirate Night, Castaway Cay, gratuities, kids clubs, and 19 more essential tips.',
+  openGraph: {
+    title: '25 Things to Know Before Your First Disney Cruise',
+    description: 'Complete first-time Disney cruise guide — rotational dining, Pirate Night, Castaway Cay, gratuities, kids clubs, and 19 more tips.',
+    url: 'https://gatgridcruises.com/guides/first-time-disney-cruise-tips',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: '25 Things to Know Before Your First Disney Cruise',
+    description: 'Essential tips for first-time Disney cruisers — dining, Pirate Night, gratuities, and more.',
+    images: ['https://gatgridcruises.com/og-image.png'],
+  },
 };
 
 export default function FirstTimeDisneyCruiseTipsGuide() {

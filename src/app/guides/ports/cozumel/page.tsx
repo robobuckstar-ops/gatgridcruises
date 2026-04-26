@@ -7,6 +7,18 @@ export const metadata: Metadata = {
   title: 'Cozumel Cruise Guide — Disney Cruise Port Tips & Excursions',
   description: 'Everything you need to know about Cozumel on a Disney cruise — top excursions, Palancar Reef snorkeling, Chichen Itza day trips, best restaurants, and insider tips.',
   keywords: ['cozumel disney cruise', 'cozumel cruise guide', 'palancar reef snorkeling', 'cozumel excursions', 'chichen itza day trip cozumel', 'disney cruise western caribbean'],
+  openGraph: {
+    title: 'Cozumel Cruise Guide — Disney Cruise Port Tips & Excursions',
+    description: 'Everything you need to know about Cozumel on a Disney cruise — Palancar Reef, Chichen Itza, best restaurants, and insider tips.',
+    url: 'https://gatgridcruises.com/guides/ports/cozumel',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Cozumel Cruise Guide — Disney Port Tips',
+    description: 'Palancar Reef snorkeling, Chichen Itza day trips, best restaurants, and Cozumel insider tips.',
+    images: ['https://gatgridcruises.com/og-image.png'],
+  },
 }
 
 export default function CozumelPage() {

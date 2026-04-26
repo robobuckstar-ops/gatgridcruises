@@ -7,6 +7,18 @@ import { GetQuoteCTA } from '@/components/get-quote-cta';
 export const metadata: Metadata = {
   title: 'The True Cost of a Disney Cruise (2026 Breakdown)',
   description: 'Complete breakdown of Disney cruise costs including base fares, gratuities, drinks, excursions, specialty dining, and hidden fees. Plus sample family budget and cost calculator.',
+  openGraph: {
+    title: 'The True Cost of a Disney Cruise (2026 Breakdown)',
+    description: 'Complete breakdown of Disney cruise costs — base fares, gratuities, drinks, excursions, and hidden fees.',
+    url: 'https://gatgridcruises.com/guides/disney-cruise-cost-guide',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'The True Cost of a Disney Cruise (2026)',
+    description: 'Complete breakdown of Disney cruise costs — base fares, gratuities, drinks, excursions, and hidden fees.',
+    images: ['https://gatgridcruises.com/og-image.png'],
+  },
 };
 
 export default function DisneyVsCruiseCostGuide() {

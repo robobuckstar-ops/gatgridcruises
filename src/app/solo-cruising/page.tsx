@@ -8,6 +8,18 @@ import { Heart, Users, Zap, Wallet, Shield, MapPin, Calendar, Anchor, ArrowRight
 export const metadata = {
   title: 'Solo Cruising — Your Guide to Sailing Alone on Disney Cruise Line',
   description: 'Discover the freedom of solo cruising. Find solo-friendly sailings, tips for meeting people, safety advice, and the best value cruises for solo travelers.',
+  openGraph: {
+    title: 'Solo Cruising — Your Guide to Sailing Alone on Disney Cruise Line',
+    description: 'Find solo-friendly sailings, tips for meeting people, safety advice, and the best value cruises for solo travelers.',
+    url: 'https://gatgridcruises.com/solo-cruising',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Solo Cruising on Disney Cruise Line',
+    description: 'Find solo-friendly sailings, tips for meeting people, and the best value cruises for solo travelers.',
+    images: ['https://gatgridcruises.com/og-image.png'],
+  },
 }
 
 const BENEFITS = [
