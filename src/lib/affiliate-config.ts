@@ -17,8 +17,7 @@
 
 // ─── AMAZON ASSOCIATES ───────────────────────────────────────
 export const AMAZON_CONFIG = {
-  /** TODO: Replace with real Amazon Associates tag (e.g., 'gatgridcruis00-20') */
-  tag: '',
+  tag: 'thm1230b0300-20',
 
   /** Base URL for Amazon product links (don't change this) */
   baseUrl: 'https://www.amazon.com',
@@ -29,19 +28,17 @@ export const AMAZON_CONFIG = {
  * Usage: amazonLink('https://www.amazon.com/dp/B09V3KXJPB')
  *   → 'https://www.amazon.com/dp/B09V3KXJPB?tag=thm1230b0300-20'
  */
-export function amazonLink(_url: string): string {
-  // TODO: Replace with real affiliate URL once Amazon Associates tag is set
-  return '/concierge'
+export function amazonLink(url: string): string {
+  const separator = url.includes('?') ? '&' : '?'
+  return `${url}${separator}tag=${AMAZON_CONFIG.tag}`
 }
 
-export function amazonProductLink(_asin: string): string {
-  // TODO: Replace with real affiliate URL once Amazon Associates tag is set
-  return '/concierge'
+export function amazonProductLink(asin: string): string {
+  return `${AMAZON_CONFIG.baseUrl}/dp/${asin}?tag=${AMAZON_CONFIG.tag}`
 }
 
-export function amazonSearchLink(_query: string): string {
-  // TODO: Replace with real affiliate URL once Amazon Associates tag is set
-  return '/concierge'
+export function amazonSearchLink(query: string): string {
+  return `${AMAZON_CONFIG.baseUrl}/s?k=${encodeURIComponent(query)}&tag=${AMAZON_CONFIG.tag}`
 }
 
 
@@ -55,18 +52,17 @@ export function amazonSearchLink(_query: string): string {
 // online account under "Refer a Friend" or similar.
 //
 export const CARD_REFERRAL_LINKS: Record<string, string | null> = {
-  // TODO: Replace each '/concierge' with a real referral URL from your card issuer's "Refer a Friend" program
-  'chase-ink-business-preferred': '/concierge', // TODO: Replace with real Chase referral URL
-  'chase-ink-business-unlimited': '/concierge', // TODO: Replace with real Chase referral URL
-  'chase-sapphire-preferred':     '/concierge', // TODO: Replace with real Chase referral URL
-  'chase-sapphire-reserve':       '/concierge', // TODO: Replace with real Chase referral URL
-  'amex-business-platinum':       '/concierge', // TODO: Replace with real Amex referral URL
-  'amex-gold':                    '/concierge', // TODO: Replace with real Amex referral URL
-  'capital-one-spark-cash-plus':  '/concierge', // TODO: Replace with real Capital One referral URL
-  'capital-one-spark-cash-select':'/concierge', // TODO: Replace with real Capital One referral URL
-  'capital-one-venture-x':        '/concierge', // TODO: Replace with real Capital One referral URL
-  'capital-one-venture':          '/concierge', // TODO: Replace with real Capital One referral URL
-  'citi-premier':                 '/concierge', // TODO: Replace with real Citi referral URL
+  'chase-ink-business-preferred': 'https://www.referyourchasecard.com/226m/6ZT33F9TOQ',
+  'chase-ink-business-unlimited': 'https://www.referyourchasecard.com/226m/6ZT33F9TOQ',
+  'chase-sapphire-preferred':     '/concierge', // TODO: Add Chase Sapphire referral link
+  'chase-sapphire-reserve':       '/concierge', // TODO: Add Chase Sapphire Reserve referral link
+  'amex-business-platinum':       'https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS',
+  'amex-gold':                    '/concierge', // TODO: Add Amex Gold referral link
+  'capital-one-spark-cash-plus':  'https://i.capitalone.com/JKlfRwN3f',
+  'capital-one-spark-cash-select':'https://i.capitalone.com/JKlfRwN3f',
+  'capital-one-venture-x':        '/concierge', // TODO: Add Capital One Venture X referral link
+  'capital-one-venture':          '/concierge', // TODO: Add Capital One Venture referral link
+  'citi-premier':                 '/concierge', // TODO: Add Citi Premier referral link
 }
 
 /**
