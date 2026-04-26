@@ -294,12 +294,13 @@ export default function BookPage() {
               <h3 className="font-fraunces text-lg font-bold text-slate-900 mb-4 pb-2 border-b border-slate-100">Preferred Travel Dates</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-semibold text-slate-700 mb-1.5">Earliest Departure</label>
-                  <div className="flex gap-2">
+                  <p id="earliest-departure-label" className="block text-sm font-semibold text-slate-700 mb-1.5">Earliest Departure</p>
+                  <div className="flex gap-2" role="group" aria-labelledby="earliest-departure-label">
                     <select
                       name="startMonth"
                       value={form.startMonth}
                       onChange={handleChange}
+                      aria-label="Earliest departure month"
                       className="flex-1 px-3 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-slate-900 text-sm"
                     >
                       <option value="">Month</option>
@@ -309,6 +310,7 @@ export default function BookPage() {
                       name="startYear"
                       value={form.startYear}
                       onChange={handleChange}
+                      aria-label="Earliest departure year"
                       className="w-24 px-3 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-slate-900 text-sm"
                     >
                       <option value="">Year</option>
@@ -317,12 +319,13 @@ export default function BookPage() {
                   </div>
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-slate-700 mb-1.5">Latest Departure</label>
-                  <div className="flex gap-2">
+                  <p id="latest-departure-label" className="block text-sm font-semibold text-slate-700 mb-1.5">Latest Departure</p>
+                  <div className="flex gap-2" role="group" aria-labelledby="latest-departure-label">
                     <select
                       name="endMonth"
                       value={form.endMonth}
                       onChange={handleChange}
+                      aria-label="Latest departure month"
                       className="flex-1 px-3 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-slate-900 text-sm"
                     >
                       <option value="">Month</option>
@@ -332,6 +335,7 @@ export default function BookPage() {
                       name="endYear"
                       value={form.endYear}
                       onChange={handleChange}
+                      aria-label="Latest departure year"
                       className="w-24 px-3 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-slate-900 text-sm"
                     >
                       <option value="">Year</option>
@@ -457,8 +461,8 @@ export default function BookPage() {
 
               {/* Cruise Length */}
               <div className="mt-4">
-                <label className="block text-sm font-semibold text-slate-700 mb-2">Cruise Length Preference</label>
-                <div className="flex flex-wrap gap-2">
+                <p id="cruise-length-label" className="block text-sm font-semibold text-slate-700 mb-2">Cruise Length Preference</p>
+                <div className="flex flex-wrap gap-2" role="group" aria-labelledby="cruise-length-label">
                   {[
                     { value: '3-4', label: '3–4 Nights' },
                     { value: '5', label: '5 Nights' },
@@ -470,6 +474,7 @@ export default function BookPage() {
                       key={opt.value}
                       type="button"
                       onClick={() => handleCheckbox(opt.value)}
+                      aria-pressed={form.cruiseLength.includes(opt.value)}
                       className={`px-4 py-2 rounded-full text-sm font-semibold border-2 transition-colors ${
                         form.cruiseLength.includes(opt.value)
                           ? 'bg-[#1E3A5F] text-white border-[#1E3A5F]'

@@ -122,10 +122,11 @@ export function ConciergeForm() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className={labelClass}>
+          <label htmlFor="concierge-name" className={labelClass}>
             Full Name <span className="text-[#D4AF37]">*</span>
           </label>
           <input
+            id="concierge-name"
             type="text"
             name="name"
             required
@@ -136,10 +137,11 @@ export function ConciergeForm() {
           />
         </div>
         <div>
-          <label className={labelClass}>
+          <label htmlFor="concierge-email" className={labelClass}>
             Email <span className="text-[#D4AF37]">*</span>
           </label>
           <input
+            id="concierge-email"
             type="email"
             name="email"
             required
@@ -150,10 +152,11 @@ export function ConciergeForm() {
           />
         </div>
         <div>
-          <label className={labelClass}>
+          <label htmlFor="concierge-phone" className={labelClass}>
             Phone <span className="text-[#D4AF37]">*</span>
           </label>
           <input
+            id="concierge-phone"
             type="tel"
             name="phone"
             required
@@ -164,8 +167,9 @@ export function ConciergeForm() {
           />
         </div>
         <div>
-          <label className={labelClass}>Timezone</label>
+          <label htmlFor="concierge-timezone" className={labelClass}>Timezone</label>
           <select
+            id="concierge-timezone"
             name="timezone"
             value={form.timezone}
             onChange={handleChange}
@@ -181,10 +185,11 @@ export function ConciergeForm() {
       </div>
 
       <div>
-        <label className={labelClass}>
+        <label htmlFor="concierge-family" className={labelClass}>
           Who&apos;s sailing? <span className="text-[#D4AF37]">*</span>
         </label>
         <textarea
+          id="concierge-family"
           name="family_members"
           required
           value={form.family_members}
@@ -196,10 +201,11 @@ export function ConciergeForm() {
       </div>
 
       <div>
-        <label className={labelClass}>
+        <label htmlFor="concierge-how-found" className={labelClass}>
           How did you find GatGrid? <span className="text-[#D4AF37]">*</span>
         </label>
         <select
+          id="concierge-how-found"
           name="how_found_us"
           required
           value={form.how_found_us}
@@ -215,10 +221,11 @@ export function ConciergeForm() {
       </div>
 
       <div>
-        <label className={labelClass}>
+        <label htmlFor="concierge-notes" className={labelClass}>
           Cruise interests, dates, or questions (optional)
         </label>
         <textarea
+          id="concierge-notes"
           name="notes"
           value={form.notes}
           onChange={handleChange}

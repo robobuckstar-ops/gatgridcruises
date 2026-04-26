@@ -44,10 +44,11 @@ export function ReportIssueForm() {
           ) : (
             <form onSubmit={handleSubmit} className="space-y-3">
               <div>
-                <label className="block text-xs font-medium text-slate-600 mb-1">
+                <label htmlFor="report-page-url" className="block text-xs font-medium text-slate-600 mb-1">
                   Page URL
                 </label>
                 <input
+                  id="report-page-url"
                   type="text"
                   value={pageUrl}
                   onChange={e => setPageUrl(e.target.value)}
@@ -58,10 +59,11 @@ export function ReportIssueForm() {
               </div>
 
               <div>
-                <label className="block text-xs font-medium text-slate-600 mb-1">
+                <label htmlFor="report-description" className="block text-xs font-medium text-slate-600 mb-1">
                   Description <span className="text-red-500">*</span>
                 </label>
                 <textarea
+                  id="report-description"
                   value={description}
                   onChange={e => setDescription(e.target.value)}
                   placeholder="What's wrong or inaccurate?"
@@ -72,10 +74,11 @@ export function ReportIssueForm() {
               </div>
 
               <div>
-                <label className="block text-xs font-medium text-slate-600 mb-1">
+                <label htmlFor="report-email" className="block text-xs font-medium text-slate-600 mb-1">
                   Email <span className="text-slate-400">(optional)</span>
                 </label>
                 <input
+                  id="report-email"
                   type="email"
                   value={email}
                   onChange={e => setEmail(e.target.value)}

@@ -131,15 +131,15 @@ export function StateroomFinder({ ships, stateroomsByShip }: StateroomFinderProp
       >
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center gap-3 mb-3">
-            <DoorOpen className="w-8 h-8 text-blue-600" />
+            <DoorOpen className="w-8 h-8 text-[#D4AF37]" aria-hidden="true" />
             <h1
-              className="text-4xl font-bold text-slate-900"
+              className="text-4xl font-bold text-white"
               style={{ fontFamily: 'Fraunces' }}
             >
               Stateroom Finder
             </h1>
           </div>
-          <p className="text-slate-600 max-w-2xl">
+          <p className="text-blue-200 max-w-2xl">
             Find your ideal Disney cruise stateroom with noise ratings, view ratings, and honest pros/cons for every room.
           </p>
         </div>
@@ -171,11 +171,12 @@ export function StateroomFinder({ ships, stateroomsByShip }: StateroomFinderProp
               <label className="block text-sm font-semibold text-slate-700 mb-3">
                 Ship
               </label>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2" role="radiogroup" aria-label="Select ship">
                 {ships.map(ship => (
                   <button
                     key={ship.id}
                     onClick={() => setSelectedShipId(ship.id)}
+                    aria-pressed={selectedShipId === ship.id}
                     className={`px-4 py-2 rounded-lg font-medium transition ${
                       selectedShipId === ship.id
                         ? 'bg-blue-600 text-white'
@@ -197,7 +198,7 @@ export function StateroomFinder({ ships, stateroomsByShip }: StateroomFinderProp
                 <label className="block text-sm font-semibold text-slate-700 mb-3">
                   Category
                 </label>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2" role="group" aria-label="Filter by category">
                   {allCategories.map(cat => (
                     <button
                       key={cat}
@@ -208,6 +209,7 @@ export function StateroomFinder({ ships, stateroomsByShip }: StateroomFinderProp
                             : [...prev, cat]
                         )
                       }}
+                      aria-pressed={selectedCategories.includes(cat)}
                       className={`px-3 py-1.5 rounded-lg text-sm font-medium transition ${
                         selectedCategories.includes(cat)
                           ? 'bg-blue-600 text-white'
@@ -225,7 +227,7 @@ export function StateroomFinder({ ships, stateroomsByShip }: StateroomFinderProp
                 <label className="block text-sm font-semibold text-slate-700 mb-3">
                   Position
                 </label>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2" role="group" aria-label="Filter by position">
                   {positions.map(pos => (
                     <button
                       key={pos}
@@ -236,6 +238,7 @@ export function StateroomFinder({ ships, stateroomsByShip }: StateroomFinderProp
                             : [...prev, pos]
                         )
                       }}
+                      aria-pressed={selectedPositions.includes(pos)}
                       className={`px-3 py-1.5 rounded-lg text-sm font-medium transition capitalize ${
                         selectedPositions.includes(pos)
                           ? 'bg-blue-600 text-white'
@@ -251,10 +254,10 @@ export function StateroomFinder({ ships, stateroomsByShip }: StateroomFinderProp
 
             {/* Deck Range */}
             <div>
-              <label className="block text-sm font-semibold text-slate-700 mb-3">
+              <label className="block text-sm font-semibold text-slate-700 mb-3" id="deck-range-label">
                 Deck Range: {deckRange[0]} - {deckRange[1]}
               </label>
-              <div className="flex gap-4">
+              <div className="flex gap-4" role="group" aria-labelledby="deck-range-label">
                 <input
                   type="range"
                   min={Math.min(...allDecks)}
@@ -263,6 +266,7 @@ export function StateroomFinder({ ships, stateroomsByShip }: StateroomFinderProp
                   onChange={(e) =>
                     setDeckRange([parseInt(e.target.value), deckRange[1]])
                   }
+                  aria-label={`Minimum deck (currently deck ${deckRange[0]})`}
                   className="flex-1"
                 />
                 <input
@@ -273,6 +277,7 @@ export function StateroomFinder({ ships, stateroomsByShip }: StateroomFinderProp
                   onChange={(e) =>
                     setDeckRange([deckRange[0], parseInt(e.target.value)])
                   }
+                  aria-label={`Maximum deck (currently deck ${deckRange[1]})`}
                   className="flex-1"
                 />
               </div>
@@ -281,15 +286,17 @@ export function StateroomFinder({ ships, stateroomsByShip }: StateroomFinderProp
             <div className="grid md:grid-cols-2 gap-8">
               {/* Noise Rating */}
               <div>
-                <label className="block text-sm font-semibold text-slate-700 mb-3">
+                <label htmlFor="noise-rating-range" className="block text-sm font-semibold text-slate-700 mb-3">
                   Minimum Noise Rating: {minNoiseRating}
                 </label>
                 <input
+                  id="noise-rating-range"
                   type="range"
                   min={1}
                   max={5}
                   value={minNoiseRating}
                   onChange={(e) => setMinNoiseRating(parseInt(e.target.value))}
+                  aria-label={`Minimum noise rating: ${minNoiseRating} out of 5`}
                   className="w-full"
                 />
                 <p className="text-xs text-slate-600 mt-1">
@@ -299,15 +306,17 @@ export function StateroomFinder({ ships, stateroomsByShip }: StateroomFinderProp
 
               {/* View Rating */}
               <div>
-                <label className="block text-sm font-semibold text-slate-700 mb-3">
+                <label htmlFor="view-rating-range" className="block text-sm font-semibold text-slate-700 mb-3">
                   Minimum View Rating: {minViewRating}
                 </label>
                 <input
+                  id="view-rating-range"
                   type="range"
                   min={1}
                   max={5}
                   value={minViewRating}
                   onChange={(e) => setMinViewRating(parseInt(e.target.value))}
+                  aria-label={`Minimum view rating: ${minViewRating} out of 5`}
                   className="w-full"
                 />
                 <p className="text-xs text-slate-600 mt-1">
@@ -317,9 +326,10 @@ export function StateroomFinder({ ships, stateroomsByShip }: StateroomFinderProp
             </div>
 
             {/* Toggles */}
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4" role="group" aria-label="Additional filters">
               <button
                 onClick={() => setOnlyAccessible(!onlyAccessible)}
+                aria-pressed={onlyAccessible}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition ${
                   onlyAccessible
                     ? 'bg-blue-600 text-white'
@@ -330,6 +340,7 @@ export function StateroomFinder({ ships, stateroomsByShip }: StateroomFinderProp
               </button>
               <button
                 onClick={() => setOnlyConnecting(!onlyConnecting)}
+                aria-pressed={onlyConnecting}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition ${
                   onlyConnecting
                     ? 'bg-blue-600 text-white'
@@ -345,7 +356,7 @@ export function StateroomFinder({ ships, stateroomsByShip }: StateroomFinderProp
               <label className="block text-sm font-semibold text-slate-700 mb-3">
                 Sort By
               </label>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2" role="radiogroup" aria-label="Sort results by">
                 {[
                   { value: 'noise' as SortOption, label: 'Noise (Best First)' },
                   { value: 'view' as SortOption, label: 'View (Best First)' },
@@ -356,6 +367,7 @@ export function StateroomFinder({ ships, stateroomsByShip }: StateroomFinderProp
                   <button
                     key={option.value}
                     onClick={() => setSortBy(option.value)}
+                    aria-pressed={sortBy === option.value}
                     className={`px-3 py-1.5 rounded-lg text-sm font-medium transition ${
                       sortBy === option.value
                         ? 'bg-blue-600 text-white'

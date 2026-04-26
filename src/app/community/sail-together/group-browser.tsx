@@ -78,11 +78,12 @@ export function GroupBrowser({ groups }: GroupBrowserProps) {
         {/* Filter Controls */}
         <div className="flex flex-col sm:flex-row gap-4">
           <div className="flex-1">
-            <label className="block text-sm font-medium text-slate-700 mb-2">
-              <Filter className="inline h-4 w-4 mr-2" />
+            <label htmlFor="group-ship-filter" className="block text-sm font-medium text-slate-700 mb-2">
+              <Filter className="inline h-4 w-4 mr-2" aria-hidden="true" />
               Ship
             </label>
             <select
+              id="group-ship-filter"
               value={selectedShip}
               onChange={e => setSelectedShip(e.target.value)}
               className="w-full px-4 py-2 rounded-lg border border-slate-200 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 text-slate-900 text-sm"
@@ -97,8 +98,9 @@ export function GroupBrowser({ groups }: GroupBrowserProps) {
           </div>
 
           <div className="flex-1">
-            <label className="block text-sm font-medium text-slate-700 mb-2">Sailing Month</label>
+            <label htmlFor="group-month-filter" className="block text-sm font-medium text-slate-700 mb-2">Sailing Month</label>
             <select
+              id="group-month-filter"
               value={selectedMonth}
               onChange={e => setSelectedMonth(e.target.value)}
               className="w-full px-4 py-2 rounded-lg border border-slate-200 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 text-slate-900 text-sm"

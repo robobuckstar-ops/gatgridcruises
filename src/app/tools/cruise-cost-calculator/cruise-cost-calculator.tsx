@@ -130,33 +130,36 @@ export function CruiseCostCalculator() {
         <div className="grid sm:grid-cols-2 gap-6">
           {/* Guests */}
           <div>
-            <label className="block text-sm font-semibold text-slate-700 mb-2">Number of Guests</label>
-            <div className="flex items-center gap-3">
+            <label id="guests-label" className="block text-sm font-semibold text-slate-700 mb-2">Number of Guests</label>
+            <div className="flex items-center gap-3" role="group" aria-labelledby="guests-label">
               <button
                 onClick={() => setGuests(Math.max(1, guests - 1))}
+                aria-label="Decrease guest count"
                 className="w-10 h-10 rounded-lg border border-slate-300 flex items-center justify-center text-slate-700 hover:bg-slate-100 font-bold text-xl transition-colors"
               >
                 −
               </button>
-              <span className="w-12 text-center font-bold text-2xl text-slate-900">{guests}</span>
+              <span className="w-12 text-center font-bold text-2xl text-slate-900" aria-live="polite" aria-atomic="true">{guests}</span>
               <button
                 onClick={() => setGuests(Math.min(8, guests + 1))}
+                aria-label="Increase guest count"
                 className="w-10 h-10 rounded-lg border border-slate-300 flex items-center justify-center text-slate-700 hover:bg-slate-100 font-bold text-xl transition-colors"
               >
                 +
               </button>
-              <span className="text-sm text-slate-500">{guests === 1 ? 'guest' : 'guests'}</span>
+              <span className="text-sm text-slate-500" aria-hidden="true">{guests === 1 ? 'guest' : 'guests'}</span>
             </div>
           </div>
 
           {/* Cruise Length */}
           <div>
-            <label className="block text-sm font-semibold text-slate-700 mb-2">Cruise Length</label>
-            <div className="flex flex-wrap gap-2">
+            <label className="block text-sm font-semibold text-slate-700 mb-2" id="cruise-length-label">Cruise Length</label>
+            <div className="flex flex-wrap gap-2" role="radiogroup" aria-labelledby="cruise-length-label">
               {LENGTHS.map((l) => (
                 <button
                   key={l.nights}
                   onClick={() => setNightsId(l.nights)}
+                  aria-pressed={nightsId === l.nights}
                   className={`px-3 py-1.5 rounded-lg text-sm font-medium border transition-colors ${
                     nightsId === l.nights
                       ? 'bg-blue-600 text-white border-blue-600'
@@ -171,8 +174,9 @@ export function CruiseCostCalculator() {
 
           {/* Ship */}
           <div>
-            <label className="block text-sm font-semibold text-slate-700 mb-2">Ship</label>
+            <label htmlFor="calc-ship" className="block text-sm font-semibold text-slate-700 mb-2">Ship</label>
             <select
+              id="calc-ship"
               value={shipId}
               onChange={(e) => setShipId(e.target.value)}
               className="w-full px-3 py-2 border border-slate-300 rounded-lg text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -185,8 +189,9 @@ export function CruiseCostCalculator() {
 
           {/* Stateroom */}
           <div>
-            <label className="block text-sm font-semibold text-slate-700 mb-2">Stateroom Type</label>
+            <label htmlFor="calc-stateroom" className="block text-sm font-semibold text-slate-700 mb-2">Stateroom Type</label>
             <select
+              id="calc-stateroom"
               value={stateroomId}
               onChange={(e) => setStateroomId(e.target.value)}
               className="w-full px-3 py-2 border border-slate-300 rounded-lg text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"

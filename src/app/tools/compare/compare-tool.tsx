@@ -91,12 +91,12 @@ export function CompareTool({ sailings }: CompareToolProps) {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <div className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] text-slate-900 py-16 border-b border-slate-200">
+      <div className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] text-white py-16 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="font-fraunces text-4xl sm:text-5xl font-bold mb-4">
+          <h1 className="font-fraunces text-4xl sm:text-5xl font-bold mb-4 text-white">
             Compare Cruises Side by Side
           </h1>
-          <p className="text-xl text-slate-600 max-w-2xl">
+          <p className="text-xl text-blue-200 max-w-2xl">
             Stack up to 4 sailings to find your perfect match. Compare prices, ships, itineraries, and cabin categories.
           </p>
         </div>

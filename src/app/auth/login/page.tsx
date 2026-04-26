@@ -77,16 +77,19 @@ export default function LoginPage() {
       <div className="w-full max-w-md bg-white rounded-lg shadow-lg overflow-hidden">
         {/* Header */}
         <div className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] px-8 py-8 text-center border-b border-slate-200">
-          <h1 className="text-3xl font-bold text-slate-900 mb-1" style={{ fontFamily: 'Georgia, serif' }}>
+          <p className="text-3xl font-bold text-slate-900 mb-1" style={{ fontFamily: 'Georgia, serif' }} aria-hidden="true">
             ⚓
-          </h1>
+          </p>
           <h1 className="text-2xl font-bold text-white">Sign In</h1>
           <p className="text-blue-100 text-sm mt-1">Welcome back to GatGridCruises</p>
         </div>
 
         {/* Tabs */}
-        <div className="flex border-b border-slate-200">
+        <div className="flex border-b border-slate-200" role="tablist" aria-label="Sign in method">
           <button
+            role="tab"
+            aria-selected={tab === 'magic'}
+            aria-controls="tab-panel-magic"
             onClick={() => {
               setTab('magic')
               setError(null)
@@ -97,10 +100,13 @@ export default function LoginPage() {
                 : 'text-slate-600 hover:text-slate-900'
             }`}
           >
-            <Mail className="h-4 w-4 inline mr-2" />
+            <Mail className="h-4 w-4 inline mr-2" aria-hidden="true" />
             Magic Link
           </button>
           <button
+            role="tab"
+            aria-selected={tab === 'password'}
+            aria-controls="tab-panel-password"
             onClick={() => {
               setTab('password')
               setError(null)
@@ -111,13 +117,17 @@ export default function LoginPage() {
                 : 'text-slate-600 hover:text-slate-900'
             }`}
           >
-            <Lock className="h-4 w-4 inline mr-2" />
+            <Lock className="h-4 w-4 inline mr-2" aria-hidden="true" />
             Password
           </button>
         </div>
 
         {/* Content */}
-        <div className="p-8">
+        <div
+          className="p-8"
+          role="tabpanel"
+          id={tab === 'magic' ? 'tab-panel-magic' : 'tab-panel-password'}
+        >
           {error && (
             <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-start gap-3">
               <AlertCircle className="h-5 w-5 text-red-600 flex-shrink-0 mt-0.5" />
@@ -128,10 +138,11 @@ export default function LoginPage() {
           {tab === 'magic' ? (
             <form onSubmit={handleMagicLink} className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2">
+                <label htmlFor="magic-email" className="block text-sm font-medium text-slate-700 mb-2">
                   Email address
                 </label>
                 <input
+                  id="magic-email"
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -157,10 +168,11 @@ export default function LoginPage() {
           ) : (
             <form onSubmit={handlePassword} className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2">
+                <label htmlFor="password-email" className="block text-sm font-medium text-slate-700 mb-2">
                   Email address
                 </label>
                 <input
+                  id="password-email"
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -171,10 +183,11 @@ export default function LoginPage() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2">
+                <label htmlFor="login-password" className="block text-sm font-medium text-slate-700 mb-2">
                   Password
                 </label>
                 <input
+                  id="login-password"
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
