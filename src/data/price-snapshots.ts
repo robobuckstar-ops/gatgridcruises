@@ -1,115 +1,154 @@
 import type { PriceSnapshot } from '@/types/database'
 
-// Helper function to generate price curves with various patterns
-function generatePriceSnapshots(sailingId: string, sailingNum: number, basePrice: number): PriceSnapshot[] {
+// Deterministic seeded LCG random for reproducible price curves
+function makeRand(seed: number): () => number {
+  let s = seed >>> 0
+  return () => {
+    s = Math.imul(s, 1664525) + 1013904223 >>> 0
+    return s / 0x100000000
+  }
+}
+
+function generateSnapshots(
+  sailingId: string,
+  sailingIndex: number,
+  insideBase: number,
+): PriceSnapshot[] {
   const snapshots: PriceSnapshot[] = []
-  const startDate = new Date('2026-02-15')
-  const endDate = new Date('2026-04-01')
+  const startDate = new Date('2025-10-01')
+  const endDate = new Date('2026-04-20')
+  const totalMs = endDate.getTime() - startDate.getTime()
 
-  // Define different price patterns for variety
-  let dayNum = 1
-  let currentDate = new Date(startDate)
+  const rand = makeRand(sailingIndex * 31337)
+  const pattern = sailingIndex % 5
 
-  while (currentDate <= endDate) {
-    const daysFromStart = Math.floor((currentDate.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24))
-    const totalDays = Math.floor((endDate.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24))
-    const progress = daysFromStart / totalDays
+  // Derived category prices using typical cruise-line ratios
+  const oceanviewBase = Math.round(insideBase * 1.22 / 50) * 50
+  const verandahBase = Math.round(insideBase * 1.52 / 50) * 50
+  const conciergeBase = Math.round(insideBase * 2.18 / 50) * 50
 
-    // Create different price patterns based on sailing number
-    let priceMultiplier = 1.0
+  let current = new Date(startDate)
+  let seq = 1
 
-    if (sailingNum % 5 === 1) {
-      // Steady decline pattern (good deal getting better)
-      priceMultiplier = 1.2 - progress * 0.25
-    } else if (sailingNum % 5 === 2) {
-      // Gradual increase then sudden drop
-      if (progress < 0.8) {
-        priceMultiplier = 1.0 + progress * 0.3
+  while (current <= endDate) {
+    const progress = (current.getTime() - startDate.getTime()) / totalMs
+
+    // Five realistic price patterns, all converging to ~1.0 (current price) at progress=1
+    let mult: number
+
+    if (pattern === 0) {
+      // Steady climb: starts 15% below, rises to current
+      mult = 0.85 + progress * 0.15
+    } else if (pattern === 1) {
+      // Early-bird dip (promo), then steady rise
+      if (progress < 0.2) {
+        mult = 0.92 - progress * 0.2
       } else {
-        priceMultiplier = 0.85
+        mult = 0.88 + (progress - 0.2) * 0.15
       }
-    } else if (sailingNum % 5 === 3) {
-      // Fluctuating pattern
-      const wave = Math.sin(progress * Math.PI * 4) * 0.15
-      priceMultiplier = 1.05 + wave
-    } else if (sailingNum % 5 === 4) {
-      // Steady with recent sharp drop
-      if (progress < 0.85) {
-        priceMultiplier = 1.1
+    } else if (pattern === 2) {
+      // Starts elevated, sale at 40%, climbs to current
+      if (progress < 0.4) {
+        mult = 1.05 - progress * 0.25
       } else {
-        priceMultiplier = 0.9 - (progress - 0.85) * 0.5
+        mult = 0.95 + (progress - 0.4) * (0.05 / 0.6)
+      }
+    } else if (pattern === 3) {
+      // Flat at 90% then sharp rise in the final third
+      if (progress < 0.7) {
+        mult = 0.90 + progress * 0.04
+      } else {
+        mult = 0.928 + (progress - 0.7) * 0.24
       }
     } else {
-      // Stable then gradual increase
-      if (progress < 0.6) {
-        priceMultiplier = 1.0
+      // High open, mid-cruise-sale dip, then recovery rise
+      if (progress < 0.15) {
+        mult = 1.08 - progress * 0.6
+      } else if (progress < 0.45) {
+        mult = 0.99 - (progress - 0.15) * 0.1
       } else {
-        priceMultiplier = 1.0 + (progress - 0.6) * 0.35
+        mult = 0.96 + (progress - 0.45) * (0.04 / 0.55)
       }
     }
 
-    // Add some random noise for realism
-    const noise = 0.98 + Math.random() * 0.04
-    priceMultiplier *= noise
+    // ±2% noise for natural price fluctuation
+    mult = Math.max(0.75, Math.min(1.2, mult * (1 + (rand() - 0.5) * 0.04)))
 
-    // Ensure prices don't go below base or too high
-    priceMultiplier = Math.max(0.75, Math.min(1.35, priceMultiplier))
+    // Round to nearest $50 as real cruise prices are quoted
+    const snap = (base: number) => Math.round((base * mult) / 50) * 50
 
-    const lowestPrice = Math.round(basePrice * priceMultiplier)
-    const insidePrice = lowestPrice
-    const oceanviewPrice = Math.round(insidePrice * 1.2)
-    const verandahPrice = Math.round(insidePrice * 1.5)
-    const conciergePrice = Math.round(insidePrice * 2.2)
-
-    const dateStr = currentDate.toISOString().split('T')[0]
+    const insidePrice = snap(insideBase)
+    const dateStr = current.toISOString().split('T')[0]
 
     snapshots.push({
-      id: `snap-${String(sailingNum).padStart(4, '0')}-${String(dayNum).padStart(3, '0')}`,
+      id: `snap-${sailingId}-${String(seq).padStart(3, '0')}`,
       sailing_id: sailingId,
       snapshot_date: dateStr,
       inside_price: insidePrice,
-      oceanview_price: oceanviewPrice,
-      verandah_price: verandahPrice,
-      concierge_price: conciergePrice,
-      lowest_price: lowestPrice,
+      oceanview_price: snap(oceanviewBase),
+      verandah_price: snap(verandahBase),
+      concierge_price: snap(conciergeBase),
+      lowest_price: insidePrice,
       source: 'synthesized',
-      created_at: '2026-01-15T00:00:00Z'
+      created_at: dateStr + 'T00:00:00Z',
     })
 
-    currentDate.setDate(currentDate.getDate() + 1)
-    dayNum++
+    // Weekly snapshots give ~29 data points per sailing (Oct 1 → Apr 20)
+    current.setDate(current.getDate() + 7)
+    seq++
   }
 
   return snapshots
 }
 
-// Generate snapshots for all 18 sailings
-const allSnapshots: PriceSnapshot[] = []
-
+// All sailings with their current inside prices (total for 2 guests)
 const sailingsData = [
-  { id: 'sailing-0001', num: 1, basePrice: 4288 },
-  { id: 'sailing-0002', num: 2, basePrice: 3196 },
-  { id: 'sailing-0003', num: 3, basePrice: 3456 },
-  { id: 'sailing-0004', num: 4, basePrice: 4120 },
-  { id: 'sailing-0005', num: 5, basePrice: 6384 },
-  { id: 'sailing-0006', num: 6, basePrice: 5880 },
-  { id: 'sailing-0007', num: 7, basePrice: 7196 },
-  { id: 'sailing-0008', num: 8, basePrice: 4856 },
-  { id: 'sailing-0009', num: 9, basePrice: 4760 },
-  { id: 'sailing-0010', num: 10, basePrice: 3920 },
-  { id: 'sailing-0011', num: 11, basePrice: 6944 },
-  { id: 'sailing-0012', num: 12, basePrice: 4200 },
-  { id: 'sailing-0013', num: 13, basePrice: 4544 },
-  { id: 'sailing-0014', num: 14, basePrice: 6720 },
-  { id: 'sailing-0015', num: 15, basePrice: 2856 },
-  { id: 'sailing-0016', num: 16, basePrice: 7840 },
-  { id: 'sailing-0017', num: 17, basePrice: 3680 },
-  { id: 'sailing-0018', num: 18, basePrice: 4480 }
+  { id: 'sailing-dis-001', idx: 1,  insideBase: 2430  },
+  { id: 'sailing-dis-002', idx: 2,  insideBase: 4088  },
+  { id: 'sailing-dis-003', idx: 3,  insideBase: 4706  },
+  { id: 'sailing-dis-004', idx: 4,  insideBase: 2446  },
+  { id: 'sailing-dis-005', idx: 5,  insideBase: 3500  },
+  { id: 'sailing-dis-006', idx: 6,  insideBase: 2900  },
+  { id: 'sailing-dis-007', idx: 7,  insideBase: 2760  },
+  { id: 'sailing-dis-008', idx: 8,  insideBase: 4400  },
+  { id: 'sailing-rcl-001', idx: 9,  insideBase: 1282  },
+  { id: 'sailing-rcl-002', idx: 10, insideBase: 1652  },
+  { id: 'sailing-rcl-003', idx: 11, insideBase: 1856  },
+  { id: 'sailing-rcl-004', idx: 12, insideBase: 3070  },
+  { id: 'sailing-rcl-005', idx: 13, insideBase: 3226  },
+  { id: 'sailing-rcl-006', idx: 14, insideBase: 3590  },
+  { id: 'sailing-rcl-007', idx: 15, insideBase: 1386  },
+  { id: 'sailing-ccl-001', idx: 16, insideBase: 808   },
+  { id: 'sailing-ccl-002', idx: 17, insideBase: 1188  },
+  { id: 'sailing-ccl-003', idx: 18, insideBase: 898   },
+  { id: 'sailing-ncl-001', idx: 19, insideBase: 1098  },
+  { id: 'sailing-ncl-002', idx: 20, insideBase: 2158  },
+  { id: 'sailing-ncl-003', idx: 21, insideBase: 2258  },
+  { id: 'sailing-ncl-004', idx: 22, insideBase: 1778  },
+  { id: 'sailing-ncl-005', idx: 23, insideBase: 1138  },
+  { id: 'sailing-msc-001', idx: 24, insideBase: 1396  },
+  { id: 'sailing-msc-002', idx: 25, insideBase: 1390  },
+  { id: 'sailing-msc-003', idx: 26, insideBase: 1694  },
+  { id: 'sailing-msc-004', idx: 27, insideBase: 998   },
+  { id: 'sailing-cel-001', idx: 28, insideBase: 2706  },
+  { id: 'sailing-cel-002', idx: 29, insideBase: 1814  },
+  { id: 'sailing-cel-003', idx: 30, insideBase: 1316  },
+  { id: 'sailing-cel-004', idx: 31, insideBase: 2286  },
+  { id: 'sailing-pri-001', idx: 32, insideBase: 1706  },
+  { id: 'sailing-pri-002', idx: 33, insideBase: 1458  },
+  { id: 'sailing-pri-003', idx: 34, insideBase: 1798  },
+  { id: 'sailing-pri-004', idx: 35, insideBase: 1118  },
+  { id: 'sailing-pri-005', idx: 36, insideBase: 998   },
+  { id: 'sailing-hal-001', idx: 37, insideBase: 1408  },
+  { id: 'sailing-hal-002', idx: 38, insideBase: 1358  },
+  { id: 'sailing-hal-003', idx: 39, insideBase: 1244  },
+  { id: 'sailing-hal-004', idx: 40, insideBase: 1942  },
+  { id: 'sailing-hal-005', idx: 41, insideBase: 1398  },
 ]
 
-for (const sailing of sailingsData) {
-  const snapshots = generatePriceSnapshots(sailing.id, sailing.num, sailing.basePrice)
-  allSnapshots.push(...snapshots)
+const allSnapshots: PriceSnapshot[] = []
+for (const s of sailingsData) {
+  allSnapshots.push(...generateSnapshots(s.id, s.idx, s.insideBase))
 }
 
 export const priceSnapshots: PriceSnapshot[] = allSnapshots
