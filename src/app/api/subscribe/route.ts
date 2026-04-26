@@ -90,6 +90,39 @@ export async function POST(request: NextRequest) {
     }
     subscribers.push(subscriber)
 
+    // Add contact to Brevo
+    if (process.env.BREVO_API_KEY) {
+      try {
+        const brevoBody: Record<string, unknown> = {
+          email: sanitizedEmail,
+          updateEnabled: false,
+          attributes: {
+            ...(sanitizedPreferences.source ? { SOURCE: String(sanitizedPreferences.source) } : {}),
+          },
+        }
+        const listId = process.env.BREVO_LIST_ID ? parseInt(process.env.BREVO_LIST_ID, 10) : null
+        if (listId && !isNaN(listId)) {
+          brevoBody.listIds = [listId]
+        }
+        const brevoRes = await fetch('https://api.brevo.com/v3/contacts', {
+          method: 'POST',
+          headers: {
+            'api-key': process.env.BREVO_API_KEY,
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+          body: JSON.stringify(brevoBody),
+        })
+        if (!brevoRes.ok && brevoRes.status !== 204) {
+          const brevoErr = await brevoRes.text()
+          console.error('Brevo contact creation failed:', brevoRes.status, brevoErr)
+        }
+      } catch (brevoErr) {
+        console.error('Brevo API error:', brevoErr)
+        // Don't fail the subscription if Brevo is unavailable
+      }
+    }
+
     // Send welcome email via Resend
     if (process.env.RESEND_API_KEY) {
       try {
