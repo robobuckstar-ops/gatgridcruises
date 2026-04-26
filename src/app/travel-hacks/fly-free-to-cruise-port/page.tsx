@@ -15,6 +15,18 @@ export const metadata: Metadata = {
     'cruise flights',
     'airline miles',
   ],
+  openGraph: {
+    title: 'How to Fly Free to Your Cruise Port | Travel Hacks',
+    description: 'Turn credit card signup bonuses into free flights to your cruise port. Learn which cards offer the best travel values.',
+    url: 'https://gatgridcruises.com/travel-hacks/fly-free-to-cruise-port',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'How to Fly Free to Your Cruise Port',
+    description: 'Turn credit card signup bonuses into free flights to your cruise port.',
+    images: ['https://gatgridcruises.com/og-image.png'],
+  },
 }
 
 export default function FlyFreeToCruisePort() {

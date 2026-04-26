@@ -16,6 +16,18 @@ export const metadata: Metadata = {
     'amex lounge',
     'travel rewards',
   ],
+  openGraph: {
+    title: 'Cruise Port Lounge Access | Travel Hacks',
+    description: 'Get premium lounge access at major cruise ports with the right credit card. Priority Pass and Amex lounge strategies for cruisers.',
+    url: 'https://gatgridcruises.com/travel-hacks/cruise-port-lounge-access',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Cruise Port Lounge Access | Travel Hacks',
+    description: 'Get premium lounge access at major cruise ports with the right credit card.',
+    images: ['https://gatgridcruises.com/og-image.png'],
+  },
 }
 
 export default function CruisePortLoungeAccess() {

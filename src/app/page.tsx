@@ -41,6 +41,13 @@ export const metadata = {
     description:
       'Find the best Disney cruise deals with our Deal Score system. Filter by ship, duration, and guests. Updated daily.',
     url: 'https://gatgridcruises.com',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises — Magically Valuable Disney Cruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Disney Cruise Deal Finder — GatGridCruises',
+    description: 'Find the best Disney cruise deals with our Deal Score system. Filter by ship, duration, and guests. Updated daily.',
+    images: ['https://gatgridcruises.com/og-image.png'],
   },
 }
 

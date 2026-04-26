@@ -11,6 +11,13 @@ export const metadata: Metadata = {
     description:
       'Flash deals on Disney cruises departing within 90 days. Steep discounts, limited availability.',
     url: 'https://gatgridcruises.com/deals/flash-deals',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Flash Deals — Disney Cruises Departing Within 90 Days',
+    description: 'Flash deals on Disney cruises departing within 90 days. Steep discounts, limited availability.',
+    images: ['https://gatgridcruises.com/og-image.png'],
   },
 }
 

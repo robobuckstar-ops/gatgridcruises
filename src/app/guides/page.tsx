@@ -12,6 +12,13 @@ export const metadata: Metadata = {
     description:
       'Comprehensive guides for planning a Disney cruise: costs, staterooms, ports, packing, first-timers, and more.',
     url: 'https://gatgridcruises.com/guides',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Disney Cruise Guides — In-Depth Planning Resources',
+    description: 'Comprehensive guides for planning a Disney cruise: costs, staterooms, ports, packing, first-timers, and more.',
+    images: ['https://gatgridcruises.com/og-image.png'],
   },
 }
 

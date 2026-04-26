@@ -6,6 +6,18 @@ export const metadata: Metadata = {
   title: 'Best Credit Cards for Disney Cruises — The Disney Cruise Wallet | GatGridCruises',
   description:
     'The best credit card strategy for Disney cruises. Use Amex Business Platinum, Southwest, and Capital One to fly free, get trip insurance, and earn points toward your next cruise.',
+  openGraph: {
+    title: 'Best Credit Cards for Disney Cruises — The Disney Cruise Wallet',
+    description: 'The best credit card strategy for Disney cruises — fly free, get trip insurance, and earn points.',
+    url: 'https://gatgridcruises.com/tools/credit-cards',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Best Credit Cards for Disney Cruises',
+    description: 'Fly free, get trip insurance, and earn points with the right credit card strategy for Disney cruises.',
+    images: ['https://gatgridcruises.com/og-image.png'],
+  },
 }
 
 export default function CreditCardsPage() {

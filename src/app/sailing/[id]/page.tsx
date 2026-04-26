@@ -61,9 +61,23 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { id } = await params
   const sailing = getSailingById(id)
   if (!sailing) return { title: 'Sailing Not Found' }
+  const title = `${sailing.itinerary_name} — ${formatDate(sailing.sail_date)}`
+  const description = `${sailing.itinerary_name} on Disney ${sailing.ship?.name.replace('Disney ', '')}. Starting from ${formatPrice(sailing.current_lowest_price)}. Sailing Score: ${sailing.sailing_score}/100.`
   return {
-    title: `${sailing.itinerary_name} — ${formatDate(sailing.sail_date)}`,
-    description: `${sailing.itinerary_name} on Disney ${sailing.ship?.name.replace('Disney ', '')}. Starting from ${formatPrice(sailing.current_lowest_price)}. Sailing Score: ${sailing.sailing_score}/100.`,
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url: `https://gatgridcruises.com/sailing/${id}`,
+      images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: title }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: ['https://gatgridcruises.com/og-image.png'],
+    },
   }
 }
 

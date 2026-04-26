@@ -5,6 +5,18 @@ import { Star, TrendingDown, CreditCard, Lightbulb, Mail, Check } from 'lucide-r
 export const metadata: Metadata = {
   title: 'Disney Cruise Insider — Monthly Newsletter',
   description: 'Get the best Disney cruise deals, insider tips, and credit card hacks delivered monthly. Join 3,000+ savvy Disney cruisers.',
+  openGraph: {
+    title: 'Disney Cruise Insider — Monthly Newsletter',
+    description: 'Get the best Disney cruise deals, insider tips, and credit card hacks delivered monthly.',
+    url: 'https://gatgridcruises.com/newsletter',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Disney Cruise Insider — Monthly Newsletter',
+    description: 'Disney cruise deals, insider tips, and credit card hacks delivered monthly. Join 3,000+ savvy cruisers.',
+    images: ['https://gatgridcruises.com/og-image.png'],
+  },
 }
 
 const BENEFITS = [

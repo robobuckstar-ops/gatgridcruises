@@ -7,6 +7,18 @@ import { Users, Heart, TrendingUp, Gift, MessageCircle, MapPin } from 'lucide-re
 export const metadata: Metadata = {
   title: 'Sail Together | Find Your Cruise Crew',
   description: 'Connect with fellow Disney cruisers sailing on the same dates. Share excursion tips, split costs, make lifelong friends.',
+  openGraph: {
+    title: 'Sail Together | Find Your Cruise Crew',
+    description: 'Connect with fellow Disney cruisers sailing on the same dates. Share excursion tips, split costs, make lifelong friends.',
+    url: 'https://gatgridcruises.com/community/sail-together',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Sail Together | Find Your Cruise Crew',
+    description: 'Connect with fellow Disney cruisers on your sailing. Share tips, split costs, make friends.',
+    images: ['https://gatgridcruises.com/og-image.png'],
+  },
 }
 
 export default function SailTogetherPage() {

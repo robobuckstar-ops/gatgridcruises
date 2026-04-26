@@ -11,6 +11,13 @@ export const metadata: Metadata = {
     description:
       'Free tools for planning a Disney cruise: OBC calculator, cost estimator, credit card optimizer, flight finder, stateroom picker, and more.',
     url: 'https://gatgridcruises.com/tools',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Disney Cruise Planning Tools — Calculators & Finders',
+    description: 'Free tools for planning a Disney cruise: OBC calculator, cost estimator, credit card optimizer, flight finder, and more.',
+    images: ['https://gatgridcruises.com/og-image.png'],
   },
 }
 

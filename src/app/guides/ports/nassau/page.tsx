@@ -7,6 +7,18 @@ export const metadata: Metadata = {
   title: 'Nassau, Bahamas Cruise Guide — Disney Cruise Port Tips',
   description: 'Everything you need to know about Nassau on a Disney cruise — top excursions, Atlantis Paradise Island, Blue Lagoon, Cable Beach, and insider tips for your port day.',
   keywords: ['nassau bahamas disney cruise', 'nassau cruise port guide', 'atlantis paradise island day pass', 'nassau excursions', 'disney cruise nassau tips'],
+  openGraph: {
+    title: 'Nassau, Bahamas Cruise Guide — Disney Cruise Port Tips',
+    description: 'Everything you need to know about Nassau on a Disney cruise — Atlantis, Blue Lagoon, Cable Beach, and insider tips.',
+    url: 'https://gatgridcruises.com/guides/ports/nassau',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Nassau, Bahamas Cruise Guide',
+    description: 'Atlantis, Blue Lagoon, Cable Beach, and insider tips for your Nassau port day on a Disney cruise.',
+    images: ['https://gatgridcruises.com/og-image.png'],
+  },
 }
 
 export default function NassauPage() {

@@ -7,6 +7,18 @@ export const metadata: Metadata = {
   title: 'The Ultimate Disney Cruise Packing List (With Our Top Picks)',
   description: 'The best gear for Disney cruises — luggage, cruise essentials, sun & beach, kids gear, formal night, and health must-haves. Honest picks for every budget.',
   keywords: ['disney cruise packing list', 'what to pack disney cruise', 'cruise essentials', 'disney cruise gear', 'cruise packing tips'],
+  openGraph: {
+    title: 'The Ultimate Disney Cruise Packing List (With Our Top Picks)',
+    description: 'The best gear for Disney cruises — luggage, cruise essentials, sun & beach, kids gear, and health must-haves.',
+    url: 'https://gatgridcruises.com/guides/packing-gear',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Disney Cruise Packing List — Top Gear Picks',
+    description: 'The best gear for Disney cruises — luggage, cruise essentials, kids gear, and health must-haves.',
+    images: ['https://gatgridcruises.com/og-image.png'],
+  },
 }
 
 function amazonLink(_asin: string) {

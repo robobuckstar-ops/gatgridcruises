@@ -9,6 +9,18 @@ export const metadata: Metadata = {
   title: 'Disney Cruise Price Tracker — Historical Pricing Data',
   description: 'Track Disney Cruise Line pricing history for every sailing. See if today\'s price is a deal, at average, or above average compared to historical data.',
   keywords: ['disney cruise price tracker', 'disney cruise price history', 'disney cruise deals', 'cruise price comparison'],
+  openGraph: {
+    title: 'Disney Cruise Price Tracker — Historical Pricing Data',
+    description: 'Track Disney Cruise Line pricing history. See if today\'s price is a deal compared to historical data.',
+    url: 'https://gatgridcruises.com/price-tracker',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Disney Cruise Price Tracker — Historical Pricing Data',
+    description: 'Track Disney Cruise Line pricing history for every sailing and find the best time to buy.',
+    images: ['https://gatgridcruises.com/og-image.png'],
+  },
 }
 
 export default function PriceTrackerPage() {

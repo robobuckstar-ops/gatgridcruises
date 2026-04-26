@@ -8,6 +8,18 @@ export const metadata: Metadata = {
   title: 'Free Onboard Credit — GatGrid Cruises',
   description:
     'Book your Disney cruise through GatGrid Cruises and receive up to $400 in free onboard credit. Learn what OBC is, what you can spend it on, and how to qualify.',
+  openGraph: {
+    title: 'Free Onboard Credit — GatGrid Cruises',
+    description: 'Book your Disney cruise through GatGrid Cruises and receive up to $400 in free onboard credit.',
+    url: 'https://gatgridcruises.com/onboard-credit',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Free Onboard Credit — GatGrid Cruises',
+    description: 'Book your Disney cruise through GatGrid Cruises and receive up to $400 in free onboard credit.',
+    images: ['https://gatgridcruises.com/og-image.png'],
+  },
 }
 
 const WHAT_OBC_BUYS = [

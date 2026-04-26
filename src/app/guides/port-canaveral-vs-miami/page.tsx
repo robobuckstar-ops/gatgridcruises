@@ -7,6 +7,18 @@ import { GetQuoteCTA } from '@/components/get-quote-cta';
 export const metadata: Metadata = {
   title: 'Port Canaveral vs. Miami: Which Disney Cruise Port Is Better?',
   description: 'Compare Disney cruise ports: Port Canaveral vs Miami. Which is better for your family? Distance, parking, itineraries, and terminal facilities compared.',
+  openGraph: {
+    title: 'Port Canaveral vs. Miami: Which Disney Cruise Port Is Better?',
+    description: 'Port Canaveral vs Miami for Disney cruises — distance, parking, itineraries, and terminal facilities compared.',
+    url: 'https://gatgridcruises.com/guides/port-canaveral-vs-miami',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Port Canaveral vs. Miami: Which Disney Cruise Port?',
+    description: 'Compare Port Canaveral and Miami for Disney cruises — parking, itineraries, and facilities.',
+    images: ['https://gatgridcruises.com/og-image.png'],
+  },
 };
 
 export default function PortCanaveralVsMiamiGuide() {

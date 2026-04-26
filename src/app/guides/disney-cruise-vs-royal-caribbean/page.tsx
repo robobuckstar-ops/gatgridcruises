@@ -6,6 +6,18 @@ import { GetQuoteCTA } from '@/components/get-quote-cta';
 export const metadata: Metadata = {
   title: 'Disney Cruise vs. Royal Caribbean: Honest Comparison',
   description: 'Fair comparison of Disney Cruise Line and Royal Caribbean cruises. Compare pricing, ship size, entertainment, dining, and which line is best for your family.',
+  openGraph: {
+    title: 'Disney Cruise vs. Royal Caribbean: Honest Comparison',
+    description: 'Fair comparison of Disney Cruise Line and Royal Caribbean — pricing, ship size, entertainment, dining, and which is best for your family.',
+    url: 'https://gatgridcruises.com/guides/disney-cruise-vs-royal-caribbean',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Disney Cruise vs. Royal Caribbean: Honest Comparison',
+    description: 'Pricing, ships, entertainment, dining — which cruise line is best for your family?',
+    images: ['https://gatgridcruises.com/og-image.png'],
+  },
 };
 
 export default function DisneyCruiseVsRoyalCaribbeanGuide() {

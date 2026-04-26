@@ -7,6 +7,18 @@ export const metadata: Metadata = {
   title: 'Disney Cruise Port Guides — What to Know Before You Dock',
   description: 'Complete guides for every major Disney Cruise Line port: Port Canaveral, Nassau, Castaway Cay, and Cozumel. Excursion tips, hotel recommendations, and insider advice.',
   keywords: ['disney cruise ports', 'port canaveral guide', 'nassau bahamas cruise', 'castaway cay guide', 'cozumel cruise port'],
+  openGraph: {
+    title: 'Disney Cruise Port Guides — What to Know Before You Dock',
+    description: 'Complete guides for every major Disney Cruise Line port: Port Canaveral, Nassau, Castaway Cay, and Cozumel.',
+    url: 'https://gatgridcruises.com/guides/ports',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Disney Cruise Port Guides',
+    description: 'Port guides for Port Canaveral, Nassau, Castaway Cay, and Cozumel on Disney cruises.',
+    images: ['https://gatgridcruises.com/og-image.png'],
+  },
 }
 
 const ports = [

@@ -5,6 +5,18 @@ import { Gift } from 'lucide-react'
 export const metadata: Metadata = {
   title: 'About GatGridCruises — Dr. Grayson Starbuck, DPT',
   description: 'Learn about GatGridCruises — founded by Dr. Grayson Starbuck, DPT. An independent Disney cruise planning resource built for families who want transparent, honest information.',
+  openGraph: {
+    title: 'About GatGridCruises — Dr. Grayson Starbuck, DPT',
+    description: 'Learn about GatGridCruises — founded by Dr. Grayson Starbuck, DPT. An independent Disney cruise planning resource.',
+    url: 'https://gatgridcruises.com/about',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About GatGridCruises — Dr. Grayson Starbuck, DPT',
+    description: 'Learn about GatGridCruises — an independent Disney cruise planning resource built for families.',
+    images: ['https://gatgridcruises.com/og-image.png'],
+  },
 }
 
 const personSchema = {

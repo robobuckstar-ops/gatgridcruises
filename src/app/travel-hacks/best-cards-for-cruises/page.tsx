@@ -16,6 +16,18 @@ export const metadata: Metadata = {
     'dining rewards',
     'travel rewards strategy',
   ],
+  openGraph: {
+    title: 'Best Credit Cards for Cruise Purchases | Travel Hacks',
+    description: 'Which credit cards offer the best rewards on cruise fares, onboard dining, and excursions? Strategic stacking can earn 50,000+ bonus points.',
+    url: 'https://gatgridcruises.com/travel-hacks/best-cards-for-cruises',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Best Credit Cards for Cruise Purchases',
+    description: 'Which cards offer the best rewards on cruise fares, onboard dining, and excursions?',
+    images: ['https://gatgridcruises.com/og-image.png'],
+  },
 }
 
 export default function BestCardsForCruises() {

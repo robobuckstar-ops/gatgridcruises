@@ -12,6 +12,13 @@ export const metadata = {
     description:
       'Practical Disney cruise advice: money-saving tips, deal analyses, ship reviews, and planning guides.',
     url: 'https://gatgridcruises.com/blog',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Blog — Disney Cruise Tips, Deals & News',
+    description: 'Practical Disney cruise advice: money-saving tips, deal analyses, ship reviews, and planning guides.',
+    images: ['https://gatgridcruises.com/og-image.png'],
   },
 }
 

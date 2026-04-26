@@ -12,6 +12,13 @@ export const metadata: Metadata = {
     description:
       'Filter Disney cruise deals by ship, duration, port, and guest count. Deal Score ranks every sailing by value.',
     url: 'https://gatgridcruises.com/deals',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Disney Cruise Deals — Filter by Ship, Duration & Score',
+    description: 'Filter Disney cruise deals by ship, duration, port, and guest count. Deal Score ranks every sailing by value.',
+    images: ['https://gatgridcruises.com/og-image.png'],
   },
 }
 

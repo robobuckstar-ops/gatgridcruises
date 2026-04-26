@@ -7,6 +7,18 @@ import { GetQuoteCTA } from '@/components/get-quote-cta';
 export const metadata: Metadata = {
   title: 'Best Disney Cruise Staterooms: Complete Category Guide',
   description: 'Complete guide to Disney cruise cabin categories, locations, and features. Compare inside, oceanview, verandah, and concierge suites.',
+  openGraph: {
+    title: 'Best Disney Cruise Staterooms: Complete Category Guide',
+    description: 'Complete guide to Disney cruise cabin categories. Compare inside, oceanview, verandah, and concierge suites.',
+    url: 'https://gatgridcruises.com/guides/best-disney-cruise-staterooms',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Best Disney Cruise Staterooms: Complete Category Guide',
+    description: 'Compare inside, oceanview, verandah, and concierge Disney cruise staterooms.',
+    images: ['https://gatgridcruises.com/og-image.png'],
+  },
 };
 
 export default function BestDisneyCruiseStateroomsGuide() {

@@ -16,6 +16,14 @@ export const metadata: Metadata = {
     description:
       'The insider guide to maximizing credit card rewards on Disney cruises. Compare top cards for signup bonuses, lounge access, and travel insurance.',
     type: 'article',
+    url: 'https://gatgridcruises.com/guides/travel-hacks-credit-cards',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Travel Hacks: Credit Cards for Cruise Rewards',
+    description: 'The insider guide to maximizing credit card rewards on Disney cruises. Compare top cards for signup bonuses, lounge access, and travel insurance.',
+    images: ['https://gatgridcruises.com/og-image.png'],
   },
 }
 

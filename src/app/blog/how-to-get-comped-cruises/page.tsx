@@ -11,6 +11,13 @@ export const metadata: Metadata = {
     description:
       'Six real ways to cruise for free or nearly free — casino comps, loyalty programs, travel agent FAM trips, military discounts, and more.',
     url: 'https://gatgridcruises.com/blog/how-to-get-comped-cruises',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'How to Get Comped Cruises: 6 Proven Strategies',
+    description: 'Six real ways to cruise for free or nearly free — casino comps, loyalty programs, travel agent FAM trips, military discounts, and more.',
+    images: ['https://gatgridcruises.com/og-image.png'],
   },
 }
 

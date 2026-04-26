@@ -5,6 +5,18 @@ import { Users, MessageSquare, Heart } from 'lucide-react'
 export const metadata: Metadata = {
   title: 'Community — Disney Cruisers Hub',
   description: 'Join the GatGrid Cruises community. Connect with fellow Disney cruisers, share tips, and plan your next adventure together.',
+  openGraph: {
+    title: 'Community — Disney Cruisers Hub',
+    description: 'Join the GatGrid Cruises community. Connect with fellow Disney cruisers, share tips, and plan your next adventure.',
+    url: 'https://gatgridcruises.com/community',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Community — Disney Cruisers Hub',
+    description: 'Connect with fellow Disney cruisers, share tips, and plan your next adventure together.',
+    images: ['https://gatgridcruises.com/og-image.png'],
+  },
 }
 
 export default function CommunityPage() {

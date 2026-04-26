@@ -6,6 +6,18 @@ import { Car, ArrowRight } from 'lucide-react'
 export const metadata: Metadata = {
   title: 'Transfer Guide — Getting to Your Disney Cruise Port',
   description: 'Compare transportation options to every Disney cruise departure port. Disney transfer vs Uber vs rental car vs driving.',
+  openGraph: {
+    title: 'Transfer Guide — Getting to Your Disney Cruise Port',
+    description: 'Compare transportation options to every Disney cruise port — Disney transfer vs Uber vs rental car vs driving.',
+    url: 'https://gatgridcruises.com/tools/transfers',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Transfer Guide — Disney Cruise Ports',
+    description: 'Disney transfer vs Uber vs rental car — which is best for your cruise port?',
+    images: ['https://gatgridcruises.com/og-image.png'],
+  },
 }
 
 export default function TransfersPage() {

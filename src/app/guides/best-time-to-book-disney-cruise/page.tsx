@@ -6,6 +6,18 @@ import { GetQuoteCTA } from '@/components/get-quote-cta';
 export const metadata: Metadata = {
   title: 'Best Time to Book a Disney Cruise (Price Data Analysis)',
   description: 'Data-driven guide to booking Disney cruises at the lowest prices. Learn about wave season, price cycles, cheapest months, and booking strategies.',
+  openGraph: {
+    title: 'Best Time to Book a Disney Cruise (Price Data Analysis)',
+    description: 'Data-driven guide to booking Disney cruises at the lowest prices. Wave season, price cycles, and booking strategies.',
+    url: 'https://gatgridcruises.com/guides/best-time-to-book-disney-cruise',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Best Time to Book a Disney Cruise',
+    description: 'Data-driven guide: wave season, price cycles, and the best booking strategies for low prices.',
+    images: ['https://gatgridcruises.com/og-image.png'],
+  },
 };
 
 export default function BestTimeToBookGuide() {

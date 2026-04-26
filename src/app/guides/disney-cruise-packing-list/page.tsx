@@ -6,6 +6,18 @@ import { GetQuoteCTA } from '@/components/get-quote-cta';
 export const metadata: Metadata = {
   title: 'The Ultimate Disney Cruise Packing List (Printable)',
   description: 'Complete Disney cruise packing list with categories for clothing, documents, toiletries, electronics, and Castaway Cay essentials. Includes pro tips and what NOT to pack.',
+  openGraph: {
+    title: 'The Ultimate Disney Cruise Packing List (Printable)',
+    description: 'Complete Disney cruise packing list for clothing, documents, toiletries, electronics, and Castaway Cay. Includes what NOT to pack.',
+    url: 'https://gatgridcruises.com/guides/disney-cruise-packing-list',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'The Ultimate Disney Cruise Packing List (Printable)',
+    description: 'Complete packing list for your Disney cruise with pro tips and what NOT to bring.',
+    images: ['https://gatgridcruises.com/og-image.png'],
+  },
 };
 
 export default function PackingListGuide() {
