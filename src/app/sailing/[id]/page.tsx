@@ -12,6 +12,21 @@ import { PriceTrend } from '@/components/ui/price-trend'
 import { Ship, Calendar, MapPin, Clock, DollarSign, Anchor, BedDouble, Car, Building2, ArrowRight, Check, X as XIcon, Info, TrendingDown, TrendingUp, ShoppingBag, Flame } from 'lucide-react'
 import { BookingInquiryButton } from '@/components/ui/booking-inquiry-button'
 
+const PORT_GUIDE_SLUGS: Record<string, string> = {
+  'Castaway Cay': 'castaway-cay',
+  'Nassau': 'nassau',
+  'Nassau, Bahamas': 'nassau',
+  'Cozumel': 'cozumel',
+  'Cozumel, Mexico': 'cozumel',
+  'Port Canaveral': 'port-canaveral',
+  'Port Canaveral, Florida': 'port-canaveral',
+}
+
+function getPortGuideUrl(portName: string): string | null {
+  const slug = PORT_GUIDE_SLUGS[portName]
+  return slug ? `/guides/ports/${slug}` : null
+}
+
 type AvailabilityStatus = 'available' | 'limited' | 'sold_out'
 
 function getCategoryAvailability(price: number | null | undefined, score: number, category: string): AvailabilityStatus {
@@ -317,24 +332,36 @@ export default async function SailingDetailPage({ params }: PageProps) {
             <section>
               <h2 className="font-display text-2xl font-bold text-slate-900 mb-4">Itinerary</h2>
               <div className="space-y-3">
-                {sailing.itinerary_details.map((day) => (
-                  <div key={day.day} className="flex gap-4 p-4 bg-slate-50 rounded-lg">
-                    <div className="flex-shrink-0 w-12 h-12 bg-blue-600 text-white rounded-lg flex items-center justify-center font-bold text-sm">
-                      Day {day.day}
+                {sailing.itinerary_details.map((day) => {
+                  const isAtSea = day.port === 'At Sea'
+                  const portUrl = isAtSea
+                    ? (ship?.slug ? `/ships/${ship.slug}` : null)
+                    : getPortGuideUrl(day.port)
+                  return (
+                    <div key={day.day} className="flex gap-4 p-4 bg-slate-50 rounded-lg">
+                      <div className="flex-shrink-0 w-12 h-12 bg-blue-600 text-white rounded-lg flex items-center justify-center font-bold text-sm">
+                        Day {day.day}
+                      </div>
+                      <div>
+                        {portUrl ? (
+                          <Link href={portUrl} className="font-semibold text-blue-700 hover:text-blue-800 hover:underline">
+                            {day.port}
+                          </Link>
+                        ) : (
+                          <p className="font-semibold text-slate-900">{day.port}</p>
+                        )}
+                        <p className="text-sm text-slate-600">{day.description}</p>
+                        {(day.arrival || day.departure) && (
+                          <p className="text-xs text-slate-400 mt-1">
+                            {day.arrival && `Arrive: ${day.arrival}`}
+                            {day.arrival && day.departure && ' · '}
+                            {day.departure && `Depart: ${day.departure}`}
+                          </p>
+                        )}
+                      </div>
                     </div>
-                    <div>
-                      <p className="font-semibold text-slate-900">{day.port}</p>
-                      <p className="text-sm text-slate-600">{day.description}</p>
-                      {(day.arrival || day.departure) && (
-                        <p className="text-xs text-slate-400 mt-1">
-                          {day.arrival && `Arrive: ${day.arrival}`}
-                          {day.arrival && day.departure && ' · '}
-                          {day.departure && `Depart: ${day.departure}`}
-                        </p>
-                      )}
-                    </div>
-                  </div>
-                ))}
+                  )
+                })}
               </div>
             </section>
 
