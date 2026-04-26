@@ -49,10 +49,16 @@ export async function POST(request: NextRequest) {
   try {
     const apiKey = process.env.AIRTABLE_API_KEY
     if (!apiKey) {
-      return NextResponse.json({ error: 'Service unavailable' }, { status: 503 })
+      // Vercel env diagnostic: log which portal/airtable vars are present
+      const presentVars = Object.keys(process.env).filter(
+        k => k.includes('AIRTABLE') || k.includes('PORTAL') || k.includes('BREVO')
+      )
+      console.error('[portal/login] AIRTABLE_API_KEY missing. Present env vars:', presentVars)
+      return NextResponse.json({ error: 'Service unavailable', code: 'NO_AIRTABLE_KEY' }, { status: 503 })
     }
     if (!process.env.PORTAL_JWT_SECRET) {
-      return NextResponse.json({ error: 'Service unavailable' }, { status: 503 })
+      console.error('[portal/login] PORTAL_JWT_SECRET missing')
+      return NextResponse.json({ error: 'Service unavailable', code: 'NO_JWT_SECRET' }, { status: 503 })
     }
 
     const body = await request.json()
