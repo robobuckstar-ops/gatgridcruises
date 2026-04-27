@@ -141,6 +141,11 @@ export function Footer() {
                   </Link>
                 </li>
                 <li>
+                  <Link href="/tools/credit-cards" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                    Credit Card Hacks
+                  </Link>
+                </li>
+                <li>
                   <Link href="/tools/flights" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
                     Flight Finder
                   </Link>
