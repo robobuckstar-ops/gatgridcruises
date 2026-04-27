@@ -274,15 +274,15 @@ export function FlightFinder({
       >
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center gap-3 mb-3">
-            <Plane className="w-8 h-8" style={{ color: '#2563EB' }} />
+            <Plane className="w-8 h-8 text-[#D4AF37]" aria-hidden="true" />
             <h1
-              className="text-4xl font-bold text-slate-900"
+              className="text-4xl font-bold text-white"
               style={{ fontFamily: 'Fraunces' }}
             >
               Flight Finder
             </h1>
           </div>
-          <p className="text-slate-600 max-w-2xl">
+          <p className="text-blue-200 max-w-2xl">
             Find the best flights to your Disney cruise departure port. Get
             arrival time recommendations and booking links.
           </p>
@@ -304,10 +304,11 @@ export function FlightFinder({
           <div className="grid md:grid-cols-2 gap-8">
             {/* Home Airport */}
             <div ref={airportRef} className="relative">
-              <label className="block text-sm font-semibold text-slate-700 mb-2">
+              <label htmlFor="flight-home-airport" className="block text-sm font-semibold text-slate-700 mb-2">
                 Your Home Airport
               </label>
               <input
+                id="flight-home-airport"
                 type="text"
                 value={airportInputValue}
                 onChange={e => {
@@ -356,10 +357,11 @@ export function FlightFinder({
 
             {/* Sailing or Manual Port Selection */}
             <div>
-              <label className="block text-sm font-semibold text-slate-700 mb-2">
+              <label htmlFor="flight-sailing" className="block text-sm font-semibold text-slate-700 mb-2">
                 Select a Sailing <span className="text-slate-400">(or choose port manually)</span>
               </label>
               <select
+                id="flight-sailing"
                 value={selectedSailing || ''}
                 onChange={e => setSelectedSailing(e.target.value || null)}
                 className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2"
@@ -375,10 +377,11 @@ export function FlightFinder({
 
             {/* Manual Port Selection */}
             <div>
-              <label className="block text-sm font-semibold text-slate-700 mb-2">
+              <label htmlFor="flight-departure-port" className="block text-sm font-semibold text-slate-700 mb-2">
                 Or Select Departure Port
               </label>
               <select
+                id="flight-departure-port"
                 value={selectedPort || ''}
                 onChange={e => setSelectedPort(e.target.value || null)}
                 className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2"
@@ -394,10 +397,11 @@ export function FlightFinder({
 
             {/* Manual Date Selection */}
             <div>
-              <label className="block text-sm font-semibold text-slate-700 mb-2">
+              <label htmlFor="flight-departure-date" className="block text-sm font-semibold text-slate-700 mb-2">
                 Departure Date
               </label>
               <input
+                id="flight-departure-date"
                 type="date"
                 value={customDepartureDate || ''}
                 onChange={e => setCustomDepartureDate(e.target.value || null)}

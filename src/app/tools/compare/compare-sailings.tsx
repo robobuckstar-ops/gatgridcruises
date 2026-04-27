@@ -52,8 +52,9 @@ export function CompareSailings({ sailings }: CompareSailingsProps) {
         {/* Selectors */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
           <div>
-            <label className="block font-display text-lg font-bold text-slate-900 mb-3">Sailing A</label>
+            <label htmlFor="compare-sailing-a" className="block font-display text-lg font-bold text-slate-900 mb-3">Sailing A</label>
             <select
+              id="compare-sailing-a"
               value={sailingAId || ''}
               onChange={(e) => setSailingAId(e.target.value || null)}
               className="w-full px-4 py-3 border border-slate-300 rounded-lg text-slate-700 bg-white hover:border-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 font-medium"
@@ -68,8 +69,9 @@ export function CompareSailings({ sailings }: CompareSailingsProps) {
           </div>
 
           <div>
-            <label className="block font-display text-lg font-bold text-slate-900 mb-3">Sailing B</label>
+            <label htmlFor="compare-sailing-b" className="block font-display text-lg font-bold text-slate-900 mb-3">Sailing B</label>
             <select
+              id="compare-sailing-b"
               value={sailingBId || ''}
               onChange={(e) => setSailingBId(e.target.value || null)}
               className="w-full px-4 py-3 border border-slate-300 rounded-lg text-slate-700 bg-white hover:border-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 font-medium"

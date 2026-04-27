@@ -250,14 +250,15 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
           <div className="bg-slate-50 border border-slate-200 rounded-xl p-5 mb-6 space-y-5">
             {/* Cruise Lines */}
             <div>
-              <label className="block text-sm font-semibold text-slate-700 mb-2">
+              <p id="cruise-line-filter-label" className="block text-sm font-semibold text-slate-700 mb-2">
                 Cruise Line
-              </label>
-              <div className="flex flex-wrap gap-2">
+              </p>
+              <div className="flex flex-wrap gap-2" role="group" aria-labelledby="cruise-line-filter-label">
                 {cruiseLines.map(line => (
                   <button
                     key={line}
                     onClick={() => toggleCruiseLine(line)}
+                    aria-pressed={selectedCruiseLines.includes(line)}
                     className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-colors ${
                       selectedCruiseLines.includes(line)
                         ? 'bg-[#1E3A5F] text-white border-[#1E3A5F]'
@@ -272,16 +273,17 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
 
             {/* Ports */}
             <div>
-              <label className="block text-sm font-semibold text-slate-700 mb-2">
+              <p id="departure-port-filter-label" className="block text-sm font-semibold text-slate-700 mb-2">
                 Departure Port
-              </label>
-              <div className="flex flex-wrap gap-2">
+              </p>
+              <div className="flex flex-wrap gap-2" role="group" aria-labelledby="departure-port-filter-label">
                 {ports
                   .filter(p => sailings.some(s => s.departure_port_id === p.id))
                   .map(port => (
                     <button
                       key={port.id}
                       onClick={() => togglePort(port.id)}
+                      aria-pressed={selectedPorts.includes(port.id)}
                       className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-colors ${
                         selectedPorts.includes(port.id)
                           ? 'bg-[#1E3A5F] text-white border-[#1E3A5F]'
@@ -296,14 +298,15 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
 
             {/* Length */}
             <div>
-              <label className="block text-sm font-semibold text-slate-700 mb-2">
+              <p id="cruise-length-label" className="block text-sm font-semibold text-slate-700 mb-2">
                 Cruise Length
-              </label>
-              <div className="flex flex-wrap gap-2">
+              </p>
+              <div className="flex flex-wrap gap-2" role="group" aria-labelledby="cruise-length-label">
                 {lengthOptions.map(len => (
                   <button
                     key={len}
                     onClick={() => toggleLength(len)}
+                    aria-pressed={lengthFilter.includes(len)}
                     className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-colors ${
                       lengthFilter.includes(len)
                         ? 'bg-[#1E3A5F] text-white border-[#1E3A5F]'
@@ -319,29 +322,33 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
             {/* Score and Price */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-semibold text-slate-700 mb-2">
+                <label htmlFor="deal-min-score" className="block text-sm font-semibold text-slate-700 mb-2">
                   Min Score: {minScore || 'Any'}
                 </label>
                 <input
+                  id="deal-min-score"
                   type="range"
                   min={0}
                   max={100}
                   value={minScore}
                   onChange={e => setMinScore(Number(e.target.value))}
+                  aria-label={`Minimum deal score: ${minScore || 'Any'}`}
                   className="w-full accent-blue-600"
                 />
               </div>
               <div>
-                <label className="block text-sm font-semibold text-slate-700 mb-2">
+                <label htmlFor="deal-max-price" className="block text-sm font-semibold text-slate-700 mb-2">
                   Max Price: {maxPrice ? `$${maxPrice.toLocaleString()}` : 'Any'}
                 </label>
                 <input
+                  id="deal-max-price"
                   type="range"
                   min={0}
                   max={10000}
                   step={500}
                   value={maxPrice}
                   onChange={e => setMaxPrice(Number(e.target.value))}
+                  aria-label={`Maximum price: ${maxPrice ? `$${maxPrice.toLocaleString()}` : 'Any'}`}
                   className="w-full accent-blue-600"
                 />
               </div>
@@ -349,18 +356,19 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
 
             {/* Private Island */}
             <div>
-              <label className="block text-sm font-semibold text-slate-700 mb-2">
+              <p id="special-stops-label" className="block text-sm font-semibold text-slate-700 mb-2">
                 Special Stops
-              </label>
+              </p>
               <button
                 onClick={() => setPrivateIsland(prev => !prev)}
+                aria-pressed={privateIsland}
                 className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium border transition-colors ${
                   privateIsland
                     ? 'bg-blue-600 text-white border-blue-600'
                     : 'bg-white text-slate-600 border-slate-300 hover:border-blue-600'
                 }`}
               >
-                <span>🏝️</span>
+                <span aria-hidden="true">🏝️</span>
                 Private Island
               </button>
               <p className="text-xs text-slate-400 mt-1">Castaway Cay or Lighthouse Point</p>

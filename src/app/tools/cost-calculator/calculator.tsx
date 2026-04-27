@@ -291,10 +291,11 @@ export function CostCalculator({ sailings }: CostCalculatorProps) {
               <div className="space-y-4">
                 {/* Sailing Selection */}
                 <div>
-                  <label className="block text-sm font-semibold text-slate-700 mb-2">
+                  <label htmlFor="calc-sailing" className="block text-sm font-semibold text-slate-700 mb-2">
                     Select a Sailing
                   </label>
                   <select
+                    id="calc-sailing"
                     value={selectedSailing}
                     onChange={(e) => setSelectedSailing(e.target.value)}
                     className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -310,10 +311,11 @@ export function CostCalculator({ sailings }: CostCalculatorProps) {
 
                 {/* Manual Cruise Fare */}
                 <div>
-                  <label className="block text-sm font-semibold text-slate-700 mb-2">
+                  <label htmlFor="calc-fare" className="block text-sm font-semibold text-slate-700 mb-2">
                     Cruise Fare per Person {selectedSailing && '(auto-filled)'}
                   </label>
                   <input
+                    id="calc-fare"
                     type="number"
                     value={baseCruiseFare}
                     onChange={(e) => {
@@ -329,10 +331,11 @@ export function CostCalculator({ sailings }: CostCalculatorProps) {
                 {/* Party Size */}
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-semibold text-slate-700 mb-2">
+                    <label htmlFor="calc-adults" className="block text-sm font-semibold text-slate-700 mb-2">
                       Adults
                     </label>
                     <input
+                      id="calc-adults"
                       type="number"
                       min="1"
                       value={adults}
@@ -341,10 +344,11 @@ export function CostCalculator({ sailings }: CostCalculatorProps) {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-slate-700 mb-2">
+                    <label htmlFor="calc-children" className="block text-sm font-semibold text-slate-700 mb-2">
                       Children
                     </label>
                     <input
+                      id="calc-children"
                       type="number"
                       min="0"
                       value={children}
@@ -371,10 +375,11 @@ export function CostCalculator({ sailings }: CostCalculatorProps) {
               <div className="space-y-4">
                 {/* Home Airport */}
                 <div>
-                  <label className="block text-sm font-semibold text-slate-700 mb-2">
+                  <label htmlFor="calc-airport" className="block text-sm font-semibold text-slate-700 mb-2">
                     Home Airport
                   </label>
                   <input
+                    id="calc-airport"
                     type="text"
                     value={homeAirport}
                     onChange={(e) => setHomeAirport(e.target.value)}
@@ -391,10 +396,11 @@ export function CostCalculator({ sailings }: CostCalculatorProps) {
 
                 {/* Flight Costs */}
                 <div>
-                  <label className="block text-sm font-semibold text-slate-700 mb-2">
+                  <label htmlFor="calc-flight-cost" className="block text-sm font-semibold text-slate-700 mb-2">
                     Estimated Round-Trip Flight Cost per Person
                   </label>
                   <input
+                    id="calc-flight-cost"
                     type="number"
                     value={flightCostPerPerson}
                     onChange={(e) => setFlightCostPerPerson(parseFloat(e.target.value) || 0)}
@@ -422,10 +428,11 @@ export function CostCalculator({ sailings }: CostCalculatorProps) {
                   {preHotelYes && (
                     <div className="grid grid-cols-2 gap-4 ml-7">
                       <div>
-                        <label className="block text-sm font-semibold text-slate-700 mb-2">
+                        <label htmlFor="calc-hotel-nights" className="block text-sm font-semibold text-slate-700 mb-2">
                           Nights
                         </label>
                         <input
+                          id="calc-hotel-nights"
                           type="number"
                           min="1"
                           value={preHotelNights}
@@ -434,10 +441,11 @@ export function CostCalculator({ sailings }: CostCalculatorProps) {
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-semibold text-slate-700 mb-2">
+                        <label htmlFor="calc-hotel-cost" className="block text-sm font-semibold text-slate-700 mb-2">
                           Cost per Night (all guests)
                         </label>
                         <input
+                          id="calc-hotel-cost"
                           type="number"
                           value={preHotelCostPerNight}
                           onChange={(e) => setPreHotelCostPerNight(parseFloat(e.target.value) || 0)}
@@ -453,10 +461,10 @@ export function CostCalculator({ sailings }: CostCalculatorProps) {
 
                 {/* Transfer to Port */}
                 <div className="border-t pt-4">
-                  <label className="block text-sm font-semibold text-slate-700 mb-3">
+                  <p id="transfer-label" className="block text-sm font-semibold text-slate-700 mb-3">
                     Transfer to Port
-                  </label>
-                  <div className="space-y-2">
+                  </p>
+                  <div className="space-y-2" role="radiogroup" aria-labelledby="transfer-label">
                     {[
                       { value: 'ground', label: 'Disney Ground Transportation ($39pp)' },
                       { value: 'uber', label: 'Uber/Lyft (~$45pp)' },
@@ -480,10 +488,11 @@ export function CostCalculator({ sailings }: CostCalculatorProps) {
 
                   {transferType === 'personal' && (
                     <div className="mt-3 ml-6">
-                      <label className="block text-sm font-semibold text-slate-700 mb-2">
+                      <label htmlFor="calc-parking" className="block text-sm font-semibold text-slate-700 mb-2">
                         Parking Days (at $20/day)
                       </label>
                       <input
+                        id="calc-parking"
                         type="number"
                         min="0"
                         value={parkingDays}
@@ -507,9 +516,9 @@ export function CostCalculator({ sailings }: CostCalculatorProps) {
                 {/* Gratuities */}
                 <div className="bg-slate-50 p-4 rounded-lg">
                   <div className="flex justify-between items-start mb-2">
-                    <label className="block text-sm font-semibold text-slate-700">
+                    <p className="block text-sm font-semibold text-slate-700">
                       Gratuities
-                    </label>
+                    </p>
                     <span className="text-xs text-slate-500">
                       Auto-calculated at ${(14.5 * cruiseNights).toLocaleString('en-US', { minimumFractionDigits: 2 })}/person
                     </span>
@@ -518,10 +527,11 @@ export function CostCalculator({ sailings }: CostCalculatorProps) {
                     $14.50/person/night × {cruiseNights} nights × {partySize} guests = ${calculations.baseGratuities.toLocaleString('en-US', { minimumFractionDigits: 2 })}
                   </p>
                   <div>
-                    <label className="block text-xs font-semibold text-slate-700 mb-2">
+                    <label htmlFor="calc-gratuity-override" className="block text-xs font-semibold text-slate-700 mb-2">
                       Override amount (optional):
                     </label>
                     <input
+                      id="calc-gratuity-override"
                       type="number"
                       value={gratuityOverride || ''}
                       onChange={(e) => setGratuityOverride(e.target.value ? parseFloat(e.target.value) : null)}
@@ -534,10 +544,11 @@ export function CostCalculator({ sailings }: CostCalculatorProps) {
                 {/* Specialty Dining */}
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-semibold text-slate-700 mb-2">
+                    <label htmlFor="calc-palo" className="block text-sm font-semibold text-slate-700 mb-2">
                       Palo Meals (at $45pp)
                     </label>
                     <input
+                      id="calc-palo"
                       type="number"
                       min="0"
                       value={paloMeals}
@@ -547,10 +558,11 @@ export function CostCalculator({ sailings }: CostCalculatorProps) {
                     <p className="text-xs text-slate-500 mt-1">${(paloMeals * 45 * partySize).toLocaleString('en-US', { minimumFractionDigits: 2 })}</p>
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-slate-700 mb-2">
+                    <label htmlFor="calc-remy" className="block text-sm font-semibold text-slate-700 mb-2">
                       Remy/Enchanté Meals (at $125pp)
                     </label>
                     <input
+                      id="calc-remy"
                       type="number"
                       min="0"
                       value={remyMeals}
@@ -563,10 +575,10 @@ export function CostCalculator({ sailings }: CostCalculatorProps) {
 
                 {/* Beverages */}
                 <div className="border-t pt-4">
-                  <label className="block text-sm font-semibold text-slate-700 mb-3">
+                  <p id="beverages-label" className="block text-sm font-semibold text-slate-700 mb-3">
                     Beverages
-                  </label>
-                  <div className="space-y-2 mb-4">
+                  </p>
+                  <div className="space-y-2 mb-4" role="radiogroup" aria-labelledby="beverages-label">
                     {[
                       { value: 'none', label: 'None - No extra beverages' },
                       { value: 'casual', label: 'Casual - Estimate bar spend' },
@@ -588,10 +600,11 @@ export function CostCalculator({ sailings }: CostCalculatorProps) {
 
                   {drinkPackageType === 'casual' && (
                     <div className="ml-6">
-                      <label className="block text-sm font-semibold text-slate-700 mb-2">
+                      <label htmlFor="calc-bar-spend" className="block text-sm font-semibold text-slate-700 mb-2">
                         Estimated Daily Bar Spend per Person
                       </label>
                       <input
+                        id="calc-bar-spend"
                         type="number"
                         value={estimatedBarSpend}
                         onChange={(e) => setEstimatedBarSpend(parseFloat(e.target.value) || 0)}
@@ -612,10 +625,11 @@ export function CostCalculator({ sailings }: CostCalculatorProps) {
 
                 {/* Port Excursions */}
                 <div className="border-t pt-4">
-                  <label className="block text-sm font-semibold text-slate-700 mb-2">
+                  <label htmlFor="calc-excursions" className="block text-sm font-semibold text-slate-700 mb-2">
                     Estimated Port Excursions (all ports, all guests)
                   </label>
                   <input
+                    id="calc-excursions"
                     type="number"
                     value={excursionsTotal}
                     onChange={(e) => setExcursionsTotal(parseFloat(e.target.value) || 0)}
@@ -629,10 +643,10 @@ export function CostCalculator({ sailings }: CostCalculatorProps) {
 
                 {/* Photo Package */}
                 <div className="border-t pt-4">
-                  <label className="block text-sm font-semibold text-slate-700 mb-3">
+                  <p id="photo-label" className="block text-sm font-semibold text-slate-700 mb-3">
                     Photo Package
-                  </label>
-                  <div className="space-y-2">
+                  </p>
+                  <div className="space-y-2" role="radiogroup" aria-labelledby="photo-label">
                     {[
                       { value: 'none', label: 'None ($0)' },
                       { value: 'basic', label: 'Basic Package ($199)' },
@@ -655,10 +669,11 @@ export function CostCalculator({ sailings }: CostCalculatorProps) {
 
                 {/* Spa */}
                 <div className="border-t pt-4">
-                  <label className="block text-sm font-semibold text-slate-700 mb-2">
+                  <label htmlFor="calc-spa" className="block text-sm font-semibold text-slate-700 mb-2">
                     Estimated Spa Spend
                   </label>
                   <input
+                    id="calc-spa"
                     type="number"
                     value={spaSpend}
                     onChange={(e) => setSpaSpend(parseFloat(e.target.value) || 0)}
@@ -669,10 +684,10 @@ export function CostCalculator({ sailings }: CostCalculatorProps) {
 
                 {/* Internet */}
                 <div className="border-t pt-4">
-                  <label className="block text-sm font-semibold text-slate-700 mb-3">
+                  <p id="internet-label" className="block text-sm font-semibold text-slate-700 mb-3">
                     Internet Package
-                  </label>
-                  <div className="space-y-2">
+                  </p>
+                  <div className="space-y-2" role="radiogroup" aria-labelledby="internet-label">
                     {[
                       { value: 'none', label: 'None ($0)' },
                       { value: 'basic', label: 'Basic ($12/day)' },
@@ -703,10 +718,11 @@ export function CostCalculator({ sailings }: CostCalculatorProps) {
                   <h3 className="font-semibold text-slate-700 mb-3">Kids' Extras</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-semibold text-slate-700 mb-2">
+                      <label htmlFor="calc-bibbidi" className="block text-sm font-semibold text-slate-700 mb-2">
                         Bibbidi Bobbidi Boutique
                       </label>
                       <input
+                        id="calc-bibbidi"
                         type="number"
                         value={bibbidiSpend}
                         onChange={(e) => setBibbidiSpend(parseFloat(e.target.value) || 0)}
@@ -715,10 +731,11 @@ export function CostCalculator({ sailings }: CostCalculatorProps) {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-semibold text-slate-700 mb-2">
+                      <label htmlFor="calc-kids-extras" className="block text-sm font-semibold text-slate-700 mb-2">
                         Other Kids' Activities & Extras
                       </label>
                       <input
+                        id="calc-kids-extras"
                         type="number"
                         value={kidsExtrasOther}
                         onChange={(e) => setKidsExtrasOther(parseFloat(e.target.value) || 0)}
