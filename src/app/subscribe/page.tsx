@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function SubscribePage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-slate-50">
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-slate-900 via-[#1E3A5F] to-slate-900 py-16 md:py-24 border-b border-white/10">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
@@ -28,7 +28,7 @@ export default function SubscribePage() {
       </section>
 
       {/* Signup Form Section */}
-      <section className="py-16 md:py-20">
+      <section className="py-16 md:py-20 bg-white">
         <div className="mx-auto max-w-lg px-4 sm:px-6 lg:px-8">
           <EmailSignup />
         </div>
@@ -85,7 +85,7 @@ export default function SubscribePage() {
       </section>
 
       {/* Trust Section */}
-      <section className="py-16 md:py-20">
+      <section className="py-16 md:py-20 bg-white">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <div className="bg-gradient-to-br from-blue-50 to-blue-50 rounded-xl p-8 border border-blue-200">
             <h2 className="font-fraunces text-2xl font-bold text-slate-900 mb-4 text-center">

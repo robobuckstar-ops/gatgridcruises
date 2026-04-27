@@ -15,6 +15,7 @@ const navItems = [
       { label: 'Current Deals', href: '/deals' },
       { label: 'Last-Minute Deals', href: '/deals/last-minute' },
       { label: 'Flash Deals', href: '/deals/flash-deals' },
+      { label: '🎖️ Military Deals', href: '/deals/military' },
       { label: '🔔 Deal Alerts', href: '/deal-alerts' },
     ],
   },
@@ -29,6 +30,7 @@ const navItems = [
       { label: 'Castaway Cay', href: '/guides/castaway-cay-guide' },
       { label: 'With Toddlers', href: '/guides/disney-cruise-with-toddlers' },
       { label: 'Port Canaveral vs Miami', href: '/guides/port-canaveral-vs-miami' },
+      { label: 'Excursion Savings', href: '/guides/excursion-savings' },
     ],
   },
   {

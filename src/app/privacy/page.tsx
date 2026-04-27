@@ -16,7 +16,7 @@ export default function PrivacyPage() {
         </div>
       </section>
 
-      <section className="py-16">
+      <section className="py-16 bg-white">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <div className="prose prose-slate">
           <h2 className="font-fraunces text-2xl font-bold text-[#1E3A5F] mb-4">Overview</h2>

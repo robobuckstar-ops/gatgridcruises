@@ -215,7 +215,7 @@ const faqs = [
 
 export default function ConciergePage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-slate-50">
       {/* Hero */}
       <section className="relative bg-[#1E3A5F] overflow-hidden py-20 md:py-28">
         <div

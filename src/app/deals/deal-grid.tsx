@@ -9,6 +9,7 @@ import { calculateDealScore } from '@/lib/deal-score'
 import Link from 'next/link'
 import { ReportIssueForm } from '@/components/ui/report-issue-form'
 import { PRICES_LAST_UPDATED } from '@/lib/constants'
+import { ResidentRateAlert } from '@/components/ui/resident-rate-alert'
 
 type SortOption = 'score' | 'price_asc' | 'price_desc' | 'price_per_night' | 'date' | 'duration' | 'drop'
 type SailingWithDrop = Sailing & { percentBelow: number }
@@ -30,8 +31,20 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
   const [sortBy, setSortBy] = useState<SortOption>('score')
   const [showFilters, setShowFilters] = useState(false)
   const [guestCount, setGuestCount] = useState(2)
+  const [specialRates, setSpecialRates] = useState<string[]>([])
 
   const lengthOptions = [3, 4, 5, 7]
+
+  const SPECIAL_RATE_OPTIONS = [
+    { id: 'florida', label: '🌴 FL Resident' },
+    { id: 'socal', label: '🌊 SoCal Resident' },
+    { id: 'canada', label: '🍁 Canadian Resident' },
+    { id: 'ap', label: '🎟️ Annual Passholder' },
+  ] as const
+
+  const toggleSpecialRate = (id: string) => {
+    setSpecialRates(prev => (prev.includes(id) ? prev.filter(r => r !== id) : [...prev, id]))
+  }
 
   // Unique cruise lines from ships in active sailings
   const cruiseLines = useMemo(() => {
@@ -129,6 +142,7 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
     minScore > 0,
     maxPrice > 0,
     privateIsland,
+    specialRates.length > 0,
   ].filter(Boolean).length
 
   const clearFilters = () => {
@@ -138,6 +152,7 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
     setMinScore(0)
     setMaxPrice(0)
     setPrivateIsland(false)
+    setSpecialRates([])
     setSearch('')
   }
 
@@ -349,6 +364,39 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
                 Private Island
               </button>
               <p className="text-xs text-slate-400 mt-1">Castaway Cay or Lighthouse Point</p>
+            </div>
+
+            {/* Special / Resident Rates */}
+            <div>
+              <label className="block text-sm font-semibold text-slate-700 mb-1">
+                Special Rates
+              </label>
+              <p className="text-xs text-slate-500 mb-2">
+                Resident and passholder rates aren&apos;t tracked in real-time — sign up for alerts when they become available.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {SPECIAL_RATE_OPTIONS.map(opt => (
+                  <button
+                    key={opt.id}
+                    onClick={() => toggleSpecialRate(opt.id)}
+                    className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-colors ${
+                      specialRates.includes(opt.id)
+                        ? 'bg-[#D4AF37] text-slate-900 border-[#D4AF37]'
+                        : 'bg-white text-slate-600 border-slate-300 hover:border-[#D4AF37]/60'
+                    }`}
+                  >
+                    {opt.label}
+                  </button>
+                ))}
+              </div>
+              {specialRates.length > 0 && (
+                <div className="mt-3 space-y-3">
+                  {specialRates.includes('florida') && <ResidentRateAlert rateType="florida" />}
+                  {specialRates.includes('socal') && <ResidentRateAlert rateType="socal" />}
+                  {specialRates.includes('canada') && <ResidentRateAlert rateType="canada" />}
+                  {specialRates.includes('ap') && <ResidentRateAlert rateType="ap" />}
+                </div>
+              )}
             </div>
 
             {activeFilterCount > 0 && (

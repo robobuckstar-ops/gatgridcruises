@@ -66,7 +66,7 @@ export default function PriceTrackerPage() {
   ]
 
   return (
-    <main>
+    <main className="bg-slate-50">
       {/* Hero */}
       <section className="bg-[#1E3A5F] py-14 md:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

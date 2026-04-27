@@ -76,7 +76,7 @@ export default function CastawayCayPage() {
       </section>
 
       {/* Overview */}
-      <section className="py-12 md:py-16">
+      <section className="py-12 md:py-16 bg-white">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <h2 className="font-fraunces text-3xl font-bold text-[#1E3A5F] mb-6">What Makes Castaway Cay Different</h2>
           <div className="text-slate-600 leading-relaxed space-y-4">
@@ -224,7 +224,7 @@ export default function CastawayCayPage() {
       </section>
 
       {/* Cookies BBQ */}
-      <section className="py-12 md:py-16">
+      <section className="py-12 md:py-16 bg-white">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-6">
             <span className="text-4xl" aria-hidden="true">🍖</span>
@@ -293,7 +293,7 @@ export default function CastawayCayPage() {
       </section>
 
       {/* Packing for Castaway Cay */}
-      <section className="py-12 md:py-16">
+      <section className="py-12 md:py-16 bg-white">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <h2 className="font-fraunces text-3xl font-bold text-[#1E3A5F] mb-6">What to Pack for Castaway Cay</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
@@ -317,7 +317,7 @@ export default function CastawayCayPage() {
       </section>
 
       {/* Related Ports */}
-      <section className="py-10 border-t border-slate-200">
+      <section className="py-10 border-t border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 className="font-fraunces text-2xl font-bold text-slate-900 mb-6">More Port Guides</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

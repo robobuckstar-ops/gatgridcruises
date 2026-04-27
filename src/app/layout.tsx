@@ -9,6 +9,7 @@ import { NewsletterPopup } from '@/components/ui/newsletter-popup'
 import { generateWebsiteSchema, generateOrganizationSchema } from '@/lib/structured-data'
 import { StructuredData } from '@/components/ui/structured-data'
 import { CopyProtection } from '@/components/ui/copy-protection'
+import { FamilyPromoBanner } from '@/components/ui/family-promo-banner'
 
 const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX' // Replace with your real GA4 Measurement ID
 
@@ -95,6 +96,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <CopyProtection />
         <SkipNav />
         <Header />
+        <FamilyPromoBanner />
         <main id="main-content" className="flex-1 pb-28 sm:pb-0">{children}</main>
         <Footer />
         <ChatWidget />

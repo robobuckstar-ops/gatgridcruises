@@ -40,9 +40,9 @@ interface FormData {
 }
 
 const inputClass =
-  'w-full bg-white/5 border border-white/15 rounded-lg px-4 py-2.5 text-white placeholder-blue-400/50 text-sm focus:outline-none focus:border-[#D4AF37]/70 transition-colors'
+  'w-full bg-white/5 border border-white/15 rounded-lg px-4 py-2.5 text-white placeholder-blue-400/50 text-sm focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:ring-offset-1 focus:ring-offset-[#0d1f3c] focus:border-[#D4AF37]/70 transition-colors'
 const selectClass =
-  'w-full bg-[#0d1f3c] border border-white/15 rounded-lg px-4 py-2.5 text-white text-sm focus:outline-none focus:border-[#D4AF37]/70 transition-colors appearance-none'
+  'w-full bg-[#0d1f3c] border border-white/15 rounded-lg px-4 py-2.5 text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:ring-offset-1 focus:ring-offset-[#0d1f3c] focus:border-[#D4AF37]/70 transition-colors appearance-none'
 const labelClass = 'block text-xs font-semibold text-blue-300 uppercase tracking-wider mb-1.5'
 
 export function ConciergeForm() {
@@ -110,10 +110,10 @@ export function ConciergeForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} className="space-y-4" aria-label="Concierge service inquiry form" noValidate>
       {sailingParam && (
         <div className="bg-[#D4AF37]/10 border border-[#D4AF37]/30 rounded-xl px-4 py-3 flex items-center gap-2">
-          <Anchor className="w-4 h-4 text-[#D4AF37] flex-shrink-0" />
+          <Anchor className="w-4 h-4 text-[#D4AF37] flex-shrink-0" aria-hidden="true" />
           <p className="text-sm text-[#D4AF37]">
             <span className="font-semibold">Interested in:</span> {sailingParam}
           </p>
@@ -122,13 +122,15 @@ export function ConciergeForm() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className={labelClass}>
-            Full Name <span className="text-[#D4AF37]">*</span>
+          <label htmlFor="concierge-name" className={labelClass}>
+            Full Name <span className="text-[#D4AF37]" aria-hidden="true">*</span><span className="sr-only">(required)</span>
           </label>
           <input
+            id="concierge-name"
             type="text"
             name="name"
             required
+            aria-required="true"
             value={form.name}
             onChange={handleChange}
             placeholder="Your full name"
@@ -136,13 +138,15 @@ export function ConciergeForm() {
           />
         </div>
         <div>
-          <label className={labelClass}>
-            Email <span className="text-[#D4AF37]">*</span>
+          <label htmlFor="concierge-email" className={labelClass}>
+            Email <span className="text-[#D4AF37]" aria-hidden="true">*</span><span className="sr-only">(required)</span>
           </label>
           <input
+            id="concierge-email"
             type="email"
             name="email"
             required
+            aria-required="true"
             value={form.email}
             onChange={handleChange}
             placeholder="you@example.com"
@@ -150,13 +154,15 @@ export function ConciergeForm() {
           />
         </div>
         <div>
-          <label className={labelClass}>
-            Phone <span className="text-[#D4AF37]">*</span>
+          <label htmlFor="concierge-phone" className={labelClass}>
+            Phone <span className="text-[#D4AF37]" aria-hidden="true">*</span><span className="sr-only">(required)</span>
           </label>
           <input
+            id="concierge-phone"
             type="tel"
             name="phone"
             required
+            aria-required="true"
             value={form.phone}
             onChange={handleChange}
             placeholder="(555) 000-0000"
@@ -164,8 +170,9 @@ export function ConciergeForm() {
           />
         </div>
         <div>
-          <label className={labelClass}>Timezone</label>
+          <label htmlFor="concierge-timezone" className={labelClass}>Timezone</label>
           <select
+            id="concierge-timezone"
             name="timezone"
             value={form.timezone}
             onChange={handleChange}
@@ -181,12 +188,14 @@ export function ConciergeForm() {
       </div>
 
       <div>
-        <label className={labelClass}>
-          Who&apos;s sailing? <span className="text-[#D4AF37]">*</span>
+        <label htmlFor="concierge-family" className={labelClass}>
+          Who&apos;s sailing? <span className="text-[#D4AF37]" aria-hidden="true">*</span><span className="sr-only">(required)</span>
         </label>
         <textarea
+          id="concierge-family"
           name="family_members"
           required
+          aria-required="true"
           value={form.family_members}
           onChange={handleChange}
           rows={2}
@@ -196,12 +205,14 @@ export function ConciergeForm() {
       </div>
 
       <div>
-        <label className={labelClass}>
-          How did you find GatGrid? <span className="text-[#D4AF37]">*</span>
+        <label htmlFor="concierge-how-found" className={labelClass}>
+          How did you find GatGrid? <span className="text-[#D4AF37]" aria-hidden="true">*</span><span className="sr-only">(required)</span>
         </label>
         <select
+          id="concierge-how-found"
           name="how_found_us"
           required
+          aria-required="true"
           value={form.how_found_us}
           onChange={handleChange}
           className={selectClass}
@@ -215,10 +226,11 @@ export function ConciergeForm() {
       </div>
 
       <div>
-        <label className={labelClass}>
+        <label htmlFor="concierge-notes" className={labelClass}>
           Cruise interests, dates, or questions (optional)
         </label>
         <textarea
+          id="concierge-notes"
           name="notes"
           value={form.notes}
           onChange={handleChange}
@@ -229,22 +241,23 @@ export function ConciergeForm() {
       </div>
 
       {status === 'error' && (
-        <p className="text-red-400 text-sm">{errorMsg}</p>
+        <p className="text-red-400 text-sm" role="alert" aria-live="assertive">{errorMsg}</p>
       )}
 
       <button
         type="submit"
         disabled={status === 'loading'}
+        aria-busy={status === 'loading'}
         className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#D4AF37] text-[#1E3A5F] font-bold rounded-xl hover:bg-yellow-300 transition-colors shadow-lg text-base disabled:opacity-70 disabled:cursor-not-allowed"
       >
         {status === 'loading' ? (
           <>
-            <Loader2 className="w-4 h-4 animate-spin" />
+            <Loader2 className="w-4 h-4 animate-spin" aria-hidden="true" />
             Sending...
           </>
         ) : (
           <>
-            <Send className="w-4 h-4" />
+            <Send className="w-4 h-4" aria-hidden="true" />
             Get My Free Concierge
           </>
         )}

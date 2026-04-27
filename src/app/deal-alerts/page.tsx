@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Bell, TrendingDown, Mail, Check, Zap, Bot, Shield } from 'lucide-react'
 import { DealAlertsForm } from './deal-alerts-form'
+import { SegmentedEmailSignup } from '@/components/ui/segmented-email-signup'
 
 export const metadata: Metadata = {
   title: 'Disney Cruise Deal Alerts — GatGrid Cruises',
@@ -51,7 +52,7 @@ const TESTIMONIALS = [
 
 export default function DealAlertsPage() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-slate-50">
       {/* Hero */}
       <section className="bg-gradient-to-br from-[#1E3A5F] via-[#162d4a] to-[#0f1f33] py-20 md:py-28">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
@@ -103,6 +104,21 @@ export default function DealAlertsPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Segmented alert signup */}
+      <section className="bg-[#0a1628] py-16 md:py-20">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <h2 className="font-fraunces text-3xl md:text-4xl font-bold text-white mb-4">
+              Choose your alert categories
+            </h2>
+            <p className="text-blue-200 max-w-xl mx-auto">
+              Only want military rates? Just family promos? Pick exactly what matters to you — we&apos;ll skip the rest.
+            </p>
+          </div>
+          <SegmentedEmailSignup dark />
         </div>
       </section>
 

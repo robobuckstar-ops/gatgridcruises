@@ -77,16 +77,20 @@ export default function LoginPage() {
       <div className="w-full max-w-md bg-white rounded-lg shadow-lg overflow-hidden">
         {/* Header */}
         <div className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] px-8 py-8 text-center border-b border-slate-200">
-          <h1 className="text-3xl font-bold text-slate-900 mb-1" style={{ fontFamily: 'Georgia, serif' }}>
+          <p className="text-3xl font-bold text-slate-900 mb-1" style={{ fontFamily: 'Georgia, serif' }} aria-hidden="true">
             ⚓
-          </h1>
+          </p>
           <h1 className="text-2xl font-bold text-white">Sign In</h1>
           <p className="text-blue-100 text-sm mt-1">Welcome back to GatGridCruises</p>
         </div>
 
         {/* Tabs */}
-        <div className="flex border-b border-slate-200">
+        <div className="flex border-b border-slate-200" role="tablist" aria-label="Sign in method">
           <button
+            role="tab"
+            id="tab-magic"
+            aria-selected={tab === 'magic'}
+            aria-controls="panel-magic"
             onClick={() => {
               setTab('magic')
               setError(null)
@@ -97,10 +101,14 @@ export default function LoginPage() {
                 : 'text-slate-600 hover:text-slate-900'
             }`}
           >
-            <Mail className="h-4 w-4 inline mr-2" />
+            <Mail className="h-4 w-4 inline mr-2" aria-hidden="true" />
             Magic Link
           </button>
           <button
+            role="tab"
+            id="tab-password"
+            aria-selected={tab === 'password'}
+            aria-controls="panel-password"
             onClick={() => {
               setTab('password')
               setError(null)
@@ -111,7 +119,7 @@ export default function LoginPage() {
                 : 'text-slate-600 hover:text-slate-900'
             }`}
           >
-            <Lock className="h-4 w-4 inline mr-2" />
+            <Lock className="h-4 w-4 inline mr-2" aria-hidden="true" />
             Password
           </button>
         </div>
@@ -119,24 +127,26 @@ export default function LoginPage() {
         {/* Content */}
         <div className="p-8">
           {error && (
-            <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-start gap-3">
-              <AlertCircle className="h-5 w-5 text-red-600 flex-shrink-0 mt-0.5" />
+            <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-start gap-3" role="alert">
+              <AlertCircle className="h-5 w-5 text-red-600 flex-shrink-0 mt-0.5" aria-hidden="true" />
               <p className="text-sm text-red-800">{error}</p>
             </div>
           )}
 
           {tab === 'magic' ? (
-            <form onSubmit={handleMagicLink} className="space-y-4">
+            <form id="panel-magic" role="tabpanel" aria-labelledby="tab-magic" onSubmit={handleMagicLink} className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2">
+                <label htmlFor="magic-email" className="block text-sm font-medium text-slate-700 mb-2">
                   Email address
                 </label>
                 <input
+                  id="magic-email"
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="you@example.com"
                   required
+                  aria-required="true"
                   className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 />
               </div>
@@ -144,9 +154,10 @@ export default function LoginPage() {
               <button
                 type="submit"
                 disabled={loading}
+                aria-busy={loading}
                 className="w-full bg-[#1E3A5F] text-white font-semibold py-2 rounded-lg hover:bg-[#0a1628] transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
               >
-                {loading && <Loader2 className="h-4 w-4 animate-spin" />}
+                {loading && <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />}
                 {loading ? 'Sending...' : 'Send Magic Link'}
               </button>
 
@@ -155,31 +166,35 @@ export default function LoginPage() {
               </p>
             </form>
           ) : (
-            <form onSubmit={handlePassword} className="space-y-4">
+            <form id="panel-password" role="tabpanel" aria-labelledby="tab-password" onSubmit={handlePassword} className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2">
+                <label htmlFor="password-email" className="block text-sm font-medium text-slate-700 mb-2">
                   Email address
                 </label>
                 <input
+                  id="password-email"
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="you@example.com"
                   required
+                  aria-required="true"
                   className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2">
+                <label htmlFor="password-password" className="block text-sm font-medium text-slate-700 mb-2">
                   Password
                 </label>
                 <input
+                  id="password-password"
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="••••••••"
                   required
+                  aria-required="true"
                   className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 />
               </div>
@@ -187,9 +202,10 @@ export default function LoginPage() {
               <button
                 type="submit"
                 disabled={loading}
+                aria-busy={loading}
                 className="w-full bg-[#1E3A5F] text-white font-semibold py-2 rounded-lg hover:bg-[#0a1628] transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
               >
-                {loading && <Loader2 className="h-4 w-4 animate-spin" />}
+                {loading && <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />}
                 {loading ? 'Signing in...' : 'Sign In'}
               </button>
 

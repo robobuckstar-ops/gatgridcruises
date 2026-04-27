@@ -187,6 +187,7 @@ export default function BestFishExtenderGifts() {
       </section>
 
       {/* Intro */}
+      <section className="bg-white">
       <article className="py-12 md:py-16">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           {/* What is FE? */}
@@ -302,6 +303,7 @@ export default function BestFishExtenderGifts() {
 
         </div>
       </article>
+      </section>
     </main>
   )
 }

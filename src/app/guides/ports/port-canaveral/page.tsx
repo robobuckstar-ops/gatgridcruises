@@ -75,7 +75,7 @@ export default function PortCanaveralPage() {
       </section>
 
       {/* What to Expect */}
-      <section className="py-12 md:py-16">
+      <section className="py-12 md:py-16 bg-white">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <h2 className="font-fraunces text-3xl font-bold text-[#1E3A5F] mb-6">What to Expect at Port Canaveral</h2>
           <div className="prose prose-slate max-w-none text-slate-600 leading-relaxed space-y-4">
@@ -142,7 +142,7 @@ export default function PortCanaveralPage() {
       </section>
 
       {/* Pre-Cruise Hotels */}
-      <section className="py-12 md:py-16">
+      <section className="py-12 md:py-16 bg-white">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-3">
             <Hotel className="w-7 h-7 text-[#D4AF37]" />
@@ -246,7 +246,7 @@ export default function PortCanaveralPage() {
       </section>
 
       {/* Insider Tips */}
-      <section className="py-12 md:py-16">
+      <section className="py-12 md:py-16 bg-white">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-6">
             <Lightbulb className="w-7 h-7 text-[#D4AF37]" />
@@ -274,7 +274,7 @@ export default function PortCanaveralPage() {
       </section>
 
       {/* Related Ports */}
-      <section className="py-10 border-t border-slate-200">
+      <section className="py-10 border-t border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 className="font-fraunces text-2xl font-bold text-slate-900 mb-6">More Port Guides</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

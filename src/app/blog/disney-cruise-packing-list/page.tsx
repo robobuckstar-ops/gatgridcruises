@@ -262,7 +262,7 @@ const doNotBring = [
 
 export default function PackingListPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-slate-50">
       {/* Hero */}
       <section className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] text-white py-16 px-4">
         <div className="max-w-4xl mx-auto">
@@ -284,6 +284,7 @@ export default function PackingListPage() {
         </div>
       </section>
 
+      <div className="bg-white">
       <div className="max-w-4xl mx-auto px-4 py-10">
         {/* Quick links */}
         <div className="p-5 bg-[#1E3A5F]/10 border border-blue-200 rounded-xl">
@@ -446,6 +447,7 @@ export default function PackingListPage() {
             </p>
           </div>
         </section>
+      </div>
       </div>
     </div>
   )

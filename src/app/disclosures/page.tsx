@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 export default function DisclosuresPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-slate-50">
       {/* Hero Section */}
       <section className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] text-white py-16 md:py-20 border-b border-slate-200">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
@@ -19,6 +19,7 @@ export default function DisclosuresPage() {
       </section>
 
       {/* Main Content */}
+      <div className="bg-white">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 md:py-20">
         {/* Affiliate Relationships */}
         <section className="mb-16">
@@ -135,6 +136,7 @@ export default function DisclosuresPage() {
             We may update these disclosures periodically as our business relationships and practices evolve. The most current version is always available on this page. Please check back regularly.
           </p>
         </section>
+      </div>
       </div>
     </main>
   )

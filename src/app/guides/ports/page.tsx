@@ -109,7 +109,7 @@ export default function PortsHubPage() {
       </section>
 
       {/* Port Cards */}
-      <section className="py-16 md:py-20">
+      <section className="py-16 md:py-20 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {ports.map((port) => (
@@ -200,7 +200,7 @@ export default function PortsHubPage() {
       </section>
 
       {/* Amex CTA */}
-      <section className="py-12">
+      <section className="py-12 bg-white">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <a
             href="/concierge"

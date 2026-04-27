@@ -160,7 +160,7 @@ export default function SoloCruisingPage() {
     .slice(0, 6)
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-slate-50">
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-slate-900 via-[#1E3A5F] to-slate-900 py-16 px-4 sm:px-6 lg:px-8 border-b border-white/10">
         <div className="max-w-4xl mx-auto text-center">
@@ -174,7 +174,7 @@ export default function SoloCruisingPage() {
       </section>
 
       {/* Why Cruise Solo Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-5xl mx-auto">
           <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-12 text-center">
             Why Cruise Solo?
@@ -297,7 +297,7 @@ export default function SoloCruisingPage() {
       </section>
 
       {/* Solo Tips Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-3xl mx-auto">
           <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-12 text-center">
             Solo Cruiser Tips & FAQs

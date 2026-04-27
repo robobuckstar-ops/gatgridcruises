@@ -3,17 +3,17 @@ import { ArrowRight } from 'lucide-react'
 
 export default function NotFound() {
   return (
-    <main className="min-h-screen bg-white flex items-center justify-center px-4">
+    <div className="min-h-screen bg-white flex items-center justify-center px-4">
       <div className="text-center">
         {/* 404 Number */}
-        <h1 className="font-fraunces text-9xl md:text-10xl font-bold text-blue-600 mb-4">
+        <p className="font-fraunces text-9xl md:text-10xl font-bold text-blue-600 mb-4" aria-hidden="true">
           404
-        </h1>
+        </p>
 
         {/* Heading */}
-        <h2 className="font-fraunces text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+        <h1 className="font-fraunces text-4xl md:text-5xl font-bold text-slate-900 mb-4">
           Page Not Found
-        </h2>
+        </h1>
 
         {/* Subtitle */}
         <p className="font-inter text-xl text-gray-600 mb-12 max-w-md mx-auto">
@@ -27,7 +27,7 @@ export default function NotFound() {
             className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg bg-[#1E3A5F] text-white font-semibold hover:bg-blue-700 transition-colors duration-200"
           >
             Return Home
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-4 h-4" aria-hidden="true" />
           </Link>
 
           <Link
@@ -35,7 +35,7 @@ export default function NotFound() {
             className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg border-2 border-[#1E3A5F] text-[#1E3A5F] font-semibold hover:bg-[#1E3A5F] hover:text-white transition-colors duration-200"
           >
             Browse Deals
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-4 h-4" aria-hidden="true" />
           </Link>
 
           <Link
@@ -43,10 +43,10 @@ export default function NotFound() {
             className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg border-2 border-[#D4AF37] text-[#D4AF37] font-semibold hover:bg-[#D4AF37] hover:text-slate-900 transition-colors duration-200"
           >
             Cost Calculator
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-4 h-4" aria-hidden="true" />
           </Link>
         </div>
       </div>
-    </main>
+    </div>
   )
 }

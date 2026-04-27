@@ -62,7 +62,7 @@ const FAQ = [
 
 export default function OnboardCreditPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-slate-50">
 
       {/* Hero */}
       <section className="bg-gradient-to-br from-[#0a1628] to-[#1E3A5F] py-16 md:py-24">
@@ -96,6 +96,7 @@ export default function OnboardCreditPage() {
         </div>
       </section>
 
+      <div className="bg-white">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-16 md:py-20 space-y-16">
 
         {/* What is OBC */}
@@ -252,6 +253,7 @@ export default function OnboardCreditPage() {
           <OBCDisclaimer />
         </div>
 
+      </div>
       </div>
     </main>
   )

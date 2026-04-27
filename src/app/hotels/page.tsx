@@ -50,7 +50,7 @@ export default function HotelsIndexPage() {
   })
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-slate-50">
       {/* Hero Section */}
       <div className="bg-gradient-to-br from-slate-900 via-[#1E3A5F] to-slate-900 border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
@@ -66,6 +66,7 @@ export default function HotelsIndexPage() {
       </div>
 
       {/* Editorial Intro */}
+      <div className="bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
         <div className="max-w-2xl mx-auto prose prose-slate mb-12">
           <p className="text-lg leading-relaxed text-slate-700">
@@ -132,6 +133,7 @@ export default function HotelsIndexPage() {
             </Link>
           ))}
         </div>
+      </div>
       </div>
 
       {/* Footer CTA */}

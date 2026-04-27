@@ -52,7 +52,7 @@ const SAMPLE_SUBJECTS = [
 
 export default function NewsletterPage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-slate-50">
       {/* Hero */}
       <div className="bg-gradient-to-br from-[#0F172A] via-[#1E3A5F] to-[#1a3356] py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">

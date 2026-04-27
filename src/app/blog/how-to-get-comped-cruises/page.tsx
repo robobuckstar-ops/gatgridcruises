@@ -163,6 +163,7 @@ export default function HowToGetCompedCruises() {
       </section>
 
       {/* Content */}
+      <section className="bg-white">
       <article className="py-12 md:py-16">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <div className="prose prose-slate max-w-none">
@@ -252,6 +253,7 @@ export default function HowToGetCompedCruises() {
 
         </div>
       </article>
+      </section>
     </main>
   )
 }

@@ -91,9 +91,9 @@ export default function SignupPage() {
       <div className="w-full max-w-md bg-white rounded-lg shadow-lg overflow-hidden">
         {/* Header */}
         <div className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] px-8 py-8 text-center border-b border-slate-200">
-          <h1 className="text-3xl font-bold text-slate-900 mb-1" style={{ fontFamily: 'Georgia, serif' }}>
+          <p className="text-3xl font-bold text-slate-900 mb-1" style={{ fontFamily: 'Georgia, serif' }} aria-hidden="true">
             ⚓
-          </h1>
+          </p>
           <h1 className="text-2xl font-bold text-white">Create Account</h1>
           <p className="text-blue-100 text-sm mt-1">Join GatGridCruises today</p>
         </div>
@@ -101,55 +101,62 @@ export default function SignupPage() {
         {/* Content */}
         <div className="p-8">
           {error && (
-            <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-start gap-3">
-              <AlertCircle className="h-5 w-5 text-red-600 flex-shrink-0 mt-0.5" />
+            <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-start gap-3" role="alert">
+              <AlertCircle className="h-5 w-5 text-red-600 flex-shrink-0 mt-0.5" aria-hidden="true" />
               <p className="text-sm text-red-800">{error}</p>
             </div>
           )}
 
-          <form onSubmit={handleSignup} className="space-y-4">
+          <form onSubmit={handleSignup} className="space-y-4" aria-label="Create account form" noValidate>
             <div>
-              <label className="block text-sm font-medium text-slate-700 mb-2">
-                <Mail className="h-4 w-4 inline mr-1" />
+              <label htmlFor="signup-email" className="block text-sm font-medium text-slate-700 mb-2">
+                <Mail className="h-4 w-4 inline mr-1" aria-hidden="true" />
                 Email address
               </label>
               <input
+                id="signup-email"
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@example.com"
                 required
+                aria-required="true"
                 className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-slate-700 mb-2">
-                <Lock className="h-4 w-4 inline mr-1" />
+              <label htmlFor="signup-password" className="block text-sm font-medium text-slate-700 mb-2">
+                <Lock className="h-4 w-4 inline mr-1" aria-hidden="true" />
                 Password
               </label>
               <input
+                id="signup-password"
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
                 required
+                aria-required="true"
+                aria-describedby="password-hint"
                 className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
-              <p className="text-xs text-slate-500 mt-1">At least 8 characters</p>
+              <p id="password-hint" className="text-xs text-slate-500 mt-1">At least 8 characters</p>
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-slate-700 mb-2">
-                <Lock className="h-4 w-4 inline mr-1" />
+              <label htmlFor="signup-confirm-password" className="block text-sm font-medium text-slate-700 mb-2">
+                <Lock className="h-4 w-4 inline mr-1" aria-hidden="true" />
                 Confirm password
               </label>
               <input
+                id="signup-confirm-password"
                 type="password"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 placeholder="••••••••"
                 required
+                aria-required="true"
                 className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
             </div>
@@ -157,9 +164,10 @@ export default function SignupPage() {
             <button
               type="submit"
               disabled={loading}
+              aria-busy={loading}
               className="w-full bg-[#1E3A5F] text-white font-semibold py-2 rounded-lg hover:bg-[#0a1628] transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 mt-6"
             >
-              {loading && <Loader2 className="h-4 w-4 animate-spin" />}
+              {loading && <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />}
               {loading ? 'Creating account...' : 'Create Account'}
             </button>
 
