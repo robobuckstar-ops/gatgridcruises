@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import { amazonSearchLink } from '@/lib/affiliate-config'
 
 export const metadata: Metadata = {
   title: 'The Ultimate Disney Cruise Packing List 2026 | GatGridCruises',
@@ -21,8 +22,8 @@ export const metadata: Metadata = {
   },
 }
 
-function amazonLink(_searchTerm: string) {
-  return '/concierge'
+function amazonLink(searchTerm: string) {
+  return amazonSearchLink(searchTerm)
 }
 
 interface PackingItem {

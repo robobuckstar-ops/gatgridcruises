@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { ShoppingBag, ExternalLink, Star, ChevronRight } from 'lucide-react'
 import { GetQuoteCTA } from '@/components/get-quote-cta'
+import { amazonProductLink } from '@/lib/affiliate-config'
 
 export const metadata: Metadata = {
   title: 'The Ultimate Disney Cruise Packing List (With Our Top Picks)',
@@ -21,8 +22,8 @@ export const metadata: Metadata = {
   },
 }
 
-function amazonLink(_asin: string) {
-  return '/concierge'
+function amazonLink(asin: string) {
+  return amazonProductLink(asin)
 }
 
 interface Product {

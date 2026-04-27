@@ -27,14 +27,15 @@ export async function GET(
     return NextResponse.redirect(new URL('/concierge', request.url), { status: 302 })
   }
 
-  // Handle Amazon redirects: /go/amazon/<rest> → https://www.amazon.com/<rest>?tag=...
+  // Handle Amazon redirects: /go/amazon/dp/B09V3KXJPB or /go/amazon/s?k=packing+cubes
   if (provider === 'amazon') {
-    const amazonUrl = new URL(`https://www.amazon.com/${target}`)
-    request.nextUrl.searchParams.forEach((value, key) => {
-      amazonUrl.searchParams.set(key, value)
-    })
-    amazonUrl.searchParams.set('tag', 'thm1230b0300-20')
-    return NextResponse.redirect(amazonUrl.toString(), { status: 302 })
+    let amazonUrl = AMAZON_CONFIG.baseUrl
+    if (target) amazonUrl += '/' + target
+    const searchParams = request.nextUrl.searchParams.toString()
+    if (searchParams) amazonUrl += '?' + searchParams
+    const separator = amazonUrl.includes('?') ? '&' : '?'
+    amazonUrl += `${separator}tag=${AMAZON_CONFIG.tag}`
+    return NextResponse.redirect(amazonUrl, { status: 302 })
   }
 
   // Handle travel affiliate redirects: /go/skyscanner, /go/booking, etc.
