@@ -47,10 +47,10 @@ const LINKS = {
   capitalOneVenture: 'https://www.capitalone.com/credit-cards/venture/',
 
   // Business cards — referral / affiliate links
-  chaseInk: 'https://creditcards.chase.com/business-credit-cards/ink/preferred', // referral link pending
+  chaseInk: 'https://www.referyourchasecard.com/226m/6ZT33F9TOQ',
   amexBizPlat:
     'https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS',
-  capitalOneSpark: 'https://www.capitalone.com/small-business/credit-cards/spark-miles/', // referral link pending
+  capitalOneSpark: 'https://i.capitalone.com/JKlfRwN3f',
 
   // Amazon affiliate (tag: thm1230b0300-20)
   amazonPacking: 'https://www.amazon.com/s?k=packing+cubes+travel+set&tag=thm1230b0300-20',
@@ -784,7 +784,7 @@ export default function CreditCardsPage() {
                     <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </Link>
                   <p className="text-xs text-slate-400 mt-2">
-                    Opens Chase.com · Affiliate link — referral link pending
+                    Opens Chase.com · Referral link — we earn a commission if you&rsquo;re approved
                   </p>
                 </div>
               </div>
@@ -941,7 +941,7 @@ export default function CreditCardsPage() {
                     <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </Link>
                   <p className="text-xs text-slate-400 mt-2">
-                    Opens CapitalOne.com · Affiliate link — referral link pending
+                    Opens CapitalOne.com · Referral link — we earn a commission if you&rsquo;re approved
                   </p>
                 </div>
               </div>
