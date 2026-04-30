@@ -11,7 +11,7 @@ import { StructuredData } from '@/components/ui/structured-data'
 import { CopyProtection } from '@/components/ui/copy-protection'
 import { FamilyPromoBanner } from '@/components/ui/family-promo-banner'
 
-const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-22TCMRK076'
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID
 
 export const metadata: Metadata = {
   title: {
@@ -74,19 +74,23 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
-        {/* Google Analytics 4 — must be in <head> for Search Console verification */}
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-          strategy="beforeInteractive"
-        />
-        <Script id="ga4-init" strategy="beforeInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${GA_MEASUREMENT_ID}');
-          `}
-        </Script>
+        {GA_MEASUREMENT_ID && (
+          <>
+            {/* Google Analytics 4 — must be in <head> for Search Console verification */}
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+              strategy="beforeInteractive"
+            />
+            <Script id="ga4-init" strategy="beforeInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${GA_MEASUREMENT_ID}');
+              `}
+            </Script>
+          </>
+        )}
       </head>
       <body className="min-h-screen flex flex-col">
 
