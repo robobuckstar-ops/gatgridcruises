@@ -11,7 +11,7 @@ import { StructuredData } from '@/components/ui/structured-data'
 import { CopyProtection } from '@/components/ui/copy-protection'
 import { FamilyPromoBanner } from '@/components/ui/family-promo-banner'
 
-const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA4_ID || 'G-22TCMRK076'
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-22TCMRK076'
 
 export const metadata: Metadata = {
   title: {
