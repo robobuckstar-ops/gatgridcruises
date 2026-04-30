@@ -804,8 +804,8 @@ export function CruiseCountdownTimeline() {
               <div className="mt-3 inline-flex items-start gap-2 bg-amber-100 border border-amber-300 rounded-lg px-4 py-2.5">
                 <span className="text-sm">🎯</span>
                 <p className="text-sm text-amber-800 font-medium">
-                  <strong>GatGrid concierge tip:</strong> When you book through GatGrid, your
-                  personal concierge converts every booking window to{' '}
+                  <strong>GatGrid concierge tip:</strong> When you plan with our concierge, your
+                  personal specialist converts every booking window to{' '}
                   <em>your local time zone</em> and sends reminders before each deadline —
                   so you never have to do time zone math.
                 </p>

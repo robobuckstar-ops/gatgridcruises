@@ -107,10 +107,10 @@ export default function OnboardCreditPage() {
               Onboard credit (OBC) is free spending money loaded directly onto your Disney Cruise stateroom folio — think of it as a gift card you can use for nearly anything you purchase on the ship.
             </p>
             <p className="text-lg text-slate-600 leading-relaxed mb-4">
-              When you book through a travel agent like GatGrid Cruises, Disney Cruise Line pays us a commission. Rather than keeping all of it, we share a portion back with you as OBC. You get free money to spend onboard; we earn a modest commission for the booking. Everyone wins.
+              When you plan your cruise through a travel agent partner like GatGrid Cruises (via Boardwalk Travel Agency), Disney Cruise Line pays the agency a commission. Rather than keeping all of it, we share a portion back with you as OBC. You get free money to spend onboard; the agency earns a modest commission. Everyone wins.
             </p>
             <p className="text-lg text-slate-600 leading-relaxed">
-              Unlike booking directly through Disney, where you receive $0 in OBC as a standard perk, booking through GatGrid gives you instant value — no loyalty programs, no credit cards required.
+              Unlike planning your cruise directly through Disney, where you receive $0 in OBC as a standard perk, planning through our concierge gives you instant value — no loyalty programs, no credit cards required.
             </p>
           </div>
         </section>

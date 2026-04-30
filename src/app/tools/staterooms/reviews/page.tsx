@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { Star, MessageSquare, ThumbsUp } from 'lucide-react'
+import { ships as DCL_SHIPS } from '@/data/ships'
 
 interface Review {
   id: string
@@ -91,13 +92,7 @@ const SAMPLE_REVIEWS: Review[] = [
   },
 ]
 
-const SHIPS = [
-  { id: 'ship-0001', name: 'Disney Magic' },
-  { id: 'ship-0002', name: 'Disney Wonder' },
-  { id: 'ship-0003', name: 'Disney Dream' },
-  { id: 'ship-0004', name: 'Disney Fantasy' },
-  { id: 'ship-0005', name: 'Disney Wish' },
-]
+const SHIPS = DCL_SHIPS.map(s => ({ id: s.id, name: s.name }))
 
 const CATEGORIES = ['Inside', 'Oceanview', 'Verandah', 'Concierge', 'Suites']
 

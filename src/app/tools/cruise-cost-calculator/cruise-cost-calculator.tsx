@@ -2,15 +2,24 @@
 
 import { useState, useMemo } from 'react'
 import Link from 'next/link'
+import { ships as DCL_SHIPS } from '@/data/ships'
 
-const SHIPS = [
-  { id: 'magic', name: 'Disney Magic', multiplier: 1.0 },
-  { id: 'wonder', name: 'Disney Wonder', multiplier: 1.0 },
-  { id: 'dream', name: 'Disney Dream', multiplier: 1.05 },
-  { id: 'fantasy', name: 'Disney Fantasy', multiplier: 1.05 },
-  { id: 'wish', name: 'Disney Wish', multiplier: 1.15 },
-  { id: 'treasure', name: 'Disney Treasure', multiplier: 1.2 },
-]
+const SHIP_MULTIPLIERS: Record<string, number> = {
+  'disney-magic': 1.0,
+  'disney-wonder': 1.0,
+  'disney-dream': 1.05,
+  'disney-fantasy': 1.05,
+  'disney-wish': 1.15,
+  'disney-treasure': 1.2,
+  'disney-destiny': 1.2,
+  'disney-adventure': 1.25,
+}
+
+const SHIPS = DCL_SHIPS.map(s => ({
+  id: s.slug,
+  name: s.name,
+  multiplier: SHIP_MULTIPLIERS[s.slug] ?? 1.1,
+}))
 
 const STATEROOMS = [
   {

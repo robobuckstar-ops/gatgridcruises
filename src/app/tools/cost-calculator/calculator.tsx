@@ -114,8 +114,8 @@ export function CostCalculator({ sailings }: CostCalculatorProps) {
       transferCost = parkingDays * 20
     }
 
-    // Gratuities
-    const gratuityPerPersonPerNight = 14.5
+    // Gratuities (DCL standard rate as of 2024 update)
+    const gratuityPerPersonPerNight = 16.0
     const baseGratuities = gratuityPerPersonPerNight * cruiseNights * totalParty
     const totalGratuities = gratuityOverride !== null ? gratuityOverride : baseGratuities
 
@@ -520,11 +520,11 @@ export function CostCalculator({ sailings }: CostCalculatorProps) {
                       Gratuities
                     </p>
                     <span className="text-xs text-slate-500">
-                      Auto-calculated at ${(14.5 * cruiseNights).toLocaleString('en-US', { minimumFractionDigits: 2 })}/person
+                      Auto-calculated at ${(16.0 * cruiseNights).toLocaleString('en-US', { minimumFractionDigits: 2 })}/person
                     </span>
                   </div>
                   <p className="text-xs text-slate-600 mb-3">
-                    $14.50/person/night × {cruiseNights} nights × {partySize} guests = ${calculations.baseGratuities.toLocaleString('en-US', { minimumFractionDigits: 2 })}
+                    $16.00/person/night × {cruiseNights} nights × {partySize} guests = ${calculations.baseGratuities.toLocaleString('en-US', { minimumFractionDigits: 2 })}
                   </p>
                   <div>
                     <label htmlFor="calc-gratuity-override" className="block text-xs font-semibold text-slate-700 mb-2">

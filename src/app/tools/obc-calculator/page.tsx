@@ -41,7 +41,7 @@ export default function OBCCalculatorPage() {
             Free Onboard Credit Calculator
           </h1>
           <p className="text-blue-200 text-lg max-w-2xl mx-auto">
-            Book through GatGrid Cruises and get free spending money to use onboard — the more you cruise, the more you earn.
+            Plan your cruise through our concierge (via Boardwalk Travel Agency) and earn free spending money to use onboard — the more you cruise, the more you earn.
           </p>
         </div>
       </section>
@@ -80,7 +80,7 @@ export default function OBCCalculatorPage() {
             {numericFare > 0 && (
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="rounded-xl border-2 border-slate-200 p-5 text-center">
-                  <p className="text-sm font-semibold text-slate-500 mb-1">Book Direct with Disney</p>
+                  <p className="text-sm font-semibold text-slate-500 mb-1">Plan Direct with Disney</p>
                   <p className="font-fraunces text-4xl font-bold text-slate-400">$0</p>
                   <p className="text-xs text-slate-400 mt-1">No onboard credit</p>
                 </div>
@@ -88,7 +88,7 @@ export default function OBCCalculatorPage() {
                   <div className="absolute top-0 right-0 bg-[#D4AF37] text-[#1E3A5F] text-xs font-bold px-3 py-1 rounded-bl-lg">
                     Your Perk
                   </div>
-                  <p className="text-sm font-semibold text-[#1E3A5F] mb-1">Book with GatGrid</p>
+                  <p className="text-sm font-semibold text-[#1E3A5F] mb-1">Plan with GatGrid Concierge</p>
                   <p className="font-fraunces text-4xl font-bold text-[#1E3A5F]">${obc}</p>
                   <p className="text-xs text-amber-700 mt-1 font-semibold">Free onboard credit*</p>
                 </div>
@@ -158,16 +158,16 @@ export default function OBCCalculatorPage() {
             Ready to Claim Your Free Onboard Credit?
           </h2>
           <p className="text-[#1E3A5F]/80 mb-6 max-w-xl mx-auto">
-            Book your Disney cruise through GatGrid Cruises and your OBC is automatically applied to your reservation — no codes, no hassle.
+            Plan your Disney cruise with our concierge (via Boardwalk Travel Agency) and your OBC is automatically applied — no codes, no hassle.
           </p>
           <Link
             href="/book"
             className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-[#1E3A5F] text-white font-bold text-lg hover:bg-[#162d4a] transition-colors shadow-lg"
           >
-            Start My Free Booking Inquiry
+            Start My Free Quote
             <ArrowRight className="w-5 h-5" aria-hidden="true" />
           </Link>
-          <p className="text-xs text-[#1E3A5F]/60 mt-4">Free, no-obligation quote. No booking pressure.</p>
+          <p className="text-xs text-[#1E3A5F]/60 mt-4">Free, no-obligation quote. No pressure.</p>
         </div>
 
         {/* Disclaimer */}

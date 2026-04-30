@@ -184,9 +184,6 @@ export function StateroomFinder({ ships, stateroomsByShip }: StateroomFinderProp
                     }`}
                   >
                     {ship.name}
-                    {!stateroomsByShip[ship.id] || stateroomsByShip[ship.id].length === 0 ? (
-                      <span className="text-xs ml-2 opacity-75">Coming soon</span>
-                    ) : null}
                   </button>
                 ))}
               </div>

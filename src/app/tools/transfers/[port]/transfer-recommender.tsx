@@ -38,8 +38,6 @@ export function TransferRecommender({ transfers, portName }: TransferRecommender
           score += 45
           reasoning += "If you're staying overnight, shuttle is ideal. "
         } else if (t.type === 'uber') {
-        } else if (t.type === 'uber' || t.type === 'lyft') {
-        } else if (t.type === 'uber') {
           score += 35
           reasoning += 'Good option without overnight hotel. '
         } else if (t.type === 'disney_ground') {

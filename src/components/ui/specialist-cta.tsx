@@ -12,16 +12,16 @@ export function SpecialistCTA({ variant = 'default' }: SpecialistCTAProps) {
         <div className="flex items-start gap-3">
           <div>
             <h3 className="font-semibold text-slate-900 text-sm mb-1">
-              Ready to Book This Cruise?
+              Want Expert Help on This Cruise?
             </h3>
             <p className="text-xs text-slate-600 mb-3">
-              Free concierge service — our specialists find the best deal and handle the details.
+              Free concierge service — our specialists explain pricing, promotions, and stateroom options.
             </p>
             <Link
               href="/concierge"
               className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#1E3A5F] hover:text-[#0a1628] transition-colors"
             >
-              Get booking help <ArrowRight className="h-3 w-3" />
+              Get a free quote <ArrowRight className="h-3 w-3" />
             </Link>
           </div>
         </div>
@@ -34,14 +34,14 @@ export function SpecialistCTA({ variant = 'default' }: SpecialistCTAProps) {
       <div className="flex flex-col md:flex-row md:items-center gap-6">
         <div className="flex-1">
           <p className="text-[#D4AF37] text-xs font-bold uppercase tracking-wider mb-1.5">
-            Concierge Booking Help
+            Free Concierge Service
           </p>
           <h2 className="font-display text-xl md:text-2xl font-bold text-white mb-2">
-            Ready to Book This Cruise?
+            Want Expert Help With This Cruise?
           </h2>
           <p className="text-blue-200 text-sm md:text-base">
-            Our specialists at Boardwalk Travel Agency can help you lock in the best price,
-            apply promotions, and handle all the details — at no extra cost to you.
+            Specialists at Boardwalk Travel Agency walk you through pricing, current promotions,
+            and stateroom options — at no extra cost to you.
           </p>
         </div>
         <div className="flex-shrink-0">

@@ -5,7 +5,6 @@ import {
   Bell,
   Plane,
   CheckCircle,
-  MessageSquare,
   Utensils,
   Anchor,
   Camera,
@@ -27,7 +26,7 @@ import { ConciergeForm } from './ConciergeForm'
 export const metadata: Metadata = {
   title: 'Your Personal Disney Cruise Concierge | GatGridCruises',
   description:
-    'Book your Disney cruise through GatGridCruises and get a personal concierge who guides you every step — from booking to boarding and beyond. Free onboard credit included.',
+    'Plan your Disney cruise with a personal concierge who guides you every step — from quote to boarding and beyond. Free onboard credit included via our partner travel agency.',
 }
 
 const valueProps = [
@@ -35,7 +34,7 @@ const valueProps = [
     icon: Gift,
     title: 'Free Onboard Credit',
     description:
-      'You get bonus onboard credit just for booking through us — money you can spend on drinks, spa treatments, and shore excursions. Disney charges you the exact same price either way.',
+      'When you plan with our concierge (via Boardwalk Travel Agency), you qualify for bonus onboard credit — money to spend on drinks, spa treatments, and shore excursions. Disney charges you the exact same price either way.',
   },
   {
     icon: Users,
@@ -124,7 +123,7 @@ const timelineSteps = [
     label: 'Post-Cruise',
     title: 'Follow-Up & Re-Booking Deals',
     description:
-      "After you're home we check in on your trip and flag any Placeholder Club discounts or re-booking offers you're eligible for. Many of our clients book their next cruise from the ship.",
+      "After you're home we check in on your trip and flag any Castaway Club discounts or re-booking offers you're eligible for. Many of our clients book their next cruise from the ship.",
   },
 ]
 
@@ -181,7 +180,7 @@ const features = [
     icon: Gift,
     title: 'Post-Cruise Re-Booking Deals',
     description:
-      'Placeholder Club discounts and onboard booking offers have expiration dates. We track them and flag the best deals before they lapse.',
+      'Castaway Club discounts and onboard booking offers have expiration dates. We track them and flag the best deals before they lapse.',
   },
 ]
 
@@ -278,11 +277,11 @@ export default function ConciergePage() {
               The Smart Way to Book
             </p>
             <h2 className="font-fraunces text-3xl md:text-4xl font-bold text-[#1E3A5F] mb-4">
-              Why Book Through GatGrid Instead of Directly?
+              Why Plan With a Concierge Instead of Going It Alone?
             </h2>
             <p className="font-inter text-lg text-slate-600 max-w-2xl mx-auto">
               Disney&apos;s price is Disney&apos;s price — you can&apos;t beat it. But you can get more out of it.
-              Here&apos;s what booking through us adds.
+              Here&apos;s what our free concierge service adds.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -400,7 +399,7 @@ export default function ConciergePage() {
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 bg-[#D4AF37]/10 border border-[#D4AF37]/30 rounded-full px-4 py-1.5 mb-6">
               <ShieldCheck className="w-3.5 h-3.5 text-[#D4AF37]" />
-              <span className="text-[#D4AF37] text-xs font-bold uppercase tracking-widest">Price Drop Guarantee</span>
+              <span className="text-[#D4AF37] text-xs font-bold uppercase tracking-widest">Price Drop Protection</span>
             </div>
             <h2 className="font-fraunces text-3xl md:text-4xl font-bold text-white mb-4">
               We Monitor Your Price Until Final Payment
@@ -492,44 +491,14 @@ export default function ConciergePage() {
 
           <div className="text-center">
             <p className="font-inter text-sm text-blue-300 mb-5">
-              Price Drop Protection is included free when you book through GatGrid via Boardwalk Travel.
+              Price Drop Protection is included free when you plan your cruise with our concierge via Boardwalk Travel.
             </p>
             <a
               href="mailto:bookings@gatgridcruises.com?subject=Disney%20Cruise%20Inquiry%20-%20Price%20Drop%20Protection"
               className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#D4AF37] text-[#0a1628] font-bold rounded-xl hover:bg-yellow-300 transition-colors shadow-lg text-base"
             >
-              Book Through GatGrid <ArrowRight className="w-4 h-4" />
+              Get a Free Quote <ArrowRight className="w-4 h-4" />
             </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Social Proof */}
-      <section className="py-16 md:py-20 bg-[#1E3A5F]">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-[#D4AF37] text-xs font-bold uppercase tracking-widest mb-4">
-            From Our Clients
-          </p>
-          <h2 className="font-fraunces text-3xl md:text-4xl font-bold text-white mb-10">
-            Happy Cruisers
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[1, 2, 3].map((i) => (
-              <div
-                key={i}
-                className="bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col items-center justify-center"
-              >
-                <MessageSquare className="w-8 h-8 text-[#D4AF37]/40 mb-3" />
-                <p className="font-inter text-blue-200 text-sm italic text-center leading-relaxed">
-                  Coming soon — hear from our happy cruisers!
-                </p>
-                <div className="flex gap-1 mt-4">
-                  {[...Array(5)].map((_, s) => (
-                    <Star key={s} className="w-3.5 h-3.5 text-[#D4AF37]/30 fill-[#D4AF37]/30" />
-                  ))}
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>

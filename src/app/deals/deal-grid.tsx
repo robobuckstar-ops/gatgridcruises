@@ -478,7 +478,7 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
 
         {/* Report an Issue */}
         <div className="mt-8">
-          <ReportIssueForm page="/deals" />
+          <ReportIssueForm />
         </div>
       </div>
     </div>

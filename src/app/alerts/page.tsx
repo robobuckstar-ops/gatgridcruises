@@ -2,15 +2,9 @@
 
 import { useState } from 'react'
 import { Bell, Check, AlertCircle, Ship, Anchor, MapPin, Calendar } from 'lucide-react'
+import { ships } from '@/data/ships'
 
-const SHIPS = [
-  'Disney Dream',
-  'Disney Fantasy',
-  'Disney Wish',
-  'Disney Wonder',
-  'Disney Magic',
-  'Disney Treasure',
-]
+const SHIPS = ships.map(s => s.name)
 
 const CABIN_TYPES = [
   { id: 'interior', label: 'Interior', description: 'Best value, no window' },

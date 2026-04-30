@@ -58,7 +58,7 @@ const SOLO_TIPS: AccordionItem[] = [
           <li>Many solo staterooms (Studio cabins) have no or reduced supplemental fees</li>
           <li>On some sailings, the supplement is as low as 10-20% of the base rate</li>
           <li>Studio passengers enjoy exclusive perks like a private lounge and concierge service</li>
-          <li>Book early to lock in the best rates for your preferred sailing dates</li>
+          <li>Book early to find the best rates for your preferred sailing dates</li>
         </ul>
         <p className="text-sm pt-2">
           <strong>Pro tip:</strong> Compare the per-person cost of a studio cabin to sharing a stateroom with another guest. Often solo travel is just as affordable!

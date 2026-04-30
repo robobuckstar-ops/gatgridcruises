@@ -52,11 +52,20 @@ const REGION_MAP: Record<string, string> = {
   bahamas: 'caribbean',
   western: 'caribbean',
   eastern: 'caribbean',
+  southern: 'caribbean',
   alaska: 'alaska',
   baja: 'mexico',
   mexico: 'mexico',
   pacific: 'pacific',
   hawaii: 'hawaii',
+  europe: 'europe',
+  european: 'europe',
+  mediterranean: 'europe',
+  med: 'europe',
+  transatlantic: 'transatlantic',
+  asia: 'asia',
+  'south pacific': 'pacific',
+  australia: 'pacific',
 }
 
 const SHIP_MAP: Record<string, string> = {
@@ -67,6 +76,7 @@ const SHIP_MAP: Record<string, string> = {
   wish: 'ship-0005',
   treasure: 'ship-0006',
   destiny: 'ship-0007',
+  adventure: 'ship-0008',
 }
 
 const PORT_MAP: Record<string, string> = {
@@ -74,6 +84,31 @@ const PORT_MAP: Record<string, string> = {
   'port canaveral': 'port-0001',
   miami: 'port-0002',
   galveston: 'port-0003',
+  'new york': 'port-0004',
+  bayonne: 'port-0004',
+  nyc: 'port-0004',
+  vancouver: 'port-0005',
+  southampton: 'port-0006',
+  london: 'port-0006',
+  barcelona: 'port-0007',
+  sydney: 'port-0008',
+  tokyo: 'port-0009',
+  japan: 'port-0009',
+  singapore: 'port-0010',
+  'fort lauderdale': 'port-0011',
+  'ft lauderdale': 'port-0011',
+  fll: 'port-0011',
+  tampa: 'port-0012',
+  seattle: 'port-0013',
+  'san juan': 'port-0014',
+  'puerto rico': 'port-0014',
+  rome: 'port-0015',
+  civitavecchia: 'port-0015',
+  'los angeles': 'port-0016',
+  lax: 'port-0016',
+  'san pedro': 'port-0016',
+  jacksonville: 'port-0017',
+  jax: 'port-0017',
 }
 
 export function parseSearchQuery(query: string): SearchIntent {
@@ -265,15 +300,21 @@ export function searchSailings(query: string, sailings: Sailing[]): Sailing[] {
       return intent.region!.some(region => {
         switch (region) {
           case 'caribbean':
-            return itineraryLower.includes('caribbean') || itineraryLower.includes('bahamian')
+            return itineraryLower.includes('caribbean') || itineraryLower.includes('bahamian') || itineraryLower.includes('bahamas')
           case 'alaska':
             return itineraryLower.includes('alaska')
           case 'mexico':
             return itineraryLower.includes('baja') || itineraryLower.includes('mexico')
           case 'pacific':
-            return itineraryLower.includes('pacific')
+            return itineraryLower.includes('pacific') || itineraryLower.includes('australia') || itineraryLower.includes('south pacific')
           case 'hawaii':
             return itineraryLower.includes('hawaii')
+          case 'europe':
+            return itineraryLower.includes('europe') || itineraryLower.includes('mediterranean') || itineraryLower.includes('greek') || itineraryLower.includes('british isles')
+          case 'transatlantic':
+            return itineraryLower.includes('transatlantic') || itineraryLower.includes('trans-atlantic')
+          case 'asia':
+            return itineraryLower.includes('asia') || itineraryLower.includes('japan') || itineraryLower.includes('singapore')
           default:
             return false
         }
