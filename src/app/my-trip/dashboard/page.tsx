@@ -84,7 +84,7 @@ const TRIP = {
   guests: 3,
   guestNames: ['Sarah Johnson', 'Mark Johnson', 'Emma Johnson (age 8)'],
   totalPaid: '$5,847',
-  onboardCredit: '$200',
+  onboardCredit: '$300',
 }
 
 type ChecklistItem = {
