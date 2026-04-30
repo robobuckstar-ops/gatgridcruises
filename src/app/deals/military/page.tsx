@@ -84,12 +84,12 @@ const FAQS = [
     a: 'Disney typically runs military appreciation promotions for specific booking windows. The 2026 $250 OBC offer is available on select sailings — contact us to check current availability before rates change.',
   },
   {
-    q: 'Does GatGrid charge a fee for military bookings?',
-    a: "No. We're a travel agency — Disney pays us a commission. You pay exactly what Disney charges, and you get the military rate plus our concierge service at no extra cost.",
+    q: 'Does GatGrid charge a fee for military quotes?',
+    a: "No. Our partner agency Boardwalk Travel earns a commission directly from Disney. You pay exactly what Disney charges, and you get the military rate plus our concierge service at no extra cost.",
   },
   {
     q: 'Can I use the military rate and still get the GatGrid OBC bonus?',
-    a: 'Yes. When you book through GatGrid, any bonus OBC we offer is on top of the military rate and Disney\'s own OBC promotions — subject to confirmation for your specific sailing.',
+    a: 'Yes. When you plan your cruise with our concierge, any bonus OBC we offer is on top of the military rate and Disney\'s own OBC promotions — subject to confirmation for your specific sailing.',
   },
 ]
 

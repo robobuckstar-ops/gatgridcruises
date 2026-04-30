@@ -2,15 +2,27 @@
 
 import { useState, useMemo } from 'react'
 import Link from 'next/link'
+import { ships as DCL_SHIPS } from '@/data/ships'
+import { GRATUITY_RATES, getPriceForGuests } from '@/lib/pricing'
 
-const SHIPS = [
-  { id: 'magic', name: 'Disney Magic', multiplier: 1.0 },
-  { id: 'wonder', name: 'Disney Wonder', multiplier: 1.0 },
-  { id: 'dream', name: 'Disney Dream', multiplier: 1.05 },
-  { id: 'fantasy', name: 'Disney Fantasy', multiplier: 1.05 },
-  { id: 'wish', name: 'Disney Wish', multiplier: 1.15 },
-  { id: 'treasure', name: 'Disney Treasure', multiplier: 1.2 },
-]
+const SHIP_MULTIPLIERS: Record<string, number> = {
+  'disney-magic': 1.0,
+  'disney-wonder': 1.0,
+  'disney-dream': 1.05,
+  'disney-fantasy': 1.05,
+  'disney-wish': 1.15,
+  'disney-treasure': 1.2,
+  'disney-destiny': 1.2,
+  'disney-adventure': 1.25,
+}
+
+const SHIPS = DCL_SHIPS.map(s => ({
+  id: s.slug,
+  name: s.name,
+  multiplier: SHIP_MULTIPLIERS[s.slug] ?? 1.1,
+}))
+
+const PORT_FEES_PER_PERSON = 130
 
 const STATEROOMS = [
   {
@@ -86,21 +98,40 @@ const SAVINGS_TIPS = [
 ]
 
 export function CruiseCostCalculator() {
-  const [guests, setGuests] = useState(2)
+  const [adults, setAdults] = useState(2)
+  const [children, setChildren] = useState(0)
+  const [infants, setInfants] = useState(0)
   const [stateroomId, setStateroomId] = useState('verandah')
   const [nightsId, setNightsId] = useState(7)
-  const [shipId, setShipId] = useState('wish')
+  const [shipId, setShipId] = useState('disney-wish')
+
+  const guests = adults + children + infants
 
   const results = useMemo(() => {
     const stateroom = STATEROOMS.find((s) => s.id === stateroomId)!
     const lengthConfig = LENGTHS.find((l) => l.nights === nightsId)!
     const ship = SHIPS.find((s) => s.id === shipId)!
 
+    // Per-night base for two guests in this stateroom on this ship/length
     const basePpn = stateroom.basePricePerNight
-    const ppn = basePpn * lengthConfig.multiplier * ship.multiplier
-    const totalPerNight = ppn * guests
-    const total = totalPerNight * lengthConfig.nights
-    const perPerson = total / guests
+    const adjustedPpn = basePpn * lengthConfig.multiplier * ship.multiplier
+    // Two-guest base fare for the whole sailing (each of the first two pays full)
+    const twoGuestBaseFare = adjustedPpn * 2 * lengthConfig.nights
+
+    // DCL pricing model — first 2 pay full, 3rd/4th ~60%, under-3 free for fare
+    const cappedGuests = Math.min(guests, 4)
+    const cappedInfants = Math.min(infants, cappedGuests)
+    const baseFare = getPriceForGuests(twoGuestBaseFare, cappedGuests, cappedInfants)
+
+    // Gratuities & port fees apply to all guests including infants per DCL policy
+    const gratuityRate =
+      stateroomId === 'concierge' ? GRATUITY_RATES.concierge : GRATUITY_RATES.standard
+    const gratuities = gratuityRate * cappedGuests * lengthConfig.nights
+    const portFees = PORT_FEES_PER_PERSON * cappedGuests
+
+    const total = baseFare + gratuities + portFees
+    const divisor = cappedGuests > 0 ? cappedGuests : 1
+    const perPerson = total / divisor
     const perPersonPerNight = perPerson / lengthConfig.nights
 
     const low = Math.round(total * 0.85)
@@ -110,15 +141,18 @@ export function CruiseCostCalculator() {
       stateroom,
       lengthConfig,
       ship,
-      ppn: Math.round(ppn),
-      totalPerNight: Math.round(totalPerNight),
+      adjustedPpn: Math.round(adjustedPpn),
+      baseFare: Math.round(baseFare),
+      gratuities: Math.round(gratuities),
+      portFees: Math.round(portFees),
       total: Math.round(total),
       perPerson: Math.round(perPerson),
       perPersonPerNight: Math.round(perPersonPerNight),
       low,
       high,
+      cappedGuests,
     }
-  }, [guests, stateroomId, nightsId, shipId])
+  }, [adults, children, infants, guests, stateroomId, nightsId, shipId])
 
   const fmt = (n: number) => n.toLocaleString('en-US')
 
@@ -129,26 +163,54 @@ export function CruiseCostCalculator() {
         <h2 className="font-display text-xl font-bold text-slate-900 mb-6">Configure Your Cruise</h2>
         <div className="grid sm:grid-cols-2 gap-6">
           {/* Guests */}
-          <div>
-            <label id="guests-label" className="block text-sm font-semibold text-slate-700 mb-2">Number of Guests</label>
-            <div className="flex items-center gap-3" role="group" aria-labelledby="guests-label">
-              <button
-                onClick={() => setGuests(Math.max(1, guests - 1))}
-                aria-label="Decrease guest count"
-                className="w-10 h-10 rounded-lg border border-slate-300 flex items-center justify-center text-slate-700 hover:bg-slate-100 font-bold text-xl transition-colors"
-              >
-                −
-              </button>
-              <span className="w-12 text-center font-bold text-2xl text-slate-900" aria-live="polite" aria-atomic="true">{guests}</span>
-              <button
-                onClick={() => setGuests(Math.min(8, guests + 1))}
-                aria-label="Increase guest count"
-                className="w-10 h-10 rounded-lg border border-slate-300 flex items-center justify-center text-slate-700 hover:bg-slate-100 font-bold text-xl transition-colors"
-              >
-                +
-              </button>
-              <span className="text-sm text-slate-500" aria-hidden="true">{guests === 1 ? 'guest' : 'guests'}</span>
+          <div className="sm:col-span-2">
+            <label id="guests-label" className="block text-sm font-semibold text-slate-700 mb-2">
+              Party Size <span className="font-normal text-slate-500">(stateroom occupancy capped at 4)</span>
+            </label>
+            <div className="grid grid-cols-3 gap-3" role="group" aria-labelledby="guests-label">
+              {[
+                { key: 'adults', label: 'Adults', value: adults, set: setAdults, min: 1, hint: 'age 18+' },
+                { key: 'children', label: 'Children', value: children, set: setChildren, min: 0, hint: 'ages 3–17' },
+                { key: 'infants', label: 'Under 3', value: infants, set: setInfants, min: 0, hint: 'free fare' },
+              ].map(({ key, label, value, set, min, hint }) => {
+                const remainingRoom = 4 - guests
+                const canIncrease = value + 1 <= 4 && remainingRoom > 0
+                return (
+                  <div key={key} className="border border-slate-200 rounded-lg p-3">
+                    <div className="text-xs font-semibold text-slate-700">{label}</div>
+                    <div className="text-[10px] text-slate-400 mb-2">{hint}</div>
+                    <div className="flex items-center gap-2">
+                      <button
+                        onClick={() => set(Math.max(min, value - 1))}
+                        disabled={value <= min}
+                        aria-label={`Decrease ${label}`}
+                        className="w-8 h-8 rounded-md border border-slate-300 flex items-center justify-center text-slate-700 hover:bg-slate-100 disabled:opacity-30 disabled:cursor-not-allowed font-bold transition-colors"
+                      >
+                        −
+                      </button>
+                      <span
+                        className="flex-1 text-center font-bold text-lg text-slate-900"
+                        aria-live="polite"
+                        aria-atomic="true"
+                      >
+                        {value}
+                      </span>
+                      <button
+                        onClick={() => canIncrease && set(value + 1)}
+                        disabled={!canIncrease}
+                        aria-label={`Increase ${label}`}
+                        className="w-8 h-8 rounded-md border border-slate-300 flex items-center justify-center text-slate-700 hover:bg-slate-100 disabled:opacity-30 disabled:cursor-not-allowed font-bold transition-colors"
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
+                )
+              })}
             </div>
+            <p className="text-xs text-slate-500 mt-2">
+              {guests} {guests === 1 ? 'guest' : 'guests'} total · First 2 pay base fare, 3rd/4th pay ~60%, under-3 are free for fare
+            </p>
           </div>
 
           {/* Cruise Length */}
@@ -229,9 +291,28 @@ export function CruiseCostCalculator() {
           <div className="p-5 text-center col-span-2 sm:col-span-1">
             <div className="text-xs text-slate-500 mb-1">Summary</div>
             <div className="text-sm font-semibold text-slate-700">
-              {guests} guest{guests !== 1 ? 's' : ''} · {results.lengthConfig.nights} nights · {results.ship.name}
+              {results.cappedGuests} guest{results.cappedGuests !== 1 ? 's' : ''} · {results.lengthConfig.nights} nights · {results.ship.name}
             </div>
             <div className="text-xs text-slate-500">{results.stateroom.name} stateroom</div>
+          </div>
+        </div>
+
+        {/* Cost breakdown */}
+        <div className="px-6 py-4 border-t border-slate-100">
+          <div className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2">What's included in this estimate</div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
+            <div className="flex justify-between sm:block">
+              <span className="text-slate-600">Cruise fare</span>
+              <span className="font-semibold text-slate-900 sm:block">${fmt(results.baseFare)}</span>
+            </div>
+            <div className="flex justify-between sm:block">
+              <span className="text-slate-600">Gratuities</span>
+              <span className="font-semibold text-slate-900 sm:block">${fmt(results.gratuities)}</span>
+            </div>
+            <div className="flex justify-between sm:block">
+              <span className="text-slate-600">Port fees & taxes</span>
+              <span className="font-semibold text-slate-900 sm:block">${fmt(results.portFees)}</span>
+            </div>
           </div>
         </div>
 

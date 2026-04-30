@@ -30,7 +30,7 @@ export default function BestTimeToBookGuide() {
             Best Time to Book a Disney Cruise
           </h1>
           <p className="text-lg text-blue-100 mb-6">
-            Save thousands with data-driven booking strategies. Learn when Disney releases cruises, how prices fluctuate, and exactly when to hit "book now."
+            Save thousands with data-driven booking strategies. Learn when Disney releases cruises, how prices fluctuate, and the timing windows that matter most.
           </p>
           <div className="flex flex-wrap gap-4 text-sm text-blue-100">
             <span className="flex items-center gap-2"><Calendar className="w-4 h-4" /> Wave season timing</span>
@@ -73,7 +73,7 @@ export default function BestTimeToBookGuide() {
             Disney cruise prices are dynamic, controlled by sophisticated revenue management algorithms. Unlike hotels with gradual pricing, cruise fares can drop or spike suddenly based on occupancy, demand, and competing itineraries. The difference between booking at the right time versus wrong time can be $1,000-3,000+ per cabin. Understanding the pricing cycle and using strategic booking tactics can save you significant money.
           </p>
           <p className="font-inter text-slate-600 leading-relaxed">
-            This guide reveals the patterns Disney's pricing follows and provides actionable strategies to lock in the best rates.
+            This guide reveals the patterns Disney's pricing follows and provides actionable strategies to find the best rates.
           </p>
         </section>
 

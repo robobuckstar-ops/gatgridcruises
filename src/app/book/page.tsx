@@ -5,6 +5,7 @@ import { Shield, Star, Phone, Gift, BadgeCheck, Building2 } from 'lucide-react'
 import Link from 'next/link'
 import { OBC_TIERS } from '@/lib/obc'
 import { OBCDisclaimer } from '@/components/ui/obc-disclaimer'
+import { ships as DCL_SHIPS } from '@/data/ships'
 
 export default function BookPage() {
   const [submitted, setSubmitted] = useState(false)
@@ -395,14 +396,9 @@ export default function BookPage() {
                     className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-slate-900 text-sm"
                   >
                     <option value="any">Any Ship</option>
-                    <option value="magic">Disney Magic</option>
-                    <option value="wonder">Disney Wonder</option>
-                    <option value="dream">Disney Dream</option>
-                    <option value="fantasy">Disney Fantasy</option>
-                    <option value="wish">Disney Wish</option>
-                    <option value="treasure">Disney Treasure</option>
-                    <option value="destiny">Disney Destiny</option>
-                    <option value="adventure">Disney Adventure</option>
+                    {DCL_SHIPS.map(s => (
+                      <option key={s.id} value={s.slug.replace('disney-', '')}>{s.name}</option>
+                    ))}
                   </select>
                 </div>
                 <div>

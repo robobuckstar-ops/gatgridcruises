@@ -804,8 +804,8 @@ export function CruiseCountdownTimeline() {
               <div className="mt-3 inline-flex items-start gap-2 bg-amber-100 border border-amber-300 rounded-lg px-4 py-2.5">
                 <span className="text-sm">🎯</span>
                 <p className="text-sm text-amber-800 font-medium">
-                  <strong>GatGrid concierge tip:</strong> When you book through GatGrid, your
-                  personal concierge converts every booking window to{' '}
+                  <strong>GatGrid concierge tip:</strong> When you plan with our concierge, your
+                  personal specialist converts every booking window to{' '}
                   <em>your local time zone</em> and sends reminders before each deadline —
                   so you never have to do time zone math.
                 </p>
@@ -1103,7 +1103,7 @@ export function CruiseCountdownTimeline() {
             Want Someone to Handle All of This for You?
           </h2>
           <p className="text-blue-200 text-lg mb-8 max-w-xl mx-auto">
-            Book through GatGrid and get a personal cruise concierge who turns this entire
+            Plan with our concierge and get a personal cruise specialist who turns this entire
             timeline into a hands-off experience.
           </p>
 

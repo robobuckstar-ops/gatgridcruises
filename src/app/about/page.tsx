@@ -138,9 +138,9 @@ export default function AboutPage() {
           <div className="flex items-start gap-4 bg-gradient-to-r from-[#0a1628] to-[#1E3A5F] rounded-xl p-6 text-white">
             <Gift className="w-8 h-8 text-[#D4AF37] flex-shrink-0 mt-0.5" aria-hidden="true" />
             <div>
-              <p className="font-fraunces font-bold text-lg mb-1 text-[#D4AF37]">Up to $400 in Free Onboard Credit</p>
+              <p className="font-fraunces font-bold text-lg mb-1 text-[#D4AF37]">Up to $1,000 in Free Onboard Credit</p>
               <p className="text-blue-200 text-sm leading-relaxed mb-3">
-                Book direct with Disney and you get $0 in OBC. Book through GatGrid and we add free money to your cruise account — for spa, specialty dining, excursions, or anything else you charge to your stateroom. Same price as booking direct, better perks.
+                Plan direct with Disney and you get $0 in OBC. Plan with our concierge (via Boardwalk Travel Agency) and we add free money to your cruise account — for spa, specialty dining, excursions, or anything else you charge to your stateroom. Same Disney price, better perks.
               </p>
               <Link
                 href="/onboard-credit"

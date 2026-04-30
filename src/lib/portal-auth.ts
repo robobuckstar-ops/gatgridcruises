@@ -3,6 +3,7 @@ import type { NextRequest } from 'next/server'
 
 export const COOKIE_NAME = 'gg_portal_session'
 const SESSION_TTL_SECONDS = 60 * 60 * 24 * 7 // 7 days
+const MAGIC_LINK_TTL_SECONDS = 60 * 60 * 24 * 30 // 30 days
 
 export interface PortalSession {
   bookingId: string
@@ -10,6 +11,13 @@ export interface PortalSession {
   email: string
   clientName: string
   exp: number
+}
+
+export interface MagicLinkPayload {
+  bookingId: string
+  email: string
+  exp: number
+  type: 'magic-link'
 }
 
 function b64urlEncode(str: string): string {
@@ -67,36 +75,50 @@ export function getSessionFromRequest(req: NextRequest): PortalSession | null {
   return verifySessionToken(token)
 }
 
-export interface MagicLinkPayload {
-  email: string
-  name: string
-}
+// ─── Magic-link tokens ─────────────────────────────────────────────────────
+// Same JWT format as session tokens (HS256, shared PORTAL_JWT_SECRET) but the
+// payload carries `type: 'magic-link'` so the two token kinds can't be confused.
 
-// Verifies a one-time magic-link JWT containing {email, name, exp}.
-// Throws on invalid signature, malformed token, or expiry.
-export function verifyMagicLinkToken(token: string): MagicLinkPayload {
+export function createMagicLinkToken(payload: { bookingId: string; email: string }): string {
   const secret = process.env.PORTAL_JWT_SECRET
   if (!secret) throw new Error('PORTAL_JWT_SECRET not configured')
 
-  const parts = token.split('.')
-  if (parts.length !== 3) throw new Error('Invalid token format')
+  const header = b64urlEncode(JSON.stringify({ alg: 'HS256', typ: 'JWT' }))
+  const body = b64urlEncode(
+    JSON.stringify({
+      bookingId: payload.bookingId,
+      email: payload.email,
+      type: 'magic-link',
+      exp: Math.floor(Date.now() / 1000) + MAGIC_LINK_TTL_SECONDS,
+    })
+  )
+  const sig = hmacSign(`${header}.${body}`, secret)
+  return `${header}.${body}.${sig}`
+}
 
-  const [header, body, sig] = parts
-  const expectedSig = hmacSign(`${header}.${body}`, secret)
+export function verifyMagicLinkToken(token: string): MagicLinkPayload | null {
+  try {
+    const secret = process.env.PORTAL_JWT_SECRET
+    if (!secret) return null
 
-  const sigBuf = Buffer.from(sig, 'base64url')
-  const expectedBuf = Buffer.from(expectedSig, 'base64url')
-  if (sigBuf.length !== expectedBuf.length || !timingSafeEqual(sigBuf, expectedBuf)) {
-    throw new Error('Invalid token signature')
+    const parts = token.split('.')
+    if (parts.length !== 3) return null
+
+    const [header, body, sig] = parts
+    const expectedSig = hmacSign(`${header}.${body}`, secret)
+
+    const sigBuf = Buffer.from(sig, 'base64url')
+    const expectedBuf = Buffer.from(expectedSig, 'base64url')
+    if (sigBuf.length !== expectedBuf.length) return null
+    if (!timingSafeEqual(sigBuf, expectedBuf)) return null
+
+    const parsed = JSON.parse(b64urlDecode(body)) as Partial<MagicLinkPayload>
+    if (parsed.type !== 'magic-link') return null
+    if (typeof parsed.exp !== 'number' || parsed.exp < Math.floor(Date.now() / 1000)) return null
+    if (typeof parsed.bookingId !== 'string' || typeof parsed.email !== 'string') return null
+
+    return parsed as MagicLinkPayload
+  } catch {
+    return null
   }
-
-  const payload = JSON.parse(b64urlDecode(body))
-  if (typeof payload.email !== 'string' || typeof payload.name !== 'string') {
-    throw new Error('Token missing required fields')
-  }
-  if (typeof payload.exp === 'number' && payload.exp < Math.floor(Date.now() / 1000)) {
-    throw new Error('Token has expired')
-  }
-
-  return { email: payload.email, name: payload.name }
 }

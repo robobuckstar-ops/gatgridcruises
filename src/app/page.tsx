@@ -106,9 +106,9 @@ export default async function Home() {
           <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
             {([
               { icon: ShieldCheck, text: 'Authorized Disney Vacation Planner', sub: 'via Boardwalk Travel' },
-              { icon: TrendingDown, text: 'Price Drop Protection Guarantee' },
-              { icon: Star, text: 'Personal Concierge Service' },
-              { icon: Anchor, text: 'Powered by Real Cruise Experience' },
+              { icon: TrendingDown, text: 'Price Drop Watch', sub: undefined },
+              { icon: Star, text: 'Personal Concierge Service', sub: undefined },
+              { icon: Anchor, text: 'Powered by Real Cruise Experience', sub: undefined },
             ] as const).map(({ icon: Icon, text, sub }) => (
               <div key={text} className="flex items-center gap-2.5">
                 <div className="w-8 h-8 rounded-full bg-[#D4AF37]/15 flex items-center justify-center flex-shrink-0">
@@ -264,7 +264,7 @@ export default async function Home() {
               { icon: Clock, title: 'Milestone Reminders', desc: 'We ping you when booking windows, payment deadlines, and activity reservations open — so you never miss a beat.' },
               { icon: Plane, title: 'Flight Monitoring', desc: 'We watch your flights for price drops and alert you to schedule changes before they cause trip-day chaos.' },
               { icon: MapPin, title: 'Personal Prep Guidance', desc: 'Port tips, what to pack, when to arrive — tailored advice specific to your ship, dates, and ports.' },
-              { icon: Gift, title: 'Free Onboard Credit', desc: 'GatGrid clients receive up to $400 in OBC added to their stateroom account through Boardwalk Travel. Spend it on spa, dining, or excursions.' },
+              { icon: Gift, title: 'Free Onboard Credit', desc: 'GatGrid clients receive up to $1,000 in OBC added to their stateroom account through Boardwalk Travel. Spend it on spa, dining, or excursions.' },
             ].map(({ icon: Icon, title, desc }) => (
               <div key={title} className="bg-white/5 border border-white/10 rounded-xl p-5 hover:bg-white/10 transition-colors">
                 <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-[#D4AF37]/15 border border-[#D4AF37]/25 mb-4">
@@ -298,7 +298,7 @@ export default async function Home() {
                 <span className="text-[#D4AF37] text-xs font-bold uppercase tracking-widest">Exclusive Perk</span>
               </div>
               <h2 id="obc-heading" className="font-fraunces text-3xl md:text-4xl font-bold text-white mb-3">
-                Get Up to $400 in Free Onboard Credit
+                Get Up to $1,000 in Free Onboard Credit
               </h2>
               <p className="text-blue-200 text-base max-w-xl">
                 Connect through GatGrid and our partner Boardwalk Travel will add free spending money to your onboard account — for spa, dining, excursions, and more. Zero extra cost to you.

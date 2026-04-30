@@ -7,17 +7,17 @@ import { OBCDisclaimer } from '@/components/ui/obc-disclaimer'
 export const metadata: Metadata = {
   title: 'Free Onboard Credit — GatGrid Cruises',
   description:
-    'Book your Disney cruise through GatGrid Cruises and receive up to $400 in free onboard credit. Learn what OBC is, what you can spend it on, and how to qualify.',
+    'Plan your Disney cruise with the GatGrid Cruises concierge and receive up to $1,000 in free onboard credit. Learn what OBC is, what you can spend it on, and how to qualify.',
   openGraph: {
     title: 'Free Onboard Credit — GatGrid Cruises',
-    description: 'Book your Disney cruise through GatGrid Cruises and receive up to $400 in free onboard credit.',
+    description: 'Plan your Disney cruise with the GatGrid Cruises concierge and receive up to $1,000 in free onboard credit.',
     url: 'https://gatgridcruises.com/onboard-credit',
     images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Free Onboard Credit — GatGrid Cruises',
-    description: 'Book your Disney cruise through GatGrid Cruises and receive up to $400 in free onboard credit.',
+    description: 'Plan your Disney cruise with the GatGrid Cruises concierge and receive up to $1,000 in free onboard credit.',
     images: ['https://gatgridcruises.com/og-image.png'],
   },
 }
@@ -72,10 +72,10 @@ export default function OnboardCreditPage() {
             Exclusive GatGrid Perk
           </div>
           <h1 className="font-fraunces text-4xl md:text-5xl font-bold text-white mb-5">
-            Get Up to $400 in Free Onboard Credit
+            Get Up to $1,000 in Free Onboard Credit
           </h1>
           <p className="text-blue-200 text-lg max-w-2xl mx-auto mb-8">
-            When you book your Disney cruise through GatGrid Cruises, we pass a portion of our commission back to you as free spending money onboard.
+            When you plan your Disney cruise with our concierge (via Boardwalk Travel Agency), we pass a portion of our commission back to you as free spending money onboard.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -107,10 +107,10 @@ export default function OnboardCreditPage() {
               Onboard credit (OBC) is free spending money loaded directly onto your Disney Cruise stateroom folio — think of it as a gift card you can use for nearly anything you purchase on the ship.
             </p>
             <p className="text-lg text-slate-600 leading-relaxed mb-4">
-              When you book through a travel agent like GatGrid Cruises, Disney Cruise Line pays us a commission. Rather than keeping all of it, we share a portion back with you as OBC. You get free money to spend onboard; we earn a modest commission for the booking. Everyone wins.
+              When you plan your cruise through a travel agent partner like GatGrid Cruises (via Boardwalk Travel Agency), Disney Cruise Line pays the agency a commission. Rather than keeping all of it, we share a portion back with you as OBC. You get free money to spend onboard; the agency earns a modest commission. Everyone wins.
             </p>
             <p className="text-lg text-slate-600 leading-relaxed">
-              Unlike booking directly through Disney, where you receive $0 in OBC as a standard perk, booking through GatGrid gives you instant value — no loyalty programs, no credit cards required.
+              Unlike planning your cruise directly through Disney, where you receive $0 in OBC as a standard perk, planning through our concierge gives you instant value — no loyalty programs, no credit cards required.
             </p>
           </div>
         </section>
@@ -193,7 +193,7 @@ export default function OnboardCreditPage() {
               {
                 icon: '💰',
                 title: 'Free Onboard Credit',
-                desc: 'Up to $400 in free spending money — automatically applied to your account.',
+                desc: 'Up to $1,000 in free spending money — automatically applied to your account.',
               },
               {
                 icon: '🎯',
