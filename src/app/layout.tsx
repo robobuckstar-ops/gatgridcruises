@@ -11,7 +11,7 @@ import { StructuredData } from '@/components/ui/structured-data'
 import { CopyProtection } from '@/components/ui/copy-protection'
 import { FamilyPromoBanner } from '@/components/ui/family-promo-banner'
 
-const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA4_ID || 'G-434T744BN1'
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA4_ID || 'G-22TCMRK076'
 
 export const metadata: Metadata = {
   title: {
@@ -65,18 +65,21 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://gatgridcruises.com',
   },
+  verification: {
+    google: 'xxlVbTclSd-rAUoo-92p1-0adoSj0Ys8PLX4R96VTag',
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="min-h-screen flex flex-col">
-        {/* Google Analytics 4 */}
+      <head>
+        {/* Google Analytics 4 — must be in <head> for Search Console verification */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-          strategy="afterInteractive"
+          strategy="beforeInteractive"
         />
-        <Script id="ga4-init" strategy="afterInteractive">
+        <Script id="ga4-init" strategy="beforeInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -84,6 +87,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             gtag('config', '${GA_MEASUREMENT_ID}');
           `}
         </Script>
+      </head>
+      <body className="min-h-screen flex flex-col">
 
         <StructuredData data={generateWebsiteSchema()} />
         <StructuredData data={generateOrganizationSchema()} />
