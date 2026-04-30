@@ -86,6 +86,19 @@ export async function fetchBookingByName(
   return records[0] ?? null
 }
 
+export async function fetchBookingByEmail(
+  email: string,
+  apiKey: string,
+): Promise<{ id: string; fields: Record<string, unknown> } | null> {
+  const normalized = email.trim().toLowerCase().replace(/"/g, '\\"')
+  const formula = encodeURIComponent(`LOWER({Client Email})="${normalized}"`)
+  const fieldParams = Object.values(BOOKING_FIELDS).map(id => `fields[]=${id}`).join('&')
+  const url = `https://api.airtable.com/v0/${AIRTABLE_BASE}/${BOOKINGS_TABLE}?filterByFormula=${formula}&${fieldParams}`
+  const data = await airtableGet(url, apiKey)
+  const records = (data.records as Array<{ id: string; fields: Record<string, unknown> }>) ?? []
+  return records[0] ?? null
+}
+
 export async function fetchClientName(clientId: string, apiKey: string): Promise<string> {
   const url = bookingUrl(CLIENTS_TABLE, `${clientId}?fields[]=${CLIENT_FIELDS.name}`)
   try {

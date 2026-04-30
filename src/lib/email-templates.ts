@@ -267,6 +267,8 @@ export interface BookingDetails {
   totalPaid: number
   finalPaymentDate: string
   ports: string[]
+  /** Magic-link URL for one-click access to /my-trip/dashboard. */
+  magicLinkUrl?: string
 }
 
 export function BOOKING_CONFIRMED(details: BookingDetails): string {
@@ -280,8 +282,18 @@ export function BOOKING_CONFIRMED(details: BookingDetails): string {
     ['Final Payment Due', `<span style="color:#DC2626;font-weight:600;">${details.finalPaymentDate}</span>`],
   ]
 
+  const magicLinkBlock = details.magicLinkUrl
+    ? `
+    <div style="text-align:center;margin:24px 0;">
+      <a href="${details.magicLinkUrl}" style="display:inline-block;background-color:#1E3A5F;color:#D4AF37;padding:14px 32px;border-radius:8px;text-decoration:none;font-weight:bold;font-size:15px;">View My Trip Dashboard →</a>
+      <p style="margin:10px 0 0;color:#94A3B8;font-size:12px;">One-click access — no password needed. Link valid for 30 days.</p>
+    </div>
+  `
+    : ''
+
   return wrapBookingEmail(`
     <h2 style="margin:0 0 4px;color:#1E3A5F;font-family:Georgia,serif;font-size:24px;">Your Disney cruise is booked! 🎉</h2>
+    ${magicLinkBlock}
     <div style="background-color:#F0FDF4;border:1px solid #86EFAC;border-radius:8px;padding:20px;margin:20px 0;">
       <h3 style="margin:0 0 14px;color:#166534;font-size:15px;">Booking Summary</h3>
       <table width="100%" cellpadding="0" cellspacing="0">
@@ -304,6 +316,26 @@ export function BOOKING_CONFIRMED(details: BookingDetails): string {
     </div>
 
     <p style="margin:0;color:#64748B;font-size:13px;">Safe travels!<br><strong style="color:#1E3A5F;">Dr. Grayson Starbuck, DPT</strong><br>Grayson at GatGrid Cruises</p>
+  `)
+}
+
+export function MAGIC_LINK_EMAIL(name: string, magicLinkUrl: string, bookingRef?: string): string {
+  return wrapBookingEmail(`
+    <h2 style="margin:0 0 12px;color:#1E3A5F;font-family:Georgia,serif;font-size:22px;">Your My Trip dashboard link</h2>
+    <p style="margin:0 0 20px;color:#334155;font-size:15px;line-height:1.6;">
+      Hi ${name}, here's your one-click link${bookingRef ? ` for booking <strong>${bookingRef}</strong>` : ''}. Click below to jump straight into your dashboard — no booking number, last name, or password to type in.
+    </p>
+    <div style="text-align:center;margin:28px 0;">
+      <a href="${magicLinkUrl}" style="display:inline-block;background-color:#1E3A5F;color:#D4AF37;padding:14px 32px;border-radius:8px;text-decoration:none;font-weight:bold;font-size:15px;">View My Trip Dashboard →</a>
+    </div>
+    <p style="margin:0 0 12px;color:#64748B;font-size:13px;line-height:1.6;">
+      This link is valid for <strong>30 days</strong>. If it expires, just request a new one from <a href="https://gatgridcruises.com/my-trip" style="color:#1E3A5F;">gatgridcruises.com/my-trip</a>.
+    </p>
+    <p style="margin:0 0 20px;color:#94A3B8;font-size:12px;line-height:1.6;">
+      If you didn't request this link, you can safely ignore this email — nothing was changed on your account.
+    </p>
+
+    <p style="margin:0;color:#64748B;font-size:13px;">Safe travels,<br><strong style="color:#1E3A5F;">Dr. Grayson Starbuck, DPT</strong><br>Grayson at GatGrid Cruises</p>
   `)
 }
 

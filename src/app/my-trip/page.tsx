@@ -1,15 +1,40 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
-import { Hash, User, Mail, ArrowRight, Lock, Star } from 'lucide-react'
+import { Hash, User, Mail, ArrowRight, Lock, Star, Send, AlertTriangle } from 'lucide-react'
+
+const ERROR_MESSAGES: Record<string, string> = {
+  expired: 'Your link has expired or is no longer valid. Enter your details below or request a new link.',
+  missing_token: 'That link is missing its access token. Request a new one below.',
+  booking_not_found: "We couldn't find that booking anymore. Please log in or request a new link.",
+  service_unavailable: "The portal is briefly unavailable. Please try again in a moment.",
+  server_error: 'Something went wrong. Please try again.',
+}
 
 export default function MyTripPage() {
   const router = useRouter()
   const [form, setForm] = useState({ bookingNumber: '', lastName: '', email: '' })
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
+
+  // Magic-link resend form state
+  const [resendEmail, setResendEmail] = useState('')
+  const [resendLoading, setResendLoading] = useState(false)
+  const [resendMessage, setResendMessage] = useState('')
+  const [resendError, setResendError] = useState('')
+
+  // Surface ?error=… messages from the magic-link callback. Read from
+  // window.location to avoid pulling in a Suspense boundary for useSearchParams.
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    const params = new URLSearchParams(window.location.search)
+    const errCode = params.get('error')
+    if (errCode && ERROR_MESSAGES[errCode]) {
+      setError(ERROR_MESSAGES[errCode])
+    }
+  }, [])
 
   function setField(field: keyof typeof form, value: string) {
     setForm(prev => ({ ...prev, [field]: value }))
@@ -42,6 +67,33 @@ export default function MyTripPage() {
     }
   }
 
+  async function handleResend(e: React.FormEvent) {
+    e.preventDefault()
+    setResendLoading(true)
+    setResendMessage('')
+    setResendError('')
+
+    try {
+      const res = await fetch('/api/portal/resend-link', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: resendEmail }),
+      })
+      const data = await res.json()
+
+      if (!res.ok) {
+        setResendError(data.error || 'Could not send a new link. Please try again.')
+        return
+      }
+      setResendMessage(data.message || "If that email matches a booking on file, we've sent a fresh access link.")
+      setResendEmail('')
+    } catch {
+      setResendError('Network error. Please try again.')
+    } finally {
+      setResendLoading(false)
+    }
+  }
+
   const isValid = form.bookingNumber && form.lastName && form.email
 
   return (
@@ -56,10 +108,18 @@ export default function MyTripPage() {
           <p className="text-blue-200 mt-1.5 text-sm">Your personal cruise concierge portal</p>
         </div>
 
+        {/* Magic-link callback error banner */}
+        {error && (
+          <div className="mb-4 flex items-start gap-3 bg-amber-50 border border-amber-200 text-amber-900 text-sm rounded-xl px-4 py-3">
+            <AlertTriangle className="w-4 h-4 mt-0.5 flex-shrink-0 text-amber-600" />
+            <span>{error}</span>
+          </div>
+        )}
+
         {/* Card */}
         <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
           <div className="px-6 pt-6 pb-5">
-            <div className="flex items-center gap-3 mb-5 p-3 bg-slate-50 rounded-xl border border-slate-100">
+            <div className="flex items-center gap-3 mb-4 p-3 bg-slate-50 rounded-xl border border-slate-100">
               <div className="w-9 h-9 rounded-full bg-navy/10 flex items-center justify-center flex-shrink-0">
                 <Lock className="w-4 h-4 text-navy" />
               </div>
@@ -68,6 +128,10 @@ export default function MyTripPage() {
                 <p className="text-slate-500 text-xs mt-0.5">Enter your booking details to access your dashboard</p>
               </div>
             </div>
+
+            <p className="text-xs text-slate-500 mb-4 leading-relaxed">
+              <span className="font-semibold text-slate-700">Tip:</span> Your booking confirmation email has a one-click link straight to your dashboard — check your inbox first.
+            </p>
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
@@ -124,12 +188,6 @@ export default function MyTripPage() {
                 </div>
               </div>
 
-              {error && (
-                <p className="text-sm text-red-600 bg-red-50 border border-red-100 rounded-xl px-4 py-3">
-                  {error}
-                </p>
-              )}
-
               <button
                 type="submit"
                 disabled={loading || !isValid}
@@ -158,6 +216,46 @@ export default function MyTripPage() {
                 Get a free quote →
               </Link>
             </p>
+          </div>
+
+          {/* Resend magic link */}
+          <div className="bg-slate-50 border-t border-slate-100 px-6 py-5">
+            <p className="text-sm font-semibold text-slate-700 mb-1">Lost your link?</p>
+            <p className="text-xs text-slate-500 mb-3">Enter your email and we'll send a fresh one-click link to your dashboard.</p>
+            <form onSubmit={handleResend} className="flex gap-2">
+              <div className="relative flex-1">
+                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+                <input
+                  type="email"
+                  value={resendEmail}
+                  onChange={(e) => {
+                    setResendEmail(e.target.value)
+                    if (resendError) setResendError('')
+                    if (resendMessage) setResendMessage('')
+                  }}
+                  placeholder="you@example.com"
+                  required
+                  className="w-full pl-9 pr-3 py-2.5 border border-slate-200 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy text-sm transition-all bg-white"
+                />
+              </div>
+              <button
+                type="submit"
+                disabled={resendLoading || !resendEmail}
+                className="flex items-center gap-1.5 px-4 py-2.5 bg-navy text-white text-sm font-semibold rounded-lg hover:bg-[#0a1628] transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+              >
+                {resendLoading ? 'Sending…' : (<><Send className="w-3.5 h-3.5" />Send</>)}
+              </button>
+            </form>
+            {resendMessage && (
+              <p className="mt-3 text-xs text-emerald-700 bg-emerald-50 border border-emerald-100 rounded-lg px-3 py-2">
+                {resendMessage}
+              </p>
+            )}
+            {resendError && (
+              <p className="mt-3 text-xs text-red-600 bg-red-50 border border-red-100 rounded-lg px-3 py-2">
+                {resendError}
+              </p>
+            )}
           </div>
 
           {/* Feature highlights */}
