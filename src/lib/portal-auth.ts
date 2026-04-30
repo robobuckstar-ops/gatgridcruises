@@ -20,6 +20,15 @@ export interface MagicLinkPayload {
   type: 'magic-link'
 }
 
+// Looser shape used by /portal?token=… links sent before the strict
+// magic-link format (`type: 'magic-link'` + bookingId) was introduced.
+// Authenticates an email + display name only.
+export interface SimpleMagicLinkPayload {
+  email: string
+  name: string
+  exp: number
+}
+
 function b64urlEncode(str: string): string {
   return Buffer.from(str).toString('base64url')
 }
@@ -118,6 +127,44 @@ export function verifyMagicLinkToken(token: string): MagicLinkPayload | null {
     if (typeof parsed.bookingId !== 'string' || typeof parsed.email !== 'string') return null
 
     return parsed as MagicLinkPayload
+  } catch {
+    return null
+  }
+}
+
+// Verifies the simpler { email, name, exp } magic-link payload that the
+// initial round of /portal?token=… emails (Crystal, Timothy/Krista) was
+// signed with. Same secret + HS256, no `type` discriminator, no bookingId.
+export function verifySimpleMagicLinkToken(token: string): SimpleMagicLinkPayload | null {
+  try {
+    const secret = process.env.PORTAL_JWT_SECRET
+    if (!secret) return null
+
+    const parts = token.split('.')
+    if (parts.length !== 3) return null
+
+    const [header, body, sig] = parts
+
+    // Reject anything that isn't HS256 — keeps "alg: none" forgeries out.
+    let parsedHeader: { alg?: string }
+    try {
+      parsedHeader = JSON.parse(b64urlDecode(header))
+    } catch {
+      return null
+    }
+    if (parsedHeader.alg !== 'HS256') return null
+
+    const expectedSig = hmacSign(`${header}.${body}`, secret)
+    const sigBuf = Buffer.from(sig, 'base64url')
+    const expectedBuf = Buffer.from(expectedSig, 'base64url')
+    if (sigBuf.length !== expectedBuf.length) return null
+    if (!timingSafeEqual(sigBuf, expectedBuf)) return null
+
+    const payload = JSON.parse(b64urlDecode(body)) as Partial<SimpleMagicLinkPayload>
+    if (!payload.email || !payload.name || typeof payload.exp !== 'number') return null
+    if (payload.exp < Math.floor(Date.now() / 1000)) return null
+
+    return { email: payload.email, name: payload.name, exp: payload.exp }
   } catch {
     return null
   }
