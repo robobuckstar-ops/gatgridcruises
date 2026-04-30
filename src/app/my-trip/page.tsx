@@ -179,16 +179,6 @@ export default function MyTripPage() {
           </div>
         </div>
 
-        {/* Demo preview link */}
-        <div className="text-center mt-6">
-          <Link
-            href="/my-trip/dashboard"
-            className="inline-flex items-center gap-1.5 text-blue-200 text-sm hover:text-white transition-colors"
-          >
-            <span>Preview the dashboard</span>
-            <ArrowRight className="w-3.5 h-3.5" />
-          </Link>
-        </div>
       </div>
     </div>
   )
