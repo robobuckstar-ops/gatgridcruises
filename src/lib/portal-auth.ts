@@ -66,3 +66,37 @@ export function getSessionFromRequest(req: NextRequest): PortalSession | null {
   if (!token) return null
   return verifySessionToken(token)
 }
+
+export interface MagicLinkPayload {
+  email: string
+  name: string
+}
+
+// Verifies a one-time magic-link JWT containing {email, name, exp}.
+// Throws on invalid signature, malformed token, or expiry.
+export function verifyMagicLinkToken(token: string): MagicLinkPayload {
+  const secret = process.env.PORTAL_JWT_SECRET
+  if (!secret) throw new Error('PORTAL_JWT_SECRET not configured')
+
+  const parts = token.split('.')
+  if (parts.length !== 3) throw new Error('Invalid token format')
+
+  const [header, body, sig] = parts
+  const expectedSig = hmacSign(`${header}.${body}`, secret)
+
+  const sigBuf = Buffer.from(sig, 'base64url')
+  const expectedBuf = Buffer.from(expectedSig, 'base64url')
+  if (sigBuf.length !== expectedBuf.length || !timingSafeEqual(sigBuf, expectedBuf)) {
+    throw new Error('Invalid token signature')
+  }
+
+  const payload = JSON.parse(b64urlDecode(body))
+  if (typeof payload.email !== 'string' || typeof payload.name !== 'string') {
+    throw new Error('Token missing required fields')
+  }
+  if (typeof payload.exp === 'number' && payload.exp < Math.floor(Date.now() / 1000)) {
+    throw new Error('Token has expired')
+  }
+
+  return { email: payload.email, name: payload.name }
+}
