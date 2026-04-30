@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Minus, Plus, Users } from 'lucide-react'
 
 interface GuestCountSelectorProps {
@@ -9,9 +9,21 @@ interface GuestCountSelectorProps {
   className?: string
 }
 
-export function GuestCountSelector({ onChange, className = '' }: GuestCountSelectorProps) {
-  const [adults, setAdults] = useState(2)
+export function GuestCountSelector({ value, onChange, className = '' }: GuestCountSelectorProps) {
+  const [adults, setAdults] = useState(Math.min(Math.max(value || 2, 1), 4))
   const [children, setChildren] = useState(0)
+
+  // Keep adults+children consistent if the parent forces a new total
+  useEffect(() => {
+    const internalTotal = Math.min(adults + children, 4)
+    if (value !== internalTotal) {
+      const newAdults = Math.min(Math.max(value || 1, 1), 4)
+      setAdults(newAdults)
+      setChildren(0)
+    }
+    // We intentionally only react to value changes from the parent
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [value])
 
   function changeAdults(delta: number) {
     const next = Math.max(1, Math.min(4, adults + delta))

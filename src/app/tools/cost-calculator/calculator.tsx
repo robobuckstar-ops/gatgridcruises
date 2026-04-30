@@ -44,6 +44,7 @@ export function CostCalculator({ sailings }: CostCalculatorProps) {
   const [manualCruiseFare, setManualCruiseFare] = useState<number>(0)
   const [adults, setAdults] = useState<number>(2)
   const [children, setChildren] = useState<number>(0)
+  const [infants, setInfants] = useState<number>(0)
   const [nights, setNights] = useState<number>(7)
 
   // Getting There
@@ -84,50 +85,70 @@ export function CostCalculator({ sailings }: CostCalculatorProps) {
   // Get selected sailing details
   const currentSailing = sailings.find((s) => s.id === selectedSailing)
   const cruiseNights = currentSailing ? currentSailing.nights : nights
-  const partySize = adults + children
+  const partySize = adults + children + infants
   const baseCruiseFare = currentSailing ? currentSailing.lowestPrice : manualCruiseFare
 
   // Calculate all costs
   const calculations = useMemo(() => {
-    const totalParty = adults + children
+    const totalParty = adults + children + infants
+    // Stateroom occupancy capped at 4
+    const cappedParty = Math.min(totalParty, 4)
+    const cappedInfants = Math.min(infants, cappedParty)
+    // DCL fare model. baseCruiseFare in this UI is per-person for the first 2 guests.
+    // First 2 pay full per-person; 3rd/4th pay ~60%; under-3 are free for fare.
+    const perPersonRate = baseCruiseFare
+    const payingGuestsForFare = Math.max(0, cappedParty - cappedInfants)
+    let totalCruiseFare = 0
+    if (payingGuestsForFare === 1) {
+      totalCruiseFare = Math.round(perPersonRate * 1.75)
+    } else if (payingGuestsForFare === 2) {
+      totalCruiseFare = perPersonRate * 2
+    } else if (payingGuestsForFare === 3) {
+      totalCruiseFare = Math.round(perPersonRate * 2 + perPersonRate * 0.6)
+    } else if (payingGuestsForFare >= 4) {
+      totalCruiseFare = Math.round(perPersonRate * 2 + perPersonRate * 0.6 * 2)
+    }
 
-    // Cruise costs
-    const totalCruiseFare = baseCruiseFare * totalParty
+    // Adults & children pay full for transport/hotels; infants typically lap-rides/free
+    const transportParty = adults + children
+    // Drinks/dining only for adults/children
+    const adultsForDrinks = adults
+    const adultsAndKidsForDining = adults + children
 
-    // Flight costs
-    const totalFlights = flightCostPerPerson * totalParty
+    // Flight costs (infants commonly lap-infant, treat as free unless user adjusts)
+    const totalFlights = flightCostPerPerson * transportParty
 
-    // Pre-cruise hotel
+    // Pre-cruise hotel — same room for everyone, but charged per night × party (existing model)
     const preHotelCost = preHotelYes
-      ? preHotelNights * preHotelCostPerNight * totalParty
+      ? preHotelNights * preHotelCostPerNight * transportParty
       : 0
 
     // Transfer costs
     let transferCost = 0
     if (transferType === 'ground') {
-      transferCost = 39 * totalParty
+      transferCost = 39 * transportParty
     } else if (transferType === 'uber') {
-      transferCost = 45 * totalParty
+      transferCost = 45 * transportParty
     } else if (transferType === 'rental') {
-      transferCost = 60 * totalParty
+      transferCost = 60 * transportParty
     } else if (transferType === 'personal') {
       transferCost = parkingDays * 20
     }
 
-    // Gratuities (DCL standard rate as of 2024 update)
+    // Gratuities — DCL charges per guest per night for ALL ages, capped at 4 (one stateroom)
     const gratuityPerPersonPerNight = 16.0
-    const baseGratuities = gratuityPerPersonPerNight * cruiseNights * totalParty
+    const baseGratuities = gratuityPerPersonPerNight * cruiseNights * cappedParty
     const totalGratuities = gratuityOverride !== null ? gratuityOverride : baseGratuities
 
-    // Specialty dining
-    const totalSpecialtyDining = (paloMeals * 45 + remyMeals * 125) * totalParty
+    // Specialty dining — adults & older kids only (infants don't dine separately)
+    const totalSpecialtyDining = (paloMeals * 45 + remyMeals * 125) * adultsAndKidsForDining
 
-    // Drink package
+    // Drink package — adults only (kids/infants don't drink the alcohol package)
     let drinkCost = 0
     if (drinkPackageType === 'package') {
-      drinkCost = 69 * cruiseNights * totalParty
+      drinkCost = 69 * cruiseNights * adultsForDrinks
     } else if (drinkPackageType === 'casual') {
-      drinkCost = estimatedBarSpend * totalParty
+      drinkCost = estimatedBarSpend * adultsForDrinks
     }
 
     // Photo package
@@ -187,6 +208,7 @@ export function CostCalculator({ sailings }: CostCalculatorProps) {
   }, [
     adults,
     children,
+    infants,
     baseCruiseFare,
     cruiseNights,
     flightCostPerPerson,
@@ -215,6 +237,7 @@ export function CostCalculator({ sailings }: CostCalculatorProps) {
       manual: manualCruiseFare.toString(),
       adults: adults.toString(),
       children: children.toString(),
+      infants: infants.toString(),
       nights: nights.toString(),
       airport: homeAirport,
       flight: flightCostPerPerson.toString(),
@@ -247,9 +270,10 @@ export function CostCalculator({ sailings }: CostCalculatorProps) {
     setTimeout(() => setCopied(false), 2000)
   }
 
+  // Compare all-in cost against the cruise fare alone (the number Disney advertises)
   const percentageDifference =
-    baseCruiseFare > 0
-      ? Math.round(((calculations.grandTotal - baseCruiseFare * partySize) / (baseCruiseFare * partySize)) * 100)
+    calculations.totalCruiseFare > 0
+      ? Math.round(((calculations.grandTotal - calculations.totalCruiseFare) / calculations.totalCruiseFare) * 100)
       : 0
 
   return (
@@ -325,11 +349,14 @@ export function CostCalculator({ sailings }: CostCalculatorProps) {
                     placeholder="e.g., 3000"
                     className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
-                  <p className="text-xs text-slate-500 mt-1">Total for all guests: ${(baseCruiseFare * partySize).toLocaleString('en-US', { minimumFractionDigits: 2 })}</p>
+                  <p className="text-xs text-slate-500 mt-1">
+                    Total cruise fare: ${calculations.totalCruiseFare.toLocaleString('en-US', { minimumFractionDigits: 2 })}
+                    <span className="ml-1 text-slate-400">(first 2 pay full, 3rd/4th ~60%, under 3 free)</span>
+                  </p>
                 </div>
 
                 {/* Party Size */}
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-3 gap-3">
                   <div>
                     <label htmlFor="calc-adults" className="block text-sm font-semibold text-slate-700 mb-2">
                       Adults
@@ -340,8 +367,9 @@ export function CostCalculator({ sailings }: CostCalculatorProps) {
                       min="1"
                       value={adults}
                       onChange={(e) => setAdults(Math.max(1, parseInt(e.target.value) || 1))}
-                      className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
+                    <p className="text-[10px] text-slate-500 mt-1">age 18+</p>
                   </div>
                   <div>
                     <label htmlFor="calc-children" className="block text-sm font-semibold text-slate-700 mb-2">
@@ -353,10 +381,30 @@ export function CostCalculator({ sailings }: CostCalculatorProps) {
                       min="0"
                       value={children}
                       onChange={(e) => setChildren(Math.max(0, parseInt(e.target.value) || 0))}
-                      className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
+                    <p className="text-[10px] text-slate-500 mt-1">ages 3–17</p>
+                  </div>
+                  <div>
+                    <label htmlFor="calc-infants" className="block text-sm font-semibold text-slate-700 mb-2">
+                      Under 3
+                    </label>
+                    <input
+                      id="calc-infants"
+                      type="number"
+                      min="0"
+                      value={infants}
+                      onChange={(e) => setInfants(Math.max(0, parseInt(e.target.value) || 0))}
+                      className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+                    <p className="text-[10px] text-slate-500 mt-1">free fare</p>
                   </div>
                 </div>
+                {partySize > 4 && (
+                  <p className="text-xs text-amber-700 bg-amber-50 border border-amber-200 rounded px-3 py-2">
+                    Disney staterooms hold up to 4 guests. With {partySize} you'll likely need a second stateroom — costs above reflect a single 4-guest cabin.
+                  </p>
+                )}
 
                 {currentSailing && (
                   <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-3">
@@ -407,7 +455,7 @@ export function CostCalculator({ sailings }: CostCalculatorProps) {
                     placeholder="e.g., 400"
                     className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
-                  <p className="text-xs text-slate-500 mt-1">Total for all guests: ${(flightCostPerPerson * partySize).toLocaleString('en-US', { minimumFractionDigits: 2 })}</p>
+                  <p className="text-xs text-slate-500 mt-1">Total ({adults + children} non-infant guests): ${(flightCostPerPerson * (adults + children)).toLocaleString('en-US', { minimumFractionDigits: 2 })}</p>
                 </div>
 
                 {/* Pre-Cruise Hotel */}
@@ -524,7 +572,7 @@ export function CostCalculator({ sailings }: CostCalculatorProps) {
                     </span>
                   </div>
                   <p className="text-xs text-slate-600 mb-3">
-                    $16.00/person/night × {cruiseNights} nights × {partySize} guests = ${calculations.baseGratuities.toLocaleString('en-US', { minimumFractionDigits: 2 })}
+                    $16.00/person/night × {cruiseNights} nights × {Math.min(partySize, 4)} guests = ${calculations.baseGratuities.toLocaleString('en-US', { minimumFractionDigits: 2 })}
                   </p>
                   <div>
                     <label htmlFor="calc-gratuity-override" className="block text-xs font-semibold text-slate-700 mb-2">
@@ -555,7 +603,7 @@ export function CostCalculator({ sailings }: CostCalculatorProps) {
                       onChange={(e) => setPaloMeals(Math.max(0, parseInt(e.target.value) || 0))}
                       className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
-                    <p className="text-xs text-slate-500 mt-1">${(paloMeals * 45 * partySize).toLocaleString('en-US', { minimumFractionDigits: 2 })}</p>
+                    <p className="text-xs text-slate-500 mt-1">${calculations.totalSpecialtyDining > 0 ? (paloMeals * 45 * (adults + children)).toLocaleString('en-US', { minimumFractionDigits: 2 }) : '0.00'}</p>
                   </div>
                   <div>
                     <label htmlFor="calc-remy" className="block text-sm font-semibold text-slate-700 mb-2">
@@ -569,7 +617,7 @@ export function CostCalculator({ sailings }: CostCalculatorProps) {
                       onChange={(e) => setRemyMeals(Math.max(0, parseInt(e.target.value) || 0))}
                       className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
-                    <p className="text-xs text-slate-500 mt-1">${(remyMeals * 125 * partySize).toLocaleString('en-US', { minimumFractionDigits: 2 })}</p>
+                    <p className="text-xs text-slate-500 mt-1">${(remyMeals * 125 * (adults + children)).toLocaleString('en-US', { minimumFractionDigits: 2 })}</p>
                   </div>
                 </div>
 
@@ -612,13 +660,13 @@ export function CostCalculator({ sailings }: CostCalculatorProps) {
                         className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                       />
                       <p className="text-xs text-slate-500 mt-1">
-                        Total: ${(estimatedBarSpend * partySize * cruiseNights).toLocaleString('en-US', { minimumFractionDigits: 2 })}
+                        Total ({adults} adults × {cruiseNights} nights): ${(estimatedBarSpend * adults * cruiseNights).toLocaleString('en-US', { minimumFractionDigits: 2 })}
                       </p>
                     </div>
                   )}
                   {drinkPackageType === 'package' && (
                     <p className="text-xs text-slate-500 ml-6">
-                      Total: ${(69 * cruiseNights * partySize).toLocaleString('en-US', { minimumFractionDigits: 2 })}
+                      Total ({adults} adults × {cruiseNights} days): ${(69 * cruiseNights * adults).toLocaleString('en-US', { minimumFractionDigits: 2 })}
                     </p>
                   )}
                 </div>
@@ -925,15 +973,15 @@ export function CostCalculator({ sailings }: CostCalculatorProps) {
               {baseCruiseFare > 0 && (
                 <div className="bg-[#1E3A5F]/10 border border-blue-200 rounded-lg p-4 mb-6">
                   <p className="text-sm text-slate-700 mb-2">
-                    <span className="font-semibold text-blue-900">Disney advertises</span> this cruise from{' '}
-                    <span className="font-bold text-blue-900">${(baseCruiseFare * partySize).toLocaleString('en-US', { minimumFractionDigits: 2 })}</span>
+                    <span className="font-semibold text-blue-900">Cruise fare alone</span> for your party is{' '}
+                    <span className="font-bold text-blue-900">${calculations.totalCruiseFare.toLocaleString('en-US', { minimumFractionDigits: 2 })}</span>
                   </p>
                   <p className="text-sm text-slate-700">
-                    <span className="font-semibold text-blue-900">Your estimated cost</span> is{' '}
+                    <span className="font-semibold text-blue-900">Your all-in estimated cost</span> is{' '}
                     <span className="font-bold text-amber-600">${calculations.grandTotal.toLocaleString('en-US', { minimumFractionDigits: 2 })}</span>
                   </p>
                   <p className="text-sm mt-2 font-semibold text-amber-700">
-                    That's <span className="text-lg">{percentageDifference}%</span> more than advertised
+                    That's <span className="text-lg">{percentageDifference}%</span> more than the advertised cruise fare
                   </p>
                 </div>
               )}

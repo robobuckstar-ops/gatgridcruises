@@ -13,11 +13,11 @@ const PORT_FEES_BY_REGION: Record<string, number> = {
 }
 
 /**
- * Gratuity rates (per person per night)
+ * Gratuity rates (per person per night) — Disney Cruise Line current rates
  */
-const GRATUITY_RATES = {
-  standard: 14.50,
-  concierge: 16.50,
+export const GRATUITY_RATES = {
+  standard: 16.00,
+  concierge: 18.50,
 }
 
 /**
@@ -135,12 +135,20 @@ export function getPortFeesEstimate(region: string | undefined): string {
 
 /**
  * Adjust a 2-guest base price for a different guest count.
- * Single supplement rule: 1 guest pays ~1.75× per-person rate.
- * 3rd/4th guest: each additional guest adds ~60% of per-person rate.
+ * DCL pricing: first 2 guests pay the base fare, 3rd/4th pay ~60% of the per-person rate.
+ * Single supplement: 1 guest pays ~1.75× per-person rate.
+ * Children under 3 are free for cruise fare but still count for stateroom occupancy.
  */
-export function getPriceForGuests(basePrice: number, guestCount: number): number {
+export function getPriceForGuests(
+  basePrice: number,
+  guestCount: number,
+  infantsUnder3: number = 0
+): number {
+  const payingGuests = Math.max(0, guestCount - infantsUnder3)
   const perPersonRate = basePrice / 2
-  switch (guestCount) {
+  switch (payingGuests) {
+    case 0:
+      return 0
     case 1:
       return Math.round(perPersonRate * 1.75)
     case 2:
@@ -153,22 +161,35 @@ export function getPriceForGuests(basePrice: number, guestCount: number): number
 }
 
 /**
- * Calculate out-the-door total adjusted for guest count
+ * Calculate out-the-door total adjusted for guest count.
+ * Infants under 3 are free for fare; per DCL policy gratuities and port fees still apply.
  */
 export function getOutTheDoorTotalForGuests(
   basePrice: number,
   nights: number,
   guestCount: number,
-  region: string = 'other'
-): { total: number; perPerson: number; perPersonPerNight: number; adjustedBase: number; portFees: number; gratuities: number; guests: number } {
-  const adjustedBase = getPriceForGuests(basePrice, guestCount)
+  region: string = 'other',
+  infantsUnder3: number = 0
+): {
+  total: number
+  perPerson: number
+  perPersonPerNight: number
+  adjustedBase: number
+  portFees: number
+  gratuities: number
+  guests: number
+  payingGuests: number
+} {
   const guests = Math.min(guestCount, 4)
+  const adjustedBase = getPriceForGuests(basePrice, guests, infantsUnder3)
+  const payingGuests = Math.max(0, guests - infantsUnder3)
   const portFees = getPortFees(region, nights, guests)
   const gratuities = GRATUITY_RATES.standard * guests * nights
 
   const total = adjustedBase + portFees + gratuities
-  const perPerson = Math.round(total / guests)
+  const divisor = guests > 0 ? guests : 1
+  const perPerson = Math.round(total / divisor)
   const perPersonPerNight = Math.round(perPerson / nights)
 
-  return { total, perPerson, perPersonPerNight, adjustedBase, portFees, gratuities, guests }
+  return { total, perPerson, perPersonPerNight, adjustedBase, portFees, gratuities, guests, payingGuests }
 }
