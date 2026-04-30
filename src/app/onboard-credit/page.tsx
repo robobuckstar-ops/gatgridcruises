@@ -7,17 +7,17 @@ import { OBCDisclaimer } from '@/components/ui/obc-disclaimer'
 export const metadata: Metadata = {
   title: 'Free Onboard Credit — GatGrid Cruises',
   description:
-    'Book your Disney cruise through GatGrid Cruises and receive up to $1,000 in free onboard credit. Learn what OBC is, what you can spend it on, and how to qualify.',
+    'Plan your Disney cruise with the GatGrid Cruises concierge and receive up to $1,000 in free onboard credit. Learn what OBC is, what you can spend it on, and how to qualify.',
   openGraph: {
     title: 'Free Onboard Credit — GatGrid Cruises',
-    description: 'Book your Disney cruise through GatGrid Cruises and receive up to $1,000 in free onboard credit.',
+    description: 'Plan your Disney cruise with the GatGrid Cruises concierge and receive up to $1,000 in free onboard credit.',
     url: 'https://gatgridcruises.com/onboard-credit',
     images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Free Onboard Credit — GatGrid Cruises',
-    description: 'Book your Disney cruise through GatGrid Cruises and receive up to $1,000 in free onboard credit.',
+    description: 'Plan your Disney cruise with the GatGrid Cruises concierge and receive up to $1,000 in free onboard credit.',
     images: ['https://gatgridcruises.com/og-image.png'],
   },
 }
@@ -75,7 +75,7 @@ export default function OnboardCreditPage() {
             Get Up to $1,000 in Free Onboard Credit
           </h1>
           <p className="text-blue-200 text-lg max-w-2xl mx-auto mb-8">
-            When you book your Disney cruise through GatGrid Cruises, we pass a portion of our commission back to you as free spending money onboard.
+            When you plan your Disney cruise with our concierge (via Boardwalk Travel Agency), we pass a portion of our commission back to you as free spending money onboard.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

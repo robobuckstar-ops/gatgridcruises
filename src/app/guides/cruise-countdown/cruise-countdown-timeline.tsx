@@ -1103,7 +1103,7 @@ export function CruiseCountdownTimeline() {
             Want Someone to Handle All of This for You?
           </h2>
           <p className="text-blue-200 text-lg mb-8 max-w-xl mx-auto">
-            Book through GatGrid and get a personal cruise concierge who turns this entire
+            Plan with our concierge and get a personal cruise specialist who turns this entire
             timeline into a hands-off experience.
           </p>
 
