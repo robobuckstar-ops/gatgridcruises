@@ -187,7 +187,7 @@ export default function OnboardCreditPage() {
 
         {/* Why Book With GatGrid */}
         <section>
-          <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-6">Why Book Through GatGrid?</h2>
+          <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-6">Why Use Our Free Concierge Service?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {[
               {

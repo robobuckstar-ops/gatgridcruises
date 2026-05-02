@@ -127,7 +127,7 @@ export default function BookPage() {
         <div className="rounded-2xl bg-[#1E3A5F] p-6 mb-2">
           <div className="flex items-center gap-3 mb-3">
             <Gift className="w-6 h-6 text-[#D4AF37] flex-shrink-0" aria-hidden="true" />
-            <h2 className="font-fraunces text-xl font-bold text-white">Book Through GatGrid — Get Free Onboard Credit</h2>
+            <h2 className="font-fraunces text-xl font-bold text-white">Get Free Onboard Credit With Our Concierge Service</h2>
           </div>
           <p className="text-blue-200 text-sm mb-5">
             The more you cruise, the more free spending money we add to your onboard account. This perk isn&rsquo;t available when booking directly with Disney.
