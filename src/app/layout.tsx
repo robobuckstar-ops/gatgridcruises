@@ -10,6 +10,7 @@ import { generateWebsiteSchema, generateOrganizationSchema } from '@/lib/structu
 import { StructuredData } from '@/components/ui/structured-data'
 import { CopyProtection } from '@/components/ui/copy-protection'
 import { FamilyPromoBanner } from '@/components/ui/family-promo-banner'
+import { ReferralTracker } from '@/components/ui/referral-tracker'
 
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-22TCMRK076'
 
@@ -99,6 +100,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <a href="/api/honeypot?src=nav" tabIndex={-1}>Sailing Index</a>
         </div>
         <CopyProtection />
+        <ReferralTracker />
         <SkipNav />
         <Header />
         <FamilyPromoBanner />

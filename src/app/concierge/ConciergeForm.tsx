@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { CheckCircle, Loader2, Send, Anchor } from 'lucide-react'
+import { readReferralCookie } from '@/components/ui/referral-tracker'
 
 const WEBHOOK_URL = 'https://hook.us2.make.com/x0omp8bq5bbyl2jgjcfv7a9kod4e3ame'
 
@@ -73,9 +74,11 @@ export function ConciergeForm() {
     setErrorMsg('')
 
     try {
+      const referralCode = readReferralCookie()
       const payload = {
         ...form,
         ...(sailingParam ? { sailing_interest: sailingParam } : {}),
+        ...(referralCode ? { referral_code: referralCode } : {}),
       }
       const res = await fetch(WEBHOOK_URL, {
         method: 'POST',
@@ -83,6 +86,26 @@ export function ConciergeForm() {
         body: JSON.stringify(payload),
       })
       if (!res.ok) throw new Error(`HTTP ${res.status}`)
+
+      // Also log the conversion to our Airtable Referral Leads table when
+      // the visitor came in through a partner code. Make.com remains the
+      // primary funnel; this is a safety net so partner attribution is
+      // never lost if the Make scenario is paused.
+      if (referralCode) {
+        fetch('/api/referral/lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            referral_code: referralCode,
+            lead_name: form.name,
+            lead_email: form.email,
+            lead_source: 'Concierge Form',
+            ...(sailingParam ? { notes: `Sailing interest: ${sailingParam}` } : {}),
+          }),
+          keepalive: true,
+        }).catch(() => {})
+      }
+
       setStatus('success')
     } catch {
       setStatus('error')

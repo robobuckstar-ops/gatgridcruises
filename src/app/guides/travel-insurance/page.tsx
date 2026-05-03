@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { Shield, ChevronRight, CheckCircle, XCircle, AlertTriangle, CreditCard } from 'lucide-react'
 import { GetQuoteCTA } from '@/components/get-quote-cta'
+import { InsurancePartners } from '@/components/ui/insurance-partners'
 
 export const metadata: Metadata = {
   title: 'Do You Need Travel Insurance for a Disney Cruise?',
@@ -580,6 +581,9 @@ export default function TravelInsurancePage() {
           </a>
         </div>
       </section>
+
+      {/* Compare Insurance Providers */}
+      <InsurancePartners />
 
       {/* Who Should Skip Insurance */}
       <section className="py-12 md:py-16 bg-white">

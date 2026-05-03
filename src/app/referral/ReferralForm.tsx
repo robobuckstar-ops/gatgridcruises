@@ -2,9 +2,9 @@
 
 import { useState } from 'react'
 import { CheckCircle, Loader2, Send, Copy } from 'lucide-react'
-import { generateReferralCode, buildReferralUrl } from '@/lib/referral'
+import { buildReferralUrl } from '@/lib/referral'
 
-const WEBHOOK_URL = 'https://hook.us2.make.com/REFERRAL_PLACEHOLDER'
+const SIGNUP_ENDPOINT = '/api/referral/signup'
 
 const PLATFORM_OPTIONS = [
   { value: '', label: 'Select primary platform' },
@@ -82,24 +82,27 @@ export function ReferralForm() {
     setStatus('loading')
     setErrorMsg('')
 
-    const code = generateReferralCode(form.name)
-    const referralUrl = buildReferralUrl(code)
-
     try {
-      const { website_url: _hp, ...safeForm } = form
-      const payload = { ...safeForm, referral_code: code, referral_url: referralUrl }
-      const res = await fetch(WEBHOOK_URL, {
+      const res = await fetch(SIGNUP_ENDPOINT, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
+        body: JSON.stringify(form),
       })
-      if (!res.ok) throw new Error(`HTTP ${res.status}`)
-      setReferralCode(code)
+      const data = (await res.json().catch(() => ({}))) as {
+        code?: string
+        error?: string
+      }
+      if (!res.ok || !data.code) {
+        throw new Error(data.error || `HTTP ${res.status}`)
+      }
+      setReferralCode(data.code)
       setStatus('success')
-    } catch {
+    } catch (err) {
       setStatus('error')
       setErrorMsg(
-        'Something went wrong. Please email us directly at grayson@gatgridcruises.com'
+        err instanceof Error && err.message && err.message !== 'HTTP 502'
+          ? err.message
+          : 'Something went wrong. Please email us directly at grayson@gatgridcruises.com',
       )
     }
   }
