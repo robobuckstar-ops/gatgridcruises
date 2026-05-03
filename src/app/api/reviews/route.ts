@@ -1,4 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { checkRateLimit, getClientIp } from '@/lib/rate-limit'
+
+function sanitize(value: unknown, maxLen: number): string {
+  return String(value ?? '').replace(/[<>]/g, '').trim().slice(0, maxLen)
+}
 
 export interface Review {
   id: string
@@ -88,18 +93,52 @@ export async function GET() {
 }
 
 export async function POST(request: NextRequest) {
+  const ip = getClientIp(request)
+
+  // 5 reviews per hour per IP
+  const { allowed, retryAfter } = checkRateLimit(ip, 'reviews', 5, 60 * 60 * 1000)
+  if (!allowed) {
+    return NextResponse.json(
+      { error: 'Too many requests. Please try again later.' },
+      { status: 429, headers: { 'Retry-After': String(retryAfter) } }
+    )
+  }
+
   try {
     const body = await request.json()
+
+    // Honeypot — silently 200 so bots can't tell they've been caught
+    if (body._honeypot) {
+      return NextResponse.json({ success: true })
+    }
+
+    const rating = Number(body.rating)
+    if (!Number.isInteger(rating) || rating < 1 || rating > 5) {
+      return NextResponse.json({ error: 'Rating must be an integer 1–5' }, { status: 400 })
+    }
+
+    const shipId = sanitize(body.shipId, 50)
+    const roomNumber = sanitize(body.roomNumber, 20)
+    const category = sanitize(body.category, 50)
+    const title = sanitize(body.title, 200)
+    const reviewBody = sanitize(body.body, 4000)
+    const sailDate = sanitize(body.sailDate, 20)
+    const reviewerName = sanitize(body.reviewerName, 100) || 'Anonymous'
+
+    if (!shipId || !category || !title || !reviewBody) {
+      return NextResponse.json({ error: 'Required fields missing' }, { status: 400 })
+    }
+
     const review: Review = {
       id: `review-${Date.now()}`,
-      shipId: body.shipId,
-      roomNumber: body.roomNumber,
-      category: body.category,
-      rating: body.rating,
-      title: body.title,
-      body: body.body,
-      sailDate: body.sailDate,
-      reviewerName: body.reviewerName || 'Anonymous',
+      shipId,
+      roomNumber,
+      category,
+      rating,
+      title,
+      body: reviewBody,
+      sailDate,
+      reviewerName,
       createdAt: new Date().toISOString(),
       helpful: 0,
     }

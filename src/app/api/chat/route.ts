@@ -1,5 +1,6 @@
 import Anthropic from '@anthropic-ai/sdk'
 import { NextRequest } from 'next/server'
+import { checkRateLimit, getClientIp } from '@/lib/rate-limit'
 
 const client = new Anthropic()
 
@@ -58,6 +59,19 @@ When discussing ships, give specific, accurate facts. If asked about a compariso
 - If you don't know something specific, say so and suggest contacting Grayson directly`
 
 export async function POST(request: NextRequest) {
+  // 30 messages per hour per IP — Anthropic API costs money per call
+  const ip = getClientIp(request)
+  const { allowed, retryAfter } = checkRateLimit(ip, 'chat', 30, 60 * 60 * 1000)
+  if (!allowed) {
+    return new Response(
+      JSON.stringify({ error: 'Too many requests. Please try again later.' }),
+      {
+        status: 429,
+        headers: { 'Content-Type': 'application/json', 'Retry-After': String(retryAfter) },
+      }
+    )
+  }
+
   try {
     const { message, history } = await request.json()
 

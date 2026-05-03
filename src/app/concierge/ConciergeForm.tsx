@@ -4,8 +4,6 @@ import { useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { CheckCircle, Loader2, Send, Anchor } from 'lucide-react'
 
-const WEBHOOK_URL = 'https://hook.us2.make.com/x0omp8bq5bbyl2jgjcfv7a9kod4e3ame'
-
 const TIMEZONES = [
   { value: '', label: 'Select timezone (optional)' },
   { value: 'ET', label: 'Eastern Time (ET)' },
@@ -37,6 +35,7 @@ interface FormData {
   family_members: string
   how_found_us: string
   notes: string
+  _honeypot: string
 }
 
 const inputClass =
@@ -57,6 +56,7 @@ export function ConciergeForm() {
     family_members: '',
     how_found_us: '',
     notes: '',
+    _honeypot: '',
   })
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [errorMsg, setErrorMsg] = useState('')
@@ -77,7 +77,7 @@ export function ConciergeForm() {
         ...form,
         ...(sailingParam ? { sailing_interest: sailingParam } : {}),
       }
-      const res = await fetch(WEBHOOK_URL, {
+      const res = await fetch('/api/concierge', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
@@ -111,6 +111,20 @@ export function ConciergeForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4" aria-label="Concierge service inquiry form" noValidate>
+      {/* Honeypot — bots fill it, real users never see it. Submission is silently dropped server-side. */}
+      <div className="gg-trap" aria-hidden="true">
+        <label htmlFor="concierge-website">Website (leave blank)</label>
+        <input
+          id="concierge-website"
+          type="text"
+          name="_honeypot"
+          tabIndex={-1}
+          autoComplete="off"
+          value={form._honeypot}
+          onChange={handleChange}
+        />
+      </div>
+
       {sailingParam && (
         <div className="bg-[#D4AF37]/10 border border-[#D4AF37]/30 rounded-xl px-4 py-3 flex items-center gap-2">
           <Anchor className="w-4 h-4 text-[#D4AF37] flex-shrink-0" aria-hidden="true" />

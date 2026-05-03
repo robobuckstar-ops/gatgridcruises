@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createSessionToken, COOKIE_NAME } from '@/lib/portal-auth'
+import { checkRateLimit, getClientIp } from '@/lib/rate-limit'
 import {
   BOOKING_FIELDS,
   fetchBookingByName,
@@ -10,6 +11,16 @@ import {
 export const runtime = 'nodejs'
 
 export async function POST(request: NextRequest) {
+  // 5 attempts per 15 min per IP — slow brute force without breaking real retries
+  const ip = getClientIp(request)
+  const { allowed, retryAfter } = checkRateLimit(ip, 'portal-login', 5, 15 * 60 * 1000)
+  if (!allowed) {
+    return NextResponse.json(
+      { error: 'Too many login attempts. Please try again later.' },
+      { status: 429, headers: { 'Retry-After': String(retryAfter) } }
+    )
+  }
+
   try {
     const apiKey = process.env.AIRTABLE_API_KEY
     if (!apiKey) {

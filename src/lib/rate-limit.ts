@@ -5,6 +5,14 @@ interface RateLimitEntry {
 
 const store = new Map<string, RateLimitEntry>()
 
+export function getClientIp(req: { headers: Headers }): string {
+  return (
+    req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
+    req.headers.get('x-real-ip') ||
+    '127.0.0.1'
+  )
+}
+
 export function checkRateLimit(
   ip: string,
   key: string,
