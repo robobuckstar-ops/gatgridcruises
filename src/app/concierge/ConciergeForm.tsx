@@ -99,11 +99,15 @@ export function ConciergeForm() {
           <CheckCircle className="w-8 h-8 text-[#D4AF37]" />
         </div>
         <h3 className="font-fraunces text-2xl font-bold text-white mb-3">
-          We got your message!
+          Thanks! We got your inquiry.
         </h3>
-        <p className="font-inter text-blue-200 max-w-md mx-auto leading-relaxed">
-          Grayson will be in touch within 1 business day to get your trip set up. Keep an
-          eye on your inbox.
+        <p className="font-inter text-blue-200 max-w-md mx-auto leading-relaxed mb-3">
+          Grayson will personally follow up within the hour. We&apos;ve also sent a
+          confirmation email to your inbox — check your spam folder if you don&apos;t see
+          it within a few minutes.
+        </p>
+        <p className="font-inter text-sm text-blue-300/80 max-w-md mx-auto">
+          In the meantime, browse our <a href="/guides/cruise-countdown" className="underline hover:text-[#D4AF37]">Disney Cruise Countdown Checklist</a> to get a head start on planning.
         </p>
       </div>
     )

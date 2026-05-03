@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { Resend } from 'resend'
 import { checkRateLimit } from '@/lib/rate-limit'
+import { CONCIERGE_RECEIVED } from '@/lib/email-templates'
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
@@ -71,9 +73,32 @@ export async function POST(request: NextRequest) {
       console.error('[concierge] webhook returned non-2xx:', res.status)
       return NextResponse.json({ error: 'Submission failed' }, { status: 502 })
     }
-    return NextResponse.json({ success: true })
   } catch (err) {
     console.error('[concierge] webhook error:', err)
     return NextResponse.json({ error: 'Submission failed' }, { status: 502 })
   }
+
+  // Fire-and-forget auto-acknowledgment email. Failures here must not break
+  // the user response — the webhook already succeeded.
+  if (process.env.RESEND_API_KEY) {
+    try {
+      const resend = new Resend(process.env.RESEND_API_KEY)
+      await resend.emails.send({
+        from: '"Dr. Grayson Starbuck, DPT" <bookings@gatgridcruises.com>',
+        replyTo: 'bookings@gatgridcruises.com',
+        to: email,
+        subject: 'Thanks for reaching out — I\'ll be in touch within the hour',
+        html: CONCIERGE_RECEIVED({
+          name,
+          sailingInterest: payload.sailing_interest,
+        }),
+      })
+    } catch (emailErr) {
+      console.error('[concierge] auto-ack email failed:', emailErr)
+    }
+  } else {
+    console.warn('[concierge] RESEND_API_KEY not set; auto-ack email not sent')
+  }
+
+  return NextResponse.json({ success: true })
 }
