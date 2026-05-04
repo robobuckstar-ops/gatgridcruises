@@ -70,6 +70,16 @@ export function Footer() {
                     My Trip ↗
                   </Link>
                 </li>
+                <li>
+                  <Link href="/already-booked" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                    Already Booked?
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/giving-back" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                    Giving Back
+                  </Link>
+                </li>
               </ul>
             </div>
 
@@ -107,6 +117,11 @@ export function Footer() {
                 <li>
                   <Link href="/tools/flights" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
                     Flight Finder
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/flight-deals" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                    Flight Deal Alerts
                   </Link>
                 </li>
                 <li>
