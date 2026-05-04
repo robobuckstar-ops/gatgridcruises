@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { CheckCircle, XCircle } from 'lucide-react'
 import { NewsletterSignup } from '@/components/newsletter-signup'
+import { BookingInquiryButton } from '@/components/ui/booking-inquiry-button'
 import {
   getStateroomCategories,
   getStateroomComparisonFeatures,
@@ -258,23 +259,14 @@ export default function StateroomComparisonPage() {
         </section>
 
         {/* CTA */}
-        <section className="mb-12">
-          <div className="grid sm:grid-cols-2 gap-4">
-            <Link
-              href="/tools/cruise-cost-calculator"
-              className="block text-center px-6 py-4 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition"
-            >
-              Estimate Your Cruise Cost
-            </Link>
-            <a
-              href="https://www.disneycruise.disney.go.com/"
-              
-              rel="noopener noreferrer"
-              className="block text-center px-6 py-4 border-2 border-slate-300 text-slate-700 font-semibold rounded-xl hover:border-blue-400 transition"
-            >
-              Check Price on Disney Cruise Line →
-            </a>
-          </div>
+        <section className="mb-12 space-y-4">
+          <Link
+            href="/tools/cruise-cost-calculator"
+            className="block text-center px-6 py-4 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition"
+          >
+            Estimate Your Cruise Cost
+          </Link>
+          <BookingInquiryButton variant="inline" label="Get a Free Quote" />
         </section>
 
         {/* Newsletter */}

@@ -11,6 +11,7 @@ import { BuyWaitBadge } from '@/components/ui/buy-wait-badge'
 import { PriceTrend } from '@/components/ui/price-trend'
 import { Ship, Calendar, MapPin, Clock, DollarSign, Anchor, BedDouble, Car, Building2, ArrowRight, Check, X as XIcon, Info, TrendingDown, TrendingUp, ShoppingBag, Flame } from 'lucide-react'
 import { BookingInquiryButton } from '@/components/ui/booking-inquiry-button'
+import { WhyBookWithUs } from '@/components/ui/why-book-with-us'
 
 const PORT_GUIDE_SLUGS: Record<string, string> = {
   'Castaway Cay': 'castaway-cay',
@@ -352,6 +353,9 @@ export default async function SailingDetailPage({ params }: PageProps) {
               </div>
             </section>
 
+            {/* Why request through us — value prop */}
+            <WhyBookWithUs variant="inline" />
+
             {/* Booking CTA — middle */}
             <BookingInquiryButton sailing={sailing} variant="inline" />
 
@@ -565,6 +569,9 @@ export default async function SailingDetailPage({ params }: PageProps) {
 
             {/* Booking inquiry CTA */}
             <BookingInquiryButton sailing={sailing} variant="sidebar" />
+
+            {/* Why request through us — value prop */}
+            <WhyBookWithUs variant="compact" />
           </div>
         </div>
       </div>

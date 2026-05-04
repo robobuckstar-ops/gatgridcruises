@@ -4,6 +4,7 @@ import { useState, useMemo } from 'react'
 import Link from 'next/link'
 import { ships as DCL_SHIPS } from '@/data/ships'
 import { GRATUITY_RATES, getPriceForGuests } from '@/lib/pricing'
+import { BookingInquiryButton } from '@/components/ui/booking-inquiry-button'
 
 const SHIP_MULTIPLIERS: Record<string, number> = {
   'disney-magic': 1.0,
@@ -319,23 +320,13 @@ export function CruiseCostCalculator() {
         <div className="px-6 py-4 bg-amber-50 border-t border-amber-200">
           <p className="text-xs text-amber-800">
             <strong>Note:</strong> These are estimates based on typical Disney Cruise Line pricing ranges.
-            Actual prices vary by itinerary, season, availability, and promotions.
-            Always check current prices directly with Disney.
+            Actual prices vary by itinerary, season, availability, and promotions. We&apos;ll confirm
+            real-time pricing when you request a quote.
           </p>
         </div>
 
         <div className="p-6">
-          <a
-            href="https://disneycruise.disney.go.com"
-            
-            rel="noopener noreferrer"
-            className="block w-full text-center py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold transition-colors"
-          >
-            Check Current Prices on Disney Cruise Line →
-          </a>
-          <p className="text-xs text-slate-400 text-center mt-2">
-            Opens disneycruise.disney.go.com — official Disney site, not affiliated.
-          </p>
+          <BookingInquiryButton variant="inline" />
         </div>
       </div>
 
