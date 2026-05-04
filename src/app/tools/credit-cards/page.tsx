@@ -181,8 +181,8 @@ export default function CreditCardsPage() {
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6 p-4 bg-slate-50 rounded-xl">
                     <div>
                       <p className="text-xs text-slate-500 mb-1">Signup Bonus</p>
-                      <p className="font-fraunces font-bold text-[#1E3A5F] text-lg">60,000 pts</p>
-                      <p className="text-xs text-slate-400">≈ $750 value</p>
+                      <p className="font-fraunces font-bold text-[#1E3A5F] text-lg">75,000 pts</p>
+                      <p className="text-xs text-slate-400">≈ $938 value</p>
                     </div>
                     <div>
                       <p className="text-xs text-slate-500 mb-1">On Travel</p>
@@ -205,7 +205,7 @@ export default function CreditCardsPage() {
                     <p className="text-sm font-semibold text-slate-900 mb-1">Why This Card?</p>
                     <p className="text-sm text-slate-600 leading-relaxed">
                       The Chase Sapphire Preferred is the best starter travel card for Disney cruise families.
-                      The 60,000-point signup bonus is worth $750 toward flights or hotels — or significantly
+                      The 75,000-point signup bonus is worth $938 toward flights or hotels — or significantly
                       more when transferred to Southwest, United, Hyatt, or Marriott. Book your cruise fare
                       for 2x points and get automatic trip cancellation insurance up to $10,000 per trip with
                       no extra enrollment required.
@@ -215,8 +215,8 @@ export default function CreditCardsPage() {
                   <ul className="space-y-3 mb-6">
                     {[
                       {
-                        title: '60,000 points after $4,000 spend in first 3 months',
-                        sub: 'Worth $750 in Chase Travel — or more when transferred to Southwest or Hyatt',
+                        title: '75,000 points after $4,000 spend in first 3 months',
+                        sub: 'Worth $938 in Chase Travel — or more when transferred to Southwest or Hyatt',
                       },
                       {
                         title: '5x on travel through Chase Travel · 3x on dining',
@@ -495,7 +495,7 @@ export default function CreditCardsPage() {
                   step: 2,
                   color: 'bg-[#1E3A5F] text-white',
                   title: 'Transfer Chase or Amex points to airline partners for flights',
-                  desc: 'Chase Ultimate Rewards transfer 1:1 to Southwest Rapid Rewards. A 60,000-point Sapphire bonus can fund 2 round trips to MCO. Amex Membership Rewards transfer to Delta, British Airways, and Singapore Airlines for premium cabin redemptions.',
+                  desc: 'Chase Ultimate Rewards transfer 1:1 to Southwest Rapid Rewards. A 75,000-point Sapphire Preferred bonus can fund 2+ round trips to MCO. Amex Membership Rewards transfer to Delta, British Airways, and Singapore Airlines for premium cabin redemptions.',
                 },
                 {
                   step: 3,
@@ -1028,7 +1028,7 @@ export default function CreditCardsPage() {
               {
                 name: 'Chase Sapphire Reserve',
                 fee: '$550 / yr',
-                bonus: '75,000 pts ($1,125)',
+                bonus: '150,000 pts ($2,250)',
                 earn: '3x travel · 10x Chase Travel',
                 why: 'Premium Chase card with $300 annual travel credit, Priority Pass lounge access, and superior trip protections. Best if you travel 4+ times per year.',
               },

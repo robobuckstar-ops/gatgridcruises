@@ -154,6 +154,25 @@ export default async function ShipDetailPage({ params }: PageProps) {
               </div>
             </section>
 
+            {/* Upcoming Sailings — fallback when none are listed */}
+            {shipSailings.length === 0 && (
+              <section>
+                <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-4">Upcoming Sailings on This Ship</h2>
+                <div className="rounded-lg border border-slate-200 bg-slate-50 p-6">
+                  <p className="text-gray-700 mb-3">
+                    We don&apos;t have current sailings listed for the {ship.name} in our deal feed yet. Disney releases inventory in waves — check back soon, or browse all sailings to see what&apos;s available across the fleet.
+                  </p>
+                  <Link
+                    href="/deals"
+                    className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors"
+                  >
+                    Browse All Sailings
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+              </section>
+            )}
+
             {/* Upcoming Sailings */}
             {shipSailings.length > 0 && (
               <section>

@@ -53,6 +53,16 @@ const ports = [
     color: 'emerald',
   },
   {
+    slug: 'lookout-cay',
+    name: 'Lookout Cay at Lighthouse Point',
+    location: 'Eleuthera, Bahamas',
+    flag: '🪸',
+    description: "Disney's second private destination, opened June 2024 on Eleuthera. Designed with Bahamian artists and chefs — Junkanoo culture, local cuisine, and quieter beaches than Castaway Cay.",
+    highlights: ['Opened June 2024', 'Bahamian-inspired food', 'Live Junkanoo performances', 'Adults-only Serenity Cove', 'Walking trails through native flora'],
+    sailings: '5-night Bahamas itineraries from Florida',
+    color: 'cyan',
+  },
+  {
     slug: 'cozumel',
     name: 'Cozumel, Mexico',
     location: 'Quintana Roo, Mexico',
@@ -184,6 +194,7 @@ export default function PortsHubPage() {
                   { port: 'Port Canaveral', bestFor: 'Families flying in, park extensions', activity: 'Relaxed', time: 'Embarkation day' },
                   { port: 'Nassau', bestFor: 'Beaches, water sports, quick excursions', activity: 'Moderate', time: '8 hrs in port' },
                   { port: 'Castaway Cay', bestFor: 'Everyone — pure Disney magic', activity: 'All levels', time: '7–8 hrs' },
+                  { port: 'Lookout Cay', bestFor: 'Bahamian culture, quieter beaches, food', activity: 'Relaxed–Moderate', time: '7–8 hrs' },
                   { port: 'Cozumel', bestFor: 'Snorkeling, diving, Mexican culture', activity: 'Active', time: '7–9 hrs in port' },
                 ].map((row, i) => (
                   <tr key={row.port} className={i % 2 === 0 ? 'bg-slate-50' : 'bg-white'}>

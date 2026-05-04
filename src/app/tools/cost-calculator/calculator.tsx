@@ -919,7 +919,7 @@ export function CostCalculator({ sailings }: CostCalculatorProps) {
                       <span className="text-lg">✈️</span>
                       <div className="flex-1">
                         <p className="font-medium text-sm text-slate-900 group-hover:text-[#D4AF37]">Cover your flights with a signup bonus</p>
-                        <p className="text-xs text-slate-600 mt-0.5">The Chase Sapphire Preferred 60K bonus is worth ~$750 in travel</p>
+                        <p className="text-xs text-slate-600 mt-0.5">The Chase Sapphire Preferred 75K bonus is worth ~$938 in travel</p>
                       </div>
                     </div>
                   </a>

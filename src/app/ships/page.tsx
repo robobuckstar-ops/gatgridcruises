@@ -6,7 +6,7 @@ import { getShips } from '@/lib/data'
 export const metadata: Metadata = {
   title: 'Disney Cruise Line Ships — Fleet Guide & Comparison',
   description:
-    'Compare every Disney Cruise Line ship — Disney Magic, Wonder, Dream, Fantasy, Wish, Treasure, and Adventure. Specs, highlights, staterooms, and deals for each vessel.',
+    'Compare every Disney Cruise Line ship — Disney Magic, Wonder, Dream, Fantasy, Wish, Treasure, Destiny, and Adventure. Specs, highlights, staterooms, and deals for each vessel.',
   openGraph: {
     title: 'Disney Cruise Line Ships — Fleet Guide & Comparison',
     description:

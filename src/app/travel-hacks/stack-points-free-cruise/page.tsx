@@ -112,7 +112,7 @@ export default function StackPointsForFreeCruise() {
 
           <ul className="text-slate-600 space-y-4 mb-6">
             <li>
-              <strong>Card 1 - Chase Sapphire Preferred (60K points / $750 value):</strong> This is
+              <strong>Card 1 - Chase Sapphire Preferred (75K points / $938 value):</strong> This is
               your anchor card for flights and travel bookings through the Chase portal
             </li>
             <li>
@@ -128,7 +128,7 @@ export default function StackPointsForFreeCruise() {
 
           <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded my-6">
             <p className="text-sm text-slate-700 mb-2">
-              <strong>Chase Trifecta Total Bonuses:</strong> 60K + 150K + 90K = 300K points
+              <strong>Chase Trifecta Total Bonuses:</strong> 75K + 150K + 90K = 315K points
             </p>
             <p className="text-sm text-slate-700">
               <strong>Value:</strong> ~$4,500 in the Chase Travel Portal (enough for a full 7-night
@@ -180,7 +180,7 @@ export default function StackPointsForFreeCruise() {
 
           <ul className="text-slate-600 space-y-4 mb-6">
             <li>
-              <strong>Month 1 - Chase Sapphire Preferred (60K / $750):</strong> Flexible travel
+              <strong>Month 1 - Chase Sapphire Preferred (75K / $938):</strong> Flexible travel
               portal rewards
             </li>
             <li>
@@ -194,7 +194,7 @@ export default function StackPointsForFreeCruise() {
 
           <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded my-6">
             <p className="text-sm text-slate-700 mb-2">
-              <strong>Hybrid Mix Total Bonuses:</strong> 60K + 75K + 60K = 195K points/miles
+              <strong>Hybrid Mix Total Bonuses:</strong> 75K + 75K + 60K = 210K points/miles
             </p>
             <p className="text-sm text-slate-700">
               <strong>Value:</strong> ~$4,500-5,000 (plenty for a 7-night cruise, or a combination
@@ -264,7 +264,7 @@ export default function StackPointsForFreeCruise() {
           </p>
 
           <ul className="text-slate-600 space-y-2 mb-6">
-            <li>Chase Sapphire Preferred: 60,000 points = $900 in travel portal</li>
+            <li>Chase Sapphire Preferred: 75,000 points = $938 in travel portal</li>
             <li>Capital One Venture X: 75,000 miles = $750 in travel credit</li>
             <li>Amex Gold: 60,000 points = $720 via Amex Travel</li>
           </ul>

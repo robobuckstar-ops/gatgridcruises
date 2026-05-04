@@ -100,7 +100,7 @@ export default function FlyFreeToCruisePort() {
           <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded my-6">
             <p className="text-sm text-slate-700">
               <span className="font-semibold">Key insight:</span> The Chase Sapphire Preferred
-              offers 60,000 points worth roughly $750 via the Chase Travel Portal—enough to cover
+              offers 75,000 points worth roughly $938 via the Chase Travel Portal—enough to cover
               flights for most cruisers traveling within North America.
             </p>
           </div>
@@ -116,9 +116,9 @@ export default function FlyFreeToCruisePort() {
           </p>
 
           <p className="text-slate-600 leading-relaxed mb-4">
-            With Chase Sapphire Preferred's 60,000 point welcome bonus (worth $750 in the Chase
-            Travel Portal), you can cover your flights three times over. That's free travel for
-            your entire family, plus $150-200 left over for other pre-cruise expenses.
+            With Chase Sapphire Preferred's 75,000 point welcome bonus (worth $938 in the Chase
+            Travel Portal), you can cover your flights twice over. That's free travel for
+            your entire family, plus $300+ left over for other pre-cruise expenses.
           </p>
 
           <h3 className="text-2xl font-fraunces font-bold text-slate-900 mt-8 mb-4">
@@ -206,7 +206,7 @@ export default function FlyFreeToCruisePort() {
             <h4 className="font-semibold text-slate-900 mb-2">Pro Tip: Travel Portal vs. Transfer</h4>
             <p className="text-sm text-slate-700 mb-3">
               <strong>Travel Portal:</strong> Simpler, fixed redemption rates, covers any airline.
-              Example: 60,000 Chase points = $750 credit to book any flight.
+              Example: 75,000 Chase points = $938 credit to book any flight.
             </p>
             <p className="text-sm text-slate-700">
               <strong>Airline Transfer:</strong> More flexibility but requires some research. 75,000
@@ -237,7 +237,7 @@ export default function FlyFreeToCruisePort() {
           </p>
 
           <p className="text-slate-600 leading-relaxed mb-4">
-            For example: Chase Sapphire Preferred (60K points) + Capital One Venture (75K miles) =
+            For example: Chase Sapphire Preferred (75K points) + Capital One Venture (75K miles) =
             enough for flights for a family of four.
           </p>
 

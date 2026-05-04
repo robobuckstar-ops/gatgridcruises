@@ -14,6 +14,9 @@ import { BookingInquiryButton } from '@/components/ui/booking-inquiry-button'
 
 const PORT_GUIDE_SLUGS: Record<string, string> = {
   'Castaway Cay': 'castaway-cay',
+  'Lookout Cay': 'lookout-cay',
+  'Lookout Cay at Lighthouse Point': 'lookout-cay',
+  'Lighthouse Point': 'lookout-cay',
   'Nassau': 'nassau',
   'Nassau, Bahamas': 'nassau',
   'Cozumel': 'cozumel',
@@ -212,7 +215,7 @@ export default async function SailingDetailPage({ params }: PageProps) {
                 <div className="flex-1">
                   <p className="font-semibold text-sm text-amber-900 mb-1">Travel Hack</p>
                   <p className="text-sm text-amber-800">
-                    The Chase Sapphire Preferred signup bonus ($750 value) could cover flights to {port?.name} for this cruise.
+                    The Chase Sapphire Preferred signup bonus (75,000 pts ≈ $938 value) could cover flights to {port?.name} for this cruise.
                   </p>
                   <a href="/travel-hacks" className="inline-flex items-center gap-1 text-sm font-medium text-amber-700 hover:text-amber-900 mt-2 transition-colors">
                     See all travel hacks →

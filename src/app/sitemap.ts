@@ -112,7 +112,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }))
 
   // Port guide pages
-  const portGuidePages = ['castaway-cay', 'cozumel', 'nassau', 'port-canaveral'].map(slug => ({
+  const portGuidePages = ['castaway-cay', 'lookout-cay', 'cozumel', 'nassau', 'port-canaveral'].map(slug => ({
     url: `${baseUrl}/guides/ports/${slug}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,

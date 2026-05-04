@@ -48,12 +48,12 @@ export function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <a
-                    href="mailto:grayson@gatgridcruises.com"
+                  <Link
+                    href="/contact"
                     className="text-slate-600 hover:text-blue-600 transition-colors duration-200"
                   >
                     Contact
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <Link href="/newsletter" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
@@ -199,6 +199,11 @@ export function Footer() {
                 <li>
                   <Link href="/guides/ports/castaway-cay" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
                     Castaway Cay
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/guides/ports/lookout-cay" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                    Lookout Cay
                   </Link>
                 </li>
                 <li>

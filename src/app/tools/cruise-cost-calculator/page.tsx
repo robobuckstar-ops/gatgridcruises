@@ -60,7 +60,7 @@ export default function CruiseCostCalculatorPage() {
             <div className="bg-white/5 rounded-xl p-4 border border-white/10">
               <div className="text-2xl mb-2">💰</div>
               <p className="text-white font-semibold text-sm">Earn Signup Bonuses</p>
-              <p className="text-blue-200 text-xs mt-1">Chase Sapphire Preferred 60K bonus is worth $750 toward travel</p>
+              <p className="text-blue-200 text-xs mt-1">Chase Sapphire Preferred 75K bonus is worth $938 toward travel</p>
             </div>
           </div>
           <Link

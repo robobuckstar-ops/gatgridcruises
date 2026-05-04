@@ -29,6 +29,7 @@ const navItems = [
       { label: 'Packing List', href: '/guides/disney-cruise-packing-list' },
       { label: '🏝️ Port Guides', href: '/ports' },
       { label: 'Castaway Cay', href: '/guides/castaway-cay-guide' },
+      { label: 'Lookout Cay', href: '/guides/ports/lookout-cay' },
       { label: 'With Toddlers', href: '/guides/disney-cruise-with-toddlers' },
       { label: 'Port Canaveral vs Miami', href: '/guides/port-canaveral-vs-miami' },
       { label: 'Excursion Savings', href: '/guides/excursion-savings' },
