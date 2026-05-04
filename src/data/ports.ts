@@ -669,4 +669,31 @@ export const ports: Port[] = [
     created_at: '2026-01-01T00:00:00Z',
     updated_at: '2026-04-20T00:00:00Z',
   },
+  {
+    id: 'port-0018',
+    name: 'San Diego',
+    slug: 'san-diego',
+    city: 'San Diego',
+    country: 'USA',
+    code: 'SAN',
+    overview: 'San Diego is Disney Cruise Line\'s West Coast homeport for short Baja and Mexican Riviera sailings on the Disney Wonder. The B Street Cruise Terminal sits on the downtown waterfront within walking distance of the Gaslamp Quarter, hotels, and the airport — making it one of the most convenient cruise ports in North America.',
+    nearest_airports: [
+      { code: 'SAN', name: 'San Diego International', distance_miles: 3 },
+    ],
+    parking: [
+      { name: 'Port of San Diego Cruise Terminal Parking', dailyRate: 20, tips: 'Adjacent to the terminal — short walk with luggage. Reserve in peak season; first-come, first-served otherwise.' },
+    ],
+    terminalTips: [
+      'B Street Pier is steps from downtown — you can walk to dozens of hotels for a pre-cruise stay.',
+      'San Diego International (SAN) is a 5-minute taxi or rideshare from the terminal — the closest major airport-to-cruise pairing in the country.',
+      'Embarkation is typically fast at this terminal; lines are short compared to Miami or Port Canaveral.',
+    ],
+    preTripsActivities: [
+      { name: 'USS Midway Museum', description: 'Aircraft carrier turned museum, directly across from the cruise terminal.', distance: '0.2 miles' },
+      { name: 'Gaslamp Quarter', description: 'Historic downtown district packed with restaurants, bars, and shops.', distance: '0.5 miles' },
+      { name: 'Balboa Park & San Diego Zoo', description: 'World-class zoo plus museums and gardens in a 1,200-acre urban park.', distance: '3 miles' },
+    ],
+    created_at: '2026-05-04T00:00:00Z',
+    updated_at: '2026-05-04T00:00:00Z',
+  },
 ];

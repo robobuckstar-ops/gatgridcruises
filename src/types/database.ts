@@ -71,7 +71,7 @@ export interface Sailing {
   deal_score?: number
   deal_recommendation?: 'strong-buy' | 'buy' | 'fair' | 'wait' | 'overpriced'
   deal_label?: string
-  region?: 'caribbean' | 'bahamas' | 'alaska' | 'pacific' | 'europe' | 'other'
+  region?: 'caribbean' | 'bahamas' | 'alaska' | 'pacific' | 'europe' | 'mediterranean' | 'transatlantic' | 'other'
   theme?: 'halloween' | 'merrytime' | 'starwars' | 'marvel'
   // Joined fields
   ship?: Ship
