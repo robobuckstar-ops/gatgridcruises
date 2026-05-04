@@ -131,15 +131,15 @@ export function SailingCard({ sailing, percentBelow, guestCount = 2 }: SailingCa
                 <span className="text-xs text-emerald-600 font-semibold">{formatPrice(pricePerNight)}/night</span>
               )}
             </div>
-            {/* Price vs historical average */}
+            {/* Price vs historical average — only show discounts, never premiums */}
             {sailing.price_snapshots && sailing.price_snapshots.length >= 2 && (() => {
               const prices = sailing.price_snapshots!.map(s => s.lowest_price)
               const avg = prices.reduce((a, b) => a + b, 0) / prices.length
               const pct = Math.round(((sailing.current_lowest_price - avg) / avg) * 100)
-              if (Math.abs(pct) < 2) return null
+              if (pct >= -2) return null
               return (
-                <p className={`text-xs font-semibold ${pct < 0 ? 'text-emerald-600' : 'text-red-500'}`}>
-                  {pct < 0 ? `↓ ${Math.abs(pct)}% vs avg` : `↑ ${pct}% vs avg`}
+                <p className="text-xs font-semibold text-emerald-600">
+                  ↓ {Math.abs(pct)}% below average
                 </p>
               )
             })()}

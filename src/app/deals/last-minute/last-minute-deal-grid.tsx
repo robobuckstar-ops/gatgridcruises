@@ -6,7 +6,9 @@ import type { Sailing, Ship, Port } from '@/types/database'
 import { formatPrice, formatDate, daysUntil, cn } from '@/lib/utils'
 import { CountdownTimer } from '@/components/ui/countdown-timer'
 import { GuestSelector } from '@/components/ui/guest-selector'
-import { Search, SlidersHorizontal, X, ArrowRight, Zap } from 'lucide-react'
+import { GuestQuotePrompt } from '@/components/ui/guest-quote-prompt'
+import { useGuestCount } from '@/context/guest-count-context'
+import { Search, SlidersHorizontal, X, ArrowRight, Clock } from 'lucide-react'
 
 type SailingWithDrop = Sailing & { percentBelow?: number }
 
@@ -17,13 +19,14 @@ interface LastMinuteDealGridProps {
 }
 
 export function LastMinuteDealGrid({ deals: initialDeals, ships, ports }: LastMinuteDealGridProps) {
+  const { guests } = useGuestCount()
   // Filter state
   const [search, setSearch] = useState('')
   const [selectedShips, setSelectedShips] = useState<string[]>([])
   const [selectedNights, setSelectedNights] = useState<string[]>([])
   const [selectedRegions, setSelectedRegions] = useState<string[]>([])
   const [privateIsland, setPrivateIsland] = useState(false)
-  const [sortBy, setSortBy] = useState<'soonest' | 'savings' | 'score'>('soonest')
+  const [sortBy, setSortBy] = useState<'score' | 'soonest' | 'savings'>('score')
   const [showFilters, setShowFilters] = useState(false)
 
   // Filter and sort logic
@@ -138,21 +141,24 @@ export function LastMinuteDealGrid({ deals: initialDeals, ships, ports }: LastMi
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex justify-center mb-4">
             <div className="inline-flex items-center gap-2 bg-[#D4AF37]/15 border border-[#D4AF37]/30 text-[#D4AF37] px-4 py-2 rounded-full">
-              <Zap className="h-4 w-4" />
-              <span className="font-semibold text-sm tracking-wider uppercase">Flash Deals</span>
+              <Clock className="h-4 w-4" />
+              <span className="font-semibold text-sm tracking-wider uppercase">Last-Minute Deals</span>
             </div>
           </div>
           <h1 className="font-fraunces text-5xl md:text-6xl font-bold text-white mb-4">
-            Flash Deals
+            Last-Minute Deals
           </h1>
           <p className="text-xl text-blue-200 mb-2 max-w-2xl mx-auto">
             Sailings within 90 days at steep discounts
           </p>
           <p className="text-base text-blue-300 max-w-2xl mx-auto">
-            Limited availability — prices update daily
+            Prices updated daily. Request a quote for exact pricing with your group.
           </p>
           <div className="flex justify-center mt-6">
             <GuestSelector />
+          </div>
+          <div className="max-w-2xl mx-auto mt-4">
+            <GuestQuotePrompt guestCount={guests} />
           </div>
         </div>
       </div>
@@ -177,12 +183,12 @@ export function LastMinuteDealGrid({ deals: initialDeals, ships, ports }: LastMi
 
             <select
               value={sortBy}
-              onChange={(e) => setSortBy(e.target.value as 'soonest' | 'savings' | 'score')}
+              onChange={(e) => setSortBy(e.target.value as 'score' | 'soonest' | 'savings')}
               className="px-4 py-2.5 border border-slate-300 rounded-lg bg-white text-slate-700 font-medium hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-600"
             >
+              <option value="score">Best Deal Score</option>
               <option value="soonest">Soonest Departure</option>
               <option value="savings">Biggest Savings</option>
-              <option value="score">Best Deal Score</option>
             </select>
 
             {activeFilterCount > 0 && (
@@ -315,7 +321,7 @@ export function LastMinuteDealGrid({ deals: initialDeals, ships, ports }: LastMi
         ) : (
           <>
             <p className="text-slate-600 mb-6">
-              Showing <strong>{filtered.length}</strong> flash deal{filtered.length !== 1 ? 's' : ''} within 90 days
+              Showing <strong>{filtered.length}</strong> last-minute deal{filtered.length !== 1 ? 's' : ''} within 90 days
             </p>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -383,9 +389,9 @@ export function LastMinuteDealGrid({ deals: initialDeals, ships, ports }: LastMi
 
                       {/* CTA Button */}
                       <div className="px-5 pb-5 pt-3 border-t border-slate-100">
-                        <button className="w-full px-4 py-3 bg-gold hover:bg-amber-400 text-slate-900 font-semibold rounded-lg transition-colors text-center">
-                          View Deal
-                        </button>
+                        <span className="block w-full px-4 py-3 bg-gold group-hover:bg-amber-400 text-slate-900 font-semibold rounded-lg transition-colors text-center">
+                          Request This Sailing
+                        </span>
                       </div>
                     </div>
                   </Link>

@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { SlidersHorizontal, X, ArrowRight } from 'lucide-react'
 import { SailingCard } from '@/components/ui/sailing-card'
 import { GuestCountSelector } from '@/components/ui/guest-count-selector'
+import { GuestQuotePrompt } from '@/components/ui/guest-quote-prompt'
 import type { Sailing, Ship } from '@/types/database'
 
 interface HomeDealsProps {
@@ -160,6 +161,8 @@ export function HomeDeals({ sailings, ships }: HomeDealsProps) {
           </button>
         )}
       </div>
+
+      <GuestQuotePrompt guestCount={guestCount} className="mb-6" />
 
       {/* Results */}
       <div className="flex items-center justify-between mb-4">

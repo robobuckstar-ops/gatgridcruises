@@ -14,7 +14,7 @@ const navItems = [
     children: [
       { label: 'Current Deals', href: '/deals' },
       { label: 'Last-Minute Deals', href: '/deals/last-minute' },
-      { label: 'Flash Deals', href: '/deals/flash-deals' },
+      { label: '🎲 Restricted Stateroom Deals', href: '/deals/restricted-staterooms' },
       { label: '🎖️ Military Deals', href: '/deals/military' },
       { label: '🔔 Deal Alerts', href: '/deal-alerts' },
     ],

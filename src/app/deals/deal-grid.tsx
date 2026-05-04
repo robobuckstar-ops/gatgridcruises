@@ -10,6 +10,7 @@ import Link from 'next/link'
 import { ReportIssueForm } from '@/components/ui/report-issue-form'
 import { PRICES_LAST_UPDATED } from '@/lib/constants'
 import { ResidentRateAlert } from '@/components/ui/resident-rate-alert'
+import { GuestQuotePrompt } from '@/components/ui/guest-quote-prompt'
 
 type SortOption = 'score' | 'price_asc' | 'price_desc' | 'price_per_night' | 'date' | 'duration' | 'drop'
 type SailingWithDrop = Sailing & { percentBelow: number }
@@ -183,7 +184,7 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
             Cruise Deals
           </h1>
           <p className="text-blue-200 text-lg">
-            {sailings.length} sailings tracked · Prices approximate, verify at cruise line
+            {sailings.length} sailings tracked · Prices updated daily. Request a quote for exact pricing with your group.
           </p>
           <p className="text-blue-400 text-sm mt-1">
             Prices last updated: {PRICES_LAST_UPDATED}
@@ -193,10 +194,11 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Guest count selector — prominent, sticky-feeling */}
-        <div className="flex items-center justify-between mb-6 pb-4 border-b border-slate-100">
+        <div className="flex items-center justify-between mb-4 pb-4 border-b border-slate-100">
           <GuestCountSelector value={guestCount} onChange={setGuestCount} />
-          <p className="text-xs text-slate-400">Price/person/night updates with guest count</p>
+          <p className="text-xs text-slate-400">Estimated all-in pricing for default 2-guest cabins</p>
         </div>
+        <GuestQuotePrompt guestCount={guestCount} className="mb-6" />
 
         {/* Search and filter bar */}
         <div className="flex flex-col sm:flex-row gap-3 mb-6">

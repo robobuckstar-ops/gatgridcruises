@@ -48,8 +48,13 @@ export default function SailingsIndexPage() {
     if (!byRegion.has(key)) byRegion.set(key, [])
     byRegion.get(key)!.push(s)
   }
+  // Best deals first (highest sailing_score), then earliest sail date as tiebreaker
   for (const list of byRegion.values()) {
-    list.sort((a, b) => a.sail_date.localeCompare(b.sail_date))
+    list.sort((a, b) => {
+      const scoreDiff = (b.sailing_score ?? 0) - (a.sailing_score ?? 0)
+      if (scoreDiff !== 0) return scoreDiff
+      return a.sail_date.localeCompare(b.sail_date)
+    })
   }
 
   // Stable region ordering: Bahamas, Caribbean, Alaska, then alphabetical
@@ -200,9 +205,9 @@ export default function SailingsIndexPage() {
       <section className="border-t border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 text-sm text-slate-600">
           <p className="mb-2">
-            <strong className="text-slate-900">About these listings.</strong> Prices shown are starting fares
-            tracked from public Disney Cruise Line and aggregator sources. They change daily and are estimates,
-            not quotes. We don&apos;t sell cruises — we help you research them.
+            <strong className="text-slate-900">About these listings.</strong> Prices updated daily. Request a
+            quote for exact pricing with your group. We don&apos;t sell cruises directly — we help you
+            research them and forward inquiries to a partner agency at no extra cost.
           </p>
           <p>
             Looking for filters and a deal score?{' '}

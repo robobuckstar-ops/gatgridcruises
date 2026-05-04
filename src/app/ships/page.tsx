@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, Ship } from 'lucide-react'
 import { getShips } from '@/lib/data'
+import { ShipHeroImage } from '@/components/ui/ship-hero-image'
 
 export const metadata: Metadata = {
   title: 'Disney Cruise Line Ships — Fleet Guide & Comparison',
@@ -52,8 +53,13 @@ export default function ShipsPage() {
                 href={`/ships/${ship.slug}`}
                 className="group h-full rounded-xl border-2 border-gray-200 hover:border-blue-600 overflow-hidden transition-all duration-200 hover:shadow-lg"
               >
-                <div className="bg-gradient-to-br from-blue-100 to-indigo-100 h-48 flex items-center justify-center group-hover:from-blue-200 group-hover:to-indigo-200 transition-colors">
-                  <Ship className="w-16 h-16 text-blue-600 opacity-30 group-hover:opacity-50 transition-opacity" />
+                <div className="h-48">
+                  <ShipHeroImage
+                    src={ship.hero_image_url}
+                    shipName={ship.name}
+                    yearLaunched={ship.year_launched}
+                    imgClassName="group-hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
 
                 <div className="p-6">

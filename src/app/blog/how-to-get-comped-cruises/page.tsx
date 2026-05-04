@@ -292,8 +292,8 @@ export default function HowToGetCompedCruises() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/deals/flash-deals" className="text-blue-600 hover:text-blue-700 font-medium text-sm">
-                    Current Flash Deals →
+                  <Link href="/deals/last-minute" className="text-blue-600 hover:text-blue-700 font-medium text-sm">
+                    Current Last-Minute Deals →
                   </Link>
                 </li>
               </ul>

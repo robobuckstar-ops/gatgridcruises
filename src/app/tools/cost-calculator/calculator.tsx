@@ -2,6 +2,7 @@
 
 import { useState, useMemo, useEffect } from 'react'
 import { Copy, Check } from 'lucide-react'
+import { BookingInquiryButton } from '@/components/ui/booking-inquiry-button'
 
 interface Sailing {
   id: string
@@ -954,7 +955,7 @@ export function CostCalculator({ sailings }: CostCalculatorProps) {
               </div>
 
               {/* Grand Total */}
-              <div className="bg-gradient-to-r from-amber-50 to-amber-100 rounded-lg p-4 mb-6 border-2 border-amber-300">
+              <div className="bg-gradient-to-r from-amber-50 to-amber-100 rounded-lg p-4 mb-4 border-2 border-amber-300">
                 <div className="flex justify-between items-baseline mb-2">
                   <span className="text-lg font-bold text-slate-800">Total Trip Cost</span>
                   <span className="text-3xl font-bold text-amber-600">
@@ -967,6 +968,14 @@ export function CostCalculator({ sailings }: CostCalculatorProps) {
                     ${calculations.costPerPerson.toLocaleString('en-US', { minimumFractionDigits: 2 })}
                   </span>
                 </div>
+                <p className="text-[11px] text-amber-800/80 mt-3 leading-snug">
+                  These are <strong>estimates only</strong>. The cruise fare assumes a 2-guest cabin model (3rd/4th at ~60%) — actual Disney pricing varies by sailing, cabin, and party.
+                </p>
+              </div>
+
+              {/* Quote CTA — exact pricing for the user's group */}
+              <div className="mb-6">
+                <BookingInquiryButton variant="inline" label="Request a Free Quote" />
               </div>
 
               {/* Price Comparison */}
