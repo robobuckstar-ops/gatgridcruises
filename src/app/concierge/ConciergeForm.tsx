@@ -4,8 +4,6 @@ import { useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { CheckCircle, Loader2, Send, Anchor } from 'lucide-react'
 
-const WEBHOOK_URL = 'https://hook.us2.make.com/x0omp8bq5bbyl2jgjcfv7a9kod4e3ame'
-
 const TIMEZONES = [
   { value: '', label: 'Select timezone (optional)' },
   { value: 'ET', label: 'Eastern Time (ET)' },
@@ -37,6 +35,7 @@ interface FormData {
   family_members: string
   how_found_us: string
   notes: string
+  _honeypot: string
 }
 
 const inputClass =
@@ -57,6 +56,7 @@ export function ConciergeForm() {
     family_members: '',
     how_found_us: '',
     notes: '',
+    _honeypot: '',
   })
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [errorMsg, setErrorMsg] = useState('')
@@ -77,7 +77,7 @@ export function ConciergeForm() {
         ...form,
         ...(sailingParam ? { sailing_interest: sailingParam } : {}),
       }
-      const res = await fetch(WEBHOOK_URL, {
+      const res = await fetch('/api/concierge', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
@@ -99,11 +99,15 @@ export function ConciergeForm() {
           <CheckCircle className="w-8 h-8 text-[#D4AF37]" />
         </div>
         <h3 className="font-fraunces text-2xl font-bold text-white mb-3">
-          We got your message!
+          Thanks! We got your inquiry.
         </h3>
-        <p className="font-inter text-blue-200 max-w-md mx-auto leading-relaxed">
-          Grayson will be in touch within 1 business day to get your trip set up. Keep an
-          eye on your inbox.
+        <p className="font-inter text-blue-200 max-w-md mx-auto leading-relaxed mb-3">
+          Grayson will personally follow up within the hour. We&apos;ve also sent a
+          confirmation email to your inbox — check your spam folder if you don&apos;t see
+          it within a few minutes.
+        </p>
+        <p className="font-inter text-sm text-blue-300/80 max-w-md mx-auto">
+          In the meantime, browse our <a href="/guides/cruise-countdown" className="underline hover:text-[#D4AF37]">Disney Cruise Countdown Checklist</a> to get a head start on planning.
         </p>
       </div>
     )
@@ -111,6 +115,20 @@ export function ConciergeForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4" aria-label="Concierge service inquiry form" noValidate>
+      {/* Honeypot — bots fill it, real users never see it. Submission is silently dropped server-side. */}
+      <div className="gg-trap" aria-hidden="true">
+        <label htmlFor="concierge-website">Website (leave blank)</label>
+        <input
+          id="concierge-website"
+          type="text"
+          name="_honeypot"
+          tabIndex={-1}
+          autoComplete="off"
+          value={form._honeypot}
+          onChange={handleChange}
+        />
+      </div>
+
       {sailingParam && (
         <div className="bg-[#D4AF37]/10 border border-[#D4AF37]/30 rounded-xl px-4 py-3 flex items-center gap-2">
           <Anchor className="w-4 h-4 text-[#D4AF37] flex-shrink-0" aria-hidden="true" />

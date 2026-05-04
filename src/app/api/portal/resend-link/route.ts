@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
+import { checkRateLimit, getClientIp } from '@/lib/rate-limit'
 import { createMagicLinkToken } from '@/lib/portal-auth'
 import {
   BOOKING_FIELDS,
@@ -19,6 +20,16 @@ function successResponse() {
 }
 
 export async function POST(request: NextRequest) {
+  // 3 magic-link sends per hour per IP — block email-blast abuse via Resend
+  const ip = getClientIp(request)
+  const { allowed, retryAfter } = checkRateLimit(ip, 'portal-resend', 3, 60 * 60 * 1000)
+  if (!allowed) {
+    return NextResponse.json(
+      { error: 'Too many requests. Please try again in a bit.' },
+      { status: 429, headers: { 'Retry-After': String(retryAfter) } }
+    )
+  }
+
   try {
     const body = await request.json().catch(() => ({}))
     const rawEmail = typeof body?.email === 'string' ? body.email : ''

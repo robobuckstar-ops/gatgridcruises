@@ -1,7 +1,18 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { checkRateLimit, getClientIp } from '@/lib/rate-limit'
 import { subscribers } from '@/app/api/subscribe/route'
 
 export async function POST(request: NextRequest) {
+  // 10 unsubscribe attempts per hour per IP
+  const ip = getClientIp(request)
+  const { allowed, retryAfter } = checkRateLimit(ip, 'unsubscribe', 10, 60 * 60 * 1000)
+  if (!allowed) {
+    return NextResponse.json(
+      { error: 'Too many requests' },
+      { status: 429, headers: { 'Retry-After': String(retryAfter) } }
+    )
+  }
+
   try {
     const body = await request.json()
     const { token, email } = body

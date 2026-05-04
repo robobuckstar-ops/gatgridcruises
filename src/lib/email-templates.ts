@@ -218,6 +218,40 @@ export function INQUIRY_RECEIVED(data: InquiryData): string {
   `)
 }
 
+export interface ConciergeAckData {
+  name: string
+  sailingInterest?: string
+}
+
+export function CONCIERGE_RECEIVED(data: ConciergeAckData): string {
+  const firstName = (data.name || '').trim().split(/\s+/)[0] || 'there'
+  return wrapBookingEmail(`
+    <h2 style="margin:0 0 12px;color:#1E3A5F;font-family:Georgia,serif;font-size:22px;">Hi ${firstName} —</h2>
+    <p style="margin:0 0 16px;color:#334155;font-size:15px;line-height:1.6;">
+      Thanks for reaching out to GatGrid Cruises! I just got your inquiry${data.sailingInterest ? ` about <strong>${data.sailingInterest}</strong>` : ''} and I'll personally follow up <strong>within the hour</strong>.
+    </p>
+    <p style="margin:0 0 20px;color:#334155;font-size:15px;line-height:1.6;">
+      I'm Dr. Grayson Starbuck, DPT — founder of GatGrid Cruises and a Disney cruise nut who has taken his family on more sailings than I care to admit. I'll review what you sent over and come back with options that actually fit your family.
+    </p>
+    <div style="background-color:#F0F7FF;border-left:4px solid #1E3A5F;border-radius:6px;padding:20px;margin:0 0 24px;">
+      <p style="margin:0 0 10px;color:#1E3A5F;font-size:14px;font-weight:600;">While you wait, get a head start:</p>
+      <ul style="margin:0;padding-left:20px;color:#1E3A5F;font-size:14px;line-height:1.8;">
+        <li><a href="https://gatgridcruises.com/guides/cruise-countdown" style="color:#1E3A5F;">Disney Cruise Countdown Checklist</a></li>
+        <li><a href="https://gatgridcruises.com/tools/cost-calculator" style="color:#1E3A5F;">Total Trip Cost Calculator</a></li>
+        <li><a href="https://gatgridcruises.com/deals" style="color:#1E3A5F;">Current Deals</a></li>
+      </ul>
+    </div>
+    <p style="margin:0 0 8px;color:#334155;font-size:14px;line-height:1.6;">
+      Talk soon,
+    </p>
+    <p style="margin:0;color:#64748B;font-size:13px;line-height:1.5;">
+      <strong style="color:#1E3A5F;">Dr. Grayson Starbuck, DPT</strong><br>
+      Grayson at GatGrid Cruises · Boardwalk Travel Agency<br>
+      <a href="mailto:bookings@gatgridcruises.com" style="color:#1E3A5F;">bookings@gatgridcruises.com</a>
+    </p>
+  `)
+}
+
 export interface QuoteOption {
   shipName: string
   sailDate: string
