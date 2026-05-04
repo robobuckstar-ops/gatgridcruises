@@ -1124,16 +1124,16 @@ export function CruiseCountdownTimeline() {
           </ul>
 
           <Link
-            href="/book"
+            href="/concierge"
             className="inline-flex items-center gap-2 bg-amber-400 hover:bg-amber-300 text-blue-950 font-bold px-8 py-4 rounded-xl text-lg transition-colors shadow-lg shadow-amber-400/20"
           >
-            Book Through GatGrid
+            Get Free Concierge Help
             <span aria-hidden>→</span>
           </Link>
 
           <p className="mt-4 text-blue-400 text-sm">
-            No extra cost. Same pricing as booking direct — plus a personal cruise expert in
-            your corner.
+            Free service via our partner travel agency. Same pricing as booking direct — plus
+            a personal cruise expert in your corner.
           </p>
         </div>
       </section>

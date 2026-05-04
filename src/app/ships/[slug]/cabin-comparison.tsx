@@ -2,8 +2,7 @@
 
 import { useMemo } from 'react'
 import { getStaterooms, getShipBySlug, getSailings } from '@/lib/data'
-import type { Stateroom } from '@/types/database'
-import { Star, Check, X, Users, Waves } from 'lucide-react'
+import { Star, Check, X, Users } from 'lucide-react'
 import { formatPrice } from '@/lib/utils'
 
 interface CabinComparisonProps {
@@ -64,41 +63,45 @@ export function CabinComparison({ shipSlug }: CabinComparisonProps) {
     {
       name: 'Inside',
       key: 'inside' as const,
-      color: 'slate',
       bgColor: 'bg-slate-50',
       headerColor: 'bg-slate-100',
       borderColor: 'border-slate-200',
       textColor: 'text-slate-900',
+      starOn: 'text-slate-600 fill-current',
+      starOff: 'text-slate-300',
       rooms: staterooms.inside,
     },
     {
       name: 'Oceanview',
       key: 'oceanview' as const,
-      color: 'blue',
-      bgColor: 'bg-[#1E3A5F]/10',
-      headerColor: 'bg-[#1E3A5F]/20',
+      bgColor: 'bg-blue-50',
+      headerColor: 'bg-blue-100',
       borderColor: 'border-blue-200',
       textColor: 'text-blue-900',
+      starOn: 'text-blue-600 fill-current',
+      starOff: 'text-blue-200',
       rooms: staterooms.oceanview,
     },
     {
       name: 'Verandah',
       key: 'verandah' as const,
-      color: 'teal',
       bgColor: 'bg-teal-50',
       headerColor: 'bg-teal-100',
       borderColor: 'border-teal-200',
       textColor: 'text-teal-900',
+      starOn: 'text-teal-600 fill-current',
+      starOff: 'text-teal-200',
       rooms: staterooms.verandah,
     },
     {
       name: 'Concierge',
       key: 'concierge' as const,
-      color: 'amber',
       bgColor: 'bg-amber-50',
       headerColor: 'bg-amber-100',
       borderColor: 'border-amber-200',
       textColor: 'text-amber-900',
+      starOn: 'text-amber-600 fill-current',
+      starOff: 'text-amber-200',
       rooms: staterooms.concierge,
     },
   ]
@@ -132,9 +135,6 @@ export function CabinComparison({ shipSlug }: CabinComparisonProps) {
                 {startingPrices[cat.key] != null ? (
                   <div>
                     <p className={`font-fraunces text-xl font-bold ${cat.textColor}`}>
-                      {formatPrice(startingPrices[cat.key] as number)}
-                      {formatPrice(startingPrices[cat.key] ?? 0)}
-                      {formatPrice(startingPrices[cat.key] ?? 0)}
                       {formatPrice(startingPrices[cat.key] as number)}
                     </p>
                     <p className="text-xs text-slate-600 mt-1">Lowest available</p>
@@ -249,11 +249,7 @@ export function CabinComparison({ shipSlug }: CabinComparisonProps) {
                     {Array.from({ length: 5 }).map((_, i) => (
                       <Star
                         key={i}
-                        className={`w-4 h-4 ${
-                          i < avgNoise
-                            ? `text-${cat.color === 'slate' ? 'slate' : cat.color}-600 fill-current`
-                            : `text-${cat.color}-200`
-                        }`}
+                        className={`w-4 h-4 ${i < avgNoise ? cat.starOn : cat.starOff}`}
                       />
                     ))}
                   </div>
@@ -421,11 +417,6 @@ export function CabinComparison({ shipSlug }: CabinComparisonProps) {
                 <p className="text-sm text-slate-600 font-semibold mb-1">Starting Price</p>
                 <p className={`font-fraunces text-3xl font-bold ${cat.textColor}`}>
                   {formatPrice(startingPrices[cat.key] as number)}
-                  {formatPrice(startingPrices[cat.key]!)}
-                  {formatPrice(startingPrices[cat.key]!)}
-                  {formatPrice(startingPrices[cat.key] ?? 0)}
-                  {formatPrice(startingPrices[cat.key] ?? 0)}
-                  {formatPrice(startingPrices[cat.key] as number)}
                 </p>
               </div>
             )}
@@ -450,11 +441,7 @@ export function CabinComparison({ shipSlug }: CabinComparisonProps) {
                       {Array.from({ length: 5 }).map((_, i) => (
                         <Star
                           key={i}
-                          className={`w-3 h-3 ${
-                            i < avgNoise
-                              ? `text-${cat.color}-600 fill-current`
-                              : `text-${cat.color}-200`
-                          }`}
+                          className={`w-3 h-3 ${i < avgNoise ? cat.starOn : cat.starOff}`}
                         />
                       ))}
                     </div>
