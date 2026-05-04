@@ -116,14 +116,13 @@ const sections = [
     content: `You can't redeem airline miles or hotel points directly for a Disney cruise, but you can
     use them to cover airfare and hotels — which dramatically reduces your total trip cost.
 
-    Best cards for Disney cruise planning:
-    — Chase Sapphire Preferred / Reserve: Strong travel portal and transfer partners.
-      The sign-up bonus alone ($750–$1,000 value) can cover flights for two.
+    Best cards for Disney cruise planning (we have referral relationships with all three):
+    — Chase Ink Business Preferred: 100,000-point welcome bonus (~$1,250 value), 3x on travel and shipping.
+      Trip cancellation insurance up to $5,000/trip. See the application link below.
     — American Express Business Platinum: 150,000-point welcome offer after meeting spend.
-      Points transfer to Delta, Air France/KLM, and others. Lounge access a bonus during embarkation.
-      Talk to our advisors to learn more.
-    — Capital One Spark Miles: 2x on all purchases, flexible redemption.
-      Visit our concierge page for cruise planning help.
+      Points transfer to Delta, Air France/KLM, and others. Centurion Lounge access a bonus during embarkation.
+    — Capital One Spark Cash Plus: 2% unlimited cash back on everything, including the cruise fare itself.
+      Up to $1,000 welcome cash bonus and no foreign transaction fees.
 
     Strategy: Use credit card points for flights and hotels. Pay for the cruise with a card
     that earns 2–3x on travel purchases. The Amex Biz Plat earns 5x on flights booked direct.`,
@@ -193,6 +192,56 @@ export default function HowToGetCompedCruises() {
                   </div>
                 )
               })}
+            </div>
+
+            {/* Affiliate Card Referral CTA */}
+            <div className="mt-12 p-6 bg-amber-50 border border-amber-200 rounded-2xl">
+              <p className="text-xs uppercase tracking-widest text-amber-700 font-semibold mb-2">
+                Strategy 6 · Apply via referral
+              </p>
+              <h3 className="font-fraunces text-lg font-bold text-slate-900 mb-3">
+                Open one of our affiliate cards and your sign-up bonus alone can cover the flights
+              </h3>
+              <p className="text-sm text-slate-700 mb-4">
+                These are the three referral relationships we currently maintain. Applying through
+                our links costs you nothing extra and helps fund the editorial work on this site.
+              </p>
+              <div className="grid sm:grid-cols-3 gap-3">
+                <a
+                  href="https://www.referyourchasecard.com/226m/6ZT33F9TOQ"
+                  target="_blank"
+                  rel="nofollow sponsored noopener noreferrer"
+                  className="block p-4 rounded-xl bg-white border border-amber-300 hover:border-amber-500 hover:shadow-md transition"
+                >
+                  <p className="font-bold text-sm text-slate-900">Chase Ink Business Preferred</p>
+                  <p className="text-xs text-slate-600 mt-1">100K-pt bonus · 3x travel · trip insurance</p>
+                  <p className="text-xs font-semibold text-amber-700 mt-2">Apply via referral →</p>
+                </a>
+                <a
+                  href="https://i.capitalone.com/JKlfRwN3f"
+                  target="_blank"
+                  rel="nofollow sponsored noopener noreferrer"
+                  className="block p-4 rounded-xl bg-white border border-amber-300 hover:border-amber-500 hover:shadow-md transition"
+                >
+                  <p className="font-bold text-sm text-slate-900">Capital One Spark Cash Plus</p>
+                  <p className="text-xs text-slate-600 mt-1">2% unlimited cash back · up to $1,000 welcome</p>
+                  <p className="text-xs font-semibold text-amber-700 mt-2">Apply via referral →</p>
+                </a>
+                <a
+                  href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS"
+                  target="_blank"
+                  rel="nofollow sponsored noopener noreferrer"
+                  className="block p-4 rounded-xl bg-white border border-amber-300 hover:border-amber-500 hover:shadow-md transition"
+                >
+                  <p className="font-bold text-sm text-slate-900">Amex Business Platinum</p>
+                  <p className="text-xs text-slate-600 mt-1">150K MR bonus · 5x flights · Centurion Lounges</p>
+                  <p className="text-xs font-semibold text-amber-700 mt-2">Apply via referral →</p>
+                </a>
+              </div>
+              <p className="text-[11px] italic text-slate-500 mt-4">
+                Affiliate disclosure: links above are referral links. We may earn a commission if
+                you&apos;re approved, at no extra cost to you.
+              </p>
             </div>
 
             {/* Concierge CTA */}

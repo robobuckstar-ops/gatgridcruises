@@ -10,7 +10,7 @@ import { getCardReferralLink } from './affiliate-config'
 export interface CreditCard {
   id: string
   name: string
-  issuer: 'chase' | 'amex' | 'capital-one' | 'citi' | 'bank-of-america' | 'other'
+  issuer: 'chase' | 'amex' | 'capital-one' | 'bank-of-america' | 'other'
   slug: string
   annualFee: number
   signupBonus: string // e.g., "60,000 points"
@@ -176,35 +176,6 @@ export const creditCards: CreditCard[] = [
     imageColor: '#FF5000',
     editorial_take:
       "Capital One's premium offering has improved dramatically. The flat 2x miles on everything is easy to manage, and lounge access helps justify the fee.",
-  },
-  {
-    id: 'citi-premier',
-    name: 'Citi Premier Card',
-    issuer: 'citi',
-    slug: 'citi-premier',
-    annualFee: 95,
-    signupBonus: '60,000 points',
-    signupBonusValue: 600,
-    signupBonusRequirement: 'Spend $4,000 in first 3 months',
-    pointsPerDollarTravel: 3,
-    pointsPerDollarDining: 3,
-    pointsPerDollarOther: 1,
-    tripCancellation: true,
-    tripDelay: true,
-    baggageDelay: true,
-    travelAccident: true,
-    loungeAccess: null,
-    bestFor: 'Budget-conscious cruisers who want premium benefits',
-    highlights: [
-      '3x points on flights, hotels, cruise tickets, and dining',
-      '$95 annual fee with immediate travel credits',
-      'Excellent travel insurance coverage',
-      'No category complexity — simple earning',
-    ],
-    referralUrl: getCardReferralLink('citi-premier') || '',
-    imageColor: '#0066B2',
-    editorial_take:
-      "The Citi Premier is underrated. At $95 with 3x on cruises, it's a fantastic value play if you don't need lounge access.",
   },
   {
     id: 'chase-ink-business-preferred',

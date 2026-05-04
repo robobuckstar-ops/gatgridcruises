@@ -115,18 +115,6 @@ const cardDatabase = [
     bestFor: 'Best no-fee business cash back',
   },
   {
-    id: 'citi-premier',
-    name: 'Citi Premier',
-    annualFee: 95,
-    signupBonus: '60K points',
-    bonusValue: 600,
-    travelPoints: 3,
-    diningPoints: 3,
-    tripInsurance: 'Yes',
-    loungeAccess: 'No',
-    bestFor: 'Best budget travel option',
-  },
-  {
     id: 'capital-one-venture',
     name: 'Capital One Venture',
     annualFee: 95,

@@ -777,7 +777,7 @@ export default function CreditCardsPage() {
                   <Link
                     href={LINKS.chaseInk}
                     target="_blank"
-                    rel="noopener noreferrer sponsored"
+                    rel="nofollow sponsored noopener noreferrer"
                     className="inline-flex items-center gap-2 bg-[#D4AF37] text-[#1E3A5F] font-bold px-8 py-3 rounded-xl hover:bg-yellow-300 transition-colors text-sm"
                   >
                     Apply for Chase Ink Business Preferred{' '}
@@ -862,7 +862,7 @@ export default function CreditCardsPage() {
                   <Link
                     href={LINKS.amexBizPlat}
                     target="_blank"
-                    rel="noopener noreferrer sponsored"
+                    rel="nofollow sponsored noopener noreferrer"
                     className="inline-flex items-center gap-2 bg-[#D4AF37] text-[#1E3A5F] font-bold px-8 py-3 rounded-xl hover:bg-yellow-300 transition-colors text-sm"
                   >
                     Apply via Crystal&rsquo;s Referral Link{' '}
@@ -934,7 +934,7 @@ export default function CreditCardsPage() {
                   <Link
                     href={LINKS.capitalOneSpark}
                     target="_blank"
-                    rel="noopener noreferrer sponsored"
+                    rel="nofollow sponsored noopener noreferrer"
                     className="inline-flex items-center gap-2 bg-[#D4AF37] text-[#1E3A5F] font-bold px-8 py-3 rounded-xl hover:bg-yellow-300 transition-colors text-sm"
                   >
                     Apply for Capital One Spark Miles{' '}
@@ -998,7 +998,7 @@ export default function CreditCardsPage() {
                 key={item.title}
                 href={item.href}
                 target="_blank"
-                rel="noopener noreferrer sponsored"
+                rel="nofollow sponsored noopener noreferrer"
                 className="group border border-slate-200 rounded-xl p-5 hover:border-[#D4AF37] hover:shadow-md transition-all flex flex-col"
               >
                 <div className="text-3xl mb-3" aria-hidden="true">{item.emoji}</div>
@@ -1054,11 +1054,11 @@ export default function CreditCardsPage() {
                 why: 'Best for foodies. Earn 4x at port restaurants and excursion dining. Pairs perfectly with Amex Platinum for a full Membership Rewards stack.',
               },
               {
-                name: 'Citi Strata Premier',
-                fee: '$95 / yr',
-                bonus: '70,000 pts ($700)',
-                earn: '3x travel · dining · grocery',
-                why: 'Underrated gem. 3x on almost everything, 1:1 transfers to Turkish Airlines Miles & Smiles — a hidden gem for Caribbean award redemptions.',
+                name: 'Chase Ink Business Unlimited',
+                fee: '$0 / yr (no annual fee)',
+                bonus: '$900 cash back',
+                earn: '1.5x on all purchases',
+                why: 'No-fee workhorse. Pair with the Ink Business Preferred to pool Ultimate Rewards and unlock airline + Hyatt transfers at zero added cost.',
               },
               {
                 name: 'Barclays Aviator Red',

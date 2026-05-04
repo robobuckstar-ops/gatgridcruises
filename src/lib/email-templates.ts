@@ -281,7 +281,7 @@ export function QUOTE_FOLLOW_UP(name: string, options: QuoteOption[]): string {
     ${optionsHTML}
     <div style="background-color:#FEF9EC;border:1px solid #D4AF37;border-radius:8px;padding:16px;margin:24px 0;">
       <p style="margin:0;color:#92400E;font-size:13px;font-weight:600;">💳 Pro Tip: Pay with a travel rewards card</p>
-      <p style="margin:6px 0 0;color:#78350F;font-size:13px;">Earn points toward future upgrades. The <a href="https://gatgridcruises.com/concierge" style="color:#92400E;">Amex Business Platinum</a> and <a href="https://gatgridcruises.com/concierge" style="color:#92400E;">Chase Ink Business Preferred</a> both earn excellent travel rewards.</p>
+      <p style="margin:6px 0 0;color:#78350F;font-size:13px;">Earn points toward future upgrades. The <a href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS" rel="nofollow sponsored noopener" style="color:#92400E;">Amex Business Platinum</a> and <a href="https://www.referyourchasecard.com/226m/6ZT33F9TOQ" rel="nofollow sponsored noopener" style="color:#92400E;">Chase Ink Business Preferred</a> both earn excellent travel rewards.</p>
     </div>
 
     <p style="margin:0;color:#64748B;font-size:13px;">Ready to move forward? Just reply.<br><br><strong style="color:#1E3A5F;">Dr. Grayson Starbuck, DPT</strong><br><span style="color:#64748B;">Grayson at GatGrid Cruises</span></p>
@@ -341,7 +341,7 @@ export function BOOKING_CONFIRMED(details: BookingDetails): string {
     </ol>
     <div style="background-color:#FEF9EC;border:1px solid #D4AF37;border-radius:8px;padding:16px;margin-bottom:20px;">
       <p style="margin:0;color:#92400E;font-size:13px;font-weight:600;">💳 Maximize your rewards</p>
-      <p style="margin:6px 0 0;color:#78350F;font-size:13px;">Consider paying your final balance with the <a href="https://gatgridcruises.com/concierge" style="color:#92400E;">Amex Business Platinum</a> (5× on flights, up to $200 airline fee credit) or <a href="https://gatgridcruises.com/concierge" style="color:#92400E;">Chase Ink Business Preferred</a> (3× on travel, no foreign transaction fees).</p>
+      <p style="margin:6px 0 0;color:#78350F;font-size:13px;">Consider paying your final balance with the <a href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS" rel="nofollow sponsored noopener" style="color:#92400E;">Amex Business Platinum</a> (5× on flights, up to $200 airline fee credit) or <a href="https://www.referyourchasecard.com/226m/6ZT33F9TOQ" rel="nofollow sponsored noopener" style="color:#92400E;">Chase Ink Business Preferred</a> (3× on travel, no foreign transaction fees).</p>
     </div>
 
     <p style="margin:0;color:#64748B;font-size:13px;">Safe travels!<br><strong style="color:#1E3A5F;">Dr. Grayson Starbuck, DPT</strong><br>Grayson at GatGrid Cruises</p>
@@ -601,19 +601,19 @@ export function welcomeEmail3(name: string, unsubToken: string): string {
     <div class="card-box">
       <h3>1. Chase Ink Business Preferred — Best for travel rewards</h3>
       <p>Earn 3x points on travel purchases (including cruises). The 100K point sign-up bonus is worth ~$1,250 in travel. No foreign transaction fees — useful for Caribbean ports.</p>
-      <a href="/concierge" class="cta-navy" style="font-size: 13px; padding: 10px 20px;">Learn More →</a>
+      <a href="https://www.referyourchasecard.com/226m/6ZT33F9TOQ" target="_blank" rel="nofollow sponsored noopener" class="cta-navy" style="font-size: 13px; padding: 10px 20px;">Apply via Referral →</a>
     </div>
 
     <div class="card-box">
-      <h3>2. Capital One Venture X — Best for simplicity</h3>
-      <p>Earn 2x miles on everything. The $300 annual travel credit and 10,000 bonus miles each anniversary effectively make the card free. Miles transfer to 15+ airline partners.</p>
-      <a href="/concierge" class="cta-navy" style="font-size: 13px; padding: 10px 20px;">Learn More →</a>
+      <h3>2. Capital One Spark Cash Plus — Best for simplicity</h3>
+      <p>Earn 2% unlimited cash back on everything. Up to $1,000 in welcome cash bonuses. No foreign transaction fees — use it freely at every Caribbean port.</p>
+      <a href="https://i.capitalone.com/JKlfRwN3f" target="_blank" rel="nofollow sponsored noopener" class="cta-navy" style="font-size: 13px; padding: 10px 20px;">Apply via Referral →</a>
     </div>
 
     <div class="card-box">
       <h3>3. Amex Business Platinum — Best for big spenders</h3>
       <p>150K+ point sign-up bonus (worth $1,500+ in travel). Up to $200 in airline fee credits annually. If you're booking a high-end stateroom, the math is hard to beat.</p>
-      <a href="/concierge" class="cta-navy" style="font-size: 13px; padding: 10px 20px;">Learn More →</a>
+      <a href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS" target="_blank" rel="nofollow sponsored noopener" class="cta-navy" style="font-size: 13px; padding: 10px 20px;">Apply via Referral →</a>
     </div>
 
     <div class="gold-box">
@@ -668,7 +668,7 @@ export function dealAlertEmail(alert: PriceDropAlert, unsubToken: string): strin
     <p><strong>Want to book?</strong> Just reply to this email. I'll walk you through the options, make sure the stateroom category works for your group, and handle the booking through Boardwalk Travel Agency at no extra cost to you.</p>
 
     <div class="gold-box">
-      <p><strong>💳 Tip:</strong> Pay your deposit with a travel rewards card and you could earn enough points to offset a future trip. I recommend the <a href="https://gatgridcruises.com/concierge" style="color: #92400E;">Chase Ink Business Preferred</a> or <a href="https://gatgridcruises.com/concierge" style="color: #92400E;">Amex Business Platinum</a>.</p>
+      <p><strong>💳 Tip:</strong> Pay your deposit with a travel rewards card and you could earn enough points to offset a future trip. I recommend the <a href="https://www.referyourchasecard.com/226m/6ZT33F9TOQ" rel="nofollow sponsored noopener" style="color: #92400E;">Chase Ink Business Preferred</a> or <a href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS" rel="nofollow sponsored noopener" style="color: #92400E;">Amex Business Platinum</a>.</p>
     </div>
 
     <p class="sig">Talk soon,<br><strong style="color: #1E3A5F;">Dr. Grayson Starbuck, DPT</strong><br>GatGrid Cruises · bookings@gatgridcruises.com</p>

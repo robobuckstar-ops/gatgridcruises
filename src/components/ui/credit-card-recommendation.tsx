@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { ChevronRight, CreditCard } from 'lucide-react'
 import type { CreditCard as CreditCardType } from '@/lib/credit-card-config'
+import { isExternalReferralLink } from '@/lib/affiliate-config'
 import { cn } from '@/lib/utils'
 
 interface CreditCardRecommendationProps {
@@ -25,12 +26,13 @@ export function CreditCardRecommendation({
     chase: 'bg-[#1E3A5F]/20 text-blue-700',
     amex: 'bg-indigo-100 text-indigo-700',
     'capital-one': 'bg-orange-100 text-orange-700',
-    citi: 'bg-sky-100 text-sky-700',
     'bank-of-america': 'bg-slate-100 text-slate-700',
     other: 'bg-gray-100 text-gray-700',
   }
 
-  const hasReferralLink = card.referralUrl && card.referralUrl.length > 0
+  const hasReferralLink = Boolean(card.referralUrl && card.referralUrl.length > 0)
+  const isExternal = isExternalReferralLink(card.referralUrl)
+  const ctaHref = hasReferralLink ? card.referralUrl : '/concierge'
 
   const compactInner = (
     <>
@@ -52,10 +54,20 @@ export function CreditCardRecommendation({
 
   if (compact) {
     const cls = "group flex items-center gap-3 p-3 rounded-lg border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all duration-200 bg-white"
-    return hasReferralLink ? (
-      <Link href="/concierge" className={cls}>{compactInner}</Link>
+    if (!hasReferralLink) {
+      return <div className={cls}>{compactInner}</div>
+    }
+    return isExternal ? (
+      <a
+        href={ctaHref}
+        target="_blank"
+        rel="nofollow sponsored noopener noreferrer"
+        className={cls}
+      >
+        {compactInner}
+      </a>
     ) : (
-      <div className={cls}>{compactInner}</div>
+      <Link href={ctaHref} className={cls}>{compactInner}</Link>
     )
   }
 
@@ -151,13 +163,25 @@ export function CreditCardRecommendation({
           {/* CTA */}
           {hasReferralLink && (
             <div className="mt-auto">
-              <Link
-                href="/concierge"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#1E3A5F] hover:bg-[#2a4f7a] text-white font-medium text-sm transition-colors duration-200"
-              >
-                Learn More
-                <ChevronRight className="h-4 w-4" />
-              </Link>
+              {isExternal ? (
+                <a
+                  href={ctaHref}
+                  target="_blank"
+                  rel="nofollow sponsored noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#1E3A5F] hover:bg-[#2a4f7a] text-white font-medium text-sm transition-colors duration-200"
+                >
+                  Apply via Referral
+                  <ChevronRight className="h-4 w-4" />
+                </a>
+              ) : (
+                <Link
+                  href={ctaHref}
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#1E3A5F] hover:bg-[#2a4f7a] text-white font-medium text-sm transition-colors duration-200"
+                >
+                  Learn More
+                  <ChevronRight className="h-4 w-4" />
+                </Link>
+              )}
             </div>
           )}
         </div>

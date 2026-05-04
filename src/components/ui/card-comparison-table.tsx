@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { Check, X } from 'lucide-react'
 import { getCardBySlug, creditCards, type CreditCard } from '@/lib/credit-card-config'
+import { isExternalReferralLink } from '@/lib/affiliate-config'
 import { cn } from '@/lib/utils'
 
 interface CardComparisonTableProps {
@@ -285,16 +286,30 @@ export function CardComparisonTable({ cardIds }: CardComparisonTableProps) {
             {/* CTA Row */}
             <tr>
               <td className="py-4 px-4 bg-slate-50 sticky left-0 z-10" />
-              {cards.map((card) => (
-                <td key={`${card.id}-cta`} className="py-4 px-4 text-center bg-slate-50">
-                  <Link
-                    href={card.referralUrl}
-                    className="inline-flex items-center px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium text-sm transition-colors duration-200"
-                  >
-                    Learn More
-                  </Link>
-                </td>
-              ))}
+              {cards.map((card) => {
+                const href = card.referralUrl || '/concierge'
+                const external = isExternalReferralLink(card.referralUrl)
+                const ctaClass =
+                  'inline-flex items-center px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium text-sm transition-colors duration-200'
+                return (
+                  <td key={`${card.id}-cta`} className="py-4 px-4 text-center bg-slate-50">
+                    {external ? (
+                      <a
+                        href={href}
+                        target="_blank"
+                        rel="nofollow sponsored noopener noreferrer"
+                        className={ctaClass}
+                      >
+                        Apply via Referral
+                      </a>
+                    ) : (
+                      <Link href={href} className={ctaClass}>
+                        Learn More
+                      </Link>
+                    )}
+                  </td>
+                )
+              })}
             </tr>
           </tbody>
         </table>

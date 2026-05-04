@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import { CARD_REFERRAL_LINKS } from '@/lib/affiliate-config'
 
 export const metadata: Metadata = {
   title: 'Best Business Credit Cards for Disney Cruises 2026 | GatGridCruises',
@@ -30,14 +31,15 @@ const cards = [
     annualFee: '$95',
     earningRate: '3x on travel, shipping, internet, & phone',
     signupBonus: '90,000 points after $8,000 spend in 3 months (~$1,125 value)',
-    referralUrl: '/concierge',
+    referralUrl: CARD_REFERRAL_LINKS['chase-ink-business-preferred'] as string,
     highlights: [
-      '3x Ultimate Rewards points on travel (including cruise bookings)',
-      'Points transfer 1:1 to United, Hyatt, Southwest, and more',
-      'Primary rental car insurance — no need to buy from the rental desk',
-      'Trip cancellation / interruption insurance up to $5,000 per trip',
-      'Cell phone protection (pay your bill with the card)',
-      'No foreign transaction fees',
+      '3x Ultimate Rewards points on travel (including cruise bookings — Disney, Royal Caribbean, Carnival all code as travel)',
+      'Points transfer 1:1 to United, Hyatt, Southwest, JetBlue, and more',
+      'Primary rental car insurance — skip the desk upsell on pre/post-cruise rentals',
+      'Trip cancellation & interruption insurance up to $5,000 per trip when paid with the card',
+      'Trip delay insurance up to $500 per ticket — covers hotel + meals if a flight delays embarkation',
+      'Cell phone protection up to $1,000 when you pay your monthly bill on the card',
+      'No foreign transaction fees — use it freely in Caribbean/Bahamian ports',
     ],
     bestFor: 'Business owners who travel regularly and want maximum flexibility with points',
     cruiseTip:
@@ -53,14 +55,14 @@ const cards = [
     annualFee: '$150 (rebated if you spend $150K+)',
     earningRate: '2% unlimited cash back on everything',
     signupBonus: 'Up to $1,000 cash back — $500 at $5K, $500 more at $50K in first 6 months',
-    referralUrl: '/concierge',
+    referralUrl: CARD_REFERRAL_LINKS['capital-one-spark-cash-plus'] as string,
     highlights: [
-      'Flat 2% cash back on every purchase — no categories to track',
-      'No spending caps or limits on cash back',
+      'Flat 2% cash back on every purchase — cruise fare, port hotels, excursions, onboard charges all earn the same',
+      'No spending caps or category restrictions — perfect for a $5K–$15K cruise charge',
+      'Travel accident insurance + auto rental collision damage waiver',
       'Extended warranty on purchases',
       'Free employee cards at no additional cost',
-      'No foreign transaction fees',
-      'Travel accident insurance included',
+      'No foreign transaction fees — use it in Nassau, Cozumel, St. Maarten without surcharges',
     ],
     bestFor: 'Business owners who want dead-simple, predictable rewards without managing categories',
     cruiseTip:
@@ -76,17 +78,18 @@ const cards = [
     annualFee: '$695',
     earningRate: '5x on flights & hotels booked via Amex Travel; 1.5x on purchases $5K+',
     signupBonus: '150,000 Membership Rewards points after $20,000 spend in first 3 months',
-    referralUrl: '/concierge',
+    referralUrl: CARD_REFERRAL_LINKS['amex-business-platinum'] as string,
     highlights: [
-      '$200 airline fee credit per year (incidental fees)',
-      '$189 CLEAR Plus credit per year',
-      '$100 Global Entry or TSA PreCheck credit',
-      'Priority Pass Select lounge access (1,300+ lounges)',
-      'Centurion Lounge access at select airports',
-      'Trip cancellation / interruption insurance',
-      '5x Membership Rewards on flights booked via Amex Travel',
-      'No preset spending limit — charge large cruise fares easily',
-      '35% airline bonus when you Pay with Points on flights',
+      '5x Membership Rewards on flights booked direct or via Amex Travel — maximize on flights to MCO, MIA, FLL, MSY, and other cruise hubs',
+      '1.5x points on single purchases of $5,000+ (cap $2M/yr) — Disney, Royal Caribbean, and Virgin Voyages cruise fares often qualify',
+      'Centurion Lounge access at MCO, MIA, JFK, LAX, DFW, SEA — quiet pre-cruise meal + open bar before embarkation',
+      'Priority Pass Select at 1,300+ lounges + Delta Sky Club access (when flying Delta)',
+      'Trip cancellation & interruption insurance up to $10,000/trip — replaces DCL Vacation Protection for most families',
+      'Trip delay insurance up to $500/ticket after a 6-hour delay',
+      '$200 airline fee credit + $189 CLEAR Plus credit + $100 Global Entry / TSA PreCheck credit annually',
+      'Fine Hotels & Resorts: $100 property credit + room upgrades on pre/post-cruise hotel stays',
+      'No preset spending limit — charge a $15K concierge cruise fare without bumping a preset cap',
+      '35% airline bonus when you Pay With Points on flights (effective 1.54¢/pt redemption)',
     ],
     bestFor: 'Frequent travelers who want premium airport lounge access and maximum points on big-ticket purchases',
     cruiseTip:
@@ -224,9 +227,11 @@ export default function BestCruiseCreditCardsPage() {
         {/* CTAs */}
         <section className="grid sm:grid-cols-3 gap-4 mb-14">
           {cards.map((card) => (
-            <Link
+            <a
               key={card.name}
               href={card.referralUrl}
+              target="_blank"
+              rel="nofollow sponsored noopener noreferrer"
               className="block text-center p-5 border-2 border-[#1E3A5F] rounded-xl hover:bg-[#1E3A5F] hover:text-white transition group"
             >
               <p className="font-bold text-slate-900 group-hover:text-white text-sm mb-1">
@@ -236,9 +241,9 @@ export default function BestCruiseCreditCardsPage() {
                 {card.signupBonus.split(' ').slice(0, 2).join(' ')}
               </p>
               <p className="text-slate-600 group-hover:text-white text-xs mt-2">
-                Learn More →
+                Apply via Referral →
               </p>
-            </Link>
+            </a>
           ))}
         </section>
 
@@ -307,9 +312,11 @@ export default function BestCruiseCreditCardsPage() {
                   </div>
                   <a
                     href={card.referralUrl}
+                    target="_blank"
+                    rel="nofollow sponsored noopener noreferrer"
                     className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#1E3A5F] hover:bg-[#2a4f7a] text-white font-semibold text-sm transition-colors whitespace-nowrap"
                   >
-                    Learn More →
+                    Apply via Referral →
                   </a>
                 </div>
 
@@ -373,9 +380,11 @@ export default function BestCruiseCreditCardsPage() {
               <div className="px-6 pb-6">
                 <a
                   href={card.referralUrl}
+                  target="_blank"
+                  rel="nofollow sponsored noopener noreferrer"
                   className="block w-full text-center py-3 rounded-lg bg-[#1E3A5F] hover:bg-[#2a4f7a] text-white font-semibold transition-colors"
                 >
-                  Plan Your Disney Cruise →
+                  Apply for {card.name} →
                 </a>
               </div>
             </section>

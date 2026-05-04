@@ -215,11 +215,21 @@ export default async function SailingDetailPage({ params }: PageProps) {
                 <div className="flex-1">
                   <p className="font-semibold text-sm text-amber-900 mb-1">Travel Hack</p>
                   <p className="text-sm text-amber-800">
-                    The Chase Sapphire Preferred signup bonus (75,000 pts ≈ $938 value) could cover flights to {port?.name} for this cruise.
+                    The Chase Ink Business Preferred 100K-point signup bonus (~$1,250 in travel) could cover flights to {port?.name} for this cruise — and earns 3x on the cruise fare itself.
                   </p>
-                  <a href="/travel-hacks" className="inline-flex items-center gap-1 text-sm font-medium text-amber-700 hover:text-amber-900 mt-2 transition-colors">
-                    See all travel hacks →
-                  </a>
+                  <div className="flex flex-wrap gap-3 mt-2">
+                    <a
+                      href="https://www.referyourchasecard.com/226m/6ZT33F9TOQ"
+                      target="_blank"
+                      rel="nofollow sponsored noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-sm font-semibold text-amber-700 hover:text-amber-900 transition-colors"
+                    >
+                      Apply via referral →
+                    </a>
+                    <a href="/travel-hacks/best-cruise-credit-cards" className="inline-flex items-center gap-1 text-sm font-medium text-amber-700 hover:text-amber-900 transition-colors">
+                      Compare cruise cards →
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

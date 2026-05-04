@@ -44,49 +44,80 @@ export function amazonSearchLink(query: string): string {
 
 // ─── CREDIT CARD REFERRAL LINKS ──────────────────────────────
 //
-// Add your referral links as you get them. Set to null if you
-// don't have one yet — the site will still show the card info
-// but won't include a referral link (just editorial content).
+// We have three live affiliate referral links — Chase Ink Business,
+// Capital One Spark Business, and Amex Business Platinum. Other
+// cards in the comparison content fall back to the closest issuer
+// referral, or to /concierge if no relationship exists yet.
 //
 // TIP: Most issuers let you generate referral links from your
 // online account under "Refer a Friend" or similar.
 //
 export const CARD_REFERRAL_LINKS: Record<string, string | null> = {
+  // Chase — Ink Business referral covers all Chase cards
   'chase-ink-business-preferred': 'https://www.referyourchasecard.com/226m/6ZT33F9TOQ',
   'chase-ink-business-unlimited': 'https://www.referyourchasecard.com/226m/6ZT33F9TOQ',
-  'chase-sapphire-preferred':     '/concierge', // TODO: Add Chase Sapphire referral link
-  'chase-sapphire-reserve':       '/concierge', // TODO: Add Chase Sapphire Reserve referral link
+  'chase-sapphire-preferred':     'https://www.referyourchasecard.com/226m/6ZT33F9TOQ',
+  'chase-sapphire-reserve':       'https://www.referyourchasecard.com/226m/6ZT33F9TOQ',
+
+  // American Express — Business Platinum referral
   'amex-business-platinum':       'https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS',
-  'amex-gold':                    '/concierge', // TODO: Add Amex Gold referral link
+  'amex-gold':                    'https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS',
+
+  // Capital One — Spark Business referral covers all Capital One cards
   'capital-one-spark-cash-plus':  'https://i.capitalone.com/JKlfRwN3f',
   'capital-one-spark-cash-select':'https://i.capitalone.com/JKlfRwN3f',
-  'capital-one-venture-x':        '/concierge', // TODO: Add Capital One Venture X referral link
-  'capital-one-venture':          '/concierge', // TODO: Add Capital One Venture referral link
-  'citi-premier':                 '/concierge', // TODO: Add Citi Premier referral link
+  'capital-one-spark-miles':      'https://i.capitalone.com/JKlfRwN3f',
+  'capital-one-venture-x':        'https://i.capitalone.com/JKlfRwN3f',
+  'capital-one-venture':          'https://i.capitalone.com/JKlfRwN3f',
 }
 
 /**
- * Get the referral link for a card. Falls back to the Chase
- * general link for Chase cards if no specific link exists,
- * or returns null if no link is available.
+ * Get the referral link for a card. Falls back by issuer family
+ * (Chase → Ink referral, Amex → Biz Platinum referral, Capital One →
+ * Spark referral), or returns null if we have no relationship.
  */
 export function getCardReferralLink(cardSlug: string): string | null {
-  // Check for exact match first
   if (CARD_REFERRAL_LINKS[cardSlug]) {
     return CARD_REFERRAL_LINKS[cardSlug]
   }
 
-  // For Chase cards without a specific link, use the Ink Business Preferred referral
-  if (cardSlug.startsWith('chase-') && CARD_REFERRAL_LINKS['chase-ink-business-preferred']) {
-    return CARD_REFERRAL_LINKS['chase-ink-business-preferred']
+  if (cardSlug.startsWith('chase-')) {
+    return CARD_REFERRAL_LINKS['chase-ink-business-preferred'] ?? null
   }
 
-  // For Capital One cards without a specific link, use the Spark Cash Plus referral
-  if (cardSlug.startsWith('capital-one-') && CARD_REFERRAL_LINKS['capital-one-spark-cash-plus']) {
-    return CARD_REFERRAL_LINKS['capital-one-spark-cash-plus']
+  if (cardSlug.startsWith('amex-')) {
+    return CARD_REFERRAL_LINKS['amex-business-platinum'] ?? null
+  }
+
+  if (cardSlug.startsWith('capital-one-')) {
+    return CARD_REFERRAL_LINKS['capital-one-spark-cash-plus'] ?? null
   }
 
   return null
+}
+
+/**
+ * True when the URL points to an external affiliate destination
+ * (not an internal /concierge fallback). Used to decide whether to
+ * apply nofollow/sponsored attributes and target=_blank.
+ */
+export function isExternalReferralLink(url: string | null | undefined): boolean {
+  if (!url) return false
+  return /^https?:\/\//i.test(url)
+}
+
+/**
+ * Standard `<a>` props for an outbound affiliate referral link.
+ * Adds rel="nofollow sponsored noopener noreferrer" and opens in a
+ * new tab. Returns null if the URL is not an external referral.
+ */
+export function affiliateLinkAttrs(url: string | null | undefined) {
+  if (!isExternalReferralLink(url)) return null
+  return {
+    href: url as string,
+    target: '_blank' as const,
+    rel: 'nofollow sponsored noopener noreferrer',
+  }
 }
 
 

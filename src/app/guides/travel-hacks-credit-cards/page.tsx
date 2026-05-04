@@ -145,11 +145,11 @@ export default function TravelHacksCreditCardsPage() {
         </p>
         <CardComparisonTable
           cardIds={[
+            'chase-ink-business-preferred',
+            'amex-business-platinum',
+            'capital-one-spark-cash-plus',
             'chase-sapphire-preferred',
-            'chase-sapphire-reserve',
             'amex-gold',
-            'capital-one-venture-x',
-            'citi-premier',
           ]}
         />
       </section>
@@ -174,9 +174,9 @@ export default function TravelHacksCreditCardsPage() {
               Which card is best if I only cruise once every few years?
             </h3>
             <p className="text-slate-700 leading-relaxed">
-              The <strong>Citi Premier</strong> or <strong>Capital One Venture</strong> offer excellent value at $95/year with 3x-1.5x
-              points on cruises. You don't need lounge access or premium perks if cruising is occasional. Pay off the
-              card monthly and watch your rewards grow.
+              The <strong>Chase Ink Business Preferred</strong> or <strong>Capital One Venture</strong> offer excellent value at $95/year
+              with 3x and 2x respectively on travel — including cruise fare. You don't need lounge access or premium perks if cruising
+              is occasional. Pay off the card monthly and watch your rewards grow.
             </p>
           </div>
 
