@@ -9,33 +9,32 @@ interface CountdownTimerProps {
   size?: 'sm' | 'md' | 'lg'
 }
 
+type TimeLeft = { days: number; hours: number } | null
+
+function computeTimeLeft(sailDate: string): TimeLeft {
+  const target = new Date(sailDate)
+  const diff = target.getTime() - Date.now()
+  if (diff <= 0) return null
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24))
+  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+  return { days, hours }
+}
+
 export function CountdownTimer({ sailDate, size = 'md' }: CountdownTimerProps) {
-  const [timeLeft, setTimeLeft] = useState<{ days: number; hours: number } | null>(null)
+  const [timeLeft, setTimeLeft] = useState<TimeLeft>(() => computeTimeLeft(sailDate))
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    const calculateTime = () => {
-      const now = new Date()
-      const target = new Date(sailDate)
-      const diff = target.getTime() - now.getTime()
-
-      if (diff <= 0) {
-        setTimeLeft(null)
-        return
-      }
-
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24))
-      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-
-      setTimeLeft({ days, hours })
-    }
-
-    calculateTime()
-    const interval = setInterval(calculateTime, 60000) // Update every minute
-
+    setMounted(true)
+    setTimeLeft(computeTimeLeft(sailDate))
+    const interval = setInterval(() => setTimeLeft(computeTimeLeft(sailDate)), 60000)
     return () => clearInterval(interval)
   }, [sailDate])
 
   if (!timeLeft) {
+    // Only render "Departed" after client mount confirms the sail date is in the past;
+    // avoids stale-build SSR HTML showing "Departed" for future sailings.
+    if (!mounted) return null
     return (
       <div className="text-xs text-slate-500 font-medium">
         Departed
