@@ -4,6 +4,8 @@ import Link from 'next/link'
 import { getShipBySlug, getShips, getSailings } from '@/lib/data'
 import { CabinComparison } from './cabin-comparison'
 import { Calendar, Anchor, Check, DollarSign, ArrowRight, Ship as ShipIcon } from 'lucide-react'
+import { StructuredData } from '@/components/ui/structured-data'
+import { generateShipSchema, generateBreadcrumbSchema } from '@/lib/structured-data'
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -53,6 +55,14 @@ export default async function ShipDetailPage({ params }: PageProps) {
 
   return (
     <div className="min-h-screen bg-white">
+      <StructuredData data={generateShipSchema(ship)} />
+      <StructuredData
+        data={generateBreadcrumbSchema([
+          { name: 'Home', url: 'https://gatgridcruises.com' },
+          { name: 'Ships', url: 'https://gatgridcruises.com/ships' },
+          { name: ship.name, url: `https://gatgridcruises.com/ships/${ship.slug}` },
+        ])}
+      />
       {/* Hero Section */}
       <div className="relative bg-gradient-to-br from-slate-900 via-[#1E3A5F] to-slate-900 text-white border-b border-white/10 overflow-hidden">
         {/* Decorative wave pattern */}

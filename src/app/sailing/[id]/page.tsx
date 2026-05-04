@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { getSailingById, getShipById, getStateroomsForShip, getHotelsForPort, getTransfersForPort, getSnapshotsForSailing } from '@/lib/data'
 import { formatPrice, formatDate, getScoreBg, calculateSailingScore, daysUntil } from '@/lib/utils'
-import { generateSailingSchema } from '@/lib/structured-data'
+import { generateSailingSchema, generateBreadcrumbSchema } from '@/lib/structured-data'
 import { calculateOutTheDoorPrice } from '@/lib/pricing'
 import { StructuredData } from '@/components/ui/structured-data'
 import { PriceChart } from '@/components/ui/price-chart'
@@ -121,6 +121,13 @@ export default async function SailingDetailPage({ params }: PageProps) {
   return (
     <div className="min-h-screen bg-white">
       <StructuredData data={generateSailingSchema(sailing)} />
+      <StructuredData
+        data={generateBreadcrumbSchema([
+          { name: 'Home', url: 'https://gatgridcruises.com' },
+          { name: 'Deals', url: 'https://gatgridcruises.com/deals' },
+          { name: sailing.itinerary_name, url: `https://gatgridcruises.com/sailing/${sailing.id}` },
+        ])}
+      />
       {/* Hero */}
       <div className="bg-gradient-to-br from-slate-900 via-[#1E3A5F] to-slate-900 text-white border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
