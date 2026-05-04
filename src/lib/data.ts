@@ -4,11 +4,22 @@ import { sailings } from '@/data/sailings'
 import { lastMinuteSailings } from '@/data/last-minute-sailings'
 import { priceSnapshots } from '@/data/price-snapshots'
 import { staterooms } from '@/data/staterooms'
+import {
+  stateroomCategories,
+  stateroomComparisonFeatures,
+  stateroomDecisionGuide,
+} from '@/data/stateroom-categories'
 import { hotels } from '@/data/hotels'
 import { transfers } from '@/data/transfers'
 import { sailTogetherGroups } from '@/data/sail-together-groups'
 import { blogPosts } from '@/data/blog-posts'
 import type { Ship, Port, Sailing, PriceSnapshot, Stateroom, PreCruiseHotel, TransferOption } from '@/types/database'
+import type {
+  StateroomCategory,
+  StateroomCategoryId,
+  StateroomComparisonFeature,
+  StateroomDecisionRule,
+} from '@/data/stateroom-categories'
 import type { SailTogetherGroup } from '@/data/sail-together-groups'
 import type { BlogPost } from '@/data/blog-posts'
 
@@ -174,6 +185,23 @@ export function getStaterooms(): Stateroom[] {
 
 export function getStateroomsForShip(shipId: string): Stateroom[] {
   return staterooms.filter(s => s.ship_id === shipId)
+}
+
+// Stateroom Categories (Inside / Oceanview / Verandah / Concierge — category-level profiles)
+export function getStateroomCategories(): StateroomCategory[] {
+  return stateroomCategories
+}
+
+export function getStateroomCategoryById(id: StateroomCategoryId): StateroomCategory | undefined {
+  return stateroomCategories.find(c => c.id === id)
+}
+
+export function getStateroomComparisonFeatures(): StateroomComparisonFeature[] {
+  return stateroomComparisonFeatures
+}
+
+export function getStateroomDecisionGuide(): StateroomDecisionRule[] {
+  return stateroomDecisionGuide
 }
 
 // Hotels
