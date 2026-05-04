@@ -115,7 +115,7 @@ export const ships: Ship[] = [
       }
     ],
     editorial_take: 'The Disney Magic is where the Disney Cruise Line dream began, and it still delivers all the charm and character you\'d expect from the original. While smaller than its newer siblings, that\'s actually its greatest strength—the ship feels intimate and personal rather than overwhelming. Perfect for first-timers or anyone who prefers a cozier cruise experience.',
-    hero_image_url: '/images/ships/disney-magic.jpg',
+    hero_image_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Disney_Magic_%28ship%2C_1998%29_001.jpg/1280px-Disney_Magic_%28ship%2C_1998%29_001.jpg',
     created_at: '2026-01-01T00:00:00Z',
     updated_at: '2026-01-01T00:00:00Z'
   },
@@ -233,7 +233,7 @@ export const ships: Ship[] = [
       }
     ],
     editorial_take: 'The Disney Wonder proves that bigger isn\'t always better. This beautifully maintained classic delivers an authentic Disney cruise experience without the sensory overload of mega-ships. If you\'ve watched the Disney Cruise Line grow and miss the original magic, the Wonder is your ship.',
-    hero_image_url: '/images/ships/disney-wonder.jpg',
+    hero_image_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Disney_Wonder_at_Port_Canaveral.jpg/1280px-Disney_Wonder_at_Port_Canaveral.jpg',
     created_at: '2026-01-01T00:00:00Z',
     updated_at: '2026-01-01T00:00:00Z'
   },
@@ -353,7 +353,7 @@ export const ships: Ship[] = [
       }
     ],
     editorial_take: 'The Disney Dream represented a quantum leap in ship size and technology when it launched, and it still feels modern today. The AquaDuck is genuinely thrilling, and the entertainment here is next-level. This is the sweet spot for families who want innovation without losing the Disney magic.',
-    hero_image_url: '/images/ships/disney-dream.jpg',
+    hero_image_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Disney_Dream_%28ship%2C_2011%29_001.jpg/1280px-Disney_Dream_%28ship%2C_2011%29_001.jpg',
     created_at: '2026-01-01T00:00:00Z',
     updated_at: '2026-01-01T00:00:00Z'
   },
@@ -473,7 +473,7 @@ export const ships: Ship[] = [
       }
     ],
     editorial_take: 'The Disney Fantasy is where Disney Cruise Line proved they could innovate with confidence. Remy is genuinely one of the best restaurants at sea, and the overall experience balances luxury with family-friendly fun beautifully. If you\'re willing to spend a bit extra, this ship will reward you with exceptional memories.',
-    hero_image_url: '/images/ships/disney-fantasy.jpg',
+    hero_image_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/AIDAblu_and_Disney_Fantasy.jpg/1280px-AIDAblu_and_Disney_Fantasy.jpg',
     created_at: '2026-01-01T00:00:00Z',
     updated_at: '2026-01-01T00:00:00Z'
   },
@@ -593,7 +593,7 @@ export const ships: Ship[] = [
       }
     ],
     editorial_take: 'The Disney Wish is what happens when Disney decides to dream big—literally, Rapunzel\'s Tower is a real climbing experience at sea. This is the most advanced ship in the fleet with technology that actually enhances rather than distracts from the magic. Fair warning: it\'s also the most expensive, but if you want the cutting edge of Disney cruising, this is it.',
-    hero_image_url: '/images/ships/disney-wish.jpg',
+    hero_image_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Disney_Wish_arriving_at_Port_Canaveral_%2802%29_%28cropped%29.jpg/1280px-Disney_Wish_arriving_at_Port_Canaveral_%2802%29_%28cropped%29.jpg',
     created_at: '2026-01-01T00:00:00Z',
     updated_at: '2026-01-01T00:00:00Z'
   },
@@ -713,7 +713,7 @@ export const ships: Ship[] = [
       }
     ],
     editorial_take: 'The Disney Treasure shows Disney learning from the Wish while charting its own course. The adventure-theme resonates more than some might expect, and the ship manages to feel fresh without feeling like a rehash. If you want cutting-edge experiences at a slightly better price point than the Wish, this is genuinely worth considering.',
-    hero_image_url: '/images/ships/disney-treasure.jpg',
+    hero_image_url: '',
     created_at: '2026-01-01T00:00:00Z',
     updated_at: '2026-01-01T00:00:00Z'
   },
@@ -833,7 +833,7 @@ export const ships: Ship[] = [
       }
     ],
     editorial_take: 'The Disney Destiny represents everything Disney has learned about modern family cruising distilled into one ship. It\'s the most refined version of the newer fleet, with all the tech and entertainment bells and whistles but without feeling experimental. This is Disney saying "we know how to do this really, really well now."',
-    hero_image_url: '/images/ships/disney-destiny.jpg',
+    hero_image_url: '',
     created_at: '2026-01-01T00:00:00Z',
     updated_at: '2026-01-01T00:00:00Z'
   },
@@ -955,7 +955,7 @@ export const ships: Ship[] = [
       }
     ],
     editorial_take: 'The Disney Adventure redefines what a cruise ship can be—it\'s so massive that Disney had to rethink how to make it feel personal. The neighborhood concept is genuinely clever, and with over 6,700 passengers, you\'d expect chaos but somehow it works. This is the future of cruising, whether you\'re excited or intimidated by the scale.',
-    hero_image_url: '/images/ships/disney-adventure.jpg',
+    hero_image_url: '',
     created_at: '2026-01-01T00:00:00Z',
     updated_at: '2026-01-01T00:00:00Z'
   }
