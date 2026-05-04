@@ -106,9 +106,9 @@ export default async function Home() {
           <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
             {([
               { icon: ShieldCheck, text: 'Authorized Disney Vacation Planner', sub: 'via Boardwalk Travel' },
-              { icon: TrendingDown, text: 'Price Drop Watch', sub: undefined },
-              { icon: Star, text: 'Personal Concierge Service', sub: undefined },
               { icon: Anchor, text: 'Powered by Real Cruise Experience', sub: undefined },
+              { icon: Star, text: 'Personal Concierge Service', sub: undefined },
+              { icon: TrendingDown, text: 'Price Drop Watch', sub: undefined },
             ] as const).map(({ icon: Icon, text, sub }) => (
               <div key={text} className="flex items-center gap-2.5">
                 <div className="w-8 h-8 rounded-full bg-[#D4AF37]/15 flex items-center justify-center flex-shrink-0">
