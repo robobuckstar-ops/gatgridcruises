@@ -1,7 +1,7 @@
 import { ships } from '@/data/ships'
 import { ports } from '@/data/ports'
-import { sailings } from '@/data/sailings'
-import { lastMinuteSailings } from '@/data/last-minute-sailings'
+import { sailings as rawSailings } from '@/data/sailings'
+import { lastMinuteSailings as rawLastMinuteSailings } from '@/data/last-minute-sailings'
 import { priceSnapshots } from '@/data/price-snapshots'
 import { staterooms } from '@/data/staterooms'
 import {
@@ -52,6 +52,24 @@ export function getPortBySlug(slug: string): Port | undefined {
 export function getPortById(id: string): Port | undefined {
   return ports.find(p => p.id === id)
 }
+
+// Sailings imported from upstream sources (Apify scrapes, manual entry) can
+// contain duplicates — same ship, same date, same departure port appearing
+// multiple times. Dedupe at the data layer so duplicates never reach the UI.
+function dedupeSailings<T extends { ship_id: string; sail_date: string; departure_port_id: string }>(list: T[]): T[] {
+  const seen = new Set<string>()
+  const out: T[] = []
+  for (const s of list) {
+    const key = `${s.ship_id}|${s.sail_date}|${s.departure_port_id}`
+    if (seen.has(key)) continue
+    seen.add(key)
+    out.push(s)
+  }
+  return out
+}
+
+const sailings = dedupeSailings(rawSailings)
+const lastMinuteSailings = dedupeSailings(rawLastMinuteSailings)
 
 // Disney Cruise Line ship IDs — only these ships should ever appear on the site
 const DISNEY_SHIP_IDS = new Set([
@@ -148,11 +166,12 @@ export function getLastMinuteDeals(): Sailing[] {
   const now = new Date()
   const ninetyDaysFromNow = new Date(now.getTime() + 90 * 24 * 60 * 60 * 1000)
 
-  // Combine last-minute sailings with regular sailings, filtering to Disney only
-  const allSailings = [
+  // Combine last-minute sailings with regular sailings, filtering to Disney only.
+  // Dedupe across the union — a sailing could appear in both arrays.
+  const allSailings = dedupeSailings([
     ...lastMinuteSailings,
     ...sailings
-  ].filter(isDisneySailing)
+  ]).filter(isDisneySailing)
 
   // Filter for sailings departing within 90 days
   const dealsWithin90 = allSailings.filter(s => {
