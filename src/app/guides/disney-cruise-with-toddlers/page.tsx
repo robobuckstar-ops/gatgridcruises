@@ -600,9 +600,9 @@ export default function DisneyCruiseWithToddlersGuide() {
         <section className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] p-8 rounded-lg mb-12 text-white">
           <h2 className="text-2xl font-fraunces font-bold mb-4 text-white">Ready to Find Your Perfect Cruise?</h2>
           <p className="font-inter mb-6">
-            Use our cost calculator to explore cabin options, pricing, and see which ships and itineraries work best for your family with young children.
+            Browse current deals to explore cabin options, pricing, and see which ships and itineraries work best for your family with young children.
           </p>
-          <Link href="/tools/cost-calculator" className="inline-flex items-center gap-2 bg-[#D4AF37] text-slate-900 font-bold py-3 px-6 rounded-lg hover:bg-yellow-300 transition">
+          <Link href="/deals" className="inline-flex items-center gap-2 bg-[#D4AF37] text-slate-900 font-bold py-3 px-6 rounded-lg hover:bg-yellow-300 transition">
             Browse Deals <ArrowRight size={20} />
           </Link>
         </section>

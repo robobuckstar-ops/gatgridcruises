@@ -6,7 +6,7 @@ import { GetQuoteCTA } from '@/components/get-quote-cta';
 
 export const metadata: Metadata = {
   title: 'The True Cost of a Disney Cruise (2026 Breakdown)',
-  description: 'Complete breakdown of Disney cruise costs including base fares, gratuities, drinks, excursions, specialty dining, and hidden fees. Plus sample family budget and cost calculator.',
+  description: 'Complete breakdown of Disney cruise costs including base fares, gratuities, drinks, excursions, specialty dining, and hidden fees. Plus a sample family budget.',
   openGraph: {
     title: 'The True Cost of a Disney Cruise (2026 Breakdown)',
     description: 'Complete breakdown of Disney cruise costs — base fares, gratuities, drinks, excursions, and hidden fees.',
@@ -282,14 +282,14 @@ export default function DisneyVsCruiseCostGuide() {
   
         <section className="mb-12">
           <h2 className="text-3xl font-fraunces font-bold text-slate-900 mb-6">
-            Use Our Cost Calculator
+            Get a Personalized Cost Estimate
           </h2>
-          <div className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] text-slate-900 p-8 rounded-lg">
+          <div className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] text-white p-8 rounded-lg">
             <p className="font-inter mb-6">
-              Stop guessing at your cruise budget. Our interactive cost calculator lets you input your stateroom category, sailing length, family size, and preferred add-ons to generate a personalized total cost estimate.
+              Stop guessing at your cruise budget. Tell our concierge your stateroom preference, sailing length, family size, and add-ons, and we&apos;ll send back a personalized total-cost breakdown.
             </p>
-            <Link href="/tools/cost-calculator" className="inline-flex items-center gap-2 bg-[#D4AF37] text-slate-900 font-bold py-3 px-6 rounded-lg hover:bg-yellow-300 transition">
-              Try the Cost Calculator <ArrowRight size={20} />
+            <Link href="/book" className="inline-flex items-center gap-2 bg-[#D4AF37] text-slate-900 font-bold py-3 px-6 rounded-lg hover:bg-yellow-300 transition">
+              Request a Cost Estimate <ArrowRight size={20} />
             </Link>
           </div>
         </section>
@@ -332,8 +332,8 @@ export default function DisneyVsCruiseCostGuide() {
             <Link href="/deals" className="inline-flex items-center justify-center gap-2 bg-[#D4AF37] text-slate-900 font-bold py-3 px-6 rounded-lg hover:bg-yellow-300 transition">
               View Current Deals <ArrowRight size={20} />
             </Link>
-            <Link href="/tools/cost-calculator" className="inline-flex items-center justify-center gap-2 border-2 border-[#1E3A5F] text-slate-900 font-bold py-3 px-6 rounded-lg hover:bg-[#1E3A5F] hover:text-white transition">
-              Calculate Your Cost <TrendingUp size={20} />
+            <Link href="/book" className="inline-flex items-center justify-center gap-2 border-2 border-white text-white font-bold py-3 px-6 rounded-lg hover:bg-white hover:text-[#1E3A5F] transition">
+              Get a Free Quote <TrendingUp size={20} />
             </Link>
           </div>
         </section>

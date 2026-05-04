@@ -299,7 +299,7 @@ export default function CastawayCayGuide() {
         <section className="my-12 p-8 bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] text-white rounded-lg">
           <h2 className="font-fraunces text-3xl font-bold mb-4">Plan Your Castaway Cay Adventure</h2>
           <p className="font-inter text-lg mb-6">
-            Ready to explore Disney's private island? Use our cruise planning tools to calculate your costs, find the best deals, and compare cruise options.
+            Ready to explore Disney's private island? Use our cruise planning tools to find the best deals and compare cruise options.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link
@@ -309,10 +309,10 @@ export default function CastawayCayGuide() {
               Browse Deals
             </Link>
             <Link
-              href="/tools/cost-calculator"
+              href="/book"
               className="inline-block px-6 py-3 bg-white text-slate-900 font-inter font-bold rounded hover:bg-gray-100 transition"
             >
-              Calculate Total Cost
+              Get a Free Quote
             </Link>
             <Link
               href="/ships"

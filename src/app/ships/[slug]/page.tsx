@@ -270,21 +270,6 @@ export default async function ShipDetailPage({ params }: PageProps) {
               </Link>
             </div>
 
-            {/* Cost Calculator CTA */}
-            <div className="bg-slate-50 rounded-xl p-6 border border-slate-200">
-              <h3 className="font-fraunces text-lg font-bold text-slate-900 mb-3">What Will Your Cruise Cost?</h3>
-              <p className="font-inter text-sm text-gray-600 mb-4">
-                Add flights, hotels, excursions, and dining packages to see the true cost of your dream cruise.
-              </p>
-              <Link
-                href="/tools/cost-calculator"
-                className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#D4AF37] text-slate-900 font-semibold text-sm rounded-lg hover:bg-yellow-300 transition-colors w-full justify-center"
-              >
-                Cost Calculator
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-
             {/* Related Ships */}
             <div className="bg-white rounded-xl p-6 border-2 border-gray-200">
               <h3 className="font-fraunces text-lg font-bold text-slate-900 mb-4">Explore Other Ships</h3>

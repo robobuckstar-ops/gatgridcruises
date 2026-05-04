@@ -39,7 +39,6 @@ const navItems = [
     label: 'Tools',
     href: '/tools',
     children: [
-      { label: 'Cost Calculator', href: '/tools/cost-calculator' },
       { label: 'OBC Calculator', href: '/tools/obc-calculator' },
       { label: '💳 Credit Card Hacks', href: '/tools/credit-cards' },
       { label: 'Flight Finder', href: '/tools/flights' },

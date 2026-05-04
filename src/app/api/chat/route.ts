@@ -46,7 +46,6 @@ When discussing ships, give specific, accurate facts. If asked about a compariso
 **Key Pages on GatGrid Cruises:**
 - /deals — Deal Grid for tracking current Disney cruise deals (updated daily)
 - /ships — Ship comparisons and detailed reviews
-- /tools/cost-calculator — Full trip cost calculator including flights, hotels, and extras
 - /tools/staterooms — Stateroom finder with honest pros/cons and noise ratings
 - /tools/transfers — Port transfer guide and cost comparison
 - /guides — Disney cruise planning guides

@@ -104,7 +104,6 @@ function ackHtml(name: string, sailingSummary: string): string {
   <p style="margin:0 0 8px;color:#1E3A5F;font-size:14px;font-weight:600;">While you wait:</p>
   <ul style="margin:0;padding-left:20px;color:#1E3A5F;font-size:14px;line-height:1.7;">
     <li><a href="https://gatgridcruises.com/guides/cruise-countdown" style="color:#1E3A5F;">Disney Cruise Countdown Checklist</a></li>
-    <li><a href="https://gatgridcruises.com/tools/cost-calculator" style="color:#1E3A5F;">Total Trip Cost Calculator</a></li>
     <li><a href="https://gatgridcruises.com/deals" style="color:#1E3A5F;">Browse current deals</a></li>
   </ul>
 </div>

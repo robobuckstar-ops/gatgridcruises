@@ -610,10 +610,10 @@ export default function PackingListGuide() {
               Find Cruise Deals
             </Link>
             <Link
-              href="/tools/cost-calculator"
+              href="/book"
               className="inline-block px-6 py-3 bg-white text-slate-900 font-inter font-bold rounded hover:bg-gray-100 transition"
             >
-              Calculate Total Cost
+              Get a Free Quote
             </Link>
             <Link
               href="/ships"

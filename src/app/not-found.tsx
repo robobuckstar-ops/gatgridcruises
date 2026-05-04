@@ -39,10 +39,10 @@ export default function NotFound() {
           </Link>
 
           <Link
-            href="/tools/cost-calculator"
+            href="/tools"
             className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg border-2 border-[#D4AF37] text-[#D4AF37] font-semibold hover:bg-[#D4AF37] hover:text-slate-900 transition-colors duration-200"
           >
-            Cost Calculator
+            Planning Tools
             <ArrowRight className="w-4 h-4" aria-hidden="true" />
           </Link>
         </div>

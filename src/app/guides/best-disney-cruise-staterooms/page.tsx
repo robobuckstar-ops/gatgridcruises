@@ -475,7 +475,7 @@ export default function BestDisneyCruiseStateroomsGuide() {
             <li className="flex gap-3">
               <span className="text-blue-600 font-bold">4.</span>
               <div>
-                <strong>Price compare across websites:</strong> Use our <Link href="/tools/cost-calculator" className="text-blue-600 font-bold hover:underline">cost calculator</Link> to compare cabin categories and understand price differences.
+                <strong>Price compare across websites:</strong> Browse our <Link href="/tools/staterooms" className="text-blue-600 font-bold hover:underline">stateroom finder</Link> to compare cabin categories and understand price differences.
               </div>
             </li>
           </ul>
@@ -487,7 +487,7 @@ export default function BestDisneyCruiseStateroomsGuide() {
           <p className="font-inter mb-6">
             Use our stateroom finder to compare cabin categories, view pricing, and discover the best options for your vacation style and budget.
           </p>
-          <Link href="/tools/cost-calculator" className="inline-flex items-center gap-2 bg-[#D4AF37] text-slate-900 font-bold py-3 px-6 rounded-lg hover:bg-yellow-300 transition">
+          <Link href="/deals" className="inline-flex items-center gap-2 bg-[#D4AF37] text-slate-900 font-bold py-3 px-6 rounded-lg hover:bg-yellow-300 transition">
             Browse Deals <ArrowRight size={20} />
           </Link>
         </section>

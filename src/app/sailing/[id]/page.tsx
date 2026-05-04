@@ -344,12 +344,6 @@ export default async function SailingDetailPage({ params }: PageProps) {
                     </div>
                   )}
                 </div>
-                <div className="p-5 bg-slate-50 border-t border-slate-200">
-                  <Link href={`/tools/cost-calculator?sailing=${sailing.id}`} className="inline-flex items-center gap-2 text-sm text-blue-600 hover:text-blue-700 font-medium">
-                    Calculate custom costs <ArrowRight className="h-4 w-4" />
-                  </Link>
-                  <p className="text-xs text-slate-500 mt-2">Add flights, hotels, excursions, dining packages, and more to see your true trip cost.</p>
-                </div>
               </div>
             </section>
 
@@ -505,20 +499,6 @@ export default async function SailingDetailPage({ params }: PageProps) {
 
           {/* Sidebar - 1/3 */}
           <div className="space-y-6">
-            {/* Cost Calculator CTA */}
-            <div className="bg-slate-50 border border-slate-200 rounded-xl p-5">
-              <h3 className="font-display text-lg font-semibold text-slate-900 mb-2">What Will This Trip Really Cost?</h3>
-              <p className="text-sm text-slate-600 mb-4">
-                Add flights, hotels, gratuities, excursions, and more to see the true cost.
-              </p>
-              <Link
-                href={`/tools/cost-calculator?sailing=${sailing.id}`}
-                className="inline-flex items-center gap-2 w-full justify-center px-4 py-2.5 bg-[#D4AF37] text-slate-900 font-semibold text-sm rounded-lg hover:bg-yellow-300 transition-colors"
-              >
-                Calculate Total Cost <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
-
             {/* Pre-cruise hotels */}
             {hotels.length > 0 && (
               <div className="bg-white border border-slate-200 rounded-xl p-5">

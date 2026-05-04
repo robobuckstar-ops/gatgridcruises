@@ -27,6 +27,12 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      { source: '/tools/cost-calculator', destination: '/tools', permanent: true },
+      { source: '/tools/cruise-cost-calculator', destination: '/tools', permanent: true },
+    ]
+  },
   async headers() {
     return [
       {

@@ -1068,8 +1068,8 @@ Many teens who are skeptical before boarding return home having had a genuinely 
 <h2>Bonus: Use GatGrid's Free Planning Tools</h2>
 <p>Beyond the deal scanner, GatGridCruises offers several free tools that help you plan smarter before you book:</p>
 <ul>
-<li><a href="/tools/cost-calculator">Cruise Cost Calculator</a> — model the true all-in cost including gratuities, excursions, and beverage packages</li>
 <li><a href="/tools/compare">Compare Sailings</a> — side-by-side comparison of different itineraries, ships, and price points</li>
+<li><a href="/tools/obc-calculator">OBC Calculator</a> — see how much onboard credit you qualify for based on your booking fare</li>
 <li><a href="/tools/staterooms">Stateroom Finder</a> — compare cabin categories and find the right balance of space vs. price</li>
 <li><a href="/tools/flights">Flight Finder</a> — find the best flights to your embarkation port</li>
 </ul>

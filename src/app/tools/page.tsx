@@ -1,22 +1,22 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { Calculator, CreditCard, Plane, BedDouble, ArrowLeftRight, DollarSign, Bell, Bot } from 'lucide-react'
+import { CreditCard, Plane, BedDouble, ArrowLeftRight, DollarSign, Bell, Bot } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Disney Cruise Planning Tools — Calculators & Finders',
   description:
-    'Free tools for planning a Disney cruise: OBC calculator, cost estimator, credit card optimizer, flight finder, stateroom picker, sailing comparison, and more.',
+    'Free tools for planning a Disney cruise: OBC calculator, credit card optimizer, flight finder, stateroom picker, sailing comparison, and more.',
   openGraph: {
     title: 'Disney Cruise Planning Tools — Calculators & Finders',
     description:
-      'Free tools for planning a Disney cruise: OBC calculator, cost estimator, credit card optimizer, flight finder, stateroom picker, and more.',
+      'Free tools for planning a Disney cruise: OBC calculator, credit card optimizer, flight finder, stateroom picker, and more.',
     url: 'https://gatgridcruises.com/tools',
     images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Disney Cruise Planning Tools — Calculators & Finders',
-    description: 'Free tools for planning a Disney cruise: OBC calculator, cost estimator, credit card optimizer, flight finder, and more.',
+    description: 'Free tools for planning a Disney cruise: OBC calculator, credit card optimizer, flight finder, and more.',
     images: ['https://gatgridcruises.com/og-image.png'],
   },
 }
@@ -28,13 +28,6 @@ const tools = [
     title: 'OBC Calculator',
     description: 'Find out exactly how much onboard credit you qualify for based on your booking fare.',
     cta: 'Calculate OBC',
-  },
-  {
-    href: '/tools/cost-calculator',
-    icon: Calculator,
-    title: 'Cost Calculator',
-    description: 'Get a full estimate of your Disney cruise total cost — fare, gratuities, excursions, drinks, and more.',
-    cta: 'Estimate Cost',
   },
   {
     href: '/tools/credit-cards',

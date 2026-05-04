@@ -438,7 +438,7 @@ export default function DisneyCruiseFoodGuide() {
         <section className="my-12 p-8 bg-gradient-to-r from-blue-50 to-blue-900 text-white rounded-lg">
           <h2 className="font-fraunces text-3xl font-bold mb-4">Ready to Experience Disney Dining?</h2>
           <p className="font-inter text-lg mb-6">
-            Explore cruise options, compare ships, and calculate your total trip cost including dining experiences.
+            Explore cruise options, compare ships, and request a quote covering everything from staterooms to specialty dining.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link
@@ -448,10 +448,10 @@ export default function DisneyCruiseFoodGuide() {
               Browse Deals
             </Link>
             <Link
-              href="/tools/cost-calculator"
+              href="/book"
               className="inline-block px-6 py-3 bg-white text-slate-900 font-inter font-bold rounded hover:bg-gray-100 transition"
             >
-              Calculate Total Cost
+              Get a Free Quote
             </Link>
             <Link
               href="/ships"

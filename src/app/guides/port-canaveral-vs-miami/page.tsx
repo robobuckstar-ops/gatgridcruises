@@ -568,9 +568,9 @@ export default function PortCanaveralVsMiamiGuide() {
         <section className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] p-8 rounded-lg mb-12 text-white">
           <h2 className="text-2xl font-fraunces font-bold mb-4 text-white">Ready to Find Your Perfect Cruise?</h2>
           <p className="font-inter mb-6">
-            Now that you've chosen your port, use our cost calculator to compare pricing and find the best deals on your Disney cruise.
+            Now that you've chosen your port, browse current deals and compare pricing for your Disney cruise.
           </p>
-          <Link href="/tools/cost-calculator" className="inline-flex items-center gap-2 bg-[#D4AF37] text-slate-900 font-bold py-3 px-6 rounded-lg hover:bg-yellow-300 transition">
+          <Link href="/deals" className="inline-flex items-center gap-2 bg-[#D4AF37] text-slate-900 font-bold py-3 px-6 rounded-lg hover:bg-yellow-300 transition">
             Browse Deals <ArrowRight size={20} />
           </Link>
         </section>

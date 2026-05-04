@@ -260,12 +260,6 @@ export default function StateroomComparisonPage() {
 
         {/* CTA */}
         <section className="mb-12 space-y-4">
-          <Link
-            href="/tools/cruise-cost-calculator"
-            className="block text-center px-6 py-4 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition"
-          >
-            Estimate Your Cruise Cost
-          </Link>
           <BookingInquiryButton variant="inline" label="Get a Free Quote" />
         </section>
 
@@ -279,7 +273,7 @@ export default function StateroomComparisonPage() {
             {[
               ['/guides/first-time-disney-cruise', 'First-Time Disney Cruise Guide'],
               ['/blog/disney-cruise-packing-list', 'Packing List'],
-              ['/tools/cruise-cost-calculator', 'Cruise Cost Calculator'],
+              ['/tools/staterooms', 'Stateroom Finder'],
               ['/travel-hacks/best-cruise-credit-cards', 'Best Credit Cards for Cruises'],
             ].map(([href, label]) => (
               <Link

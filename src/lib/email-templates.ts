@@ -92,7 +92,7 @@ export function weeklyDigestTemplate(data: {
     </div>
 
     <div style="text-align: center; padding: 0 24px 24px;">
-      <a href="https://gatgridcruises.com/tools/cost-calculator" class="cta-button" style="background: #1E3A5F; color: #ffffff;">Calculate Your Trip Cost →</a>
+      <a href="https://gatgridcruises.com/book" class="cta-button" style="background: #1E3A5F; color: #ffffff;">Get a Free Quote →</a>
     </div>
 
     <div class="footer">
@@ -209,8 +209,8 @@ export function INQUIRY_RECEIVED(data: InquiryData): string {
     ${data.notes ? `<p style="margin:0 0 20px;color:#334155;font-size:14px;"><strong>Your notes:</strong> ${data.notes}</p>` : ''}
     <p style="margin:0 0 8px;color:#334155;font-size:14px;line-height:1.6;">While you wait, check out our free planning tools:</p>
     <ul style="margin:0 0 24px;padding-left:20px;color:#1E3A5F;font-size:14px;">
-      <li style="margin-bottom:6px;"><a href="https://gatgridcruises.com/tools/cost-calculator" style="color:#1E3A5F;">Total Trip Cost Calculator</a></li>
       <li style="margin-bottom:6px;"><a href="https://gatgridcruises.com/guides" style="color:#1E3A5F;">Disney Cruise Guides</a></li>
+      <li style="margin-bottom:6px;"><a href="https://gatgridcruises.com/tools/staterooms" style="color:#1E3A5F;">Stateroom Finder</a></li>
       <li><a href="https://gatgridcruises.com/deals" style="color:#1E3A5F;">Current Deals</a></li>
     </ul>
 
@@ -237,7 +237,6 @@ export function CONCIERGE_RECEIVED(data: ConciergeAckData): string {
       <p style="margin:0 0 10px;color:#1E3A5F;font-size:14px;font-weight:600;">While you wait, get a head start:</p>
       <ul style="margin:0;padding-left:20px;color:#1E3A5F;font-size:14px;line-height:1.8;">
         <li><a href="https://gatgridcruises.com/guides/cruise-countdown" style="color:#1E3A5F;">Disney Cruise Countdown Checklist</a></li>
-        <li><a href="https://gatgridcruises.com/tools/cost-calculator" style="color:#1E3A5F;">Total Trip Cost Calculator</a></li>
         <li><a href="https://gatgridcruises.com/deals" style="color:#1E3A5F;">Current Deals</a></li>
       </ul>
     </div>
@@ -545,9 +544,9 @@ export function welcomeEmail1(name: string, unsubToken: string, topDeals: TopDea
     </div>
 
     <div class="card-box">
-      <h3>🧮 Not sure what a Disney cruise really costs?</h3>
-      <p>Our free Cost Calculator adds up the cruise fare, excursions, gratuities, drinks, and everything else so you know the real number before you book.</p>
-      <a href="https://gatgridcruises.com/tools/cost-calculator" style="color: #1E3A5F; font-weight: 600; font-size: 14px;">Try the Cost Calculator →</a>
+      <h3>💬 Not sure what a Disney cruise really costs?</h3>
+      <p>Tell our concierge your stateroom preference, sailing length, family size, and add-ons, and we&rsquo;ll send back a personalized total-cost breakdown — fare, gratuities, excursions, drinks, the works.</p>
+      <a href="https://gatgridcruises.com/book" style="color: #1E3A5F; font-weight: 600; font-size: 14px;">Request a Cost Estimate →</a>
     </div>
 
     <p>Every Sunday I send a weekly deal digest with the biggest price drops of the week. But if a really good deal surfaces mid-week, I'll send a quick note so you don't miss it.</p>
@@ -807,9 +806,9 @@ export function leadNurtureDay1(name: string): string {
     <div style="background-color:#F0F7FF;border-left:4px solid #1E3A5F;border-radius:6px;padding:20px;margin-bottom:24px;">
       <h3 style="margin:0 0 8px;color:#1E3A5F;font-size:15px;font-family:Georgia,serif;">While you're thinking it over:</h3>
       <ul style="margin:0;padding-left:20px;color:#334155;font-size:14px;line-height:1.8;">
-        <li><a href="https://gatgridcruises.com/tools/cost-calculator" style="color:#1E3A5F;font-weight:600;">Total Trip Cost Calculator</a> — see the real cost, not just the fare</li>
         <li><a href="https://gatgridcruises.com/deals" style="color:#1E3A5F;font-weight:600;">Current Deals Dashboard</a> — AI-scored deals updated daily</li>
         <li><a href="https://gatgridcruises.com/guides" style="color:#1E3A5F;font-weight:600;">First-Timer's Guide</a> — everything you need to know</li>
+        <li><a href="https://gatgridcruises.com/tools/staterooms" style="color:#1E3A5F;font-weight:600;">Stateroom Finder</a> — honest pros, cons, and noise ratings</li>
       </ul>
     </div>
     <p style="margin:0 0 16px;color:#334155;font-size:15px;line-height:1.6;">

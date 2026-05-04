@@ -453,10 +453,6 @@ export default function BestTimeToBookGuide() {
               <span className="text-blue-600 font-bold">✓</span>
               <span>Compare prices across multiple ships and itineraries</span>
             </li>
-            <li className="flex gap-3">
-              <span className="text-blue-600 font-bold">✓</span>
-              <span>Use our cost calculator to estimate total trip expenses</span>
-            </li>
           </ul>
 
           <div className="p-4 bg-[#1E3A5F]/10 rounded">
@@ -470,7 +466,7 @@ export default function BestTimeToBookGuide() {
         <section className="my-12 p-8 bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] text-white rounded-lg">
           <h2 className="font-fraunces text-3xl font-bold mb-4">Ready to Book at the Best Price?</h2>
           <p className="font-inter text-lg mb-6">
-            Use our price tracking, cost calculator, and deal finder to secure the lowest fares on your Disney cruise.
+            Use our price tracking and deal finder to secure the lowest fares on your Disney cruise.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link
@@ -480,10 +476,10 @@ export default function BestTimeToBookGuide() {
               Browse Current Deals
             </Link>
             <Link
-              href="/tools/cost-calculator"
+              href="/price-tracker"
               className="inline-block px-6 py-3 bg-white text-slate-900 font-inter font-bold rounded hover:bg-gray-100 transition"
             >
-              Calculate Total Cost
+              Track Prices
             </Link>
             <Link
               href="/ships"

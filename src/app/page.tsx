@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import {
   TrendingDown,
-  Calculator,
   Plane,
   ArrowRight,
   Search,
@@ -13,7 +12,6 @@ import {
   MapPin,
   Clock,
   Trophy,
-  Bot,
   Gift,
   ShieldCheck,
   Anchor,
@@ -91,10 +89,10 @@ export default async function Home() {
               View Current Deals
             </Link>
             <Link
-              href="/tools/cost-calculator"
+              href="/book"
               className="inline-flex items-center justify-center px-8 py-3.5 rounded-lg bg-white/10 border border-white/25 text-white font-semibold hover:bg-white/20 transition-colors duration-200 backdrop-blur-sm w-full sm:w-auto max-w-[280px]"
             >
-              Calculate Trip Cost
+              Get a Free Quote
             </Link>
           </div>
         </div>
@@ -217,10 +215,9 @@ export default async function Home() {
             Planning Tools
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {[
               { href: '/search', icon: Search, label: 'AI Cruise Finder', desc: 'Describe your dream cruise in plain English' },
-              { href: '/tools/cost-calculator', icon: Calculator, label: 'Cost Calculator', desc: 'True all-in cost beyond the advertised price' },
               { href: '/tools/flights', icon: Plane, label: 'Flight Finder', desc: 'Best flights to your departure port' },
               { href: '/tools/credit-cards', icon: CreditCard, label: 'Credit Card Hack', desc: 'The best card combo for Disney cruises' },
               { href: '/travel-hacks', icon: Sparkles, label: 'Travel Hacks', desc: 'Insider strategies to cruise cheaper — or free' },

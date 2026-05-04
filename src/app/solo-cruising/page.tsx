@@ -307,11 +307,11 @@ export default function SoloCruisingPage() {
         </div>
       </section>
 
-      {/* Solo Cost Calculator Section */}
+      {/* Solo Cost Examples Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-indigo-50">
         <div className="max-w-3xl mx-auto">
           <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-3 text-center">
-            Solo Cost Calculator
+            Solo Cruise Cost Examples
           </h2>
           <p className="text-center text-slate-600 mb-12 font-inter">
             See how solo cruise costs compare to other travel

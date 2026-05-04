@@ -520,14 +520,14 @@ export default function FirstTimeDisneyCruisePage() {
           <div className="grid sm:grid-cols-2 gap-4">
             {[
               {
-                title: 'Cruise Cost Calculator',
-                description: 'Estimate your fare based on ship, stateroom, length, and party size.',
-                href: '/tools/cruise-cost-calculator',
+                title: 'OBC Calculator',
+                description: 'See exactly how much onboard credit you qualify for based on your booking fare.',
+                href: '/tools/obc-calculator',
               },
               {
-                title: 'Full Trip Cost Calculator',
-                description: 'Include flights, hotels, excursions, and onboard extras.',
-                href: '/tools/cost-calculator',
+                title: 'Stateroom Finder',
+                description: 'Browse and filter staterooms with noise ratings, view scores, and honest reviews.',
+                href: '/tools/staterooms',
               },
               {
                 title: 'Packing List',

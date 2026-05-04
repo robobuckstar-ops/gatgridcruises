@@ -413,14 +413,14 @@ export default function PackingListPage() {
         <section className="mt-12 text-center">
           <h2 className="font-display text-2xl font-bold text-slate-900 mb-3">Ready to Start Planning?</h2>
           <p className="text-slate-600 mb-6 max-w-xl mx-auto">
-            Use our free tools to estimate your cruise cost and find the best stateroom for your family.
+            Use our free tools to compare staterooms and explore current deals before you book.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <Link
-              href="/tools/cruise-cost-calculator"
+              href="/deals"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#1E3A5F] hover:bg-[#2a4f7a] text-white font-semibold transition-colors"
             >
-              Cost Calculator
+              View Current Deals
             </Link>
             <Link
               href="/guides/stateroom-comparison"

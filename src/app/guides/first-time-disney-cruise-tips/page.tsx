@@ -597,8 +597,8 @@ export default function FirstTimeDisneyCruiseTipsGuide() {
             <Link href="/deals" className="inline-flex items-center justify-center gap-2 bg-[#D4AF37] text-slate-900 font-bold py-3 px-6 rounded-lg hover:bg-yellow-300 transition">
               Browse Deals <ArrowRight size={20} />
             </Link>
-            <Link href="/tools/cost-calculator" className="inline-flex items-center justify-center gap-2 border-2 border-[#1E3A5F] text-white font-bold py-3 px-6 rounded-lg hover:bg-[#1E3A5F] hover:text-slate-900 transition">
-              Calculate Your Cost <ArrowRight size={20} />
+            <Link href="/book" className="inline-flex items-center justify-center gap-2 border-2 border-white text-white font-bold py-3 px-6 rounded-lg hover:bg-white hover:text-[#1E3A5F] transition">
+              Get a Free Quote <ArrowRight size={20} />
             </Link>
           </div>
         </section>

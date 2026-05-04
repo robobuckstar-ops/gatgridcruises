@@ -62,7 +62,7 @@ export function boardwalkComplianceEmailHTML(): string {
 
   <ul>
     <li><strong>Price tracking</strong> — monitoring publicly available Disney Cruise Line pricing and highlighting price drops.</li>
-    <li><strong>Planning tools</strong> — a total trip cost calculator, stateroom finder with noise ratings, flight search for departure ports, and pre-cruise hotel guides.</li>
+    <li><strong>Planning tools</strong> — an OBC calculator, stateroom finder with noise ratings, flight search for departure ports, and pre-cruise hotel guides.</li>
     <li><strong>Editorial content</strong> — long-form guides on topics like packing lists, first-timer tips, dining guides, port comparisons, and family planning advice.</li>
     <li><strong>Email newsletter</strong> — a weekly opt-in digest of price drops and travel tips.</li>
   </ul>
@@ -133,7 +133,7 @@ WHAT THE WEBSITE DOES
 GatGridCruises.com provides free consumer-facing content including:
 
 - Price tracking — monitoring publicly available Disney Cruise Line pricing and highlighting price drops.
-- Planning tools — a total trip cost calculator, stateroom finder with noise ratings, flight search for departure ports, and pre-cruise hotel guides.
+- Planning tools — an OBC calculator, stateroom finder with noise ratings, flight search for departure ports, and pre-cruise hotel guides.
 - Editorial content — long-form guides on topics like packing lists, first-timer tips, dining guides, port comparisons, and family planning advice.
 - Email newsletter — a weekly opt-in digest of price drops and travel tips.
 
