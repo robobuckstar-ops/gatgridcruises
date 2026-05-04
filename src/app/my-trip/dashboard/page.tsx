@@ -116,6 +116,76 @@ function formatCurrency(value: number | null | undefined): string {
   }).format(value)
 }
 
+// Pulls port names from a freeform itinerary string like
+// "7-Night Eastern Caribbean: St. Thomas, St. Maarten & Castaway Cay".
+// Splits the segment after the colon on commas, ampersands, and "and".
+function extractPorts(itinerary: string): string[] {
+  if (!itinerary) return []
+  const afterColon = itinerary.includes(':')
+    ? itinerary.split(':').slice(1).join(':')
+    : itinerary
+  const parts = afterColon
+    .split(/,| & | and /i)
+    .map((p) => p.trim())
+    .filter(Boolean)
+  return parts.length > 1 ? parts : []
+}
+
+interface ItineraryDay {
+  date: Date
+  dayNum: number
+  isFirst: boolean
+  isLast: boolean
+}
+
+// Build a day-by-day list from sailing date through return date inclusive.
+// Falls back to nights count when no return date is on file.
+function buildItineraryDays(
+  startIso: string,
+  returnIso: string,
+  nights: number | null,
+): ItineraryDay[] {
+  const start = parseSailingDate(startIso)
+  if (!start) return []
+
+  let end = parseSailingDate(returnIso)
+  if (!end && nights && nights > 0) {
+    end = new Date(start)
+    end.setDate(end.getDate() + nights)
+  }
+  if (!end) return []
+
+  const days: ItineraryDay[] = []
+  const cur = new Date(start)
+  cur.setHours(12, 0, 0, 0)
+  const stop = new Date(end)
+  stop.setHours(12, 0, 0, 0)
+
+  let dayNum = 1
+  // Cap at 30 days as a safety rail against bad data.
+  while (cur.getTime() <= stop.getTime() && dayNum <= 30) {
+    days.push({
+      date: new Date(cur),
+      dayNum,
+      isFirst: dayNum === 1,
+      isLast: cur.getTime() === stop.getTime(),
+    })
+    cur.setDate(cur.getDate() + 1)
+    dayNum++
+  }
+  // Mark the final entry as the last day in case the loop's safety rail trimmed it.
+  if (days.length > 0) days[days.length - 1].isLast = true
+  return days
+}
+
+function formatItineraryDate(d: Date): string {
+  return new Intl.DateTimeFormat('en-US', {
+    weekday: 'short',
+    month: 'short',
+    day: 'numeric',
+  }).format(d)
+}
+
 // ─── API types ────────────────────────────────────────────────────────────────
 
 interface PortalApiResponse {
@@ -186,7 +256,6 @@ export default function DashboardPage() {
   const [timezone, setTimezone] = useState('America/New_York')
   const [checklistDone, setChecklistDone] = useState<Record<string, boolean>>({})
   const [prefs, setPrefs] = useState({ email: true, sms: true, frequency: 'milestone' })
-  const [messageSent, setMessageSent] = useState(false)
   const [showTzInfo, setShowTzInfo] = useState(false)
   const [signingOut, setSigningOut] = useState(false)
 
@@ -512,6 +581,89 @@ export default function DashboardPage() {
           </div>
         </section>
 
+        {/* ── Itinerary Timeline ── */}
+        {(() => {
+          const itineraryDays = buildItineraryDays(booking.sailingDate, booking.returnDate, booking.nights)
+          if (itineraryDays.length === 0) return null
+          const ports = extractPorts(booking.itinerary)
+          const headline = booking.itinerary.includes(':')
+            ? booking.itinerary.split(':')[0].trim()
+            : booking.itinerary
+
+          return (
+            <section className="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
+              <div className="px-6 py-4 border-b border-slate-100 flex items-center gap-2.5">
+                <MapPin className="w-5 h-5 text-navy" />
+                <h2 className="font-display font-bold text-navy text-lg">Itinerary</h2>
+                {headline && (
+                  <span className="ml-auto text-xs font-semibold uppercase tracking-wide text-slate-400">
+                    {headline}
+                  </span>
+                )}
+              </div>
+
+              <div className="px-6 py-5">
+                {ports.length > 0 && (
+                  <div className="mb-5 flex flex-wrap items-center gap-2">
+                    <span className="text-xs font-semibold uppercase tracking-wide text-slate-400">
+                      Ports of call:
+                    </span>
+                    {ports.map((port) => (
+                      <span
+                        key={port}
+                        className="inline-flex items-center gap-1 text-xs font-semibold bg-gold/10 text-navy border border-gold/30 rounded-full px-2.5 py-1"
+                      >
+                        <MapPin className="w-3 h-3" />
+                        {port}
+                      </span>
+                    ))}
+                  </div>
+                )}
+
+                <ol className="relative ml-2 border-l-2 border-slate-100 space-y-4">
+                  {itineraryDays.map((day) => {
+                    const accent = day.isFirst || day.isLast
+                    return (
+                      <li key={day.dayNum} className="relative pl-5">
+                        <span
+                          className={`absolute -left-[7px] top-1 w-3 h-3 rounded-full ring-2 ring-white ${
+                            accent ? 'bg-[#D4AF37]' : 'bg-slate-300'
+                          }`}
+                        />
+                        <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                          <span className="text-xs font-bold uppercase tracking-wide text-slate-400 w-12 shrink-0">
+                            Day {day.dayNum}
+                          </span>
+                          <span className="text-sm font-semibold text-slate-800">
+                            {formatItineraryDate(day.date)}
+                          </span>
+                          {day.isFirst && (
+                            <span className="text-[10px] font-bold uppercase tracking-wide bg-emerald-50 text-emerald-700 border border-emerald-100 rounded-full px-2 py-0.5">
+                              Embark
+                            </span>
+                          )}
+                          {day.isLast && (
+                            <span className="text-[10px] font-bold uppercase tracking-wide bg-amber-50 text-amber-700 border border-amber-100 rounded-full px-2 py-0.5">
+                              Return
+                            </span>
+                          )}
+                        </div>
+                      </li>
+                    )
+                  })}
+                </ol>
+
+                {ports.length > 0 && (
+                  <p className="mt-5 text-xs text-slate-400 leading-relaxed">
+                    Day-by-day port assignments depend on the cruise line&apos;s final schedule.
+                    Your concierge will confirm exact arrival and departure times closer to sail date.
+                  </p>
+                )}
+              </div>
+            </section>
+          )
+        })()}
+
         {/* ── Trip Details + Checklist ── */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
@@ -649,20 +801,33 @@ export default function DashboardPage() {
                 </p>
               </div>
 
-              {!messageSent ? (
-                <button
-                  onClick={() => setMessageSent(true)}
-                  className="w-full flex items-center justify-center gap-2 py-2.5 px-4 bg-navy text-white rounded-xl text-sm font-semibold hover:bg-[#15304f] transition-colors"
+              {(() => {
+                const subject = `Question about my ${booking.ship || 'cruise'}${
+                  booking.number ? ` — ${booking.number}` : ''
+                }`
+                const body = `Hi Grayson,\n\n`
+                const mailto = `mailto:bookings@gatgridcruises.com?subject=${encodeURIComponent(
+                  subject,
+                )}&body=${encodeURIComponent(body)}`
+                return (
+                  <a
+                    href={mailto}
+                    className="w-full flex items-center justify-center gap-2 py-2.5 px-4 bg-navy text-white rounded-xl text-sm font-semibold hover:bg-[#15304f] transition-colors"
+                  >
+                    <MessageCircle className="w-4 h-4" />
+                    Message Grayson
+                  </a>
+                )
+              })()}
+              <p className="text-xs text-slate-400 text-center mt-3">
+                Or email{' '}
+                <a
+                  href="mailto:bookings@gatgridcruises.com"
+                  className="text-navy font-semibold hover:underline"
                 >
-                  <MessageCircle className="w-4 h-4" />
-                  Message Grayson
-                </button>
-              ) : (
-                <div className="flex items-center justify-center gap-2 text-sm text-green-600 font-semibold py-2.5">
-                  <CheckCircle2 className="w-4 h-4" />
-                  Message sent! Grayson will reply within 24 hrs.
-                </div>
-              )}
+                  bookings@gatgridcruises.com
+                </a>
+              </p>
             </div>
           </section>
 
