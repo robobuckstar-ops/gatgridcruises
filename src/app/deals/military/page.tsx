@@ -10,6 +10,7 @@ import {
   ChevronRight,
 } from 'lucide-react'
 import { GetQuoteCTA } from '@/components/get-quote-cta'
+import { OBCDisclaimer } from '@/components/ui/obc-disclaimer'
 
 export const metadata: Metadata = {
   title: 'Military Disney Cruise Deals & Discounts 2026 | GatGridCruises',
@@ -309,6 +310,9 @@ export default function MilitaryDealsPage() {
           <p className="mt-6 text-blue-400 text-sm">
             Thank you for your service. We&apos;re honored to help you and your family make the most of it.
           </p>
+          <div className="mt-10 pt-6 border-t border-white/10 text-left">
+            <OBCDisclaimer />
+          </div>
         </div>
       </section>
     </main>

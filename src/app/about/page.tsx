@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { Gift } from 'lucide-react'
+import { OBCDisclaimer } from '@/components/ui/obc-disclaimer'
 
 export const metadata: Metadata = {
   title: 'About GatGridCruises — Dr. Grayson Starbuck, DPT',
@@ -138,7 +139,7 @@ export default function AboutPage() {
           <div className="flex items-start gap-4 bg-gradient-to-r from-[#0a1628] to-[#1E3A5F] rounded-xl p-6 text-white">
             <Gift className="w-8 h-8 text-[#D4AF37] flex-shrink-0 mt-0.5" aria-hidden="true" />
             <div>
-              <p className="font-fraunces font-bold text-lg mb-1 text-[#D4AF37]">Up to $1,000 in Free Onboard Credit</p>
+              <p className="font-fraunces font-bold text-lg mb-1 text-[#D4AF37]">Up to $400* in Free Onboard Credit</p>
               <p className="text-blue-200 text-sm leading-relaxed mb-3">
                 Plan direct with Disney and you get $0 in OBC. Plan with our concierge (via Boardwalk Travel Agency) and we add free money to your cruise account — for spa, specialty dining, excursions, or anything else you charge to your stateroom. Same Disney price, better perks.
               </p>
@@ -201,6 +202,11 @@ export default function AboutPage() {
             <div>
               <h3 className="font-semibold text-slate-900 mb-2">User-Generated Content</h3>
               <p>Reviews and comments from community members represent individual experiences and opinions, not official endorsements from GatGridCruises. We're not responsible for accuracy or appropriateness of user submissions.</p>
+            </div>
+
+            <div>
+              <h3 className="font-semibold text-slate-900 mb-2">Onboard Credit (OBC)</h3>
+              <OBCDisclaimer />
             </div>
           </div>
         </section>

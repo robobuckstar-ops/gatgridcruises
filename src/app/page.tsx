@@ -264,7 +264,7 @@ export default async function Home() {
               { icon: Clock, title: 'Milestone Reminders', desc: 'We ping you when booking windows, payment deadlines, and activity reservations open — so you never miss a beat.' },
               { icon: Plane, title: 'Flight Monitoring', desc: 'We watch your flights for price drops and alert you to schedule changes before they cause trip-day chaos.' },
               { icon: MapPin, title: 'Personal Prep Guidance', desc: 'Port tips, what to pack, when to arrive — tailored advice specific to your ship, dates, and ports.' },
-              { icon: Gift, title: 'Free Onboard Credit', desc: 'GatGrid clients receive up to $1,000 in OBC added to their stateroom account through Boardwalk Travel. Spend it on spa, dining, or excursions.' },
+              { icon: Gift, title: 'Free Onboard Credit', desc: 'GatGrid clients receive up to $400* in OBC added to their stateroom account through Boardwalk Travel. Spend it on spa, dining, or excursions.' },
             ].map(({ icon: Icon, title, desc }) => (
               <div key={title} className="bg-white/5 border border-white/10 rounded-xl p-5 hover:bg-white/10 transition-colors">
                 <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-[#D4AF37]/15 border border-[#D4AF37]/25 mb-4">
@@ -298,7 +298,7 @@ export default async function Home() {
                 <span className="text-[#D4AF37] text-xs font-bold uppercase tracking-widest">Exclusive Perk</span>
               </div>
               <h2 id="obc-heading" className="font-fraunces text-3xl md:text-4xl font-bold text-white mb-3">
-                Get Up to $1,000 in Free Onboard Credit
+                Get Up to $400* in Free Onboard Credit
               </h2>
               <p className="text-blue-200 text-base max-w-xl">
                 Connect through GatGrid and our partner Boardwalk Travel will add free spending money to your onboard account — for spa, dining, excursions, and more. Zero extra cost to you.
@@ -321,6 +321,9 @@ export default async function Home() {
               </Link>
             </div>
           </div>
+          <p className="mt-6 text-xs text-blue-300/70 max-w-3xl">
+            * OBC is tiered by total cruise fare (max $400). Applied after final payment via Boardwalk Travel Agency. Has no cash value, cannot be combined with other agent promotions, and is forfeited if the booking is cancelled or transferred. <Link href="/onboard-credit" className="underline hover:text-blue-200">Full terms</Link>.
+          </p>
         </div>
       </section>
 

@@ -864,7 +864,7 @@ export function leadNurtureDay7(name: string): string {
     </div>
     <div style="background-color:#F0F7EE;border:1px solid #C0DD97;border-radius:8px;padding:16px;margin:20px 0;">
       <p style="margin:0;color:#3B6D11;font-size:13px;line-height:1.6;">
-        <strong>Did you know?</strong> 10% of our commission from every booking is donated to <strong>CURE.org</strong> to help children receive life-changing surgical care. When you book through GatGrid, you're making a difference.
+        <strong>Did you know?</strong> 5% of our commission from every booking is donated to <strong>CURE.org</strong> to help children receive life-changing surgical care. When you book through GatGrid, you're making a difference.
       </p>
     </div>
     <p style="margin:0 0 16px;color:#334155;font-size:15px;line-height:1.6;">

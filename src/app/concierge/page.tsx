@@ -23,6 +23,7 @@ import {
 } from 'lucide-react'
 import { ConciergeForm } from './ConciergeForm'
 import { InsurancePartners } from '@/components/ui/insurance-partners'
+import { OBCDisclaimer } from '@/components/ui/obc-disclaimer'
 
 export const metadata: Metadata = {
   title: 'Your Personal Disney Cruise Concierge | GatGridCruises',
@@ -592,6 +593,10 @@ export default function ConciergePage() {
               <Mail className="w-4 h-4" />
               grayson@gatgridcruises.com
             </a>
+          </div>
+
+          <div className="mt-10 pt-6 border-t border-slate-200">
+            <OBCDisclaimer />
           </div>
         </div>
       </section>

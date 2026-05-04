@@ -20,6 +20,7 @@ import {
   ChevronDown,
   Loader2,
 } from 'lucide-react'
+import { OBCDisclaimer } from '@/components/ui/obc-disclaimer'
 
 // ─── Timezone Options ─────────────────────────────────────────────────────────
 
@@ -1015,6 +1016,12 @@ export default function DashboardPage() {
             </div>
           </div>
         </section>
+
+        {booking.obcAmount && booking.obcAmount > 0 ? (
+          <section className="border-t border-slate-200 pt-6">
+            <OBCDisclaimer />
+          </section>
+        ) : null}
 
       </div>
     </div>
