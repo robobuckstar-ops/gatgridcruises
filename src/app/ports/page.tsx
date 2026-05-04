@@ -1,21 +1,22 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { getPorts } from '@/lib/data'
-import { MapPin, Plane, DollarSign, Calendar } from 'lucide-react'
+import { destinationPorts } from '@/data/destination-ports'
+import { MapPin, Plane, DollarSign, Calendar, Anchor, ChevronRight } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Disney Cruise Ports',
-  description: 'Explore all Disney Cruise Line departure ports. Complete guides with parking, weather, activities, and pre-cruise hotel recommendations for every port.',
+  title: 'Disney Cruise Ports — Destination Guides & Departure Ports',
+  description: 'Complete Disney Cruise Line port guides. In-depth destination guides for Nassau, Castaway Cay, Lookout Cay, Cozumel, Grand Cayman, and St. Thomas — plus departure-port info for every Disney embarkation port.',
   openGraph: {
-    title: 'Disney Cruise Ports',
-    description: 'Explore all Disney Cruise Line departure ports. Complete guides with parking, weather, activities, and hotel recommendations.',
+    title: 'Disney Cruise Ports — Destination Guides & Departure Ports',
+    description: 'In-depth port guides for every Disney Cruise Line destination — Nassau, Castaway Cay, Lookout Cay, Cozumel, Grand Cayman, St. Thomas — plus departure-port info.',
     url: 'https://gatgridcruises.com/ports',
     images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Disney Cruise Ports',
-    description: 'Complete guides for every Disney Cruise Line departure port — parking, hotels, activities, and tips.',
+    title: 'Disney Cruise Ports — Destination Guides & Departure Ports',
+    description: 'In-depth port guides for every Disney Cruise Line destination plus departure-port info.',
     images: ['https://gatgridcruises.com/og-image.png'],
   },
 }
@@ -55,18 +56,99 @@ export default function PortsIndexPage() {
               Disney Cruise Ports
             </h1>
             <p className="text-lg sm:text-xl text-blue-200">
-              Comprehensive guides for all Disney Cruise Line departure ports. Parking, weather, activities, and honest hotel recommendations.
+              In-depth port guides for every Disney Cruise Line destination — what to do, where to eat, which excursions are worth it — plus departure-port info for every embarkation port.
             </p>
           </div>
         </div>
       </div>
 
-      {/* Editorial Intro */}
-      <div className="bg-white">
+      {/* DESTINATION PORT GUIDES */}
+      <div className="bg-white border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+          <div className="mb-8">
+            <div className="inline-flex items-center gap-2 bg-[#D4AF37]/10 text-[#1E3A5F] text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full mb-3">
+              <Anchor className="w-3.5 h-3.5" />
+              Cruise Destination Guides
+            </div>
+            <h2 className="font-display text-3xl sm:text-4xl font-bold text-slate-900 mb-3">
+              Where Disney Cruises Stop
+            </h2>
+            <p className="text-slate-700 max-w-2xl leading-relaxed">
+              Comprehensive port-day guides for the destinations Disney ships visit most often. Top things to do, excursion comparisons, dining picks, family-tested tips, and weather windows for every cruise stop.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {destinationPorts.map(port => (
+              <Link
+                key={port.slug}
+                href={`/ports/${port.slug}`}
+                className="group block rounded-xl border border-slate-200 bg-white hover:border-[#D4AF37] hover:shadow-lg transition-all overflow-hidden"
+              >
+                <div className="bg-gradient-to-br from-[#1E3A5F] to-slate-900 p-5">
+                  <div className="flex items-start justify-between gap-3">
+                    <div className="flex items-center gap-3 min-w-0">
+                      <span className="text-3xl flex-shrink-0" aria-hidden="true">
+                        {port.flag}
+                      </span>
+                      <div className="min-w-0">
+                        <h3 className="font-display text-lg font-bold text-white group-hover:text-[#D4AF37] transition-colors leading-tight">
+                          {port.shortName}
+                        </h3>
+                        <p className="text-blue-300 text-xs mt-0.5">{port.country}</p>
+                      </div>
+                    </div>
+                    {port.isPrivateIsland && (
+                      <span className="text-[10px] font-bold uppercase bg-[#D4AF37] text-[#1E3A5F] px-2 py-0.5 rounded-full whitespace-nowrap">
+                        Disney Island
+                      </span>
+                    )}
+                  </div>
+                </div>
+                <div className="p-5">
+                  <p className="text-slate-700 text-sm leading-relaxed mb-4 line-clamp-3">
+                    {port.heroTagline}
+                  </p>
+                  <div className="space-y-1.5 mb-4 text-xs">
+                    <div className="flex items-center gap-1.5 text-slate-600">
+                      <span className="text-slate-400">⏱️</span>
+                      <span>{port.typicalDockTime}</span>
+                    </div>
+                    <div className="flex items-center gap-1.5 text-slate-600">
+                      <span className="text-slate-400">⚓</span>
+                      <span className="capitalize">
+                        {port.dockType === 'pier'
+                          ? 'Pier docking (no tender)'
+                          : port.dockType === 'tender'
+                            ? 'Tender port'
+                            : 'Pier or tender'}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between pt-3 border-t border-slate-100">
+                    <span className="text-sm font-semibold text-[#1E3A5F]">Read full guide</span>
+                    <ChevronRight className="w-4 h-4 text-[#D4AF37] group-hover:translate-x-0.5 transition-transform" />
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* DEPARTURE PORTS */}
+      <div className="bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
-        <div className="max-w-2xl mx-auto prose prose-slate mb-12">
-          <p className="text-lg leading-relaxed text-slate-700">
-            Whether you're sailing from Florida, New York, Canada, Europe, or the Asia-Pacific, every port has a story. This guide covers everything you need to know about arriving, parking, getting through the terminal, and making the most of your time before your cruise.
+        <div className="mb-8">
+          <div className="inline-flex items-center gap-2 bg-[#1E3A5F]/10 text-[#1E3A5F] text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full mb-3">
+            <Plane className="w-3.5 h-3.5" />
+            Departure Ports
+          </div>
+          <h2 className="font-display text-3xl sm:text-4xl font-bold text-slate-900 mb-3">
+            Where Disney Cruises Sail From
+          </h2>
+          <p className="text-slate-700 max-w-2xl leading-relaxed">
+            Embarkation-port guides covering parking, driving directions, terminal tips, weather, and pre-cruise hotel recommendations for every Disney Cruise Line departure port.
           </p>
         </div>
 
@@ -77,9 +159,9 @@ export default function PortsIndexPage() {
 
           return (
             <div key={region} className="mb-16">
-              <h2 className="font-display text-2xl font-bold text-slate-900 mb-6 pb-3 border-b border-slate-200">
+              <h3 className="font-display text-2xl font-bold text-slate-900 mb-6 pb-3 border-b border-slate-200">
                 {region}
-              </h2>
+              </h3>
 
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {regionPorts.map(port => (

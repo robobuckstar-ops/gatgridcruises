@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next'
 import { getSailings, getShips, getPorts, getHotelsForPort, getBlogPosts } from '@/lib/data'
+import { destinationPorts } from '@/data/destination-ports'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://gatgridcruises.com'
@@ -124,6 +125,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   })
 
+  // Destination port guide pages (/ports/[slug])
+  const destinationPortPages = destinationPorts.map(p => ({
+    url: `${baseUrl}/ports/${p.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.85,
+  }))
+
   // Blog pages
   const posts = getBlogPosts()
   const blogPages = posts.map(p => ({
@@ -133,5 +142,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }))
 
-  return [...staticPages, ...sailingPages, ...shipPages, ...hotelPages, ...transferPages, ...guidePages, ...portGuidePages, ...travelHacksPages, ...blogPages]
+  return [...staticPages, ...sailingPages, ...shipPages, ...hotelPages, ...transferPages, ...guidePages, ...portGuidePages, ...destinationPortPages, ...travelHacksPages, ...blogPages]
 }

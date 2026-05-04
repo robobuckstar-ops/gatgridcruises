@@ -27,6 +27,7 @@ const navItems = [
       { label: 'First-Time Tips', href: '/guides/first-time-disney-cruise-tips' },
       { label: 'Stateroom Comparison', href: '/guides/stateroom-comparison' },
       { label: 'Packing List', href: '/guides/disney-cruise-packing-list' },
+      { label: '🏝️ Port Guides', href: '/ports' },
       { label: 'Castaway Cay', href: '/guides/castaway-cay-guide' },
       { label: 'With Toddlers', href: '/guides/disney-cruise-with-toddlers' },
       { label: 'Port Canaveral vs Miami', href: '/guides/port-canaveral-vs-miami' },
