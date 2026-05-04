@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { useRouter } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { Hash, User, Mail, ArrowRight, Lock, Star, Send, AlertTriangle } from 'lucide-react'
 
@@ -11,10 +11,15 @@ const ERROR_MESSAGES: Record<string, string> = {
   booking_not_found: "We couldn't find that booking anymore. Please log in or request a new link.",
   service_unavailable: "The portal is briefly unavailable. Please try again in a moment.",
   server_error: 'Something went wrong. Please try again.',
+  invalid: 'That link is invalid or has already been used.',
+  unauthorized: 'Please log in to access your dashboard.',
 }
 
 export default function MyTripPage() {
   const router = useRouter()
+  const searchParams = useSearchParams()
+  const errorParam = searchParams.get('error') ?? ''
+  const bannerMessage = ERROR_MESSAGES[errorParam] ?? ''
   const [form, setForm] = useState({ bookingNumber: '', lastName: '', email: '' })
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
@@ -108,11 +113,11 @@ export default function MyTripPage() {
           <p className="text-blue-200 mt-1.5 text-sm">Your personal cruise concierge portal</p>
         </div>
 
-        {/* Magic-link callback error banner */}
-        {error && (
+        {/* Error banner from redirect */}
+        {bannerMessage && (
           <div className="mb-4 flex items-start gap-3 bg-amber-50 border border-amber-200 text-amber-900 text-sm rounded-xl px-4 py-3">
             <AlertTriangle className="w-4 h-4 mt-0.5 flex-shrink-0 text-amber-600" />
-            <span>{error}</span>
+            <span>{bannerMessage}</span>
           </div>
         )}
 

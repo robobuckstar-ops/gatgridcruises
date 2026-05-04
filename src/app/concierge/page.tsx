@@ -27,6 +27,22 @@ export const metadata: Metadata = {
   title: 'Your Personal Disney Cruise Concierge | GatGridCruises',
   description:
     'Plan your Disney cruise with a personal concierge who guides you every step — from quote to boarding and beyond. Free onboard credit included via our partner travel agency.',
+  openGraph: {
+    title: 'Your Personal Disney Cruise Concierge | GatGridCruises',
+    description:
+      'Plan your Disney cruise with a personal concierge who guides you every step — from quote to boarding and beyond. Free onboard credit included via our partner travel agency.',
+    url: 'https://gatgridcruises.com/concierge',
+    siteName: 'GatGrid Cruises',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630 }],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Your Personal Disney Cruise Concierge | GatGridCruises',
+    description:
+      'Plan your Disney cruise with a personal concierge who guides you every step — from quote to boarding and beyond.',
+    images: ['https://gatgridcruises.com/og-image.png'],
+  },
 }
 
 const valueProps = [

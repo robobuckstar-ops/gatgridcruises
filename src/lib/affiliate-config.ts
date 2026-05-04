@@ -143,11 +143,11 @@ export const AD_CONFIG = {
 // Your social media and promotional links for cross-promotion.
 //
 export const SOCIAL_LINKS = {
+  tiktok: 'https://tiktok.com/@gatgridcruises',
+  instagram: 'https://instagram.com/gatgridcruises',
+  youtube: 'https://youtube.com/@gatgridcruises',
   // Add these as you create them:
   // twitter: 'https://twitter.com/gatgridcruises',
-  // instagram: 'https://instagram.com/gatgridcruises',
-  // youtube: 'https://youtube.com/@gatgridcruises',
-  // tiktok: 'https://tiktok.com/@gatgridcruises',
   // facebook: 'https://facebook.com/gatgridcruises',
   // pinterest: 'https://pinterest.com/gatgridcruises',
 }

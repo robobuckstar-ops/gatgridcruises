@@ -185,9 +185,9 @@ export default function OnboardCreditPage() {
           </div>
         </section>
 
-        {/* Why Book With GatGrid */}
+        {/* Why Use GatGrid */}
         <section>
-          <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-6">Why Book Through GatGrid?</h2>
+          <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-6">Why Use GatGrid?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {[
               {
@@ -198,7 +198,7 @@ export default function OnboardCreditPage() {
               {
                 icon: '🎯',
                 title: 'Same Price as Disney',
-                desc: 'Disney Cruise Line sets the price. You pay exactly the same whether you book direct or through us.',
+                desc: 'Disney Cruise Line sets the price. You pay exactly the same whether you book direct or through our partner agency.',
               },
               {
                 icon: '🤝',

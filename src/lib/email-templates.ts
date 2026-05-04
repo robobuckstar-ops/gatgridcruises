@@ -267,8 +267,8 @@ export interface BookingDetails {
   totalPaid: number
   finalPaymentDate: string
   ports: string[]
-  /** Magic-link URL for one-click access to /my-trip/dashboard. */
-  magicLinkUrl?: string
+  /** URL to the client's My Trip dashboard (e.g. https://gatgridcruises.com/my-trip) */
+  portalUrl?: string
 }
 
 export function BOOKING_CONFIRMED(details: BookingDetails): string {
@@ -282,18 +282,8 @@ export function BOOKING_CONFIRMED(details: BookingDetails): string {
     ['Final Payment Due', `<span style="color:#DC2626;font-weight:600;">${details.finalPaymentDate}</span>`],
   ]
 
-  const magicLinkBlock = details.magicLinkUrl
-    ? `
-    <div style="text-align:center;margin:24px 0;">
-      <a href="${details.magicLinkUrl}" style="display:inline-block;background-color:#1E3A5F;color:#D4AF37;padding:14px 32px;border-radius:8px;text-decoration:none;font-weight:bold;font-size:15px;">View My Trip Dashboard →</a>
-      <p style="margin:10px 0 0;color:#94A3B8;font-size:12px;">One-click access — no password needed. Link valid for 30 days.</p>
-    </div>
-  `
-    : ''
-
   return wrapBookingEmail(`
     <h2 style="margin:0 0 4px;color:#1E3A5F;font-family:Georgia,serif;font-size:24px;">Your Disney cruise is booked! 🎉</h2>
-    ${magicLinkBlock}
     <div style="background-color:#F0FDF4;border:1px solid #86EFAC;border-radius:8px;padding:20px;margin:20px 0;">
       <h3 style="margin:0 0 14px;color:#166534;font-size:15px;">Booking Summary</h3>
       <table width="100%" cellpadding="0" cellspacing="0">
@@ -302,6 +292,11 @@ export function BOOKING_CONFIRMED(details: BookingDetails): string {
     </div>
     <h3 style="margin:0 0 10px;color:#1E3A5F;font-family:Georgia,serif;font-size:16px;">Ports of Call</h3>
     <ul style="margin:0 0 20px;padding-left:20px;color:#334155;font-size:14px;">${details.ports.map(p => `<li style="margin-bottom:4px;">${p}</li>`).join('')}</ul>
+    ${details.portalUrl ? `<div style="background-color:#F0F7FF;border:1px solid #BFDBFE;border-radius:8px;padding:20px;margin-bottom:20px;text-align:center;">
+      <p style="margin:0 0 8px;color:#1E3A5F;font-weight:600;font-size:15px;">📋 Your Trip Dashboard is Ready</p>
+      <p style="margin:0 0 14px;color:#64748B;font-size:13px;">Track your countdown, prep checklist, documents, and reminders — all in one place.</p>
+      <a href="${details.portalUrl}" style="display:inline-block;background:#D4AF37;color:#1E3A5F;padding:12px 28px;border-radius:8px;text-decoration:none;font-weight:600;font-size:14px;">Access My Trip Dashboard →</a>
+    </div>` : ''}
     <h3 style="margin:0 0 10px;color:#1E3A5F;font-family:Georgia,serif;font-size:16px;">What to Do Next</h3>
     <ol style="margin:0 0 20px;padding-left:20px;color:#334155;font-size:14px;line-height:1.8;">
       <li>Set up your Disney Cruise Line online account at dcl.com</li>
@@ -762,6 +757,139 @@ export function preCruise7Days(name: string, shipName: string, sailDate: string,
 
     <p class="sig">Bon voyage!<br><strong style="color: #1E3A5F;">Dr. Grayson Starbuck, DPT</strong><br>GatGrid Cruises · bookings@gatgridcruises.com</p>
   `, unsubToken)
+}
+
+// ─── Lead nurture drip templates (inquiry → non-booking follow-up) ──────────
+
+export function leadNurtureDay1(name: string): string {
+  return wrapBookingEmail(`
+    <h2 style="margin:0 0 8px;color:#1E3A5F;font-family:Georgia,serif;font-size:22px;">Thanks for reaching out, ${name}!</h2>
+    <p style="margin:0 0 16px;color:#334155;font-size:15px;line-height:1.6;">
+      I just wanted to follow up on your inquiry. Planning a Disney cruise should be exciting — not stressful — and I'm here to make it easy.
+    </p>
+    <p style="margin:0 0 16px;color:#334155;font-size:15px;line-height:1.6;">
+      Whether you're still exploring dates, comparing ships, or just getting a feel for pricing — there's no rush and no pressure. I work with families every day to find the perfect sailing, and I'd love to help you too.
+    </p>
+    <div style="background-color:#F0F7FF;border-left:4px solid #1E3A5F;border-radius:6px;padding:20px;margin-bottom:24px;">
+      <h3 style="margin:0 0 8px;color:#1E3A5F;font-size:15px;font-family:Georgia,serif;">While you're thinking it over:</h3>
+      <ul style="margin:0;padding-left:20px;color:#334155;font-size:14px;line-height:1.8;">
+        <li><a href="https://gatgridcruises.com/tools/cost-calculator" style="color:#1E3A5F;font-weight:600;">Total Trip Cost Calculator</a> — see the real cost, not just the fare</li>
+        <li><a href="https://gatgridcruises.com/deals" style="color:#1E3A5F;font-weight:600;">Current Deals Dashboard</a> — AI-scored deals updated daily</li>
+        <li><a href="https://gatgridcruises.com/guides" style="color:#1E3A5F;font-weight:600;">First-Timer's Guide</a> — everything you need to know</li>
+      </ul>
+    </div>
+    <p style="margin:0 0 16px;color:#334155;font-size:15px;line-height:1.6;">
+      Just reply to this email anytime — I personally read every message and typically respond within a few hours.
+    </p>
+    <p style="margin:0;color:#64748B;font-size:13px;">Talk soon,<br><strong style="color:#1E3A5F;">Grayson Starbuck</strong><br>Cruise Concierge, GatGrid Cruises</p>
+  `)
+}
+
+export function leadNurtureDay3(name: string): string {
+  return wrapBookingEmail(`
+    <h2 style="margin:0 0 8px;color:#1E3A5F;font-family:Georgia,serif;font-size:22px;">Quick question, ${name}</h2>
+    <p style="margin:0 0 16px;color:#334155;font-size:15px;line-height:1.6;">
+      I wanted to check in — did you have any questions about Disney cruises that I can help with? Sometimes it helps to talk through the options with someone who's been on a bunch of them.
+    </p>
+    <p style="margin:0 0 16px;color:#334155;font-size:15px;line-height:1.6;">
+      A few things families often want to know:
+    </p>
+    <div style="background-color:#F7F8FA;border-radius:8px;padding:20px;margin-bottom:20px;">
+      <p style="margin:0 0 12px;color:#1E3A5F;font-size:14px;font-weight:600;">Common questions I get:</p>
+      <ul style="margin:0;padding-left:20px;color:#334155;font-size:14px;line-height:1.8;">
+        <li>"Which ship is best for kids under 5?"</li>
+        <li>"Is a verandah room worth the extra cost?"</li>
+        <li>"What's the best time of year for Caribbean?"</li>
+        <li>"How much should we budget beyond the cruise fare?"</li>
+        <li>"Can we really save money booking through you vs. Disney directly?"</li>
+      </ul>
+    </div>
+    <p style="margin:0 0 16px;color:#334155;font-size:15px;line-height:1.6;">
+      The answer to that last one, by the way, is <strong>yes</strong> — same price as booking direct, but you get a dedicated concierge (me), onboard credit on many sailings, and ongoing price monitoring.
+    </p>
+    <div style="text-align:center;margin:24px 0;">
+      <a href="mailto:bookings@gatgridcruises.com?subject=I%20have%20a%20question%20about%20Disney%20cruises" style="display:inline-block;background:#D4AF37;color:#1E3A5F;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:bold;font-size:14px;">Reply With Your Questions →</a>
+    </div>
+    <p style="margin:0;color:#64748B;font-size:13px;">Here when you're ready,<br><strong style="color:#1E3A5F;">Grayson Starbuck</strong><br>Cruise Concierge, GatGrid Cruises</p>
+  `)
+}
+
+export function leadNurtureDay7(name: string): string {
+  return wrapBookingEmail(`
+    <h2 style="margin:0 0 8px;color:#1E3A5F;font-family:Georgia,serif;font-size:22px;">${name}, here's what other families are saying</h2>
+    <p style="margin:0 0 16px;color:#334155;font-size:15px;line-height:1.6;">
+      I know booking a cruise is a big decision — especially if it's your first one. So I thought I'd share what a few recent GatGrid families have said:
+    </p>
+    <div style="border-left:4px solid #D4AF37;padding:16px 20px;margin:20px 0;background:#FFFBF0;border-radius:0 8px 8px 0;">
+      <p style="margin:0 0 8px;color:#334155;font-size:14px;font-style:italic;">"Grayson made the whole process so easy. He found us a price drop after we booked and got us an upgrade. We saved over $400."</p>
+      <p style="margin:0;color:#64748B;font-size:12px;">— The Martinez Family, Disney Fantasy 7-Night</p>
+    </div>
+    <div style="border-left:4px solid #D4AF37;padding:16px 20px;margin:20px 0;background:#FFFBF0;border-radius:0 8px 8px 0;">
+      <p style="margin:0 0 8px;color:#334155;font-size:14px;font-style:italic;">"We were nervous about our first cruise with a toddler. Grayson's prep emails and packing list made us feel totally prepared."</p>
+      <p style="margin:0;color:#64748B;font-size:12px;">— The Thompson Family, Disney Wish 4-Night</p>
+    </div>
+    <div style="background-color:#F0F7EE;border:1px solid #C0DD97;border-radius:8px;padding:16px;margin:20px 0;">
+      <p style="margin:0;color:#3B6D11;font-size:13px;line-height:1.6;">
+        <strong>Did you know?</strong> 10% of our commission from every booking is donated to <strong>CURE.org</strong> to help children receive life-changing surgical care. When you book through GatGrid, you're making a difference.
+      </p>
+    </div>
+    <p style="margin:0 0 16px;color:#334155;font-size:15px;line-height:1.6;">
+      No pressure, no deadlines. Whenever you're ready to explore options, I'm one reply away.
+    </p>
+    <p style="margin:0;color:#64748B;font-size:13px;">Cheers,<br><strong style="color:#1E3A5F;">Grayson Starbuck</strong><br>Cruise Concierge, GatGrid Cruises</p>
+  `)
+}
+
+export function leadNurtureDay14(name: string): string {
+  return wrapBookingEmail(`
+    <h2 style="margin:0 0 8px;color:#1E3A5F;font-family:Georgia,serif;font-size:22px;">Prices are moving, ${name}</h2>
+    <p style="margin:0 0 16px;color:#334155;font-size:15px;line-height:1.6;">
+      Just a heads up — Disney cruise pricing is dynamic, and I've seen some significant movement this week on popular sailings. Prices tend to climb as ships fill up, especially for peak-season dates and popular stateroom categories.
+    </p>
+    <div style="background-color:#FEF9EC;border:1px solid #D4AF37;border-radius:8px;padding:20px;margin:20px 0;">
+      <p style="margin:0 0 8px;color:#92400E;font-size:14px;font-weight:600;">Why booking earlier usually wins:</p>
+      <ul style="margin:0;padding-left:20px;color:#78350F;font-size:14px;line-height:1.8;">
+        <li>Best stateroom locations go first (midship, lower deck = less motion)</li>
+        <li>Deposits are often refundable up to final payment (75-90 days out)</li>
+        <li>If the price drops after you book, I rebook at the lower rate automatically</li>
+        <li>You lock in your preferred sailing date before it sells out</li>
+      </ul>
+    </div>
+    <p style="margin:0 0 16px;color:#334155;font-size:15px;line-height:1.6;">
+      That third point is key — <strong>I monitor prices after booking too</strong>. If the price drops before your penalty date, I'll catch it and get you the savings without you lifting a finger.
+    </p>
+    <div style="text-align:center;margin:24px 0;">
+      <a href="https://gatgridcruises.com/deals" style="display:inline-block;background:#D4AF37;color:#1E3A5F;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:bold;font-size:14px;">Check Today's Deals →</a>
+    </div>
+    <p style="margin:0;color:#64748B;font-size:13px;">Ready when you are,<br><strong style="color:#1E3A5F;">Grayson Starbuck</strong><br>Cruise Concierge, GatGrid Cruises</p>
+  `)
+}
+
+export function leadNurtureDay30(name: string): string {
+  return wrapBookingEmail(`
+    <h2 style="margin:0 0 8px;color:#1E3A5F;font-family:Georgia,serif;font-size:22px;">Still thinking about it, ${name}?</h2>
+    <p style="margin:0 0 16px;color:#334155;font-size:15px;line-height:1.6;">
+      It's been about a month since you first reached out, and I just wanted to let you know — I'm still here whenever you're ready. No expiration on my help.
+    </p>
+    <p style="margin:0 0 16px;color:#334155;font-size:15px;line-height:1.6;">
+      If a Disney cruise isn't in the cards right now, totally fine. But if it's still on the wish list, here are a few things I can do to make it easier:
+    </p>
+    <div style="background-color:#F7F8FA;border-radius:8px;padding:20px;margin:20px 0;">
+      <ul style="margin:0;padding-left:20px;color:#334155;font-size:14px;line-height:2;">
+        <li><strong>Set a price alert</strong> — tell me the sailing you're watching and I'll notify you if it drops</li>
+        <li><strong>Get a no-commitment quote</strong> — see exact pricing for your party with zero obligation</li>
+        <li><strong>Payment plan options</strong> — deposits start around $200/person and final payment isn't due until 75-90 days before sailing</li>
+        <li><strong>Future sailing watch</strong> — I can watch for new sailings that haven't been released yet</li>
+      </ul>
+    </div>
+    <p style="margin:0 0 16px;color:#334155;font-size:15px;line-height:1.6;">
+      This will be my last follow-up unless you'd like to hear more. Either way — I hope our tools and guides have been helpful. You're always welcome to reach out anytime.
+    </p>
+    <div style="text-align:center;margin:24px 0;">
+      <a href="mailto:bookings@gatgridcruises.com?subject=I'm%20ready%20to%20explore%20options" style="display:inline-block;background:#1E3A5F;color:#FFFFFF;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:bold;font-size:14px;">I'm Ready — Let's Talk →</a>
+    </div>
+    <p style="margin:0;color:#64748B;font-size:13px;">Wishing you smooth seas ahead,<br><strong style="color:#1E3A5F;">Grayson Starbuck</strong><br>Cruise Concierge, GatGrid Cruises</p>
+  `)
 }
 
 // ─── Original newsletter templates ──────────────────────────────────────────

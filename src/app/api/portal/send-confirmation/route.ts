@@ -112,7 +112,7 @@ export async function POST(request: NextRequest) {
       totalPaid: booking.bookingPrice ?? 0,
       finalPaymentDate: computeFinalPaymentDate(booking.sailingDate),
       ports: extractPorts(booking.itinerary),
-      magicLinkUrl,
+      portalUrl: magicLinkUrl,
     })
 
     const resend = new Resend(process.env.RESEND_API_KEY)
