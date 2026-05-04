@@ -121,6 +121,89 @@ export const TRAVEL_AFFILIATES: Record<string, {
 }
 
 
+// ─── TRAVEL INSURANCE AFFILIATES ────────────────────────────
+//
+// Notes on availability (as of 2026 — re-verify before applying):
+//   • Allianz: direct affiliate program via partnerize.com — strong cruise
+//     coverage and the brand most cruise lines white-label.
+//   • TravelGuard (AIG): affiliate available through CJ Affiliate (Commission
+//     Junction). Solid medical evacuation limits.
+//   • InsureMyTrip: aggregator marketplace; CJ + ShareASale programs.
+//     Best when a visitor wants to compare quotes across many carriers.
+//   • SquareMouth: aggregator; CJ + Impact programs.
+//   • World Nomads (nomadinsurance.com): primarily for adventure/long-term
+//     travelers — not the best fit for family cruises but listed for completeness.
+//
+// Set the URL to null to suppress a card on the comparison page.
+//
+export interface InsurancePartner {
+  slug: string
+  name: string
+  tagline: string
+  bestFor: string
+  highlights: string[]
+  affiliateUrl: string | null
+  // Public marketing URL we can fall back to if there's no affiliate link yet.
+  fallbackUrl: string
+}
+
+export const INSURANCE_PARTNERS: InsurancePartner[] = [
+  {
+    slug: 'allianz',
+    name: 'Allianz Travel',
+    tagline: 'The cruise-line standard for trip protection',
+    bestFor: 'Most Disney cruise families',
+    highlights: [
+      'Disney Cruise Line uses Allianz for its own protection plan',
+      'Strong trip cancellation and interruption coverage',
+      'Pre-existing condition waiver available within 14 days of deposit',
+      '24/7 multilingual emergency assistance',
+    ],
+    // TODO: Replace with real Partnerize / Allianz affiliate link
+    affiliateUrl: null,
+    fallbackUrl: 'https://www.allianztravelinsurance.com/',
+  },
+  {
+    slug: 'travelguard',
+    name: 'Travel Guard (AIG)',
+    tagline: 'Higher medical & evacuation limits',
+    bestFor: 'International itineraries & older travelers',
+    highlights: [
+      'Up to $1M emergency medical evacuation',
+      'Cancel For Any Reason (CFAR) upgrade available',
+      'Strong pre-existing condition waiver if purchased within 15 days',
+      'Family-rate plans cover dependents at no extra cost',
+    ],
+    // TODO: Replace with real CJ Affiliate Travel Guard link
+    affiliateUrl: null,
+    fallbackUrl: 'https://www.travelguard.com/',
+  },
+  {
+    slug: 'insuremytrip',
+    name: 'InsureMyTrip',
+    tagline: 'Compare quotes from 20+ carriers',
+    bestFor: 'Comparison shoppers',
+    highlights: [
+      'Side-by-side quotes across major travel insurers',
+      'Anytime Advocates™ help you file claims if denied',
+      'Filter by CFAR, pre-existing waiver, medical limits',
+      'Money-back review period on most policies',
+    ],
+    // TODO: Replace with real CJ Affiliate / ShareASale link
+    affiliateUrl: null,
+    fallbackUrl: 'https://www.insuremytrip.com/',
+  },
+]
+
+export function getInsurancePartnerLink(partner: InsurancePartner): string {
+  return partner.affiliateUrl ?? partner.fallbackUrl
+}
+
+export function isInsurancePartnerAffiliated(partner: InsurancePartner): boolean {
+  return Boolean(partner.affiliateUrl)
+}
+
+
 // ─── AD NETWORK CONFIG ───────────────────────────────────────
 //
 // When you're ready to add display ads (Google AdSense, Mediavine,

@@ -22,6 +22,7 @@ import {
   MapPin,
 } from 'lucide-react'
 import { ConciergeForm } from './ConciergeForm'
+import { InsurancePartners } from '@/components/ui/insurance-partners'
 
 export const metadata: Metadata = {
   title: 'Your Personal Disney Cruise Concierge | GatGridCruises',
@@ -547,6 +548,12 @@ export default function ConciergePage() {
           </p>
         </div>
       </section>
+
+      {/* Travel Insurance — affiliate partners */}
+      <InsurancePartners
+        heading="Don't Sail Without Travel Insurance"
+        subheading="A Disney cruise is a big-ticket trip with non-refundable deposits and limited medical resources at sea. Compare the carriers we trust before you finalize your booking."
+      />
 
       {/* FAQ */}
       <section className="py-16 md:py-24 bg-white">
