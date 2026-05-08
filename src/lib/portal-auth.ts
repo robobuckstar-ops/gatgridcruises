@@ -14,18 +14,9 @@ export interface PortalSession {
 }
 
 export interface MagicLinkPayload {
-  bookingId: string
   email: string
-  exp: number
-  type: 'magic-link'
-}
-
-// Looser shape used by /portal?token=… links sent before the strict
-// magic-link format (`type: 'magic-link'` + bookingId) was introduced.
-// Authenticates an email + display name only.
-export interface SimpleMagicLinkPayload {
-  email: string
-  name: string
+  name?: string
+  bookingId?: string
   exp: number
 }
 
@@ -84,27 +75,12 @@ export function getSessionFromRequest(req: NextRequest): PortalSession | null {
   return verifySessionToken(token)
 }
 
-// ─── Magic-link tokens ─────────────────────────────────────────────────────
-// Same JWT format as session tokens (HS256, shared PORTAL_JWT_SECRET) but the
-// payload carries `type: 'magic-link'` so the two token kinds can't be confused.
-
-export function createMagicLinkToken(payload: { bookingId: string; email: string }): string {
-  const secret = process.env.PORTAL_JWT_SECRET
-  if (!secret) throw new Error('PORTAL_JWT_SECRET not configured')
-
-  const header = b64urlEncode(JSON.stringify({ alg: 'HS256', typ: 'JWT' }))
-  const body = b64urlEncode(
-    JSON.stringify({
-      bookingId: payload.bookingId,
-      email: payload.email,
-      type: 'magic-link',
-      exp: Math.floor(Date.now() / 1000) + MAGIC_LINK_TTL_SECONDS,
-    })
-  )
-  const sig = hmacSign(`${header}.${body}`, secret)
-  return `${header}.${body}.${sig}`
-}
-
+// Verifies a magic-link JWT signed with PORTAL_JWT_SECRET. Accepts two payload
+// shapes:
+//   1. Simple confirmation-email format: { email, name, exp }
+//   2. Legacy/typed format:              { type: 'magic-link', bookingId, email, exp }
+// Either is acceptable as long as the signature checks out, exp is in the future,
+// and email is present. Optional fields (name, bookingId) are surfaced when present.
 export function verifyMagicLinkToken(token: string): MagicLinkPayload | null {
   try {
     const secret = process.env.PORTAL_JWT_SECRET
@@ -121,50 +97,17 @@ export function verifyMagicLinkToken(token: string): MagicLinkPayload | null {
     if (sigBuf.length !== expectedBuf.length) return null
     if (!timingSafeEqual(sigBuf, expectedBuf)) return null
 
-    const parsed = JSON.parse(b64urlDecode(body)) as Partial<MagicLinkPayload>
-    if (parsed.type !== 'magic-link') return null
-    if (typeof parsed.exp !== 'number' || parsed.exp < Math.floor(Date.now() / 1000)) return null
-    if (typeof parsed.bookingId !== 'string' || typeof parsed.email !== 'string') return null
+    const parsed = JSON.parse(b64urlDecode(body)) as Record<string, unknown>
+    if (typeof parsed.exp !== 'number') return null
+    if (parsed.exp < Math.floor(Date.now() / 1000)) return null
+    if (typeof parsed.email !== 'string' || !parsed.email) return null
 
-    return parsed as MagicLinkPayload
-  } catch {
-    return null
-  }
-}
-
-// Verifies the simpler { email, name, exp } magic-link payload that the
-// initial round of /portal?token=… emails (Crystal, Timothy/Krista) was
-// signed with. Same secret + HS256, no `type` discriminator, no bookingId.
-export function verifySimpleMagicLinkToken(token: string): SimpleMagicLinkPayload | null {
-  try {
-    const secret = process.env.PORTAL_JWT_SECRET
-    if (!secret) return null
-
-    const parts = token.split('.')
-    if (parts.length !== 3) return null
-
-    const [header, body, sig] = parts
-
-    // Reject anything that isn't HS256 — keeps "alg: none" forgeries out.
-    let parsedHeader: { alg?: string }
-    try {
-      parsedHeader = JSON.parse(b64urlDecode(header))
-    } catch {
-      return null
+    return {
+      email: parsed.email,
+      name: typeof parsed.name === 'string' ? parsed.name : undefined,
+      bookingId: typeof parsed.bookingId === 'string' ? parsed.bookingId : undefined,
+      exp: parsed.exp,
     }
-    if (parsedHeader.alg !== 'HS256') return null
-
-    const expectedSig = hmacSign(`${header}.${body}`, secret)
-    const sigBuf = Buffer.from(sig, 'base64url')
-    const expectedBuf = Buffer.from(expectedSig, 'base64url')
-    if (sigBuf.length !== expectedBuf.length) return null
-    if (!timingSafeEqual(sigBuf, expectedBuf)) return null
-
-    const payload = JSON.parse(b64urlDecode(body)) as Partial<SimpleMagicLinkPayload>
-    if (!payload.email || !payload.name || typeof payload.exp !== 'number') return null
-    if (payload.exp < Math.floor(Date.now() / 1000)) return null
-
-    return { email: payload.email, name: payload.name, exp: payload.exp }
   } catch {
     return null
   }
