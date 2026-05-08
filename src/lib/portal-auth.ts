@@ -75,6 +75,20 @@ export function getSessionFromRequest(req: NextRequest): PortalSession | null {
   return verifySessionToken(token)
 }
 
+export function createMagicLinkToken(
+  payload: { email: string; name?: string; bookingId?: string }
+): string {
+  const secret = process.env.PORTAL_JWT_SECRET
+  if (!secret) throw new Error('PORTAL_JWT_SECRET not configured')
+
+  const header = b64urlEncode(JSON.stringify({ alg: 'HS256', typ: 'JWT' }))
+  const body = b64urlEncode(
+    JSON.stringify({ ...payload, exp: Math.floor(Date.now() / 1000) + MAGIC_LINK_TTL_SECONDS })
+  )
+  const sig = hmacSign(`${header}.${body}`, secret)
+  return `${header}.${body}.${sig}`
+}
+
 // Verifies a magic-link JWT signed with PORTAL_JWT_SECRET. Accepts two payload
 // shapes:
 //   1. Simple confirmation-email format: { email, name, exp }
