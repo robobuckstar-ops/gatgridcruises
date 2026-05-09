@@ -80,15 +80,15 @@ export default function HotelsIndexPage() {
             <Link
               key={port.id}
               href={`/hotels/${port.slug}`}
-              className="group border border-slate-300 rounded-lg p-6 hover:border-blue-400 hover:shadow-lg transition-all"
+              className="group border border-slate-300 rounded-lg p-6 hover:border-[#1E3A5F] hover:shadow-lg transition-all"
             >
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center">
-                    <MapPin className="w-6 h-6 text-blue-600" />
+                  <div className="w-12 h-12 rounded-full bg-[#1E3A5F]/10 flex items-center justify-center">
+                    <MapPin className="w-6 h-6 text-[#1E3A5F]" />
                   </div>
                   <div>
-                    <h2 className="font-display text-2xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                    <h2 className="font-display text-2xl font-bold text-slate-900 group-hover:text-[#1E3A5F] transition-colors">
                       {port.name}
                     </h2>
                     <p className="text-sm text-slate-500">{port.city}, {port.country}</p>

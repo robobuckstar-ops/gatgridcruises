@@ -186,12 +186,12 @@ export default function SoloCruisingPage() {
               return (
                 <div
                   key={idx}
-                  className="bg-white rounded-lg border border-slate-200 p-8 hover:border-blue-400 hover:shadow-lg transition-all duration-200"
+                  className="bg-white rounded-lg border border-slate-200 p-8 hover:border-[#1E3A5F] hover:shadow-lg transition-all duration-200"
                 >
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0">
-                      <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-blue-100">
-                        <Icon className="w-6 h-6 text-blue-600" />
+                      <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-[#1E3A5F]/10">
+                        <Icon className="w-6 h-6 text-[#1E3A5F]" />
                       </div>
                     </div>
                     <div>
@@ -211,7 +211,7 @@ export default function SoloCruisingPage() {
       </section>
 
       {/* Solo-Friendly Sailings Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-blue-50">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-100">
         <div className="max-w-5xl mx-auto">
           <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-3 text-center">
             Perfect Solo-Friendly Sailings
@@ -229,9 +229,9 @@ export default function SoloCruisingPage() {
                   href={`/sailing/${sailing.id}`}
                   className="group"
                 >
-                  <div className="h-full bg-white rounded-lg border border-slate-200 hover:border-blue-400 hover:shadow-lg transition-all duration-200 overflow-hidden flex flex-col">
+                  <div className="h-full bg-white rounded-lg border border-slate-200 hover:border-[#1E3A5F] hover:shadow-lg transition-all duration-200 overflow-hidden flex flex-col">
                     {/* Card Header */}
-                    <div className="p-5 border-b border-slate-200 bg-gradient-to-r from-blue-50 to-indigo-50">
+                    <div className="p-5 border-b border-slate-200 bg-gradient-to-r from-[#1E3A5F]/5 to-[#1E3A5F]/10">
                       <h3 className="font-fraunces text-lg font-bold text-slate-900 mb-2">
                         {sailing.itinerary_name}
                       </h3>
@@ -262,7 +262,7 @@ export default function SoloCruisingPage() {
                         <p className="text-xs text-slate-600 uppercase tracking-wide mb-1 font-inter">
                           From per night
                         </p>
-                        <p className="font-fraunces text-2xl font-bold text-blue-600">
+                        <p className="font-fraunces text-2xl font-bold text-[#1E3A5F]">
                           {formatPrice(Math.round(perNightCost))}
                         </p>
                         <p className="text-xs text-slate-600 mt-1 font-inter">
@@ -272,8 +272,8 @@ export default function SoloCruisingPage() {
                     </div>
 
                     {/* Footer */}
-                    <div className="p-5 bg-slate-50 border-t border-slate-200 group-hover:bg-blue-50 transition-colors">
-                      <button className="w-full inline-flex items-center justify-center gap-2 text-blue-600 font-inter font-semibold hover:text-blue-700 transition-colors">
+                    <div className="p-5 bg-slate-50 border-t border-slate-200 group-hover:bg-[#1E3A5F]/5 transition-colors">
+                      <button className="w-full inline-flex items-center justify-center gap-2 text-[#1E3A5F] font-inter font-semibold hover:text-[#0a1628] transition-colors">
                         View Details
                         <ArrowRight className="w-4 h-4" />
                       </button>
@@ -287,7 +287,7 @@ export default function SoloCruisingPage() {
           <div className="mt-10 text-center">
             <Link
               href="/search"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white font-inter font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#1E3A5F] text-white font-inter font-semibold rounded-lg hover:bg-[#0a1628] transition-colors"
             >
               Browse All Solo-Friendly Sailings
               <ArrowRight className="w-4 h-4" />
@@ -308,7 +308,7 @@ export default function SoloCruisingPage() {
       </section>
 
       {/* Solo Cost Examples Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-indigo-50">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-100">
         <div className="max-w-3xl mx-auto">
           <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-3 text-center">
             Solo Cruise Cost Examples
@@ -338,13 +338,13 @@ export default function SoloCruisingPage() {
                     <p className="text-xs text-slate-600 uppercase tracking-wide mb-1 font-inter">
                       Per Night
                     </p>
-                    <p className="font-fraunces text-2xl font-bold text-blue-600">
+                    <p className="font-fraunces text-2xl font-bold text-[#1E3A5F]">
                       {formatPrice(Math.round(6384 / 7))}
                     </p>
                   </div>
                 </div>
 
-                <div className="bg-blue-50 border border-blue-200 rounded p-4">
+                <div className="bg-[#1E3A5F]/5 border border-[#1E3A5F]/20 rounded p-4">
                   <p className="text-sm text-slate-700 font-inter">
                     <strong>Compare:</strong> Resort stay (luxury) = {formatPrice(200)}/night | Hotel + flights = ~{formatPrice(250)}/day | All-inclusive = ~{formatPrice(300)}/day
                   </p>
@@ -370,7 +370,7 @@ export default function SoloCruisingPage() {
                     <p className="text-xs text-slate-600 uppercase tracking-wide mb-1 font-inter">
                       Per Night
                     </p>
-                    <p className="font-fraunces text-2xl font-bold text-blue-600">
+                    <p className="font-fraunces text-2xl font-bold text-[#1E3A5F]">
                       {formatPrice(Math.round((4288 * 1.1) / 4))}
                     </p>
                   </div>

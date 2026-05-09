@@ -57,8 +57,8 @@ export default function SubscribePage() {
 
             {/* Featured Sailings */}
             <div className="bg-white rounded-xl p-8 border border-slate-200">
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-blue-100 mb-4">
-                <Ship className="w-6 h-6 text-blue-600" />
+              <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-[#1E3A5F]/10 mb-4">
+                <Ship className="w-6 h-6 text-[#1E3A5F]" />
               </div>
               <h3 className="font-fraunces text-xl font-bold text-slate-900 mb-3">
                 Featured Sailings
