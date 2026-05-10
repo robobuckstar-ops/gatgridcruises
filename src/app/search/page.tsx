@@ -65,7 +65,7 @@ export default function SearchPage() {
                   <button
                     key={suggestion}
                     onClick={() => handleSuggestedSearch(suggestion)}
-                    className="px-4 py-2 rounded-full bg-white border border-slate-300 text-slate-700 text-sm font-inter hover:border-blue-400 hover:bg-blue-50 transition-all duration-200"
+                    className="px-4 py-2 rounded-full bg-white border border-slate-300 text-slate-700 text-sm font-inter hover:border-[#1E3A5F] hover:bg-[#1E3A5F]/5 transition-all duration-200"
                   >
                     {suggestion}
                   </button>
@@ -101,9 +101,9 @@ export default function SearchPage() {
                     href={`/sailing/${sailing.id}`}
                     className="group"
                   >
-                    <div className="h-full bg-white rounded-lg border border-slate-200 hover:border-blue-400 hover:shadow-lg transition-all duration-200 overflow-hidden flex flex-col">
+                    <div className="h-full bg-white rounded-lg border border-slate-200 hover:border-[#1E3A5F] hover:shadow-lg transition-all duration-200 overflow-hidden flex flex-col">
                       {/* Card Header */}
-                      <div className="p-6 border-b border-slate-200 bg-gradient-to-r from-blue-50 to-indigo-50">
+                      <div className="p-6 border-b border-slate-200 bg-gradient-to-r from-[#1E3A5F]/5 to-[#1E3A5F]/10">
                         <div className="flex items-start justify-between mb-3">
                           <div>
                             <h3 className="font-fraunces text-xl font-bold text-slate-900">
@@ -140,7 +140,7 @@ export default function SearchPage() {
                             <p className="text-xs text-slate-600 uppercase tracking-wide mb-1 font-inter">
                               From
                             </p>
-                            <p className="font-fraunces text-3xl font-bold text-blue-600">
+                            <p className="font-fraunces text-3xl font-bold text-[#1E3A5F]">
                               {formatPrice(sailing.current_lowest_price)}
                             </p>
                             <p className="text-xs text-slate-600 mt-1 font-inter">
@@ -184,7 +184,7 @@ export default function SearchPage() {
                       </div>
 
                       {/* Card Footer */}
-                      <div className="p-6 border-t border-slate-200 bg-slate-50 group-hover:bg-blue-50 transition-colors">
+                      <div className="p-6 border-t border-slate-200 bg-slate-50 group-hover:bg-[#1E3A5F]/5 transition-colors">
                         <button className="w-full bg-[#1E3A5F] text-white font-inter font-semibold py-2 rounded-lg hover:bg-[#0a1628] transition-colors">
                           View Details
                         </button>

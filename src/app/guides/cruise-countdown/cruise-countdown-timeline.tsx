@@ -818,7 +818,7 @@ export function CruiseCountdownTimeline() {
       {/* ------------------------------------------------------------------ */}
       {/* Castaway Club tier helper */}
       {/* ------------------------------------------------------------------ */}
-      <section className="bg-gradient-to-br from-indigo-50 to-blue-50 border-b border-blue-100 py-10 md:py-14">
+      <section className="bg-slate-100 border-b border-slate-200 py-10 md:py-14">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
             <span className="text-5xl block mb-3">🏆</span>

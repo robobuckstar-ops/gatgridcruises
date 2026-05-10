@@ -200,7 +200,7 @@ export default async function Home() {
           <div className="text-center">
             <Link
               href="/deals"
-              className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors"
+              className="inline-flex items-center gap-2 text-[#1E3A5F] font-semibold hover:text-[#0a1628] transition-colors"
             >
               View All Deals <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </Link>
@@ -225,12 +225,12 @@ export default async function Home() {
               <Link
                 key={href}
                 href={href}
-                className="group p-5 rounded-xl border-2 border-slate-200 hover:border-blue-500 hover:shadow-md transition-all duration-200"
+                className="group p-5 rounded-xl border-2 border-slate-200 hover:border-[#1E3A5F] hover:shadow-md transition-all duration-200"
               >
-                <div className="flex items-center justify-center w-11 h-11 rounded-xl bg-blue-50 group-hover:bg-blue-600 mb-3 transition-colors">
-                  <Icon className="w-5 h-5 text-blue-600 group-hover:text-white" aria-hidden="true" />
+                <div className="flex items-center justify-center w-11 h-11 rounded-xl bg-[#1E3A5F]/10 group-hover:bg-[#1E3A5F] mb-3 transition-colors">
+                  <Icon className="w-5 h-5 text-[#1E3A5F] group-hover:text-[#D4AF37]" aria-hidden="true" />
                 </div>
-                <h3 className="font-fraunces text-base font-bold text-slate-900 mb-1 group-hover:text-blue-600 transition-colors">
+                <h3 className="font-fraunces text-base font-bold text-slate-900 mb-1 group-hover:text-[#1E3A5F] transition-colors">
                   {label}
                 </h3>
                 <p className="text-slate-500 text-xs leading-snug">{desc}</p>
