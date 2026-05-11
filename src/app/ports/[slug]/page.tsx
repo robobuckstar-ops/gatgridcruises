@@ -17,8 +17,9 @@ import {
   CloudSun,
 } from 'lucide-react'
 import {
-  destinationPorts,
+  allDestinationPorts,
   getDestinationPortBySlug,
+  getPortSlugFromItineraryName,
   type DestinationPort,
 } from '@/data/destination-ports'
 import { getSailings } from '@/lib/data'
@@ -30,7 +31,7 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  return destinationPorts.map(p => ({ slug: p.slug }))
+  return allDestinationPorts.map(p => ({ slug: p.slug }))
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
@@ -66,25 +67,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 }
 
-// Match itinerary day port strings to a destination port
+// Match itinerary day port strings to a destination port using the central helper
 function itineraryMatchesPort(itineraryPortName: string, port: DestinationPort): boolean {
-  const lower = itineraryPortName.toLowerCase()
-  switch (port.slug) {
-    case 'nassau':
-      return lower.includes('nassau')
-    case 'castaway-cay':
-      return lower.includes('castaway')
-    case 'lookout-cay':
-      return lower.includes('lookout') || lower.includes('lighthouse point')
-    case 'cozumel':
-      return lower.includes('cozumel')
-    case 'grand-cayman':
-      return lower.includes('grand cayman') || lower.includes('george town')
-    case 'st-thomas':
-      return lower.includes('st. thomas') || lower.includes('st thomas')
-    default:
-      return false
-  }
+  return getPortSlugFromItineraryName(itineraryPortName) === port.slug
 }
 
 function dockTypeLabel(type: DestinationPort['dockType']): string {
@@ -105,7 +90,7 @@ export default async function DestinationPortPage({ params }: PageProps) {
     )
     .slice(0, 6)
 
-  const otherPorts = destinationPorts.filter(p => p.slug !== port.slug).slice(0, 5)
+  const otherPorts = allDestinationPorts.filter(p => p.slug !== port.slug).slice(0, 5)
 
   // JSON-LD: TouristDestination + Breadcrumbs + FAQ
   const placeSchema = {

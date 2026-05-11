@@ -50,12 +50,29 @@ export interface DestinationFAQ {
   answer: string
 }
 
+export type DestinationRegion =
+  | 'Bahamas'
+  | 'Mexico'
+  | 'Caribbean'
+  | 'Mexican Riviera'
+  | 'Pacific Coast'
+  | 'Alaska'
+  | 'Mediterranean'
+  | 'Iberian Peninsula'
+  | 'Northern Europe'
+  | 'British Isles'
+  | 'Atlantic Islands'
+  | 'Panama Canal'
+  | 'South America'
+  | 'Asia'
+  | 'Home Port'
+
 export interface DestinationPort {
   slug: string
   name: string
   shortName: string
   country: string
-  region: 'Bahamas' | 'Mexico' | 'Caribbean'
+  region: DestinationRegion
   flag: string
   isPrivateIsland?: boolean
   dockType: 'pier' | 'tender' | 'pier-or-tender'
@@ -2017,10 +2034,141 @@ export const destinationPorts: DestinationPort[] = [
   },
 ]
 
+import { extraDestinationPorts } from './destination-ports-extra'
+
+export const allDestinationPorts: DestinationPort[] = [
+  ...destinationPorts,
+  ...extraDestinationPorts,
+]
+
 export function getDestinationPorts(): DestinationPort[] {
-  return destinationPorts
+  return allDestinationPorts
 }
 
 export function getDestinationPortBySlug(slug: string): DestinationPort | undefined {
-  return destinationPorts.find(p => p.slug === slug)
+  return allDestinationPorts.find(p => p.slug === slug)
+}
+
+/**
+ * Normalize an itinerary port name (as found in sailings.json) to a destination
+ * port slug. Returns null for "At Sea", scenic cruising, and Panama Canal transits.
+ *
+ * The matcher is intentionally fuzzy — itinerary strings come in several variants
+ * (e.g. "Cozumel" vs "Cozumel, Mexico"), so each rule is a contains-check rather
+ * than an exact match.
+ */
+export function getPortSlugFromItineraryName(rawPortName: string): string | null {
+  const name = rawPortName.toLowerCase().trim()
+
+  // Skip non-stops
+  if (name === 'at sea' || name.includes('glacier viewing') || name === 'panama canal') {
+    return null
+  }
+
+  // Bahamas / Caribbean
+  if (name.includes('castaway')) return 'castaway-cay'
+  if (name.includes('lookout') || name.includes('lighthouse point')) return 'lookout-cay'
+  if (name.includes('nassau')) return 'nassau'
+  if (name.includes('cozumel')) return 'cozumel'
+  if (name.includes('grand cayman') || name.includes('george town')) return 'grand-cayman'
+  if (name.includes('st. thomas') || name.includes('st thomas')) return 'st-thomas'
+  if (name.includes('tortola')) return 'tortola'
+  if (name.includes('falmouth') && name.includes('jamaica')) return 'falmouth-jamaica'
+  if (name.includes('puerto plata')) return 'puerto-plata'
+  if (name.includes('philipsburg') || name.includes('st. maarten') || name.includes('st maarten')) return 'philipsburg-st-maarten'
+  if (name.includes('oranjestad') || name.includes('aruba')) return 'oranjestad-aruba'
+  if (name.includes('willemstad') || name.includes('curaçao') || name.includes('curacao')) return 'willemstad-curacao'
+  if (name.includes("st. john's") || name.includes("st johns") || name.includes('antigua')) return 'st-johns-antigua'
+  if (name.includes('castries') || name.includes('st. lucia') || name.includes('st lucia')) return 'castries'
+  if (name.includes('san juan')) return 'san-juan'
+  if (name.includes('cartagena') && name.includes('colombia')) return 'cartagena-colombia'
+
+  // Mexican Riviera / Mexico
+  if (name.includes('cabo san lucas')) return 'cabo-san-lucas'
+  if (name.includes('ensenada')) return 'ensenada'
+  if (name.includes('mazatlán') || name.includes('mazatlan')) return 'mazatlan'
+  if (name.includes('puerto vallarta')) return 'puerto-vallarta'
+  if (name.includes('progreso')) return 'progreso'
+
+  // Pacific Coast
+  if (name.includes('catalina')) return 'catalina-island'
+
+  // Alaska
+  if (name.includes('juneau')) return 'juneau'
+  if (name.includes('ketchikan')) return 'ketchikan'
+  if (name.includes('skagway')) return 'skagway'
+  if (name.includes('sitka')) return 'sitka'
+  if (name.includes('icy strait')) return 'icy-strait-point'
+
+  // Norway
+  if (name.includes('bergen')) return 'bergen'
+  if (name.includes('alesund') || name.includes('ålesund')) return 'alesund'
+  if (name.includes('haugesund')) return 'haugesund'
+  if (name.includes('stavanger')) return 'stavanger'
+  if (name.includes('olden')) return 'olden'
+  if (name.includes('hellesylt')) return 'hellesylt'
+  if (name.includes('kristiansand')) return 'kristiansand'
+  if (name.includes('maloy') || name.includes('måløy')) return 'maloy'
+
+  // Denmark
+  if (name.includes('copenhagen')) return 'copenhagen'
+  if (name.includes('skagen')) return 'skagen'
+
+  // British Isles
+  if (name.includes('southampton')) return 'southampton'
+  if (name.includes('liverpool')) return 'liverpool'
+  if (name.includes('belfast')) return 'belfast'
+  if (name.includes('cobh') || (name.includes('cork') && name.includes('ireland'))) return 'cobh-cork'
+  if (name.includes('greenock') || name.includes('glasgow')) return 'greenock-glasgow'
+  if (name.includes('portland') && (name.includes('stonehenge') || name.includes('england'))) return 'portland-england'
+
+  // Netherlands
+  if (name.includes('rotterdam') || name.includes('amsterdam')) return 'rotterdam-amsterdam'
+
+  // Iberian Peninsula
+  if (name.includes('barcelona')) return 'barcelona'
+  if (name.includes('lisbon')) return 'lisbon'
+  if (name.includes('bilbao')) return 'bilbao'
+  if (name.includes('cartagena') && name.includes('spain')) return 'cartagena-spain'
+  if (name.includes('la coruña') || name.includes('la coruna')) return 'la-coruna'
+  if (name.includes('málaga') || name.includes('malaga')) return 'malaga'
+  if (name.includes('palma de mallorca') || name.includes('mallorca')) return 'palma-de-mallorca'
+  if (name.includes('vigo')) return 'vigo'
+  if (name.includes('funchal') || name.includes('madeira')) return 'funchal-madeira'
+  if (name.includes('gibraltar')) return 'gibraltar'
+
+  // Mediterranean — Italy
+  if (name.includes('civitavecchia') || name.startsWith('rome')) return 'civitavecchia-rome'
+  if (name.includes('genoa') || name.includes('genova')) return 'genoa-milan'
+  if (name.includes('livorno') || name.includes('florence') || name.includes('pisa')) return 'livorno-florence'
+  if (name.includes('messina') || name.includes('sicily')) return 'messina-sicily'
+  if (name.includes('naples') || name.includes('pompeii')) return 'naples-pompeii'
+  if (name.includes('cagliari')) return 'cagliari'
+  if (name.includes('trieste') || name.includes('venice')) return 'trieste-venice'
+
+  // Mediterranean — France
+  if (name.includes('ajaccio') || name.includes('corsica')) return 'ajaccio'
+
+  // Mediterranean — Greece
+  if (name.includes('chania')) return 'chania'
+  if (name.includes('corfu')) return 'corfu'
+  if (name.includes('mykonos')) return 'mykonos'
+  if (name.includes('piraeus') || name.includes('athens')) return 'piraeus-athens'
+  if (name.includes('rhodes')) return 'rhodes'
+  if (name.includes('santorini')) return 'santorini'
+
+  // Mediterranean — Croatia / Malta
+  if (name.includes('dubrovnik')) return 'dubrovnik'
+  if (name.includes('zadar')) return 'zadar'
+  if (name.includes('valletta') || name.includes('malta')) return 'valletta'
+
+  // Home ports
+  if (name.includes('port canaveral') || name === 'pcv') return 'port-canaveral'
+  if (name.includes('fort lauderdale')) return 'fort-lauderdale'
+  if (name.includes('galveston')) return 'galveston'
+  if (name.includes('san diego')) return 'san-diego'
+  if (name.includes('vancouver')) return 'vancouver'
+  if (name.includes('singapore')) return 'singapore'
+
+  return null
 }
