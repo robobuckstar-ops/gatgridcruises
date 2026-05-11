@@ -52,11 +52,11 @@ const LINKS = {
     'https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS',
   capitalOneSpark: 'https://i.capitalone.com/JKlfRwN3f',
 
-  // Amazon affiliate (tag: thm1230b0300-20)
-  amazonPacking: 'https://www.amazon.com/s?k=packing+cubes+travel+set&tag=thm1230b0300-20',
-  amazonWallet: 'https://www.amazon.com/s?k=rfid+blocking+travel+wallet&tag=thm1230b0300-20',
-  amazonPowerbank: 'https://www.amazon.com/s?k=portable+power+bank+20000mah&tag=thm1230b0300-20',
-  amazonLuggage: 'https://www.amazon.com/s?k=carry+on+luggage+spinner&tag=thm1230b0300-20',
+  // Amazon affiliate (tag: gatgridcruise-20)
+  amazonPacking: 'https://www.amazon.com/s?k=packing+cubes+travel+set&tag=gatgridcruise-20',
+  amazonWallet: 'https://www.amazon.com/s?k=rfid+blocking+travel+wallet&tag=gatgridcruise-20',
+  amazonPowerbank: 'https://www.amazon.com/s?k=portable+power+bank+20000mah&tag=gatgridcruise-20',
+  amazonLuggage: 'https://www.amazon.com/s?k=carry+on+luggage+spinner&tag=gatgridcruise-20',
 
   concierge: '/concierge',
 }
@@ -1123,7 +1123,7 @@ export default function CreditCardsPage() {
           GatGrid Cruises participates in affiliate programs and may earn a commission when you are
           approved for a credit card through our referral links. Editorial picks (Chase Sapphire
           Preferred, American Express Platinum, Capital One Venture) have no affiliate relationship
-          and are included based solely on merit. Amazon links use affiliate tag thm1230b0300-20.
+          and are included based solely on merit. Amazon links use affiliate tag gatgridcruise-20.
           This does not increase your cost in any way. Card details, signup bonuses, annual fees,
           and terms are subject to change — always verify current offers directly with the card
           issuer before applying. GatGrid Cruises does not provide financial, legal, or tax advice.

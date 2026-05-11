@@ -17,7 +17,7 @@
 
 // ─── AMAZON ASSOCIATES ───────────────────────────────────────
 export const AMAZON_CONFIG = {
-  tag: 'thm1230b0300-20',
+  tag: 'gatgridcruise-20',
 
   /** Base URL for Amazon product links (don't change this) */
   baseUrl: 'https://www.amazon.com',
@@ -26,7 +26,7 @@ export const AMAZON_CONFIG = {
 /**
  * Append your Amazon Associates tag to any Amazon URL.
  * Usage: amazonLink('https://www.amazon.com/dp/B09V3KXJPB')
- *   → 'https://www.amazon.com/dp/B09V3KXJPB?tag=thm1230b0300-20'
+ *   → 'https://www.amazon.com/dp/B09V3KXJPB?tag=gatgridcruise-20'
  */
 export function amazonLink(url: string): string {
   const separator = url.includes('?') ? '&' : '?'
