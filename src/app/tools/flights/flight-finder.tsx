@@ -341,7 +341,7 @@ export function FlightFinder({
                           setShowAirportDropdown(false)
                         }}
                       >
-                        <span className="font-mono font-bold text-blue-600 w-10 shrink-0">{airport.code}</span>
+                        <span className="font-mono font-bold text-[#1E3A5F] w-10 shrink-0">{airport.code}</span>
                         <span className="text-sm text-slate-600">{airport.city}</span>
                       </button>
                     </li>
@@ -421,7 +421,7 @@ export function FlightFinder({
             >
               <div className="flex gap-4">
                 <AlertCircle
-                  className="w-6 h-6 flex-shrink-0 mt-0.5 text-blue-600"
+                  className="w-6 h-6 flex-shrink-0 mt-0.5 text-[#1E3A5F]"
                 />
                 <div>
                   <h3
@@ -514,7 +514,7 @@ export function FlightFinder({
                             </div>
                             <div>
                               <p
-                                className="text-lg font-bold text-blue-600"
+                                className="text-lg font-bold text-[#1E3A5F]"
                               >
                                 {flight.arrivalTime}
                               </p>
@@ -526,7 +526,7 @@ export function FlightFinder({
                         <div className="flex flex-col sm:flex-row sm:items-center gap-4 md:border-l md:border-slate-200 md:pl-6">
                           <div className="text-right">
                             <p
-                              className="text-2xl font-bold text-blue-600"
+                              className="text-2xl font-bold text-[#1E3A5F]"
                             >
                               ${flight.price}
                             </p>
@@ -536,7 +536,7 @@ export function FlightFinder({
                             href={`/go/skyscanner/search?from=${homeAirport.toUpperCase()}&to=${
                               nearestAirport?.code || 'MCO'
                             }&date=${formatDateForSkyscanner(flight.departureDate)}`}
-                            className="px-4 py-2 rounded font-semibold text-white bg-blue-600 flex items-center gap-2 whitespace-nowrap transition hover:bg-blue-700"
+                            className="px-4 py-2 rounded font-semibold text-white bg-[#1E3A5F] flex items-center gap-2 whitespace-nowrap transition hover:bg-[#162d4a]"
                           >
                             Search <ArrowRight className="w-4 h-4" />
                           </a>
@@ -571,7 +571,7 @@ export function FlightFinder({
                 <table className="w-full">
                   <thead>
                     <tr
-                      className="bg-blue-600 text-white"
+                      className="bg-[#1E3A5F] text-white"
                     >
                       <th className="px-6 py-3 text-left text-sm font-semibold">
                         Airport
@@ -620,7 +620,7 @@ export function FlightFinder({
                 <div className="bg-white rounded-lg p-6 border border-slate-200">
                   <div className="flex gap-3 mb-3">
                     <Info
-                      className="w-5 h-5 flex-shrink-0 mt-0.5 text-blue-600"
+                      className="w-5 h-5 flex-shrink-0 mt-0.5 text-[#1E3A5F]"
                     />
                     <h4
                       className="font-bold text-slate-900"
@@ -640,7 +640,7 @@ export function FlightFinder({
                 <div className="bg-white rounded-lg p-6 border border-slate-200">
                   <div className="flex gap-3 mb-3">
                     <Info
-                      className="w-5 h-5 flex-shrink-0 mt-0.5 text-blue-600"
+                      className="w-5 h-5 flex-shrink-0 mt-0.5 text-[#1E3A5F]"
                     />
                     <h4
                       className="font-bold text-slate-900"
@@ -660,7 +660,7 @@ export function FlightFinder({
                 <div className="bg-white rounded-lg p-6 border border-slate-200">
                   <div className="flex gap-3 mb-3">
                     <Info
-                      className="w-5 h-5 flex-shrink-0 mt-0.5 text-blue-600"
+                      className="w-5 h-5 flex-shrink-0 mt-0.5 text-[#1E3A5F]"
                     />
                     <h4
                       className="font-bold text-slate-900"
@@ -680,7 +680,7 @@ export function FlightFinder({
                 <div className="bg-white rounded-lg p-6 border border-slate-200">
                   <div className="flex gap-3 mb-3">
                     <Info
-                      className="w-5 h-5 flex-shrink-0 mt-0.5 text-blue-600"
+                      className="w-5 h-5 flex-shrink-0 mt-0.5 text-[#1E3A5F]"
                     />
                     <h4
                       className="font-bold text-slate-900"

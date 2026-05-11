@@ -43,9 +43,9 @@ export default function PackingListGuide() {
       {/* Breadcrumb */}
       <div className="bg-gray-50 px-4 sm:px-6 lg:px-8 py-4 border-b">
         <div className="max-w-4xl mx-auto text-sm text-gray-600">
-          <Link href="/" className="text-blue-600 hover:underline">Home</Link>
+          <Link href="/" className="text-[#1E3A5F] hover:underline">Home</Link>
           {' > '}
-          <Link href="/guides" className="text-blue-600 hover:underline">Guides</Link>
+          <Link href="/guides" className="text-[#1E3A5F] hover:underline">Guides</Link>
           {' > Packing List'}
         </div>
       </div>
@@ -82,43 +82,43 @@ export default function PackingListGuide() {
           <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-4">Critical Documents (Don't Forget!)</h2>
           <div className="space-y-3 mb-6">
             <div className="flex gap-3 p-3 bg-blue-50 rounded">
-              <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+              <CheckCircle className="w-5 h-5 text-[#1E3A5F] flex-shrink-0 mt-0.5" />
               <div className="font-inter text-slate-600">
                 <strong>Passport or government-issued ID</strong> — Required for Caribbean/international cruises; driver's license or passport for domestic cruises
               </div>
             </div>
             <div className="flex gap-3 p-3 bg-blue-50 rounded">
-              <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+              <CheckCircle className="w-5 h-5 text-[#1E3A5F] flex-shrink-0 mt-0.5" />
               <div className="font-inter text-slate-600">
                 <strong>Cruise documents</strong> — Booking confirmation, reservation number, cruise itinerary, and pre-check-in confirmation (available in Disney Cruise Line app or via email)
               </div>
             </div>
             <div className="flex gap-3 p-3 bg-blue-50 rounded">
-              <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+              <CheckCircle className="w-5 h-5 text-[#1E3A5F] flex-shrink-0 mt-0.5" />
               <div className="font-inter text-slate-600">
                 <strong>Insurance documents</strong> — Travel insurance papers (if purchased), policy numbers, and contact info
               </div>
             </div>
             <div className="flex gap-3 p-3 bg-blue-50 rounded">
-              <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+              <CheckCircle className="w-5 h-5 text-[#1E3A5F] flex-shrink-0 mt-0.5" />
               <div className="font-inter text-slate-600">
                 <strong>Key to the World Card</strong> — Your onboard key card (often arrives in advance; print or save digitally)
               </div>
             </div>
             <div className="flex gap-3 p-3 bg-blue-50 rounded">
-              <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+              <CheckCircle className="w-5 h-5 text-[#1E3A5F] flex-shrink-0 mt-0.5" />
               <div className="font-inter text-slate-600">
                 <strong>Vaccination records or health documentation</strong> — If required by your itinerary
               </div>
             </div>
             <div className="flex gap-3 p-3 bg-blue-50 rounded">
-              <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+              <CheckCircle className="w-5 h-5 text-[#1E3A5F] flex-shrink-0 mt-0.5" />
               <div className="font-inter text-slate-600">
                 <strong>Credit card and backup payment method</strong> — For onboard charging and emergencies
               </div>
             </div>
             <div className="flex gap-3 p-3 bg-blue-50 rounded">
-              <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+              <CheckCircle className="w-5 h-5 text-[#1E3A5F] flex-shrink-0 mt-0.5" />
               <div className="font-inter text-slate-600">
                 <strong>Copies of important documents</strong> — Keep digital copies (email to yourself or cloud storage) in case originals are lost
               </div>
@@ -133,13 +133,13 @@ export default function PackingListGuide() {
           <div className="mb-8">
             <h3 className="font-fraunces text-2xl font-bold text-slate-900 mb-4">Casual Daywear</h3>
             <ul className="space-y-2 font-inter text-slate-600">
-              <li className="flex gap-2"><span className="text-blue-600">•</span> 5-7 t-shirts or casual tops (depending on cruise length)</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> 3-4 pairs shorts or casual pants</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> 2-3 sundresses or casual outfits</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Light cardigan or fleece for air-conditioned ship areas</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Casual shoes/sneakers for daytime</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Comfortable walking shoes</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Flip-flops or casual sandals</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> 5-7 t-shirts or casual tops (depending on cruise length)</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> 3-4 pairs shorts or casual pants</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> 2-3 sundresses or casual outfits</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Light cardigan or fleece for air-conditioned ship areas</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Casual shoes/sneakers for daytime</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Comfortable walking shoes</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Flip-flops or casual sandals</li>
             </ul>
             <p className="font-inter text-gray-600 text-sm mt-4">
               <em>Pro Tip:</em> Pack neutral colors that mix and match to maximize outfit combinations and reduce overall volume.
@@ -152,11 +152,11 @@ export default function PackingListGuide() {
               Disney cruises include "dress up nights." A typical 3-4 night cruise has 1-2 such nights; longer cruises have more. Disney's dress code is flexible—you can wear business casual, cocktail attire, or full formal wear.
             </p>
             <ul className="space-y-2 font-inter text-slate-600">
-              <li className="flex gap-2"><span className="text-blue-600">•</span> 1-2 dresses, dress shirts, or dressy outfits</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Dress shoes or nicer sandals (comfortable for several hours)</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Dress pants or skirt if not bringing a full dress</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Wrap or light jacket (formal dining rooms are chilly)</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Tie, cufflinks, or accessories (optional)</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> 1-2 dresses, dress shirts, or dressy outfits</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Dress shoes or nicer sandals (comfortable for several hours)</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Dress pants or skirt if not bringing a full dress</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Wrap or light jacket (formal dining rooms are chilly)</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Tie, cufflinks, or accessories (optional)</li>
             </ul>
             <p className="font-inter text-gray-600 text-sm mt-4">
               <em>Pro Tip:</em> Smart casual (pressed slacks/dress pants + nice top) is acceptable on most dress-up nights. You don't need a gown or tuxedo unless you want to dress up!
@@ -169,9 +169,9 @@ export default function PackingListGuide() {
               Every Disney cruise features a Pirate Night celebration. Costumes are optional but highly encouraged and add to the fun. You can bring a full costume or simple pirate-themed items.
             </p>
             <ul className="space-y-2 font-inter text-slate-600">
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Pirate costume (full or DIY elements: bandana, eye patch, striped shirt, red sash)</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Pirate hat (optional but fun)</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Dark pants or skirt to match pirate theme</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Pirate costume (full or DIY elements: bandana, eye patch, striped shirt, red sash)</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Pirate hat (optional but fun)</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Dark pants or skirt to match pirate theme</li>
             </ul>
             <p className="font-inter text-gray-600 text-sm mt-4">
               <em>Pro Tip:</em> Most guests make DIY costumes or wear simple pirate-themed items rather than full costumes. The ship is crowded; simple is often better.
@@ -181,12 +181,12 @@ export default function PackingListGuide() {
           <div className="mb-8">
             <h3 className="font-fraunces text-2xl font-bold text-slate-900 mb-4">Swimwear & Beach/Pool Clothing</h3>
             <ul className="space-y-2 font-inter text-slate-600">
-              <li className="flex gap-2"><span className="text-blue-600">•</span> 2-3 swimsuits (rotate so one can dry overnight)</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Cover-up or light shirt for pool areas</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Rash guard (kids or sun-sensitive guests)</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Quick-dry pants or shorts</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Water shoes (especially important for Castaway Cay)</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Casual outfit for Castaway Cay exploration</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> 2-3 swimsuits (rotate so one can dry overnight)</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Cover-up or light shirt for pool areas</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Rash guard (kids or sun-sensitive guests)</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Quick-dry pants or shorts</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Water shoes (especially important for Castaway Cay)</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Casual outfit for Castaway Cay exploration</li>
             </ul>
           </div>
 
@@ -203,14 +203,14 @@ export default function PackingListGuide() {
           <div className="mb-8">
             <h3 className="font-fraunces text-2xl font-bold text-slate-900 mb-4">Undergarments & Accessories</h3>
             <ul className="space-y-2 font-inter text-slate-600">
-              <li className="flex gap-2"><span className="text-blue-600">•</span> 6-8 pairs underwear (for 5-7 days; plan for laundry access)</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> 2-3 bras or equivalent</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Socks (crew socks for comfort, thin socks for shoes)</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Sleepwear/pajamas</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Belt(s) to adjust clothing fit</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Hat or visor (sun protection)</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Sunglasses</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Watch or no watch (some cruisers prefer watch-free relaxation)</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> 6-8 pairs underwear (for 5-7 days; plan for laundry access)</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> 2-3 bras or equivalent</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Socks (crew socks for comfort, thin socks for shoes)</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Sleepwear/pajamas</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Belt(s) to adjust clothing fit</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Hat or visor (sun protection)</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Sunglasses</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Watch or no watch (some cruisers prefer watch-free relaxation)</li>
             </ul>
           </div>
         </section>
@@ -235,12 +235,12 @@ export default function PackingListGuide() {
           <div className="mb-8">
             <h3 className="font-fraunces text-2xl font-bold text-slate-900 mb-4">Sun & Skincare</h3>
             <ul className="space-y-2 font-inter text-slate-600">
-              <li className="flex gap-2"><span className="text-blue-600">•</span> <strong>Reef-safe sunscreen</strong> (SPF 30+, critical for Castaway Cay)</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Lip balm with SPF</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Aloe vera gel (sunburn relief)</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Facial moisturizer</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Face wash and toner</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Any prescription acne or skincare medications</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> <strong>Reef-safe sunscreen</strong> (SPF 30+, critical for Castaway Cay)</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Lip balm with SPF</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Aloe vera gel (sunburn relief)</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Facial moisturizer</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Face wash and toner</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Any prescription acne or skincare medications</li>
             </ul>
             <p className="font-inter text-gray-600 text-sm mt-4">
               <em>Important:</em> Reef-safe sunscreen is essential for Castaway Cay. Avoid sunscreens with oxybenzone or octinoxate, which damage coral reefs.
@@ -250,49 +250,49 @@ export default function PackingListGuide() {
           <div className="mb-8">
             <h3 className="font-fraunces text-2xl font-bold text-slate-900 mb-4">Motion Sickness & Health</h3>
             <ul className="space-y-2 font-inter text-slate-600">
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Dramamine or motion sickness medication (if prone to seasickness)</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> SeaBands or acupressure wristbands (non-medicinal alternative)</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Ginger supplements or ginger candies</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Your regular medications (bring in original containers with prescriptions)</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Dramamine or motion sickness medication (if prone to seasickness)</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> SeaBands or acupressure wristbands (non-medicinal alternative)</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Ginger supplements or ginger candies</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Your regular medications (bring in original containers with prescriptions)</li>
             </ul>
           </div>
 
           <div className="mb-8">
             <h3 className="font-fraunces text-2xl font-bold text-slate-900 mb-4">First Aid & General Health</h3>
             <ul className="space-y-2 font-inter text-slate-600">
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Pain relievers (ibuprofen, acetaminophen)</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Antacids (Tums, Gas-X)</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Anti-diarrheal medication</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Allergy medication (antihistamines)</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Cold/cough medicine</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Hydrocortisone cream (rashes, bug bites)</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> First aid supplies (bandages, gauze, antibiotic ointment)</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Thermometer</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Pain relievers (ibuprofen, acetaminophen)</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Antacids (Tums, Gas-X)</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Anti-diarrheal medication</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Allergy medication (antihistamines)</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Cold/cough medicine</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Hydrocortisone cream (rashes, bug bites)</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> First aid supplies (bandages, gauze, antibiotic ointment)</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Thermometer</li>
             </ul>
           </div>
 
           <div className="mb-8">
             <h3 className="font-fraunces text-2xl font-bold text-slate-900 mb-4">Hair & Grooming</h3>
             <ul className="space-y-2 font-inter text-slate-600">
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Shampoo & conditioner (travel size or full size)</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Body wash or soap</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Deodorant (essential on a cruise!)</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Hairbrush or comb</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Hair ties or clips</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Hair styling products (if normally used)</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Toothbrush & toothpaste (often provided in cabins)</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Razor & shaving cream</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Nail clippers</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Shampoo & conditioner (travel size or full size)</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Body wash or soap</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Deodorant (essential on a cruise!)</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Hairbrush or comb</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Hair ties or clips</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Hair styling products (if normally used)</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Toothbrush & toothpaste (often provided in cabins)</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Razor & shaving cream</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Nail clippers</li>
             </ul>
           </div>
 
           <div className="mb-8">
             <h3 className="font-fraunces text-2xl font-bold text-slate-900 mb-4">Women's Specific Items</h3>
             <ul className="space-y-2 font-inter text-slate-600">
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Period products (tampons, pads) — hard to find on ship</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Birth control (if applicable)</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Feminine wash (optional)</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Extra bras or sports bras</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Period products (tampons, pads) — hard to find on ship</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Birth control (if applicable)</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Feminine wash (optional)</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Extra bras or sports bras</li>
             </ul>
           </div>
         </section>
@@ -304,11 +304,11 @@ export default function PackingListGuide() {
           <div className="mb-6">
             <h3 className="font-fraunces text-2xl font-bold text-slate-900 mb-3">Power & Charging</h3>
             <ul className="space-y-2 font-inter text-slate-600">
-              <li className="flex gap-2"><span className="text-blue-600">•</span> <strong>Power strip or surge protector</strong> (crucial—cabin outlets are limited)</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Phone/device charger (USB-C, Lightning, micro-USB as needed)</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Portable power bank/battery (20,000 mAh+)</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Universal power adapter (if traveling internationally)</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Laptop charger (if bringing a laptop)</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> <strong>Power strip or surge protector</strong> (crucial—cabin outlets are limited)</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Phone/device charger (USB-C, Lightning, micro-USB as needed)</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Portable power bank/battery (20,000 mAh+)</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Universal power adapter (if traveling internationally)</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Laptop charger (if bringing a laptop)</li>
             </ul>
             <p className="font-inter text-gray-600 text-sm mt-4">
               <em>Critical Pro Tip:</em> Cabin bathrooms typically have only one outlet near the sink. A power strip is essential for charging phones, cameras, and other devices in your cabin.
@@ -318,13 +318,13 @@ export default function PackingListGuide() {
           <div className="mb-6">
             <h3 className="font-fraunces text-2xl font-bold text-slate-900 mb-3">Devices & Accessories</h3>
             <ul className="space-y-2 font-inter text-slate-600">
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Mobile phone and charger cable</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Camera or action camera (optional)</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> E-reader or tablet (for relaxation)</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Laptop (optional; many cruisers take a break from work)</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Waterproof phone case (essential for beach/pool)</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Earbuds or headphones</li>
-              <li className="flex gap-2"><span className="text-blue-600">•</span> Portable Bluetooth speaker (for cabin use)</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Mobile phone and charger cable</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Camera or action camera (optional)</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> E-reader or tablet (for relaxation)</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Laptop (optional; many cruisers take a break from work)</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Waterproof phone case (essential for beach/pool)</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Earbuds or headphones</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Portable Bluetooth speaker (for cabin use)</li>
             </ul>
           </div>
         </section>
@@ -397,37 +397,37 @@ export default function PackingListGuide() {
 
           <div className="space-y-3">
             <div className="flex gap-3 p-3 bg-blue-50 rounded">
-              <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+              <CheckCircle className="w-5 h-5 text-[#1E3A5F] flex-shrink-0 mt-0.5" />
               <div className="font-inter text-slate-600">
                 <strong>Water shoes</strong> — Essential for Castaway Cay's rocky areas and hot sand
               </div>
             </div>
             <div className="flex gap-3 p-3 bg-blue-50 rounded">
-              <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+              <CheckCircle className="w-5 h-5 text-[#1E3A5F] flex-shrink-0 mt-0.5" />
               <div className="font-inter text-slate-600">
                 <strong>Snorkel gear (optional)</strong> — Bring your own to save $12/person at Castaway Cay
               </div>
             </div>
             <div className="flex gap-3 p-3 bg-blue-50 rounded">
-              <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+              <CheckCircle className="w-5 h-5 text-[#1E3A5F] flex-shrink-0 mt-0.5" />
               <div className="font-inter text-slate-600">
                 <strong>Waterproof phone case</strong> — Protect devices near water
               </div>
             </div>
             <div className="flex gap-3 p-3 bg-blue-50 rounded">
-              <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+              <CheckCircle className="w-5 h-5 text-[#1E3A5F] flex-shrink-0 mt-0.5" />
               <div className="font-inter text-slate-600">
                 <strong>Beach towel (optional)</strong> — Ships provide towels, but some prefer their own
               </div>
             </div>
             <div className="flex gap-3 p-3 bg-blue-50 rounded">
-              <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+              <CheckCircle className="w-5 h-5 text-[#1E3A5F] flex-shrink-0 mt-0.5" />
               <div className="font-inter text-slate-600">
                 <strong>Goggles (optional)</strong> — For snorkeling enthusiasts
               </div>
             </div>
             <div className="flex gap-3 p-3 bg-blue-50 rounded">
-              <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+              <CheckCircle className="w-5 h-5 text-[#1E3A5F] flex-shrink-0 mt-0.5" />
               <div className="font-inter text-slate-600">
                 <strong>Underwater camera (optional)</strong> — Capture beach memories
               </div>
@@ -495,14 +495,14 @@ export default function PackingListGuide() {
             If participating, pack small items like:
           </p>
           <ul className="space-y-2 font-inter text-slate-600 mb-6">
-            <li className="flex gap-2"><span className="text-blue-600">•</span> Individually wrapped candies or chocolates</li>
-            <li className="flex gap-2"><span className="text-blue-600">•</span> Small soaps or hand sanitizers</li>
-            <li className="flex gap-2"><span className="text-blue-600">•</span> Stickers or temporary tattoos (for kids)</li>
-            <li className="flex gap-2"><span className="text-blue-600">•</span> Mini notepads or pens</li>
-            <li className="flex gap-2"><span className="text-blue-600">•</span> Hair clips or bands</li>
-            <li className="flex gap-2"><span className="text-blue-600">•</span> Chapstick or lip balm</li>
-            <li className="flex gap-2"><span className="text-blue-600">•</span> Glow sticks</li>
-            <li className="flex gap-2"><span className="text-blue-600">•</span> Small snacks (non-perishable)</li>
+            <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Individually wrapped candies or chocolates</li>
+            <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Small soaps or hand sanitizers</li>
+            <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Stickers or temporary tattoos (for kids)</li>
+            <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Mini notepads or pens</li>
+            <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Hair clips or bands</li>
+            <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Chapstick or lip balm</li>
+            <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Glow sticks</li>
+            <li className="flex gap-2"><span className="text-[#1E3A5F]">•</span> Small snacks (non-perishable)</li>
           </ul>
           <p className="font-inter text-gray-600 text-sm">
             <em>Pro Tip:</em> Pack 10-15 items per person. The tradition creates a wonderful bonding experience with fellow cruisers.
@@ -597,7 +597,7 @@ export default function PackingListGuide() {
         </section>
 
         {/* CTA Section */}
-        <section className="my-12 p-8 bg-gradient-to-r from-blue-50 to-blue-900 text-white rounded-lg">
+        <section className="my-12 p-8 bg-gradient-to-r from-blue-50 to-[#0a1628] text-white rounded-lg">
           <h2 className="font-fraunces text-3xl font-bold mb-4">Ready to Set Sail?</h2>
           <p className="font-inter text-lg mb-6">
             Use this packing list to prepare for your Disney cruise, then explore our other guides to plan the perfect voyage.

@@ -268,7 +268,7 @@ export default function ExcursionSavingsPage() {
                     <td className="px-5 py-4 text-slate-600 align-top leading-relaxed">{row.direct}</td>
                     <td className="px-5 py-4 align-top">
                       {row.winner === 'dcl' && (
-                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 text-xs font-semibold">
+                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-blue-100 text-[#0a1628] text-xs font-semibold">
                           <Check className="h-3 w-3" aria-hidden="true" /> DCL
                         </span>
                       )}
@@ -313,7 +313,7 @@ export default function ExcursionSavingsPage() {
                 </div>
                 <div className="space-y-2 text-sm">
                   <div className="flex items-start gap-2">
-                    <span className="text-blue-600 font-semibold w-12 flex-shrink-0">DCL:</span>
+                    <span className="text-[#1E3A5F] font-semibold w-12 flex-shrink-0">DCL:</span>
                     <span className="text-slate-600">{row.dcl}</span>
                   </div>
                   <div className="flex items-start gap-2">

@@ -80,7 +80,7 @@ export function Accordion({ items, allowMultiple = true }: AccordionProps) {
             }}
             onClick={() => toggleItem(item.id)}
             onKeyDown={(e) => handleKeyDown(e, item.id, index)}
-            className="w-full px-6 py-4 flex items-center justify-between bg-white hover:bg-slate-50 transition-colors focus-visible:outline-2 focus-visible:outline-offset-0 focus-visible:outline-blue-600"
+            className="w-full px-6 py-4 flex items-center justify-between bg-white hover:bg-slate-50 transition-colors focus-visible:outline-2 focus-visible:outline-offset-0 focus-visible:outline-[#1E3A5F]"
             aria-expanded={openIds.has(item.id)}
             aria-controls={`accordion-panel-${item.id}`}
             aria-label={`${item.title}, accordion item ${index + 1} of ${items.length}`}

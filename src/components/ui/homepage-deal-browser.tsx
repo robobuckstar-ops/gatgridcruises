@@ -69,8 +69,8 @@ export function HomepageDealBrowser({ sailings, ships, ports }: HomepageDealBrow
                 onClick={() => setDestination(activeDest === d.value ? null : d.value)}
                 className={`px-3 py-1.5 rounded-full text-sm font-medium border transition-colors ${
                   activeDest === d.value
-                    ? 'bg-blue-600 text-white border-blue-600'
-                    : 'bg-white text-slate-700 border-slate-300 hover:border-blue-400 hover:text-blue-600'
+                    ? 'bg-[#1E3A5F] text-white border-[#1E3A5F]'
+                    : 'bg-white text-slate-700 border-slate-300 hover:border-blue-400 hover:text-[#1E3A5F]'
                 }`}
               >
                 {d.label}
@@ -91,8 +91,8 @@ export function HomepageDealBrowser({ sailings, ships, ports }: HomepageDealBrow
                   onClick={() => setDuration(isActive ? null : { min: d.min, max: d.max })}
                   className={`px-3 py-1.5 rounded-full text-sm font-medium border transition-colors ${
                     isActive
-                      ? 'bg-blue-600 text-white border-blue-600'
-                      : 'bg-white text-slate-700 border-slate-300 hover:border-blue-400 hover:text-blue-600'
+                      ? 'bg-[#1E3A5F] text-white border-[#1E3A5F]'
+                      : 'bg-white text-slate-700 border-slate-300 hover:border-blue-400 hover:text-[#1E3A5F]'
                   }`}
                 >
                   {d.label}
@@ -112,8 +112,8 @@ export function HomepageDealBrowser({ sailings, ships, ports }: HomepageDealBrow
                 onClick={() => setSelectedShip(selectedShip === ship.id ? null : ship.id)}
                 className={`px-3 py-1.5 rounded-full text-sm font-medium border transition-colors ${
                   selectedShip === ship.id
-                    ? 'bg-blue-600 text-white border-blue-600'
-                    : 'bg-white text-slate-700 border-slate-300 hover:border-blue-400 hover:text-blue-600'
+                    ? 'bg-[#1E3A5F] text-white border-[#1E3A5F]'
+                    : 'bg-white text-slate-700 border-slate-300 hover:border-blue-400 hover:text-[#1E3A5F]'
                 }`}
               >
                 {ship.name.replace('Disney ', '')}
@@ -152,7 +152,7 @@ export function HomepageDealBrowser({ sailings, ships, ports }: HomepageDealBrow
                   onClick={() => setGuests(n)}
                   className={`w-10 h-10 rounded-lg text-sm font-semibold border transition-colors ${
                     guests === n
-                      ? 'bg-blue-600 text-white border-blue-600'
+                      ? 'bg-[#1E3A5F] text-white border-[#1E3A5F]'
                       : 'bg-white text-slate-700 border-slate-300 hover:border-blue-400'
                   }`}
                 >
@@ -165,7 +165,7 @@ export function HomepageDealBrowser({ sailings, ships, ports }: HomepageDealBrow
           {/* Min Deal Score */}
           <div className="flex-1 min-w-[180px]">
             <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2">
-              Min Deal Score: <span className="text-blue-600 font-bold">{minScore}</span>
+              Min Deal Score: <span className="text-[#1E3A5F] font-bold">{minScore}</span>
             </p>
             <input
               type="range"
@@ -174,7 +174,7 @@ export function HomepageDealBrowser({ sailings, ships, ports }: HomepageDealBrow
               step={5}
               value={minScore}
               onChange={e => setMinScore(Number(e.target.value))}
-              className="w-full accent-blue-600"
+              className="w-full accent-[#1E3A5F]"
             />
           </div>
 
@@ -185,8 +185,8 @@ export function HomepageDealBrowser({ sailings, ships, ports }: HomepageDealBrow
               onClick={() => setPrivateIsland(prev => !prev)}
               className={`inline-flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium border transition-colors ${
                 privateIsland
-                  ? 'bg-blue-600 text-white border-blue-600'
-                  : 'bg-white text-slate-700 border-slate-300 hover:border-blue-400 hover:text-blue-600'
+                  ? 'bg-[#1E3A5F] text-white border-[#1E3A5F]'
+                  : 'bg-white text-slate-700 border-slate-300 hover:border-blue-400 hover:text-[#1E3A5F]'
               }`}
             >
               <span>🏝️</span>
@@ -226,7 +226,7 @@ export function HomepageDealBrowser({ sailings, ships, ports }: HomepageDealBrow
           <p className="font-semibold text-slate-700 mb-2">No sailings match your filters</p>
           <button
             onClick={() => { setDestination(null); setDuration(null); setSelectedShip(null); setSelectedPort(null); setMinScore(0); setPrivateIsland(false) }}
-            className="text-sm text-blue-600 hover:underline"
+            className="text-sm text-[#1E3A5F] hover:underline"
           >
             Clear all filters
           </button>

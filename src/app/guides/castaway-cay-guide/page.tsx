@@ -43,9 +43,9 @@ export default function CastawayCayGuide() {
       {/* Breadcrumb */}
       <div className="bg-gray-50 px-4 sm:px-6 lg:px-8 py-4 border-b">
         <div className="max-w-4xl mx-auto text-sm text-gray-600">
-          <Link href="/" className="text-blue-600 hover:underline">Home</Link>
+          <Link href="/" className="text-[#1E3A5F] hover:underline">Home</Link>
           {' > '}
-          <Link href="/guides" className="text-blue-600 hover:underline">Guides</Link>
+          <Link href="/guides" className="text-[#1E3A5F] hover:underline">Guides</Link>
           {' > Castaway Cay'}
         </div>
       </div>

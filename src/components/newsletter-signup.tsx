@@ -43,7 +43,7 @@ export function NewsletterSignup({ variant = 'card', className = '' }: Newslette
             <button
               type="submit"
               disabled={loading}
-              className="px-5 py-2.5 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition text-sm disabled:opacity-60 whitespace-nowrap"
+              className="px-5 py-2.5 bg-[#1E3A5F] text-white font-semibold rounded-lg hover:bg-[#162d4a] transition text-sm disabled:opacity-60 whitespace-nowrap"
             >
               {loading ? 'Signing up…' : 'Get Alerts'}
             </button>
@@ -55,7 +55,7 @@ export function NewsletterSignup({ variant = 'card', className = '' }: Newslette
 
   if (variant === 'banner') {
     return (
-      <div className={`bg-blue-600 text-white py-4 px-6 ${className}`}>
+      <div className={`bg-[#1E3A5F] text-white py-4 px-6 ${className}`}>
         <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center gap-4">
           <div className="flex items-center gap-2 flex-1">
             <Bell className="h-5 w-5 text-yellow-300 flex-shrink-0" />
@@ -96,7 +96,7 @@ export function NewsletterSignup({ variant = 'card', className = '' }: Newslette
   return (
     <div className={`bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] rounded-xl p-8 border border-blue-100 ${className}`}>
       <div className="flex items-center gap-3 mb-3">
-        <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+        <div className="w-10 h-10 bg-[#1E3A5F] rounded-full flex items-center justify-center flex-shrink-0">
           <Bell className="h-5 w-5 text-white" />
         </div>
         <div>
@@ -131,7 +131,7 @@ export function NewsletterSignup({ variant = 'card', className = '' }: Newslette
           <button
             type="submit"
             disabled={loading}
-            className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition text-sm disabled:opacity-60 whitespace-nowrap"
+            className="px-6 py-3 bg-[#1E3A5F] text-white font-semibold rounded-lg hover:bg-[#162d4a] transition text-sm disabled:opacity-60 whitespace-nowrap"
           >
             {loading ? 'Signing up…' : 'Send Me Deals'}
           </button>

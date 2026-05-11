@@ -129,7 +129,7 @@ export default async function ShipDetailPage({ params }: PageProps) {
               <ul className="space-y-3">
                 {ship.highlights.map((highlight, idx) => (
                   <li key={idx} className="flex gap-4 p-4 bg-slate-50 rounded-lg">
-                    <Anchor className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+                    <Anchor className="w-5 h-5 text-[#1E3A5F] flex-shrink-0 mt-0.5" />
                     <p className="font-inter text-gray-700">{highlight}</p>
                   </li>
                 ))}
@@ -194,11 +194,11 @@ export default async function ShipDetailPage({ params }: PageProps) {
                     <Link
                       key={sailing.id}
                       href={`/sailing/${sailing.id}`}
-                      className="block p-5 border-2 border-gray-200 rounded-lg hover:border-blue-600 transition-all group"
+                      className="block p-5 border-2 border-gray-200 rounded-lg hover:border-[#1E3A5F] transition-all group"
                     >
                       <div className="flex items-start justify-between gap-4 mb-2">
                         <div>
-                          <h3 className="font-fraunces text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                          <h3 className="font-fraunces text-lg font-bold text-slate-900 group-hover:text-[#1E3A5F] transition-colors">
                             {sailing.itinerary_name}
                           </h3>
                           <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mt-2 text-sm text-gray-600">
@@ -217,13 +217,13 @@ export default async function ShipDetailPage({ params }: PageProps) {
                           </div>
                         </div>
                         <div className="text-right flex-shrink-0">
-                          <p className="text-2xl font-bold text-blue-600">
+                          <p className="text-2xl font-bold text-[#1E3A5F]">
                             ${sailing.current_lowest_price}
                           </p>
                           <p className="text-xs text-gray-500">per stateroom</p>
                         </div>
                       </div>
-                      <div className="flex items-center gap-1 text-slate-900 font-semibold text-sm group-hover:text-blue-600 transition-colors">
+                      <div className="flex items-center gap-1 text-slate-900 font-semibold text-sm group-hover:text-[#1E3A5F] transition-colors">
                         View Details
                         <ArrowRight className="w-3 h-3" />
                       </div>
@@ -234,7 +234,7 @@ export default async function ShipDetailPage({ params }: PageProps) {
                   <p className="text-sm text-gray-600 mb-3">Want to see all sailings on this ship?</p>
                   <Link
                     href={`/deals?ship=${ship.id}`}
-                    className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors"
+                    className="inline-flex items-center gap-2 text-[#1E3A5F] font-semibold hover:text-[#162d4a] transition-colors"
                   >
                     Browse All Sailings
                     <ArrowRight className="w-4 h-4" />
@@ -285,7 +285,7 @@ export default async function ShipDetailPage({ params }: PageProps) {
               <h3 className="font-fraunces text-lg font-bold text-slate-900 mb-4">Explore Other Ships</h3>
               <Link
                 href="/ships"
-                className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors text-sm"
+                className="inline-flex items-center gap-2 text-[#1E3A5F] font-semibold hover:text-[#162d4a] transition-colors text-sm"
               >
                 View All Ships
                 <ArrowRight className="w-4 h-4" />

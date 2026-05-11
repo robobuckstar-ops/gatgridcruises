@@ -404,37 +404,37 @@ export default function FirstTimeDisneyCruiseTipsGuide() {
 
           <ul className="font-inter text-slate-600 space-y-4">
             <li className="flex gap-3">
-              <span className="text-blue-600 font-bold">•</span>
+              <span className="text-[#1E3A5F] font-bold">•</span>
               <div>
                 <strong>Arrive early to the island:</strong> Get off the ship first thing to secure good beach spots near the water before crowds arrive. Early bird gets the best loungers.
               </div>
             </li>
             <li className="flex gap-3">
-              <span className="text-blue-600 font-bold">•</span>
+              <span className="text-[#1E3A5F] font-bold">•</span>
               <div>
                 <strong>Plan your day in advance:</strong> Decide if you want beach time, paid activities (snorkeling, jet skis, paddleboarding), or exploring. Know your priorities before going ashore.
               </div>
             </li>
             <li className="flex gap-3">
-              <span className="text-blue-600 font-bold">•</span>
+              <span className="text-[#1E3A5F] font-bold">•</span>
               <div>
                 <strong>Adults-only Serenity Bay:</strong> On the island's other side is Serenity Bay, adults-only beach area. Perfect for parents wanting quiet time or couples seeking romance.
               </div>
             </li>
             <li className="flex gap-3">
-              <span className="text-blue-600 font-bold">•</span>
+              <span className="text-[#1E3A5F] font-bold">•</span>
               <div>
                 <strong>Bring your Key to the World card:</strong> You'll need it for food/beverage charges on the island. Lunch is included, but alcoholic drinks, specialty snacks, and paid activities cost extra.
               </div>
             </li>
             <li className="flex gap-3">
-              <span className="text-blue-600 font-bold">•</span>
+              <span className="text-[#1E3A5F] font-bold">•</span>
               <div>
                 <strong>Pack reef-safe sunscreen:</strong> The island's coral reefs need protection. Bring reef-safe (no oxybenzone or octinoxate) sunscreen to avoid damaging marine life.
               </div>
             </li>
             <li className="flex gap-3">
-              <span className="text-blue-600 font-bold">•</span>
+              <span className="text-[#1E3A5F] font-bold">•</span>
               <div>
                 <strong>Water shoes for reef/snorkeling:</strong> If snorkeling, water shoes protect your feet. Reef is beautiful but can be rocky.
               </div>
@@ -454,15 +454,15 @@ export default function FirstTimeDisneyCruiseTipsGuide() {
               </h3>
               <ul className="font-inter text-slate-600 space-y-2">
                 <li className="flex gap-2">
-                  <CheckCircle2 size={18} className="text-blue-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 size={18} className="text-[#1E3A5F] flex-shrink-0 mt-0.5" />
                   <span>Download Navigator app before sailing</span>
                 </li>
                 <li className="flex gap-2">
-                  <CheckCircle2 size={18} className="text-blue-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 size={18} className="text-[#1E3A5F] flex-shrink-0 mt-0.5" />
                   <span>Enable Wi-Fi alerts on your phone</span>
                 </li>
                 <li className="flex gap-2">
-                  <CheckCircle2 size={18} className="text-blue-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 size={18} className="text-[#1E3A5F] flex-shrink-0 mt-0.5" />
                   <span>Bring portable chargers</span>
                 </li>
               </ul>
@@ -474,15 +474,15 @@ export default function FirstTimeDisneyCruiseTipsGuide() {
               </h3>
               <ul className="font-inter text-slate-600 space-y-2">
                 <li className="flex gap-2">
-                  <CheckCircle2 size={18} className="text-blue-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 size={18} className="text-[#1E3A5F] flex-shrink-0 mt-0.5" />
                   <span>Bring magnetic decorations</span>
                 </li>
                 <li className="flex gap-2">
-                  <CheckCircle2 size={18} className="text-blue-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 size={18} className="text-[#1E3A5F] flex-shrink-0 mt-0.5" />
                   <span>Pack small gift exchange items</span>
                 </li>
                 <li className="flex gap-2">
-                  <CheckCircle2 size={18} className="text-blue-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 size={18} className="text-[#1E3A5F] flex-shrink-0 mt-0.5" />
                   <span>Bring sunscreen and medications</span>
                 </li>
               </ul>
@@ -494,15 +494,15 @@ export default function FirstTimeDisneyCruiseTipsGuide() {
               </h3>
               <ul className="font-inter text-slate-600 space-y-2">
                 <li className="flex gap-2">
-                  <CheckCircle2 size={18} className="text-blue-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 size={18} className="text-[#1E3A5F] flex-shrink-0 mt-0.5" />
                   <span>Request dietary accommodations early</span>
                 </li>
                 <li className="flex gap-2">
-                  <CheckCircle2 size={18} className="text-blue-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 size={18} className="text-[#1E3A5F] flex-shrink-0 mt-0.5" />
                   <span>Meet your dining server on day one</span>
                 </li>
                 <li className="flex gap-2">
-                  <CheckCircle2 size={18} className="text-blue-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 size={18} className="text-[#1E3A5F] flex-shrink-0 mt-0.5" />
                   <span>Book specialty dining early</span>
                 </li>
               </ul>
@@ -514,15 +514,15 @@ export default function FirstTimeDisneyCruiseTipsGuide() {
               </h3>
               <ul className="font-inter text-slate-600 space-y-2">
                 <li className="flex gap-2">
-                  <CheckCircle2 size={18} className="text-blue-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 size={18} className="text-[#1E3A5F] flex-shrink-0 mt-0.5" />
                   <span>Dress up for formal nights</span>
                 </li>
                 <li className="flex gap-2">
-                  <CheckCircle2 size={18} className="text-blue-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 size={18} className="text-[#1E3A5F] flex-shrink-0 mt-0.5" />
                   <span>Participate in ship activities</span>
                 </li>
                 <li className="flex gap-2">
-                  <CheckCircle2 size={18} className="text-blue-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 size={18} className="text-[#1E3A5F] flex-shrink-0 mt-0.5" />
                   <span>Embrace Pirate Night with enthusiasm</span>
                 </li>
               </ul>
@@ -609,7 +609,7 @@ export default function FirstTimeDisneyCruiseTipsGuide() {
           <div className="grid md:grid-cols-3 gap-6">
             <Link href="/guides/disney-cruise-with-toddlers" className="group">
               <div className="bg-gray-50 p-6 rounded-lg hover:bg-blue-50 transition">
-                <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-blue-600">
+                <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-[#1E3A5F]">
                   Disney Cruise with Toddlers
                 </h3>
                 <p className="font-inter text-gray-600 text-sm">
@@ -619,7 +619,7 @@ export default function FirstTimeDisneyCruiseTipsGuide() {
             </Link>
             <Link href="/guides/best-disney-cruise-staterooms" className="group">
               <div className="bg-gray-50 p-6 rounded-lg hover:bg-blue-50 transition">
-                <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-blue-600">
+                <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-[#1E3A5F]">
                   Best Disney Cruise Staterooms
                 </h3>
                 <p className="font-inter text-gray-600 text-sm">
@@ -629,7 +629,7 @@ export default function FirstTimeDisneyCruiseTipsGuide() {
             </Link>
             <Link href="/guides/port-canaveral-vs-miami" className="group">
               <div className="bg-gray-50 p-6 rounded-lg hover:bg-blue-50 transition">
-                <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-blue-600">
+                <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-[#1E3A5F]">
                   Port Canaveral vs. Miami
                 </h3>
                 <p className="font-inter text-gray-600 text-sm">

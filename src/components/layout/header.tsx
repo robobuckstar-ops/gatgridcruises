@@ -213,7 +213,7 @@ export function Header() {
                         <Link
                           key={child.href}
                           href={child.href}
-                          className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-navy transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-0 focus-visible:outline-blue-600"
+                          className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-navy transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-0 focus-visible:outline-[#1E3A5F]"
                           role="menuitem"
                           onClick={() => setOpenDropdown(null)}
                         >

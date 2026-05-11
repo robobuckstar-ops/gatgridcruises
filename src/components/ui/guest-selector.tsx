@@ -28,7 +28,7 @@ export function GuestSelector({ className }: { className?: string }) {
               i === GUEST_OPTIONS.length - 1 && 'rounded-r-lg',
               i > 0 && '-ml-px',
               guests === opt.value
-                ? 'bg-blue-600 text-white border-blue-600 z-10 relative'
+                ? 'bg-[#1E3A5F] text-white border-[#1E3A5F] z-10 relative'
                 : 'bg-white text-slate-600 border-slate-300 hover:border-blue-400 hover:z-10 relative'
             )}
           >

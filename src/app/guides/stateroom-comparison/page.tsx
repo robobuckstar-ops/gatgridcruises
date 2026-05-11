@@ -40,7 +40,7 @@ function CheckIcon({ val }: { val: boolean }) {
 
 const colorMap: Record<string, { bg: string; border: string; badge: string; badgeText: string }> = {
   slate: { bg: 'bg-slate-50', border: 'border-slate-200', badge: 'bg-slate-100', badgeText: 'text-slate-700' },
-  blue: { bg: 'bg-[#1E3A5F]/10', border: 'border-blue-200', badge: 'bg-[#1E3A5F]/20', badgeText: 'text-blue-700' },
+  blue: { bg: 'bg-[#1E3A5F]/10', border: 'border-blue-200', badge: 'bg-[#1E3A5F]/20', badgeText: 'text-[#162d4a]' },
   emerald: { bg: 'bg-emerald-50', border: 'border-emerald-200', badge: 'bg-emerald-100', badgeText: 'text-emerald-700' },
   purple: { bg: 'bg-purple-50', border: 'border-purple-200', badge: 'bg-purple-100', badgeText: 'text-purple-700' },
 }
@@ -127,7 +127,7 @@ export default function StateroomComparisonPage() {
           <div className="space-y-4">
             {decisionGuide.map(({ cond, rec, why }) => (
               <div key={cond} className="flex gap-4 bg-white rounded-xl p-4 border border-blue-100">
-                <div className="flex-shrink-0 w-2 bg-blue-600 rounded-full" />
+                <div className="flex-shrink-0 w-2 bg-[#1E3A5F] rounded-full" />
                 <div>
                   <p className="text-slate-500 text-xs mb-1">If: {cond}</p>
                   <p className="font-bold text-slate-900 text-sm">→ {rec}</p>
@@ -282,7 +282,7 @@ export default function StateroomComparisonPage() {
                 className="flex items-center justify-between p-4 bg-white rounded-lg border border-slate-200 hover:border-blue-300 transition text-sm"
               >
                 <span className="font-medium text-slate-900">{label}</span>
-                <span className="text-blue-600">→</span>
+                <span className="text-[#1E3A5F]">→</span>
               </Link>
             ))}
           </div>

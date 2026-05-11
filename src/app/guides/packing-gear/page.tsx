@@ -280,7 +280,7 @@ export default function PackingGearPage() {
             We've curated the 30 items that regularly separate a stressful embarkation from a smooth,
             magical one — with honest reasons why each one earns its bag space.
           </p>
-          <div className="mt-6 inline-flex items-center gap-2 bg-blue-800/50 text-blue-200 text-sm px-4 py-2 rounded-full">
+          <div className="mt-6 inline-flex items-center gap-2 bg-[#0a1628]/50 text-blue-200 text-sm px-4 py-2 rounded-full">
             <Star className="w-4 h-4 text-[#D4AF37]" />
             <span>Affiliate links below — we earn a small commission at no cost to you. See our <Link href="/disclosures" className="underline hover:text-white">disclosure</Link>.</span>
           </div>
@@ -408,15 +408,15 @@ export default function PackingGearPage() {
           <h2 className="font-fraunces text-2xl font-bold text-slate-900 mb-6">Related Guides</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <Link href="/guides/travel-insurance" className="group block p-5 rounded-xl border-2 border-slate-200 hover:border-[#1E3A5F] hover:shadow-md transition-all duration-200">
-              <p className="text-xs font-semibold text-blue-600 uppercase tracking-wider mb-2">Insurance</p>
+              <p className="text-xs font-semibold text-[#1E3A5F] uppercase tracking-wider mb-2">Insurance</p>
               <p className="font-fraunces font-bold text-slate-900 group-hover:text-[#1E3A5F] transition-colors">Do You Need Travel Insurance for a Disney Cruise?</p>
             </Link>
             <Link href="/guides/ports" className="group block p-5 rounded-xl border-2 border-slate-200 hover:border-[#1E3A5F] hover:shadow-md transition-all duration-200">
-              <p className="text-xs font-semibold text-blue-600 uppercase tracking-wider mb-2">Ports</p>
+              <p className="text-xs font-semibold text-[#1E3A5F] uppercase tracking-wider mb-2">Ports</p>
               <p className="font-fraunces font-bold text-slate-900 group-hover:text-[#1E3A5F] transition-colors">Disney Cruise Port Guides</p>
             </Link>
             <Link href="/guides/disney-cruise-cost-guide" className="group block p-5 rounded-xl border-2 border-slate-200 hover:border-[#1E3A5F] hover:shadow-md transition-all duration-200">
-              <p className="text-xs font-semibold text-blue-600 uppercase tracking-wider mb-2">Planning</p>
+              <p className="text-xs font-semibold text-[#1E3A5F] uppercase tracking-wider mb-2">Planning</p>
               <p className="font-fraunces font-bold text-slate-900 group-hover:text-[#1E3A5F] transition-colors">The True Cost of a Disney Cruise</p>
             </Link>
           </div>

@@ -22,7 +22,7 @@ function getInitials(name: string): string {
 }
 
 const colors = [
-  'bg-[#1E3A5F]/20 text-blue-700',
+  'bg-[#1E3A5F]/20 text-[#162d4a]',
   'bg-emerald-100 text-emerald-700',
   'bg-amber-100 text-amber-700',
   'bg-rose-100 text-rose-700',
@@ -117,7 +117,7 @@ export function GroupCard({ group, sailing }: GroupCardProps) {
             {group.recent_topics.map((topic, idx) => (
               <span
                 key={idx}
-                className="inline-flex items-center px-2.5 py-1 rounded-full text-xs bg-[#1E3A5F]/10 text-blue-700 border border-blue-200"
+                className="inline-flex items-center px-2.5 py-1 rounded-full text-xs bg-[#1E3A5F]/10 text-[#162d4a] border border-blue-200"
               >
                 {topic}
               </span>

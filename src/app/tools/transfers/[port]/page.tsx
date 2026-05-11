@@ -73,7 +73,7 @@ export default async function PortTransfersPage({ params }: { params: Promise<{ 
         {/* Nearest Airports */}
         <div className="bg-slate-50 rounded-xl p-8 mb-12 border border-slate-200">
           <h2 className="font-display text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-            <MapPin className="h-6 w-6 text-blue-600" />
+            <MapPin className="h-6 w-6 text-[#1E3A5F]" />
             Nearest Airports
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -81,7 +81,7 @@ export default async function PortTransfersPage({ params }: { params: Promise<{ 
               <div key={airport.code} className="bg-white rounded-lg p-4 border border-slate-300">
                 <p className="font-bold text-slate-900 text-lg">{airport.code}</p>
                 <p className="text-slate-600 text-sm mb-2">{airport.name}</p>
-                <p className="text-blue-600 font-medium">{airport.distance_miles} miles away</p>
+                <p className="text-[#1E3A5F] font-medium">{airport.distance_miles} miles away</p>
               </div>
             ))}
           </div>
@@ -106,7 +106,7 @@ export default async function PortTransfersPage({ params }: { params: Promise<{ 
                   <tr key={transfer.id} className={idx % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
                     <td className="px-4 py-4 font-bold text-slate-900">{typeLabels[transfer.type] || transfer.type}</td>
                     <td className="px-4 py-4 text-right">
-                      <span className="text-blue-600 font-bold">
+                      <span className="text-[#1E3A5F] font-bold">
                         ${transfer.cost_estimate_min}
                         {transfer.cost_estimate_max !== transfer.cost_estimate_min && `–$${transfer.cost_estimate_max}`}
                       </span>
@@ -136,7 +136,7 @@ export default async function PortTransfersPage({ params }: { params: Promise<{ 
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
                     <div>
                       <p className="text-sm text-slate-600 mb-1">Cost Range</p>
-                      <p className="text-2xl font-bold text-blue-600">
+                      <p className="text-2xl font-bold text-[#1E3A5F]">
                         ${transfer.cost_estimate_min}–${transfer.cost_estimate_max}
                       </p>
                     </div>
@@ -193,8 +193,8 @@ export default async function PortTransfersPage({ params }: { params: Promise<{ 
         {/* Disclaimers */}
         <div className="bg-[#1E3A5F]/10 border border-blue-200 rounded-xl p-6">
           <div className="flex gap-3">
-            <AlertCircle className="h-5 w-5 text-blue-600 flex-shrink-0 mt-0.5" />
-            <div className="text-sm text-blue-900">
+            <AlertCircle className="h-5 w-5 text-[#1E3A5F] flex-shrink-0 mt-0.5" />
+            <div className="text-sm text-[#0a1628]">
               <p className="font-bold mb-2">Important Disclaimers</p>
               <ul className="space-y-1 list-disc list-inside">
                 <li>All costs are estimates based on typical pricing as of 2026</li>

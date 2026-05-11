@@ -85,7 +85,7 @@ export function SegmentedEmailSignup({
   const subColor = dark ? 'text-blue-200' : 'text-slate-500'
   const inputClass = dark
     ? 'bg-white/10 border-white/20 text-white placeholder:text-slate-400 focus:outline-blue-400'
-    : 'bg-white border-slate-300 text-slate-900 placeholder:text-slate-400 focus:outline-blue-600'
+    : 'bg-white border-slate-300 text-slate-900 placeholder:text-slate-400 focus:outline-[#1E3A5F]'
 
   if (submitted) {
     return (

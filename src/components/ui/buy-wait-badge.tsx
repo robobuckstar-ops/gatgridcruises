@@ -89,7 +89,7 @@ export function BuyWaitBadge({ currentPrice, snapshots, sailDate }: BuyWaitBadge
 
   const colorMap = {
     green: 'bg-emerald-50 border-emerald-200 text-emerald-900',
-    blue: 'bg-[#1E3A5F]/10 border-blue-200 text-blue-900',
+    blue: 'bg-[#1E3A5F]/10 border-blue-200 text-[#0a1628]',
     amber: 'bg-amber-50 border-amber-200 text-amber-900',
     orange: 'bg-orange-50 border-orange-200 text-orange-900',
     red: 'bg-red-50 border-red-200 text-red-900',
@@ -97,7 +97,7 @@ export function BuyWaitBadge({ currentPrice, snapshots, sailDate }: BuyWaitBadge
 
   const iconColorMap = {
     green: 'text-emerald-600',
-    blue: 'text-blue-600',
+    blue: 'text-[#1E3A5F]',
     amber: 'text-amber-600',
     orange: 'text-orange-600',
     red: 'text-red-600',

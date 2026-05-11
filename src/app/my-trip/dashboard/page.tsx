@@ -757,7 +757,7 @@ export default function DashboardPage() {
                           <p className="text-xs text-slate-400 mt-0.5 leading-relaxed">{item.detail}</p>
                         )}
                         {showTzTime && (
-                          <p className="text-xs font-semibold text-blue-600 mt-1">
+                          <p className="text-xs font-semibold text-[#1E3A5F] mt-1">
                             ⏰ That&apos;s {tzInfo.date} at {tzInfo.time} {tzInfo.tzAbbr} your time
                           </p>
                         )}
@@ -1010,7 +1010,7 @@ export default function DashboardPage() {
 
             <div className="mt-5 p-3.5 bg-[#1E3A5F]/10 border border-blue-100 rounded-xl flex items-start gap-2.5">
               <Info className="w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5" />
-              <p className="text-xs text-blue-700 leading-relaxed">
+              <p className="text-xs text-[#162d4a] leading-relaxed">
                 Regardless of your settings, Grayson will personally reach out before every major booking window — especially excursions and dining. You won&apos;t miss a thing.
               </p>
             </div>

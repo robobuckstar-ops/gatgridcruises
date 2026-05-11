@@ -22,7 +22,7 @@ export function ScoreBadge({ score, size = 'md', showTooltip = false }: ScoreBad
       {showTooltip && (
         <>
           <Info className="h-3.5 w-3.5 text-slate-400 cursor-help" />
-          <div className="absolute bottom-full left-0 mb-2 w-64 p-3 bg-blue-600 text-white text-xs rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10">
+          <div className="absolute bottom-full left-0 mb-2 w-64 p-3 bg-[#1E3A5F] text-white text-xs rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10">
             <p className="font-semibold mb-1">Sailing Score (0–100)</p>
             <p>A composite score based on price vs. historical average (60%), urgency (20%), and ship popularity (20%). Higher = better deal.</p>
           </div>

@@ -43,9 +43,9 @@ export default function DisneyCruiseFoodGuide() {
       {/* Breadcrumb */}
       <div className="bg-gray-50 px-4 sm:px-6 lg:px-8 py-4 border-b">
         <div className="max-w-4xl mx-auto text-sm text-gray-600">
-          <Link href="/" className="text-blue-600 hover:underline">Home</Link>
+          <Link href="/" className="text-[#1E3A5F] hover:underline">Home</Link>
           {' > '}
-          <Link href="/guides" className="text-blue-600 hover:underline">Guides</Link>
+          <Link href="/guides" className="text-[#1E3A5F] hover:underline">Guides</Link>
           {' > Food Guide'}
         </div>
       </div>
@@ -255,12 +255,12 @@ export default function DisneyCruiseFoodGuide() {
           <div className="mb-8">
             <h3 className="font-fraunces text-2xl font-bold text-slate-900 mb-4">Quick-Service Venues</h3>
             <ul className="space-y-3 font-inter text-slate-600">
-              <li className="flex gap-2"><span className="text-blue-600 font-bold">•</span> <strong>Cabanas or Marceline (updated buffet concept):</strong> Modern, efficient buffet with shorter wait times</li>
-              <li className="flex gap-2"><span className="text-blue-600 font-bold">•</span> <strong>Pizza & Pasta:</strong> Always available, perfect for quick meals</li>
-              <li className="flex gap-2"><span className="text-blue-600 font-bold">•</span> <strong>Grill/BBQ Station:</strong> Burgers, hot dogs, grilled items</li>
-              <li className="flex gap-2"><span className="text-blue-600 font-bold">•</span> <strong>Sandwich Shop:</strong> Deli sandwiches and wraps</li>
-              <li className="flex gap-2"><span className="text-blue-600 font-bold">•</span> <strong>Smoothie/Coffee Bars:</strong> Beverages, breakfast items</li>
-              <li className="flex gap-2"><span className="text-blue-600 font-bold">•</span> <strong>Poolside Bars & Grills:</strong> Casual daytime dining</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F] font-bold">•</span> <strong>Cabanas or Marceline (updated buffet concept):</strong> Modern, efficient buffet with shorter wait times</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F] font-bold">•</span> <strong>Pizza & Pasta:</strong> Always available, perfect for quick meals</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F] font-bold">•</span> <strong>Grill/BBQ Station:</strong> Burgers, hot dogs, grilled items</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F] font-bold">•</span> <strong>Sandwich Shop:</strong> Deli sandwiches and wraps</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F] font-bold">•</span> <strong>Smoothie/Coffee Bars:</strong> Beverages, breakfast items</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F] font-bold">•</span> <strong>Poolside Bars & Grills:</strong> Casual daytime dining</li>
             </ul>
           </div>
         </section>
@@ -435,7 +435,7 @@ export default function DisneyCruiseFoodGuide() {
         </section>
 
         {/* CTA Section */}
-        <section className="my-12 p-8 bg-gradient-to-r from-blue-50 to-blue-900 text-white rounded-lg">
+        <section className="my-12 p-8 bg-gradient-to-r from-blue-50 to-[#0a1628] text-white rounded-lg">
           <h2 className="font-fraunces text-3xl font-bold mb-4">Ready to Experience Disney Dining?</h2>
           <p className="font-inter text-lg mb-6">
             Explore cruise options, compare ships, and request a quote covering everything from staterooms to specialty dining.

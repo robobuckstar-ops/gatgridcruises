@@ -37,7 +37,7 @@ export function SailingCard({ sailing, percentBelow, guestCount = 2 }: SailingCa
   // Recommendation color
   const recommendationColors = {
     'strong-buy': 'bg-emerald-50 text-emerald-700 border-emerald-200',
-    buy: 'bg-[#1E3A5F]/10 text-blue-700 border-blue-200',
+    buy: 'bg-[#1E3A5F]/10 text-[#162d4a] border-blue-200',
     fair: 'bg-slate-50 text-slate-700 border-slate-200',
     wait: 'bg-amber-50 text-amber-700 border-amber-200',
     overpriced: 'bg-red-50 text-red-700 border-red-200',
@@ -54,7 +54,7 @@ export function SailingCard({ sailing, percentBelow, guestCount = 2 }: SailingCa
   const themeBadge = sailing.theme ? {
     halloween: { emoji: '🎃', label: 'Halloween',  className: 'bg-orange-100 text-orange-800 border-orange-300' },
     merrytime:  { emoji: '🎄', label: 'Merrytime',  className: 'bg-red-100 text-red-800 border-red-300' },
-    starwars:   { emoji: '⭐', label: 'Star Wars',  className: 'bg-[#1E3A5F]/20 text-blue-800 border-blue-300' },
+    starwars:   { emoji: '⭐', label: 'Star Wars',  className: 'bg-[#1E3A5F]/20 text-[#0a1628] border-blue-300' },
     marvel:     { emoji: '🦸', label: 'Marvel',     className: 'bg-red-100 text-red-900 border-red-400' },
   }[sailing.theme] : null
 
@@ -64,7 +64,7 @@ export function SailingCard({ sailing, percentBelow, guestCount = 2 }: SailingCa
       className="group relative block bg-white rounded-xl border border-slate-200 hover:border-blue-300 hover:shadow-lg transition-all duration-200 overflow-hidden"
     >
       {/* Ship color bar at top */}
-      <div className="h-1.5 bg-gradient-to-r from-blue-600 to-blue-500 group-hover:from-[#D4AF37] group-hover:to-amber-400 transition-all duration-200" />
+      <div className="h-1.5 bg-gradient-to-r from-[#1E3A5F] to-blue-500 group-hover:from-[#D4AF37] group-hover:to-amber-400 transition-all duration-200" />
 
       <div className="p-5">
         {/* Label pills */}
@@ -202,7 +202,7 @@ export function SailingCard({ sailing, percentBelow, guestCount = 2 }: SailingCa
                 <span>Total (all {outTheDoor.guests === 1 ? '1 guest' : `${outTheDoor.guests} guests`})</span>
                 <span>{formatPrice(outTheDoor.total)}</span>
               </div>
-              <div className="flex justify-between font-semibold text-blue-700">
+              <div className="flex justify-between font-semibold text-[#162d4a]">
                 <span>Per Person</span>
                 <span>{formatPrice(outTheDoor.perPerson)}</span>
               </div>

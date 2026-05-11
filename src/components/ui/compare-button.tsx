@@ -41,10 +41,10 @@ export function CompareButton({ sailing, size = 'md' }: CompareButtonProps) {
           disabled={isFull && !isSelected}
           className={`inline-flex items-center gap-1.5 px-3 py-2 rounded-md text-sm font-semibold transition-colors ${
             isSelected
-              ? 'bg-blue-600 text-white hover:bg-blue-700'
+              ? 'bg-[#1E3A5F] text-white hover:bg-[#162d4a]'
               : isFull
                 ? 'bg-slate-200 text-slate-400 cursor-not-allowed'
-                : 'bg-slate-100 text-slate-700 hover:bg-[#1E3A5F]/20 hover:text-blue-700'
+                : 'bg-slate-100 text-slate-700 hover:bg-[#1E3A5F]/20 hover:text-[#162d4a]'
           }`}
         >
           {isSelected ? (
@@ -75,10 +75,10 @@ export function CompareButton({ sailing, size = 'md' }: CompareButtonProps) {
         disabled={isFull && !isSelected}
         className={`w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-lg text-sm font-semibold transition-colors ${
           isSelected
-            ? 'bg-blue-600 text-white hover:bg-blue-700'
+            ? 'bg-[#1E3A5F] text-white hover:bg-[#162d4a]'
             : isFull
               ? 'bg-slate-200 text-slate-400 cursor-not-allowed'
-              : 'bg-[#1E3A5F]/10 text-blue-700 hover:bg-[#1E3A5F]/20 border border-blue-200'
+              : 'bg-[#1E3A5F]/10 text-[#162d4a] hover:bg-[#1E3A5F]/20 border border-blue-200'
         }`}
       >
         {isSelected ? (
@@ -109,7 +109,7 @@ export function CompareBar() {
   if (selectedSailings.length === 0) return null
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-blue-600 shadow-2xl z-40">
+    <div className="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-[#1E3A5F] shadow-2xl z-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
         <div className="flex items-center gap-4">
           <p className="font-semibold text-slate-900 text-lg">
@@ -126,10 +126,10 @@ export function CompareBar() {
           </button>
           <Link
             href="/tools/compare"
-            className="inline-flex items-center gap-2 px-6 py-2.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+            className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#1E3A5F] text-white rounded-lg hover:bg-[#162d4a] transition-colors font-semibold"
           >
             Compare Now
-            <span className="bg-blue-700 text-white text-xs rounded-full px-2 py-0.5 font-bold">
+            <span className="bg-[#162d4a] text-white text-xs rounded-full px-2 py-0.5 font-bold">
               {selectedSailings.length}
             </span>
           </Link>

@@ -144,7 +144,7 @@ export default function TransfersCRUD() {
           {!showCreateForm && (
             <button
               onClick={() => setShowCreateForm(true)}
-              className="flex items-center gap-2 px-4 py-2 bg-navy text-white rounded-lg hover:bg-blue-900 transition-colors font-medium"
+              className="flex items-center gap-2 px-4 py-2 bg-navy text-white rounded-lg hover:bg-[#0a1628] transition-colors font-medium"
             >
               <Plus className="h-4 w-4" />
               Create New Transfer
@@ -280,7 +280,7 @@ export default function TransfersCRUD() {
                         {editingId !== t.id && (
                           <button
                             onClick={() => handleEditClick(t)}
-                            className="text-navy hover:text-blue-600 transition-colors flex items-center gap-1 font-medium text-xs"
+                            className="text-navy hover:text-[#1E3A5F] transition-colors flex items-center gap-1 font-medium text-xs"
                           >
                             <Edit2 className="h-4 w-4" />
                             Edit

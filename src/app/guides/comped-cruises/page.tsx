@@ -150,7 +150,7 @@ export default function CompedCruisesGuide() {
         <section>
           <div className="flex items-center gap-3 mb-5">
             <div className="w-10 h-10 bg-[#1E3A5F]/20 rounded-lg flex items-center justify-center flex-shrink-0">
-              <Star className="h-5 w-5 text-blue-700" />
+              <Star className="h-5 w-5 text-[#162d4a]" />
             </div>
             <h2 className="font-fraunces text-2xl font-bold text-slate-900">Loyalty Program Strategies</h2>
           </div>

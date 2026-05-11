@@ -87,7 +87,7 @@ export default function SubscribersCRUD() {
             </p>
             <a
               href="/subscribe"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-navy text-white rounded-lg hover:bg-blue-900 transition-colors font-medium text-sm"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-navy text-white rounded-lg hover:bg-[#0a1628] transition-colors font-medium text-sm"
             >
               View Subscribe Page
             </a>

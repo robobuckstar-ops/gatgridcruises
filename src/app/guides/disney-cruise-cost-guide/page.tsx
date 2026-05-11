@@ -225,9 +225,9 @@ export default function DisneyVsCruiseCostGuide() {
                   <td className="border border-gray-300 px-4 py-3">Port Parking (7 days at Port Canaveral)</td>
                   <td className="border border-gray-300 px-4 py-3 text-right">$210</td>
                 </tr>
-                <tr className="bg-blue-600/10 font-bold">
+                <tr className="bg-[#1E3A5F]/10 font-bold">
                   <td className="border border-gray-300 px-4 py-3">TOTAL CRUISE COST</td>
-                  <td className="border border-gray-300 px-4 py-3 text-right text-blue-600">$6,680</td>
+                  <td className="border border-gray-300 px-4 py-3 text-right text-[#1E3A5F]">$6,680</td>
                 </tr>
               </tbody>
             </table>
@@ -244,23 +244,23 @@ export default function DisneyVsCruiseCostGuide() {
           </h2>
           <ul className="font-inter text-slate-600 space-y-3">
             <li className="flex gap-3">
-              <span className="text-blue-600 font-bold">•</span>
+              <span className="text-[#1E3A5F] font-bold">•</span>
               <span><strong>Book during promotional periods:</strong> Last-minute deals and seasonal promotions can save 15-30% on base fares.</span>
             </li>
             <li className="flex gap-3">
-              <span className="text-blue-600 font-bold">•</span>
+              <span className="text-[#1E3A5F] font-bold">•</span>
               <span><strong>Skip beverage packages strategically:</strong> If your family rarely drinks, skip the package and order select beverages à la carte.</span>
             </li>
             <li className="flex gap-3">
-              <span className="text-blue-600 font-bold">•</span>
+              <span className="text-[#1E3A5F] font-bold">•</span>
               <span><strong>Plan free excursions:</strong> Many ports offer beaches and attractions accessible without organized tours.</span>
             </li>
             <li className="flex gap-3">
-              <span className="text-blue-600 font-bold">•</span>
+              <span className="text-[#1E3A5F] font-bold">•</span>
               <span><strong>Use onboard credit:</strong> Some booking promos include OBC that reduces out-of-pocket specialty dining costs.</span>
             </li>
             <li className="flex gap-3">
-              <span className="text-blue-600 font-bold">•</span>
+              <span className="text-[#1E3A5F] font-bold">•</span>
               <span><strong>Share a cabin:</strong> Booking with another family reduces per-person base fares and opens larger stateroom options.</span>
             </li>
           </ul>
@@ -300,23 +300,23 @@ export default function DisneyVsCruiseCostGuide() {
           </h2>
           <ul className="font-inter text-slate-600 space-y-2">
             <li className="flex gap-3">
-              <span className="text-blue-600 font-bold">✓</span>
+              <span className="text-[#1E3A5F] font-bold">✓</span>
               <span>Base fares represent only 60-70% of your actual cruise cost</span>
             </li>
             <li className="flex gap-3">
-              <span className="text-blue-600 font-bold">✓</span>
+              <span className="text-[#1E3A5F] font-bold">✓</span>
               <span>Gratuities and beverage packages are the largest hidden costs</span>
             </li>
             <li className="flex gap-3">
-              <span className="text-blue-600 font-bold">✓</span>
+              <span className="text-[#1E3A5F] font-bold">✓</span>
               <span>Port excursions and specialty dining vary widely—budget per your interests</span>
             </li>
             <li className="flex gap-3">
-              <span className="text-blue-600 font-bold">✓</span>
+              <span className="text-[#1E3A5F] font-bold">✓</span>
               <span>Consider pre-cruise hotel, parking, and ground transportation in your total</span>
             </li>
             <li className="flex gap-3">
-              <span className="text-blue-600 font-bold">✓</span>
+              <span className="text-[#1E3A5F] font-bold">✓</span>
               <span>A realistic family budget ranges from $5,500-$12,000+ per week</span>
             </li>
           </ul>

@@ -21,7 +21,7 @@ const REGIONS = [
 ]
 
 const LINE_COLORS: Record<string, string> = {
-  'Royal Caribbean': 'bg-[#1E3A5F]/20 text-blue-800',
+  'Royal Caribbean': 'bg-[#1E3A5F]/20 text-[#0a1628]',
   'Carnival': 'bg-red-100 text-red-800',
   'Norwegian': 'bg-sky-100 text-sky-800',
   'MSC Cruises': 'bg-navy/10 text-slate-800',

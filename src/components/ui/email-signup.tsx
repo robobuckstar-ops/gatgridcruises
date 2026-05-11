@@ -63,7 +63,7 @@ export function EmailSignup() {
   }
 
   return (
-    <div className="bg-blue-600 rounded-xl p-6 sm:p-8">
+    <div className="bg-[#1E3A5F] rounded-xl p-6 sm:p-8">
       <div className="flex items-center gap-3 mb-3">
         <div className="inline-flex items-center justify-center w-10 h-10 bg-white/20 rounded-full">
           <Mail className="h-5 w-5 text-white" />

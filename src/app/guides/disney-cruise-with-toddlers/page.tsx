@@ -154,19 +154,19 @@ export default function DisneyCruiseWithToddlersGuide() {
             </h3>
             <ul className="font-inter text-slate-600 space-y-2">
               <li className="flex gap-2">
-                <CheckCircle2 size={18} className="text-blue-600 flex-shrink-0 mt-0.5" />
+                <CheckCircle2 size={18} className="text-[#1E3A5F] flex-shrink-0 mt-0.5" />
                 <span><strong>Potty training requirement:</strong> Must be fully potty trained. Pull-ups at night are sometimes okay; ask staff.</span>
               </li>
               <li className="flex gap-2">
-                <CheckCircle2 size={18} className="text-blue-600 flex-shrink-0 mt-0.5" />
+                <CheckCircle2 size={18} className="text-[#1E3A5F] flex-shrink-0 mt-0.5" />
                 <span><strong>First visit is nervous:</strong> Many kids are hesitant the first time. Come back and try again—most warm up quickly once they see activities.</span>
               </li>
               <li className="flex gap-2">
-                <CheckCircle2 size={18} className="text-blue-600 flex-shrink-0 mt-0.5" />
+                <CheckCircle2 size={18} className="text-[#1E3A5F] flex-shrink-0 mt-0.5" />
                 <span><strong>Start with short visits:</strong> Drop off for 30 minutes, come back, and gradually increase time as your child gets comfortable.</span>
               </li>
               <li className="flex gap-2">
-                <CheckCircle2 size={18} className="text-blue-600 flex-shrink-0 mt-0.5" />
+                <CheckCircle2 size={18} className="text-[#1E3A5F] flex-shrink-0 mt-0.5" />
                 <span><strong>Meet the staff:</strong> Introduce yourself and your child to club staff on day one. Tell them about separation anxiety if applicable.</span>
               </li>
             </ul>
@@ -359,27 +359,27 @@ export default function DisneyCruiseWithToddlersGuide() {
               </h3>
               <ul className="font-inter text-slate-600 space-y-2">
                 <li className="flex gap-2">
-                  <CheckCircle2 size={18} className="text-blue-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 size={18} className="text-[#1E3A5F] flex-shrink-0 mt-0.5" />
                   <span>Diapers & wipes (bring extras; some onboard but pricey)</span>
                 </li>
                 <li className="flex gap-2">
-                  <CheckCircle2 size={18} className="text-blue-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 size={18} className="text-[#1E3A5F] flex-shrink-0 mt-0.5" />
                   <span>Baby formula & baby food (if applicable)</span>
                 </li>
                 <li className="flex gap-2">
-                  <CheckCircle2 size={18} className="text-blue-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 size={18} className="text-[#1E3A5F] flex-shrink-0 mt-0.5" />
                   <span>Medications & pain reliever</span>
                 </li>
                 <li className="flex gap-2">
-                  <CheckCircle2 size={18} className="text-blue-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 size={18} className="text-[#1E3A5F] flex-shrink-0 mt-0.5" />
                   <span>Sunscreen (reef-safe)</span>
                 </li>
                 <li className="flex gap-2">
-                  <CheckCircle2 size={18} className="text-blue-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 size={18} className="text-[#1E3A5F] flex-shrink-0 mt-0.5" />
                   <span>Comfort items (stuffed animal, pacifier)</span>
                 </li>
                 <li className="flex gap-2">
-                  <CheckCircle2 size={18} className="text-blue-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 size={18} className="text-[#1E3A5F] flex-shrink-0 mt-0.5" />
                   <span>Favorite snacks (ship has limited variety)</span>
                 </li>
               </ul>
@@ -391,23 +391,23 @@ export default function DisneyCruiseWithToddlersGuide() {
               </h3>
               <ul className="font-inter text-slate-600 space-y-2">
                 <li className="flex gap-2">
-                  <CheckCircle2 size={18} className="text-blue-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 size={18} className="text-[#1E3A5F] flex-shrink-0 mt-0.5" />
                   <span>Magnetic cabin decorations</span>
                 </li>
                 <li className="flex gap-2">
-                  <CheckCircle2 size={18} className="text-blue-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 size={18} className="text-[#1E3A5F] flex-shrink-0 mt-0.5" />
                   <span>Nighttime pull-ups (if transitioning)</span>
                 </li>
                 <li className="flex gap-2">
-                  <CheckCircle2 size={18} className="text-blue-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 size={18} className="text-[#1E3A5F] flex-shrink-0 mt-0.5" />
                   <span>Lightweight travel jacket</span>
                 </li>
                 <li className="flex gap-2">
-                  <CheckCircle2 size={18} className="text-blue-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 size={18} className="text-[#1E3A5F] flex-shrink-0 mt-0.5" />
                   <span>Portable night light (optional, for cabin)</span>
                 </li>
                 <li className="flex gap-2">
-                  <CheckCircle2 size={18} className="text-blue-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 size={18} className="text-[#1E3A5F] flex-shrink-0 mt-0.5" />
                   <span>Swim diapers (if toddler is in water frequently)</span>
                 </li>
               </ul>
@@ -520,31 +520,31 @@ export default function DisneyCruiseWithToddlersGuide() {
             </h3>
             <ul className="font-inter text-slate-600 space-y-3">
               <li className="flex gap-3">
-                <span className="text-blue-600 font-bold">•</span>
+                <span className="text-[#1E3A5F] font-bold">•</span>
                 <div>
                   <strong>Baby Beach Area:</strong> There's a dedicated beach area for babies and young toddlers with calm water and shallow wading. Perfect for toddlers who don't swim yet.
                 </div>
               </li>
               <li className="flex gap-3">
-                <span className="text-blue-600 font-bold">•</span>
+                <span className="text-[#1E3A5F] font-bold">•</span>
                 <div>
                   <strong>Nap planning:</strong> The island day can be long. Plan mid-day return to ship for toddler nap, then return to beach in late afternoon. Or pack a portable pop-up tent for beach napping.
                 </div>
               </li>
               <li className="flex gap-3">
-                <span className="text-blue-600 font-bold">•</span>
+                <span className="text-[#1E3A5F] font-bold">•</span>
                 <div>
                   <strong>Sun protection:</strong> Toddler skin is sensitive. Reapply reef-safe sunscreen every 1-2 hours. Use rash guard for extended sun exposure.
                 </div>
               </li>
               <li className="flex gap-3">
-                <span className="text-blue-600 font-bold">•</span>
+                <span className="text-[#1E3A5F] font-bold">•</span>
                 <div>
                   <strong>Water shoes:</strong> Bring water shoes to protect tiny feet from sandy/rocky areas.
                 </div>
               </li>
               <li className="flex gap-3">
-                <span className="text-blue-600 font-bold">•</span>
+                <span className="text-[#1E3A5F] font-bold">•</span>
                 <div>
                   <strong>Skip expensive excursions:</strong> Most paid excursions (snorkeling, zip-lines, nature hikes) aren't suitable for toddlers. Stick to beach time and casual exploration.
                 </div>
@@ -613,7 +613,7 @@ export default function DisneyCruiseWithToddlersGuide() {
           <div className="grid md:grid-cols-3 gap-6">
             <Link href="/guides/first-time-disney-cruise-tips" className="group">
               <div className="bg-gray-50 p-6 rounded-lg hover:bg-blue-50 transition">
-                <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-blue-600">
+                <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-[#1E3A5F]">
                   25 First-Time Cruise Tips
                 </h3>
                 <p className="font-inter text-gray-600 text-sm">
@@ -623,7 +623,7 @@ export default function DisneyCruiseWithToddlersGuide() {
             </Link>
             <Link href="/guides/best-disney-cruise-staterooms" className="group">
               <div className="bg-gray-50 p-6 rounded-lg hover:bg-blue-50 transition">
-                <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-blue-600">
+                <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-[#1E3A5F]">
                   Best Disney Cruise Staterooms
                 </h3>
                 <p className="font-inter text-gray-600 text-sm">
@@ -633,7 +633,7 @@ export default function DisneyCruiseWithToddlersGuide() {
             </Link>
             <Link href="/guides/disney-cruise-cost-guide" className="group">
               <div className="bg-gray-50 p-6 rounded-lg hover:bg-blue-50 transition">
-                <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-blue-600">
+                <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-[#1E3A5F]">
                   The True Cost of a Disney Cruise
                 </h3>
                 <p className="font-inter text-gray-600 text-sm">

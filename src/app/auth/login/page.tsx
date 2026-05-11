@@ -62,7 +62,7 @@ export default function LoginPage() {
             </p>
             <button
               onClick={() => setSuccess(false)}
-              className="text-blue-600 hover:text-blue-700 font-medium transition-colors"
+              className="text-[#1E3A5F] hover:text-[#162d4a] font-medium transition-colors"
             >
               Back to login
             </button>
@@ -97,7 +97,7 @@ export default function LoginPage() {
             }}
             className={`flex-1 px-4 py-4 font-medium text-sm transition-colors ${
               tab === 'magic'
-                ? 'border-b-2 border-blue-600 text-slate-900'
+                ? 'border-b-2 border-[#1E3A5F] text-slate-900'
                 : 'text-slate-600 hover:text-slate-900'
             }`}
           >
@@ -115,7 +115,7 @@ export default function LoginPage() {
             }}
             className={`flex-1 px-4 py-4 font-medium text-sm transition-colors ${
               tab === 'password'
-                ? 'border-b-2 border-blue-600 text-slate-900'
+                ? 'border-b-2 border-[#1E3A5F] text-slate-900'
                 : 'text-slate-600 hover:text-slate-900'
             }`}
           >
@@ -218,7 +218,7 @@ export default function LoginPage() {
           <div className="mt-6 pt-6 border-t border-slate-200">
             <p className="text-center text-slate-600 text-sm">
               Don't have an account?{' '}
-              <Link href="/auth/signup" className="text-blue-600 hover:text-blue-700 font-semibold transition-colors">
+              <Link href="/auth/signup" className="text-[#1E3A5F] hover:text-[#162d4a] font-semibold transition-colors">
                 Sign up
               </Link>
             </p>

@@ -71,7 +71,7 @@ export default function SailTogetherPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Step 1 */}
             <div className="text-center">
-              <div className="inline-flex items-center justify-center h-14 w-14 rounded-full bg-[#1E3A5F]/20 text-blue-600 font-display font-bold text-lg mb-4">
+              <div className="inline-flex items-center justify-center h-14 w-14 rounded-full bg-[#1E3A5F]/20 text-[#1E3A5F] font-display font-bold text-lg mb-4">
                 1
               </div>
               <h3 className="font-display text-xl font-semibold text-slate-900 mb-2">
@@ -126,7 +126,7 @@ export default function SailTogetherPage() {
             <div className="p-6 rounded-xl border border-slate-200 bg-white hover:shadow-md transition-shadow">
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0">
-                  <MapPin className="h-6 w-6 text-blue-600 mt-1" />
+                  <MapPin className="h-6 w-6 text-[#1E3A5F] mt-1" />
                 </div>
                 <div>
                   <h3 className="font-display font-semibold text-slate-900 mb-1">
@@ -216,7 +216,7 @@ export default function SailTogetherPage() {
             <div className="p-6 rounded-xl border border-slate-200 bg-white hover:shadow-md transition-shadow">
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0">
-                  <Users className="h-6 w-6 text-blue-600 mt-1" />
+                  <Users className="h-6 w-6 text-[#1E3A5F] mt-1" />
                 </div>
                 <div>
                   <h3 className="font-display font-semibold text-slate-900 mb-1">

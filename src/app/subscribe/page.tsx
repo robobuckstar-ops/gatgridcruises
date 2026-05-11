@@ -93,7 +93,7 @@ export default function SubscribePage() {
             </h2>
             <ul className="font-inter text-slate-700 space-y-3">
               <li className="flex gap-3">
-                <span className="text-blue-600 font-bold">✓</span>
+                <span className="text-[#1E3A5F] font-bold">✓</span>
                 <span>Stay ahead of price drops without constantly checking the web</span>
               </li>
               <li className="flex gap-3">

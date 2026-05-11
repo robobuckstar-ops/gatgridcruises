@@ -281,7 +281,7 @@ export default async function DestinationPortPage({ params }: PageProps) {
                   ? 'bg-[#D4AF37] text-[#1E3A5F]'
                   : ex.source === 'independent'
                     ? 'bg-emerald-400 text-emerald-950'
-                    : 'bg-blue-300 text-blue-950'
+                    : 'bg-blue-300 text-[#0a1628]'
               const sourceLabel =
                 ex.source === 'disney'
                   ? 'Best via Disney'

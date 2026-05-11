@@ -23,7 +23,7 @@ export function CreditCardRecommendation({
 }: CreditCardRecommendationProps) {
   // Issuer badge colors
   const issuerColors: Record<string, string> = {
-    chase: 'bg-[#1E3A5F]/20 text-blue-700',
+    chase: 'bg-[#1E3A5F]/20 text-[#162d4a]',
     amex: 'bg-indigo-100 text-indigo-700',
     'capital-one': 'bg-orange-100 text-orange-700',
     'bank-of-america': 'bg-slate-100 text-slate-700',
@@ -139,12 +139,12 @@ export function CreditCardRecommendation({
           {/* Travel insurance badges */}
           <div className="mb-4 flex flex-wrap gap-2">
             {card.tripCancellation && (
-              <span className="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-[#1E3A5F]/10 text-blue-700 text-xs font-medium">
+              <span className="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-[#1E3A5F]/10 text-[#162d4a] text-xs font-medium">
                 <span>✓</span> Trip Cancellation
               </span>
             )}
             {card.tripDelay && (
-              <span className="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-[#1E3A5F]/10 text-blue-700 text-xs font-medium">
+              <span className="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-[#1E3A5F]/10 text-[#162d4a] text-xs font-medium">
                 <span>✓</span> Trip Delay
               </span>
             )}

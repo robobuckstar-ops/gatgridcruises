@@ -158,7 +158,7 @@ export default function OnboardCreditPage() {
           <div className="mt-4 text-center">
             <Link
               href="/tools/obc-calculator"
-              className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors text-sm"
+              className="inline-flex items-center gap-2 text-[#1E3A5F] font-semibold hover:text-[#162d4a] transition-colors text-sm"
             >
               Calculate exactly how much OBC you'd earn →
             </Link>

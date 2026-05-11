@@ -148,7 +148,7 @@ export function TransferRecommender({ transfers, portName }: TransferRecommender
             type="checkbox"
             checked={isDisneyPartner}
             onChange={(e) => setIsDisneyPartner(e.target.checked)}
-            className="w-5 h-5 rounded border-slate-300 text-blue-600 focus:ring-blue-500"
+            className="w-5 h-5 rounded border-slate-300 text-[#1E3A5F] focus:ring-blue-500"
           />
           <span className="text-sm font-medium text-slate-700">Staying at Disney partner hotel</span>
         </label>
@@ -158,7 +158,7 @@ export function TransferRecommender({ transfers, portName }: TransferRecommender
         <div className="bg-gradient-to-b from-[#0a1628] to-[#1E3A5F] border border-blue-200 text-slate-900 rounded-xl p-6 mb-8">
           <div className="flex items-start gap-4 mb-4">
             <div className="flex-shrink-0">
-              <Check className="h-6 w-6 text-blue-600" />
+              <Check className="h-6 w-6 text-[#1E3A5F]" />
             </div>
             <div className="flex-1">
               <h3 className="font-display text-xl font-bold mb-2">
@@ -173,16 +173,16 @@ export function TransferRecommender({ transfers, portName }: TransferRecommender
               <div className="grid grid-cols-3 gap-4 text-sm">
                 <div>
                   <p className="text-slate-600">Total Cost</p>
-                  <p className="font-bold text-lg text-blue-600">${totalCost}</p>
+                  <p className="font-bold text-lg text-[#1E3A5F]">${totalCost}</p>
                   <p className="text-slate-600 text-xs">{partySize} people</p>
                 </div>
                 <div>
                   <p className="text-slate-600">Travel Time</p>
-                  <p className="font-bold text-lg text-blue-600">{topRecommendation.transfer.travel_time_minutes} min</p>
+                  <p className="font-bold text-lg text-[#1E3A5F]">{topRecommendation.transfer.travel_time_minutes} min</p>
                 </div>
                 <div>
                   <p className="text-slate-600">Per Person</p>
-                  <p className="font-bold text-lg text-blue-600">${Math.round(totalCost / partySize)}</p>
+                  <p className="font-bold text-lg text-[#1E3A5F]">${Math.round(totalCost / partySize)}</p>
                 </div>
               </div>
             </div>

@@ -209,7 +209,7 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
               value={search}
               onChange={e => setSearch(e.target.value)}
               placeholder="Search sailings, ships, ports..."
-              className="w-full pl-10 pr-4 py-2.5 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-blue-600"
+              className="w-full pl-10 pr-4 py-2.5 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-[#1E3A5F]"
             />
           </div>
 
@@ -264,7 +264,7 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
                     className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-colors ${
                       selectedCruiseLines.includes(line)
                         ? 'bg-[#1E3A5F] text-white border-[#1E3A5F]'
-                        : 'bg-white text-slate-600 border-slate-300 hover:border-blue-600'
+                        : 'bg-white text-slate-600 border-slate-300 hover:border-[#1E3A5F]'
                     }`}
                   >
                     {line}
@@ -289,7 +289,7 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
                       className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-colors ${
                         selectedPorts.includes(port.id)
                           ? 'bg-[#1E3A5F] text-white border-[#1E3A5F]'
-                          : 'bg-white text-slate-600 border-slate-300 hover:border-blue-600'
+                          : 'bg-white text-slate-600 border-slate-300 hover:border-[#1E3A5F]'
                       }`}
                     >
                       {port.name}
@@ -312,7 +312,7 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
                     className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-colors ${
                       lengthFilter.includes(len)
                         ? 'bg-[#1E3A5F] text-white border-[#1E3A5F]'
-                        : 'bg-white text-slate-600 border-slate-300 hover:border-blue-600'
+                        : 'bg-white text-slate-600 border-slate-300 hover:border-[#1E3A5F]'
                     }`}
                   >
                     {len === 7 ? '7+ nights' : `${len} nights`}
@@ -335,7 +335,7 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
                   value={minScore}
                   onChange={e => setMinScore(Number(e.target.value))}
                   aria-label={`Minimum deal score: ${minScore || 'Any'}`}
-                  className="w-full accent-blue-600"
+                  className="w-full accent-[#1E3A5F]"
                 />
               </div>
               <div>
@@ -351,7 +351,7 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
                   value={maxPrice}
                   onChange={e => setMaxPrice(Number(e.target.value))}
                   aria-label={`Maximum price: ${maxPrice ? `$${maxPrice.toLocaleString()}` : 'Any'}`}
-                  className="w-full accent-blue-600"
+                  className="w-full accent-[#1E3A5F]"
                 />
               </div>
             </div>
@@ -366,8 +366,8 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
                 aria-pressed={privateIsland}
                 className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium border transition-colors ${
                   privateIsland
-                    ? 'bg-blue-600 text-white border-blue-600'
-                    : 'bg-white text-slate-600 border-slate-300 hover:border-blue-600'
+                    ? 'bg-[#1E3A5F] text-white border-[#1E3A5F]'
+                    : 'bg-white text-slate-600 border-slate-300 hover:border-[#1E3A5F]'
                 }`}
               >
                 <span aria-hidden="true">🏝️</span>
@@ -412,7 +412,7 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
             {activeFilterCount > 0 && (
               <button
                 onClick={clearFilters}
-                className="inline-flex items-center gap-1.5 text-sm text-slate-500 hover:text-blue-600"
+                className="inline-flex items-center gap-1.5 text-sm text-slate-500 hover:text-[#1E3A5F]"
               >
                 <X className="h-3.5 w-3.5" />
                 Clear all filters
@@ -470,7 +470,7 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
             </p>
             <button
               onClick={clearFilters}
-              className="text-sm text-blue-600 hover:text-blue-700 font-medium"
+              className="text-sm text-[#1E3A5F] hover:text-[#162d4a] font-medium"
             >
               Clear all filters
             </button>

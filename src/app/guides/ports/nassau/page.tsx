@@ -223,7 +223,7 @@ export default function NassauPage() {
                 <div className="flex flex-wrap items-start justify-between gap-3 mb-3">
                   <h3 className="font-bold text-slate-900 text-lg">{name}</h3>
                   <div className="flex gap-2">
-                    <span className="text-xs bg-[#1E3A5F]/20 text-blue-800 px-2.5 py-1 rounded-full font-medium">{tier}</span>
+                    <span className="text-xs bg-[#1E3A5F]/20 text-[#0a1628] px-2.5 py-1 rounded-full font-medium">{tier}</span>
                     <span className="text-xs bg-slate-100 text-slate-600 px-2.5 py-1 rounded-full font-medium">{location}</span>
                   </div>
                 </div>

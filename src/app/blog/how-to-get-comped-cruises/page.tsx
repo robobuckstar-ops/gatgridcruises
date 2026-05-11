@@ -177,10 +177,10 @@ export default function HowToGetCompedCruises() {
               {sections.map((section) => {
                 const Icon = section.icon
                 return (
-                  <div key={section.title} className="border-l-4 border-blue-600 pl-6">
+                  <div key={section.title} className="border-l-4 border-[#1E3A5F] pl-6">
                     <div className="flex items-center gap-3 mb-3">
                       <div className="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <Icon className="w-4 h-4 text-blue-600" />
+                        <Icon className="w-4 h-4 text-[#1E3A5F]" />
                       </div>
                       <h2 className="font-fraunces text-xl font-bold text-slate-900">
                         {section.title}
@@ -282,17 +282,17 @@ export default function HowToGetCompedCruises() {
               <h3 className="font-fraunces text-lg font-bold text-slate-900 mb-4">Related Guides</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/travel-hacks" className="text-blue-600 hover:text-blue-700 font-medium text-sm">
+                  <Link href="/travel-hacks" className="text-[#1E3A5F] hover:text-[#162d4a] font-medium text-sm">
                     Travel Hacks Hub — All Strategies →
                   </Link>
                 </li>
                 <li>
-                  <Link href="/guides/best-time-to-book-disney-cruise" className="text-blue-600 hover:text-blue-700 font-medium text-sm">
+                  <Link href="/guides/best-time-to-book-disney-cruise" className="text-[#1E3A5F] hover:text-[#162d4a] font-medium text-sm">
                     Best Time to Book a Disney Cruise →
                   </Link>
                 </li>
                 <li>
-                  <Link href="/deals/last-minute" className="text-blue-600 hover:text-blue-700 font-medium text-sm">
+                  <Link href="/deals/last-minute" className="text-[#1E3A5F] hover:text-[#162d4a] font-medium text-sm">
                     Current Last-Minute Deals →
                   </Link>
                 </li>

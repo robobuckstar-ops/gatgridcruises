@@ -98,7 +98,7 @@ export function HomeDeals({ sailings, ships }: HomeDealsProps) {
                   onClick={() => toggleDuration(opt.value)}
                   className={`px-2.5 py-1.5 rounded-lg text-xs font-medium border transition-colors ${
                     selectedDurations.includes(opt.value)
-                      ? 'bg-blue-600 text-white border-blue-600'
+                      ? 'bg-[#1E3A5F] text-white border-[#1E3A5F]'
                       : 'bg-white text-slate-600 border-slate-200 hover:border-blue-400'
                   }`}
                 >
@@ -119,7 +119,7 @@ export function HomeDeals({ sailings, ships }: HomeDealsProps) {
           {/* Min Deal Score */}
           <div>
             <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">
-              Min Deal Score: <span className="text-blue-600">{minScore > 0 ? minScore : 'Any'}</span>
+              Min Deal Score: <span className="text-[#1E3A5F]">{minScore > 0 ? minScore : 'Any'}</span>
             </label>
             <input
               type="range"
@@ -128,7 +128,7 @@ export function HomeDeals({ sailings, ships }: HomeDealsProps) {
               step={10}
               value={minScore}
               onChange={e => setMinScore(Number(e.target.value))}
-              className="w-full accent-blue-600"
+              className="w-full accent-[#1E3A5F]"
             />
             <div className="flex justify-between text-[10px] text-slate-400 mt-0.5">
               <span>Any</span><span>90+</span>
@@ -142,7 +142,7 @@ export function HomeDeals({ sailings, ships }: HomeDealsProps) {
             onClick={() => setPrivateIsland(prev => !prev)}
             className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium border transition-colors ${
               privateIsland
-                ? 'bg-blue-600 text-white border-blue-600'
+                ? 'bg-[#1E3A5F] text-white border-[#1E3A5F]'
                 : 'bg-white text-slate-600 border-slate-200 hover:border-blue-400'
             }`}
           >
@@ -155,7 +155,7 @@ export function HomeDeals({ sailings, ships }: HomeDealsProps) {
         {hasFilters && (
           <button
             onClick={clearFilters}
-            className="mt-4 inline-flex items-center gap-1.5 text-xs text-slate-500 hover:text-blue-600 transition-colors"
+            className="mt-4 inline-flex items-center gap-1.5 text-xs text-slate-500 hover:text-[#1E3A5F] transition-colors"
           >
             <X className="w-3.5 h-3.5" /> Clear filters
           </button>
@@ -171,7 +171,7 @@ export function HomeDeals({ sailings, ships }: HomeDealsProps) {
         </p>
         <Link
           href="/deals"
-          className="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors"
+          className="inline-flex items-center gap-1 text-sm font-semibold text-[#1E3A5F] hover:text-[#162d4a] transition-colors"
         >
           View all deals <ArrowRight className="w-4 h-4" />
         </Link>
@@ -191,7 +191,7 @@ export function HomeDeals({ sailings, ships }: HomeDealsProps) {
           <p className="text-slate-500 font-medium">No sailings match your filters</p>
           <button
             onClick={clearFilters}
-            className="mt-3 text-sm text-blue-600 hover:text-blue-700 font-medium"
+            className="mt-3 text-sm text-[#1E3A5F] hover:text-[#162d4a] font-medium"
           >
             Clear all filters
           </button>

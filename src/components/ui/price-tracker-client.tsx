@@ -135,7 +135,7 @@ export function PriceTrackerClient({ sailings, ships, regions }: Props) {
             {hasFilters && (
               <button
                 onClick={clearFilters}
-                className="text-xs text-blue-600 hover:text-blue-800 font-medium transition-colors"
+                className="text-xs text-[#1E3A5F] hover:text-[#0a1628] font-medium transition-colors"
               >
                 Clear filters
               </button>
@@ -232,7 +232,7 @@ export function PriceTrackerClient({ sailings, ships, regions }: Props) {
 
                   <div className="mt-3 flex items-center justify-between">
                     <span className="text-xs text-slate-400">{s.snapshot_count} data points</span>
-                    <span className="text-xs font-medium text-blue-500 group-hover:text-blue-700 flex items-center gap-0.5 transition-colors">
+                    <span className="text-xs font-medium text-blue-500 group-hover:text-[#162d4a] flex items-center gap-0.5 transition-colors">
                       View full history <ArrowRight className="w-3 h-3" />
                     </span>
                   </div>
@@ -247,7 +247,7 @@ export function PriceTrackerClient({ sailings, ships, regions }: Props) {
             <p className="text-slate-500 text-lg mb-3">No sailings match your filters</p>
             <button
               onClick={clearFilters}
-              className="text-blue-600 hover:text-blue-800 text-sm font-medium transition-colors"
+              className="text-[#1E3A5F] hover:text-[#0a1628] text-sm font-medium transition-colors"
             >
               Clear all filters
             </button>

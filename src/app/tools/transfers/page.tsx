@@ -46,12 +46,12 @@ export default function TransfersPage() {
               <Link key={port.id} href={`/tools/transfers/${port.slug}`}
                 className="group bg-white border border-slate-300 rounded-xl p-6 hover:border-blue-400 hover:shadow-lg transition-all">
                 <div className="flex items-center gap-3 mb-3">
-                  <Car className="h-5 w-5 text-blue-600" />
-                  <h2 className="font-display text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">{port.name}</h2>
+                  <Car className="h-5 w-5 text-[#1E3A5F]" />
+                  <h2 className="font-display text-xl font-bold text-slate-900 group-hover:text-[#1E3A5F] transition-colors">{port.name}</h2>
                 </div>
                 <p className="text-sm text-slate-600 mb-3">{transfers.length} transfer options compared</p>
                 <p className="text-sm text-slate-600">Cheapest option from <strong className="text-slate-900">${cheapest.cost_estimate_min}</strong></p>
-                <span className="inline-flex items-center gap-1 mt-3 text-sm text-blue-600 font-medium group-hover:text-blue-700">
+                <span className="inline-flex items-center gap-1 mt-3 text-sm text-[#1E3A5F] font-medium group-hover:text-[#162d4a]">
                   View full comparison <ArrowRight className="h-3.5 w-3.5" />
                 </span>
               </Link>

@@ -147,7 +147,7 @@ export default function AlertsPage() {
           <div className="bg-white border border-slate-200 rounded-xl p-6 text-left mb-6 space-y-3">
             {prefs.ships.length > 0 && (
               <div className="flex gap-3">
-                <Ship className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
+                <Ship className="w-4 h-4 text-[#1E3A5F] mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1">Ships</p>
                   <p className="text-sm text-slate-700">{prefs.ships.join(', ')}</p>
@@ -156,7 +156,7 @@ export default function AlertsPage() {
             )}
             {prefs.cabinTypes.length > 0 && (
               <div className="flex gap-3">
-                <Anchor className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
+                <Anchor className="w-4 h-4 text-[#1E3A5F] mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1">Cabin Types</p>
                   <p className="text-sm text-slate-700">{prefs.cabinTypes.map(c => CABIN_TYPES.find(t => t.id === c)?.label).join(', ')}</p>
@@ -165,7 +165,7 @@ export default function AlertsPage() {
             )}
             {prefs.destinations.length > 0 && (
               <div className="flex gap-3">
-                <MapPin className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
+                <MapPin className="w-4 h-4 text-[#1E3A5F] mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1">Destinations</p>
                   <p className="text-sm text-slate-700">{prefs.destinations.join(', ')}</p>
@@ -174,7 +174,7 @@ export default function AlertsPage() {
             )}
             {(prefs.earliestMonth || prefs.latestMonth) && (
               <div className="flex gap-3">
-                <Calendar className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
+                <Calendar className="w-4 h-4 text-[#1E3A5F] mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1">Travel Window</p>
                   <p className="text-sm text-slate-700">
@@ -231,7 +231,7 @@ export default function AlertsPage() {
           <section className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
             <div className="flex items-center gap-3 mb-5">
               <div className="flex items-center justify-center w-9 h-9 bg-[#1E3A5F]/10 rounded-lg">
-                <Ship className="w-5 h-5 text-blue-600" aria-hidden="true" />
+                <Ship className="w-5 h-5 text-[#1E3A5F]" aria-hidden="true" />
               </div>
               <div>
                 <h2 className="font-display text-lg font-bold text-slate-900">Which ships?</h2>
@@ -267,7 +267,7 @@ export default function AlertsPage() {
           <section className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
             <div className="flex items-center gap-3 mb-5">
               <div className="flex items-center justify-center w-9 h-9 bg-[#1E3A5F]/10 rounded-lg">
-                <Anchor className="w-5 h-5 text-blue-600" aria-hidden="true" />
+                <Anchor className="w-5 h-5 text-[#1E3A5F]" aria-hidden="true" />
               </div>
               <div>
                 <h2 className="font-display text-lg font-bold text-slate-900">Cabin type</h2>
@@ -300,7 +300,7 @@ export default function AlertsPage() {
           <section className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
             <div className="flex items-center gap-3 mb-5">
               <div className="flex items-center justify-center w-9 h-9 bg-[#1E3A5F]/10 rounded-lg">
-                <MapPin className="w-5 h-5 text-blue-600" aria-hidden="true" />
+                <MapPin className="w-5 h-5 text-[#1E3A5F]" aria-hidden="true" />
               </div>
               <div>
                 <h2 className="font-display text-lg font-bold text-slate-900">Destinations</h2>
@@ -330,7 +330,7 @@ export default function AlertsPage() {
           <section className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
             <div className="flex items-center gap-3 mb-5">
               <div className="flex items-center justify-center w-9 h-9 bg-[#1E3A5F]/10 rounded-lg">
-                <Calendar className="w-5 h-5 text-blue-600" aria-hidden="true" />
+                <Calendar className="w-5 h-5 text-[#1E3A5F]" aria-hidden="true" />
               </div>
               <div>
                 <h2 className="font-display text-lg font-bold text-slate-900">Travel window</h2>

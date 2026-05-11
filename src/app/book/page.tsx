@@ -115,7 +115,7 @@ export default function BookPage() {
             </div>
           </div>
           <div className="flex items-start gap-3 bg-white rounded-xl p-4 border border-slate-200 shadow-sm">
-            <Phone className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+            <Phone className="w-5 h-5 text-[#1E3A5F] flex-shrink-0 mt-0.5" />
             <div>
               <p className="font-semibold text-slate-900 text-sm">Our Service is 100% Free</p>
               <p className="text-xs text-slate-500">We earn a commission from the cruise line, not you</p>
@@ -168,7 +168,7 @@ export default function BookPage() {
         {/* Agent Credentials */}
         <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 mb-6">
           <div className="flex items-center gap-2 mb-4">
-            <BadgeCheck className="w-5 h-5 text-blue-600 flex-shrink-0" />
+            <BadgeCheck className="w-5 h-5 text-[#1E3A5F] flex-shrink-0" />
             <h2 className="font-fraunces text-lg font-bold text-slate-900">Your Personal Disney Cruise Specialist</h2>
           </div>
           <div className="flex flex-col sm:flex-row gap-6">
