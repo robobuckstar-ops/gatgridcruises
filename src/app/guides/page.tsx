@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { BookOpen, ArrowRight } from 'lucide-react'
+import { BookOpen, ArrowRight, Download } from 'lucide-react'
 import { GetQuoteCTA } from '@/components/get-quote-cta'
 
 export const metadata: Metadata = {
@@ -139,6 +139,39 @@ export default function GuidesPage() {
             In-depth, honest guides to help you plan the perfect Disney cruise.
             No fluff, no affiliate pressure — just the information you need.
           </p>
+        </div>
+      </section>
+
+      <section className="py-12 md:py-16 bg-slate-50 border-b border-slate-200">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <Link
+            href="/guides/insiders-guide"
+            className="group block rounded-2xl overflow-hidden border-2 border-[#D4AF37] bg-gradient-to-r from-[#0a1628] to-[#1E3A5F] hover:shadow-xl transition-shadow"
+          >
+            <div className="grid md:grid-cols-[1fr,auto] items-center gap-6 p-6 md:p-8">
+              <div className="flex items-start gap-4">
+                <div className="hidden md:flex flex-shrink-0 w-12 h-12 rounded-full bg-[#D4AF37] text-[#1E3A5F] items-center justify-center">
+                  <Download className="w-5 h-5" />
+                </div>
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-wider text-[#D4AF37] mb-1">
+                    Free PDF Download
+                  </p>
+                  <h2 className="font-fraunces text-2xl md:text-3xl font-bold text-white mb-2">
+                    The Disney Cruise Insider’s Guide
+                  </h2>
+                  <p className="text-navy-200 text-sm md:text-base">
+                    7 focused sections — choosing the right ship, stateroom categories decoded,
+                    Castaway Cay tips, packing checklist, and more.
+                  </p>
+                </div>
+              </div>
+              <span className="inline-flex items-center justify-center gap-2 bg-[#D4AF37] text-[#1E3A5F] font-bold px-6 py-3 rounded-lg whitespace-nowrap group-hover:bg-amber-400 transition">
+                <Download className="w-4 h-4" />
+                Get the Guide
+              </span>
+            </div>
+          </Link>
         </div>
       </section>
 

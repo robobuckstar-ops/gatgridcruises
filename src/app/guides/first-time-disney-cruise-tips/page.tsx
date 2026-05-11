@@ -608,7 +608,7 @@ export default function FirstTimeDisneyCruiseTipsGuide() {
           <h2 className="text-2xl font-fraunces font-bold text-slate-900 mb-6">Related Guides</h2>
           <div className="grid md:grid-cols-3 gap-6">
             <Link href="/guides/disney-cruise-with-toddlers" className="group">
-              <div className="bg-gray-50 p-6 rounded-lg hover:bg-blue-50 transition">
+              <div className="bg-gray-50 p-6 rounded-lg hover:bg-navy-50 transition">
                 <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-blue-600">
                   Disney Cruise with Toddlers
                 </h3>
@@ -618,7 +618,7 @@ export default function FirstTimeDisneyCruiseTipsGuide() {
               </div>
             </Link>
             <Link href="/guides/best-disney-cruise-staterooms" className="group">
-              <div className="bg-gray-50 p-6 rounded-lg hover:bg-blue-50 transition">
+              <div className="bg-gray-50 p-6 rounded-lg hover:bg-navy-50 transition">
                 <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-blue-600">
                   Best Disney Cruise Staterooms
                 </h3>
@@ -628,7 +628,7 @@ export default function FirstTimeDisneyCruiseTipsGuide() {
               </div>
             </Link>
             <Link href="/guides/port-canaveral-vs-miami" className="group">
-              <div className="bg-gray-50 p-6 rounded-lg hover:bg-blue-50 transition">
+              <div className="bg-gray-50 p-6 rounded-lg hover:bg-navy-50 transition">
                 <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-blue-600">
                   Port Canaveral vs. Miami
                 </h3>

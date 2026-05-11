@@ -114,7 +114,7 @@ export default function DisneyCruiseVsRoyalCaribbeanGuide() {
             </ul>
           </div>
 
-          <div className="p-4 bg-blue-50 rounded">
+          <div className="p-4 bg-navy-50 rounded">
             <p className="font-inter text-slate-600">
               <strong>Value Verdict:</strong> If price is your primary concern, Royal Caribbean wins decisively. If you value Disney theming and character experiences as worth the premium, Disney offers excellent value for what you receive.
             </p>
@@ -170,7 +170,7 @@ export default function DisneyCruiseVsRoyalCaribbeanGuide() {
           </div>
 
           <div className="space-y-4 font-inter text-slate-600">
-            <div className="p-4 bg-blue-50 rounded">
+            <div className="p-4 bg-navy-50 rounded">
               <p className="font-bold mb-2">Disney Kids' Clubs:</p>
               <ul className="list-disc list-inside mt-2 space-y-1">
                 <li>Theme-based programming (Marvel, Frozen, Encanto, etc.)</li>
@@ -180,7 +180,7 @@ export default function DisneyCruiseVsRoyalCaribbeanGuide() {
               </ul>
             </div>
 
-            <div className="p-4 bg-blue-50 rounded">
+            <div className="p-4 bg-navy-50 rounded">
               <p className="font-bold mb-2">Royal Caribbean Adventure Ocean:</p>
               <ul className="list-disc list-inside mt-2 space-y-1">
                 <li>Diversified programming (sports, crafts, competitions, learning)</li>
@@ -208,7 +208,7 @@ export default function DisneyCruiseVsRoyalCaribbeanGuide() {
           </div>
 
           <div className="space-y-4 font-inter text-slate-600">
-            <div className="p-4 bg-blue-50 rounded">
+            <div className="p-4 bg-navy-50 rounded">
               <p className="font-bold mb-2">Disney Rotational Dining:</p>
               <ul className="list-disc list-inside mt-2 space-y-1">
                 <li>Three different dining rooms; servers accompany you nightly</li>
@@ -219,7 +219,7 @@ export default function DisneyCruiseVsRoyalCaribbeanGuide() {
               </ul>
             </div>
 
-            <div className="p-4 bg-blue-50 rounded">
+            <div className="p-4 bg-navy-50 rounded">
               <p className="font-bold mb-2">Royal Caribbean My Time Dining:</p>
               <ul className="list-disc list-inside mt-2 space-y-1">
                 <li>Eat whenever you want, wherever you want (24/7)</li>

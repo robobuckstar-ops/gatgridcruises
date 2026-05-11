@@ -459,7 +459,7 @@ export default async function SailingDetailPage({ params }: PageProps) {
             {/* Packing guide promo */}
             <section className="border border-slate-200 rounded-xl p-5 bg-slate-50/60">
               <div className="flex items-start gap-3 mb-4">
-                <div className="flex-shrink-0 w-9 h-9 bg-blue-50 border border-blue-100 rounded-lg flex items-center justify-center">
+                <div className="flex-shrink-0 w-9 h-9 bg-navy-50 border border-navy-100 rounded-lg flex items-center justify-center">
                   <ShoppingBag className="h-5 w-5 text-blue-500" />
                 </div>
                 <div>

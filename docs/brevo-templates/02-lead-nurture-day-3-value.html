@@ -1,0 +1,67 @@
+<!--
+  Brevo template export — do not edit by hand.
+  Source: src/lib/email-templates.ts
+  Subject: Quick question about your Disney cruise plans
+  Trigger: Day 3 after first contact
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"></head>
+<body style="margin:0;padding:0;background-color:#F1F5F9;font-family:Arial,sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background-color:#F1F5F9;padding:32px 16px;">
+    <tr><td align="center">
+      <table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background-color:#FFFFFF;border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.08);">
+        <tr><td>
+  <div style="background-color:#1E3A5F;padding:24px 32px;text-align:center;">
+    <h1 style="margin:0;color:#D4AF37;font-family:Georgia,serif;font-size:22px;font-weight:bold;letter-spacing:1px;">
+      ⚓ GatGrid Cruises
+    </h1>
+    <p style="margin:6px 0 0;color:#93C5FD;font-family:Arial,sans-serif;font-size:13px;">
+      Dr. Grayson Starbuck, DPT · AI-Curated Disney Cruise Deals
+    </p>
+  </div>
+</td></tr>
+        <tr><td style="padding:32px;">
+    <h2 style="margin:0 0 8px;color:#1E3A5F;font-family:Georgia,serif;font-size:22px;">Quick question, {{ contact.FIRSTNAME | default: "there" }}</h2>
+    <p style="margin:0 0 16px;color:#334155;font-size:15px;line-height:1.6;">
+      I wanted to check in — did you have any questions about Disney cruises that I can help with? Sometimes it helps to talk through the options with someone who's been on a bunch of them.
+    </p>
+    <p style="margin:0 0 16px;color:#334155;font-size:15px;line-height:1.6;">
+      A few things families often want to know:
+    </p>
+    <div style="background-color:#F7F8FA;border-radius:8px;padding:20px;margin-bottom:20px;">
+      <p style="margin:0 0 12px;color:#1E3A5F;font-size:14px;font-weight:600;">Common questions I get:</p>
+      <ul style="margin:0;padding-left:20px;color:#334155;font-size:14px;line-height:1.8;">
+        <li>"Which ship is best for kids under 5?"</li>
+        <li>"Is a verandah room worth the extra cost?"</li>
+        <li>"What's the best time of year for Caribbean?"</li>
+        <li>"How much should we budget beyond the cruise fare?"</li>
+        <li>"Can we really save money booking through you vs. Disney directly?"</li>
+      </ul>
+    </div>
+    <p style="margin:0 0 16px;color:#334155;font-size:15px;line-height:1.6;">
+      The answer to that last one, by the way, is <strong>yes</strong> — same price as booking direct, but you get a dedicated concierge (me), onboard credit on many sailings, and ongoing price monitoring.
+    </p>
+    <div style="text-align:center;margin:24px 0;">
+      <a href="mailto:bookings@gatgridcruises.com?subject=I%20have%20a%20question%20about%20Disney%20cruises" style="display:inline-block;background:#D4AF37;color:#1E3A5F;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:bold;font-size:14px;">Reply With Your Questions →</a>
+    </div>
+    <p style="margin:0;color:#64748B;font-size:13px;">Here when you're ready,<br><strong style="color:#1E3A5F;">Grayson Starbuck</strong><br>Cruise Concierge, GatGrid Cruises</p>
+  </td></tr>
+        <tr><td>
+  <div style="background-color:#F8FAFC;border-top:1px solid #E2E8F0;padding:24px 32px;text-align:center;margin-top:32px;">
+    <p style="margin:0 0 6px;color:#64748B;font-family:Arial,sans-serif;font-size:12px;">
+      Dr. Grayson Starbuck, DPT · GatGrid Cruises · Booking services provided through Boardwalk Travel Agency
+    </p>
+    <p style="margin:0 0 4px;color:#94A3B8;font-family:Arial,sans-serif;font-size:11px;">
+      Reply directly to reach Grayson when you're ready to book.
+    </p>
+    <p style="margin:0;color:#94A3B8;font-family:Arial,sans-serif;font-size:11px;">
+      Questions? <a href="mailto:bookings@gatgridcruises.com" style="color:#1E3A5F;">bookings@gatgridcruises.com</a> · <a href="https://gatgridcruises.com" style="color:#1E3A5F;">gatgridcruises.com</a>
+    </p>
+  </div>
+</td></tr>
+      </table>
+    </td></tr>
+  </table>
+</body>
+</html>

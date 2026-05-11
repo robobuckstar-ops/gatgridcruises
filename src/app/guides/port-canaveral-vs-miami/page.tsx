@@ -190,7 +190,7 @@ export default function PortCanaveralVsMiamiGuide() {
             </ul>
           </div>
 
-          <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg mb-6">
+          <div className="bg-navy-50 border-l-4 border-navy-700 p-6 rounded-lg mb-6">
             <p className="font-inter text-slate-600">
               <strong>Cost Comparison for Orlando-Based Families:</strong> Driving to Port Canaveral ($175 parking) is significantly cheaper than driving to Miami ($231+ parking plus gas) or flying and renting a car at Miami ($70-80/day rental + $25-35 ride-share).
             </p>
@@ -291,7 +291,7 @@ export default function PortCanaveralVsMiamiGuide() {
             </p>
           </div>
 
-          <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg mb-6">
+          <div className="bg-navy-50 border-l-4 border-navy-700 p-6 rounded-lg mb-6">
             <p className="font-inter text-slate-600 mb-3">
               <strong>Cost Consideration:</strong> If you're driving from Orlando, skip the pre-cruise hotel in Canaveral and arrive morning-of (saves $100-150). If flying into Miami, budget $100-150/night for one pre-cruise hotel night.
             </p>
@@ -580,7 +580,7 @@ export default function PortCanaveralVsMiamiGuide() {
           <h2 className="text-2xl font-fraunces font-bold text-slate-900 mb-6">Related Guides</h2>
           <div className="grid md:grid-cols-3 gap-6">
             <Link href="/guides/disney-cruise-cost-guide" className="group">
-              <div className="bg-gray-50 p-6 rounded-lg hover:bg-blue-50 transition">
+              <div className="bg-gray-50 p-6 rounded-lg hover:bg-navy-50 transition">
                 <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-blue-600">
                   The True Cost of a Disney Cruise
                 </h3>
@@ -590,7 +590,7 @@ export default function PortCanaveralVsMiamiGuide() {
               </div>
             </Link>
             <Link href="/guides/first-time-disney-cruise-tips" className="group">
-              <div className="bg-gray-50 p-6 rounded-lg hover:bg-blue-50 transition">
+              <div className="bg-gray-50 p-6 rounded-lg hover:bg-navy-50 transition">
                 <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-blue-600">
                   25 First-Time Cruise Tips
                 </h3>
@@ -600,7 +600,7 @@ export default function PortCanaveralVsMiamiGuide() {
               </div>
             </Link>
             <Link href="/guides/best-disney-cruise-staterooms" className="group">
-              <div className="bg-gray-50 p-6 rounded-lg hover:bg-blue-50 transition">
+              <div className="bg-gray-50 p-6 rounded-lg hover:bg-navy-50 transition">
                 <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-blue-600">
                   Best Disney Cruise Staterooms
                 </h3>

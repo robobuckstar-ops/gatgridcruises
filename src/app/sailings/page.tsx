@@ -147,7 +147,7 @@ export default function SailingsIndexPage() {
                           {sailing.itinerary_name}
                         </h3>
                         {sailing.sailing_score != null && (
-                          <span className="flex-shrink-0 text-xs font-bold bg-blue-50 text-blue-700 border border-blue-200 px-2 py-1 rounded-full">
+                          <span className="flex-shrink-0 text-xs font-bold bg-navy-50 text-navy-800 border border-navy-200 px-2 py-1 rounded-full">
                             {sailing.sailing_score}
                           </span>
                         )}

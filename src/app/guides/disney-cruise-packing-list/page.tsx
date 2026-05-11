@@ -81,44 +81,44 @@ export default function PackingListGuide() {
         <section className="mb-12">
           <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-4">Critical Documents (Don't Forget!)</h2>
           <div className="space-y-3 mb-6">
-            <div className="flex gap-3 p-3 bg-blue-50 rounded">
-              <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+            <div className="flex gap-3 p-3 bg-navy-50 rounded">
+              <CheckCircle className="w-5 h-5 text-navy-700 flex-shrink-0 mt-0.5" />
               <div className="font-inter text-slate-600">
                 <strong>Passport or government-issued ID</strong> — Required for Caribbean/international cruises; driver's license or passport for domestic cruises
               </div>
             </div>
-            <div className="flex gap-3 p-3 bg-blue-50 rounded">
-              <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+            <div className="flex gap-3 p-3 bg-navy-50 rounded">
+              <CheckCircle className="w-5 h-5 text-navy-700 flex-shrink-0 mt-0.5" />
               <div className="font-inter text-slate-600">
                 <strong>Cruise documents</strong> — Booking confirmation, reservation number, cruise itinerary, and pre-check-in confirmation (available in Disney Cruise Line app or via email)
               </div>
             </div>
-            <div className="flex gap-3 p-3 bg-blue-50 rounded">
-              <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+            <div className="flex gap-3 p-3 bg-navy-50 rounded">
+              <CheckCircle className="w-5 h-5 text-navy-700 flex-shrink-0 mt-0.5" />
               <div className="font-inter text-slate-600">
                 <strong>Insurance documents</strong> — Travel insurance papers (if purchased), policy numbers, and contact info
               </div>
             </div>
-            <div className="flex gap-3 p-3 bg-blue-50 rounded">
-              <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+            <div className="flex gap-3 p-3 bg-navy-50 rounded">
+              <CheckCircle className="w-5 h-5 text-navy-700 flex-shrink-0 mt-0.5" />
               <div className="font-inter text-slate-600">
                 <strong>Key to the World Card</strong> — Your onboard key card (often arrives in advance; print or save digitally)
               </div>
             </div>
-            <div className="flex gap-3 p-3 bg-blue-50 rounded">
-              <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+            <div className="flex gap-3 p-3 bg-navy-50 rounded">
+              <CheckCircle className="w-5 h-5 text-navy-700 flex-shrink-0 mt-0.5" />
               <div className="font-inter text-slate-600">
                 <strong>Vaccination records or health documentation</strong> — If required by your itinerary
               </div>
             </div>
-            <div className="flex gap-3 p-3 bg-blue-50 rounded">
-              <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+            <div className="flex gap-3 p-3 bg-navy-50 rounded">
+              <CheckCircle className="w-5 h-5 text-navy-700 flex-shrink-0 mt-0.5" />
               <div className="font-inter text-slate-600">
                 <strong>Credit card and backup payment method</strong> — For onboard charging and emergencies
               </div>
             </div>
-            <div className="flex gap-3 p-3 bg-blue-50 rounded">
-              <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+            <div className="flex gap-3 p-3 bg-navy-50 rounded">
+              <CheckCircle className="w-5 h-5 text-navy-700 flex-shrink-0 mt-0.5" />
               <div className="font-inter text-slate-600">
                 <strong>Copies of important documents</strong> — Keep digital copies (email to yourself or cloud storage) in case originals are lost
               </div>
@@ -396,38 +396,38 @@ export default function PackingListGuide() {
           <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-4">Beach & Pool Essentials</h2>
 
           <div className="space-y-3">
-            <div className="flex gap-3 p-3 bg-blue-50 rounded">
-              <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+            <div className="flex gap-3 p-3 bg-navy-50 rounded">
+              <CheckCircle className="w-5 h-5 text-navy-700 flex-shrink-0 mt-0.5" />
               <div className="font-inter text-slate-600">
                 <strong>Water shoes</strong> — Essential for Castaway Cay's rocky areas and hot sand
               </div>
             </div>
-            <div className="flex gap-3 p-3 bg-blue-50 rounded">
-              <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+            <div className="flex gap-3 p-3 bg-navy-50 rounded">
+              <CheckCircle className="w-5 h-5 text-navy-700 flex-shrink-0 mt-0.5" />
               <div className="font-inter text-slate-600">
                 <strong>Snorkel gear (optional)</strong> — Bring your own to save $12/person at Castaway Cay
               </div>
             </div>
-            <div className="flex gap-3 p-3 bg-blue-50 rounded">
-              <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+            <div className="flex gap-3 p-3 bg-navy-50 rounded">
+              <CheckCircle className="w-5 h-5 text-navy-700 flex-shrink-0 mt-0.5" />
               <div className="font-inter text-slate-600">
                 <strong>Waterproof phone case</strong> — Protect devices near water
               </div>
             </div>
-            <div className="flex gap-3 p-3 bg-blue-50 rounded">
-              <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+            <div className="flex gap-3 p-3 bg-navy-50 rounded">
+              <CheckCircle className="w-5 h-5 text-navy-700 flex-shrink-0 mt-0.5" />
               <div className="font-inter text-slate-600">
                 <strong>Beach towel (optional)</strong> — Ships provide towels, but some prefer their own
               </div>
             </div>
-            <div className="flex gap-3 p-3 bg-blue-50 rounded">
-              <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+            <div className="flex gap-3 p-3 bg-navy-50 rounded">
+              <CheckCircle className="w-5 h-5 text-navy-700 flex-shrink-0 mt-0.5" />
               <div className="font-inter text-slate-600">
                 <strong>Goggles (optional)</strong> — For snorkeling enthusiasts
               </div>
             </div>
-            <div className="flex gap-3 p-3 bg-blue-50 rounded">
-              <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+            <div className="flex gap-3 p-3 bg-navy-50 rounded">
+              <CheckCircle className="w-5 h-5 text-navy-700 flex-shrink-0 mt-0.5" />
               <div className="font-inter text-slate-600">
                 <strong>Underwater camera (optional)</strong> — Capture beach memories
               </div>
@@ -546,49 +546,49 @@ export default function PackingListGuide() {
           <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-4">Packing Pro Tips</h2>
 
           <div className="space-y-4">
-            <div className="p-4 bg-blue-50 rounded">
+            <div className="p-4 bg-navy-50 rounded">
               <p className="font-inter text-slate-600 mb-2">
                 <strong>Roll, Don't Fold:</strong> Rolling clothes saves space and reduces wrinkles compared to folding. Use the KonMari method or packing cubes to maximize luggage space.
               </p>
             </div>
 
-            <div className="p-4 bg-blue-50 rounded">
+            <div className="p-4 bg-navy-50 rounded">
               <p className="font-inter text-slate-600 mb-2">
                 <strong>Wear Your Bulkiest Item:</strong> If packing a heavy jacket or boots, wear them onboard to save luggage space.
               </p>
             </div>
 
-            <div className="p-4 bg-blue-50 rounded">
+            <div className="p-4 bg-navy-50 rounded">
               <p className="font-inter text-slate-600 mb-2">
                 <strong>Check Your Itinerary:</strong> Know which ports you're visiting and what dress codes apply. Research weather patterns for your cruise dates.
               </p>
             </div>
 
-            <div className="p-4 bg-blue-50 rounded">
+            <div className="p-4 bg-navy-50 rounded">
               <p className="font-inter text-slate-600 mb-2">
                 <strong>Use Packing Cubes:</strong> Organize items by category (casual, formal, beach, etc.) in separate packing cubes for easy access and space efficiency.
               </p>
             </div>
 
-            <div className="p-4 bg-blue-50 rounded">
+            <div className="p-4 bg-navy-50 rounded">
               <p className="font-inter text-slate-600 mb-2">
                 <strong>Ship Your Luggage:</strong> For longer cruises, consider shipping luggage to your port destination to avoid baggage fees and excess weight.
               </p>
             </div>
 
-            <div className="p-4 bg-blue-50 rounded">
+            <div className="p-4 bg-navy-50 rounded">
               <p className="font-inter text-slate-600 mb-2">
                 <strong>Prepare a Day-Bag:</strong> Pack a separate small bag with essentials (medications, phone chargers, toiletries) that you'll access immediately upon embarkation before your cabin is ready.
               </p>
             </div>
 
-            <div className="p-4 bg-blue-50 rounded">
+            <div className="p-4 bg-navy-50 rounded">
               <p className="font-inter text-slate-600 mb-2">
                 <strong>Verify Baggage Allowance:</strong> Check your cruise line's baggage policy. Disney Cruise Line typically allows 2 standard suitcases + carry-on per person; fees apply for excess.
               </p>
             </div>
 
-            <div className="p-4 bg-blue-50 rounded">
+            <div className="p-4 bg-navy-50 rounded">
               <p className="font-inter text-slate-600 mb-2">
                 <strong>Leave Room for Souvenirs:</strong> Pack slightly lighter than your baggage limit allows to have room for purchases made onboard and at ports.
               </p>

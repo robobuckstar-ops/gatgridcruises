@@ -132,7 +132,7 @@ export default function DisneyCruiseWithToddlersGuide() {
             </ul>
           </div>
 
-          <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg mb-6">
+          <div className="bg-navy-50 border-l-4 border-navy-700 p-6 rounded-lg mb-6">
             <p className="font-inter text-slate-600 mb-2">
               <strong>Pro Tip:</strong> Book nursery time for the first evening after embarkation when your toddler is acclimating. Skip the early evening chaos and book 8pm-10pm when kids are sleepy anyway. You get adult time and your toddler might even fall asleep there.
             </p>
@@ -414,7 +414,7 @@ export default function DisneyCruiseWithToddlersGuide() {
             </div>
           </div>
 
-          <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
+          <div className="bg-navy-50 border-l-4 border-navy-700 p-6 rounded-lg">
             <p className="font-inter text-slate-600 mb-2">
               <strong>Packing Reality:</strong> Cabins are compact. Pack efficiently—bring minimal clothing (wash clothes in cabin sink if needed), and maximize essential items (diapers, formula, medications). Luggage can be stored under the bed.
             </p>
@@ -612,7 +612,7 @@ export default function DisneyCruiseWithToddlersGuide() {
           <h2 className="text-2xl font-fraunces font-bold text-slate-900 mb-6">Related Guides</h2>
           <div className="grid md:grid-cols-3 gap-6">
             <Link href="/guides/first-time-disney-cruise-tips" className="group">
-              <div className="bg-gray-50 p-6 rounded-lg hover:bg-blue-50 transition">
+              <div className="bg-gray-50 p-6 rounded-lg hover:bg-navy-50 transition">
                 <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-blue-600">
                   25 First-Time Cruise Tips
                 </h3>
@@ -622,7 +622,7 @@ export default function DisneyCruiseWithToddlersGuide() {
               </div>
             </Link>
             <Link href="/guides/best-disney-cruise-staterooms" className="group">
-              <div className="bg-gray-50 p-6 rounded-lg hover:bg-blue-50 transition">
+              <div className="bg-gray-50 p-6 rounded-lg hover:bg-navy-50 transition">
                 <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-blue-600">
                   Best Disney Cruise Staterooms
                 </h3>
@@ -632,7 +632,7 @@ export default function DisneyCruiseWithToddlersGuide() {
               </div>
             </Link>
             <Link href="/guides/disney-cruise-cost-guide" className="group">
-              <div className="bg-gray-50 p-6 rounded-lg hover:bg-blue-50 transition">
+              <div className="bg-gray-50 p-6 rounded-lg hover:bg-navy-50 transition">
                 <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-blue-600">
                   The True Cost of a Disney Cruise
                 </h3>

@@ -22,12 +22,12 @@ function getInitials(name: string): string {
 }
 
 const colors = [
-  'bg-[#1E3A5F]/20 text-blue-700',
+  'bg-navy-100 text-navy-800',
   'bg-emerald-100 text-emerald-700',
-  'bg-amber-100 text-amber-700',
+  'bg-amber-100 text-amber-800',
   'bg-rose-100 text-rose-700',
   'bg-purple-100 text-purple-700',
-  'bg-cyan-100 text-cyan-700',
+  'bg-teal-100 text-teal-700',
 ]
 
 function getColorForIndex(index: number): string {
@@ -79,9 +79,9 @@ export function GroupCard({ group, sailing }: GroupCardProps) {
   }
 
   return (
-    <div className="group bg-white rounded-xl border border-slate-200 hover:border-blue-300 hover:shadow-lg transition-all duration-200 overflow-hidden">
+    <div className="group bg-white rounded-xl border border-slate-200 hover:border-navy-400 hover:shadow-lg transition-all duration-200 overflow-hidden">
       {/* Color bar at top */}
-      <div className="h-1.5 bg-gradient-to-r from-cyan-500 to-blue-500 group-hover:from-[#D4AF37] group-hover:to-amber-400 transition-all duration-200" />
+      <div className="h-1.5 bg-gradient-to-r from-navy-700 to-navy-500 group-hover:from-[#D4AF37] group-hover:to-amber-400 transition-all duration-200" />
 
       <div className="p-5">
         {/* Ship + Date Header */}
@@ -117,7 +117,7 @@ export function GroupCard({ group, sailing }: GroupCardProps) {
             {group.recent_topics.map((topic, idx) => (
               <span
                 key={idx}
-                className="inline-flex items-center px-2.5 py-1 rounded-full text-xs bg-[#1E3A5F]/10 text-blue-700 border border-blue-200"
+                className="inline-flex items-center px-2.5 py-1 rounded-full text-xs bg-navy-50 text-navy-800 border border-navy-200"
               >
                 {topic}
               </span>

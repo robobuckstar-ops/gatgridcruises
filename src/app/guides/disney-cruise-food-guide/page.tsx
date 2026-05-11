@@ -245,7 +245,7 @@ export default function DisneyCruiseFoodGuide() {
             <p className="font-inter text-slate-600 leading-relaxed mb-4">
               Each Disney ship has a main buffet (called Marceline Market on Wish/Treasure, Cabanas on older ships) offering breakfast, lunch, and dinner spreads. The buffet is included with your cruise and offers casual, self-serve dining with international cuisine selections, salads, carving stations, and desserts.
             </p>
-            <div className="p-4 bg-blue-50 rounded">
+            <div className="p-4 bg-navy-50 rounded">
               <p className="font-inter text-slate-600 text-sm">
                 <strong>Pro Tip:</strong> Breakfast buffet is underrated and less crowded than lunch/dinner. Dinner buffet can be extremely crowded; consider quick-service or main dining room to avoid waits.
               </p>
@@ -351,7 +351,7 @@ export default function DisneyCruiseFoodGuide() {
           <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-4">Must-Try Dishes & Dining Recommendations</h2>
 
           <div className="space-y-4">
-            <div className="p-4 bg-blue-50 rounded">
+            <div className="p-4 bg-navy-50 rounded">
               <p className="font-inter font-bold text-slate-900 mb-2">From Main Dining Rooms:</p>
               <ul className="list-disc list-inside font-inter text-slate-600 text-sm space-y-1">
                 <li>Short ribs (offered on multiple menus)</li>
@@ -363,7 +363,7 @@ export default function DisneyCruiseFoodGuide() {
               </ul>
             </div>
 
-            <div className="p-4 bg-blue-50 rounded">
+            <div className="p-4 bg-navy-50 rounded">
               <p className="font-inter font-bold text-slate-900 mb-2">From Specialty Restaurants (Palo, Remy, etc.):</p>
               <ul className="list-disc list-inside font-inter text-slate-600 text-sm space-y-1">
                 <li>Handmade pappardelle with truffle (Palo)</li>
@@ -374,7 +374,7 @@ export default function DisneyCruiseFoodGuide() {
               </ul>
             </div>
 
-            <div className="p-4 bg-blue-50 rounded">
+            <div className="p-4 bg-navy-50 rounded">
               <p className="font-inter font-bold text-slate-900 mb-2">From Buffets & Quick Service:</p>
               <ul className="list-disc list-inside font-inter text-slate-600 text-sm space-y-1">
                 <li>Carving station (prime rib, turkey)</li>

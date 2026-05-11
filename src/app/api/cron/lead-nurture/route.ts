@@ -4,7 +4,9 @@ import {
   leadNurtureDay3,
   leadNurtureDay7,
   leadNurtureDay14,
+  leadNurtureDay21,
   leadNurtureDay30,
+  leadNurtureDay45,
 } from '@/lib/email-templates'
 
 export const runtime = 'nodejs'
@@ -63,10 +65,22 @@ const DRIP_STEPS: DripStep[] = [
     subject: 'Disney cruise prices are moving — here\'s what to know',
   },
   {
+    day: 21,
+    sequenceLabel: 'Day 21 - Ship Choice',
+    templateFn: leadNurtureDay21,
+    subject: 'Which Disney ship is right for your family?',
+  },
+  {
     day: 30,
     sequenceLabel: 'Day 30 - Last Chance',
     templateFn: leadNurtureDay30,
     subject: 'Still thinking about a Disney cruise?',
+  },
+  {
+    day: 45,
+    sequenceLabel: 'Day 45 - Soft Close',
+    templateFn: leadNurtureDay45,
+    subject: 'A friendly goodbye for now — keep in touch',
   },
 ]
 

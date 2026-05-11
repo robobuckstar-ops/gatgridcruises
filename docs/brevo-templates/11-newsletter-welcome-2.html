@@ -1,0 +1,84 @@
+<!--
+  Brevo template export — do not edit by hand.
+  Source: src/lib/email-templates.ts
+  Subject: How GatGrid finds Disney cruise deals
+  Trigger: Day 3 after newsletter subscribe
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>How We Find the Best Disney Cruise Deals</title>
+  <style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 0; background: #F1F5F9; color: #1E293B; }
+  .wrap { max-width: 600px; margin: 32px auto; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+  .hdr { background: #1E3A5F; padding: 28px 32px; text-align: center; }
+  .hdr h1 { color: #D4AF37; font-family: Georgia, serif; font-size: 22px; margin: 0 0 6px; }
+  .hdr p { color: #93C5FD; font-size: 13px; margin: 0; }
+  .body { padding: 32px; }
+  .body h2 { color: #1E3A5F; font-family: Georgia, serif; font-size: 22px; margin: 0 0 16px; }
+  .body p { color: #334155; font-size: 15px; line-height: 1.7; margin: 0 0 16px; }
+  .cta { display: inline-block; background: #D4AF37; color: #1E3A5F; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 14px; margin: 8px 0; }
+  .cta-navy { display: inline-block; background: #1E3A5F; color: #fff; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 14px; margin: 8px 0; }
+  .deal-card { border: 1px solid #E2E8F0; border-radius: 8px; padding: 16px; margin-bottom: 12px; }
+  .deal-name { font-weight: 700; color: #1E3A5F; font-size: 15px; margin: 0 0 6px; }
+  .deal-meta { color: #64748B; font-size: 13px; margin: 0 0 8px; }
+  .deal-price { font-size: 22px; font-weight: 700; color: #1E3A5F; }
+  .drop-badge { display: inline-block; background: #ECFDF5; color: #059669; padding: 2px 8px; border-radius: 12px; font-size: 12px; font-weight: 600; margin-left: 8px; }
+  .card-box { background: #F0F7FF; border-left: 4px solid #1E3A5F; border-radius: 6px; padding: 16px; margin: 16px 0; }
+  .card-box h3 { color: #1E3A5F; font-size: 15px; margin: 0 0 8px; }
+  .card-box p { font-size: 14px; margin: 0 0 8px; }
+  .gold-box { background: #FEF9EC; border: 1px solid #D4AF37; border-radius: 8px; padding: 16px; margin: 20px 0; }
+  .gold-box p { color: #92400E; font-size: 14px; margin: 0; }
+  .checklist { margin: 0 0 20px; padding-left: 20px; }
+  .checklist li { color: #334155; font-size: 14px; line-height: 1.7; margin-bottom: 6px; }
+  .sig { color: #64748B; font-size: 13px; }
+  .footer { background: #1E3A5F; padding: 20px 32px; text-align: center; }
+  .footer p { color: #94A3B8; font-size: 12px; margin: 4px 0; }
+  .footer a { color: #D4AF37; text-decoration: none; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="hdr">
+      <h1>⚓ GatGrid Cruises</h1>
+      <p>Dr. Grayson Starbuck, DPT · AI-Curated Disney Cruise Deals</p>
+    </div>
+    <div class="body">
+    <h2>How we find deals most people miss 🔍</h2>
+    <p>Hi {{ contact.FIRSTNAME | default: "there" }} — a quick peek behind the curtain today.</p>
+
+    <p>Disney Cruise Line prices change constantly — sometimes multiple times a day. They vary by stateroom category, sailing date, number of guests, and even what device you're on. Tracking this manually is basically impossible.</p>
+
+    <p>So here's what we built:</p>
+
+    <div class="card-box">
+      <h3>The GatGrid AI Scanning System</h3>
+      <p><strong>1. Daily price collection</strong> — We pull prices for every tracked sailing every morning</p>
+      <p><strong>2. Historical comparison</strong> — Every price is compared against a 90-day rolling average</p>
+      <p><strong>3. Deal Scoring</strong> — We assign a 0–100 "Sailing Score" that factors in price drops, itinerary quality, timing, and ship popularity</p>
+      <p><strong>4. You get the best ones</strong> — We surface only the sailings that actually score well — not just the cheapest, but the best value</p>
+    </div>
+
+    <p>The result: you see deals that are <em>genuinely</em> below market, not just below an inflated "original price."</p>
+
+    <p>We also flag <strong>Last-Minute Steals</strong> — sailings departing within 90 days that DCL has discounted to fill cabins. These are often the biggest percentage drops.</p>
+
+    <div style="text-align: center; margin: 24px 0;">
+      <a href="https://gatgridcruises.com/deals?sort=score" class="cta">See Top-Scored Deals →</a>
+    </div>
+
+    <p>Tomorrow — well, not tomorrow, but in a few days — I'll share the credit card strategy that can save you hundreds (sometimes over $1,000) on a Disney cruise without changing which sailing you book.</p>
+
+    <p class="sig">Until then,<br><strong style="color: #1E3A5F;">Dr. Grayson Starbuck, DPT</strong><br>GatGrid Cruises</p>
+  </div>
+    <div class="footer">
+      <p>Sent by Dr. Grayson Starbuck, DPT · <a href="mailto:bookings@gatgridcruises.com">bookings@gatgridcruises.com</a></p>
+      <p>You're receiving this because you subscribed at GatGridCruises.com</p>
+      <p><a href="https://gatgridcruises.com/unsubscribe?token={{ contact.UNSUB_TOKEN | default: "" }}">Unsubscribe</a> · <a href="https://gatgridcruises.com/privacy">Privacy Policy</a></p>
+      <p style="margin-top: 10px;">Independently owned. Not affiliated with The Walt Disney Company.</p>
+    </div>
+  </div>
+</body>
+</html>

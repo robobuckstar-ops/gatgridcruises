@@ -74,12 +74,12 @@ export function CabinComparison({ shipSlug }: CabinComparisonProps) {
     {
       name: 'Oceanview',
       key: 'oceanview' as const,
-      bgColor: 'bg-blue-50',
-      headerColor: 'bg-blue-100',
-      borderColor: 'border-blue-200',
-      textColor: 'text-blue-900',
-      starOn: 'text-blue-600 fill-current',
-      starOff: 'text-blue-200',
+      bgColor: 'bg-navy-50',
+      headerColor: 'bg-navy-100',
+      borderColor: 'border-navy-200',
+      textColor: 'text-navy-900',
+      starOn: 'text-navy-700 fill-current',
+      starOff: 'text-navy-200',
       rooms: staterooms.oceanview,
     },
     {

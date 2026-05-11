@@ -1,0 +1,90 @@
+<!--
+  Brevo template export — do not edit by hand.
+  Source: src/lib/email-templates.ts
+  Subject: Ready to book? Here's how it works
+  Trigger: Day 7 after newsletter subscribe
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>The Credit Cards That Save You Hundreds on a Disney Cruise</title>
+  <style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 0; background: #F1F5F9; color: #1E293B; }
+  .wrap { max-width: 600px; margin: 32px auto; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+  .hdr { background: #1E3A5F; padding: 28px 32px; text-align: center; }
+  .hdr h1 { color: #D4AF37; font-family: Georgia, serif; font-size: 22px; margin: 0 0 6px; }
+  .hdr p { color: #93C5FD; font-size: 13px; margin: 0; }
+  .body { padding: 32px; }
+  .body h2 { color: #1E3A5F; font-family: Georgia, serif; font-size: 22px; margin: 0 0 16px; }
+  .body p { color: #334155; font-size: 15px; line-height: 1.7; margin: 0 0 16px; }
+  .cta { display: inline-block; background: #D4AF37; color: #1E3A5F; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 14px; margin: 8px 0; }
+  .cta-navy { display: inline-block; background: #1E3A5F; color: #fff; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 14px; margin: 8px 0; }
+  .deal-card { border: 1px solid #E2E8F0; border-radius: 8px; padding: 16px; margin-bottom: 12px; }
+  .deal-name { font-weight: 700; color: #1E3A5F; font-size: 15px; margin: 0 0 6px; }
+  .deal-meta { color: #64748B; font-size: 13px; margin: 0 0 8px; }
+  .deal-price { font-size: 22px; font-weight: 700; color: #1E3A5F; }
+  .drop-badge { display: inline-block; background: #ECFDF5; color: #059669; padding: 2px 8px; border-radius: 12px; font-size: 12px; font-weight: 600; margin-left: 8px; }
+  .card-box { background: #F0F7FF; border-left: 4px solid #1E3A5F; border-radius: 6px; padding: 16px; margin: 16px 0; }
+  .card-box h3 { color: #1E3A5F; font-size: 15px; margin: 0 0 8px; }
+  .card-box p { font-size: 14px; margin: 0 0 8px; }
+  .gold-box { background: #FEF9EC; border: 1px solid #D4AF37; border-radius: 8px; padding: 16px; margin: 20px 0; }
+  .gold-box p { color: #92400E; font-size: 14px; margin: 0; }
+  .checklist { margin: 0 0 20px; padding-left: 20px; }
+  .checklist li { color: #334155; font-size: 14px; line-height: 1.7; margin-bottom: 6px; }
+  .sig { color: #64748B; font-size: 13px; }
+  .footer { background: #1E3A5F; padding: 20px 32px; text-align: center; }
+  .footer p { color: #94A3B8; font-size: 12px; margin: 4px 0; }
+  .footer a { color: #D4AF37; text-decoration: none; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="hdr">
+      <h1>⚓ GatGrid Cruises</h1>
+      <p>Dr. Grayson Starbuck, DPT · AI-Curated Disney Cruise Deals</p>
+    </div>
+    <div class="body">
+    <h2>Save $500–$1,500 on your cruise — without changing a thing 💳</h2>
+    <p>Hi {{ contact.FIRSTNAME | default: "there" }} — today I want to talk money. Specifically, how to pay for a Disney cruise in a way that puts hundreds of dollars back in your pocket.</p>
+
+    <p>Disney Cruise Line doesn't offer a loyalty points program. But credit card rewards more than make up for it — if you use the right card.</p>
+
+    <p>Here are the three I personally recommend to guests:</p>
+
+    <div class="card-box">
+      <h3>1. Chase Ink Business Preferred — Best for travel rewards</h3>
+      <p>Earn 3x points on travel purchases (including cruises). The 100K point sign-up bonus is worth ~$1,250 in travel. No foreign transaction fees — useful for Caribbean ports.</p>
+      <a href="https://www.referyourchasecard.com/226m/6ZT33F9TOQ" target="_blank" rel="nofollow sponsored noopener" class="cta-navy" style="font-size: 13px; padding: 10px 20px;">Apply via Referral →</a>
+    </div>
+
+    <div class="card-box">
+      <h3>2. Capital One Spark Cash Plus — Best for simplicity</h3>
+      <p>Earn 2% unlimited cash back on everything. Up to $1,000 in welcome cash bonuses. No foreign transaction fees — use it freely at every Caribbean port.</p>
+      <a href="https://i.capitalone.com/JKlfRwN3f" target="_blank" rel="nofollow sponsored noopener" class="cta-navy" style="font-size: 13px; padding: 10px 20px;">Apply via Referral →</a>
+    </div>
+
+    <div class="card-box">
+      <h3>3. Amex Business Platinum — Best for big spenders</h3>
+      <p>150K+ point sign-up bonus (worth $1,500+ in travel). Up to $200 in airline fee credits annually. If you're booking a high-end stateroom, the math is hard to beat.</p>
+      <a href="https://americanexpress.com/en-us/referral/business-platinum-charge-card?ref=CRYSTSGCNM&XL=MIMNS" target="_blank" rel="nofollow sponsored noopener" class="cta-navy" style="font-size: 13px; padding: 10px 20px;">Apply via Referral →</a>
+    </div>
+
+    <div class="gold-box">
+      <p><strong>💡 Pro tip:</strong> Get approved for the card before you book, then put your deposit on it. You'll meet the minimum spend requirement naturally, and your sign-up bonus posts before your final payment date.</p>
+    </div>
+
+    <p>Ready to book? Just reply to this email with your preferred dates and I'll pull up the best options.</p>
+
+    <p class="sig">To smarter travel,<br><strong style="color: #1E3A5F;">Dr. Grayson Starbuck, DPT</strong><br>GatGrid Cruises</p>
+  </div>
+    <div class="footer">
+      <p>Sent by Dr. Grayson Starbuck, DPT · <a href="mailto:bookings@gatgridcruises.com">bookings@gatgridcruises.com</a></p>
+      <p>You're receiving this because you subscribed at GatGridCruises.com</p>
+      <p><a href="https://gatgridcruises.com/unsubscribe?token={{ contact.UNSUB_TOKEN | default: "" }}">Unsubscribe</a> · <a href="https://gatgridcruises.com/privacy">Privacy Policy</a></p>
+      <p style="margin-top: 10px;">Independently owned. Not affiliated with The Walt Disney Company.</p>
+    </div>
+  </div>
+</body>
+</html>

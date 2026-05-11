@@ -1,0 +1,113 @@
+<!--
+  Brevo template export — do not edit by hand.
+  Source: src/lib/email-templates.ts
+  Subject: Welcome to GatGrid Cruises — your first deal alert is ready
+  Trigger: Confirmed subscribe to the weekly newsletter
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Welcome to GatGrid Cruises!</title>
+  <style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 0; background: #F1F5F9; color: #1E293B; }
+  .wrap { max-width: 600px; margin: 32px auto; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+  .hdr { background: #1E3A5F; padding: 28px 32px; text-align: center; }
+  .hdr h1 { color: #D4AF37; font-family: Georgia, serif; font-size: 22px; margin: 0 0 6px; }
+  .hdr p { color: #93C5FD; font-size: 13px; margin: 0; }
+  .body { padding: 32px; }
+  .body h2 { color: #1E3A5F; font-family: Georgia, serif; font-size: 22px; margin: 0 0 16px; }
+  .body p { color: #334155; font-size: 15px; line-height: 1.7; margin: 0 0 16px; }
+  .cta { display: inline-block; background: #D4AF37; color: #1E3A5F; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 14px; margin: 8px 0; }
+  .cta-navy { display: inline-block; background: #1E3A5F; color: #fff; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 14px; margin: 8px 0; }
+  .deal-card { border: 1px solid #E2E8F0; border-radius: 8px; padding: 16px; margin-bottom: 12px; }
+  .deal-name { font-weight: 700; color: #1E3A5F; font-size: 15px; margin: 0 0 6px; }
+  .deal-meta { color: #64748B; font-size: 13px; margin: 0 0 8px; }
+  .deal-price { font-size: 22px; font-weight: 700; color: #1E3A5F; }
+  .drop-badge { display: inline-block; background: #ECFDF5; color: #059669; padding: 2px 8px; border-radius: 12px; font-size: 12px; font-weight: 600; margin-left: 8px; }
+  .card-box { background: #F0F7FF; border-left: 4px solid #1E3A5F; border-radius: 6px; padding: 16px; margin: 16px 0; }
+  .card-box h3 { color: #1E3A5F; font-size: 15px; margin: 0 0 8px; }
+  .card-box p { font-size: 14px; margin: 0 0 8px; }
+  .gold-box { background: #FEF9EC; border: 1px solid #D4AF37; border-radius: 8px; padding: 16px; margin: 20px 0; }
+  .gold-box p { color: #92400E; font-size: 14px; margin: 0; }
+  .checklist { margin: 0 0 20px; padding-left: 20px; }
+  .checklist li { color: #334155; font-size: 14px; line-height: 1.7; margin-bottom: 6px; }
+  .sig { color: #64748B; font-size: 13px; }
+  .footer { background: #1E3A5F; padding: 20px 32px; text-align: center; }
+  .footer p { color: #94A3B8; font-size: 12px; margin: 4px 0; }
+  .footer a { color: #D4AF37; text-decoration: none; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="hdr">
+      <h1>⚓ GatGrid Cruises</h1>
+      <p>Dr. Grayson Starbuck, DPT · AI-Curated Disney Cruise Deals</p>
+    </div>
+    <div class="body">
+    <h2>Welcome aboard, {{ contact.FIRSTNAME | default: "there" }}! 🎉</h2>
+    <p>I'm Dr. Grayson Starbuck, DPT — and I'm genuinely excited you're here. I built GatGrid Cruises because I got tired of watching Disney cruise prices fluctuate wildly and not knowing when to pull the trigger. So I built an AI system that watches them for me (and now for you).</p>
+
+    <p><strong>Here's how GatGrid works in 3 steps:</strong></p>
+    <ol class="checklist">
+      <li><strong>We watch the prices</strong> — Our AI scans hundreds of Disney cruise sailings every day</li>
+      <li><strong>You get alerted</strong> — When a price drops significantly below the historical average, we let you know</li>
+      <li><strong>You book smarter</strong> — Reply to any email and I'll personally help you lock in the deal</li>
+    </ol>
+
+    <p>Right now, here are a few sailings worth watching:</p>
+    
+    <div class="deal-card">
+      <div class="deal-name">Disney Wish 4-Night Bahamas</div>
+      <div class="deal-meta">Disney Wish · 2026-09-12 · 4 nights</div>
+      <div>
+        <span class="deal-price">$1,899/person</span>
+        <span class="drop-badge">↓ 22% below avg</span>
+      </div>
+    </div>
+  
+    <div class="deal-card">
+      <div class="deal-name">Disney Fantasy 7-Night Eastern Caribbean</div>
+      <div class="deal-meta">Disney Fantasy · 2026-10-03 · 7 nights</div>
+      <div>
+        <span class="deal-price">$2,799/person</span>
+        <span class="drop-badge">↓ 18% below avg</span>
+      </div>
+    </div>
+  
+    <div class="deal-card">
+      <div class="deal-name">Disney Treasure 6-Night Western Caribbean</div>
+      <div class="deal-meta">Disney Treasure · 2026-11-14 · 6 nights</div>
+      <div>
+        <span class="deal-price">$2,349/person</span>
+        <span class="drop-badge">↓ 15% below avg</span>
+      </div>
+    </div>
+  
+
+    <div style="text-align: center; margin: 24px 0;">
+      <a href="https://gatgridcruises.com/deals" class="cta">See All Current Deals →</a>
+    </div>
+
+    <div class="card-box">
+      <h3>💬 Not sure what a Disney cruise really costs?</h3>
+      <p>Tell our concierge your stateroom preference, sailing length, family size, and add-ons, and we&rsquo;ll send back a personalized total-cost breakdown — fare, gratuities, excursions, drinks, the works.</p>
+      <a href="https://gatgridcruises.com/book" style="color: #1E3A5F; font-weight: 600; font-size: 14px;">Request a Cost Estimate →</a>
+    </div>
+
+    <p>Every Sunday I send a weekly deal digest with the biggest price drops of the week. But if a really good deal surfaces mid-week, I'll send a quick note so you don't miss it.</p>
+
+    <p>Questions? Just reply — I personally read every email.</p>
+
+    <p class="sig">Talk soon,<br><strong style="color: #1E3A5F;">Dr. Grayson Starbuck, DPT</strong><br>GatGrid Cruises</p>
+  </div>
+    <div class="footer">
+      <p>Sent by Dr. Grayson Starbuck, DPT · <a href="mailto:bookings@gatgridcruises.com">bookings@gatgridcruises.com</a></p>
+      <p>You're receiving this because you subscribed at GatGridCruises.com</p>
+      <p><a href="https://gatgridcruises.com/unsubscribe?token={{ contact.UNSUB_TOKEN | default: "" }}">Unsubscribe</a> · <a href="https://gatgridcruises.com/privacy">Privacy Policy</a></p>
+      <p style="margin-top: 10px;">Independently owned. Not affiliated with The Walt Disney Company.</p>
+    </div>
+  </div>
+</body>
+</html>

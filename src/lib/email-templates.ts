@@ -925,6 +925,88 @@ export function leadNurtureDay30(name: string): string {
   `)
 }
 
+// ─── Lead magnet (Insider's Guide PDF) ──────────────────────────────────────
+
+export function leadMagnetDeliveryEmail(name: string, pdfUrl: string): string {
+  return wrapBookingEmail(`
+    <h2 style="margin:0 0 8px;color:#1E3A5F;font-family:Georgia,serif;font-size:22px;">Your guide is ready, ${name} 🎁</h2>
+    <p style="margin:0 0 16px;color:#334155;font-size:15px;line-height:1.6;">
+      Thanks for grabbing <strong>The Disney Cruise Insider's Guide</strong>. It's a tight, 7-section PDF — the things seasoned cruisers know and first-timers usually learn the hard way.
+    </p>
+    <div style="text-align:center;margin:24px 0;">
+      <a href="${pdfUrl}" style="display:inline-block;background:#D4AF37;color:#1E3A5F;padding:14px 28px;border-radius:8px;text-decoration:none;font-weight:bold;font-size:15px;">📘 Download the Guide (PDF)</a>
+    </div>
+    <div style="background-color:#F0F4F8;border-left:4px solid #1E3A5F;border-radius:6px;padding:18px 20px;margin:0 0 24px;">
+      <p style="margin:0 0 8px;color:#1E3A5F;font-size:14px;font-weight:600;">What's inside</p>
+      <ul style="margin:0;padding-left:20px;color:#334155;font-size:14px;line-height:1.8;">
+        <li>Choosing the right Disney ship for your family</li>
+        <li>Stateroom categories, decoded (Inside → Concierge)</li>
+        <li>What's included vs. what costs extra</li>
+        <li>Castaway Cay &amp; Lookout Cay tips</li>
+        <li>Onboard credit, explained</li>
+        <li>The first-time cruiser cheat sheet</li>
+        <li>The pre-cruise packing checklist</li>
+      </ul>
+    </div>
+    <p style="margin:0 0 16px;color:#334155;font-size:15px;line-height:1.6;">
+      Over the next few weeks I'll send a short series of follow-ups — a guide a week — based on the most common planning questions I hear. No fluff, no spam. Reply anytime if a specific question comes up; I read every email.
+    </p>
+    <p style="margin:0;color:#64748B;font-size:13px;">Happy planning,<br><strong style="color:#1E3A5F;">Grayson Starbuck</strong><br>Cruise Concierge, GatGrid Cruises</p>
+  `)
+}
+
+// Extra drip steps — extend the 5-email lead-nurture sequence to 7 touches.
+// Day 21 reinforces value (specific ship choice) and Day 45 is the polite
+// final goodbye before the lead is parked in the long-term newsletter list.
+
+export function leadNurtureDay21(name: string): string {
+  return wrapBookingEmail(`
+    <h2 style="margin:0 0 8px;color:#1E3A5F;font-family:Georgia,serif;font-size:22px;">${name}, picking the right ship is half the trip</h2>
+    <p style="margin:0 0 16px;color:#334155;font-size:15px;line-height:1.6;">
+      The most common question I get from first-time cruisers is: "Which ship should we pick?" The honest answer is that there's no single best Disney ship — there's a best ship for <em>your</em> family.
+    </p>
+    <div style="background-color:#F0F4F8;border-radius:8px;padding:20px;margin:20px 0;">
+      <p style="margin:0 0 10px;color:#1E3A5F;font-size:14px;font-weight:600;">Quick rule of thumb:</p>
+      <ul style="margin:0;padding-left:20px;color:#334155;font-size:14px;line-height:1.8;">
+        <li><strong>Kids under 8:</strong> Dream, Fantasy, or Wish — biggest pool decks &amp; kids clubs</li>
+        <li><strong>Older kids / teens:</strong> Treasure, Destiny, or Wish — best Edge / Vibe spaces</li>
+        <li><strong>Couples / quiet trip:</strong> Magic or Wonder — smaller, calmer, classic feel</li>
+        <li><strong>Once-in-a-lifetime splurge:</strong> Adventure or Destiny — newest, most features</li>
+      </ul>
+    </div>
+    <p style="margin:0 0 16px;color:#334155;font-size:15px;line-height:1.6;">
+      The ship matters more than the itinerary in most cases — you spend more time on the boat than off of it. If you've narrowed it down to two and can't decide, hit reply with the dates and party size; I'll tell you which one fits better.
+    </p>
+    <div style="text-align:center;margin:24px 0;">
+      <a href="https://gatgridcruises.com/ships" style="display:inline-block;background:#1E3A5F;color:#FFFFFF;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:bold;font-size:14px;">Compare All Disney Ships →</a>
+    </div>
+    <p style="margin:0;color:#64748B;font-size:13px;">Happy researching,<br><strong style="color:#1E3A5F;">Grayson Starbuck</strong><br>Cruise Concierge, GatGrid Cruises</p>
+  `)
+}
+
+export function leadNurtureDay45(name: string): string {
+  return wrapBookingEmail(`
+    <h2 style="margin:0 0 8px;color:#1E3A5F;font-family:Georgia,serif;font-size:22px;">A friendly goodbye for now, ${name}</h2>
+    <p style="margin:0 0 16px;color:#334155;font-size:15px;line-height:1.6;">
+      It's been about six weeks since you first reached out. I'm going to stop the planning emails here — I don't want to clutter your inbox, and you know how to find me.
+    </p>
+    <p style="margin:0 0 16px;color:#334155;font-size:15px;line-height:1.6;">
+      A few ways to stay loosely in touch — useful only if and when you want them:
+    </p>
+    <div style="background-color:#F7F8FA;border-radius:8px;padding:20px;margin:20px 0;">
+      <ul style="margin:0;padding-left:20px;color:#334155;font-size:14px;line-height:2;">
+        <li><a href="https://gatgridcruises.com/deal-alerts" style="color:#1E3A5F;font-weight:600;">Set a price alert</a> on a specific sailing — I'll only email you if the price actually drops</li>
+        <li><a href="https://gatgridcruises.com/subscribe" style="color:#1E3A5F;font-weight:600;">Weekly deals digest</a> — one Sunday email with the biggest Disney price drops</li>
+        <li><a href="https://gatgridcruises.com/guides" style="color:#1E3A5F;font-weight:600;">Browse guides anytime</a> — they're free and unlocked, no email required</li>
+      </ul>
+    </div>
+    <p style="margin:0 0 16px;color:#334155;font-size:15px;line-height:1.6;">
+      Whenever the timing is right, just reply. I keep my inbox tidy and I'll remember our previous notes.
+    </p>
+    <p style="margin:0;color:#64748B;font-size:13px;">Smooth seas,<br><strong style="color:#1E3A5F;">Grayson Starbuck</strong><br>Cruise Concierge, GatGrid Cruises</p>
+  `)
+}
+
 // ─── Original newsletter templates ──────────────────────────────────────────
 
 export function confirmationEmailTemplate(email: string): string {
