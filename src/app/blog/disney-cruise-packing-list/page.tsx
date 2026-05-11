@@ -289,13 +289,13 @@ export default function PackingListPage() {
       <div className="max-w-4xl mx-auto px-4 py-10">
         {/* Quick links */}
         <div className="p-5 bg-[#1E3A5F]/10 border border-blue-200 rounded-xl">
-          <h2 className="font-display text-lg font-semibold text-blue-900 mb-3">Jump to Section</h2>
+          <h2 className="font-display text-lg font-semibold text-[#0a1628] mb-3">Jump to Section</h2>
           <div className="flex flex-wrap gap-2">
             {[...categories, { title: 'What Disney Provides', icon: '✅' }, { title: 'What NOT to Bring', icon: '🚫' }].map((cat) => (
               <a
                 key={cat.title}
                 href={`#${cat.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-blue-200 text-blue-700 text-sm hover:bg-[#1E3A5F]/20 transition-colors"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-blue-200 text-[#162d4a] text-sm hover:bg-[#1E3A5F]/20 transition-colors"
               >
                 <span>{cat.icon}</span>
                 <span>{cat.title}</span>
@@ -315,7 +315,7 @@ export default function PackingListPage() {
                 <span>{category.icon}</span>
                 {category.title}
               </h2>
-              <div className="h-0.5 bg-gradient-to-r from-blue-600 to-transparent mb-6"></div>
+              <div className="h-0.5 bg-gradient-to-r from-[#1E3A5F] to-transparent mb-6"></div>
               <div className="grid sm:grid-cols-2 gap-3">
                 {category.items.map((item) => (
                   <div
@@ -329,7 +329,7 @@ export default function PackingListPage() {
                           href={item.link}
                           target="_blank"
                           rel="noopener noreferrer nofollow"
-                          className="font-medium text-blue-700 hover:text-blue-900 hover:underline text-sm leading-snug"
+                          className="font-medium text-[#162d4a] hover:text-[#0a1628] hover:underline text-sm leading-snug"
                         >
                           {item.name} →
                         </a>

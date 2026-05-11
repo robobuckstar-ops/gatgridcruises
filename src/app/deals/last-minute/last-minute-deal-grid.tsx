@@ -175,7 +175,7 @@ export function LastMinuteDealGrid({ deals: initialDeals, ships, ports }: LastMi
               <SlidersHorizontal className="h-4 w-4" />
               Filters
               {activeFilterCount > 0 && (
-                <span className="ml-1 inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-[#1E3A5F]/20 text-blue-700">
+                <span className="ml-1 inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-[#1E3A5F]/20 text-[#162d4a]">
                   {activeFilterCount}
                 </span>
               )}
@@ -184,7 +184,7 @@ export function LastMinuteDealGrid({ deals: initialDeals, ships, ports }: LastMi
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value as 'score' | 'soonest' | 'savings')}
-              className="px-4 py-2.5 border border-slate-300 rounded-lg bg-white text-slate-700 font-medium hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-600"
+              className="px-4 py-2.5 border border-slate-300 rounded-lg bg-white text-slate-700 font-medium hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-[#1E3A5F]"
             >
               <option value="score">Best Deal Score</option>
               <option value="soonest">Soonest Departure</option>
@@ -215,7 +215,7 @@ export function LastMinuteDealGrid({ deals: initialDeals, ships, ports }: LastMi
                         type="checkbox"
                         checked={selectedShips.includes(ship.id)}
                         onChange={() => handleShipToggle(ship.id)}
-                        className="w-4 h-4 rounded border-slate-300 text-blue-600 focus:ring-blue-600"
+                        className="w-4 h-4 rounded border-slate-300 text-[#1E3A5F] focus:ring-[#1E3A5F]"
                       />
                       <span className="text-sm text-slate-700">{ship.name}</span>
                     </label>
@@ -233,7 +233,7 @@ export function LastMinuteDealGrid({ deals: initialDeals, ships, ports }: LastMi
                         type="checkbox"
                         checked={selectedNights.includes(range)}
                         onChange={() => handleNightsToggle(range)}
-                        className="w-4 h-4 rounded border-slate-300 text-blue-600 focus:ring-blue-600"
+                        className="w-4 h-4 rounded border-slate-300 text-[#1E3A5F] focus:ring-[#1E3A5F]"
                       />
                       <span className="text-sm text-slate-700">
                         {range === '7+' ? '7+ nights' : `${range} nights`}
@@ -253,7 +253,7 @@ export function LastMinuteDealGrid({ deals: initialDeals, ships, ports }: LastMi
                         type="checkbox"
                         checked={selectedRegions.includes(region)}
                         onChange={() => handleRegionToggle(region)}
-                        className="w-4 h-4 rounded border-slate-300 text-blue-600 focus:ring-blue-600"
+                        className="w-4 h-4 rounded border-slate-300 text-[#1E3A5F] focus:ring-[#1E3A5F]"
                       />
                       <span className="text-sm text-slate-700 capitalize">{region}</span>
                     </label>
@@ -269,7 +269,7 @@ export function LastMinuteDealGrid({ deals: initialDeals, ships, ports }: LastMi
                     type="checkbox"
                     checked={privateIsland}
                     onChange={() => setPrivateIsland(prev => !prev)}
-                    className="w-4 h-4 rounded border-slate-300 text-blue-600 focus:ring-blue-600"
+                    className="w-4 h-4 rounded border-slate-300 text-[#1E3A5F] focus:ring-[#1E3A5F]"
                   />
                   <span className="text-sm text-slate-700">🏝️ Private Island</span>
                 </label>

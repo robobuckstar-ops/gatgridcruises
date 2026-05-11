@@ -43,9 +43,9 @@ export default function BestTimeToBookGuide() {
       {/* Breadcrumb */}
       <div className="bg-gray-50 px-4 sm:px-6 lg:px-8 py-4 border-b">
         <div className="max-w-4xl mx-auto text-sm text-gray-600">
-          <Link href="/" className="text-blue-600 hover:underline">Home</Link>
+          <Link href="/" className="text-[#1E3A5F] hover:underline">Home</Link>
           {' > '}
-          <Link href="/guides" className="text-blue-600 hover:underline">Guides</Link>
+          <Link href="/guides" className="text-[#1E3A5F] hover:underline">Guides</Link>
           {' > Best Time to Book'}
         </div>
       </div>
@@ -88,10 +88,10 @@ export default function BestTimeToBookGuide() {
           <div className="p-6 bg-[#1E3A5F]/10 border-l-4 border-[#D4AF37] mb-6">
             <h3 className="font-fraunces text-xl font-bold text-slate-900 mb-3">Example Timeline:</h3>
             <ul className="space-y-2 font-inter text-slate-600">
-              <li className="flex gap-2"><span className="text-blue-600 font-bold">April 2025:</span> Disney opens October 2026 cruises for booking (18 months out)</li>
-              <li className="flex gap-2"><span className="text-blue-600 font-bold">October 2025:</span> Same October 2026 cruises now available (12 months out)</li>
-              <li className="flex gap-2"><span className="text-blue-600 font-bold">April 2026:</span> Same cruises now available (6 months out)</li>
-              <li className="flex gap-2"><span className="text-blue-600 font-bold">September 2026:</span> Last-minute bookings (1 month out)</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F] font-bold">April 2025:</span> Disney opens October 2026 cruises for booking (18 months out)</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F] font-bold">October 2025:</span> Same October 2026 cruises now available (12 months out)</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F] font-bold">April 2026:</span> Same cruises now available (6 months out)</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F] font-bold">September 2026:</span> Last-minute bookings (1 month out)</li>
             </ul>
           </div>
 
@@ -115,23 +115,23 @@ export default function BestTimeToBookGuide() {
             <h3 className="font-fraunces text-2xl font-bold text-slate-900 mb-4">Why Wave Season Offers Deals:</h3>
             <ul className="space-y-3 font-inter text-slate-600">
               <li className="flex gap-3">
-                <span className="text-blue-600 font-bold">•</span>
+                <span className="text-[#1E3A5F] font-bold">•</span>
                 <span><strong>Post-holiday cash flow:</strong> Travelers have return-from-holidays sales mentality.</span>
               </li>
               <li className="flex gap-3">
-                <span className="text-blue-600 font-bold">•</span>
+                <span className="text-[#1E3A5F] font-bold">•</span>
                 <span><strong>Spring getaway planning:</strong> Families plan spring break and summer vacations.</span>
               </li>
               <li className="flex gap-3">
-                <span className="text-blue-600 font-bold">•</span>
+                <span className="text-[#1E3A5F] font-bold">•</span>
                 <span><strong>Travel agency sales goals:</strong> Agents push bookings to hit Q1 targets.</span>
               </li>
               <li className="flex gap-3">
-                <span className="text-blue-600 font-bold">•</span>
+                <span className="text-[#1E3A5F] font-bold">•</span>
                 <span><strong>Competitive pressure:</strong> Cruise lines reduce fares to capture market share.</span>
               </li>
               <li className="flex gap-3">
-                <span className="text-blue-600 font-bold">•</span>
+                <span className="text-[#1E3A5F] font-bold">•</span>
                 <span><strong>Onboard credit promos:</strong> Disney bundles $50-300+ onboard credits with bookings.</span>
               </li>
             </ul>
@@ -267,10 +267,10 @@ export default function BestTimeToBookGuide() {
           <div className="p-6 bg-[#1E3A5F]/10 border-l-4 border-[#D4AF37]">
             <h3 className="font-fraunces text-xl font-bold text-slate-900 mb-4">How GTY Works:</h3>
             <ul className="space-y-3 font-inter text-slate-600">
-              <li className="flex gap-2"><span className="text-blue-600 font-bold">1.</span> Book a cabin category without a specific cabin assignment</li>
-              <li className="flex gap-2"><span className="text-blue-600 font-bold">2.</span> Pay a lower price than if you selected a specific cabin</li>
-              <li className="flex gap-2"><span className="text-blue-600 font-bold">3.</span> Disney assigns your specific cabin 75 days before sailing</li>
-              <li className="flex gap-2"><span className="text-blue-600 font-bold">4.</span> You're guaranteed to receive that category or an upgrade</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F] font-bold">1.</span> Book a cabin category without a specific cabin assignment</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F] font-bold">2.</span> Pay a lower price than if you selected a specific cabin</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F] font-bold">3.</span> Disney assigns your specific cabin 75 days before sailing</li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F] font-bold">4.</span> You're guaranteed to receive that category or an upgrade</li>
             </ul>
           </div>
 
@@ -438,19 +438,19 @@ export default function BestTimeToBookGuide() {
 
           <ul className="space-y-3 font-inter text-slate-600 mb-6">
             <li className="flex gap-3">
-              <span className="text-blue-600 font-bold">✓</span>
+              <span className="text-[#1E3A5F] font-bold">✓</span>
               <span>Set price alerts for your target cruises and dates</span>
             </li>
             <li className="flex gap-3">
-              <span className="text-blue-600 font-bold">✓</span>
+              <span className="text-[#1E3A5F] font-bold">✓</span>
               <span>Receive notifications when prices drop</span>
             </li>
             <li className="flex gap-3">
-              <span className="text-blue-600 font-bold">✓</span>
+              <span className="text-[#1E3A5F] font-bold">✓</span>
               <span>View historical pricing trends on itineraries</span>
             </li>
             <li className="flex gap-3">
-              <span className="text-blue-600 font-bold">✓</span>
+              <span className="text-[#1E3A5F] font-bold">✓</span>
               <span>Compare prices across multiple ships and itineraries</span>
             </li>
           </ul>

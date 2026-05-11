@@ -220,37 +220,37 @@ export default function BestDisneyCruiseStateroomsGuide() {
             </p>
             <ul className="font-inter text-slate-600 space-y-3">
               <li className="flex gap-3">
-                <span className="text-blue-600 font-bold">•</span>
+                <span className="text-[#1E3A5F] font-bold">•</span>
                 <div>
                   <strong>Midship cabins:</strong> Best for guests sensitive to motion. Ships rock least in the middle. Slightly longer walk to activities but reduced seasickness.
                 </div>
               </li>
               <li className="flex gap-3">
-                <span className="text-blue-600 font-bold">•</span>
+                <span className="text-[#1E3A5F] font-bold">•</span>
                 <div>
                   <strong>Aft (back) cabins:</strong> Scenic location with views of ship's wake. Can experience more noticeable ocean motion. Popular for romantic couples.
                 </div>
               </li>
               <li className="flex gap-3">
-                <span className="text-blue-600 font-bold">•</span>
+                <span className="text-[#1E3A5F] font-bold">•</span>
                 <div>
                   <strong>Bow (front) cabins:</strong> Higher decks offer spectacular forward views. Can experience more motion and ocean spray. First in embarkation but last in debarkation.
                 </div>
               </li>
               <li className="flex gap-3">
-                <span className="text-blue-600 font-bold">•</span>
+                <span className="text-[#1E3A5F] font-bold">•</span>
                 <div>
                   <strong>Higher decks:</strong> More desirable for views and quieter overall. Some guests report noisier areas near pool decks above. Access to elevators may be longer.
                 </div>
               </li>
               <li className="flex gap-3">
-                <span className="text-blue-600 font-bold">•</span>
+                <span className="text-[#1E3A5F] font-bold">•</span>
                 <div>
                   <strong>Lower decks:</strong> Closer to dining venues and some activities. May be louder if near engines (lower aft decks). Quieter if near bow.
                 </div>
               </li>
               <li className="flex gap-3">
-                <span className="text-blue-600 font-bold">•</span>
+                <span className="text-[#1E3A5F] font-bold">•</span>
                 <div>
                   <strong>Avoid:</strong> Cabins directly above/below public spaces, laundry facilities, or elevators. Request a location away from noisy areas.
                 </div>
@@ -314,13 +314,13 @@ export default function BestDisneyCruiseStateroomsGuide() {
               Concierge suite guests enjoy exclusive benefits throughout their cruise:
             </p>
             <ul className="font-inter text-slate-600 space-y-2">
-              <li className="flex gap-2"><span className="text-blue-600 font-bold">•</span> <span><strong>Priority boarding/debarkation:</strong> Get on ship first, off ship first—avoiding long lines</span></li>
-              <li className="flex gap-2"><span className="text-blue-600 font-bold">•</span> <span><strong>Concierge lounge access:</strong> Private lounge with complimentary beverages, snacks, and seating</span></li>
-              <li className="flex gap-2"><span className="text-blue-600 font-bold">•</span> <span><strong>Dedicated concierge service:</strong> Personal assistant for dining reservations, excursion booking, special requests</span></li>
-              <li className="flex gap-2"><span className="text-blue-600 font-bold">•</span> <span><strong>Complimentary Wi-Fi:</strong> Unlimited internet throughout the cruise</span></li>
-              <li className="flex gap-2"><span className="text-blue-600 font-bold">•</span> <span><strong>Premium bedding & amenities:</strong> Higher thread-count linens, luxury toiletries, robes, slippers</span></li>
-              <li className="flex gap-2"><span className="text-blue-600 font-bold">•</span> <span><strong>Enhanced room service:</strong> Premium menu, room service champagne/wine</span></li>
-              <li className="flex gap-2"><span className="text-blue-600 font-bold">•</span> <span><strong>Complimentary specialty dining:</strong> One night of specialty dinner included</span></li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F] font-bold">•</span> <span><strong>Priority boarding/debarkation:</strong> Get on ship first, off ship first—avoiding long lines</span></li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F] font-bold">•</span> <span><strong>Concierge lounge access:</strong> Private lounge with complimentary beverages, snacks, and seating</span></li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F] font-bold">•</span> <span><strong>Dedicated concierge service:</strong> Personal assistant for dining reservations, excursion booking, special requests</span></li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F] font-bold">•</span> <span><strong>Complimentary Wi-Fi:</strong> Unlimited internet throughout the cruise</span></li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F] font-bold">•</span> <span><strong>Premium bedding & amenities:</strong> Higher thread-count linens, luxury toiletries, robes, slippers</span></li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F] font-bold">•</span> <span><strong>Enhanced room service:</strong> Premium menu, room service champagne/wine</span></li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F] font-bold">•</span> <span><strong>Complimentary specialty dining:</strong> One night of specialty dinner included</span></li>
             </ul>
           </div>
 
@@ -376,10 +376,10 @@ export default function BestDisneyCruiseStateroomsGuide() {
               These newest Disney cruise ships feature:
             </p>
             <ul className="font-inter text-slate-600 space-y-2">
-              <li className="flex gap-2"><span className="text-blue-600 font-bold">•</span> <span><strong>Tower Suites:</strong> Exclusive ultra-luxury 2-story suite with private elevator access, private deck area, and premium butler service</span></li>
-              <li className="flex gap-2"><span className="text-blue-600 font-bold">•</span> <span><strong>Navigator Verandahs:</strong> Exclusive verandah cabin category in premium location</span></li>
-              <li className="flex gap-2"><span className="text-blue-600 font-bold">•</span> <span><strong>Updated inside cabin design:</strong> Modern art, improved lighting, smart TV, larger storage</span></li>
-              <li className="flex gap-2"><span className="text-blue-600 font-bold">•</span> <span><strong>Family staterooms:</strong> Larger options specifically designed for families of 5-6</span></li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F] font-bold">•</span> <span><strong>Tower Suites:</strong> Exclusive ultra-luxury 2-story suite with private elevator access, private deck area, and premium butler service</span></li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F] font-bold">•</span> <span><strong>Navigator Verandahs:</strong> Exclusive verandah cabin category in premium location</span></li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F] font-bold">•</span> <span><strong>Updated inside cabin design:</strong> Modern art, improved lighting, smart TV, larger storage</span></li>
+              <li className="flex gap-2"><span className="text-[#1E3A5F] font-bold">•</span> <span><strong>Family staterooms:</strong> Larger options specifically designed for families of 5-6</span></li>
             </ul>
           </div>
 
@@ -455,27 +455,27 @@ export default function BestDisneyCruiseStateroomsGuide() {
           </h2>
           <ul className="font-inter text-slate-600 space-y-4">
             <li className="flex gap-3">
-              <span className="text-blue-600 font-bold">1.</span>
+              <span className="text-[#1E3A5F] font-bold">1.</span>
               <div>
                 <strong>Request specific cabin location:</strong> When booking, request midship for stability, higher deck for views/quietness, or avoid noisy areas (elevators, laundry).
               </div>
             </li>
             <li className="flex gap-3">
-              <span className="text-blue-600 font-bold">2.</span>
+              <span className="text-[#1E3A5F] font-bold">2.</span>
               <div>
                 <strong>Consider upgrade potential:</strong> Book an inside cabin and request a free upgrade on embarkation day. Disney occasionally offers free cabin upgrades to fill premium categories.
               </div>
             </li>
             <li className="flex gap-3">
-              <span className="text-blue-600 font-bold">3.</span>
+              <span className="text-[#1E3A5F] font-bold">3.</span>
               <div>
                 <strong>Check for location-specific perks:</strong> Some cabin locations offer exclusive benefits (access to specific lounge, premier location on ship).
               </div>
             </li>
             <li className="flex gap-3">
-              <span className="text-blue-600 font-bold">4.</span>
+              <span className="text-[#1E3A5F] font-bold">4.</span>
               <div>
-                <strong>Price compare across websites:</strong> Browse our <Link href="/tools/staterooms" className="text-blue-600 font-bold hover:underline">stateroom finder</Link> to compare cabin categories and understand price differences.
+                <strong>Price compare across websites:</strong> Browse our <Link href="/tools/staterooms" className="text-[#1E3A5F] font-bold hover:underline">stateroom finder</Link> to compare cabin categories and understand price differences.
               </div>
             </li>
           </ul>

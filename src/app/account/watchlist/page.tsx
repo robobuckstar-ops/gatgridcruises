@@ -69,7 +69,7 @@ export default function WatchlistPage() {
       <div className="min-h-screen bg-gradient-to-b from-[#0a1628] to-[#1E3A5F]">
         <div className="max-w-6xl mx-auto px-4 py-16">
           <div className="text-center py-16">
-            <Heart className="h-16 w-16 text-blue-600 mx-auto mb-6 opacity-50" />
+            <Heart className="h-16 w-16 text-[#1E3A5F] mx-auto mb-6 opacity-50" />
             <h1 className="text-4xl font-bold text-white mb-4">Your Watchlist</h1>
             <p className="text-lg text-blue-100 mb-8">
               Sign in to track Disney cruise prices
@@ -96,7 +96,7 @@ export default function WatchlistPage() {
 
         {watchlist.length === 0 ? (
           <div className="bg-white border border-slate-300 rounded-lg p-12 text-center">
-            <Heart className="h-16 w-16 text-blue-600 mx-auto mb-6 opacity-30" />
+            <Heart className="h-16 w-16 text-[#1E3A5F] mx-auto mb-6 opacity-30" />
             <h2 className="text-2xl font-semibold text-slate-900 mb-4">
               You're not watching any sailings yet
             </h2>

@@ -29,7 +29,7 @@ function getColorClasses(score: number): {
     return {
       ring: 'stroke-blue-500',
       fill: 'fill-blue-500',
-      text: 'text-blue-700',
+      text: 'text-[#162d4a]',
     }
   } else if (score >= 40) {
     return {

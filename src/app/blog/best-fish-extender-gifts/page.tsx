@@ -193,7 +193,7 @@ export default function BestFishExtenderGifts() {
           {/* What is FE? */}
           <div className="bg-[#1E3A5F]/10 border border-blue-200 rounded-xl p-6 mb-10">
             <div className="flex items-start gap-3">
-              <Gift className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+              <Gift className="w-5 h-5 text-[#1E3A5F] flex-shrink-0 mt-0.5" />
               <div>
                 <h2 className="font-bold text-slate-900 mb-1">What is a Fish Extender?</h2>
                 <p className="text-slate-700 text-sm leading-relaxed">
@@ -242,7 +242,7 @@ export default function BestFishExtenderGifts() {
                       href={amzLink(gift.searchTerm)}
                       target="_blank"
                       rel="noopener noreferrer sponsored"
-                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors"
+                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#1E3A5F] hover:text-[#162d4a] transition-colors"
                     >
                       Search on Amazon <ExternalLink className="w-3.5 h-3.5" />
                     </a>
@@ -257,23 +257,23 @@ export default function BestFishExtenderGifts() {
             <h2 className="font-fraunces text-xl font-bold text-slate-900 mb-4">FE Packing Tips</h2>
             <ul className="space-y-2 text-slate-700 text-sm">
               <li className="flex items-start gap-2">
-                <span className="text-blue-600 font-bold mt-0.5">→</span>
+                <span className="text-[#1E3A5F] font-bold mt-0.5">→</span>
                 Pack FE gifts in a dedicated bag or zip-lock so you can find them easily on embarkation day.
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-blue-600 font-bold mt-0.5">→</span>
+                <span className="text-[#1E3A5F] font-bold mt-0.5">→</span>
                 Label each gift set by cabin number (your FE organizer will share this list) before you leave home.
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-blue-600 font-bold mt-0.5">→</span>
+                <span className="text-[#1E3A5F] font-bold mt-0.5">→</span>
                 Small organza bags or cellophane treat bags make any gift look polished and cost almost nothing.
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-blue-600 font-bold mt-0.5">→</span>
+                <span className="text-[#1E3A5F] font-bold mt-0.5">→</span>
                 First delivery is usually Day 1 at embarkation or Day 2 morning. Check with your group for the schedule.
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-blue-600 font-bold mt-0.5">→</span>
+                <span className="text-[#1E3A5F] font-bold mt-0.5">→</span>
                 Include a handwritten card or printed card with your cabin number so recipients can thank you.
               </li>
             </ul>
@@ -284,17 +284,17 @@ export default function BestFishExtenderGifts() {
             <h3 className="font-fraunces text-lg font-bold text-slate-900 mb-4">Related Guides</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/guides/disney-cruise-packing-list" className="text-blue-600 hover:text-blue-700 font-medium text-sm">
+                <Link href="/guides/disney-cruise-packing-list" className="text-[#1E3A5F] hover:text-[#162d4a] font-medium text-sm">
                   The Ultimate Disney Cruise Packing List →
                 </Link>
               </li>
               <li>
-                <Link href="/guides/first-time-disney-cruise-tips" className="text-blue-600 hover:text-blue-700 font-medium text-sm">
+                <Link href="/guides/first-time-disney-cruise-tips" className="text-[#1E3A5F] hover:text-[#162d4a] font-medium text-sm">
                   25 Things to Know Before Your First Disney Cruise →
                 </Link>
               </li>
               <li>
-                <Link href="/deals" className="text-blue-600 hover:text-blue-700 font-medium text-sm">
+                <Link href="/deals" className="text-[#1E3A5F] hover:text-[#162d4a] font-medium text-sm">
                   Find Current Disney Cruise Deals →
                 </Link>
               </li>

@@ -67,7 +67,7 @@ export default function AboutPage() {
           <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-4">Meet Grayson</h2>
           <div className="flex flex-col sm:flex-row gap-6 items-start">
             <div className="flex-shrink-0">
-              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center text-white font-fraunces text-3xl font-bold select-none">
+              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#1E3A5F] to-indigo-700 flex items-center justify-center text-white font-fraunces text-3xl font-bold select-none">
                 G
               </div>
             </div>
@@ -83,7 +83,7 @@ export default function AboutPage() {
               </p>
               <p className="font-inter text-lg text-gray-700 leading-relaxed">
                 When you're serious about booking, I'm personally available to help you through the final steps. You can reach me directly at{' '}
-                <a href="mailto:grayson@gatgridcruises.com" className="text-blue-600 hover:underline">grayson@gatgridcruises.com</a>.
+                <a href="mailto:grayson@gatgridcruises.com" className="text-[#1E3A5F] hover:underline">grayson@gatgridcruises.com</a>.
               </p>
             </div>
           </div>

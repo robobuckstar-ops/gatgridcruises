@@ -114,7 +114,7 @@ export default function HotelsIndexPage() {
                 {/* Breakdown */}
                 <div className="flex items-center gap-4 text-sm text-slate-600 pt-2 border-t border-slate-200">
                   <div className="flex items-center gap-1">
-                    <Heart className="w-4 h-4 text-blue-600 fill-blue-600" />
+                    <Heart className="w-4 h-4 text-[#1E3A5F] fill-[#1E3A5F]" />
                     <span><strong className="text-slate-900">{disneyPartnerCount}</strong> Disney partner</span>
                   </div>
                   <div>
@@ -126,7 +126,7 @@ export default function HotelsIndexPage() {
               {/* CTA Arrow */}
               <div className="flex items-center justify-between pt-3 border-t border-slate-200">
                 <span className="text-sm font-semibold text-slate-900">View all options</span>
-                <svg className="w-5 h-5 text-slate-900 group-hover:translate-x-1 group-hover:text-blue-600 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 text-slate-900 group-hover:translate-x-1 group-hover:text-[#1E3A5F] transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </div>

@@ -75,7 +75,7 @@ export default function BlogPage() {
                 {/* Content */}
                 <div className="p-8 md:p-10 flex flex-col justify-between">
                   <div>
-                    <span className="inline-block px-4 py-2 bg-[#1E3A5F]/20 text-blue-700 rounded-full text-sm font-semibold uppercase tracking-wide mb-4">
+                    <span className="inline-block px-4 py-2 bg-[#1E3A5F]/20 text-[#162d4a] rounded-full text-sm font-semibold uppercase tracking-wide mb-4">
                       {featuredPost.category}
                     </span>
 

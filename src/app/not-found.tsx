@@ -6,7 +6,7 @@ export default function NotFound() {
     <div className="min-h-screen bg-white flex items-center justify-center px-4">
       <div className="text-center">
         {/* 404 Number */}
-        <p className="font-fraunces text-9xl md:text-10xl font-bold text-blue-600 mb-4" aria-hidden="true">
+        <p className="font-fraunces text-9xl md:text-10xl font-bold text-[#1E3A5F] mb-4" aria-hidden="true">
           404
         </p>
 
@@ -24,7 +24,7 @@ export default function NotFound() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             href="/"
-            className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg bg-[#1E3A5F] text-white font-semibold hover:bg-blue-700 transition-colors duration-200"
+            className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg bg-[#1E3A5F] text-white font-semibold hover:bg-[#162d4a] transition-colors duration-200"
           >
             Return Home
             <ArrowRight className="w-4 h-4" aria-hidden="true" />

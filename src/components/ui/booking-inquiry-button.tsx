@@ -116,7 +116,7 @@ export function BookingInquiryButton({
         <div className={`border border-blue-200 bg-[#1E3A5F]/10 rounded-xl p-5 ${className ?? ''}`}>
           <div className="flex flex-col sm:flex-row sm:items-center gap-4">
             <div className="flex-1">
-              <p className="text-blue-700 text-xs font-bold uppercase tracking-wider mb-1">
+              <p className="text-[#162d4a] text-xs font-bold uppercase tracking-wider mb-1">
                 One-click inquiry
               </p>
               <p className="text-slate-900 font-semibold text-sm">

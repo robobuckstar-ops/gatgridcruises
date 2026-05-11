@@ -50,9 +50,9 @@ export default function FirstTimeDisneyCruisePage() {
       {/* Breadcrumb */}
       <div className="bg-slate-50 border-b border-slate-200 py-3 px-4">
         <div className="max-w-4xl mx-auto text-xs text-slate-500">
-          <Link href="/" className="hover:text-blue-600">Home</Link>
+          <Link href="/" className="hover:text-[#1E3A5F]">Home</Link>
           {' / '}
-          <Link href="/guides" className="hover:text-blue-600">Guides</Link>
+          <Link href="/guides" className="hover:text-[#1E3A5F]">Guides</Link>
           {' / First-Time Disney Cruise'}
         </div>
       </div>
@@ -60,7 +60,7 @@ export default function FirstTimeDisneyCruisePage() {
       <div className="max-w-4xl mx-auto px-4 py-10">
         {/* Table of Contents */}
         <nav className="bg-[#1E3A5F]/10 border border-blue-200 rounded-xl p-5 mb-10">
-          <h2 className="font-display text-base font-bold text-blue-900 mb-3">In This Guide</h2>
+          <h2 className="font-display text-base font-bold text-[#0a1628] mb-3">In This Guide</h2>
           <ol className="space-y-1.5">
             {[
               ['#whats-included', "What's Included in Your Fare"],
@@ -73,7 +73,7 @@ export default function FirstTimeDisneyCruisePage() {
               ['#tools', 'Helpful Tools on This Site'],
             ].map(([href, label]) => (
               <li key={href}>
-                <a href={href} className="text-sm text-blue-700 hover:text-blue-900 hover:underline">
+                <a href={href} className="text-sm text-[#162d4a] hover:text-[#0a1628] hover:underline">
                   → {label}
                 </a>
               </li>
@@ -84,7 +84,7 @@ export default function FirstTimeDisneyCruisePage() {
         {/* What's Included */}
         <section id="whats-included" className="mb-14">
           <h2 className="font-display text-3xl font-bold text-slate-900 mb-2">What&apos;s Included in Your Fare</h2>
-          <div className="h-0.5 bg-gradient-to-r from-blue-600 to-transparent mb-6"></div>
+          <div className="h-0.5 bg-gradient-to-r from-[#1E3A5F] to-transparent mb-6"></div>
           <p className="text-slate-600 mb-6 leading-relaxed">
             Disney cruises are an all-inclusive experience — to a point. The fare covers more than most people realize, which is why the price feels high compared to a hotel stay but often delivers more value.
           </p>
@@ -148,7 +148,7 @@ export default function FirstTimeDisneyCruisePage() {
         {/* What Costs Extra */}
         <section id="what-costs-extra" className="mb-14">
           <h2 className="font-display text-3xl font-bold text-slate-900 mb-2">What Costs Extra</h2>
-          <div className="h-0.5 bg-gradient-to-r from-blue-600 to-transparent mb-6"></div>
+          <div className="h-0.5 bg-gradient-to-r from-[#1E3A5F] to-transparent mb-6"></div>
           <p className="text-slate-600 mb-6 leading-relaxed">
             This is where the budget creep happens. Know these in advance so you can plan (or avoid them).
           </p>
@@ -222,7 +222,7 @@ export default function FirstTimeDisneyCruisePage() {
         {/* Embarkation Day */}
         <section id="embarkation" className="mb-14">
           <h2 className="font-display text-3xl font-bold text-slate-900 mb-2">Embarkation Day Tips</h2>
-          <div className="h-0.5 bg-gradient-to-r from-blue-600 to-transparent mb-6"></div>
+          <div className="h-0.5 bg-gradient-to-r from-[#1E3A5F] to-transparent mb-6"></div>
           <p className="text-slate-600 mb-6 leading-relaxed">
             Embarkation day is chaotic but exciting. These tips make it smooth.
           </p>
@@ -265,7 +265,7 @@ export default function FirstTimeDisneyCruisePage() {
               },
             ].map((tip) => (
               <div key={tip.number} className="flex gap-4 p-4 bg-white border border-slate-200 rounded-xl">
-                <div className="w-8 h-8 rounded-full bg-blue-600 text-white font-bold text-sm flex items-center justify-center flex-shrink-0">
+                <div className="w-8 h-8 rounded-full bg-[#1E3A5F] text-white font-bold text-sm flex items-center justify-center flex-shrink-0">
                   {tip.number}
                 </div>
                 <div>
@@ -280,7 +280,7 @@ export default function FirstTimeDisneyCruisePage() {
         {/* Pirate Night */}
         <section id="pirate-night" className="mb-14">
           <h2 className="font-display text-3xl font-bold text-slate-900 mb-2">Pirate Night Explained</h2>
-          <div className="h-0.5 bg-gradient-to-r from-blue-600 to-transparent mb-6"></div>
+          <div className="h-0.5 bg-gradient-to-r from-[#1E3A5F] to-transparent mb-6"></div>
           <div className="bg-slate-900 text-white rounded-2xl p-6 sm:p-8">
             <div className="text-4xl mb-4">☠️</div>
             <p className="text-slate-300 mb-5 leading-relaxed">
@@ -322,7 +322,7 @@ export default function FirstTimeDisneyCruisePage() {
         {/* Castaway Cay */}
         <section id="castaway-cay" className="mb-14">
           <h2 className="font-display text-3xl font-bold text-slate-900 mb-2">Castaway Cay: Disney&apos;s Private Island</h2>
-          <div className="h-0.5 bg-gradient-to-r from-blue-600 to-transparent mb-6"></div>
+          <div className="h-0.5 bg-gradient-to-r from-[#1E3A5F] to-transparent mb-6"></div>
           <p className="text-slate-600 mb-6 leading-relaxed">
             Castaway Cay is Disney&apos;s private island in the Bahamas, and it&apos;s a reason to choose Disney over other cruise lines.
             Most Caribbean and Bahamas itineraries stop here for a full day.
@@ -391,7 +391,7 @@ export default function FirstTimeDisneyCruisePage() {
         {/* Staterooms */}
         <section id="staterooms" className="mb-14">
           <h2 className="font-display text-3xl font-bold text-slate-900 mb-2">Stateroom Types: Which Should You Choose?</h2>
-          <div className="h-0.5 bg-gradient-to-r from-blue-600 to-transparent mb-6"></div>
+          <div className="h-0.5 bg-gradient-to-r from-[#1E3A5F] to-transparent mb-6"></div>
           <p className="text-slate-600 mb-6 leading-relaxed">
             There are four main stateroom categories. Here&apos;s the honest breakdown:
           </p>
@@ -433,7 +433,7 @@ export default function FirstTimeDisneyCruisePage() {
               <div key={room.type} className="p-5 bg-white border border-slate-200 rounded-xl">
                 <div className="flex items-baseline gap-3 flex-wrap mb-2">
                   <h3 className="font-bold text-slate-900">{room.type}</h3>
-                  <span className="text-xs font-semibold text-blue-600 bg-[#1E3A5F]/10 px-2 py-0.5 rounded">{room.sqft}</span>
+                  <span className="text-xs font-semibold text-[#1E3A5F] bg-[#1E3A5F]/10 px-2 py-0.5 rounded">{room.sqft}</span>
                   <span className="text-xs font-semibold text-amber-700 bg-amber-50 px-2 py-0.5 rounded">Price: {room.price}</span>
                 </div>
                 <p className="text-xs text-slate-500 mb-3">Best for: {room.best}</p>
@@ -463,7 +463,7 @@ export default function FirstTimeDisneyCruisePage() {
             ))}
           </div>
           <div className="mt-4 text-center">
-            <Link href="/guides/stateroom-comparison" className="text-sm text-blue-600 hover:underline font-medium">
+            <Link href="/guides/stateroom-comparison" className="text-sm text-[#1E3A5F] hover:underline font-medium">
               See our full stateroom comparison with price ranges →
             </Link>
           </div>
@@ -472,7 +472,7 @@ export default function FirstTimeDisneyCruisePage() {
         {/* Tipping */}
         <section id="tipping" className="mb-14">
           <h2 className="font-display text-3xl font-bold text-slate-900 mb-2">Tipping & Gratuity Guide</h2>
-          <div className="h-0.5 bg-gradient-to-r from-blue-600 to-transparent mb-6"></div>
+          <div className="h-0.5 bg-gradient-to-r from-[#1E3A5F] to-transparent mb-6"></div>
           <div className="bg-white border border-slate-200 rounded-xl p-6">
             <p className="text-slate-600 mb-5 leading-relaxed">
               Disney auto-charges gratuities at <strong>$14.50 per person per night</strong>, split among your dining team and stateroom host.
@@ -505,8 +505,8 @@ export default function FirstTimeDisneyCruisePage() {
               </table>
             </div>
             <div className="mt-5 p-4 bg-[#1E3A5F]/10 border border-blue-200 rounded-lg">
-              <h3 className="font-semibold text-blue-900 text-sm mb-1">Should you tip extra?</h3>
-              <p className="text-xs text-blue-800 leading-relaxed">
+              <h3 className="font-semibold text-[#0a1628] text-sm mb-1">Should you tip extra?</h3>
+              <p className="text-xs text-[#0a1628] leading-relaxed">
                 Yes, if service was great. Cash envelopes are distributed on the last night — bring $10–$20 per exceptional crew member.
                 The crew is overwhelmingly excellent and a small extra tip genuinely makes their month.
               </p>
@@ -545,7 +545,7 @@ export default function FirstTimeDisneyCruisePage() {
                 href={tool.href}
                 className="p-5 bg-white border border-slate-200 hover:border-blue-400 rounded-xl transition-colors group"
               >
-                <h3 className="font-semibold text-slate-900 group-hover:text-blue-700 mb-1 text-sm">{tool.title} →</h3>
+                <h3 className="font-semibold text-slate-900 group-hover:text-[#162d4a] mb-1 text-sm">{tool.title} →</h3>
                 <p className="text-xs text-slate-500">{tool.description}</p>
               </Link>
             ))}

@@ -190,7 +190,7 @@ export default function ReviewsPage() {
 
           <button
             onClick={() => setShowForm(!showForm)}
-            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors"
+            className="bg-[#1E3A5F] hover:bg-[#162d4a] text-white font-semibold py-3 px-6 rounded-lg transition-colors"
           >
             {showForm ? 'Cancel' : 'Write a Review'}
           </button>
@@ -211,7 +211,7 @@ export default function ReviewsPage() {
                     value={formData.shipId}
                     onChange={handleFormChange}
                     required
-                    className="w-full bg-white border border-slate-300 rounded-lg px-4 py-2 text-slate-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                    className="w-full bg-white border border-slate-300 rounded-lg px-4 py-2 text-slate-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#1E3A5F]"
                   >
                     <option value="">Select a ship</option>
                     {SHIPS.map((ship) => (
@@ -233,7 +233,7 @@ export default function ReviewsPage() {
                     onChange={handleFormChange}
                     placeholder="e.g., 7104"
                     required
-                    className="w-full bg-white border border-slate-300 rounded-lg px-4 py-2 text-slate-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                    className="w-full bg-white border border-slate-300 rounded-lg px-4 py-2 text-slate-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#1E3A5F]"
                   />
                 </div>
 
@@ -246,7 +246,7 @@ export default function ReviewsPage() {
                     value={formData.category}
                     onChange={handleFormChange}
                     required
-                    className="w-full bg-white border border-slate-300 rounded-lg px-4 py-2 text-slate-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                    className="w-full bg-white border border-slate-300 rounded-lg px-4 py-2 text-slate-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#1E3A5F]"
                   >
                     <option value="">Select a category</option>
                     {CATEGORIES.map((cat) => (
@@ -292,7 +292,7 @@ export default function ReviewsPage() {
                     onChange={handleFormChange}
                     placeholder="Brief summary of your experience"
                     required
-                    className="w-full bg-white border border-slate-300 rounded-lg px-4 py-2 text-slate-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                    className="w-full bg-white border border-slate-300 rounded-lg px-4 py-2 text-slate-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#1E3A5F]"
                   />
                 </div>
 
@@ -307,7 +307,7 @@ export default function ReviewsPage() {
                     placeholder="Share details about the stateroom, location, view, noise level, amenities, etc."
                     required
                     rows={5}
-                    className="w-full bg-white border border-slate-300 rounded-lg px-4 py-2 text-slate-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600 resize-none"
+                    className="w-full bg-white border border-slate-300 rounded-lg px-4 py-2 text-slate-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#1E3A5F] resize-none"
                   />
                 </div>
 
@@ -321,7 +321,7 @@ export default function ReviewsPage() {
                     value={formData.sailDate}
                     onChange={handleFormChange}
                     required
-                    className="w-full bg-white border border-slate-300 rounded-lg px-4 py-2 text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                    className="w-full bg-white border border-slate-300 rounded-lg px-4 py-2 text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#1E3A5F]"
                   />
                 </div>
 
@@ -335,14 +335,14 @@ export default function ReviewsPage() {
                     value={formData.reviewerName}
                     onChange={handleFormChange}
                     placeholder="Display name"
-                    className="w-full bg-white border border-slate-300 rounded-lg px-4 py-2 text-slate-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                    className="w-full bg-white border border-slate-300 rounded-lg px-4 py-2 text-slate-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#1E3A5F]"
                   />
                 </div>
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition-colors"
+                className="w-full bg-[#1E3A5F] hover:bg-[#162d4a] text-white font-semibold py-3 rounded-lg transition-colors"
               >
                 Submit Review
               </button>
@@ -359,7 +359,7 @@ export default function ReviewsPage() {
             <select
               value={filterShip}
               onChange={(e) => setFilterShip(e.target.value)}
-              className="w-full bg-white border border-slate-300 rounded-lg px-4 py-2 text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-600"
+              className="w-full bg-white border border-slate-300 rounded-lg px-4 py-2 text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#1E3A5F]"
             >
               <option value="">All Ships</option>
               {SHIPS.map((ship) => (
@@ -377,7 +377,7 @@ export default function ReviewsPage() {
             <select
               value={filterCategory}
               onChange={(e) => setFilterCategory(e.target.value)}
-              className="w-full bg-white border border-slate-300 rounded-lg px-4 py-2 text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-600"
+              className="w-full bg-white border border-slate-300 rounded-lg px-4 py-2 text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#1E3A5F]"
             >
               <option value="">All Categories</option>
               {CATEGORIES.map((cat) => (
@@ -411,7 +411,7 @@ export default function ReviewsPage() {
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
                   <div>
                     <div className="flex items-center gap-2 mb-2">
-                      <span className="text-sm font-medium text-blue-600">
+                      <span className="text-sm font-medium text-[#1E3A5F]">
                         {review.shipName}
                       </span>
                       <span className="text-xs bg-slate-100 text-slate-700 px-2 py-1 rounded">
@@ -451,7 +451,7 @@ export default function ReviewsPage() {
                 </p>
 
                 <div className="flex items-center gap-4 text-sm text-slate-600">
-                  <button className="flex items-center gap-1 hover:text-blue-600 transition-colors">
+                  <button className="flex items-center gap-1 hover:text-[#1E3A5F] transition-colors">
                     <ThumbsUp className="h-4 w-4" />
                     Helpful ({review.helpful})
                   </button>

@@ -62,7 +62,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const relatedPosts = getRelatedPosts(post.id, post.category, 3)
 
   const categoryColors: Record<string, { bg: string; text: string }> = {
-    news: { bg: 'bg-blue-100', text: 'text-blue-700' },
+    news: { bg: 'bg-blue-100', text: 'text-[#162d4a]' },
     tips: { bg: 'bg-emerald-100', text: 'text-emerald-700' },
     deals: { bg: 'bg-amber-100', text: 'text-amber-700' },
     reviews: { bg: 'bg-purple-100', text: 'text-purple-700' },
@@ -111,7 +111,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               {post.title}
             </h1>
 
-            <div className="flex flex-wrap items-center gap-6 text-blue-100 border-t border-blue-800 pt-6">
+            <div className="flex flex-wrap items-center gap-6 text-blue-100 border-t border-[#0a1628] pt-6">
               <div className="flex items-center gap-3">
                 {post.author_avatar && (
                   <img
@@ -220,7 +220,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                           {relatedPost.category}
                         </span>
 
-                        <h3 className="font-display text-base font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors line-clamp-2">
+                        <h3 className="font-display text-base font-bold text-slate-900 mb-2 group-hover:text-[#1E3A5F] transition-colors line-clamp-2">
                           {relatedPost.title}
                         </h3>
 

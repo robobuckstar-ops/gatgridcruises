@@ -48,7 +48,7 @@ export default function TravelHacksCreditCardsPage() {
             <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#1E3A5F]/10 text-[#1E3A5F] text-sm font-medium">
               <span>✓</span> 8 Cards Compared
             </div>
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#1E3A5F]/20 text-blue-700 text-sm font-medium">
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#1E3A5F]/20 text-[#162d4a] text-sm font-medium">
               <span>✓</span> Honest Reviews
             </div>
             <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#D4AF37]/20 text-[#1E3A5F] text-sm font-medium">
@@ -121,7 +121,7 @@ export default function TravelHacksCreditCardsPage() {
           give you access:
         </p>
         <div className="mb-8 p-4 bg-[#1E3A5F]/10 border border-blue-200 rounded-lg">
-          <p className="text-sm text-blue-900">
+          <p className="text-sm text-[#0a1628]">
             <strong>Priority Pass</strong> includes 1,000+ lounges globally, not just airport lounges. Many cruise
             terminals (Port Canaveral, Miami) have Priority Pass partners nearby.
           </p>
@@ -231,8 +231,8 @@ export default function TravelHacksCreditCardsPage() {
             </p>
           </div>
           <div className="bg-[#1E3A5F]/10 border border-blue-200 rounded-lg p-6">
-            <h3 className="font-semibold text-blue-900 mb-3">Trip Delay</h3>
-            <p className="text-sm text-blue-800 leading-relaxed">
+            <h3 className="font-semibold text-[#0a1628] mb-3">Trip Delay</h3>
+            <p className="text-sm text-[#0a1628] leading-relaxed">
               Miss your cruise due to a flight delay? You're reimbursed for hotel and meals up to $500. Common scenario
               at busy hub airports.
             </p>
@@ -262,28 +262,28 @@ export default function TravelHacksCreditCardsPage() {
         </p>
         <ol className="space-y-4 ml-4">
           <li className="flex gap-4">
-            <span className="font-bold text-blue-600 flex-shrink-0">1.</span>
+            <span className="font-bold text-[#1E3A5F] flex-shrink-0">1.</span>
             <div>
               <strong className="text-slate-900">Before Cruise:</strong> Book flights on the card (2-3x points).
               Reserve dining packages and activities (earns points too).
             </div>
           </li>
           <li className="flex gap-4">
-            <span className="font-bold text-blue-600 flex-shrink-0">2.</span>
+            <span className="font-bold text-[#1E3A5F] flex-shrink-0">2.</span>
             <div>
               <strong className="text-slate-900">During Cruise:</strong> Use the card at onboard restaurants,
               shops, and excursion vendors (3x for dining, 2x for travel-adjacent purchases).
             </div>
           </li>
           <li className="flex gap-4">
-            <span className="font-bold text-blue-600 flex-shrink-0">3.</span>
+            <span className="font-bold text-[#1E3A5F] flex-shrink-0">3.</span>
             <div>
               <strong className="text-slate-900">After Cruise:</strong> Hotel stays, dining, airport transfers
               (2-3x points). These add up fast.
             </div>
           </li>
           <li className="flex gap-4">
-            <span className="font-bold text-blue-600 flex-shrink-0">4.</span>
+            <span className="font-bold text-[#1E3A5F] flex-shrink-0">4.</span>
             <div>
               <strong className="text-slate-900">Redeem Wisely:</strong> Transfer points to travel partners
               (airlines/hotels) for 2-3x value vs. cash redemption. Or use statement credits for purchases.

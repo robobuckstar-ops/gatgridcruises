@@ -243,7 +243,7 @@ export default function BestCardsForCruises() {
 
           <ul className="text-slate-600 space-y-3 mb-6">
             <li className="flex gap-3">
-              <span className="text-blue-600 font-bold">•</span>
+              <span className="text-[#1E3A5F] font-bold">•</span>
               <span>
                 <strong>Pre-pay onboard charges:</strong> Some cards let you pre-purchase onboard
                 credit before sailing. Check if this codes as dining (4x with Amex Gold!) vs.
@@ -251,7 +251,7 @@ export default function BestCardsForCruises() {
               </span>
             </li>
             <li className="flex gap-3">
-              <span className="text-blue-600 font-bold">•</span>
+              <span className="text-[#1E3A5F] font-bold">•</span>
               <span>
                 <strong>Separate accounts for clarity:</strong> Using multiple cards per cruise
                 helps you track which spending earned which rewards and ensures you don't
@@ -259,7 +259,7 @@ export default function BestCardsForCruises() {
               </span>
             </li>
             <li className="flex gap-3">
-              <span className="text-blue-600 font-bold">•</span>
+              <span className="text-[#1E3A5F] font-bold">•</span>
               <span>
                 <strong>Account transfers:</strong> If your spouse doesn't have a premium card,
                 time their card application to the cruise. One new card + bonus can cover the
@@ -267,7 +267,7 @@ export default function BestCardsForCruises() {
               </span>
             </li>
             <li className="flex gap-3">
-              <span className="text-blue-600 font-bold">•</span>
+              <span className="text-[#1E3A5F] font-bold">•</span>
               <span>
                 <strong>Annual fees vs. value:</strong> Amex Gold ($250/year) and Chase Sapphire
                 Reserve ($550/year) are expensive. Only use them if you're spending enough to earn
@@ -290,7 +290,7 @@ export default function BestCardsForCruises() {
               <span className="font-semibold text-slate-900">
                 How to Fly Free to Your Cruise Port
               </span>
-              <span className="text-blue-600">→</span>
+              <span className="text-[#1E3A5F]">→</span>
             </Link>
             <Link
               href="/travel-hacks/stack-points-free-cruise"
@@ -299,7 +299,7 @@ export default function BestCardsForCruises() {
               <span className="font-semibold text-slate-900">
                 How to Stack Points for a Free Cruise
               </span>
-              <span className="text-blue-600">→</span>
+              <span className="text-[#1E3A5F]">→</span>
             </Link>
             <Link
               href="/travel-hacks/free-trip-insurance"
@@ -308,7 +308,7 @@ export default function BestCardsForCruises() {
               <span className="font-semibold text-slate-900">
                 Free Trip Insurance You Already Have
               </span>
-              <span className="text-blue-600">→</span>
+              <span className="text-[#1E3A5F]">→</span>
             </Link>
             <Link
               href="/travel-hacks/cruise-port-lounge-access"
@@ -317,7 +317,7 @@ export default function BestCardsForCruises() {
               <span className="font-semibold text-slate-900">
                 Cruise Port Lounge Access
               </span>
-              <span className="text-blue-600">→</span>
+              <span className="text-[#1E3A5F]">→</span>
             </Link>
           </div>
         </section>

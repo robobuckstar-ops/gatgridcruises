@@ -66,7 +66,7 @@ export function HomeDealSections({ lastMinuteSailings, priceDrops, featuredSaili
       <section className="bg-white py-16 md:py-20" aria-labelledby="price-drops-heading">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-12">
-            <TrendingDown className="w-8 h-8 text-blue-600" aria-hidden="true" />
+            <TrendingDown className="w-8 h-8 text-[#1E3A5F]" aria-hidden="true" />
             <h2 id="price-drops-heading" className="font-fraunces text-3xl md:text-4xl font-bold text-slate-900">
               Biggest Price Drops This Week
             </h2>
@@ -86,7 +86,7 @@ export function HomeDealSections({ lastMinuteSailings, priceDrops, featuredSaili
           <div className="text-center">
             <Link
               href="/deals"
-              className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors"
+              className="inline-flex items-center gap-2 text-[#1E3A5F] font-semibold hover:text-[#162d4a] transition-colors"
             >
               View All Deals
               <ArrowRight className="w-4 h-4" aria-hidden="true" />

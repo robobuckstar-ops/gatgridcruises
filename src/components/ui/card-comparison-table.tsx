@@ -290,7 +290,7 @@ export function CardComparisonTable({ cardIds }: CardComparisonTableProps) {
                 const href = card.referralUrl || '/concierge'
                 const external = isExternalReferralLink(card.referralUrl)
                 const ctaClass =
-                  'inline-flex items-center px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium text-sm transition-colors duration-200'
+                  'inline-flex items-center px-4 py-2 rounded-lg bg-[#1E3A5F] hover:bg-[#162d4a] text-white font-medium text-sm transition-colors duration-200'
                 return (
                   <td key={`${card.id}-cta`} className="py-4 px-4 text-center bg-slate-50">
                     {external ? (

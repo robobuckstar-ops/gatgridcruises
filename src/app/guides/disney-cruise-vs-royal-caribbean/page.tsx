@@ -43,9 +43,9 @@ export default function DisneyCruiseVsRoyalCaribbeanGuide() {
       {/* Breadcrumb */}
       <div className="bg-gray-50 px-4 sm:px-6 lg:px-8 py-4 border-b">
         <div className="max-w-4xl mx-auto text-sm text-gray-600">
-          <Link href="/" className="text-blue-600 hover:underline">Home</Link>
+          <Link href="/" className="text-[#1E3A5F] hover:underline">Home</Link>
           {' > '}
-          <Link href="/guides" className="text-blue-600 hover:underline">Guides</Link>
+          <Link href="/guides" className="text-[#1E3A5F] hover:underline">Guides</Link>
           {' > Cruise Comparison'}
         </div>
       </div>
@@ -92,23 +92,23 @@ export default function DisneyCruiseVsRoyalCaribbeanGuide() {
             <h3 className="font-fraunces text-2xl font-bold text-slate-900 mb-4">Why Disney Costs More:</h3>
             <ul className="space-y-3 font-inter text-slate-600">
               <li className="flex gap-3">
-                <span className="text-blue-600 font-bold">•</span>
+                <span className="text-[#1E3A5F] font-bold">•</span>
                 <span><strong>Brand premium:</strong> The Disney name carries significant cachet, and guests pay for the privilege.</span>
               </li>
               <li className="flex gap-3">
-                <span className="text-blue-600 font-bold">•</span>
+                <span className="text-[#1E3A5F] font-bold">•</span>
                 <span><strong>Character experiences:</strong> Meet-and-greets, character dining, and interaction programs are included.</span>
               </li>
               <li className="flex gap-3">
-                <span className="text-blue-600 font-bold">•</span>
+                <span className="text-[#1E3A5F] font-bold">•</span>
                 <span><strong>Quality of entertainment:</strong> Broadway-caliber shows and original programming cost more to produce.</span>
               </li>
               <li className="flex gap-3">
-                <span className="text-blue-600 font-bold">•</span>
+                <span className="text-[#1E3A5F] font-bold">•</span>
                 <span><strong>Smaller ship sizes:</strong> Fewer passengers spread fixed costs across less revenue.</span>
               </li>
               <li className="flex gap-3">
-                <span className="text-blue-600 font-bold">•</span>
+                <span className="text-[#1E3A5F] font-bold">•</span>
                 <span><strong>Castaway Cay:</strong> Operating a private island exclusively for Disney guests adds cost.</span>
               </li>
             </ul>
@@ -465,12 +465,12 @@ export default function DisneyCruiseVsRoyalCaribbeanGuide() {
             <div className="p-6 bg-slate-50 rounded-lg border-l-4 border-[#1E3A5F]">
               <h3 className="font-fraunces text-xl font-bold text-slate-900 mb-3">Choose Disney if:</h3>
               <ul className="space-y-2 font-inter text-slate-600">
-                <li className="flex gap-2"><span className="text-blue-600 font-bold">→</span> Your kids are obsessed with Disney, Pixar, or Marvel</li>
-                <li className="flex gap-2"><span className="text-blue-600 font-bold">→</span> You want character interaction and theming</li>
-                <li className="flex gap-2"><span className="text-blue-600 font-bold">→</span> You have young kids (under 10) who benefit from character experiences</li>
-                <li className="flex gap-2"><span className="text-blue-600 font-bold">→</span> You prefer a more intimate ship experience</li>
-                <li className="flex gap-2"><span className="text-blue-600 font-bold">→</span> You value Broadway-quality entertainment</li>
-                <li className="flex gap-2"><span className="text-blue-600 font-bold">→</span> Budget is secondary to experience quality</li>
+                <li className="flex gap-2"><span className="text-[#1E3A5F] font-bold">→</span> Your kids are obsessed with Disney, Pixar, or Marvel</li>
+                <li className="flex gap-2"><span className="text-[#1E3A5F] font-bold">→</span> You want character interaction and theming</li>
+                <li className="flex gap-2"><span className="text-[#1E3A5F] font-bold">→</span> You have young kids (under 10) who benefit from character experiences</li>
+                <li className="flex gap-2"><span className="text-[#1E3A5F] font-bold">→</span> You prefer a more intimate ship experience</li>
+                <li className="flex gap-2"><span className="text-[#1E3A5F] font-bold">→</span> You value Broadway-quality entertainment</li>
+                <li className="flex gap-2"><span className="text-[#1E3A5F] font-bold">→</span> Budget is secondary to experience quality</li>
               </ul>
             </div>
 
@@ -490,7 +490,7 @@ export default function DisneyCruiseVsRoyalCaribbeanGuide() {
         </section>
 
         {/* CTA Section */}
-        <section className="my-12 p-8 bg-gradient-to-r from-blue-50 to-blue-900 text-white rounded-lg">
+        <section className="my-12 p-8 bg-gradient-to-r from-blue-50 to-[#0a1628] text-white rounded-lg">
           <h2 className="font-fraunces text-3xl font-bold mb-4">Ready to Start Planning?</h2>
           <p className="font-inter text-lg mb-6">
             Explore deals and pricing for both cruise lines and compare ships to find your perfect match.

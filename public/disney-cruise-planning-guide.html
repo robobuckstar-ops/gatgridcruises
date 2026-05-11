@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Disney Cruise Planning Guide — GatGrid Cruises</title>
+<style>
+  /* Base */
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, sans-serif;
+    color: #1a2332;
+    line-height: 1.65;
+    background: #f8fafc;
+  }
+
+  /* Page sizing for print */
+  @page {
+    size: Letter;
+    margin: 0.6in;
+  }
+
+  .page {
+    max-width: 8.5in;
+    margin: 0 auto;
+    padding: 0.6in 0.7in;
+    background: #ffffff;
+  }
+
+  @media print {
+    body { background: #ffffff; }
+    .page { padding: 0; max-width: 100%; }
+    .page-break { page-break-before: always; }
+    .no-print { display: none; }
+    h2, h3 { page-break-after: avoid; }
+    .ship-card, .checklist, .callout { page-break-inside: avoid; }
+  }
+
+  /* Cover */
+  .cover {
+    background: linear-gradient(135deg, #0f1f3a 0%, #1E3A5F 60%, #2a4a73 100%);
+    color: #ffffff;
+    padding: 1.2in 0.7in;
+    text-align: center;
+    border-radius: 4px;
+  }
+  .cover .badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(212, 175, 55, 0.18);
+    color: #D4AF37;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .cover h1 {
+    font-size: 44px;
+    line-height: 1.15;
+    margin: 0 0 12px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+  }
+  .cover .accent { color: #D4AF37; }
+  .cover .subtitle {
+    font-size: 18px;
+    color: #c8d4e6;
+    max-width: 460px;
+    margin: 0 auto 36px;
+    font-weight: 400;
+  }
+  .cover .by {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #94a3b8;
+    margin-top: 28px;
+  }
+  .cover .by .dot {
+    width: 6px; height: 6px; border-radius: 50%; background: #D4AF37;
+  }
+
+  /* Typography */
+  h2 {
+    color: #1E3A5F;
+    font-size: 26px;
+    margin: 36px 0 10px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #D4AF37;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+  }
+  h3 {
+    color: #1E3A5F;
+    font-size: 18px;
+    margin: 22px 0 8px;
+    font-weight: 700;
+  }
+  h4 {
+    color: #2a4a73;
+    font-size: 14px;
+    margin: 14px 0 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  p { margin: 0 0 12px; font-size: 13.5px; }
+  ul, ol { margin: 8px 0 14px; padding-left: 22px; }
+  li { margin-bottom: 5px; font-size: 13.5px; }
+  strong { color: #0f1f3a; }
+
+  /* TOC */
+  .toc {
+    background: #f4f7fb;
+    border-left: 4px solid #1E3A5F;
+    padding: 20px 26px;
+    margin: 28px 0;
+    border-radius: 0 6px 6px 0;
+  }
+  .toc h3 { margin-top: 0; color: #1E3A5F; }
+  .toc ol { margin: 0; padding-left: 22px; }
+  .toc li { font-size: 13.5px; margin-bottom: 4px; color: #334155; }
+
+  /* Ship card */
+  .ship-card {
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin: 14px 0;
+    background: #ffffff;
+    border-left: 4px solid #D4AF37;
+  }
+  .ship-card .name {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1E3A5F;
+    margin: 0 0 4px;
+  }
+  .ship-card .meta {
+    font-size: 11.5px;
+    color: #64748b;
+    margin-bottom: 10px;
+    letter-spacing: 0.3px;
+  }
+  .ship-card .meta span { margin-right: 16px; }
+  .ship-card p { margin: 6px 0; font-size: 13px; }
+  .ship-card .best-for {
+    background: #fef9e7;
+    border-left: 3px solid #D4AF37;
+    padding: 8px 12px;
+    font-size: 12.5px;
+    margin-top: 10px;
+    border-radius: 2px;
+  }
+
+  /* Callout */
+  .callout {
+    background: linear-gradient(135deg, #fef9e7 0%, #fdf2c5 100%);
+    border: 1px solid #e6cc6a;
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin: 16px 0;
+    font-size: 13px;
+  }
+  .callout strong { color: #7a5c00; }
+  .callout-navy {
+    background: #f0f4fa;
+    border: 1px solid #c9d6e8;
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin: 16px 0;
+    font-size: 13px;
+    color: #1a2332;
+  }
+
+  /* Checklist */
+  .checklist {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 18px 22px;
+    margin: 14px 0;
+  }
+  .checklist h4 { margin-top: 0; }
+  .checklist ul { list-style: none; padding-left: 0; margin: 6px 0; }
+  .checklist li {
+    padding-left: 26px;
+    position: relative;
+    margin-bottom: 6px;
+    font-size: 13px;
+  }
+  .checklist li::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 4px;
+    width: 14px; height: 14px;
+    border: 1.5px solid #1E3A5F;
+    border-radius: 3px;
+    background: #ffffff;
+  }
+  .checklist .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 30px;
+  }
+
+  /* Table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0;
+    font-size: 12.5px;
+  }
+  th, td {
+    text-align: left;
+    padding: 8px 10px;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  th {
+    background: #1E3A5F;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.3px;
+  }
+  tr:nth-child(even) td { background: #f8fafc; }
+
+  /* Final CTA */
+  .cta {
+    background: linear-gradient(135deg, #1E3A5F 0%, #2a4a73 100%);
+    color: #ffffff;
+    padding: 36px 32px;
+    border-radius: 8px;
+    margin: 36px 0 12px;
+    text-align: center;
+  }
+  .cta h2 {
+    color: #ffffff;
+    border-bottom: none;
+    margin: 0 0 12px;
+    font-size: 26px;
+  }
+  .cta p { color: #c8d4e6; font-size: 14px; max-width: 480px; margin: 0 auto 18px; }
+  .cta .link {
+    display: inline-block;
+    background: #D4AF37;
+    color: #0f1f3a;
+    padding: 12px 28px;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+    letter-spacing: 0.3px;
+  }
+  .cta .small {
+    margin-top: 16px;
+    font-size: 11px;
+    color: #94a3b8;
+    letter-spacing: 0.5px;
+  }
+
+  /* Footer */
+  .footer {
+    margin-top: 40px;
+    padding-top: 18px;
+    border-top: 1px solid #e2e8f0;
+    text-align: center;
+    font-size: 11px;
+    color: #94a3b8;
+  }
+  .footer strong { color: #1E3A5F; }
+
+  .lede {
+    font-size: 14px;
+    color: #475569;
+    border-left: 3px solid #D4AF37;
+    padding: 4px 0 4px 16px;
+    margin: 14px 0 20px;
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="badge">GatGrid Cruises • Free Planning Guide</div>
+    <h1>The Disney Cruise<br /><span class="accent">Planning Guide</span></h1>
+    <p class="subtitle">Everything a first-time (or returning) family needs to plan, pack, and enjoy a Disney cruise — without the overwhelm.</p>
+    <div class="by"><span class="dot"></span> Honest advice from the GatGrid Cruises team</div>
+  </div>
+
+  <!-- TOC -->
+  <div class="toc">
+    <h3>What's Inside</h3>
+    <ol>
+      <li>What to Expect on Your First Disney Cruise</li>
+      <li>Choosing the Right Ship</li>
+      <li>Stateroom Types, Explained</li>
+      <li>Packing Essentials Checklist</li>
+      <li>Dining &amp; Entertainment Highlights</li>
+      <li>Port Excursion Tips</li>
+      <li>Budgeting Your Cruise</li>
+      <li>Why Work With a Travel Advisor</li>
+    </ol>
+  </div>
+
+  <!-- 1. WHAT TO EXPECT -->
+  <h2>1 · What to Expect on Your First Disney Cruise</h2>
+  <p class="lede">A Disney cruise feels more like a floating Disney resort than a traditional cruise — and that single fact changes everything about how you plan.</p>
+
+  <p>The first thing most new guests notice is the pace. Where a Royal Caribbean or Carnival ship constantly nudges you toward the casino, art auctions, or upsells, Disney designs around your day. The included experiences are good enough that you can have a complete, memorable vacation without spending another dollar onboard.</p>
+
+  <h3>Boarding Day</h3>
+  <ul>
+    <li><strong>Port Arrival Form (PAF):</strong> You'll select a boarding window 30 days before sailing (concierge and Platinum Castaway Club members get earlier access). Earlier windows fill fast — set a calendar reminder for 12:00 AM Eastern.</li>
+    <li><strong>Check-in:</strong> Plan to arrive within your assigned window. Bringing your own bottled water or wine? Each adult can hand-carry up to two 750mL bottles aboard.</li>
+    <li><strong>The first lunch:</strong> Cabanas (or the equivalent buffet on each ship) opens for embarkation lunch. Sit-down options open too — and they're far less crowded.</li>
+    <li><strong>Staterooms ready:</strong> Usually around 1:30 PM. Your luggage may not arrive until late afternoon, so pack a carry-on with swimsuits and essentials.</li>
+  </ul>
+
+  <h3>What's Included (Truly Included)</h3>
+  <p>Unlike most cruise lines, Disney's base fare covers almost everything that matters:</p>
+  <ul>
+    <li>All meals at rotational dining restaurants, buffets, and quick-service venues</li>
+    <li>Soft drinks at restaurants and self-service stations</li>
+    <li>Coffee, tea, and lemonade — 24 hours</li>
+    <li>Soft-serve ice cream around the clock</li>
+    <li>All Broadway-style stage shows, deck parties, and fireworks at sea</li>
+    <li>Oceaneer Club, Oceaneer Lab, Edge, and Vibe — kids' clubs across all ages</li>
+    <li>First-run Disney, Pixar, Marvel, and Star Wars films, often before they release on streaming</li>
+  </ul>
+
+  <div class="callout"><strong>Insider tip:</strong> The free soft-serve machines run 11 AM to 11 PM on most ships. They're a small thing that ends up being a highlight for kids — and a sneaky upsell-killer.</div>
+
+  <h3>What's Not Included</h3>
+  <ul>
+    <li>Alcohol, specialty coffees, and bottled soda</li>
+    <li>Adult-exclusive restaurants (Palo, Remy, Enchanté)</li>
+    <li>Spa treatments and salon services</li>
+    <li>Photo packages from Shutters</li>
+    <li>Internet/Wi-Fi (free messaging via the Disney Cruise Line Navigator app)</li>
+    <li>Port excursions and Castaway Cay rentals (cabanas, bikes, snorkel gear)</li>
+    <li>Gratuities — automatically billed at roughly $16/person/night, adjustable at Guest Services</li>
+  </ul>
+
+  <!-- 2. CHOOSING THE RIGHT SHIP -->
+  <div class="page-break"></div>
+  <h2>2 · Choosing the Right Ship</h2>
+  <p class="lede">Disney Cruise Line operates seven active ships (with more on the way). Each has a personality — pick the one whose vibe and itinerary fit your family.</p>
+
+  <div class="ship-card">
+    <p class="name">Disney Magic</p>
+    <p class="meta"><span>Launched: 1998 (refurb 2018)</span><span>Capacity: ~2,700</span><span>Class: Magic</span></p>
+    <p>The original Disney ship — smaller, classic, with the timeless Art Deco styling that started it all. Marvel Day at Sea and a roster of European itineraries make this the most "grown-up" of the fleet, though families still love it.</p>
+    <p class="best-for"><strong>Best for:</strong> Repeat cruisers who want a more intimate experience, transatlantics, and Mediterranean sailings.</p>
+  </div>
+
+  <div class="ship-card">
+    <p class="name">Disney Wonder</p>
+    <p class="meta"><span>Launched: 1999 (refurb 2016)</span><span>Capacity: ~2,700</span><span>Class: Magic</span></p>
+    <p>Sister ship to the Magic, with an Art Nouveau flair. Home of Tiana's Place — Disney's first dinner show themed to <em>The Princess and the Frog</em>. Strong on Alaska and Pacific Coast itineraries.</p>
+    <p class="best-for"><strong>Best for:</strong> Alaska itineraries, families wanting a calmer atmosphere, multi-generational trips.</p>
+  </div>
+
+  <div class="ship-card">
+    <p class="name">Disney Dream</p>
+    <p class="meta"><span>Launched: 2011</span><span>Capacity: ~4,000</span><span>Class: Dream</span></p>
+    <p>The first of the larger Dream-class ships, with Disney's signature AquaDuck water coaster, Marvel-themed character moments, and a tilted-toward-families energy. Almost always sails 3- and 4-night Bahamas itineraries from Port Canaveral.</p>
+    <p class="best-for"><strong>Best for:</strong> First-time Disney cruisers, short Bahamian getaways, families with young kids.</p>
+  </div>
+
+  <div class="ship-card">
+    <p class="name">Disney Fantasy</p>
+    <p class="meta"><span>Launched: 2012</span><span>Capacity: ~4,000</span><span>Class: Dream</span></p>
+    <p>The Dream's sister with a slightly more grown-up Art Nouveau aesthetic. Specializes in 7-night Caribbean itineraries with two sea days and Castaway Cay — the sweet spot for many returning guests.</p>
+    <p class="best-for"><strong>Best for:</strong> 7-night Eastern and Western Caribbean trips, balanced family/adult experience.</p>
+  </div>
+
+  <div class="ship-card">
+    <p class="name">Disney Wish</p>
+    <p class="meta"><span>Launched: 2022</span><span>Capacity: ~4,000</span><span>Class: Wish</span></p>
+    <p>The first of the new Wish-class. Features the AquaMouse "attraction at sea," <em>Frozen</em>-themed dining at Arendelle, a Star Wars-themed bar (Hyperspace Lounge), and a Marvel restaurant (Worlds of Marvel). The most immersive ship for fans of those franchises.</p>
+    <p class="best-for"><strong>Best for:</strong> Marvel/Star Wars/Frozen fans, anyone who wants the newest Disney tech and theming.</p>
+  </div>
+
+  <div class="ship-card">
+    <p class="name">Disney Treasure</p>
+    <p class="meta"><span>Launched: 2024</span><span>Capacity: ~4,000</span><span>Class: Wish</span></p>
+    <p>Sister to the Wish with an Adventureland-inspired theme. Features Plaza de Coco (Coco-themed dining), Skipper Society lounge from the Jungle Cruise, and a Haunted Mansion bar (Haunted Mansion Parlor). Built for fans of Disney park theming.</p>
+    <p class="best-for"><strong>Best for:</strong> Disney parks regulars, fans of Pixar's <em>Coco</em>, and detail-driven theming nerds.</p>
+  </div>
+
+  <div class="ship-card">
+    <p class="name">Disney Destiny</p>
+    <p class="meta"><span>Launched: 2025</span><span>Capacity: ~4,000</span><span>Class: Wish</span></p>
+    <p>The third Wish-class ship, leaning into Disney heroes and villains. Features dining and lounges themed around classic Disney villains, plus a <em>Lion King</em>-inspired venue. Newest hardware in the fleet.</p>
+    <p class="best-for"><strong>Best for:</strong> Repeat Disney cruisers wanting the freshest experience, fans of classic Disney IP.</p>
+  </div>
+
+  <div class="callout-navy"><strong>How to choose, quickly:</strong> Picking by ship is fine, but picking by <em>itinerary</em> is usually smarter. The same ship in November (Bahamas) is a totally different trip than that ship in July (Mediterranean). Decide where you want to go first, then see which ship is there.</div>
+
+  <!-- 3. STATEROOM TYPES -->
+  <div class="page-break"></div>
+  <h2>3 · Stateroom Types, Explained</h2>
+  <p class="lede">Disney's stateroom categories follow a number system (1–11). Lower number = nicer. Here's how to translate it into real decisions.</p>
+
+  <table>
+    <thead>
+      <tr><th style="width:18%">Tier</th><th style="width:24%">Category</th><th>What You Get</th><th style="width:24%">Who It's For</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Concierge (1–3)</strong></td>
+        <td>Concierge Royal Suite, 1-Bedroom Suite, Concierge Family Verandah</td>
+        <td>Private lounge, sundeck, dedicated concierge team, premium amenities, expedited boarding.</td>
+        <td>Special-occasion trips, multi-gen families splitting cost across rooms.</td>
+      </tr>
+      <tr>
+        <td><strong>Verandah (4–7)</strong></td>
+        <td>Deluxe Family / Deluxe Verandah</td>
+        <td>Private balcony, full bathroom + split bath in family categories, sitting area.</td>
+        <td>The "default" if budget allows. Most families regret <em>not</em> getting one.</td>
+      </tr>
+      <tr>
+        <td><strong>Oceanview (8–9)</strong></td>
+        <td>Deluxe Oceanview / Standard Oceanview</td>
+        <td>Porthole or large window. No balcony. Full bathroom on most ships.</td>
+        <td>Light sleepers who want natural light without paying for a verandah.</td>
+      </tr>
+      <tr>
+        <td><strong>Inside (10–11)</strong></td>
+        <td>Standard Inside, Magical Porthole (on some ships)</td>
+        <td>No window. "Magical Porthole" simulates a view on Dream-class ships.</td>
+        <td>Budget-conscious cruisers who plan to spend almost no time in-cabin.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>The Hidden Detail That Matters: Split Bathrooms</h3>
+  <p>Most Disney staterooms (categories 1–9 on Dream/Fantasy/Wish-class, and many on Magic/Wonder) include a "split bath" — one room with a sink and toilet, another with a sink and shower/tub. With a family of four, this single layout decision saves enormous morning friction.</p>
+
+  <h3>"Guarantee" (GTY) Bookings</h3>
+  <p>When you book a category as "Guarantee," you commit to that category (or better) but let Disney assign the specific room. You usually pay less, sometimes get upgraded, but can't pick your location. Good for flexible travelers; risky if you need a specific deck or accessible features.</p>
+
+  <h3>Cabin Location Tips</h3>
+  <ul>
+    <li><strong>Avoid Deck 2 directly under the galley</strong> — early-morning prep noise carries.</li>
+    <li><strong>Mid-ship, mid-deck</strong> minimizes motion if anyone in your party is sensitive.</li>
+    <li><strong>Aft verandahs</strong> are larger on some ships (worth checking your specific category — your travel advisor can pull the deck plan).</li>
+    <li><strong>Avoid cabins under pool decks or directly above showrooms</strong> — sound transfers more than you'd expect.</li>
+  </ul>
+
+  <!-- 4. PACKING -->
+  <div class="page-break"></div>
+  <h2>4 · Packing Essentials Checklist</h2>
+  <p class="lede">Pack a carry-on for embarkation day separately — checked luggage often doesn't arrive at your stateroom until 5 PM or later.</p>
+
+  <div class="checklist">
+    <h4>Carry-On (Embarkation Day)</h4>
+    <ul class="two-col">
+      <li>Passports &amp; cruise documents</li>
+      <li>Swimsuits &amp; cover-ups</li>
+      <li>Sunscreen (SPF 30+)</li>
+      <li>Medications (in original bottles)</li>
+      <li>Phone charger</li>
+      <li>Change of clothes for dinner</li>
+      <li>Refillable water bottle</li>
+      <li>Light jacket (ships are cold)</li>
+    </ul>
+  </div>
+
+  <div class="checklist">
+    <h4>Clothing</h4>
+    <ul class="two-col">
+      <li>Casual daywear (one set per day)</li>
+      <li>Dinner attire (smart casual)</li>
+      <li>One formal night outfit</li>
+      <li>Pirate Night costume / red &amp; black</li>
+      <li>Character breakfast outfits (if booked)</li>
+      <li>Comfortable walking shoes</li>
+      <li>Water shoes for port days</li>
+      <li>Workout clothes (if you'll use the gym)</li>
+      <li>Sleepwear</li>
+      <li>Sweater for cold dining rooms</li>
+    </ul>
+  </div>
+
+  <div class="checklist">
+    <h4>Toiletries &amp; Health</h4>
+    <ul class="two-col">
+      <li>Reef-safe sunscreen</li>
+      <li>Aloe vera / after-sun</li>
+      <li>Seasickness remedy (Bonine, ginger)</li>
+      <li>Hand sanitizer</li>
+      <li>Pain relievers / fever reducer</li>
+      <li>Band-Aids &amp; antiseptic</li>
+      <li>Insect repellent (port days)</li>
+      <li>Hair ties &amp; hat</li>
+    </ul>
+  </div>
+
+  <div class="checklist">
+    <h4>Family / Kids</h4>
+    <ul class="two-col">
+      <li>Stroller (or rent at port)</li>
+      <li>Diapers &amp; wipes (ship store is pricey)</li>
+      <li>Swim diapers (required for splash zones)</li>
+      <li>Kids' Oceaneer Club bands (provided)</li>
+      <li>Favorite small toys / comfort items</li>
+      <li>Tablet preloaded with shows</li>
+      <li>Snacks for port days</li>
+      <li>Autograph book &amp; thick Sharpie</li>
+    </ul>
+  </div>
+
+  <div class="checklist">
+    <h4>Often Forgotten</h4>
+    <ul class="two-col">
+      <li>Power strip (non-surge, USB combo)</li>
+      <li>Magnetic hooks for stateroom door</li>
+      <li>Lanyard for Key to the World card</li>
+      <li>Highlighter for daily Navigator schedule</li>
+      <li>Travel-size laundry detergent</li>
+      <li>Ziploc bags (wet swimsuits)</li>
+      <li>Wrinkle-release spray (no irons allowed)</li>
+      <li>Cash for tipping ($1–2 bills are great)</li>
+    </ul>
+  </div>
+
+  <div class="callout"><strong>Disney rule reminder:</strong> Irons, candles, multi-plug surge protectors, and extension cords are all prohibited in staterooms. Disney provides ironing rooms on each deck.</div>
+
+  <!-- 5. DINING & ENTERTAINMENT -->
+  <div class="page-break"></div>
+  <h2>5 · Dining &amp; Entertainment Highlights</h2>
+  <p class="lede">Rotational dining is Disney's signature: your servers move with you across three themed restaurants, learning your kids' names and preferences by night two.</p>
+
+  <h3>The Three Rotations (Vary by Ship)</h3>
+  <ul>
+    <li><strong>Animator's Palate:</strong> The walls come alive with Disney characters that interact with diners. Different ships do different versions — the Wish/Treasure feature a Finding Nemo undersea show.</li>
+    <li><strong>Royal Court / Royal Palace / Arendelle:</strong> Princess-themed on most ships; the Wish runs a full <em>Frozen</em> dinner show with live performers.</li>
+    <li><strong>Themed feature restaurant:</strong> Varies — Tiana's Place on the Wonder, Worlds of Marvel on the Wish, Plaza de Coco on the Treasure, 1923 (Disney studios-themed) on multiple ships.</li>
+  </ul>
+
+  <h3>Adult-Exclusive Dining ($)</h3>
+  <ul>
+    <li><strong>Palo Steakhouse</strong> — $45/person — every Disney ship. Northern Italian. Worth it.</li>
+    <li><strong>Remy</strong> — ~$135/person — Dream &amp; Fantasy. French tasting menu. Special-occasion territory.</li>
+    <li><strong>Enchanté</strong> — ~$135/person — Wish/Treasure/Destiny. <em>Beauty and the Beast</em>-themed fine dining from chef Arnaud Lallement.</li>
+  </ul>
+
+  <div class="callout"><strong>Booking strategy:</strong> Adult dining and spa appointments open at your booking window (60–120 days before sailing depending on Castaway Club tier). Set a midnight alarm — Palo Brunch sells out within hours.</div>
+
+  <h3>Entertainment Don't-Miss List</h3>
+  <ul>
+    <li><strong>The Walt Disney Theatre shows</strong> — Broadway-caliber. <em>Beauty and the Beast</em> (Dream), <em>Frozen</em> (Wonder), <em>Disney The Tale of Moana</em> (Treasure), <em>Disney Seas the Adventure</em> (Wish).</li>
+    <li><strong>Pirate Night</strong> — deck party with fireworks at sea (one of the only cruise lines that fires from a ship).</li>
+    <li><strong>Sail-Away Party</strong> — embarkation day on the pool deck. Free champagne for adults.</li>
+    <li><strong>Character meets</strong> — book pre-cruise through the Navigator app to avoid lines. Princess Gathering and Anna &amp; Elsa Royal Reception sell out first.</li>
+  </ul>
+
+  <h3>The Kids' Clubs Are the Secret Weapon</h3>
+  <p>Oceaneer Club and Oceaneer Lab are <em>free</em>, open 9 AM to midnight, and staffed by counselors who actually engage your kids. Most parents report their kids ask to stay after pickup. The clubs are also the reason adult dining works — drop the kids at 5:30, eat at 6, pick up at 9. No babysitter required.</p>
+
+  <!-- 6. EXCURSIONS -->
+  <div class="page-break"></div>
+  <h2>6 · Port Excursion Tips</h2>
+  <p class="lede">Disney's port adventures are convenient and guaranteed-back-onboard, but they're also marked up significantly. Knowing when to book through Disney vs. independently is one of the biggest dollar-saving skills in cruising.</p>
+
+  <h3>When to Book Through Disney</h3>
+  <ul>
+    <li><strong>Tight port windows</strong> (under 6 hours). Disney guarantees the ship waits for delays.</li>
+    <li><strong>Activities with high risk</strong> — anything where being late could strand you (helicopter tours, distant excursions).</li>
+    <li><strong>Castaway Cay activities</strong> — bookable only through Disney (cabanas, bikes, parasailing).</li>
+    <li><strong>Cruise discount programs</strong> (e.g., onboard credit from a travel advisor) often apply to Disney-booked excursions.</li>
+  </ul>
+
+  <h3>When to Go Independent</h3>
+  <ul>
+    <li><strong>Beach day at Nassau, Cozumel, or St. Thomas</strong> — taxi to a public beach for a fraction of the cost.</li>
+    <li><strong>Established private operators</strong> with strong reviews on TripAdvisor/Viator (look for "cruise passenger" specialty — they know your sail-away time).</li>
+    <li><strong>DIY walking tours</strong> — Old San Juan, Key West, Cozumel downtown are all easy and walkable.</li>
+  </ul>
+
+  <h3>Castaway Cay (Disney's Private Island)</h3>
+  <p>The single best port stop in Disney's itineraries. Family beach, adults-only Serenity Bay, kid-friendly Pelican Plunge, included BBQ lunch. Strategies:</p>
+  <ul>
+    <li>Get off the ship within the first hour — beach loungers go fast.</li>
+    <li>Cabanas are the priciest add-on on any Disney cruise (~$700+) but coveted. Book the second your booking window opens.</li>
+    <li>Bring water shoes — coral and rocky entries in some swim zones.</li>
+    <li>Free trams loop the island; the path to Serenity Bay is shorter than it looks.</li>
+  </ul>
+
+  <h3>Lighthouse Point (Disney's New Bahamas Destination)</h3>
+  <p>Disney's newest private destination at the southern tip of Eleuthera. Sustainable design, Bahamian cultural focus, beautiful beaches. Expect it on Wish-class itineraries — the experience is more "tropical retreat," less "theme park beach" than Castaway Cay.</p>
+
+  <!-- 7. BUDGETING -->
+  <div class="page-break"></div>
+  <h2>7 · Budgeting Your Cruise</h2>
+  <p class="lede">The cruise fare is rarely the full picture. Here's a realistic per-couple, per-week budget for a Disney cruise.</p>
+
+  <table>
+    <thead>
+      <tr><th>Item</th><th>Typical Range (per cabin)</th><th>Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Cruise fare (verandah, 7-night)</td><td>$4,500–$8,000</td><td>Wildly seasonal. Late August–early December usually cheapest.</td></tr>
+      <tr><td>Gratuities</td><td>$220–$300</td><td>~$16/person/night, automatic.</td></tr>
+      <tr><td>Pre-cruise hotel (1 night)</td><td>$150–$300</td><td>Recommended for any flight-in arrival.</td></tr>
+      <tr><td>Travel insurance</td><td>$120–$250</td><td>~5% of trip cost is a reasonable benchmark.</td></tr>
+      <tr><td>Adult dining (Palo dinner + brunch)</td><td>$180</td><td>Easily the best dollar-for-dollar onboard upgrade.</td></tr>
+      <tr><td>Excursions (3 ports)</td><td>$200–$700</td><td>Higher for water sports / private tours.</td></tr>
+      <tr><td>Alcohol &amp; specialty drinks</td><td>$150–$500</td><td>Bring two 750mL bottles per adult to offset.</td></tr>
+      <tr><td>Photos / Shutters package</td><td>$0–$350</td><td>Skip unless you want every printed memory.</td></tr>
+      <tr><td>Wi-Fi (per device)</td><td>$0–$90</td><td>Free messaging in app is usually enough.</td></tr>
+      <tr><td>Spa / salon</td><td>$0–$400</td><td>Port-day discounts often 10–20%.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>The 5 Best Ways to Save Real Money</h3>
+  <ol>
+    <li><strong>Book early.</strong> Disney almost never discounts after launch. Opening-day pricing is usually the lowest you'll see.</li>
+    <li><strong>Book onboard.</strong> "Placeholder" reservations made onboard save 10% and add onboard credit ($100–$200). Valid for two years.</li>
+    <li><strong>Use a travel advisor.</strong> Same Disney price, plus their onboard credit and group amenities. (More on this in section 8.)</li>
+    <li><strong>Avoid peak weeks.</strong> Thanksgiving, Christmas, Spring Break, and July 4th routinely run 40–80% more than shoulder season.</li>
+    <li><strong>Stack the right credit cards.</strong> The Chase Sapphire Preferred / Reserve and Amex Platinum all earn elevated points on Disney bookings booked through their travel portals.</li>
+  </ol>
+
+  <!-- 8. TRAVEL ADVISOR -->
+  <div class="page-break"></div>
+  <h2>8 · Why Work With a Travel Advisor</h2>
+  <p class="lede">If you only remember one thing from this guide: Disney charges the same fare whether you book direct or through a travel advisor. So the question isn't "what does an advisor cost?" — it's "what extra do I get for free?"</p>
+
+  <h3>What a Good Advisor Brings</h3>
+  <ul>
+    <li><strong>Onboard credit.</strong> Group programs and agency-level promotions routinely add $50–$300 in onboard spending money to your booking — at no cost to you.</li>
+    <li><strong>Booking window expertise.</strong> They know exactly when Concierge tier dining/spa/excursion windows open for your specific Castaway Club status, and they're sitting at the keyboard at midnight Eastern.</li>
+    <li><strong>Price drop monitoring.</strong> Disney's price-drop policy lets you reprice up until paid-in-full. A good advisor watches your specific sailing daily and re-fares automatically.</li>
+    <li><strong>Cabin selection guidance.</strong> Deck plans don't tell you which cabins share walls with the laundry room, which verandahs are extra deep, which "Oceanview" rooms are obstructed. An advisor has either sailed it or has a network that has.</li>
+    <li><strong>When things go sideways.</strong> Flight delay, missed port, family emergency — you have one phone number, not a 90-minute hold queue.</li>
+    <li><strong>Multi-cabin coordination.</strong> Booking adjoining staterooms, linking reservations for shared dining, group rates — the stuff that's genuinely hard to DIY.</li>
+  </ul>
+
+  <h3>What a Good Advisor Doesn't Do</h3>
+  <ul>
+    <li>Pressure you into upgrades you don't need.</li>
+    <li>Hide fees in their service (Disney bookings are commission-paid by the cruise line, not you).</li>
+    <li>Push you toward the most expensive ship/sail.</li>
+  </ul>
+
+  <div class="callout-navy"><strong>About GatGrid Cruises:</strong> We're a Disney-cruise-focused planning service. We help families pick the right ship and itinerary, monitor prices daily, and unlock onboard credit through our agency partnerships. We're paid by the cruise line — not by you — so our incentive is to find you the right trip the first time so you book your next one with us too.</div>
+
+  <!-- FINAL CTA -->
+  <div class="cta">
+    <h2>Ready to Start Planning?</h2>
+    <p>Get a free, no-obligation Disney cruise consultation. We'll talk through your travel dates, family size, and goals — and put together two or three options that genuinely fit, with onboard credit included.</p>
+    <a class="link" href="https://gatgridcruises.com/concierge">gatgridcruises.com/concierge</a>
+    <div class="small">Free to use · No upfront fees · Cancel anytime before deposit</div>
+  </div>
+
+  <div class="footer">
+    <strong>GatGrid Cruises</strong> · The smarter way to plan a Disney cruise<br />
+    gatgridcruises.com · Honest planning. Real onboard credit. Zero pressure.
+  </div>
+
+</div>
+</body>
+</html>

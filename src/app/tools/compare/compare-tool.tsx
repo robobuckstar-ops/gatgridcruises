@@ -214,7 +214,7 @@ export function CompareTool({ sailings }: CompareToolProps) {
                     <div className="space-y-3">
                       <div>
                         <p className="text-xs text-slate-600 uppercase font-semibold">Lowest Price</p>
-                        <p className="font-fraunces text-2xl font-bold text-blue-600">
+                        <p className="font-fraunces text-2xl font-bold text-[#1E3A5F]">
                           {formatPrice(sailing.current_lowest_price)}
                         </p>
                       </div>
@@ -229,7 +229,7 @@ export function CompareTool({ sailings }: CompareToolProps) {
                             score.score.score >= 85
                               ? 'bg-emerald-100 text-emerald-700'
                               : score.score.score >= 70
-                                ? 'bg-[#1E3A5F]/20 text-blue-700'
+                                ? 'bg-[#1E3A5F]/20 text-[#162d4a]'
                                 : score.score.score >= 55
                                   ? 'bg-amber-100 text-amber-700'
                                   : 'bg-red-100 text-red-700'
@@ -379,7 +379,7 @@ export function CompareTool({ sailings }: CompareToolProps) {
                           {formatPrice(pricing.perPerson)} per person
                         </p>
                         {isLowest && (
-                          <span className="inline-block text-xs font-bold px-2 py-1 bg-[#1E3A5F]/20 text-blue-700 rounded">
+                          <span className="inline-block text-xs font-bold px-2 py-1 bg-[#1E3A5F]/20 text-[#162d4a] rounded">
                             Best Value
                           </span>
                         )}

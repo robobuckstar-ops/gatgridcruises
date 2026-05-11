@@ -25,7 +25,7 @@ export function FeaturedDealCard({ sailing, historicalAvgPrice, savingsAmount, s
 
   const recommendationColor =
     score >= 85 ? 'bg-emerald-100 text-emerald-700' :
-    score >= 70 ? 'bg-[#1E3A5F]/20 text-blue-700' :
+    score >= 70 ? 'bg-[#1E3A5F]/20 text-[#162d4a]' :
     'bg-amber-100 text-amber-700'
 
   return (
@@ -125,7 +125,7 @@ export function FeaturedDealCard({ sailing, historicalAvgPrice, savingsAmount, s
               <div className="text-center">
                 <Link
                   href="/deals"
-                  className="text-blue-600 text-xs font-semibold hover:text-blue-800 transition-colors"
+                  className="text-[#1E3A5F] text-xs font-semibold hover:text-[#0a1628] transition-colors"
                 >
                   Browse all deals →
                 </Link>

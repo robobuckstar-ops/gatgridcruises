@@ -249,7 +249,7 @@ export function calculateDealScore(
  */
 export function getDealScoreColor(score: number): string {
   if (score >= 80) return 'text-emerald-600' // green
-  if (score >= 60) return 'text-blue-600'    // blue
+  if (score >= 60) return 'text-[#1E3A5F]'    // blue
   if (score >= 40) return 'text-amber-500'   // amber
   return 'text-red-600'                       // red
 }

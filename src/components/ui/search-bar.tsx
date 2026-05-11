@@ -92,7 +92,7 @@ export function SearchBar({ onSearch, isLoading = false, placeholder = 'Try: "fa
           onBlur={() => setIsFocused(false)}
           onKeyDown={handleKeyDown}
           placeholder={placeholder}
-          className="flex-1 px-4 py-3 bg-transparent text-slate-900 placeholder-slate-400 outline-none text-base focus-visible:outline-2 focus-visible:outline-offset-0 focus-visible:outline-blue-600"
+          className="flex-1 px-4 py-3 bg-transparent text-slate-900 placeholder-slate-400 outline-none text-base focus-visible:outline-2 focus-visible:outline-offset-0 focus-visible:outline-[#1E3A5F]"
           aria-label="Search for cruises using natural language, e.g., family Caribbean cruise under 5000 in summer"
           aria-describedby="search-help"
         />
@@ -108,7 +108,7 @@ export function SearchBar({ onSearch, isLoading = false, placeholder = 'Try: "fa
         {query && !isLoading && (
           <button
             onClick={handleClear}
-            className="pr-3 text-slate-400 hover:text-slate-600 transition-colors rounded-lg focus-visible:outline-2 focus-visible:outline-offset-0 focus-visible:outline-blue-600"
+            className="pr-3 text-slate-400 hover:text-slate-600 transition-colors rounded-lg focus-visible:outline-2 focus-visible:outline-offset-0 focus-visible:outline-[#1E3A5F]"
             aria-label="Clear search query"
             type="button"
           >

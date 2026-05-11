@@ -43,40 +43,40 @@ export function Footer() {
               </h3>
               <ul className="space-y-3">
                 <li>
-                  <Link href="/about" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                  <Link href="/about" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
                     About
                   </Link>
                 </li>
                 <li>
                   <Link
                     href="/contact"
-                    className="text-slate-600 hover:text-blue-600 transition-colors duration-200"
+                    className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200"
                   >
                     Contact
                   </Link>
                 </li>
                 <li>
-                  <Link href="/newsletter" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                  <Link href="/newsletter" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
                     Newsletter
                   </Link>
                 </li>
                 <li>
-                  <Link href="/alerts" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                  <Link href="/alerts" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
                     Deal Alerts
                   </Link>
                 </li>
                 <li>
-                  <Link href="/my-trip" className="text-slate-600 hover:text-blue-600 transition-colors duration-200 font-medium">
+                  <Link href="/my-trip" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200 font-medium">
                     My Trip ↗
                   </Link>
                 </li>
                 <li>
-                  <Link href="/already-booked" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                  <Link href="/already-booked" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
                     Already Booked?
                   </Link>
                 </li>
                 <li>
-                  <Link href="/giving-back" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                  <Link href="/giving-back" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
                     Giving Back
                   </Link>
                 </li>
@@ -90,42 +90,42 @@ export function Footer() {
               </h3>
               <ul className="space-y-3">
                 <li>
-                  <Link href="/search" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                  <Link href="/search" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
                     AI Cruise Finder
                   </Link>
                 </li>
                 <li>
-                  <Link href="/onboard-credit" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                  <Link href="/onboard-credit" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
                     Free Onboard Credit
                   </Link>
                 </li>
                 <li>
-                  <Link href="/tools/obc-calculator" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                  <Link href="/tools/obc-calculator" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
                     OBC Calculator
                   </Link>
                 </li>
                 <li>
-                  <Link href="/tools/credit-cards" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                  <Link href="/tools/credit-cards" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
                     Credit Card Hacks
                   </Link>
                 </li>
                 <li>
-                  <Link href="/tools/flights" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                  <Link href="/tools/flights" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
                     Flight Finder
                   </Link>
                 </li>
                 <li>
-                  <Link href="/flight-deals" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                  <Link href="/flight-deals" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
                     Flight Deal Alerts
                   </Link>
                 </li>
                 <li>
-                  <Link href="/tools/staterooms" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                  <Link href="/tools/staterooms" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
                     Stateroom Finder
                   </Link>
                 </li>
                 <li>
-                  <Link href="/tools/transfers" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                  <Link href="/tools/transfers" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
                     Transfer Guide
                   </Link>
                 </li>
@@ -139,47 +139,47 @@ export function Footer() {
               </h3>
               <ul className="space-y-3">
                 <li>
-                  <Link href="/guides" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                  <Link href="/guides" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
                     All Guides
                   </Link>
                 </li>
                 <li>
-                  <Link href="/guides/packing-gear" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                  <Link href="/guides/packing-gear" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
                     Packing Gear
                   </Link>
                 </li>
                 <li>
-                  <Link href="/guides/travel-insurance" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                  <Link href="/guides/travel-insurance" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
                     Travel Insurance
                   </Link>
                 </li>
                 <li>
-                  <Link href="/guides/ports" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                  <Link href="/guides/ports" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
                     Port Guides
                   </Link>
                 </li>
                 <li>
-                  <Link href="/guides/ports/port-canaveral" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                  <Link href="/guides/ports/port-canaveral" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
                     Port Canaveral
                   </Link>
                 </li>
                 <li>
-                  <Link href="/guides/ports/nassau" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                  <Link href="/guides/ports/nassau" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
                     Nassau
                   </Link>
                 </li>
                 <li>
-                  <Link href="/guides/ports/castaway-cay" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                  <Link href="/guides/ports/castaway-cay" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
                     Castaway Cay
                   </Link>
                 </li>
                 <li>
-                  <Link href="/guides/ports/lookout-cay" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                  <Link href="/guides/ports/lookout-cay" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
                     Lookout Cay
                   </Link>
                 </li>
                 <li>
-                  <Link href="/guides/ports/cozumel" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                  <Link href="/guides/ports/cozumel" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
                     Cozumel
                   </Link>
                 </li>
@@ -193,67 +193,67 @@ export function Footer() {
               </h3>
               <ul className="space-y-3">
                 <li>
-                  <Link href="/deals" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                  <Link href="/deals" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
                     Deal Grid
                   </Link>
                 </li>
                 <li>
-                  <Link href="/deals/last-minute" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                  <Link href="/deals/last-minute" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
                     Last-Minute Deals
                   </Link>
                 </li>
                 <li>
-                  <Link href="/ships" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                  <Link href="/ships" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
                     Ship Guides
                   </Link>
                 </li>
                 <li>
-                  <Link href="/blog" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                  <Link href="/blog" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
                     Blog
                   </Link>
                 </li>
                 <li>
-                  <Link href="/blog/disney-cruise-packing-list" className="text-slate-500 text-sm hover:text-blue-600 transition-colors duration-200">
+                  <Link href="/blog/disney-cruise-packing-list" className="text-slate-500 text-sm hover:text-[#1E3A5F] transition-colors duration-200">
                     ↳ Packing List 2026
                   </Link>
                 </li>
                 <li>
-                  <Link href="/blog/how-to-get-comped-cruises" className="text-slate-500 text-sm hover:text-blue-600 transition-colors duration-200">
+                  <Link href="/blog/how-to-get-comped-cruises" className="text-slate-500 text-sm hover:text-[#1E3A5F] transition-colors duration-200">
                     ↳ How to Get Comped Cruises
                   </Link>
                 </li>
                 <li>
-                  <Link href="/blog/best-fish-extender-gifts" className="text-slate-500 text-sm hover:text-blue-600 transition-colors duration-200">
+                  <Link href="/blog/best-fish-extender-gifts" className="text-slate-500 text-sm hover:text-[#1E3A5F] transition-colors duration-200">
                     ↳ Best Fish Extender Gifts
                   </Link>
                 </li>
                 <li>
-                  <Link href="/travel-hacks/best-cruise-credit-cards" className="text-slate-500 text-sm hover:text-blue-600 transition-colors duration-200">
+                  <Link href="/travel-hacks/best-cruise-credit-cards" className="text-slate-500 text-sm hover:text-[#1E3A5F] transition-colors duration-200">
                     ↳ Best Cruise Credit Cards
                   </Link>
                 </li>
                 <li>
-                  <Link href="/travel-hacks" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                  <Link href="/travel-hacks" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
                     Travel Hacks
                   </Link>
                 </li>
                 <li>
-                  <Link href="/solo-cruising" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                  <Link href="/solo-cruising" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
                     Solo Cruising Hub
                   </Link>
                 </li>
                 <li>
-                  <Link href="/hotels" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                  <Link href="/hotels" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
                     Hotel Guides
                   </Link>
                 </li>
                 <li>
-                  <Link href="/tools/compare" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                  <Link href="/tools/compare" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
                     Compare Sailings
                   </Link>
                 </li>
                 <li>
-                  <Link href="/price-tracker" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                  <Link href="/price-tracker" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
                     Price Tracker
                   </Link>
                 </li>
@@ -267,17 +267,17 @@ export function Footer() {
               </h3>
               <ul className="space-y-3">
                 <li>
-                  <Link href="/disclosures" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                  <Link href="/disclosures" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
                     Disclosures
                   </Link>
                 </li>
                 <li>
-                  <Link href="/privacy" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                  <Link href="/privacy" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
                     Privacy Policy
                   </Link>
                 </li>
                 <li>
-                  <Link href="/terms" className="text-slate-600 hover:text-blue-600 transition-colors duration-200">
+                  <Link href="/terms" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
                     Terms
                   </Link>
                 </li>

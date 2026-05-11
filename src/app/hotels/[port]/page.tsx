@@ -119,7 +119,7 @@ export default async function PortHotelGuidePage({ params }: PageProps) {
         {port.drivingDirections && (
           <section className="mb-12">
             <h2 className="font-display text-3xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-              <MapPin className="w-8 h-8 text-blue-600" />
+              <MapPin className="w-8 h-8 text-[#1E3A5F]" />
               Getting There
             </h2>
             <div className="grid lg:grid-cols-2 gap-6">
@@ -138,7 +138,7 @@ export default async function PortHotelGuidePage({ params }: PageProps) {
                   {port.nearest_airports.map((airport, idx) => (
                     <div key={idx} className="flex items-start gap-3 pb-3 border-b border-slate-200 last:border-b-0 last:pb-0">
                       <div className="w-10 h-10 rounded-full bg-[#1E3A5F]/20 flex items-center justify-center flex-shrink-0">
-                        <span className="text-sm font-semibold text-blue-600">{airport.code}</span>
+                        <span className="text-sm font-semibold text-[#1E3A5F]">{airport.code}</span>
                       </div>
                       <div>
                         <p className="font-semibold text-slate-900">{airport.name}</p>
@@ -156,7 +156,7 @@ export default async function PortHotelGuidePage({ params }: PageProps) {
         {port.parking && port.parking.length > 0 && (
           <section className="mb-12">
             <h2 className="font-display text-3xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-              <MapPinCheck className="w-8 h-8 text-blue-600" />
+              <MapPinCheck className="w-8 h-8 text-[#1E3A5F]" />
               Parking Options
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
@@ -164,7 +164,7 @@ export default async function PortHotelGuidePage({ params }: PageProps) {
                 <div key={idx} className="border border-slate-300 rounded-lg p-6 hover:shadow-lg transition-shadow">
                   <div className="flex items-start justify-between mb-3">
                     <h3 className="font-display text-lg font-bold text-slate-900">{park.name}</h3>
-                    <div className="bg-[#1E3A5F]/20 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold whitespace-nowrap">
+                    <div className="bg-[#1E3A5F]/20 text-[#162d4a] px-3 py-1 rounded-full text-sm font-semibold whitespace-nowrap">
                       ${park.dailyRate}/day
                     </div>
                   </div>
@@ -172,7 +172,7 @@ export default async function PortHotelGuidePage({ params }: PageProps) {
                     {park.tips}
                   </p>
                   {park.reservationUrl && (
-                    <a href={park.reservationUrl} className="inline-flex items-center gap-2 text-blue-600 font-semibold mt-4 hover:text-blue-700 transition-colors">
+                    <a href={park.reservationUrl} className="inline-flex items-center gap-2 text-[#1E3A5F] font-semibold mt-4 hover:text-[#162d4a] transition-colors">
                       Reserve →
                     </a>
                   )}
@@ -186,13 +186,13 @@ export default async function PortHotelGuidePage({ params }: PageProps) {
         {port.terminalTips && port.terminalTips.length > 0 && (
           <section className="mb-12 bg-slate-50 rounded-lg p-6 sm:p-8 border border-slate-200">
             <h2 className="font-display text-3xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-              <AlertCircle className="w-8 h-8 text-blue-600" />
+              <AlertCircle className="w-8 h-8 text-[#1E3A5F]" />
               Terminal Tips
             </h2>
             <div className="space-y-4">
               {port.terminalTips.map((tip, idx) => (
                 <div key={idx} className="flex gap-4">
-                  <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 rounded-full bg-[#1E3A5F] flex items-center justify-center flex-shrink-0">
                     <span className="text-white font-bold text-sm">{idx + 1}</span>
                   </div>
                   <p className="text-slate-700 leading-relaxed pt-1">
@@ -208,7 +208,7 @@ export default async function PortHotelGuidePage({ params }: PageProps) {
         {port.weatherByMonth && port.weatherByMonth.length > 0 && (
           <section className="mb-12">
             <h2 className="font-display text-3xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-              <Cloud className="w-8 h-8 text-blue-600" />
+              <Cloud className="w-8 h-8 text-[#1E3A5F]" />
               Weather by Month
             </h2>
             <div className="overflow-x-auto border border-slate-300 rounded-lg">
@@ -240,7 +240,7 @@ export default async function PortHotelGuidePage({ params }: PageProps) {
         {port.preTripsActivities && port.preTripsActivities.length > 0 && (
           <section className="mb-12">
             <h2 className="font-display text-3xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-              <Compass className="w-8 h-8 text-blue-600" />
+              <Compass className="w-8 h-8 text-[#1E3A5F]" />
               Things to Do Before Your Cruise
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
@@ -283,7 +283,7 @@ export default async function PortHotelGuidePage({ params }: PageProps) {
         {disneyHotels.length > 0 && (
           <section className="mb-16">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center">
+              <div className="w-8 h-8 rounded-full bg-[#1E3A5F] flex items-center justify-center">
                 <span className="text-white font-bold text-sm">D</span>
               </div>
               <h2 className="font-display text-3xl font-bold text-slate-900">
@@ -340,7 +340,7 @@ export default async function PortHotelGuidePage({ params }: PageProps) {
                     <td className="py-3 px-4 font-medium text-slate-900">{hotel.name}</td>
                     <td className="py-3 px-4">
                       {hotel.is_disney_partner ? (
-                        <span className="inline-block bg-[#1E3A5F]/20 text-blue-700 px-2 py-1 rounded text-xs font-semibold">
+                        <span className="inline-block bg-[#1E3A5F]/20 text-[#162d4a] px-2 py-1 rounded text-xs font-semibold">
                           Yes
                         </span>
                       ) : (
@@ -366,7 +366,7 @@ export default async function PortHotelGuidePage({ params }: PageProps) {
                         </span>
                       )}
                       {hotel.id === mostConvenientHotel?.id && (
-                        <span className="inline-block bg-[#1E3A5F]/20 text-blue-700 px-2 py-1 rounded text-xs font-semibold">
+                        <span className="inline-block bg-[#1E3A5F]/20 text-[#162d4a] px-2 py-1 rounded text-xs font-semibold">
                           Most Convenient
                         </span>
                       )}
@@ -381,7 +381,7 @@ export default async function PortHotelGuidePage({ params }: PageProps) {
         {/* Tips Section */}
         <section className="bg-slate-50 rounded-lg p-6 sm:p-8 mb-16 border border-slate-200">
           <div className="flex items-center gap-3 mb-6">
-            <Zap className="w-6 h-6 text-blue-600" />
+            <Zap className="w-6 h-6 text-[#1E3A5F]" />
             <h2 className="font-display text-2xl font-bold text-slate-900">
               {port.name} Tips
             </h2>
@@ -389,7 +389,7 @@ export default async function PortHotelGuidePage({ params }: PageProps) {
           <div className="grid sm:grid-cols-2 gap-4">
             {tips.map((tip, idx) => (
               <div key={idx} className="flex gap-3">
-                <div className="w-6 h-6 rounded-full bg-[#1E3A5F]/20 text-blue-600 flex items-center justify-center flex-shrink-0 font-semibold text-sm">
+                <div className="w-6 h-6 rounded-full bg-[#1E3A5F]/20 text-[#1E3A5F] flex items-center justify-center flex-shrink-0 font-semibold text-sm">
                   {idx + 1}
                 </div>
                 <p className="text-slate-700 text-sm leading-relaxed pt-0.5">
@@ -404,7 +404,7 @@ export default async function PortHotelGuidePage({ params }: PageProps) {
         <div className="flex flex-col sm:flex-row gap-4 items-center justify-between pt-8 border-t border-slate-200">
           <Link
             href="/hotels"
-            className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors"
+            className="inline-flex items-center gap-2 text-[#1E3A5F] font-semibold hover:text-[#162d4a] transition-colors"
           >
             <ArrowRight className="w-4 h-4 rotate-180" />
             Back to all ports
@@ -438,7 +438,7 @@ function HotelCard({
             </span>
           )}
           {isMostConvenient && (
-            <span className="inline-block bg-[#1E3A5F]/20 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold">
+            <span className="inline-block bg-[#1E3A5F]/20 text-[#162d4a] px-3 py-1 rounded-full text-xs font-semibold">
               Most Convenient
             </span>
           )}
@@ -451,11 +451,11 @@ function HotelCard({
           {hotel.name}
         </h3>
         <div className="flex flex-wrap gap-2 items-center">
-          <span className="inline-block bg-[#1E3A5F]/20 text-blue-700 px-3 py-1 rounded text-sm font-semibold">
+          <span className="inline-block bg-[#1E3A5F]/20 text-[#162d4a] px-3 py-1 rounded text-sm font-semibold">
             {hotel.price_range}
           </span>
           {hotel.is_disney_partner && (
-            <span className="inline-block bg-[#1E3A5F]/10 text-blue-600 px-3 py-1 rounded text-xs font-semibold">
+            <span className="inline-block bg-[#1E3A5F]/10 text-[#1E3A5F] px-3 py-1 rounded text-xs font-semibold">
               Disney Partner
             </span>
           )}

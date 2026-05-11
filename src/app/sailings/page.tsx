@@ -110,7 +110,7 @@ export default function SailingsIndexPage() {
               <a
                 key={region}
                 href={`#${region.toLowerCase().replace(/\s+/g, '-')}`}
-                className="text-blue-700 hover:text-blue-900 hover:underline font-medium"
+                className="text-[#162d4a] hover:text-[#0a1628] hover:underline font-medium"
               >
                 {region} ({byRegion.get(region)!.length})
               </a>
@@ -143,11 +143,11 @@ export default function SailingsIndexPage() {
                       className="group block bg-white border border-slate-200 rounded-xl p-5 hover:border-blue-400 hover:shadow-md transition-all"
                     >
                       <div className="flex items-start justify-between gap-3 mb-3">
-                        <h3 className="font-display text-base font-semibold text-slate-900 group-hover:text-blue-700 transition-colors leading-tight">
+                        <h3 className="font-display text-base font-semibold text-slate-900 group-hover:text-[#162d4a] transition-colors leading-tight">
                           {sailing.itinerary_name}
                         </h3>
                         {sailing.sailing_score != null && (
-                          <span className="flex-shrink-0 text-xs font-bold bg-blue-50 text-blue-700 border border-blue-200 px-2 py-1 rounded-full">
+                          <span className="flex-shrink-0 text-xs font-bold bg-blue-50 text-[#162d4a] border border-blue-200 px-2 py-1 rounded-full">
                             {sailing.sailing_score}
                           </span>
                         )}
@@ -188,7 +188,7 @@ export default function SailingsIndexPage() {
                             {formatPrice(sailing.current_lowest_price)}
                           </span>
                         </div>
-                        <span className="text-sm font-medium text-blue-600 group-hover:text-blue-800 transition-colors flex items-center gap-1">
+                        <span className="text-sm font-medium text-[#1E3A5F] group-hover:text-[#0a1628] transition-colors flex items-center gap-1">
                           Details <ArrowRight className="w-3.5 h-3.5" />
                         </span>
                       </div>
@@ -211,7 +211,7 @@ export default function SailingsIndexPage() {
           </p>
           <p>
             Looking for filters and a deal score?{' '}
-            <Link href="/deals" className="text-blue-700 hover:text-blue-900 underline">
+            <Link href="/deals" className="text-[#162d4a] hover:text-[#0a1628] underline">
               Try the Deals browser →
             </Link>
           </p>

@@ -289,7 +289,7 @@ export default async function SailingDetailPage({ params }: PageProps) {
                 <div className="flex items-center justify-end">
                   <Link
                     href="/price-tracker"
-                    className="text-sm text-blue-600 hover:text-blue-800 font-medium flex items-center gap-1 transition-colors"
+                    className="text-sm text-[#1E3A5F] hover:text-[#0a1628] font-medium flex items-center gap-1 transition-colors"
                   >
                     <TrendingDown className="w-4 h-4" />
                     Compare prices across all sailings →
@@ -318,7 +318,7 @@ export default async function SailingDetailPage({ params }: PageProps) {
                       </div>
                       <div className="border-t border-slate-200 pt-3 flex justify-between items-center">
                         <span className="text-slate-900 font-semibold">Total</span>
-                        <span className="text-2xl font-bold text-blue-600">{formatPrice(calculateOutTheDoorPrice(sailing, 'inside', 2).total)}</span>
+                        <span className="text-2xl font-bold text-[#1E3A5F]">{formatPrice(calculateOutTheDoorPrice(sailing, 'inside', 2).total)}</span>
                       </div>
                       <p className="text-xs text-slate-500 mt-2">{formatPrice(calculateOutTheDoorPrice(sailing, 'inside', 2).perPerson)} per person</p>
                     </div>
@@ -333,7 +333,7 @@ export default async function SailingDetailPage({ params }: PageProps) {
                       </div>
                       <div className="border-t border-slate-200 pt-3 flex justify-between items-center">
                         <span className="text-slate-900 font-semibold">Total</span>
-                        <span className="text-2xl font-bold text-blue-600">{formatPrice(calculateOutTheDoorPrice(sailing, 'oceanview', 2).total)}</span>
+                        <span className="text-2xl font-bold text-[#1E3A5F]">{formatPrice(calculateOutTheDoorPrice(sailing, 'oceanview', 2).total)}</span>
                       </div>
                       <p className="text-xs text-slate-500 mt-2">{formatPrice(calculateOutTheDoorPrice(sailing, 'oceanview', 2).perPerson)} per person</p>
                     </div>
@@ -359,12 +359,12 @@ export default async function SailingDetailPage({ params }: PageProps) {
                     : getPortGuideUrl(day.port)
                   return (
                     <div key={day.day} className="flex gap-4 p-4 bg-slate-50 rounded-lg">
-                      <div className="flex-shrink-0 w-12 h-12 bg-blue-600 text-white rounded-lg flex items-center justify-center font-bold text-sm">
+                      <div className="flex-shrink-0 w-12 h-12 bg-[#1E3A5F] text-white rounded-lg flex items-center justify-center font-bold text-sm">
                         Day {day.day}
                       </div>
                       <div>
                         {portUrl ? (
-                          <Link href={portUrl} className="font-semibold text-blue-700 hover:text-blue-800 hover:underline">
+                          <Link href={portUrl} className="font-semibold text-[#162d4a] hover:text-[#0a1628] hover:underline">
                             {day.port}
                           </Link>
                         ) : (
@@ -450,7 +450,7 @@ export default async function SailingDetailPage({ params }: PageProps) {
                     </div>
                   ))}
                 </div>
-                <Link href="/tools/staterooms" className="inline-flex items-center gap-1 mt-3 text-sm text-blue-600 hover:text-blue-700 font-medium">
+                <Link href="/tools/staterooms" className="inline-flex items-center gap-1 mt-3 text-sm text-[#1E3A5F] hover:text-[#162d4a] font-medium">
                   View all staterooms <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
               </section>
@@ -482,7 +482,7 @@ export default async function SailingDetailPage({ params }: PageProps) {
               </div>
               <Link
                 href="/guides/packing-gear"
-                className="inline-flex items-center gap-1.5 text-sm font-medium text-blue-600 hover:text-blue-700 transition-colors"
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-[#1E3A5F] hover:text-[#162d4a] transition-colors"
               >
                 See the full packing list <ArrowRight className="h-3.5 w-3.5" />
               </Link>
@@ -498,7 +498,7 @@ export default async function SailingDetailPage({ params }: PageProps) {
             {hotels.length > 0 && (
               <div className="bg-white border border-slate-200 rounded-xl p-5">
                 <h3 className="font-display text-lg font-semibold text-slate-900 mb-3 flex items-center gap-2">
-                  <Building2 className="h-5 w-5 text-blue-600" /> Pre-Cruise Hotels
+                  <Building2 className="h-5 w-5 text-[#1E3A5F]" /> Pre-Cruise Hotels
                 </h3>
                 <div className="space-y-3">
                   {hotels.slice(0, 3).map(hotel => (
@@ -512,7 +512,7 @@ export default async function SailingDetailPage({ params }: PageProps) {
                   ))}
                 </div>
                 {port && (
-                  <Link href={`/hotels/${port.slug}`} className="inline-flex items-center gap-1 mt-3 text-sm text-blue-600 hover:text-blue-700 font-medium">
+                  <Link href={`/hotels/${port.slug}`} className="inline-flex items-center gap-1 mt-3 text-sm text-[#1E3A5F] hover:text-[#162d4a] font-medium">
                     All {port.name} hotels <ArrowRight className="h-3.5 w-3.5" />
                   </Link>
                 )}
@@ -524,7 +524,7 @@ export default async function SailingDetailPage({ params }: PageProps) {
             {transfers.length > 0 && (
               <div className="bg-white border border-slate-200 rounded-xl p-5">
                 <h3 className="font-display text-lg font-semibold text-slate-900 mb-3 flex items-center gap-2">
-                  <Car className="h-5 w-5 text-blue-600" /> Getting to the Port
+                  <Car className="h-5 w-5 text-[#1E3A5F]" /> Getting to the Port
                 </h3>
                 <div className="space-y-2">
                   {transfers.slice(0, 4).map(t => (
@@ -535,7 +535,7 @@ export default async function SailingDetailPage({ params }: PageProps) {
                   ))}
                 </div>
                 {port && (
-                  <Link href={`/tools/transfers/${port.slug}`} className="inline-flex items-center gap-1 mt-3 text-sm text-blue-600 hover:text-blue-700 font-medium">
+                  <Link href={`/tools/transfers/${port.slug}`} className="inline-flex items-center gap-1 mt-3 text-sm text-[#1E3A5F] hover:text-[#162d4a] font-medium">
                     Full transfer guide <ArrowRight className="h-3.5 w-3.5" />
                   </Link>
                 )}

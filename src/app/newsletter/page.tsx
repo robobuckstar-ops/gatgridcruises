@@ -136,7 +136,7 @@ export default function NewsletterPage() {
               {SAMPLE_SUBJECTS.map((item, i) => (
                 <div key={i} className={`px-6 py-4 flex items-start gap-4 ${i === 0 ? 'bg-[#1E3A5F]/10/50' : ''}`}>
                   <div className="flex-shrink-0">
-                    <Mail className={`w-5 h-5 mt-0.5 ${i === 0 ? 'text-blue-600' : 'text-slate-300'}`} aria-hidden="true" />
+                    <Mail className={`w-5 h-5 mt-0.5 ${i === 0 ? 'text-[#1E3A5F]' : 'text-slate-300'}`} aria-hidden="true" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 mb-0.5">
@@ -144,7 +144,7 @@ export default function NewsletterPage() {
                       <span className={`px-2 py-0.5 rounded-full text-xs font-semibold ${
                         item.label === 'Deal Alert' ? 'bg-amber-100 text-amber-700' :
                         item.label === 'Credit Card' ? 'bg-purple-100 text-purple-700' :
-                        item.label === 'Insider' ? 'bg-[#1E3A5F]/20 text-blue-700' :
+                        item.label === 'Insider' ? 'bg-[#1E3A5F]/20 text-[#162d4a]' :
                         'bg-emerald-100 text-emerald-700'
                       }`}>{item.label}</span>
                     </div>

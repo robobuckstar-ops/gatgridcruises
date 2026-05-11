@@ -51,7 +51,7 @@ export default function ShipsPage() {
               <Link
                 key={ship.id}
                 href={`/ships/${ship.slug}`}
-                className="group h-full rounded-xl border-2 border-gray-200 hover:border-blue-600 overflow-hidden transition-all duration-200 hover:shadow-lg"
+                className="group h-full rounded-xl border-2 border-gray-200 hover:border-[#1E3A5F] overflow-hidden transition-all duration-200 hover:shadow-lg"
               >
                 <div className="h-48">
                   <ShipHeroImage
@@ -63,7 +63,7 @@ export default function ShipsPage() {
                 </div>
 
                 <div className="p-6">
-                  <h3 className="font-fraunces text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">
+                  <h3 className="font-fraunces text-xl font-bold text-slate-900 mb-3 group-hover:text-[#1E3A5F] transition-colors">
                     {ship.name.replace('Disney ', '')}
                   </h3>
 
@@ -75,13 +75,13 @@ export default function ShipsPage() {
                   <div className="space-y-2 mb-6">
                     {ship.highlights.slice(0, 3).map((highlight, idx) => (
                       <div key={idx} className="flex gap-2">
-                        <span className="text-blue-600 font-bold text-sm">•</span>
+                        <span className="text-[#1E3A5F] font-bold text-sm">•</span>
                         <p className="font-inter text-sm text-gray-600">{highlight}</p>
                       </div>
                     ))}
                   </div>
 
-                  <div className="flex items-center gap-2 text-slate-900 font-semibold group-hover:text-blue-600 transition-colors">
+                  <div className="flex items-center gap-2 text-slate-900 font-semibold group-hover:text-[#1E3A5F] transition-colors">
                     Learn More
                     <ArrowRight className="w-4 h-4" />
                   </div>

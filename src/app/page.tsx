@@ -64,7 +64,7 @@ export default async function Home() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-slate-900 via-blue-950 to-slate-900 text-white py-24 md:py-36">
+      <section className="relative overflow-hidden bg-gradient-to-b from-slate-900 via-[#0a1628] to-slate-900 text-white py-24 md:py-36">
         <div className="absolute inset-0 opacity-20 pointer-events-none">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500 rounded-full blur-[120px]"></div>
           <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-500 rounded-full blur-[120px]"></div>
@@ -181,7 +181,7 @@ export default async function Home() {
       <section className="bg-white py-16 md:py-20 border-t border-slate-100" aria-labelledby="price-drops-heading">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-10">
-            <TrendingDown className="w-7 h-7 text-blue-600" aria-hidden="true" />
+            <TrendingDown className="w-7 h-7 text-[#1E3A5F]" aria-hidden="true" />
             <h2 id="price-drops-heading" className="font-fraunces text-3xl md:text-4xl font-bold text-slate-900">
               Biggest Price Drops This Week
             </h2>
@@ -409,7 +409,7 @@ export default async function Home() {
               <Link
                 key={ship.id}
                 href={`/ships/${ship.slug}`}
-                className="px-5 py-2 rounded-full bg-white text-blue-600 font-semibold text-sm border border-blue-200 hover:bg-blue-600 hover:text-white transition-colors duration-200 shadow-sm"
+                className="px-5 py-2 rounded-full bg-white text-[#1E3A5F] font-semibold text-sm border border-blue-200 hover:bg-[#1E3A5F] hover:text-white transition-colors duration-200 shadow-sm"
               >
                 {ship.name}
               </Link>

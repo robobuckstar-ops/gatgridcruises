@@ -52,7 +52,7 @@ export default function CommunityPage() {
             >
               <div className="flex items-start justify-between mb-4">
                 <div className="inline-flex items-center justify-center h-12 w-12 rounded-lg bg-[#1E3A5F]/20 group-hover:bg-blue-200 transition-colors">
-                  <Users className="h-6 w-6 text-blue-600" />
+                  <Users className="h-6 w-6 text-[#1E3A5F]" />
                 </div>
                 <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
                   Popular
@@ -68,7 +68,7 @@ export default function CommunityPage() {
                 excursion tips, coordinate Fish Extender gifts, and make lifelong friends.
               </p>
 
-              <div className="text-sm text-blue-600 font-semibold group-hover:text-blue-700">
+              <div className="text-sm text-[#1E3A5F] font-semibold group-hover:text-[#162d4a]">
                 Browse Groups →
               </div>
             </Link>

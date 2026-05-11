@@ -17,12 +17,12 @@ interface ShipHeroImageProps {
 const ACCENT_BY_SHIP: Record<string, string> = {
   'Disney Magic':     'from-amber-700 via-rose-700 to-amber-900',
   'Disney Wonder':    'from-sky-700 via-cyan-600 to-sky-900',
-  'Disney Dream':     'from-indigo-700 via-blue-600 to-indigo-900',
+  'Disney Dream':     'from-indigo-700 via-[#1E3A5F] to-indigo-900',
   'Disney Fantasy':   'from-purple-700 via-fuchsia-600 to-purple-900',
   'Disney Wish':      'from-rose-700 via-pink-600 to-rose-900',
   'Disney Treasure':  'from-emerald-700 via-teal-600 to-emerald-900',
   'Disney Destiny':   'from-orange-700 via-amber-600 to-orange-900',
-  'Disney Adventure': 'from-cyan-700 via-blue-600 to-cyan-900',
+  'Disney Adventure': 'from-cyan-700 via-[#1E3A5F] to-cyan-900',
 }
 
 export function ShipHeroImage({
@@ -33,7 +33,7 @@ export function ShipHeroImage({
   imgClassName = '',
 }: ShipHeroImageProps) {
   const [errored, setErrored] = useState(false)
-  const accent = ACCENT_BY_SHIP[shipName] ?? 'from-slate-700 via-blue-600 to-slate-900'
+  const accent = ACCENT_BY_SHIP[shipName] ?? 'from-slate-700 via-[#1E3A5F] to-slate-900'
   const showPlaceholder = errored || !src
 
   return (

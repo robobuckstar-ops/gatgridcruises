@@ -125,7 +125,7 @@ export default function RestrictedStateroomDealsPage() {
           </h2>
           <Link
             href="/deals"
-            className="text-sm font-semibold text-blue-700 hover:text-blue-900"
+            className="text-sm font-semibold text-[#162d4a] hover:text-[#0a1628]"
           >
             See all deals →
           </Link>
@@ -143,10 +143,10 @@ export default function RestrictedStateroomDealsPage() {
                 className="group block bg-white border border-slate-200 rounded-xl p-5 hover:border-blue-400 hover:shadow-md transition-all"
               >
                 <div className="flex items-start justify-between gap-3 mb-3">
-                  <h3 className="font-fraunces text-base font-semibold text-slate-900 group-hover:text-blue-700 leading-tight">
+                  <h3 className="font-fraunces text-base font-semibold text-slate-900 group-hover:text-[#162d4a] leading-tight">
                     {sailing.itinerary_name}
                   </h3>
-                  <span className="flex-shrink-0 text-xs font-bold bg-blue-50 text-blue-700 border border-blue-200 px-2 py-1 rounded-full">
+                  <span className="flex-shrink-0 text-xs font-bold bg-blue-50 text-[#162d4a] border border-blue-200 px-2 py-1 rounded-full">
                     {score}
                   </span>
                 </div>
@@ -163,7 +163,7 @@ export default function RestrictedStateroomDealsPage() {
                     </span>
                     <span className="text-xs text-slate-500"> /person</span>
                   </div>
-                  <span className="text-sm font-medium text-blue-600 group-hover:text-blue-800 flex items-center gap-1">
+                  <span className="text-sm font-medium text-[#1E3A5F] group-hover:text-[#0a1628] flex items-center gap-1">
                     Details <ArrowRight className="w-3.5 h-3.5" />
                   </span>
                 </div>

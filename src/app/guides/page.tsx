@@ -152,7 +152,7 @@ export default function GuidesPage() {
                   className="group block p-6 rounded-xl border-2 border-slate-200 hover:border-[#D4AF37] hover:shadow-lg transition-all duration-200"
                 >
                   <div className="flex items-center gap-3 mb-3">
-                    <span className="text-xs font-semibold uppercase tracking-wider text-blue-600 bg-[#1E3A5F]/10 px-3 py-1 rounded-full">
+                    <span className="text-xs font-semibold uppercase tracking-wider text-[#1E3A5F] bg-[#1E3A5F]/10 px-3 py-1 rounded-full">
                       {guide.category}
                     </span>
                     <span className="text-xs text-slate-400">{guide.readTime}</span>

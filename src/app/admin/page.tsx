@@ -43,7 +43,7 @@ export default function AdminDashboard() {
           <div className="bg-white rounded-xl border border-slate-200 p-5">
             <div className="flex items-center gap-3 mb-2">
               <div className="w-10 h-10 bg-gold/10 rounded-lg flex items-center justify-center">
-                <TrendingDown className="h-5 w-5 text-blue-600" />
+                <TrendingDown className="h-5 w-5 text-[#1E3A5F]" />
               </div>
               <span className="text-2xl font-bold text-navy">{featured.length}</span>
             </div>
@@ -61,7 +61,7 @@ export default function AdminDashboard() {
           <div className="bg-white rounded-xl border border-slate-200 p-5">
             <div className="flex items-center gap-3 mb-2">
               <div className="w-10 h-10 bg-[#1E3A5F]/10 rounded-lg flex items-center justify-center">
-                <MapPin className="h-5 w-5 text-blue-600" />
+                <MapPin className="h-5 w-5 text-[#1E3A5F]" />
               </div>
               <span className="text-2xl font-bold text-navy">{ports.length}</span>
             </div>
@@ -131,7 +131,7 @@ export default function AdminDashboard() {
         <div className="bg-white rounded-xl border border-slate-200 overflow-hidden">
           <div className="px-5 py-4 border-b border-slate-200 flex items-center justify-between">
             <h2 className="font-semibold text-navy">Recent Sailings</h2>
-            <Link href="/admin/sailings" className="text-sm text-navy hover:text-blue-600 font-medium">View all →</Link>
+            <Link href="/admin/sailings" className="text-sm text-navy hover:text-[#1E3A5F] font-medium">View all →</Link>
           </div>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">

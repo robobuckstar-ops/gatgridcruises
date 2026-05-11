@@ -63,10 +63,10 @@ const phases: Phase[] = [
     label: 'At Booking',
     timeframe: 'Day of Booking',
     emoji: '⚓',
-    headerBg: 'bg-blue-950',
+    headerBg: 'bg-[#0a1628]',
     cardBg: 'bg-[#1E3A5F]/10',
     cardBorder: 'border-blue-100',
-    dotBg: 'bg-blue-950',
+    dotBg: 'bg-[#0a1628]',
     milestones: [
       {
         id: 'confirm-booking',
@@ -676,7 +676,7 @@ const castawayTiers = [
     maxCruises: 24,
     bookingDays: 120,
     icon: '💎',
-    colorClass: 'text-blue-700',
+    colorClass: 'text-[#162d4a]',
     bg: 'bg-[#1E3A5F]/20',
     border: 'border-blue-200',
     description:
@@ -728,7 +728,7 @@ export function CruiseCountdownTimeline() {
       {/* ------------------------------------------------------------------ */}
       {/* Hero */}
       {/* ------------------------------------------------------------------ */}
-      <section className="bg-gradient-to-br from-blue-950 via-blue-900 to-indigo-900 py-16 md:py-24">
+      <section className="bg-gradient-to-br from-[#0a1628] via-[#0a1628] to-indigo-900 py-16 md:py-24">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-sm text-blue-200 font-medium mb-6">
@@ -822,10 +822,10 @@ export function CruiseCountdownTimeline() {
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
             <span className="text-5xl block mb-3">🏆</span>
-            <h2 className="font-display text-2xl md:text-3xl font-bold text-blue-950 mb-2">
+            <h2 className="font-display text-2xl md:text-3xl font-bold text-[#0a1628] mb-2">
               What&apos;s Your Castaway Club Tier?
             </h2>
-            <p className="text-blue-700 max-w-xl mx-auto text-sm md:text-base">
+            <p className="text-[#162d4a] max-w-xl mx-auto text-sm md:text-base">
               Your tier determines how early you can book excursions, specialty dining, and spa
               appointments. Use the selector below to find your booking window.
             </p>
@@ -833,7 +833,7 @@ export function CruiseCountdownTimeline() {
 
           <div className="max-w-xl mx-auto">
             <div className="bg-white rounded-2xl shadow-sm border border-blue-100 p-6">
-              <label className="block text-sm font-semibold text-blue-900 mb-3">
+              <label className="block text-sm font-semibold text-[#0a1628] mb-3">
                 How many Disney cruises have you completed?{' '}
                 <span className="text-blue-400 font-normal">(not counting your upcoming trip)</span>
               </label>
@@ -842,17 +842,17 @@ export function CruiseCountdownTimeline() {
                 <button
                   onClick={() => setCruiseCount(Math.max(0, cruiseCount - 1))}
                   aria-label="Decrease cruise count"
-                  className="w-10 h-10 rounded-full bg-[#1E3A5F]/20 hover:bg-blue-200 text-blue-900 font-bold text-xl flex items-center justify-center transition-colors flex-shrink-0"
+                  className="w-10 h-10 rounded-full bg-[#1E3A5F]/20 hover:bg-blue-200 text-[#0a1628] font-bold text-xl flex items-center justify-center transition-colors flex-shrink-0"
                 >
                   −
                 </button>
-                <span className="text-4xl font-bold text-blue-900 w-12 text-center tabular-nums">
+                <span className="text-4xl font-bold text-[#0a1628] w-12 text-center tabular-nums">
                   {cruiseCount}
                 </span>
                 <button
                   onClick={() => setCruiseCount(cruiseCount + 1)}
                   aria-label="Increase cruise count"
-                  className="w-10 h-10 rounded-full bg-[#1E3A5F]/20 hover:bg-blue-200 text-blue-900 font-bold text-xl flex items-center justify-center transition-colors flex-shrink-0"
+                  className="w-10 h-10 rounded-full bg-[#1E3A5F]/20 hover:bg-blue-200 text-[#0a1628] font-bold text-xl flex items-center justify-center transition-colors flex-shrink-0"
                 >
                   +
                 </button>
@@ -862,7 +862,7 @@ export function CruiseCountdownTimeline() {
                   max={30}
                   value={cruiseCount}
                   onChange={(e) => setCruiseCount(parseInt(e.target.value))}
-                  className="flex-1 accent-blue-600"
+                  className="flex-1 accent-[#1E3A5F]"
                   aria-label="Cruise count slider"
                 />
               </div>
@@ -904,7 +904,7 @@ export function CruiseCountdownTimeline() {
               {/* Expand full tier table */}
               <button
                 onClick={() => setShowTierTable(!showTierTable)}
-                className="mt-4 w-full flex items-center justify-between text-sm text-blue-600 hover:text-blue-800 font-medium transition-colors"
+                className="mt-4 w-full flex items-center justify-between text-sm text-[#1E3A5F] hover:text-[#0a1628] font-medium transition-colors"
               >
                 <span>Compare all Castaway Club tiers</span>
                 {showTierTable ? (
@@ -919,13 +919,13 @@ export function CruiseCountdownTimeline() {
                   <table className="w-full text-sm">
                     <thead>
                       <tr className="bg-[#1E3A5F]/10">
-                        <th className="text-left px-4 py-2.5 text-blue-900 font-semibold">
+                        <th className="text-left px-4 py-2.5 text-[#0a1628] font-semibold">
                           Tier
                         </th>
-                        <th className="text-left px-4 py-2.5 text-blue-900 font-semibold">
+                        <th className="text-left px-4 py-2.5 text-[#0a1628] font-semibold">
                           Cruises
                         </th>
-                        <th className="text-left px-4 py-2.5 text-blue-900 font-semibold">
+                        <th className="text-left px-4 py-2.5 text-[#0a1628] font-semibold">
                           Booking Opens
                         </th>
                       </tr>
@@ -943,7 +943,7 @@ export function CruiseCountdownTimeline() {
                             <span className="mr-1.5">{tier.icon}</span>
                             {tier.name}
                             {currentTier.name === tier.name && (
-                              <span className="ml-2 text-xs bg-blue-600 text-white rounded-full px-2 py-0.5">
+                              <span className="ml-2 text-xs bg-[#1E3A5F] text-white rounded-full px-2 py-0.5">
                                 You
                               </span>
                             )}
@@ -977,7 +977,7 @@ export function CruiseCountdownTimeline() {
           <div className="relative">
             {/* Vertical connecting line — desktop only */}
             <div
-              className="hidden md:block absolute top-6 bottom-6 w-0.5 bg-gradient-to-b from-blue-900 via-teal-400 via-amber-400 to-purple-700 opacity-30"
+              className="hidden md:block absolute top-6 bottom-6 w-0.5 bg-gradient-to-b from-[#0a1628] via-teal-400 via-amber-400 to-purple-700 opacity-30"
               style={{ left: '1.5rem' }}
             />
 
@@ -1051,7 +1051,7 @@ export function CruiseCountdownTimeline() {
                                 {milestone.proTip && (
                                   <button
                                     onClick={() => toggleTip(milestone.id)}
-                                    className="mt-2.5 flex items-center gap-1.5 text-xs font-semibold text-blue-700 hover:text-blue-900 transition-colors"
+                                    className="mt-2.5 flex items-center gap-1.5 text-xs font-semibold text-[#162d4a] hover:text-[#0a1628] transition-colors"
                                   >
                                     <span>💡</span>
                                     <span>Grayson&apos;s Pro Tip</span>
@@ -1072,7 +1072,7 @@ export function CruiseCountdownTimeline() {
                               <div className="flex gap-3 items-start md:ml-[52px]">
                                 <span className="text-xl flex-shrink-0">💡</span>
                                 <div>
-                                  <p className="text-xs font-bold text-blue-800 uppercase tracking-wide mb-1">
+                                  <p className="text-xs font-bold text-[#0a1628] uppercase tracking-wide mb-1">
                                     Grayson&apos;s Pro Tip
                                   </p>
                                   <p className="text-sm text-gray-700 leading-relaxed">
@@ -1096,7 +1096,7 @@ export function CruiseCountdownTimeline() {
       {/* ------------------------------------------------------------------ */}
       {/* Bottom CTA */}
       {/* ------------------------------------------------------------------ */}
-      <section className="bg-gradient-to-br from-blue-950 to-indigo-900 py-16 md:py-24">
+      <section className="bg-gradient-to-br from-[#0a1628] to-indigo-900 py-16 md:py-24">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
           <div className="text-5xl mb-6">🎩</div>
           <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
@@ -1125,7 +1125,7 @@ export function CruiseCountdownTimeline() {
 
           <Link
             href="/concierge"
-            className="inline-flex items-center gap-2 bg-amber-400 hover:bg-amber-300 text-blue-950 font-bold px-8 py-4 rounded-xl text-lg transition-colors shadow-lg shadow-amber-400/20"
+            className="inline-flex items-center gap-2 bg-amber-400 hover:bg-amber-300 text-[#0a1628] font-bold px-8 py-4 rounded-xl text-lg transition-colors shadow-lg shadow-amber-400/20"
           >
             Get Free Concierge Help
             <span aria-hidden>→</span>

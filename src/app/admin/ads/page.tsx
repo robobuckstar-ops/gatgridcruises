@@ -119,7 +119,7 @@ export default function AdManagement() {
       case 'direct_sold':
         return 'bg-emerald-100 text-emerald-800'
       case 'adsense':
-        return 'bg-[#1E3A5F]/20 text-blue-800'
+        return 'bg-[#1E3A5F]/20 text-[#0a1628]'
       default:
         return 'bg-slate-100 text-slate-800'
     }
@@ -156,7 +156,7 @@ export default function AdManagement() {
           <div className="bg-white rounded-xl border border-slate-200 p-5">
             <div className="flex items-center gap-3 mb-2">
               <div className="w-10 h-10 bg-[#1E3A5F]/20 rounded-lg flex items-center justify-center">
-                <TrendingUp className="h-5 w-5 text-blue-600" />
+                <TrendingUp className="h-5 w-5 text-[#1E3A5F]" />
               </div>
               <span className="text-2xl font-bold text-navy">{activePlacements}</span>
             </div>
@@ -174,7 +174,7 @@ export default function AdManagement() {
           <div className="bg-white rounded-xl border border-slate-200 p-5">
             <div className="flex items-center gap-3 mb-2">
               <div className="w-10 h-10 bg-gold/10 rounded-lg flex items-center justify-center">
-                <TrendingUp className="h-5 w-5 text-blue-600" />
+                <TrendingUp className="h-5 w-5 text-[#1E3A5F]" />
               </div>
               <span className="text-2xl font-bold text-navy">${monthlyRevenue.toLocaleString()}</span>
             </div>
@@ -389,7 +389,7 @@ export default function AdManagement() {
             </div>
             <div>
               <p className="text-sm text-slate-500 mb-1">Available Slots</p>
-              <p className="text-2xl font-bold text-blue-600">
+              <p className="text-2xl font-bold text-[#1E3A5F]">
                 {slots.filter(s => s.status === 'placeholder').length}
               </p>
               <p className="text-xs text-slate-400 mt-1">Ready to monetize</p>

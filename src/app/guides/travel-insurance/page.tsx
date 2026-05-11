@@ -250,7 +250,7 @@ export default function TravelInsurancePage() {
                   <h3 className="font-bold text-slate-900 text-lg">{type}</h3>
                   <span className={`text-xs font-bold px-3 py-1 rounded-full ${
                     priority === 'Critical' ? 'bg-red-100 text-red-700' :
-                    priority === 'Essential' ? 'bg-blue-100 text-blue-700' :
+                    priority === 'Essential' ? 'bg-blue-100 text-[#162d4a]' :
                     priority === 'Nice to Have' ? 'bg-green-100 text-green-700' :
                     'bg-slate-200 text-slate-600'
                   }`}>
@@ -319,7 +319,7 @@ export default function TravelInsurancePage() {
                 href="https://www.allianztravelinsurance.com"
                 
                 
-                className="block w-full text-center bg-[#1E3A5F] text-white font-semibold rounded-xl py-2.5 text-sm hover:bg-blue-900 transition-colors"
+                className="block w-full text-center bg-[#1E3A5F] text-white font-semibold rounded-xl py-2.5 text-sm hover:bg-[#0a1628] transition-colors"
               >
                 Get Allianz Quote →
               </a>
@@ -362,7 +362,7 @@ export default function TravelInsurancePage() {
                 href="https://www.worldnomads.com"
                 
                 
-                className="block w-full text-center bg-[#1E3A5F] text-white font-semibold rounded-xl py-2.5 text-sm hover:bg-blue-900 transition-colors"
+                className="block w-full text-center bg-[#1E3A5F] text-white font-semibold rounded-xl py-2.5 text-sm hover:bg-[#0a1628] transition-colors"
               >
                 Get World Nomads Quote →
               </a>
@@ -510,7 +510,7 @@ export default function TravelInsurancePage() {
                     <p className="font-semibold text-slate-900 text-sm">{item}</p>
                     <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${
                       priority === 'Critical' ? 'bg-red-100 text-red-700' :
-                      priority === 'Essential' ? 'bg-blue-100 text-blue-700' :
+                      priority === 'Essential' ? 'bg-blue-100 text-[#162d4a]' :
                       priority === 'Recommended' ? 'bg-green-100 text-green-700' :
                       'bg-slate-200 text-slate-600'
                     }`}>
@@ -653,15 +653,15 @@ export default function TravelInsurancePage() {
           <h2 className="font-fraunces text-2xl font-bold text-slate-900 mb-6">Related Guides</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <Link href="/guides/packing-gear" className="group block p-5 rounded-xl border-2 border-slate-200 hover:border-[#1E3A5F] hover:shadow-md transition-all duration-200">
-              <p className="text-xs font-semibold text-blue-600 uppercase tracking-wider mb-2">Gear</p>
+              <p className="text-xs font-semibold text-[#1E3A5F] uppercase tracking-wider mb-2">Gear</p>
               <p className="font-fraunces font-bold text-slate-900 group-hover:text-[#1E3A5F] transition-colors">The Ultimate Disney Cruise Packing List</p>
             </Link>
             <Link href="/guides/ports" className="group block p-5 rounded-xl border-2 border-slate-200 hover:border-[#1E3A5F] hover:shadow-md transition-all duration-200">
-              <p className="text-xs font-semibold text-blue-600 uppercase tracking-wider mb-2">Ports</p>
+              <p className="text-xs font-semibold text-[#1E3A5F] uppercase tracking-wider mb-2">Ports</p>
               <p className="font-fraunces font-bold text-slate-900 group-hover:text-[#1E3A5F] transition-colors">Disney Cruise Port Guides</p>
             </Link>
             <Link href="/guides/disney-cruise-cost-guide" className="group block p-5 rounded-xl border-2 border-slate-200 hover:border-[#1E3A5F] hover:shadow-md transition-all duration-200">
-              <p className="text-xs font-semibold text-blue-600 uppercase tracking-wider mb-2">Planning</p>
+              <p className="text-xs font-semibold text-[#1E3A5F] uppercase tracking-wider mb-2">Planning</p>
               <p className="font-fraunces font-bold text-slate-900 group-hover:text-[#1E3A5F] transition-colors">The True Cost of a Disney Cruise</p>
             </Link>
           </div>

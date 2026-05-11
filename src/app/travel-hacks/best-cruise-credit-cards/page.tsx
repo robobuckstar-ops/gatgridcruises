@@ -100,7 +100,7 @@ const cards = [
 ]
 
 const badgeColors: Record<string, string> = {
-  blue: 'bg-blue-100 text-blue-700',
+  blue: 'bg-blue-100 text-[#162d4a]',
   emerald: 'bg-emerald-100 text-emerald-700',
   purple: 'bg-purple-100 text-purple-700',
 }
@@ -265,7 +265,7 @@ export default function BestCruiseCreditCardsPage() {
                 className="flex items-center justify-between p-4 bg-white rounded-lg border border-slate-200 hover:border-blue-300 hover:shadow-sm transition"
               >
                 <span className="font-medium text-slate-900 text-sm">{label}</span>
-                <span className="text-blue-600 text-sm">→</span>
+                <span className="text-[#1E3A5F] text-sm">→</span>
               </Link>
             ))}
           </div>

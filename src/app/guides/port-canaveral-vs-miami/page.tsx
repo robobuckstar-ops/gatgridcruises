@@ -96,7 +96,7 @@ export default function PortCanaveralVsMiamiGuide() {
 
           <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3 flex items-center gap-2">
-              <Clock size={24} className="text-blue-600" />
+              <Clock size={24} className="text-[#1E3A5F]" />
               Port Canaveral
             </h3>
             <p className="font-inter text-slate-600 mb-3">
@@ -119,7 +119,7 @@ export default function PortCanaveralVsMiamiGuide() {
 
           <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3 flex items-center gap-2">
-              <Clock size={24} className="text-blue-600" />
+              <Clock size={24} className="text-[#1E3A5F]" />
               Miami (PortMiami)
             </h3>
             <p className="font-inter text-slate-600 mb-3">
@@ -149,7 +149,7 @@ export default function PortCanaveralVsMiamiGuide() {
 
           <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3 flex items-center gap-2">
-              <DollarSign size={24} className="text-blue-600" />
+              <DollarSign size={24} className="text-[#1E3A5F]" />
               Port Canaveral Parking
             </h3>
             <p className="font-inter text-slate-600 mb-4">
@@ -170,7 +170,7 @@ export default function PortCanaveralVsMiamiGuide() {
 
           <div className="bg-slate-50 border-l-4 border-[#1E3A5F] p-6 rounded-lg mb-6">
             <h3 className="text-xl font-fraunces font-bold text-slate-900 mb-3 flex items-center gap-2">
-              <DollarSign size={24} className="text-blue-600" />
+              <DollarSign size={24} className="text-[#1E3A5F]" />
               Miami Parking
             </h3>
             <p className="font-inter text-slate-600 mb-4">
@@ -323,25 +323,25 @@ export default function PortCanaveralVsMiamiGuide() {
             </h3>
             <ul className="font-inter text-slate-600 space-y-3">
               <li className="flex gap-3">
-                <span className="text-blue-600 font-bold">•</span>
+                <span className="text-[#1E3A5F] font-bold">•</span>
                 <div>
                   <strong>Kennedy Space Center Visitor Complex (45 minutes away):</strong> NASA's space exploration museum. Great for families interested in space; can spend 4-6 hours here. Perfect pre-cruise activity (especially for kids). $63+ adult admission.
                 </div>
               </li>
               <li className="flex gap-3">
-                <span className="text-blue-600 font-bold">•</span>
+                <span className="text-[#1E3A5F] font-bold">•</span>
                 <div>
                   <strong>Disney World (45 minutes):</strong> The ultimate combo—visit Magic Kingdom, EPCOT, or Hollywood Studios before your cruise. Many families plan "Disney World + Disney Cruise" back-to-back vacations from Canaveral.
                 </div>
               </li>
               <li className="flex gap-3">
-                <span className="text-blue-600 font-bold">•</span>
+                <span className="text-[#1E3A5F] font-bold">•</span>
                 <div>
                   <strong>Cocoa Beach:</strong> Beach-adjacent to port; good for morning walks or afternoon beach time.
                 </div>
               </li>
               <li className="flex gap-3">
-                <span className="text-blue-600 font-bold">•</span>
+                <span className="text-[#1E3A5F] font-bold">•</span>
                 <div>
                   <strong>Ron Jon's Surf Shop:</strong> Iconic beach retail, 24-hour store open for last-minute shopping.
                 </div>
@@ -355,31 +355,31 @@ export default function PortCanaveralVsMiamiGuide() {
             </h3>
             <ul className="font-inter text-slate-600 space-y-3">
               <li className="flex gap-3">
-                <span className="text-blue-600 font-bold">•</span>
+                <span className="text-[#1E3A5F] font-bold">•</span>
                 <div>
                   <strong>South Beach & Miami Beach:</strong> World-famous beach area just 20 minutes from port. Excellent for dining, shopping, nightlife, and relaxation before sailing.
                 </div>
               </li>
               <li className="flex gap-3">
-                <span className="text-blue-600 font-bold">•</span>
+                <span className="text-[#1E3A5F] font-bold">•</span>
                 <div>
                   <strong>Wynwood Walls:</strong> Street art district with colorful murals, galleries, boutiques, and restaurants (15 minutes).
                 </div>
               </li>
               <li className="flex gap-3">
-                <span className="text-blue-600 font-bold">•</span>
+                <span className="text-[#1E3A5F] font-bold">•</span>
                 <div>
                   <strong>Vizcaya Museum & Gardens:</strong> Historic mansion and Italian Renaissance-inspired gardens (20 minutes).
                 </div>
               </li>
               <li className="flex gap-3">
-                <span className="text-blue-600 font-bold">•</span>
+                <span className="text-[#1E3A5F] font-bold">•</span>
                 <div>
                   <strong>Everglades Tours:</strong> Airboat tours into famous wetlands (1.5 hours drive, full-day activity).
                 </div>
               </li>
               <li className="flex gap-3">
-                <span className="text-blue-600 font-bold">•</span>
+                <span className="text-[#1E3A5F] font-bold">•</span>
                 <div>
                   <strong>Little Havana:</strong> Historic Cuban neighborhood with restaurants, cafes, culture (15 minutes).
                 </div>
@@ -581,7 +581,7 @@ export default function PortCanaveralVsMiamiGuide() {
           <div className="grid md:grid-cols-3 gap-6">
             <Link href="/guides/disney-cruise-cost-guide" className="group">
               <div className="bg-gray-50 p-6 rounded-lg hover:bg-blue-50 transition">
-                <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-blue-600">
+                <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-[#1E3A5F]">
                   The True Cost of a Disney Cruise
                 </h3>
                 <p className="font-inter text-gray-600 text-sm">
@@ -591,7 +591,7 @@ export default function PortCanaveralVsMiamiGuide() {
             </Link>
             <Link href="/guides/first-time-disney-cruise-tips" className="group">
               <div className="bg-gray-50 p-6 rounded-lg hover:bg-blue-50 transition">
-                <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-blue-600">
+                <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-[#1E3A5F]">
                   25 First-Time Cruise Tips
                 </h3>
                 <p className="font-inter text-gray-600 text-sm">
@@ -601,7 +601,7 @@ export default function PortCanaveralVsMiamiGuide() {
             </Link>
             <Link href="/guides/best-disney-cruise-staterooms" className="group">
               <div className="bg-gray-50 p-6 rounded-lg hover:bg-blue-50 transition">
-                <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-blue-600">
+                <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-[#1E3A5F]">
                   Best Disney Cruise Staterooms
                 </h3>
                 <p className="font-inter text-gray-600 text-sm">

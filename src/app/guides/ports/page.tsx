@@ -75,14 +75,14 @@ const ports = [
 ]
 
 const colorMap: Record<string, string> = {
-  blue: 'bg-[#1E3A5F]/10 border-blue-200 text-blue-700',
+  blue: 'bg-[#1E3A5F]/10 border-blue-200 text-[#162d4a]',
   cyan: 'bg-cyan-50 border-cyan-200 text-cyan-700',
   emerald: 'bg-emerald-50 border-emerald-200 text-emerald-700',
   orange: 'bg-orange-50 border-orange-200 text-orange-700',
 }
 
 const badgeMap: Record<string, string> = {
-  blue: 'bg-[#1E3A5F]/20 text-blue-800',
+  blue: 'bg-[#1E3A5F]/20 text-[#0a1628]',
   cyan: 'bg-cyan-100 text-cyan-800',
   emerald: 'bg-emerald-100 text-emerald-800',
   orange: 'bg-orange-100 text-orange-800',
