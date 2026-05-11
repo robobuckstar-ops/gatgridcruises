@@ -191,8 +191,8 @@ export default function MilitaryDealsPage() {
           </div>
 
           <div className="mt-8 p-4 bg-navy-50 border border-navy-200 rounded-xl flex items-start gap-3">
-            <AlertCircle className="h-5 w-5 text-blue-600 flex-shrink-0 mt-0.5" aria-hidden="true" />
-            <p className="text-sm text-blue-800">
+            <AlertCircle className="h-5 w-5 text-navy-700 flex-shrink-0 mt-0.5" aria-hidden="true" />
+            <p className="text-sm text-navy-900">
               <span className="font-semibold">Verification required:</span> Disney confirms military
               status during the booking process. Valid documentation (military ID, DD-214, or equivalent)
               must be presented. Our concierge will guide you through what&apos;s needed for your specific

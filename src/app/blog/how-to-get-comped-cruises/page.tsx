@@ -177,10 +177,10 @@ export default function HowToGetCompedCruises() {
               {sections.map((section) => {
                 const Icon = section.icon
                 return (
-                  <div key={section.title} className="border-l-4 border-blue-600 pl-6">
+                  <div key={section.title} className="border-l-4 border-navy-700 pl-6">
                     <div className="flex items-center gap-3 mb-3">
                       <div className="w-8 h-8 bg-navy-50 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <Icon className="w-4 h-4 text-blue-600" />
+                        <Icon className="w-4 h-4 text-navy-700" />
                       </div>
                       <h2 className="font-fraunces text-xl font-bold text-slate-900">
                         {section.title}

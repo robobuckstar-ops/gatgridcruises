@@ -460,7 +460,7 @@ export default async function SailingDetailPage({ params }: PageProps) {
             <section className="border border-slate-200 rounded-xl p-5 bg-slate-50/60">
               <div className="flex items-start gap-3 mb-4">
                 <div className="flex-shrink-0 w-9 h-9 bg-navy-50 border border-navy-100 rounded-lg flex items-center justify-center">
-                  <ShoppingBag className="h-5 w-5 text-blue-500" />
+                  <ShoppingBag className="h-5 w-5 text-navy-700" />
                 </div>
                 <div>
                   <h3 className="font-display text-base font-semibold text-slate-900">Prepping for Your Voyage?</h3>
