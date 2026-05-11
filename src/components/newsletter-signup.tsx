@@ -12,19 +12,44 @@ export function NewsletterSignup({ variant = 'card', className = '' }: Newslette
   const [email, setEmail] = useState('')
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     if (!email) return
+    setError('')
     setLoading(true)
-    await new Promise((r) => setTimeout(r, 600))
-    setSubmitted(true)
-    setLoading(false)
+    try {
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email,
+          preferences: { source: `newsletter-signup-${variant}` },
+        }),
+      })
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}))
+        if (res.status === 409) {
+          // Already subscribed — treat as success from the user's perspective
+          setSubmitted(true)
+        } else {
+          setError(data.error || 'Subscription failed. Please try again.')
+        }
+        setLoading(false)
+        return
+      }
+      setSubmitted(true)
+    } catch {
+      setError('Something went wrong. Please try again.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   if (variant === 'inline') {
     return (
-      <div className={`flex flex-col sm:flex-row gap-3 ${className}`}>
+      <div className={`flex flex-col gap-2 ${className}`}>
         {submitted ? (
           <div className="flex items-center gap-2 text-emerald-600 font-medium text-sm">
             <CheckCircle className="h-5 w-5" />
@@ -49,6 +74,9 @@ export function NewsletterSignup({ variant = 'card', className = '' }: Newslette
             </button>
           </form>
         )}
+        {error && !submitted && (
+          <p className="text-red-600 text-xs" role="alert">{error}</p>
+        )}
       </div>
     )
   }
@@ -69,23 +97,28 @@ export function NewsletterSignup({ variant = 'card', className = '' }: Newslette
               You're subscribed!
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="flex gap-2">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="your@email.com"
-                required
-                className="px-3 py-1.5 rounded text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 w-44"
-              />
-              <button
-                type="submit"
-                disabled={loading}
-                className="px-4 py-1.5 bg-yellow-400 text-slate-900 font-bold rounded text-sm hover:bg-yellow-300 transition disabled:opacity-60"
-              >
-                {loading ? '…' : 'Subscribe'}
-              </button>
-            </form>
+            <div className="flex flex-col gap-1">
+              <form onSubmit={handleSubmit} className="flex gap-2">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="your@email.com"
+                  required
+                  className="px-3 py-1.5 rounded text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 w-44"
+                />
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="px-4 py-1.5 bg-yellow-400 text-slate-900 font-bold rounded text-sm hover:bg-yellow-300 transition disabled:opacity-60"
+                >
+                  {loading ? '…' : 'Subscribe'}
+                </button>
+              </form>
+              {error && (
+                <p className="text-yellow-200 text-xs" role="alert">{error}</p>
+              )}
+            </div>
           )}
         </div>
       </div>
@@ -119,23 +152,28 @@ export function NewsletterSignup({ variant = 'card', className = '' }: Newslette
           </div>
         </div>
       ) : (
-        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="your@email.com"
-            required
-            className="flex-1 px-4 py-3 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white"
-          />
-          <button
-            type="submit"
-            disabled={loading}
-            className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition text-sm disabled:opacity-60 whitespace-nowrap"
-          >
-            {loading ? 'Signing up…' : 'Send Me Deals'}
-          </button>
-        </form>
+        <>
+          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="your@email.com"
+              required
+              className="flex-1 px-4 py-3 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white"
+            />
+            <button
+              type="submit"
+              disabled={loading}
+              className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition text-sm disabled:opacity-60 whitespace-nowrap"
+            >
+              {loading ? 'Signing up…' : 'Send Me Deals'}
+            </button>
+          </form>
+          {error && (
+            <p className="text-red-300 text-xs mt-2" role="alert">{error}</p>
+          )}
+        </>
       )}
 
       <p className="text-xs text-slate-400 mt-3">

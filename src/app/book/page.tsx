@@ -9,6 +9,7 @@ import { ships as DCL_SHIPS } from '@/data/ships'
 
 export default function BookPage() {
   const [submitted, setSubmitted] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
   const [honeypot, setHoneypot] = useState('')
   const [formError, setFormError] = useState('')
   const [form, setForm] = useState({
@@ -50,15 +51,55 @@ export default function BookPage() {
     }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setFormError('')
     if (honeypot) return
     if (!form.fullName.trim()) { setFormError('Please enter your full name.'); return }
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     if (!form.email || !emailRegex.test(form.email)) { setFormError('Please enter a valid email address.'); return }
-    setSubmitted(true)
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+
+    const dateRange =
+      form.startMonth || form.startYear || form.endMonth || form.endYear
+        ? `${form.startMonth || '?'} ${form.startYear || '?'} – ${form.endMonth || '?'} ${form.endYear || '?'}`
+        : 'Flexible'
+    const notesParts = [
+      `Travel window: ${dateRange}`,
+      `Party: ${form.adults} adults, ${form.children} children`,
+      `Preferred ship: ${form.ship}`,
+      `Stateroom preference: ${form.stateroom}`,
+      `Destination: ${form.destination}`,
+      `Cruise length: ${form.cruiseLength.length ? form.cruiseLength.join(', ') : 'no preference'}`,
+      `Budget per person: ${form.budget}`,
+      form.referral ? `How they heard: ${form.referral}` : '',
+      form.notes ? `\nNotes from guest:\n${form.notes}` : '',
+    ].filter(Boolean)
+
+    setSubmitting(true)
+    try {
+      const res = await fetch('/api/inquiry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: form.fullName,
+          email: form.email,
+          phone: form.phone,
+          guests: `${form.adults}A/${form.children}C`,
+          notes: notesParts.join('\n'),
+        }),
+      })
+      if (!res.ok) {
+        setSubmitting(false)
+        setFormError('Something went wrong. Please try again or email bookings@gatgridcruises.com.')
+        return
+      }
+      setSubmitting(false)
+      setSubmitted(true)
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    } catch {
+      setSubmitting(false)
+      setFormError('Something went wrong. Please try again or email bookings@gatgridcruises.com.')
+    }
   }
 
   if (submitted) {
@@ -526,9 +567,11 @@ export default function BookPage() {
             <div className="pt-2">
               <button
                 type="submit"
-                className="w-full py-4 bg-[#1E3A5F] text-white font-bold text-lg rounded-xl hover:bg-[#162d4a] transition-colors duration-200 shadow-lg"
+                disabled={submitting}
+                aria-busy={submitting}
+                className="w-full py-4 bg-[#1E3A5F] text-white font-bold text-lg rounded-xl hover:bg-[#162d4a] transition-colors duration-200 shadow-lg disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                Get My Free Quote →
+                {submitting ? 'Sending…' : 'Get My Free Quote →'}
               </button>
               <div className="mt-4 text-center space-y-1">
                 <p className="text-xs text-slate-500">

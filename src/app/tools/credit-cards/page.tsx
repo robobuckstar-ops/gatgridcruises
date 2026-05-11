@@ -1042,7 +1042,7 @@ export default function CreditCardsPage() {
               {
                 name: 'Chase Ink Business Unlimited',
                 fee: '$0 / yr',
-                bonus: '$900 cash back',
+                bonus: '$750 cash back',
                 earn: '1.5x on all purchases',
                 why: 'Zero-fee workhorse. Pair with Ink Business Preferred to pool points and unlock airline/hotel transfers at no added cost.',
               },
@@ -1056,7 +1056,7 @@ export default function CreditCardsPage() {
               {
                 name: 'Chase Ink Business Unlimited',
                 fee: '$0 / yr (no annual fee)',
-                bonus: '$900 cash back',
+                bonus: '$750 cash back',
                 earn: '1.5x on all purchases',
                 why: 'No-fee workhorse. Pair with the Ink Business Preferred to pool Ultimate Rewards and unlock airline + Hyatt transfers at zero added cost.',
               },
