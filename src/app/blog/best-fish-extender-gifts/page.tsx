@@ -213,7 +213,7 @@ export default function BestFishExtenderGifts() {
           </p>
 
           <p className="text-xs text-slate-400 mb-8">
-            Disclosure: Links below are Amazon affiliate links (tag: thm1230b0300-20). GatGridCruises earns a small
+            Disclosure: Links below are Amazon affiliate links (tag: gatgridcruise-20). GatGridCruises earns a small
             commission if you purchase through them, at no extra cost to you.
           </p>
 
