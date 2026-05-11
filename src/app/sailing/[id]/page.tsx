@@ -12,23 +12,11 @@ import { PriceTrend } from '@/components/ui/price-trend'
 import { Ship, Calendar, MapPin, Clock, DollarSign, Anchor, BedDouble, Car, Building2, ArrowRight, Check, X as XIcon, Info, TrendingDown, TrendingUp, ShoppingBag, Flame } from 'lucide-react'
 import { BookingInquiryButton } from '@/components/ui/booking-inquiry-button'
 import { WhyBookWithUs } from '@/components/ui/why-book-with-us'
-
-const PORT_GUIDE_SLUGS: Record<string, string> = {
-  'Castaway Cay': 'castaway-cay',
-  'Lookout Cay': 'lookout-cay',
-  'Lookout Cay at Lighthouse Point': 'lookout-cay',
-  'Lighthouse Point': 'lookout-cay',
-  'Nassau': 'nassau',
-  'Nassau, Bahamas': 'nassau',
-  'Cozumel': 'cozumel',
-  'Cozumel, Mexico': 'cozumel',
-  'Port Canaveral': 'port-canaveral',
-  'Port Canaveral, Florida': 'port-canaveral',
-}
+import { getPortSlugFromItineraryName } from '@/data/destination-ports'
 
 function getPortGuideUrl(portName: string): string | null {
-  const slug = PORT_GUIDE_SLUGS[portName]
-  return slug ? `/guides/ports/${slug}` : null
+  const slug = getPortSlugFromItineraryName(portName)
+  return slug ? `/ports/${slug}` : null
 }
 
 type AvailabilityStatus = 'available' | 'limited' | 'sold_out'

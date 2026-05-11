@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { getPorts } from '@/lib/data'
-import { destinationPorts } from '@/data/destination-ports'
+import { allDestinationPorts } from '@/data/destination-ports'
 import { MapPin, Plane, DollarSign, Calendar, Anchor, ChevronRight } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -79,7 +79,7 @@ export default function PortsIndexPage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {destinationPorts.map(port => (
+            {allDestinationPorts.map(port => (
               <Link
                 key={port.slug}
                 href={`/ports/${port.slug}`}
