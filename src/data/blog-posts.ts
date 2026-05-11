@@ -54,6 +54,8 @@ The Disney Treasure's maiden voyage is scheduled for late 2025, with sailings fr
 "
 The Disney Treasure represents Disney Cruise Line's commitment to innovation while maintaining the quality and magic that guests have come to expect. This is a ship worth getting excited about.
 
+If you're comparing newer Wish-class options, the recently launched <a href="/blog/disney-destiny-heroes-villains-guide">Disney Destiny — the Heroes &amp; Villains ship</a> is the Treasure's most direct sibling and the most theatrically themed ship in the fleet right now.
+
 </div>
     `.trim(),
   },
@@ -806,7 +808,7 @@ Many teens who are skeptical before boarding return home having had a genuinely 
     id: '11',
     slug: 'best-credit-cards-disney-cruises',
     title: 'Best Credit Cards for Disney Cruises in 2026',
-    excerpt: 'The right credit card can pay for part of your Disney cruise, cover trip cancellation, and make airport lounges your pre-cruise ritual. Here are the top picks for cruise travelers in 2026.',
+    excerpt: 'The right credit card can offset Disney cruise costs, cover trip cancellation, and unlock airport lounges. Our top card picks for 2026 cruise travelers.',
     author: 'Dr. Grayson Starbuck, DPT',
     published_date: '2026-04-14',
     category: 'tips',
@@ -1009,13 +1011,14 @@ Many teens who are skeptical before boarding return home having had a genuinely 
 
 <h2>Ready to Find a Disney Deal?</h2>
 <p>If Disney is the right choice for your family, timing your booking right can save hundreds or thousands of dollars. Our <a href="/search">AI cruise finder</a> monitors Disney's pricing and surfaces deals as they emerge. The <a href="/deals">deal grid</a> shows all current pricing across all sailings. Or reach out via the <a href="/book">booking inquiry form</a> for personalized guidance on which sailing is right for your family.</p>
+<p>Curious which Disney ship is the right pick? Our <a href="/blog/disney-destiny-heroes-villains-guide">first-look guide to the Disney Destiny</a> covers the newest Wish-class ship and how its Heroes &amp; Villains theming compares to the Wish and Treasure.</p>
     `.trim(),
   },
   {
     id: '13',
     slug: 'save-money-disney-cruise',
     title: 'How to Save Money on a Disney Cruise: 10 Insider Tips',
-    excerpt: 'Disney cruises are expensive — but there are real, proven strategies to reduce what you pay without sacrificing the magic. Here are 10 tips from someone who watches Disney pricing every day.',
+    excerpt: 'Disney cruises are expensive, but real strategies can cut the cost without losing the magic. 10 insider tips from someone who watches DCL pricing daily.',
     author: 'Dr. Grayson Starbuck, DPT',
     published_date: '2026-04-10',
     category: 'tips',
@@ -1074,6 +1077,71 @@ Many teens who are skeptical before boarding return home having had a genuinely 
 <li><a href="/tools/flights">Flight Finder</a> — find the best flights to your embarkation port</li>
 </ul>
 <p>For personalized advice on timing, stateroom selection, and which sailing fits your family's preferences and budget, use the <a href="/book">free booking inquiry form</a> to reach Grayson directly. He monitors Disney pricing every day and can help you identify the right moment and the right sailing — no booking required, no pressure.</p>
+    `.trim(),
+  },
+  {
+    id: '14',
+    slug: 'disney-destiny-heroes-villains-guide',
+    title: 'Disney Destiny Heroes and Villains Ship: A First-Look Guide for 2026',
+    excerpt: 'Disney Destiny — the newest Wish-class ship — is themed around heroes and villains. Our complete first-look guide to dining, shows, and 2026 itineraries.',
+    author: 'Dr. Grayson Starbuck, DPT',
+    published_date: '2026-05-11',
+    category: 'news',
+    tags: ['destiny', 'new-ships', 'disney-cruise-line', 'heroes-villains', 'wish-class'],
+    read_time: '8 min read',
+    featured_image_url: 'https://images.unsplash.com/photo-1507666664345-c49223375e33?w=1200&h=600&fit=crop',
+    content: `
+<p>The Disney Destiny — the third ship in Disney Cruise Line's Wish-class fleet — officially set sail in November 2025, and after six months at sea, the verdict from cruise reviewers and first-wave guests is loud and clear: this is the most ambitious themed cruise ship Disney has ever launched. The <strong>Disney Destiny Heroes and Villains</strong> theme is woven into every public space, every restaurant, and every show on board, giving the ship a personality that's unlike anything else in the fleet. If you're considering a 2026 sailing, this is your complete first-look guide.</p>
+
+<h2>What Makes the Disney Destiny Heroes and Villains Ship Different?</h2>
+<p>Disney has experimented with theming on every Wish-class ship — the Wish leaned into classic fairytales, the Treasure embraced adventure and exploration — but the Destiny takes the concept further than any ship before it. The <strong>Heroes and Villains</strong> theme isn't a decorative motif; it's the architectural framework of the entire vessel. Public spaces are split between hero-aligned districts (bright, hopeful, heroic) and villain-aligned districts (moody, opulent, mischievous), and the guest experience genuinely shifts as you move between them.</p>
+<p>The result is something Disney rarely achieves on a single ship: a feeling that you've stepped into a layered Disney story rather than just a floating hotel with character meet-and-greets. For first-time cruisers, this makes the ship more immersive. For returning Disney cruisers, it's the most distinct fleet experience to date — even compared to its sister ships. (For a side-by-side breakdown of how Destiny stacks up against the rest of the fleet, our <a href="/blog/disney-cruise-comparison">Disney Cruise Line ship comparison guide</a> is a useful companion read.)</p>
+
+<h2>Dining on the Disney Destiny: Three Rotational Restaurants Reimagined</h2>
+<p>Rotational dining is the heart of every Disney cruise, and the Destiny's three main dining rooms each tell a distinct Disney story:</p>
+<ul>
+<li><strong>Pride Lands: Feast of the Lion King</strong> — the headline rotational restaurant and the spiritual successor to Arendelle on the Wish and Plaza de Coco on the Treasure. The room is themed to the African savanna, lighting shifts from dawn to dusk as your meal progresses, and the show built into the dinner is, by most accounts, the most emotionally resonant rotational dining experience in the fleet.</li>
+<li><strong>1923</strong> — a tribute to the year Walt Disney Company was founded, with more than 1,000 original drawings, props, and artifacts from Disney films lining the walls. Elegant Hollywood Golden Age atmosphere, classic American menu.</li>
+<li><strong>Worlds of Marvel</strong> — returning from the Wish, but the Destiny version features an updated Rocket and Groot interactive story that's longer and more involved than its predecessor.</li>
+</ul>
+<p>Adults-only options include <strong>Palo Steakhouse</strong> (the fleet's signature Italian-steakhouse fusion) and <strong>Enchanté by Chef Arnaud Lallement</strong>, a Michelin-starred French dining experience that has quickly become one of the most sought-after reservations on any Disney ship. Both are upcharges, and both fill within hours of online check-in opening — book the moment your window unlocks.</p>
+
+<h3>Bars and Lounges Built Around the Villains</h3>
+<p>The lounges are where the villains really get to shine. <strong>De Vil's</strong> is a 101 Dalmatians-themed piano bar in a striking black, white, and red palette. <strong>Cask and Cannon</strong> brings Pirates of the Caribbean to life as a working tavern. <strong>The Sanctum</strong> takes inspiration from Doctor Strange and serves as the ship's most atmospheric cocktail lounge. Even if you're not a drinker, these spaces are worth visiting as on-ship attractions in their own right.</p>
+
+<h2>Entertainment: Hercules the Musical and Live Villain Encounters</h2>
+<p>The Walt Disney Theatre on the Destiny debuts an original production of <strong>Hercules: The Musical</strong>, and early reviewers have called it the strongest mainstage show in the Disney Cruise Line fleet. The choreography, the live score, and the staging make it a must-see — plan around the show schedule on night one of your sailing.</p>
+<p>Beyond the mainstage, the Destiny leans into character-driven live moments throughout the ship: Cruella de Vil hosts a runway show, Maleficent holds court at the Saga lounge, and Dr. Facilier performs sleight-of-hand sessions in his "secret parlor." These aren't traditional meet-and-greets — they're improvised, theatrical performances that change night to night.</p>
+
+<h2>Itineraries and Where the Disney Destiny Sails in 2026</h2>
+<p>The Disney Destiny sails primarily from <strong>Port Everglades (Fort Lauderdale)</strong> on 4-, 5-, and 7-night Bahamas and Caribbean itineraries. Most sailings include a day at Disney's private island — typically Castaway Cay, with select itineraries calling at Lookout Cay at Lighthouse Point. Caribbean ports of call include Tortola, St. Thomas, San Juan, and Grand Cayman.</p>
+<p>If you want to compare specific dates, prices, and stateroom availability across the Destiny's current schedule, browse the live <a href="/sailings">sailings dashboard</a>. You can also see deck plans, amenities, and editorial commentary on the <a href="/ships/disney-destiny">Disney Destiny ship page</a>. For 2026 demand patterns we've observed, shoulder-season Destiny sailings (early September, late January) are running 20–30% below peak summer pricing — without sacrificing the experience.</p>
+
+<h2>Who the Disney Destiny Is Best For</h2>
+<p>The Destiny is a strong fit for several types of cruisers:</p>
+<ul>
+<li><strong>Disney superfans</strong> — the theming density is unmatched, and the Heroes and Villains framework gives every space a story you can unpack.</li>
+<li><strong>Families with older kids and teens</strong> — Marvel and villain content lands especially well with the 9–17 crowd. Younger kids still have full access to Oceaneer Club and Oceaneer Lab, but the show schedule skews more PG than the Wonder or Magic.</li>
+<li><strong>Couples without kids</strong> — Enchanté, the Rose, and De Vil's give adults a remarkably rich evening experience.</li>
+</ul>
+<p>If you're a first-time Disney cruiser specifically choosing between the Destiny and one of the older classic-class ships (the Magic or Wonder), the choice comes down to atmosphere. The Destiny is bigger, newer, and more theatrically themed. The older ships are warmer, more nostalgic, and easier to navigate. Both deliver the core Disney magic — just in different packages.</p>
+
+<h2>How the Destiny Compares to the Disney Treasure</h2>
+<p>The most common question we get is how the Destiny compares to its immediate predecessor. Both are Wish-class ships with similar layouts, capacities, and pricing. The difference is theme execution. Where the Treasure feels like an adventurer's lodge (see our <a href="/blog/disney-treasure-first-look">Disney Treasure first look</a> for the full breakdown), the Destiny feels like a Disney storybook brought to life. If you've already sailed the Treasure, the Destiny is different enough to justify another booking. If you haven't sailed either yet, the Destiny is the more theatrical of the two — but the Treasure remains the better choice if you prefer warmer, earth-toned environments.</p>
+
+<h2>Planning Your Disney Destiny Sailing</h2>
+<p>Disney Destiny sailings released for late 2026 and 2027 are pricing aggressively at initial release, which makes <strong>booking 12–18 months ahead</strong> the safest strategy for popular dates (summer, school breaks, holidays). For flexible travelers, watch September and January for the best shoulder-season pricing — our <a href="/deals">deals dashboard</a> tracks live Destiny pricing across every sailing in the schedule.</p>
+<p>A few quick pointers from guests who've already sailed:</p>
+<ul>
+<li>Book Enchanté the second your online check-in window opens — reservations vanish within minutes.</li>
+<li>Get to Hercules: The Musical at least 30 minutes early for the best seats.</li>
+<li>Plan one "villain evening" — start at Sanctum, dinner at 1923, then end at De Vil's piano bar.</li>
+<li>If you have young kids, the Oceaneer Club is still excellent — the adult-skewing entertainment is additive, not a replacement.</li>
+</ul>
+
+<h2>The Bottom Line on the Disney Destiny Heroes and Villains Ship</h2>
+<p>Disney Destiny is the most fully-realized themed ship Disney Cruise Line has ever built, and in 2026 it represents the strongest combination of new-ship excitement, theatrical ambition, and refined operational polish in the fleet. Whether it's the right ship for your family depends on what you value most — but for anyone drawn to story-driven Disney experiences, the Destiny is hard to beat.</p>
+<p>Need help deciding between the Destiny and another ship, or want personalized recommendations on which sailing fits your timing and budget? <a href="/book">Get a free quote from our team</a> or reach out via our <a href="/concierge">concierge inquiry form</a>. We'll walk you through the options — no pressure, no obligation.</p>
     `.trim(),
   },
 ]
