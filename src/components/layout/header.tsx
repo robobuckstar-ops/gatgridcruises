@@ -66,7 +66,7 @@ const navItems = [
     children: [
       { label: 'About GatGrid', href: '/about' },
       { label: '⭐ Concierge Service', href: '/concierge' },
-      { label: '🤝 Partner Program', href: '/referral' },
+      { label: '🤝 Partner Program', href: '/refer' },
     ],
   },
 ]

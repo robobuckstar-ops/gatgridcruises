@@ -81,7 +81,7 @@ export function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/referral" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
+                  <Link href="/refer" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
                     Partner Program
                   </Link>
                 </li>

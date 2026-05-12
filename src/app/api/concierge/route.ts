@@ -29,6 +29,9 @@ function agentNotificationHtml(p: {
   notes: string
   sailing_interest?: string
   referral_code?: string
+  utm_source?: string
+  utm_medium?: string
+  utm_campaign?: string
 }): string {
   const rows: [string, string][] = [
     ['Name', escapeHtml(p.name)],
@@ -40,6 +43,9 @@ function agentNotificationHtml(p: {
   ]
   if (p.sailing_interest) rows.push(['Sailing interest', escapeHtml(p.sailing_interest)])
   if (p.referral_code) rows.push(['Referral code', escapeHtml(p.referral_code)])
+  if (p.utm_source) rows.push(['UTM source', escapeHtml(p.utm_source)])
+  if (p.utm_medium) rows.push(['UTM medium', escapeHtml(p.utm_medium)])
+  if (p.utm_campaign) rows.push(['UTM campaign', escapeHtml(p.utm_campaign)])
   const rowsHtml = rows
     .map(
       ([k, v]) =>
@@ -103,6 +109,11 @@ export async function POST(request: NextRequest) {
   const notes = sanitize(body.notes, 2000)
   const sailing_interest = body.sailing_interest ? sanitize(body.sailing_interest, 200) : undefined
   const referral_code = body.referral_code ? sanitize(body.referral_code, 60) : undefined
+  const utm_source = body.utm_source ? sanitize(body.utm_source, 80) : undefined
+  const utm_medium = body.utm_medium ? sanitize(body.utm_medium, 80) : undefined
+  const utm_campaign = body.utm_campaign ? sanitize(body.utm_campaign, 80) : undefined
+  const utm_content = body.utm_content ? sanitize(body.utm_content, 80) : undefined
+  const utm_term = body.utm_term ? sanitize(body.utm_term, 80) : undefined
 
   const payload = {
     name,
@@ -114,6 +125,11 @@ export async function POST(request: NextRequest) {
     notes,
     ...(sailing_interest ? { sailing_interest } : {}),
     ...(referral_code ? { referral_code } : {}),
+    ...(utm_source ? { utm_source } : {}),
+    ...(utm_medium ? { utm_medium } : {}),
+    ...(utm_campaign ? { utm_campaign } : {}),
+    ...(utm_content ? { utm_content } : {}),
+    ...(utm_term ? { utm_term } : {}),
   }
 
   const webhookUrl = process.env.CONCIERGE_WEBHOOK_URL?.trim()
@@ -177,6 +193,9 @@ export async function POST(request: NextRequest) {
           notes,
           sailing_interest,
           referral_code,
+          utm_source,
+          utm_medium,
+          utm_campaign,
         }),
       })
       notifyOk = true

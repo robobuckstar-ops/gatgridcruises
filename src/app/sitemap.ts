@@ -55,7 +55,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/tools/compare`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
 
     // Referral / mailing
-    { url: `${baseUrl}/referral`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${baseUrl}/refer`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${baseUrl}/newsletter`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${baseUrl}/subscribe`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
 

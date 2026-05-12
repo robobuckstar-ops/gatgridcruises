@@ -149,6 +149,11 @@ export async function POST(request: NextRequest) {
   const guests = sanitize(body.guests, 10)
   const notes = sanitize(body.notes, 2000)
   const referralCode = sanitize(body.referral_code, 60)
+  const utm_source = sanitize(body.utm_source, 80) || undefined
+  const utm_medium = sanitize(body.utm_medium, 80) || undefined
+  const utm_campaign = sanitize(body.utm_campaign, 80) || undefined
+  const utm_content = sanitize(body.utm_content, 80) || undefined
+  const utm_term = sanitize(body.utm_term, 80) || undefined
 
   if (!name || !email || !EMAIL_REGEX.test(email)) {
     return NextResponse.json({ error: 'Name and email are required.' }, { status: 400 })
@@ -221,6 +226,11 @@ export async function POST(request: NextRequest) {
           notes,
           sailing,
           referral_code: referralCode || undefined,
+          ...(utm_source ? { utm_source } : {}),
+          ...(utm_medium ? { utm_medium } : {}),
+          ...(utm_campaign ? { utm_campaign } : {}),
+          ...(utm_content ? { utm_content } : {}),
+          ...(utm_term ? { utm_term } : {}),
         }),
       })
       if (!res.ok) {

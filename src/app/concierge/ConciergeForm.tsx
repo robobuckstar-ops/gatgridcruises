@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { CheckCircle, Loader2, Send, Anchor } from 'lucide-react'
-import { readReferralCookie } from '@/components/ui/referral-tracker'
+import { readReferralCookie, readUtmCookies } from '@/components/ui/referral-tracker'
 
 const TIMEZONES = [
   { value: '', label: 'Select timezone (optional)' },
@@ -75,10 +75,12 @@ export function ConciergeForm() {
 
     try {
       const referralCode = readReferralCookie()
+      const utm = readUtmCookies()
       const payload = {
         ...form,
         ...(sailingParam ? { sailing_interest: sailingParam } : {}),
         ...(referralCode ? { referral_code: referralCode } : {}),
+        ...utm,
       }
       const res = await fetch('/api/concierge', {
         method: 'POST',
