@@ -299,7 +299,7 @@ export default function TravelHacksCreditCardsPage() {
           Our specialists help you find the best pricing and availability — free service, no obligation.
         </p>
         <Link
-          href="/deals"
+          href="/concierge"
           className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#1E3A5F] hover:bg-[#0a1628] text-white font-semibold transition-colors"
         >
           Start Planning Your Cruise
