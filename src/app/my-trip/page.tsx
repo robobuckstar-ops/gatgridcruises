@@ -150,7 +150,7 @@ export default function MyTripPage() {
                     type="text"
                     value={form.bookingNumber}
                     onChange={(e) => setField('bookingNumber', e.target.value)}
-                    placeholder="#12345"
+                    placeholder="DCL-2026-1234"
                     required
                     className="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-xl text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy text-sm transition-all"
                   />
@@ -192,6 +192,17 @@ export default function MyTripPage() {
                   />
                 </div>
               </div>
+
+              {error && (
+                <div
+                  role="alert"
+                  aria-live="polite"
+                  className="flex items-start gap-2 bg-red-50 border border-red-200 text-red-700 text-sm rounded-xl px-3 py-2.5"
+                >
+                  <AlertTriangle className="w-4 h-4 mt-0.5 flex-shrink-0 text-red-500" />
+                  <span>{error}</span>
+                </div>
+              )}
 
               <button
                 type="submit"
