@@ -19,6 +19,7 @@ import {
   Star,
   ChevronDown,
   Loader2,
+  Download,
 } from 'lucide-react'
 import { OBCDisclaimer } from '@/components/ui/obc-disclaimer'
 
@@ -189,6 +190,14 @@ function formatItineraryDate(d: Date): string {
 
 // ─── API types ────────────────────────────────────────────────────────────────
 
+interface PortalDocument {
+  id: string
+  filename: string
+  url: string
+  type: string
+  size: number | null
+}
+
 interface PortalApiResponse {
   booking: {
     id: string
@@ -203,12 +212,64 @@ interface PortalApiResponse {
     obcAmount: number | null
     bookingPrice: number | null
     phase: string
+    documents: PortalDocument[]
   }
   client: {
     fullName: string
     firstName: string
     email: string
   }
+}
+
+// ─── Document helpers ─────────────────────────────────────────────────────────
+
+function formatFileSize(bytes: number | null): string {
+  if (!bytes || bytes <= 0) return ''
+  if (bytes < 1024) return `${bytes} B`
+  if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(0)} KB`
+  return `${(bytes / (1024 * 1024)).toFixed(1)} MB`
+}
+
+function documentLabel(doc: PortalDocument): string {
+  const ext = doc.filename.split('.').pop()?.toUpperCase()
+  if (ext && ext.length <= 4) return ext
+  if (doc.type.includes('pdf')) return 'PDF'
+  if (doc.type.startsWith('image/')) return 'IMG'
+  return 'FILE'
+}
+
+// ─── Persistence helpers ──────────────────────────────────────────────────────
+
+// Per-booking localStorage so a user with multiple bookings keeps separate
+// checklist and notification preferences for each.
+const STORAGE_PREFIX = 'gatgrid:portal'
+const checklistKey = (bookingId: string) => `${STORAGE_PREFIX}:checklist:${bookingId}`
+const prefsKey = (bookingId: string) => `${STORAGE_PREFIX}:prefs:${bookingId}`
+
+function readJSON<T>(key: string): T | null {
+  if (typeof window === 'undefined') return null
+  try {
+    const raw = window.localStorage.getItem(key)
+    return raw ? (JSON.parse(raw) as T) : null
+  } catch {
+    return null
+  }
+}
+
+function writeJSON(key: string, value: unknown) {
+  if (typeof window === 'undefined') return
+  try {
+    window.localStorage.setItem(key, JSON.stringify(value))
+  } catch {
+    // localStorage may be unavailable (private mode, quota); fail silently.
+  }
+}
+
+interface StoredPrefs {
+  email: boolean
+  sms: boolean
+  frequency: string
+  timezone?: string
 }
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
@@ -259,6 +320,7 @@ export default function DashboardPage() {
   const [prefs, setPrefs] = useState({ email: true, sms: true, frequency: 'milestone' })
   const [showTzInfo, setShowTzInfo] = useState(false)
   const [signingOut, setSigningOut] = useState(false)
+  const [prefsHydrated, setPrefsHydrated] = useState(false)
 
   useEffect(() => {
     setMounted(true)
@@ -294,6 +356,41 @@ export default function DashboardPage() {
   useEffect(() => {
     loadBooking()
   }, [loadBooking])
+
+  // Hydrate checklist + notification prefs from localStorage once we know
+  // which booking is loaded. Keyed by booking ID so multiple bookings stay
+  // independent.
+  const bookingId = data?.booking.id
+  useEffect(() => {
+    if (!bookingId) return
+    const storedChecklist = readJSON<Record<string, boolean>>(checklistKey(bookingId))
+    if (storedChecklist) setChecklistDone(storedChecklist)
+    const storedPrefs = readJSON<StoredPrefs>(prefsKey(bookingId))
+    if (storedPrefs) {
+      setPrefs({
+        email: storedPrefs.email ?? true,
+        sms: storedPrefs.sms ?? true,
+        frequency: storedPrefs.frequency ?? 'milestone',
+      })
+      if (storedPrefs.timezone && TZ_OPTIONS.some((o) => o.value === storedPrefs.timezone)) {
+        setTimezone(storedPrefs.timezone)
+      }
+    }
+    setPrefsHydrated(true)
+  }, [bookingId])
+
+  // Persist checklist whenever it changes (after hydration so we don't
+  // overwrite stored state with the initial empty object).
+  useEffect(() => {
+    if (!bookingId || !prefsHydrated) return
+    writeJSON(checklistKey(bookingId), checklistDone)
+  }, [bookingId, checklistDone, prefsHydrated])
+
+  // Persist notification prefs + timezone selection.
+  useEffect(() => {
+    if (!bookingId || !prefsHydrated) return
+    writeJSON(prefsKey(bookingId), { ...prefs, timezone })
+  }, [bookingId, prefs, timezone, prefsHydrated])
 
   const sailingDate = useMemo(
     () => (data ? parseSailingDate(data.booking.sailingDate) : null),
@@ -954,15 +1051,69 @@ export default function DashboardPage() {
 
         {/* ── Documents ── */}
         <section className="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
-          <div className="px-6 py-4 border-b border-slate-100 flex items-center gap-2.5">
-            <FileText className="w-5 h-5 text-navy" />
-            <h2 className="font-display font-bold text-navy text-lg">Your Documents</h2>
+          <div className="px-6 py-4 border-b border-slate-100 flex items-center justify-between gap-2.5">
+            <div className="flex items-center gap-2.5">
+              <FileText className="w-5 h-5 text-navy" />
+              <h2 className="font-display font-bold text-navy text-lg">Your Documents</h2>
+            </div>
+            {booking.documents.length > 0 && (
+              <span className="text-xs font-semibold text-slate-500">
+                {booking.documents.length} {booking.documents.length === 1 ? 'file' : 'files'}
+              </span>
+            )}
           </div>
-          <div className="px-6 py-8 text-center">
-            <div className="text-4xl mb-2">📄</div>
-            <p className="text-sm text-slate-600 font-medium">No documents uploaded yet</p>
-            <p className="text-xs text-slate-400 mt-1">
-              Confirmations, e-tickets, and travel insurance forwarded by your concierge will appear here.
+
+          {booking.documents.length === 0 ? (
+            <div className="px-6 py-8 text-center">
+              <div className="text-4xl mb-2">📄</div>
+              <p className="text-sm text-slate-600 font-medium">No documents uploaded yet</p>
+              <p className="text-xs text-slate-400 mt-1">
+                Confirmations, e-tickets, and travel insurance forwarded by your concierge will appear here.
+              </p>
+            </div>
+          ) : (
+            <ul className="divide-y divide-slate-50">
+              {booking.documents.map((doc) => {
+                const sizeLabel = formatFileSize(doc.size)
+                return (
+                  <li key={doc.id}>
+                    <a
+                      href={doc.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-4 px-6 py-3.5 hover:bg-slate-50 transition-colors group"
+                    >
+                      <div className="w-11 h-11 rounded-xl bg-navy/5 border border-navy/10 flex items-center justify-center flex-shrink-0">
+                        <span className="text-[10px] font-bold uppercase tracking-wide text-navy">
+                          {documentLabel(doc)}
+                        </span>
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm font-semibold text-slate-800 truncate group-hover:text-navy">
+                          {doc.filename}
+                        </p>
+                        {sizeLabel && (
+                          <p className="text-xs text-slate-400 mt-0.5">{sizeLabel}</p>
+                        )}
+                      </div>
+                      <Download className="w-4 h-4 text-slate-400 group-hover:text-navy flex-shrink-0" />
+                    </a>
+                  </li>
+                )
+              })}
+            </ul>
+          )}
+
+          <div className="px-6 py-3 border-t border-slate-100 bg-slate-50/50">
+            <p className="text-xs text-slate-400 leading-relaxed">
+              Need something added? Email{' '}
+              <a
+                href="mailto:bookings@gatgridcruises.com"
+                className="text-navy font-semibold hover:underline"
+              >
+                bookings@gatgridcruises.com
+              </a>{' '}
+              and your concierge will upload it here.
             </p>
           </div>
         </section>
