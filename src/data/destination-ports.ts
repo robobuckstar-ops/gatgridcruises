@@ -326,6 +326,16 @@ export const destinationPorts: DestinationPort[] = [
         detail:
           'Nassau is your only non-Castaway stop on a 3-night cruise. The downtown experience is fine for an hour of souvenir browsing but isn\'t the highlight of the day — plan a real activity.',
       },
+      {
+        title: 'Atlantis day passes are capacity-controlled — confirm same-day before you taxi',
+        detail:
+          'Atlantis sometimes caps daily pass sales when the resort is at occupancy. If you didn\'t pre-book on atlantisbahamas.com, confirm availability by phone the morning of your port day before paying for a taxi. Disney-booked Atlantis excursions include the pass slot guarantee, which is what you\'re paying the premium for.',
+      },
+      {
+        title: 'Skip the duty-free liquor unless you\'re flying home',
+        detail:
+          'Bay Street duty-free liquor pricing is competitive but you can\'t take it back on board Disney\'s ship — security holds wine and champagne (the only allowed adult beverages) and confiscates spirits. Duty-free liquor only makes sense if you\'re driving home from your embarkation port or have post-cruise hotel nights.',
+      },
     ],
     bestTimeSummary:
       'Nassau is sail-able year-round but the experience varies meaningfully by month. November–April is dry season, with comfortable temperatures (75–82°F) and minimal rain. May and October are the sweet spots for fewer crowds. June–September is hot, humid, and the heart of hurricane season — beautiful when it\'s clear, miserable when it\'s not.',
@@ -417,6 +427,21 @@ export const destinationPorts: DestinationPort[] = [
         question: 'Can I walk to a beach from the ship?',
         answer:
           'Yes — Junkanoo Beach is a 15-minute walk west of Prince George Wharf. It\'s public, free, and has chair rentals and bars on-site. Cable Beach is a better beach but requires a 10-minute taxi.',
+      },
+      {
+        question: 'Is Atlantis worth a full Nassau port day?',
+        answer:
+          'For families with kids 6+ who enjoy water slides, yes — Aquaventure has 20+ slides, multiple pools, and the lazy river that runs through shark-filled aquariums. The day pass at $130–$170 per person is the highest single expense most families incur in Nassau. For families with kids under 6, a Blue Lagoon Island or Cable Beach day is usually a better experience for the money.',
+      },
+      {
+        question: 'What\'s the difference between booking Atlantis through Disney vs directly?',
+        answer:
+          'Disney sells the same Aquaventure day pass for $30–$40 more per person and adds round-trip transportation plus the late-return guarantee. Booking directly through atlantisbahamas.com is cheaper, and the 10-minute taxi to Paradise Island carries minimal late-return risk. Book direct unless you\'re anxious about ship timing.',
+      },
+      {
+        question: 'How does Nassau compare to other Bahamas ports on Disney itineraries?',
+        answer:
+          'Nassau is the most-developed Bahamas stop with the widest range of paid activities (Atlantis, Blue Lagoon, dolphin encounters, snorkel charters). Castaway Cay is a calmer, all-inclusive private-island experience. Lookout Cay is a newer, more pristine private island with fewer activities. For families that want maximum activity options, Nassau ranks highly; for families that just want a beach day, the private islands win.',
       },
     ],
   },
@@ -650,6 +675,16 @@ export const destinationPorts: DestinationPort[] = [
         detail:
           'Disney almost never substitutes a sea day for a canceled Castaway. If wind cancels Castaway, you\'ll typically get an extra Nassau or Lookout Cay day announced 12–24 hours before.',
       },
+      {
+        title: 'The post office is a free souvenir worth the 5-minute walk',
+        detail:
+          'Castaway Cay has a working US-flagged post office near the family beach. Free postcards are stocked on the counter; mail one home with the Castaway Cay postmark for a no-cost souvenir kids genuinely treasure later. Lines move fast and stamps cost the standard USPS rate.',
+      },
+      {
+        title: 'Stake out lunch at Cookie\'s Too, not the original Cookie\'s',
+        detail:
+          'Both restaurants serve the identical BBQ buffet, but Cookie\'s Too (further down the beach toward Pelican Plunge) consistently runs a 5–10 minute shorter line. Most guests gravitate to the first restaurant they see when stepping off the tram — walk past it.',
+      },
     ],
     bestTimeSummary:
       'Castaway Cay is a year-round port, but wind is the variable that matters. Disney cancels Castaway when sustained winds push 25+ knots — most common December–February cold fronts and August–September tropical systems. April, May, and November are the calmest months for the highest probability of an actual landing.',
@@ -741,6 +776,21 @@ export const destinationPorts: DestinationPort[] = [
         question: 'Are there cabanas at Serenity Bay?',
         answer:
           'Yes — 6 cabanas, smaller than the family beach versions, designed for 4 adults. They sell out the fastest of any cabana.',
+      },
+      {
+        question: 'Do drink packages work on the island?',
+        answer:
+          'Yes. The Beverage Discount Package and the Distilled Spirits Package both apply at every Castaway Cay bar (Conched Out, Heads Up, Castaway Air Bar, Serenity Bay\'s Air Bar). Cocktails ring up at the package-discounted rate just like onboard. If you don\'t have a package, individual drink prices match the ship\'s bar menus.',
+      },
+      {
+        question: 'What\'s the difference between the family beach and Serenity Bay?',
+        answer:
+          'Family beach is the main hub: lifeguards, the snorkel trail, Pelican Plunge, kids\' splash zone, Cookie\'s BBQ, and most of the activity. Serenity Bay is adults-only (18+), longer and quieter, with its own bar, its own BBQ, hammocks, and far fewer crowds. Many families split the day: morning at the family beach with kids, afternoon at Serenity Bay while older kids are in Oceaneer Lab.',
+      },
+      {
+        question: 'How does Castaway Cay compare to Lookout Cay?',
+        answer:
+          'Castaway Cay is mature, well-developed, and offers the most activities — Pelican Plunge, the snorkel trail, the 5K, the bike trail. Lookout Cay (Disney\'s newer 2024 private island at Lighthouse Point, Eleuthera) is more pristine and less crowded but has fewer in-water attractions. For first-time Disney cruisers and families with kids who want maximum activity options, Castaway is the better port day. For couples or families wanting a quieter beach day, Lookout Cay is the stronger pick.',
       },
     ],
   },
