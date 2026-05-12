@@ -80,6 +80,11 @@ export function Footer() {
                     Giving Back
                   </Link>
                 </li>
+                <li>
+                  <Link href="/referral" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
+                    Partner Program
+                  </Link>
+                </li>
               </ul>
             </div>
 
