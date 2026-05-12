@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useId, useRef } from 'react'
 import { CheckCircle, Loader2, Send, X, Anchor, Mail } from 'lucide-react'
-import { readReferralCookie } from '@/components/ui/referral-tracker'
+import { readReferralCookie, readUtmCookies } from '@/components/ui/referral-tracker'
 
 // Bots typically fill and submit forms in under a second. Real users take
 // at least a few seconds to type a name and email. We block submissions
@@ -146,11 +146,13 @@ export function RequestSailingForm({ open, onClose, context }: RequestSailingFor
 
     try {
       const referralCode = readReferralCookie()
+      const utm = readUtmCookies()
       const payload = {
         ...form,
         sailing: context ?? null,
         elapsed_ms: elapsed,
         ...(referralCode ? { referral_code: referralCode } : {}),
+        ...utm,
       }
       const res = await fetch('/api/inquiry', {
         method: 'POST',

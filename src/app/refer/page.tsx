@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   description:
     'Share your unique link, earn rewards when friends book Disney cruises. Three reward tiers: thank-you gifts, onboard credit bonuses, and commission percentages for ambassadors.',
   robots: { index: true, follow: true },
-  alternates: { canonical: 'https://gatgridcruises.com/referral' },
+  alternates: { canonical: 'https://gatgridcruises.com/refer' },
 }
 
 const HOW_IT_WORKS = [
