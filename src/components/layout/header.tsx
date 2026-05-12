@@ -41,8 +41,9 @@ const navItems = [
     children: [
       { label: 'OBC Calculator', href: '/tools/obc-calculator' },
       { label: '💳 Credit Card Hacks', href: '/tools/credit-cards' },
+      { label: '✈️ Flight Search & Tips', href: '/flights' },
       { label: 'Flight Finder', href: '/tools/flights' },
-      { label: '✈️ Flight Deal Alerts', href: '/flight-deals' },
+      { label: '🔔 Flight Deal Alerts', href: '/flight-deals' },
       { label: 'Transfer Guide', href: '/tools/transfers' },
       { label: 'Stateroom Finder', href: '/tools/staterooms' },
       { label: 'Price Tracker', href: '/price-tracker' },

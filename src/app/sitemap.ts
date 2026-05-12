@@ -17,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/deals/flash-deals`, lastModified: now, changeFrequency: 'daily', priority: 0.85 },
     { url: `${baseUrl}/deals/military`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${baseUrl}/flight-deals`, lastModified: now, changeFrequency: 'daily', priority: 0.8 },
+    { url: `${baseUrl}/flights`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
 
     // Alerts / tracking
     { url: `${baseUrl}/alerts`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
