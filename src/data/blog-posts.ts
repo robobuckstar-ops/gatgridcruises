@@ -1144,4 +1144,287 @@ Many teens who are skeptical before boarding return home having had a genuinely 
 <p>Need help deciding between the Destiny and another ship, or want personalized recommendations on which sailing fits your timing and budget? <a href="/book">Get a free quote from our team</a> or reach out via our <a href="/concierge">concierge inquiry form</a>. We'll walk you through the options — no pressure, no obligation.</p>
     `.trim(),
   },
+  {
+    id: '15',
+    slug: 'first-time-disney-cruise-mistakes',
+    title: '10 Things First-Time Disney Cruisers Always Get Wrong',
+    excerpt: 'The ten most common (and most expensive) mistakes first-time Disney cruisers make — and exactly how to avoid each one before you sail.',
+    author: 'Dr. Grayson Starbuck, DPT',
+    published_date: '2026-05-12',
+    category: 'tips',
+    tags: ['first-time', 'mistakes', 'tips', 'planning', 'disney-cruise-line'],
+    read_time: '9 min read',
+    featured_image_url: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1200&h=600&fit=crop',
+    content: `
+<p>Disney Cruise Line is not a typical cruise line, and the playbook that works on Royal Caribbean, Carnival, or Norwegian misses on Disney almost entirely. After years of watching first-timers walk on board with the wrong expectations — and answering the same questions through our <a href="/concierge">concierge inquiry form</a> over and over — we've narrowed the list of avoidable mistakes down to ten. Fix these before you sail and your first Disney cruise will feel meaningfully smoother than ~80% of first-timer experiences.</p>
+
+<h2>Mistake 1: Missing the 75-Day Booking Window</h2>
+<p>This is the single most expensive mistake first-timers make. Disney opens specialty dining, spa, port adventures, and Castaway Cay cabana bookings at <strong>75 days before sailing</strong> for first-time cruisers (Castaway Club members get earlier windows — 90 days for Silver, 105 for Gold, 123 for Platinum). The most coveted experiences — Palo brunch, Remy dinner, family cabanas at Castaway Cay, parasailing — sell out within minutes of the window opening.</p>
+<p><strong>How to avoid it:</strong> Set a calendar alert for the exact day your booking window opens. Be logged into the Disney Cruise Line site at midnight Eastern. Have your top three picks queued up in browser tabs. Treat it like buying concert tickets.</p>
+
+<h2>Mistake 2: Skipping the Sail Away Party for an Empty Cabin</h2>
+<p>Most first-timers want to drop bags in their stateroom the moment they board. The problem: your cabin won't be ready until ~1:30 PM, and the Sail Away party on the upper deck is one of the most memorable 20 minutes of the entire cruise. The ship's horns play "When You Wish Upon a Star," the characters come out on the upper decks, and the energy is unlike anything else in cruising.</p>
+<p><strong>How to avoid it:</strong> Hand-carry swim gear, sunscreen, and one change of clothes in a soft bag for embarkation. Go straight to the pool deck or Cabanas buffet, get your kids in the water, and stake out a rail position 20 minutes before the scheduled departure time.</p>
+
+<h2>Mistake 3: Assuming "Free" Means "Free" When It Comes to Beverages</h2>
+<p>Disney includes a lot of beverages in your fare — soft drinks, juice, coffee, tea, and hot chocolate at Cabanas and in the main dining rooms are all complimentary. But many first-timers don't realize that <strong>specialty coffee drinks, bottled water, fresh-squeezed juice, smoothies, and all alcohol cost extra</strong>, and the per-item prices are higher than on most other cruise lines (a single Starbucks-style coffee runs $5–$6, a cocktail $11–$14).</p>
+<p><strong>How to avoid it:</strong> Bring a reusable water bottle and use Cabanas' free filtered water stations. Disney also allows each adult to bring two 750ml bottles of wine or champagne aboard at embarkation, which can save $150–$300 across a 7-night sailing.</p>
+
+<h2>Mistake 4: Not Understanding Rotational Dining</h2>
+<p>Disney's signature dining model — where you rotate through three or four themed restaurants while your servers follow you each night — confuses nearly every first-timer. Many guests show up to the wrong restaurant on night two, miss themed shows that play during dinner, or feel disappointed because they expected an open-seating buffet model.</p>
+<p><strong>How to avoid it:</strong> Read your dining rotation on the Navigator the first afternoon. Know which restaurant goes with which night, because some — like Animator's Palate on the Dream and Fantasy, or Pride Lands on the Destiny — feature shows built into the meal that you don't want to miss.</p>
+
+<h2>Mistake 5: Treating the Oceaneer Club Like Babysitting</h2>
+<p>Many first-time parents either (a) don't use the kids' clubs at all because they assume they're glorified daycare, or (b) drop their kids off the first day and never check in. Both miss the point. <strong>Disney's Oceaneer Club and Oceaneer Lab are some of the most imaginative themed spaces in the entire cruise industry</strong> — Marvel's Hero Zone on the Wish, Andy's Room on the Fantasy, Star Wars: Cargo Bay on the Dream. Kids genuinely don't want to leave.</p>
+<p><strong>How to avoid it:</strong> Register kids in advance via the My Disney Cruise app. Walk through the clubs with them on embarkation day so they're comfortable with the space. Then use them. Parents who lean on the youth clubs come home from Disney cruises significantly less exhausted than parents who don't.</p>
+
+<h2>Mistake 6: Booking Excursions Without Reading the Castaway Cay Section First</h2>
+<p>Castaway Cay is Disney's private island in the Bahamas, and it's the highlight of nearly every Caribbean Disney cruise. First-timers sometimes ignore it in favor of more "interesting" excursions at other ports — and then realize too late that Castaway is the best port day of the entire sailing. Worse, the things that make Castaway special (cabanas, parasailing, the 5K) require advance booking and sell out instantly.</p>
+<p><strong>How to avoid it:</strong> Read our <a href="/guides/castaway-cay-guide">complete Castaway Cay guide</a> before your booking window opens. Lock in your cabana or parasailing slot at the 75-day mark. Plan a beach day, not just "we'll figure it out when we get there."</p>
+
+<h2>Mistake 7: Picking the Wrong Ship for Your Family</h2>
+<p>Disney has six active ships (with the new Disney Destiny launched in late 2025), and they are not interchangeable. The Wish-class ships (Wish, Treasure, Destiny) are massive, theatrically themed, and tuned for first-time Disney cruisers. The classic-class ships (Magic, Wonder) are smaller, warmer, and easier to navigate — often the right pick for families with very young children or grandparents traveling along. The Dream-class (Dream, Fantasy) sits in the middle: large, family-focused, with the AquaDuck waterslide that many kids spend half their cruise on.</p>
+<p><strong>How to avoid it:</strong> Our <a href="/blog/disney-treasure-vs-disney-wish-comparison">Disney Treasure vs Disney Wish comparison</a> is a good starting point if you're choosing between the two newest sister ships. For a broader fleet overview, the <a href="/ships">ships index</a> walks through every active vessel with deck plans and family-fit notes.</p>
+
+<h2>Mistake 8: Underestimating Onboard Credit (OBC)</h2>
+<p>First-timers regularly book directly with Disney's website and assume that's the only path. The truth: when you book through a Disney-authorized travel advisor — including GatGrid — you typically receive <strong>onboard credit ranging from $50 to $400</strong> based on your stateroom category and sailing length, on top of any Disney promotional credit. That credit covers specialty dining, spa, beverages, excursions, or anything else billed to your room — and the rate at Disney itself is identical.</p>
+<p><strong>How to avoid it:</strong> Before you click "Book" on Disney's site, run your sailing through our <a href="/tools/obc-calculator">OBC Calculator</a> to see exactly how much credit you'd qualify for. Or reach out via the <a href="/concierge">concierge form</a> for personalized guidance.</p>
+
+<h2>Mistake 9: Packing Like a Land Vacation</h2>
+<p>Two specific packing failures haunt first-timers every cruise: (1) bringing a power strip with surge protection (it gets confiscated at security — Disney prohibits them because of fire risk), and (2) not bringing waterproof bags for the day at Castaway Cay. The ship's policy on prohibited items is strict and enforced.</p>
+<p><strong>How to avoid it:</strong> Read our <a href="/guides/packing-gear">Disney Cruise packing gear guide</a> before you start packing. A non-surge power strip, a dry bag for beach days, magnetic stateroom hooks, and reusable water bottles for everyone in the family will improve your trip more than another swimsuit.</p>
+
+<h2>Mistake 10: Not Buying Travel Insurance</h2>
+<p>Disney's cancellation policy is unforgiving: at 89 days out, your cruise becomes fully non-refundable. A family of four in a verandah category typically sits at $6,000–$10,000. If a family member gets seriously ill, a child breaks an arm, or a hurricane forces you to cancel a flight to your embarkation port, you can lose the entire fare with no recovery.</p>
+<p><strong>How to avoid it:</strong> A <a href="/guides/travel-insurance">comprehensive travel insurance policy</a> typically costs 4–8% of your trip and covers cancellation for a wide range of covered reasons, plus interruption and medical evacuation while at sea. This is one of the easiest cost-vs-protection trade-offs in travel.</p>
+
+<h2>The Common Thread</h2>
+<p>The pattern across all ten of these is the same: <strong>Disney rewards planning more than any other cruise line in the market.</strong> First-timers who treat a Disney cruise like a Royal Caribbean or Carnival sailing — buy a fare, show up, figure it out on board — leave feeling like they missed half the magic. First-timers who do the planning work ahead of time consistently rate their first cruise as one of their best family vacations ever.</p>
+<p>If you want a head start, the <a href="/concierge">concierge form</a> is the fastest way to get personalized guidance — we'll help you pick the right ship, the right sailing, and the right stateroom, plus identify your onboard credit options. No pressure, no booking obligation, and the rate you pay Disney is the same whether you book directly or through us.</p>
+    `.trim(),
+  },
+  {
+    id: '16',
+    slug: 'disney-treasure-vs-disney-wish-comparison',
+    title: 'Disney Treasure vs Disney Wish: Which Ship Is Right for Your Family?',
+    excerpt: 'A detailed side-by-side comparison of Disney Treasure and Disney Wish — dining, theming, staterooms, and which Wish-class sister ship fits your family best.',
+    author: 'Dr. Grayson Starbuck, DPT',
+    published_date: '2026-05-12',
+    category: 'reviews',
+    tags: ['treasure', 'wish', 'comparison', 'wish-class', 'disney-cruise-line'],
+    read_time: '10 min read',
+    featured_image_url: 'https://images.unsplash.com/photo-1548574505-5e239809f9db?w=1200&h=600&fit=crop',
+    content: `
+<p>Disney Treasure and Disney Wish are sister ships — same hull, same deck plan, similar capacity (~4,000 guests), and similar pricing. From the outside, families often assume they're functionally identical. They aren't. After two full seasons of Treasure sailings and three of Wish sailings, the two ships have established meaningfully different personalities, and the right choice between them depends on what your family actually values in a cruise.</p>
+
+<p>This is the side-by-side comparison we wish existed when first-time Wish-class cruisers reach out through our <a href="/concierge">concierge form</a>. You can see deck plans, current pricing, and live deals on the <a href="/ships/disney-treasure">Disney Treasure page</a> and the <a href="/ships/disney-wish">Disney Wish page</a> while reading.</p>
+
+<h2>The Quick Verdict</h2>
+<ul>
+<li><strong>Choose Disney Treasure if:</strong> Your family loves adventure stories, exploration, and Aladdin/Coco/Tangled vibes. The Grand Hall feels like an adventurer's atrium, restaurants tell travel stories, and the overall ship reads as warm and earth-toned.</li>
+<li><strong>Choose Disney Wish if:</strong> Your family is drawn to classic fairy-tale Disney and Marvel. The Grand Hall is enchanted-castle themed, restaurants center on Frozen and Marvel storylines, and the overall ship reads as bright, princessy, and theatrical.</li>
+</ul>
+<p>Both ships deliver the core Disney Cruise Line experience at the same standard. The difference is theme, restaurant identity, and a handful of unique-to-each spaces. Below, the specifics.</p>
+
+<h2>Theming and Atmosphere</h2>
+
+<h3>Disney Treasure: The Adventurer's Ship</h3>
+<p>The Treasure debuted in late 2024 with an "Adventure" theme that runs through every public space. The Grand Hall atrium centers on a Tangled-inspired chandelier and a giant statue of the Genie from Aladdin. The ship's color palette leans warm — golds, terracottas, deep reds, and inlaid wood. Theming density is high; you can feel that Disney's Imagineering refined what they learned on the Wish and applied it more confidently here.</p>
+<p>Restaurants tell stories of journeys. Worlds of Marvel, the rotational dining room, returns with an updated Avengers-meets-Wakanda menu. <strong>Plaza de Coco</strong>, exclusive to the Treasure, is the standout addition — a Coco-themed dining room with live mariachi performers and a meal that progresses as Miguel's family story unfolds. <strong>1923</strong>, the adults-friendly main dining room, pays tribute to the year Walt Disney founded the company and is filled with 1,000+ pieces of authentic Disney art.</p>
+
+<h3>Disney Wish: The Fairy-Tale Ship</h3>
+<p>The Wish launched in summer 2022 and remains the most photographed Disney ship. Her Grand Hall is the most ornate atrium in the fleet — a Cinderella-castle-inspired space with a soaring central staircase and the statue of Cinderella herself. The palette is bright, princessy, and pastel. The whole ship feels like walking into a Disney movie's opening sequence.</p>
+<p>Rotational restaurants center on <strong>Arendelle: A Frozen Dining Adventure</strong> (where Elsa, Anna, Olaf, and Kristoff visit your table while a multi-act show unfolds), <strong>Worlds of Marvel</strong> (the Wish's original Rocket and Groot Avengers dinner), and <strong>1923</strong> (same name and concept as Treasure's). The Wish's identity is rooted in classic Disney IP — Frozen, Mickey, the princesses — and that comes through everywhere.</p>
+
+<h2>Rotational Dining: The Biggest Differentiator</h2>
+<p>Rotational dining is the heart of every Disney cruise. Each Wish-class ship runs three rotational restaurants and one or two adults-only specialty restaurants. Here's how they map:</p>
+
+<h3>Disney Treasure Rotational Dining</h3>
+<ul>
+<li><strong>Plaza de Coco</strong> — Coco-themed, live mariachi, the most emotionally resonant rotational restaurant in the fleet.</li>
+<li><strong>Worlds of Marvel</strong> — refreshed Avengers/Wakanda menu, updated interactive elements vs the Wish version.</li>
+<li><strong>1923</strong> — Hollywood Golden Age, Disney historical artifacts, classic American menu.</li>
+</ul>
+
+<h3>Disney Wish Rotational Dining</h3>
+<ul>
+<li><strong>Arendelle: A Frozen Dining Adventure</strong> — Elsa, Anna, Olaf perform a Frozen storyline at your table.</li>
+<li><strong>Worlds of Marvel</strong> — the original Rocket and Groot Avengers experience.</li>
+<li><strong>1923</strong> — same as Treasure's.</li>
+</ul>
+
+<p>If your family is Frozen-obsessed (especially with kids 4–8), the Wish has a clear edge. If your kids are slightly older or you prefer story-driven dining without intense character interaction, the Treasure's Plaza de Coco is the standout in the entire fleet.</p>
+
+<h2>Adults-Only Restaurants</h2>
+<p>Both ships carry <strong>Palo Steakhouse</strong> (Italian-steakhouse fusion, the fleet signature) and <strong>Enchanté by Chef Arnaud Lallement</strong> (Michelin-starred French). The menus differ slightly between ships but the experience is functionally identical. Both fill within hours of online check-in opening — book the moment your window unlocks.</p>
+
+<h2>Entertainment</h2>
+
+<h3>Disney Treasure: Beauty and the Beast — The Musical</h3>
+<p>The Treasure's mainstage production is Beauty and the Beast, and it's considered the strongest Beauty and the Beast staging Disney has ever mounted on a ship. The Be Our Guest sequence is the showstopper. Family-friendly and lands well with kids 5+.</p>
+
+<h3>Disney Wish: The Little Mermaid</h3>
+<p>The Wish's headliner is The Little Mermaid: A Tale of Disney's Most Magical Voyage, with elaborate flying effects, an underwater scene that uses projection to genuinely impressive effect, and a soundtrack any Disney kid will know by heart. Equally strong as a production; it just depends which IP your family prefers.</p>
+
+<h2>Family Spaces and Kids' Clubs</h2>
+<p>Both ships share the same Oceaneer Club layout and the same age-banded clubs (Disney's Oceaneer Club for 3–10, Edge for 11–14, Vibe for 14–17). The themed rooms within Oceaneer Club differ slightly:</p>
+<ul>
+<li><strong>Treasure Oceaneer Club</strong> — Toy Story Slinky Dog Park, Marvel Super Hero Academy, Walt Disney Imagineering Lab</li>
+<li><strong>Wish Oceaneer Club</strong> — Fairytale Hall (multiple princess rooms), Marvel Super Hero Academy, Walt Disney Imagineering Lab</li>
+</ul>
+<p>The Marvel and Imagineering spaces are essentially identical between the two ships. The headlining themed space is where they diverge — Toy Story on the Treasure vs. Fairytale Hall on the Wish.</p>
+
+<h2>Pools, Waterslides, and Top-Deck Spaces</h2>
+<p>Both ships carry the same headlining attraction: <strong>AquaMouse</strong>, the first "Disney attraction at sea" — a 760-foot tube ride that runs around the upper deck with a full Mickey-and-Minnie storyline. Both ships have the same Toy Story-themed splash zone for toddlers, the same family pool, and the same Quiet Cove adults-only pool.</p>
+<p>The Treasure's top-deck deck-party space gets slightly better reviews thanks to a refined open-air layout, but the difference is marginal.</p>
+
+<h2>Staterooms</h2>
+<p>Stateroom layouts are nearly identical. Both ships carry the full range of categories from inside cabins through verandah, Concierge One-Bedroom Suites, and the headlining Concierge Royal Suites. The Treasure's suites trend slightly more "adventurer's lodge" in décor; the Wish's suites trend more "enchanted castle." Pricing is comparable.</p>
+<p>For both ships, we recommend the verandah category as the value sweet spot for first-time Wish-class cruisers — meaningfully more space than inside or oceanview, with a private outdoor space that pays for itself by day three of any sailing. Our <a href="/tools/staterooms">stateroom finder</a> shows live availability and pricing across categories.</p>
+
+<h2>Itineraries and Where Each Ship Sails</h2>
+<p>This is often the deciding factor when families can't pick on theme alone.</p>
+<ul>
+<li><strong>Disney Treasure</strong> — sails primarily from Port Canaveral (Florida) on 7-night Eastern and Western Caribbean itineraries. Castaway Cay is included on most sailings; some itineraries also include Lookout Cay or Tortola.</li>
+<li><strong>Disney Wish</strong> — sails primarily from Port Canaveral on 3-, 4-, and 5-night Bahamas itineraries. Castaway Cay is on nearly every Wish sailing. The shorter itineraries make it especially good for first-time Disney cruisers and families uncertain about committing to a full week.</li>
+</ul>
+<p>Compare live pricing on both ships across every sailing on the <a href="/sailings">sailings dashboard</a>. The <a href="/deals">deals page</a> tracks current discounts in real time.</p>
+
+<h2>Price: How They Compare</h2>
+<p>Pricing between the two ships is closer than first-timers expect. As a rough rule:</p>
+<ul>
+<li><strong>Same length, same dates, comparable category</strong>: Treasure runs roughly 5–10% above Wish for equivalent sailings, driven by newer-ship demand and the longer (7-night) Caribbean itineraries that command higher per-night rates.</li>
+<li><strong>Per-night basis</strong>: The Wish's 3- and 4-night Bahamas sailings often have the lowest per-night rates in the entire Wish-class.</li>
+</ul>
+<p>If budget is the deciding factor, the Wish on a 3-night Bahamas sailing is the lowest-friction entry into Wish-class Disney cruising. If you want the maximum Disney experience over a longer vacation, the Treasure's 7-night Caribbean itineraries are the deeper trip.</p>
+
+<h2>Which Ship Is Right for Your Family?</h2>
+
+<h3>Choose Disney Treasure if:</h3>
+<ul>
+<li>Your kids are 6+ and your family likes adventure/exploration stories over fairy tales</li>
+<li>Plaza de Coco's mariachi-and-Miguel concept excites you more than Frozen at dinner</li>
+<li>You want a 7-night Caribbean trip rather than a quick Bahamas sampler</li>
+<li>You prefer warm earth-toned décor over bright pastels</li>
+<li>You've already sailed the Wish and want a meaningfully different Wish-class experience</li>
+</ul>
+
+<h3>Choose Disney Wish if:</h3>
+<ul>
+<li>You have young kids (3–8) who love Frozen and the Disney princesses</li>
+<li>It's your family's first Disney cruise and you want a shorter (3- or 4-night) test run</li>
+<li>The fairy-tale aesthetic and Cinderella's Grand Hall are core to what your family pictures when they think "Disney cruise"</li>
+<li>You're price-sensitive — the Wish's short Bahamas sailings are the most accessible Wish-class entry point</li>
+<li>You want the original Wish-class experience as the reference standard for the fleet</li>
+</ul>
+
+<h2>If You Still Can't Decide</h2>
+<p>The honest answer: you can't really go wrong. Both ships deliver the core Disney Cruise Line experience — the same youth clubs, the same Castaway Cay, the same Broadway-caliber entertainment, and the same service standards. The difference is theme execution and which Disney stories resonate most with your family.</p>
+<p>If you'd like a second opinion before you book — including a look at which sailings have the best onboard credit and stateroom pricing for your dates — reach out via the <a href="/concierge">concierge form</a>. We monitor live pricing on both ships every day and can usually find the right sailing within a few minutes of hearing your family's preferences.</p>
+
+<h2>Looking Beyond the Wish and Treasure</h2>
+<p>If you're open to a third option, the new <a href="/blog/disney-destiny-heroes-villains-guide">Disney Destiny — the Heroes &amp; Villains ship</a> is the most theatrically themed Wish-class ship in the fleet and a natural third comparison point. The Destiny is essentially Treasure-class hardware with the most ambitious storytelling overlay Disney has ever built. For Disney superfans, it's the strongest combination of new-ship excitement and theming density on the market.</p>
+    `.trim(),
+  },
+  {
+    id: '17',
+    slug: 'disney-cruise-onboard-credit-guide',
+    title: 'The Complete Guide to Disney Cruise Onboard Credits: How to Get Up to $400 Free',
+    excerpt: 'Onboard credit is essentially free money you spend on board. Here\'s how Disney Cruise Line OBC works, how much you can stack, and why booking through a travel advisor unlocks more.',
+    author: 'Dr. Grayson Starbuck, DPT',
+    published_date: '2026-05-12',
+    category: 'tips',
+    tags: ['onboard-credit', 'obc', 'savings', 'travel-advisor', 'disney-cruise-line'],
+    read_time: '8 min read',
+    featured_image_url: 'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=1200&h=600&fit=crop',
+    content: `
+<p>Onboard credit — usually shortened to OBC — is one of the most misunderstood pieces of a Disney cruise booking. Cruisers who understand it can stack hundreds of dollars in credit against their onboard spending; cruisers who don't usually leave that money on the table. This guide breaks down exactly how Disney Cruise Line onboard credit works, where it comes from, how much you can realistically stack, and why booking through a travel advisor like GatGrid frequently unlocks more credit than booking directly with Disney — at the same fare.</p>
+
+<h2>What Is Onboard Credit (OBC)?</h2>
+<p>Onboard credit is a dollar-denominated account balance applied to your stateroom folio before you sail. Once on board, you can spend it on anything that bills to your room key: specialty dining (Palo, Remy, Enchanté), the spa, drink packages, photo packages, port adventures, the gift shops, internet packages, room service tips, and the bars. It can't be used to pay your base cruise fare, can't be withdrawn as cash, and (for most OBC types) doesn't carry over after the cruise ends — so use it.</p>
+<p>Want to see exactly how much OBC your specific sailing would qualify for? Our <a href="/tools/obc-calculator">free OBC Calculator</a> walks you through it based on your stateroom category, sailing length, and booking source.</p>
+
+<h2>The Three Main Sources of Disney Cruise OBC</h2>
+
+<h3>1. Disney Promotional OBC</h3>
+<p>Disney runs periodic promotions that include OBC as an incentive — most commonly during <strong>wave season (January–February)</strong>, sometimes during summer flash sales, and occasionally for under-booked sailings 60–90 days out. Promotional OBC typically ranges from <strong>$50 to $200 per stateroom</strong>, with the higher end reserved for verandah-and-above categories. It's published openly on Disney's site when active.</p>
+
+<h3>2. Travel Advisor OBC</h3>
+<p>This is the source most first-time cruisers don't know exists. Disney-authorized travel advisors — including GatGrid — receive a commission from Disney when they book a sailing. Many advisors (us included) <strong>pass a portion of that commission back to clients as additional onboard credit</strong>. The amount scales with the sailing's value: longer sailings in higher categories generate more commission, which translates to more credit for you.</p>
+<p>Here's the structure we use at GatGrid:</p>
+<table>
+<thead>
+<tr><th>Sailing Fare Range</th><th>Stateroom Category</th><th>Travel Advisor OBC</th></tr>
+</thead>
+<tbody>
+<tr><td>$2,000–$4,000</td><td>Inside / Oceanview</td><td>$50–$100</td></tr>
+<tr><td>$4,000–$7,000</td><td>Verandah</td><td>$100–$200</td></tr>
+<tr><td>$7,000–$12,000</td><td>Verandah / Concierge</td><td>$200–$300</td></tr>
+<tr><td>$12,000+</td><td>Concierge One-Bedroom &amp; Above</td><td>$300–$400</td></tr>
+</tbody>
+</table>
+<p>Critically: <strong>this credit is on top of Disney's promotional credit, not instead of it.</strong> You receive both. And the cruise fare you pay is identical to what Disney charges directly — there's no markup, no booking fee. Disney's fare-parity policy means advisors literally cannot charge more than Disney's published rate.</p>
+
+<h3>3. Castaway Club Loyalty Credit (Sometimes)</h3>
+<p>Disney occasionally runs Castaway Club–exclusive promotions with bonus OBC for repeat cruisers. The amounts are typically smaller ($25–$75) and the offers are infrequent, but they stack with the above.</p>
+
+<h2>How Much Can You Actually Stack? A Real Example</h2>
+<p>Let's run a concrete example. Family of four, 7-night Caribbean sailing on the <a href="/ships/disney-treasure">Disney Treasure</a> in a Category 4A verandah, August 2026. Published fare: $8,400.</p>
+<ul>
+<li>Disney wave-season promotional OBC (if booked during the active window): <strong>$150</strong></li>
+<li>GatGrid travel advisor OBC at the $7,000–$12,000 verandah tier: <strong>$250</strong></li>
+<li>Castaway Club Silver bonus (if applicable for repeat guests): <strong>$50</strong></li>
+<li><strong>Total stacked OBC: $450</strong></li>
+</ul>
+<p>That $450 covers, for example: a Palo dinner for two adults ($90), a half-day spa treatment ($180), and three specialty cocktails per adult across the sailing ($180) — with change left over. Or if your family doesn't drink, it covers an excursion at every port. Or premium photo packages and a few gift-shop pickups. The point: it's real, usable money against costs you'd otherwise pay out of pocket.</p>
+
+<h2>Why Disney Lets Travel Advisors Pass Credit Back</h2>
+<p>The short version: Disney's loyalty model is built around long-term repeat bookings, and travel advisors generate exactly that. When a family books through an advisor who provides good service, they're meaningfully more likely to book a second and third Disney cruise. From Disney's perspective, the commission paid to advisors is a customer acquisition cost — and they don't care whether the advisor rebates part of it as OBC, because the published fare to the guest is the same.</p>
+<p>The practical takeaway: if you're going to book a Disney cruise anyway, there's essentially no downside to booking through an advisor that rebates OBC. You get the same Disney customer service, the same Disney cruise, the same Disney fare — plus more onboard credit.</p>
+
+<h2>What If I Already Booked Direct With Disney?</h2>
+<p>You have a 30-day window after booking during which you can transfer your reservation to a Disney-authorized travel advisor at no cost. Some Disney terms apply (you generally can't transfer reservations made with Disney Vacation Club points or certain restricted fares), but the standard cash reservation transfer is straightforward.</p>
+<p>If you booked within the past 30 days and want to capture the OBC, reach out via our <a href="/concierge">concierge form</a> with your reservation number and we'll walk through whether transfer makes sense for your sailing.</p>
+
+<h2>Best Ways to Spend Disney OBC</h2>
+<p>OBC has the same dollar value on board no matter what you spend it on, but some categories are noticeably better value than others:</p>
+
+<h3>Highest-Value Uses</h3>
+<ul>
+<li><strong>Palo or Enchanté dinner</strong> — $50–$150 per person upcharges that are some of the best dining experiences in the fleet.</li>
+<li><strong>Spa treatments</strong> — typically $150–$300 per treatment; the OBC essentially makes one treatment "free" on a stacked sailing.</li>
+<li><strong>Drink packages</strong> — only worth it if you'll actually drink the math; pure cocktail spending without a package can also be a fine OBC use.</li>
+<li><strong>Castaway Cay extras</strong> — parasailing, stingray adventures, glass-bottom boat. Charges through your room key.</li>
+</ul>
+
+<h3>Lower-Value Uses (But Still Fine)</h3>
+<ul>
+<li><strong>Photo packages</strong> — the digital photo bundles are useful but you'd pay full price out of pocket anyway.</li>
+<li><strong>Gift shop merchandise</strong> — fine for capturing OBC you didn't otherwise use; pricing on board is at full retail.</li>
+<li><strong>Internet packages</strong> — Disney's onboard Wi-Fi is functional but not cheap; OBC offsets it well.</li>
+</ul>
+
+<h3>Often-Overlooked Uses</h3>
+<ul>
+<li><strong>Stateroom host tip</strong> — the daily auto-tip can be applied against OBC.</li>
+<li><strong>Room service tips</strong> — 24/7 room service is included, but small per-delivery tips bill to the room.</li>
+<li><strong>Cabanas at Castaway Cay</strong> — if you snagged a cabana, the rental fee bills to your room and OBC absorbs part of it.</li>
+</ul>
+
+<h2>OBC Mistakes to Avoid</h2>
+<ol>
+<li><strong>Don't assume OBC carries over.</strong> Disney's standard policy: unused OBC at the end of the sailing is forfeited. Some types of OBC (rare, advisor-specific) can roll into a future booking — confirm in writing.</li>
+<li><strong>Don't try to convert OBC to cash at Guest Services.</strong> They can't, and refunds against unused OBC don't apply.</li>
+<li><strong>Don't wait until the last day to spend it.</strong> Specialty dining and spa appointments fill the closer you get to disembarkation. Plan your OBC spending on day one.</li>
+<li><strong>Don't double-book promotional OBC.</strong> Disney sometimes runs overlapping promotions; only the higher of the two applies on a given booking, not both.</li>
+</ol>
+
+<h2>Getting Started: Calculating Your OBC</h2>
+<p>The simplest way to see your potential OBC is the <a href="/tools/obc-calculator">GatGrid OBC Calculator</a>. Enter your sailing length, ship, stateroom category, and approximate fare, and it returns your expected credit across all three sources (Disney promotional, travel advisor, and Castaway Club).</p>
+<p>If you'd rather skip the calculator and just talk through it with someone who watches Disney pricing every day, use the <a href="/concierge">concierge form</a>. We'll pull your specific sailing, identify any active Disney promotions, and confirm exactly what your stacked credit total would look like. There's no pressure, no obligation, and no charge for the conversation — and your Disney fare is identical to what you'd pay direct, so the only thing you're missing by not asking is the OBC.</p>
+
+<h2>The Bottom Line</h2>
+<p>Onboard credit is one of the most reliable ways to reduce the all-in cost of a Disney cruise. Stack Disney's promotional credit with a travel advisor's rebate, and you're looking at $200–$400 on a typical family booking — enough to cover the experiences that most first-time cruisers regret skipping (Palo, the spa, the cabana). It costs nothing to ask. The hardest part of getting more OBC on your Disney cruise is just knowing to ask in the first place.</p>
+    `.trim(),
+  },
 ]
