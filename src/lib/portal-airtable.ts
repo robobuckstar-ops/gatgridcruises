@@ -22,9 +22,22 @@ export const BOOKING_FIELDS = {
   client: 'fld6tu0nat2TiEgCZ',
 } as const
 
+// Optional attachment field on the Bookings table (e.g. "Travel Details").
+// Set AIRTABLE_DOCUMENTS_FIELD_ID to the Airtable field ID to enable
+// surfacing concierge-uploaded documents in the client portal.
+const DOCUMENTS_FIELD_ID = process.env.AIRTABLE_DOCUMENTS_FIELD_ID || ''
+
 export const CLIENT_FIELDS = {
   name: 'fldKgygvHS6sTCMQG',
 } as const
+
+export interface BookingDocument {
+  id: string
+  filename: string
+  url: string
+  type: string
+  size: number | null
+}
 
 export interface BookingDetails {
   id: string
@@ -39,6 +52,7 @@ export interface BookingDetails {
   obcAmount: number | null
   bookingPrice: number | null
   phase: string
+  documents: BookingDocument[]
 }
 
 export interface ClientDetails {
@@ -114,6 +128,33 @@ export async function fetchClientName(clientId: string, apiKey: string): Promise
   }
 }
 
+interface RawAttachment {
+  id?: unknown
+  filename?: unknown
+  url?: unknown
+  type?: unknown
+  size?: unknown
+}
+
+function shapeDocuments(raw: unknown): BookingDocument[] {
+  if (!Array.isArray(raw)) return []
+  return raw
+    .map((entry): BookingDocument | null => {
+      if (!entry || typeof entry !== 'object') return null
+      const att = entry as RawAttachment
+      const url = typeof att.url === 'string' ? att.url : ''
+      if (!url) return null
+      return {
+        id: typeof att.id === 'string' ? att.id : url,
+        filename: typeof att.filename === 'string' && att.filename ? att.filename : 'Document',
+        url,
+        type: typeof att.type === 'string' ? att.type : '',
+        size: typeof att.size === 'number' && Number.isFinite(att.size) ? att.size : null,
+      }
+    })
+    .filter((d): d is BookingDocument => d !== null)
+}
+
 function shapeBooking(id: string, fields: Record<string, unknown>): BookingDetails {
   return {
     id,
@@ -128,6 +169,7 @@ function shapeBooking(id: string, fields: Record<string, unknown>): BookingDetai
     obcAmount: toNumberOrNull(fields[BOOKING_FIELDS.obcAmount]),
     bookingPrice: toNumberOrNull(fields[BOOKING_FIELDS.bookingPrice]),
     phase: String(fields[BOOKING_FIELDS.phase] ?? ''),
+    documents: DOCUMENTS_FIELD_ID ? shapeDocuments(fields[DOCUMENTS_FIELD_ID]) : [],
   }
 }
 
@@ -135,7 +177,9 @@ export async function fetchBookingById(
   bookingId: string,
   apiKey: string,
 ): Promise<{ booking: BookingDetails; client: ClientDetails } | null> {
-  const fieldParams = Object.values(BOOKING_FIELDS).map(id => `fields[]=${id}`).join('&')
+  const fieldIds: string[] = [...Object.values(BOOKING_FIELDS)]
+  if (DOCUMENTS_FIELD_ID) fieldIds.push(DOCUMENTS_FIELD_ID)
+  const fieldParams = fieldIds.map(id => `fields[]=${id}`).join('&')
   const url = bookingUrl(BOOKINGS_TABLE, `${bookingId}?${fieldParams}`)
 
   let record: Record<string, unknown>
