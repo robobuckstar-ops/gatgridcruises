@@ -31,6 +31,7 @@ const nextConfig: NextConfig = {
     return [
       { source: '/tools/cost-calculator', destination: '/tools', permanent: true },
       { source: '/tools/cruise-cost-calculator', destination: '/tools', permanent: true },
+      { source: '/tools/credit-card-hacks', destination: '/tools/credit-cards', permanent: true },
     ]
   },
   async headers() {
