@@ -78,7 +78,11 @@ export async function fetchBookingByName(
   bookingName: string,
   apiKey: string,
 ): Promise<{ id: string; fields: Record<string, unknown> } | null> {
-  const formula = encodeURIComponent(`FIND("${bookingName}", {Booking Name}) > 0`)
+  // Substring + case-insensitive search inside the free-text Booking Name
+  // field. Escape double quotes to avoid breaking the formula or allowing
+  // injection of additional Airtable formula syntax.
+  const safe = bookingName.replace(/"/g, '\\"')
+  const formula = encodeURIComponent(`FIND(LOWER("${safe}"), LOWER({Booking Name})) > 0`)
   const fieldParams = Object.values(BOOKING_FIELDS).map(id => `fields[]=${id}`).join('&')
   const url = `https://api.airtable.com/v0/${AIRTABLE_BASE}/${BOOKINGS_TABLE}?filterByFormula=${formula}&${fieldParams}`
   const data = await airtableGet(url, apiKey)

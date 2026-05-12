@@ -116,7 +116,7 @@ export async function POST(request: NextRequest) {
     ...(referral_code ? { referral_code } : {}),
   }
 
-  const webhookUrl = process.env.CONCIERGE_WEBHOOK_URL
+  const webhookUrl = process.env.CONCIERGE_WEBHOOK_URL?.trim()
   const resendKey = process.env.RESEND_API_KEY
 
   // Two parallel delivery paths so leads are never silently lost:
@@ -129,20 +129,28 @@ export async function POST(request: NextRequest) {
   let notifyOk = false
 
   if (webhookUrl) {
+    // 8s cap — Make.com queueing is usually instant, but we never want a
+    // hung scenario to block the response or eat the serverless budget.
+    const controller = new AbortController()
+    const timeout = setTimeout(() => controller.abort(), 8000)
     try {
       const res = await fetch(webhookUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
+        signal: controller.signal,
       })
       if (res.ok) {
         webhookOk = true
+        console.log('[concierge] webhook delivered', { status: res.status, email })
       } else {
         const responseText = await res.text().catch(() => '')
         console.error('[concierge] webhook returned non-2xx:', res.status, responseText.slice(0, 500))
       }
     } catch (err) {
       console.error('[concierge] webhook error:', err)
+    } finally {
+      clearTimeout(timeout)
     }
   } else {
     console.error('[concierge] CONCIERGE_WEBHOOK_URL not configured')

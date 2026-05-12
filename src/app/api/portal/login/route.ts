@@ -43,9 +43,18 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'All fields are required' }, { status: 400 })
     }
 
-    const normalizedNumber = bookingNumber.trim().replace(/^#*/, '#')
+    // Booking numbers live inside the free-text "Booking Name" field
+    // (e.g. "Smith Family - DCL-2026-1234"), not in a dedicated field.
+    // Strip a leading "#" so users can paste with or without it, then
+    // substring-match inside Booking Name. Don't force a "#" prefix —
+    // that breaks codes like "DCL-2026-1234" which have no "#".
+    const normalizedNumber = bookingNumber.trim().replace(/^#+/, '')
     const normalizedEmail = email.trim().toLowerCase()
     const normalizedLastName = lastName.trim().toLowerCase()
+
+    if (!normalizedNumber) {
+      return NextResponse.json({ error: 'Please enter your booking number.' }, { status: 400 })
+    }
 
     const booking = await fetchBookingByName(normalizedNumber, apiKey)
     if (!booking) {
@@ -69,9 +78,10 @@ export async function POST(request: NextRequest) {
       }
     }
 
+    const fullBookingName = String(fields[BOOKING_FIELDS.bookingName] ?? normalizedNumber)
     const token = createSessionToken({
       bookingId: booking.id,
-      bookingName: normalizedNumber,
+      bookingName: fullBookingName,
       email: normalizedEmail,
       clientName: clientName || normalizedEmail.split('@')[0],
     })
