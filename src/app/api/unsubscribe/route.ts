@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { checkRateLimit, getClientIp } from '@/lib/rate-limit'
-import { subscribers } from '@/app/api/subscribe/route'
+import { isSubscriberStoreConfigured, unsubscribeSubscriber } from '@/lib/subscriber-store'
+
+export const runtime = 'nodejs'
 
 export async function POST(request: NextRequest) {
   // 10 unsubscribe attempts per hour per IP
@@ -21,18 +23,21 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Token or email required' }, { status: 400 })
     }
 
-    const idx = subscribers.findIndex(
-      s => (token && s.unsubscribe_token === token) || (email && s.email === email)
-    )
-
-    if (idx === -1) {
-      // Return success anyway to avoid email enumeration
-      return NextResponse.json({ success: true })
+    if (!isSubscriberStoreConfigured()) {
+      console.error('[unsubscribe] AIRTABLE_API_KEY not set — cannot process opt-out')
+      return NextResponse.json({ error: 'Service unavailable' }, { status: 503 })
     }
 
-    subscribers.splice(idx, 1)
+    // The result is deliberately not reflected in the response: reporting
+    // "no such subscriber" would let anyone probe the list for an address.
+    await unsubscribeSubscriber({
+      token: typeof token === 'string' ? token : undefined,
+      email: typeof email === 'string' ? email : undefined,
+    })
+
     return NextResponse.json({ success: true })
-  } catch {
+  } catch (err) {
+    console.error('[unsubscribe] failed:', err)
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
   }
 }
@@ -46,9 +51,17 @@ export async function GET(request: NextRequest) {
     return NextResponse.redirect(new URL('/?unsubscribed=missing', request.url))
   }
 
-  const idx = subscribers.findIndex(s => s.unsubscribe_token === token)
-  if (idx !== -1) {
-    subscribers.splice(idx, 1)
+  if (isSubscriberStoreConfigured()) {
+    try {
+      await unsubscribeSubscriber({ token })
+    } catch (err) {
+      // A one-click unsubscribe must never show the reader an error page —
+      // log it and let the confirmation render; the address stays flagged in
+      // the logs for a manual removal.
+      console.error('[unsubscribe] token opt-out failed:', err)
+    }
+  } else {
+    console.error('[unsubscribe] AIRTABLE_API_KEY not set — token opt-out dropped')
   }
 
   return NextResponse.redirect(new URL('/?unsubscribed=true', request.url))

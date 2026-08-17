@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
 import { checkRateLimit, getClientIp } from '@/lib/rate-limit'
+import { saveLeadSafely } from '@/lib/airtable-leads'
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 const INBOX = 'bookings@gatgridcruises.com'
@@ -174,6 +175,25 @@ export async function POST(request: NextRequest) {
 
   const sailingSummary = buildSailingSummary(sailing)
 
+  // Write the lead straight into the Airtable Leads CRM. This used to happen
+  // only as a side effect of the Make.com webhook; with that scenario paused,
+  // inquiries reached Grayson's inbox but never reached the table that
+  // /api/cron/lead-nurture drips from. Kicked off here and awaited after the
+  // email sends so it doesn't add latency to the response.
+  const leadWrite = saveLeadSafely({
+    name,
+    email,
+    phone,
+    notes,
+    source: 'request-this-sailing',
+    sailingInterest: sailing ? sailingSummary : undefined,
+    guests,
+    referralCode: referralCode || undefined,
+    utmSource: utm_source,
+    utmMedium: utm_medium,
+    utmCampaign: utm_campaign,
+  })
+
   // Resend is the primary path. If unconfigured, fall back to the existing
   // concierge webhook so this endpoint still works in environments that
   // already have Make.com wired up — same destination inbox either way.
@@ -205,6 +225,9 @@ export async function POST(request: NextRequest) {
       } catch (ackErr) {
         console.error('[inquiry] auto-ack email failed:', ackErr)
       }
+      // Awaited before responding: a serverless invocation is frozen once the
+      // response is returned, which would kill an in-flight CRM write.
+      await leadWrite
       return NextResponse.json({ success: true })
     } catch (err) {
       console.error('[inquiry] resend send failed:', err)
@@ -235,15 +258,22 @@ export async function POST(request: NextRequest) {
       })
       if (!res.ok) {
         console.error('[inquiry] webhook returned non-2xx:', res.status)
+        await leadWrite
         return NextResponse.json({ error: 'Submission failed' }, { status: 502 })
       }
+      await leadWrite
       return NextResponse.json({ success: true })
     } catch (err) {
       console.error('[inquiry] webhook error:', err)
+      await leadWrite
       return NextResponse.json({ error: 'Submission failed' }, { status: 502 })
     }
   }
 
+  // No email transport, but the lead is still in the CRM — report success on
+  // the strength of the durable write rather than dropping the inquiry.
+  const lead = await leadWrite
   console.error('[inquiry] no email transport configured (set RESEND_API_KEY or CONCIERGE_WEBHOOK_URL)')
+  if (lead) return NextResponse.json({ success: true })
   return NextResponse.json({ error: 'Service unavailable' }, { status: 503 })
 }

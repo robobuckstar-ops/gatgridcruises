@@ -3,20 +3,15 @@ import { checkRateLimit } from '@/lib/rate-limit'
 import { Resend } from 'resend'
 import { welcomeEmail1 } from '@/lib/email-templates'
 import { getBiggestPriceDrops } from '@/lib/data'
-import { randomUUID } from 'crypto'
+import { isAuthorizedCronRequest } from '@/lib/cron-auth'
+import {
+  isSubscriberStoreConfigured,
+  listActiveSubscribers,
+  markSubscriberEmailed,
+  upsertSubscriber,
+} from '@/lib/subscriber-store'
 
-export interface Subscriber {
-  id: string
-  email: string
-  name: string
-  preferences: Record<string, unknown>
-  confirmed: boolean
-  unsubscribe_token: string
-  created_at: string
-}
-
-// In-memory store (MVP — swap for Supabase when ready)
-const subscribers: Subscriber[] = []
+export const runtime = 'nodejs'
 
 function getTopDeals() {
   return getBiggestPriceDrops()
@@ -66,10 +61,6 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Valid email required' }, { status: 400 })
     }
 
-    if (subscribers.some(s => s.email === sanitizedEmail)) {
-      return NextResponse.json({ error: 'Already subscribed' }, { status: 409 })
-    }
-
     const sanitizedPreferences: Record<string, unknown> = {}
     if (preferences && typeof preferences === 'object') {
       for (const [k, v] of Object.entries(preferences)) {
@@ -78,17 +69,36 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    const unsubscribe_token = randomUUID()
-    const subscriber: Subscriber = {
-      id: randomUUID(),
-      email: sanitizedEmail,
-      name: sanitizeString(name),
-      preferences: sanitizedPreferences,
-      confirmed: true,
-      unsubscribe_token,
-      created_at: new Date().toISOString(),
+    if (!isSubscriberStoreConfigured()) {
+      // Better to tell the visitor it failed than to accept an address we
+      // have nowhere to put — that's the leak this route used to have.
+      console.error('[subscribe] AIRTABLE_API_KEY not set — refusing to accept a signup we cannot persist')
+      return NextResponse.json({ error: 'Signup is temporarily unavailable' }, { status: 503 })
     }
-    subscribers.push(subscriber)
+
+    const sanitizedName = sanitizeString(String(name ?? ''))
+    const source = sanitizedPreferences.source ? String(sanitizedPreferences.source) : 'site'
+
+    let subscriber
+    let outcome
+    try {
+      ;({ subscriber, outcome } = await upsertSubscriber({
+        email: sanitizedEmail,
+        name: sanitizedName,
+        source,
+        preferences: sanitizedPreferences,
+      }))
+    } catch (storeErr) {
+      console.error('[subscribe] durable write failed:', storeErr)
+      return NextResponse.json(
+        { error: 'Something went wrong saving your signup. Please try again.' },
+        { status: 500 }
+      )
+    }
+
+    if (outcome === 'existing') {
+      return NextResponse.json({ error: 'Already subscribed' }, { status: 409 })
+    }
 
     // Add contact to Brevo
     if (process.env.BREVO_API_KEY) {
@@ -132,11 +142,19 @@ export async function POST(request: NextRequest) {
           from: '"Dr. Grayson Starbuck, DPT" <bookings@gatgridcruises.com>',
           to: sanitizedEmail,
           subject: 'Welcome to GatGrid Cruises — your first deal alert is ready',
-          html: welcomeEmail1(name || sanitizedEmail.split('@')[0], unsubscribe_token, topDeals),
+          html: welcomeEmail1(
+            sanitizedName || sanitizedEmail.split('@')[0],
+            subscriber.unsubscribeToken,
+            topDeals
+          ),
         })
+        // Record the send so /api/cron/drip picks up at day 3 instead of
+        // re-sending the welcome.
+        await markSubscriberEmailed(subscriber.id, { dripStage: 'Welcome Sent' })
       } catch (emailErr) {
         console.error('Welcome email failed:', emailErr)
-        // Don't fail the subscription if email sending fails
+        // Don't fail the subscription if email sending fails — the address is
+        // already persisted, which is what matters.
       }
     }
 
@@ -146,10 +164,27 @@ export async function POST(request: NextRequest) {
   }
 }
 
-export async function GET() {
-  // Admin endpoint — protect with auth in production
-  return NextResponse.json({ count: subscribers.length, subscribers })
-}
+/**
+ * Admin list read. Now that the list is durable this returns real subscriber
+ * PII, so it requires CRON_SECRET (Bearer, x-cron-secret, or ?secret=) — it
+ * used to be an open endpoint that dumped every address.
+ */
+export async function GET(request: NextRequest) {
+  if (!isAuthorizedCronRequest(request)) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+  }
 
-// Exported for drip cron access
-export { subscribers }
+  if (!isSubscriberStoreConfigured()) {
+    return NextResponse.json({ error: 'AIRTABLE_API_KEY not configured' }, { status: 503 })
+  }
+
+  try {
+    const subscribers = await listActiveSubscribers()
+    return NextResponse.json({ count: subscribers.length, subscribers })
+  } catch (err) {
+    return NextResponse.json(
+      { error: 'Failed to read subscribers', detail: String(err) },
+      { status: 502 }
+    )
+  }
+}

@@ -6,22 +6,15 @@ import {
   leadNurtureDay14,
   leadNurtureDay30,
 } from '@/lib/email-templates'
+import { LEAD_FIELDS, LEADS_TABLE } from '@/lib/airtable-leads'
 
 export const runtime = 'nodejs'
 
 const AIRTABLE_BASE = 'applSFcQkOus2fFsx'
-const LEADS_TABLE = 'tblc8JHpcgEOnmCoj'
 
-// Field IDs from the GatGrid Leads table
-const F = {
-  leadName: 'fldGvA1skW1RV2sji',
-  email: 'fldagqzAWVT2rbvYT',
-  pipelineStage: 'fld4tGfjFmJnYw0uV',
-  firstContactDate: 'fldMdxtmz7wmzRuUj',
-  lastContactDate: 'fldsrvDbLelP46dnw',
-  nextFollowUp: 'fldPUqtPvTJKMDqgV',
-  dripSequence: 'fldeDE4WvAVi7ZyGs',
-}
+// Table + field IDs are shared with the direct lead writer used by the
+// inquiry/concierge forms, so both halves of the CRM funnel stay in sync.
+const F = LEAD_FIELDS
 
 // Pipeline stages that should NOT receive drip emails
 const EXCLUDED_STAGES = ['Converted', 'Lost', 'Unsubscribed', 'Ready to Book']

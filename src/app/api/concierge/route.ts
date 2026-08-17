@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
 import { checkRateLimit } from '@/lib/rate-limit'
 import { CONCIERGE_RECEIVED } from '@/lib/email-templates'
+import { saveLeadSafely } from '@/lib/airtable-leads'
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 const AGENT_INBOX = 'bookings@gatgridcruises.com'
@@ -135,12 +136,27 @@ export async function POST(request: NextRequest) {
   const webhookUrl = process.env.CONCIERGE_WEBHOOK_URL?.trim()
   const resendKey = process.env.RESEND_API_KEY
 
-  // Two parallel delivery paths so leads are never silently lost:
-  //   1. Make.com webhook → Airtable (primary CRM funnel)
-  //   2. Direct email notification to the agent inbox (backup so the lead
-  //      lands even when the Make scenario is paused, the webhook URL is
-  //      wrong, or Airtable rate-limits the upsert)
-  // Success requires AT LEAST ONE path to succeed.
+  // Three parallel delivery paths so leads are never silently lost:
+  //   1. Direct Airtable write into the Leads CRM (what the nurture drip reads)
+  //   2. Make.com webhook (kept for whatever else that scenario does)
+  //   3. Direct email notification to the agent inbox
+  // Success requires AT LEAST ONE path to succeed. The CRM write is now its
+  // own path rather than a side effect of (2), so a paused Make scenario no
+  // longer starves /api/cron/lead-nurture of new leads.
+  const leadWrite = saveLeadSafely({
+    name,
+    email,
+    phone,
+    notes,
+    source: how_found_us ? `concierge · ${how_found_us}` : 'concierge',
+    sailingInterest: sailing_interest,
+    guests: family_members,
+    referralCode: referral_code,
+    utmSource: utm_source,
+    utmMedium: utm_medium,
+    utmCampaign: utm_campaign,
+  })
+
   let webhookOk = false
   let notifyOk = false
 
@@ -206,8 +222,11 @@ export async function POST(request: NextRequest) {
     console.warn('[concierge] RESEND_API_KEY not set; agent notification email not sent')
   }
 
-  if (!webhookOk && !notifyOk) {
-    console.error('[concierge] both delivery paths failed — lead lost', { email, name })
+  // Awaited here because a serverless invocation is frozen once it responds.
+  const crmOk = (await leadWrite) !== null
+
+  if (!crmOk && !webhookOk && !notifyOk) {
+    console.error('[concierge] all delivery paths failed — lead lost', { email, name })
     return NextResponse.json({ error: 'Submission failed' }, { status: 502 })
   }
 
