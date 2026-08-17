@@ -5,6 +5,7 @@ import { Shield, Star, Phone, Gift, BadgeCheck, Building2 } from 'lucide-react'
 import Link from 'next/link'
 import { OBC_TIERS } from '@/lib/obc'
 import { OBCDisclaimer } from '@/components/ui/obc-disclaimer'
+import { GraysonFamilyPhoto } from '@/components/ui/grayson-family-photo'
 import { ships as DCL_SHIPS } from '@/data/ships'
 
 export default function BookPage() {
@@ -215,20 +216,7 @@ export default function BookPage() {
           <div className="flex flex-col sm:flex-row gap-6">
             <div className="flex-1 space-y-3">
               <div className="flex items-start gap-3">
-                <img
-                  src="/images/grayson-family-castaway.jpg"
-                  alt="Grayson Starbuck at Castaway Cay"
-                  width={40}
-                  height={40}
-                  className="w-10 h-10 rounded-full object-cover flex-shrink-0 bg-[#1E3A5F]"
-                  onError={(e) => {
-                    e.currentTarget.style.display = 'none'
-                    e.currentTarget.nextElementSibling?.classList.remove('hidden')
-                  }}
-                />
-                <div className="w-10 h-10 rounded-full bg-[#1E3A5F] text-white items-center justify-center font-bold text-sm flex-shrink-0 hidden">
-                  GS
-                </div>
+                <GraysonFamilyPhoto />
                 <div>
                   <p className="font-semibold text-slate-900">Dr. Grayson Starbuck, DPT</p>
                   <p className="text-sm text-slate-500">Disney cruise specialist &amp; founder of GatGridCruises</p>

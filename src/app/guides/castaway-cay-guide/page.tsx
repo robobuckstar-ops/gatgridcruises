@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { MapPin, Clock, DollarSign, AlertCircle, Anchor } from 'lucide-react';
 import { GetQuoteCTA } from '@/components/get-quote-cta';
+import { GraysonFamilyPhoto } from '@/components/ui/grayson-family-photo';
 
 export const metadata: Metadata = {
   title: "Castaway Cay: The Ultimate Guide to Disney's Private Island",
@@ -72,9 +73,16 @@ export default function CastawayCayGuide() {
           <p className="font-inter text-slate-600 leading-relaxed mb-4">
             Castaway Cay is Disney's exclusive private island and the jewel of every Disney cruise itinerary. Located in the Bahamas, this tropical paradise spans 95 acres and offers white-sand beaches, world-class dining, thrilling water sports, and activities for every age. For most Disney cruise passengers, a day at Castaway Cay is the highlight of their voyage—and with proper planning, you can pack unforgettable experiences into your time on the island.
           </p>
-          <p className="font-inter text-slate-600 leading-relaxed mb-4">
-            Unlike typical Caribbean ports where you're competing with cruise ship crowds and local vendors, Castaway Cay is exclusively for Disney Cruise Line guests. This means shorter lines, better organization, and a resort-like atmosphere. Your typical dock time runs from 8:00 AM to 4:30 PM (though the ship remains docked a bit longer), giving you a full 8 hours of island time to explore, relax, and adventure.
-          </p>
+          <div className="flex flex-col sm:flex-row gap-5 sm:items-start">
+            <p className="font-inter text-slate-600 leading-relaxed mb-4 flex-1">
+              Unlike typical Caribbean ports where you're competing with cruise ship crowds and local vendors, Castaway Cay is exclusively for Disney Cruise Line guests. This means shorter lines, better organization, and a resort-like atmosphere. Your typical dock time runs from 8:00 AM to 4:30 PM (though the ship remains docked a bit longer), giving you a full 8 hours of island time to explore, relax, and adventure.
+            </p>
+            <GraysonFamilyPhoto
+              variant="portrait"
+              className="w-40 sm:w-48 flex-shrink-0"
+              caption="Everything here comes from sailing this island with our own kids."
+            />
+          </div>
         </section>
 
         {/* Beach Areas */}

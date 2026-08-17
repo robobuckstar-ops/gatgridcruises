@@ -24,6 +24,7 @@ import {
 import { ConciergeForm } from './ConciergeForm'
 import { InsurancePartners } from '@/components/ui/insurance-partners'
 import { OBCDisclaimer } from '@/components/ui/obc-disclaimer'
+import { GraysonFamilyPhoto } from '@/components/ui/grayson-family-photo'
 
 export const metadata: Metadata = {
   title: 'Your Personal Disney Cruise Concierge | GatGridCruises',
@@ -538,6 +539,13 @@ export default function ConciergePage() {
               Fill out the form below and Grayson will be in touch within 1 business day. No
               cost, no pressure — just a real person helping you plan an amazing trip.
             </p>
+            <div className="flex items-center justify-center gap-3 mt-6">
+              <GraysonFamilyPhoto className="w-12 h-12 rounded-full object-cover flex-shrink-0 ring-2 ring-[#D4AF37]/40" />
+              <div className="text-left">
+                <p className="font-inter text-sm font-semibold text-white">Dr. Grayson Starbuck, DPT</p>
+                <p className="font-inter text-xs text-blue-300">Disney cruise specialist · Boardwalk Travel Agency</p>
+              </div>
+            </div>
           </div>
           <div className="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8">
             <Suspense fallback={<div className="h-64 flex items-center justify-center text-blue-300 text-sm">Loading form…</div>}>

@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { Gift } from 'lucide-react'
 import { OBCDisclaimer } from '@/components/ui/obc-disclaimer'
+import { GraysonFamilyPhoto } from '@/components/ui/grayson-family-photo'
 
 export const metadata: Metadata = {
   title: 'About GatGridCruises — Dr. Grayson Starbuck, DPT',
@@ -67,9 +68,11 @@ export default function AboutPage() {
           <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-4">Meet Grayson</h2>
           <div className="flex flex-col sm:flex-row gap-6 items-start">
             <div className="flex-shrink-0">
-              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#1E3A5F] to-indigo-700 flex items-center justify-center text-white font-fraunces text-3xl font-bold select-none">
-                G
-              </div>
+              <GraysonFamilyPhoto
+                variant="portrait"
+                className="w-40 sm:w-52"
+                caption="Our family aboard a Disney sailing — pirate night is non-negotiable."
+              />
             </div>
             <div>
               <p className="font-inter text-lg text-gray-700 leading-relaxed mb-4">
