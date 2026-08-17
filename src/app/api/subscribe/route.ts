@@ -4,10 +4,12 @@ import { Resend } from 'resend'
 import { welcomeEmail1 } from '@/lib/email-templates'
 import { getBiggestPriceDrops } from '@/lib/data'
 import { isAuthorizedCronRequest } from '@/lib/cron-auth'
+import { AirtableRequestError } from '@/lib/airtable-client'
 import {
   isSubscriberStoreConfigured,
   listActiveSubscribers,
   markSubscriberEmailed,
+  SUBSCRIBERS_TABLE,
   upsertSubscriber,
 } from '@/lib/subscriber-store'
 
@@ -89,7 +91,21 @@ export async function POST(request: NextRequest) {
         preferences: sanitizedPreferences,
       }))
     } catch (storeErr) {
-      console.error('[subscribe] durable write failed:', storeErr)
+      // Name the likely cause rather than leaving a bare 500 in the logs.
+      if (storeErr instanceof AirtableRequestError) {
+        if (storeErr.status === 404) {
+          console.error(
+            `[subscribe] Airtable table "${SUBSCRIBERS_TABLE}" not found in the base — create it (see docs/NEWSLETTER-SETUP.md) or set AIRTABLE_SUBSCRIBERS_TABLE`
+          )
+        } else if (storeErr.status === 401 || storeErr.status === 403) {
+          console.error(
+            '[subscribe] AIRTABLE_API_KEY is missing data.records:write on the base — signups cannot be stored'
+          )
+        }
+      }
+      // Tagged so a failed signup is always recoverable from the logs even
+      // though the visitor is told to retry.
+      console.error(`[subscribe] LOST SIGNUP email=${sanitizedEmail} source=${source}:`, storeErr)
       return NextResponse.json(
         { error: 'Something went wrong saving your signup. Please try again.' },
         { status: 500 }
