@@ -12,6 +12,7 @@ import { PriceTrend } from '@/components/ui/price-trend'
 import { Ship, Calendar, MapPin, Clock, DollarSign, Anchor, BedDouble, Car, Building2, ArrowRight, Check, X as XIcon, Info, TrendingDown, TrendingUp, ShoppingBag, Flame } from 'lucide-react'
 import { BookingInquiryButton } from '@/components/ui/booking-inquiry-button'
 import { WhyBookWithUs } from '@/components/ui/why-book-with-us'
+import { OBCDisclaimer } from '@/components/ui/obc-disclaimer'
 import { getPortSlugFromItineraryName } from '@/data/destination-ports'
 
 function getPortGuideUrl(portName: string): string | null {
@@ -548,6 +549,11 @@ export default async function SailingDetailPage({ params }: PageProps) {
             {/* Why request through us — value prop */}
             <WhyBookWithUs variant="compact" />
           </div>
+        </div>
+
+        {/* OBC terms — the "*" on the onboard credit figures above */}
+        <div className="mt-10 pt-6 border-t border-slate-200">
+          <OBCDisclaimer />
         </div>
       </div>
     </div>

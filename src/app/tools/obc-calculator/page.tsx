@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { Gift, ArrowRight, CheckCircle, DollarSign } from 'lucide-react'
-import { OBC_TIERS, getOBC } from '@/lib/obc'
+import { OBC_TIERS, MAX_OBC, getOBC, getOBCTierIndex } from '@/lib/obc'
 import { OBCDisclaimer } from '@/components/ui/obc-disclaimer'
 
 const SPEND_IDEAS = [
@@ -19,14 +19,18 @@ const SPEND_IDEAS = [
 
 export default function OBCCalculatorPage() {
   const [fare, setFare] = useState('')
-  const numericFare = parseFloat(fare.replace(/[^0-9.]/g, '')) || 0
-  const obc = numericFare > 0 ? getOBC(numericFare) : 0
 
-  const activeTierIndex = numericFare > 0
-    ? OBC_TIERS.findIndex(
-        (t) => numericFare >= t.minFare && (t.maxFare === null || numericFare <= t.maxFare)
-      )
-    : -1
+  // Keep the sign so a negative fare can be rejected rather than silently
+  // treated as its absolute value (the old regex stripped "-", turning -100
+  // into a $25 quote).
+  const cleanedFare = fare.replace(/[^0-9.\-]/g, '')
+  const parsedFare = parseFloat(cleanedFare)
+  const hasInput = cleanedFare.trim() !== '' && !Number.isNaN(parsedFare)
+  const isNegative = hasInput && parsedFare < 0
+
+  const numericFare = hasInput && parsedFare > 0 ? parsedFare : 0
+  const obc = getOBC(numericFare)
+  const activeTierIndex = getOBCTierIndex(numericFare)
 
   return (
     <main className="min-h-screen bg-white">
@@ -41,7 +45,7 @@ export default function OBCCalculatorPage() {
             Free Onboard Credit Calculator
           </h1>
           <p className="text-blue-200 text-lg max-w-2xl mx-auto">
-            Plan your cruise through our concierge (via Boardwalk Travel Agency) and earn free spending money to use onboard — the more you cruise, the more you earn.
+            Plan your cruise through our concierge (via Boardwalk Travel Agency) and earn up to ${MAX_OBC} in free spending money to use onboard — the more you cruise, the more you earn.
           </p>
         </div>
       </section>
@@ -73,7 +77,13 @@ export default function OBCCalculatorPage() {
                   className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#1E3A5F] focus:border-transparent text-slate-900 text-lg font-semibold"
                 />
               </div>
-              <p className="text-xs text-slate-400 mt-1.5">Total fare for all guests, before taxes and port fees</p>
+              {isNegative ? (
+                <p role="alert" className="text-xs text-red-600 mt-1.5 font-semibold">
+                  Enter a positive fare amount.
+                </p>
+              ) : (
+                <p className="text-xs text-slate-400 mt-1.5">Total fare for all guests, before taxes and port fees</p>
+              )}
             </div>
 
             {/* Result */}
@@ -95,7 +105,7 @@ export default function OBCCalculatorPage() {
               </div>
             )}
 
-            {numericFare === 0 && (
+            {numericFare === 0 && !isNegative && (
               <div className="rounded-xl bg-slate-50 border border-slate-200 p-6 text-center text-slate-400">
                 <Gift className="w-10 h-10 mx-auto mb-2 opacity-40" aria-hidden="true" />
                 <p className="text-sm">Enter your fare above to see your free OBC amount</p>
