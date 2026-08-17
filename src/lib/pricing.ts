@@ -1,15 +1,25 @@
 import type { Sailing, OutTheDoorPrice } from '@/types/database'
 
 /**
- * Port fee estimates by region (per person)
+ * Port fee estimates by region (per person).
+ *
+ * Must cover every value of `Sailing['region']`. A region present in the data
+ * but missing here used to produce `undefined * guests` → NaN, which rendered
+ * as "$NaN" on the sailing page, its /deals card, and the homepage deal
+ * finder. `DEFAULT_PORT_FEE_PER_PERSON` is the backstop for regions added to
+ * the data ahead of this table.
  */
+const DEFAULT_PORT_FEE_PER_PERSON = 130
+
 const PORT_FEES_BY_REGION: Record<string, number> = {
   caribbean: 125,
   bahamas: 125,
   alaska: 175,
   pacific: 140,
   europe: 150,
-  other: 130,
+  mediterranean: 150,
+  transatlantic: 150,
+  other: DEFAULT_PORT_FEE_PER_PERSON,
 }
 
 /**
@@ -20,12 +30,18 @@ export const GRATUITY_RATES = {
   concierge: 18.50,
 }
 
+/** Per-person port fee for a region, falling back for unknown/missing regions. */
+export function getPortFeePerPerson(region: string | undefined): number {
+  const key = region?.trim().toLowerCase()
+  const fee = key ? PORT_FEES_BY_REGION[key] : undefined
+  return Number.isFinite(fee) ? (fee as number) : DEFAULT_PORT_FEE_PER_PERSON
+}
+
 /**
  * Get port fees for a sailing
  */
 function getPortFees(region: string | undefined, nights: number, guests: number): number {
-  const feePerPerson = PORT_FEES_BY_REGION[region || 'other']
-  return feePerPerson * guests
+  return getPortFeePerPerson(region) * Math.max(0, guests)
 }
 
 /**
@@ -129,8 +145,7 @@ export function getPricePerNight(price: number, nights: number): number {
  * Get port fees estimate for display
  */
 export function getPortFeesEstimate(region: string | undefined): string {
-  const fees = PORT_FEES_BY_REGION[region || 'other']
-  return `~$${fees} per person`
+  return `~$${getPortFeePerPerson(region)} per person`
 }
 
 /**

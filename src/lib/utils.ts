@@ -5,7 +5,15 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-export function formatPrice(price: number): string {
+/** Rendered in place of a price we cannot compute, so "$NaN" never ships. */
+export const PRICE_UNAVAILABLE = 'Contact for quote'
+
+export function isRenderablePrice(price: number | null | undefined): price is number {
+  return typeof price === 'number' && Number.isFinite(price)
+}
+
+export function formatPrice(price: number | null | undefined): string {
+  if (!isRenderablePrice(price)) return PRICE_UNAVAILABLE
   return new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',

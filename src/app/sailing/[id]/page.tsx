@@ -2,7 +2,8 @@ import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { getSailingById, getShipById, getStateroomsForShip, getHotelsForPort, getTransfersForPort, getSnapshotsForSailing } from '@/lib/data'
-import { formatPrice, formatDate, getScoreBg, calculateSailingScore, daysUntil } from '@/lib/utils'
+import { formatPrice, formatDate, getScoreBg, calculateSailingScore, daysUntil, isRenderablePrice } from '@/lib/utils'
+import type { Sailing } from '@/types/database'
 import { generateSailingSchema, generateBreadcrumbSchema } from '@/lib/structured-data'
 import { calculateOutTheDoorPrice } from '@/lib/pricing'
 import { StructuredData } from '@/components/ui/structured-data'
@@ -43,6 +44,63 @@ function AvailabilityBadge({ status }: { status: AvailabilityStatus }) {
     <span className="inline-flex items-center gap-1 text-[10px] font-semibold px-1.5 py-0.5 rounded-full bg-red-50 text-red-600 border border-red-200">
       <span className="w-1.5 h-1.5 rounded-full bg-red-500"></span>Sold Out
     </span>
+  )
+}
+
+/**
+ * One stateroom column of the Total Cost Breakdown.
+ *
+ * Every money line is gated on `isRenderablePrice`: a fee we cannot compute is
+ * omitted rather than printed, and if the total itself is unavailable the whole
+ * column falls back to a quote prompt. Port fees for an unmapped region used to
+ * come back NaN and render "Port fees & taxes: $NaN" / "Total $NaN".
+ */
+function CostBreakdown({
+  sailing,
+  category,
+  label,
+  price,
+}: {
+  sailing: Sailing
+  category: 'inside' | 'oceanview'
+  label: string
+  price: number | null | undefined
+}) {
+  if (!isRenderablePrice(price)) return null
+
+  const pricing = calculateOutTheDoorPrice(sailing, category, 2)
+
+  return (
+    <div className="p-5">
+      <p className="text-sm font-semibold text-slate-900 mb-3">{label}</p>
+      <div className="space-y-2 mb-3 text-sm">
+        <div className="flex justify-between"><span className="text-slate-600">Base fare:</span><span className="font-medium">{formatPrice(price)}</span></div>
+        {isRenderablePrice(pricing.portFees) && (
+          <div className="flex justify-between"><span className="text-slate-600">Port fees &amp; taxes:</span><span className="font-medium">{formatPrice(pricing.portFees)}</span></div>
+        )}
+        {isRenderablePrice(pricing.gratuities) && (
+          <div className="flex justify-between"><span className="text-slate-600">Gratuities (2 guests):</span><span className="font-medium">{formatPrice(pricing.gratuities)}</span></div>
+        )}
+      </div>
+      {isRenderablePrice(pricing.total) ? (
+        <>
+          <div className="border-t border-slate-200 pt-3 flex justify-between items-center">
+            <span className="text-slate-900 font-semibold">Total</span>
+            <span className="text-2xl font-bold text-[#1E3A5F]">{formatPrice(pricing.total)}</span>
+          </div>
+          {isRenderablePrice(pricing.perPerson) && (
+            <p className="text-xs text-slate-500 mt-2">{formatPrice(pricing.perPerson)} per person</p>
+          )}
+        </>
+      ) : (
+        <div className="border-t border-slate-200 pt-3">
+          <p className="text-sm text-slate-500">
+            We don&apos;t have complete fee data for this sailing yet — request a quote and we&apos;ll
+            confirm the all-in total.
+          </p>
+        </div>
+      )}
+    </div>
   )
 }
 
@@ -309,36 +367,8 @@ export default async function SailingDetailPage({ params }: PageProps) {
                   </p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-0 divide-y md:divide-y-0 md:divide-x md:divide-slate-200">
-                  {sailing.current_inside_price && (
-                    <div className="p-5">
-                      <p className="text-sm font-semibold text-slate-900 mb-3">Inside Stateroom</p>
-                      <div className="space-y-2 mb-3 text-sm">
-                        <div className="flex justify-between"><span className="text-slate-600">Base fare:</span><span className="font-medium">{formatPrice(sailing.current_inside_price)}</span></div>
-                        <div className="flex justify-between"><span className="text-slate-600">Port fees & taxes:</span><span className="font-medium">{formatPrice(calculateOutTheDoorPrice(sailing, 'inside', 2).portFees)}</span></div>
-                        <div className="flex justify-between"><span className="text-slate-600">Gratuities (2 guests):</span><span className="font-medium">{formatPrice(calculateOutTheDoorPrice(sailing, 'inside', 2).gratuities)}</span></div>
-                      </div>
-                      <div className="border-t border-slate-200 pt-3 flex justify-between items-center">
-                        <span className="text-slate-900 font-semibold">Total</span>
-                        <span className="text-2xl font-bold text-[#1E3A5F]">{formatPrice(calculateOutTheDoorPrice(sailing, 'inside', 2).total)}</span>
-                      </div>
-                      <p className="text-xs text-slate-500 mt-2">{formatPrice(calculateOutTheDoorPrice(sailing, 'inside', 2).perPerson)} per person</p>
-                    </div>
-                  )}
-                  {sailing.current_oceanview_price && (
-                    <div className="p-5">
-                      <p className="text-sm font-semibold text-slate-900 mb-3">Oceanview Stateroom</p>
-                      <div className="space-y-2 mb-3 text-sm">
-                        <div className="flex justify-between"><span className="text-slate-600">Base fare:</span><span className="font-medium">{formatPrice(sailing.current_oceanview_price)}</span></div>
-                        <div className="flex justify-between"><span className="text-slate-600">Port fees & taxes:</span><span className="font-medium">{formatPrice(calculateOutTheDoorPrice(sailing, 'oceanview', 2).portFees)}</span></div>
-                        <div className="flex justify-between"><span className="text-slate-600">Gratuities (2 guests):</span><span className="font-medium">{formatPrice(calculateOutTheDoorPrice(sailing, 'oceanview', 2).gratuities)}</span></div>
-                      </div>
-                      <div className="border-t border-slate-200 pt-3 flex justify-between items-center">
-                        <span className="text-slate-900 font-semibold">Total</span>
-                        <span className="text-2xl font-bold text-[#1E3A5F]">{formatPrice(calculateOutTheDoorPrice(sailing, 'oceanview', 2).total)}</span>
-                      </div>
-                      <p className="text-xs text-slate-500 mt-2">{formatPrice(calculateOutTheDoorPrice(sailing, 'oceanview', 2).perPerson)} per person</p>
-                    </div>
-                  )}
+                  <CostBreakdown sailing={sailing} category="inside" label="Inside Stateroom" price={sailing.current_inside_price} />
+                  <CostBreakdown sailing={sailing} category="oceanview" label="Oceanview Stateroom" price={sailing.current_oceanview_price} />
                 </div>
               </div>
             </section>
