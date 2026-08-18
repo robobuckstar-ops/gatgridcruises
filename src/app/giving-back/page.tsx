@@ -1,15 +1,26 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { Heart, ArrowRight, ExternalLink, HandHeart, Stethoscope, Users } from 'lucide-react'
+import {
+  CURE_PLEDGE_PERCENT,
+  CURE_BUSINESS_DONATED_TOTAL,
+  CURE_DONATIONS_LAST_UPDATED,
+  FOUNDER_PERSONAL_GIVING_TOTAL,
+  FOUNDER_PERSONAL_GIVING_SINCE,
+  CURE_URL,
+  CURE_DONATE_URL,
+  formatGivingAmount,
+} from '@/lib/giving'
+
+const PAGE_TITLE = `Giving Back — ${CURE_PLEDGE_PERCENT}% of Commission to CURE.org | GatGrid Cruises`
+const PAGE_DESCRIPTION = `GatGrid Cruises donates ${CURE_PLEDGE_PERCENT}% of our commission from every cruise booking to CURE.org, helping children around the world receive life-changing surgical care.`
 
 export const metadata: Metadata = {
-  title: 'Giving Back — 5% of Commission to CURE.org | GatGrid Cruises',
-  description:
-    'GatGrid Cruises donates 5% of our commission from every cruise booking to CURE.org, helping children around the world receive life-changing surgical care.',
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
   openGraph: {
-    title: 'Giving Back — 5% of Commission to CURE.org | GatGrid Cruises',
-    description:
-      'GatGrid Cruises donates 5% of our commission from every cruise booking to CURE.org, helping children around the world receive life-changing surgical care.',
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
     url: 'https://gatgridcruises.com/giving-back',
     siteName: 'GatGrid Cruises',
     images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGrid Cruises gives back to CURE.org' }],
@@ -17,8 +28,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Giving Back — 5% of Commission to CURE.org | GatGrid Cruises',
-    description: 'We donate 5% of our commission from every cruise booking to CURE.org.',
+    title: PAGE_TITLE,
+    description: `We donate ${CURE_PLEDGE_PERCENT}% of our commission from every cruise booking to CURE.org.`,
     images: ['https://gatgridcruises.com/og-image.png'],
   },
 }
@@ -38,9 +49,8 @@ const HOW_IT_WORKS = [
   },
   {
     icon: Stethoscope,
-    title: 'We donate 5% of that commission to CURE.org',
-    description:
-      'On every booking — not just first-time clients, not just promotions — 5% of our share goes directly to CURE to fund pediatric surgical care.',
+    title: `We donate ${CURE_PLEDGE_PERCENT}% of that commission to CURE.org`,
+    description: `On every booking — not just first-time clients, not just promotions — ${CURE_PLEDGE_PERCENT}% of our share goes directly to CURE to fund pediatric surgical care.`,
   },
 ]
 
@@ -51,7 +61,7 @@ const FAQ = [
   },
   {
     q: 'Does the donation come out of what I pay?',
-    a: "No. Disney Cruise Line sets the price; you pay Disney directly. Disney then pays the travel agency a commission on the booking. The 5% donation comes out of our share of that commission — it doesn't add anything to your fare and doesn't reduce your onboard credit.",
+    a: `No. Disney Cruise Line sets the price; you pay Disney directly. Disney then pays the travel agency a commission on the booking. The ${CURE_PLEDGE_PERCENT}% donation comes out of our share of that commission — it doesn't add anything to your fare and doesn't reduce your onboard credit.`,
   },
   {
     q: 'How do I know the donation actually happens?',
@@ -63,7 +73,7 @@ const FAQ = [
   },
   {
     q: 'Can I donate to CURE directly instead?',
-    a: "Absolutely, and we'd encourage it. Visit cure.org/donate to give directly. Our 5% commitment is on top of any direct giving — it's our way of making every booking do a little extra good.",
+    a: `Absolutely, and we'd encourage it. Visit cure.org/donate to give directly. Our ${CURE_PLEDGE_PERCENT}% commitment is on top of any direct giving — it's our way of making every booking do a little extra good.`,
   },
 ]
 
@@ -90,8 +100,8 @@ export default function GivingBackPage() {
             Every Cruise Helps a Child<br className="hidden sm:block" /> Get Surgery They Need
           </h1>
           <p className="font-inter text-lg md:text-xl text-blue-200 max-w-2xl mx-auto leading-relaxed">
-            GatGrid donates <span className="text-[#D4AF37] font-semibold">5% of our commission</span> from every cruise
-            booking to <a href="https://cure.org" target="_blank" rel="noopener noreferrer" className="text-[#D4AF37] underline decoration-dotted underline-offset-4 hover:text-yellow-300 transition-colors">CURE.org</a>,
+            GatGrid donates <span className="text-[#D4AF37] font-semibold">{CURE_PLEDGE_PERCENT}% of our commission</span> from every cruise
+            booking to <a href={CURE_URL} target="_blank" rel="noopener noreferrer" className="text-[#D4AF37] underline decoration-dotted underline-offset-4 hover:text-yellow-300 transition-colors">CURE.org</a>,
             funding life-changing surgical care for children in low-income countries.
           </p>
         </div>
@@ -126,7 +136,7 @@ export default function GivingBackPage() {
 
           <div className="mt-8 text-center">
             <a
-              href="https://cure.org"
+              href={CURE_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 bg-white border border-slate-300 text-[#1E3A5F] font-semibold rounded-xl hover:border-[#D4AF37] hover:text-[#D4AF37] transition-colors text-sm"
@@ -134,6 +144,40 @@ export default function GivingBackPage() {
               Learn More at cure.org
               <ExternalLink className="w-4 h-4" aria-hidden="true" />
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Founder's personal commitment */}
+      <section className="py-16 md:py-20 bg-white border-t border-slate-200">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-3xl border border-slate-200 bg-slate-50 p-8 md:p-10">
+            <p className="text-[#D4AF37] text-xs font-bold uppercase tracking-widest mb-3">
+              Where This Started
+            </p>
+            <h2 className="font-fraunces text-2xl md:text-3xl font-bold text-[#1E3A5F] mb-5">
+              This Isn&apos;t a New Cause for Us
+            </h2>
+            <div className="space-y-4 font-inter text-slate-600 leading-relaxed">
+              <p>
+                Our founder, Grayson, has personally supported CURE with over{' '}
+                <span className="font-semibold text-[#1E3A5F]">
+                  {formatGivingAmount(FOUNDER_PERSONAL_GIVING_TOTAL)} in giving since{' '}
+                  {FOUNDER_PERSONAL_GIVING_SINCE}
+                </span>{' '}
+                — his own money, given quietly, long before GatGrid Cruises existed.
+              </p>
+              <p>
+                Now the business is joining in. Starting today, GatGrid Cruises commits to give back on every
+                booking we process, so the work Grayson has been supporting on his own gets a little help from
+                the company too.
+              </p>
+            </div>
+            <p className="mt-6 text-xs text-slate-500 leading-relaxed">
+              The {formatGivingAmount(FOUNDER_PERSONAL_GIVING_TOTAL)} figure reflects Grayson&apos;s personal
+              donations, confirmed by CURE International&apos;s donor relations team. It is separate from the
+              company tracker below, which counts only what GatGrid Cruises gives as a business.
+            </p>
           </div>
         </div>
       </section>
@@ -173,20 +217,41 @@ export default function GivingBackPage() {
         </div>
       </section>
 
-      {/* Stat callout */}
+      {/* Fundraising tracker */}
       <section className="py-16 md:py-20 bg-white">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <div className="bg-gradient-to-br from-[#0a1628] to-[#1E3A5F] rounded-3xl p-8 md:p-12 text-center">
             <p className="text-[#D4AF37] text-xs font-bold uppercase tracking-widest mb-4">
-              The Math
+              Our Running Total
             </p>
-            <p className="font-fraunces text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
-              5% of every cruise commission, every booking, every time.
+            <p className="font-inter text-blue-200 text-sm mb-2">
+              Raised for CURE by GatGrid Cruises
             </p>
-            <p className="font-inter text-blue-200 max-w-xl mx-auto leading-relaxed">
-              No fine print, no &ldquo;up to,&rdquo; no marketing-only campaign. It&apos;s how we operate, on every
-              booking we ever process.
+            <p className="font-fraunces text-5xl md:text-7xl font-bold text-[#D4AF37] mb-5 leading-none tabular-nums">
+              {formatGivingAmount(CURE_BUSINESS_DONATED_TOTAL)}
             </p>
+            {CURE_BUSINESS_DONATED_TOTAL > 0 ? (
+              <p className="font-inter text-blue-200 max-w-xl mx-auto leading-relaxed">
+                That&apos;s {CURE_PLEDGE_PERCENT}% of our commission from every booking we&apos;ve processed,
+                donated to CURE. This number goes up every time someone books a cruise with us.
+              </p>
+            ) : (
+              <p className="font-inter text-blue-200 max-w-xl mx-auto leading-relaxed">
+                We&apos;re starting at zero, and we&apos;d rather show you that honestly than pad the number. The
+                pledge begins with our next booking — {CURE_PLEDGE_PERCENT}% of that commission goes to CURE, and
+                this total goes up from there.
+              </p>
+            )}
+            <div className="mt-8 pt-6 border-t border-white/10">
+              <p className="font-inter text-sm text-blue-300 leading-relaxed">
+                {CURE_PLEDGE_PERCENT}% of every cruise commission, every booking, every time. No fine print, no
+                &ldquo;up to,&rdquo; no marketing-only campaign.
+              </p>
+              <p className="text-xs text-blue-400 mt-3">
+                Business donations only — updated {CURE_DONATIONS_LAST_UPDATED}. Grayson&apos;s personal giving is
+                tracked separately and isn&apos;t counted here.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -233,6 +298,18 @@ export default function GivingBackPage() {
             Talk to Our Concierge
             <ArrowRight className="w-4 h-4" aria-hidden="true" />
           </Link>
+          <p className="font-inter text-sm text-blue-200 mt-6">
+            Not booking a cruise but want to help?{' '}
+            <a
+              href={CURE_DONATE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#D4AF37] underline decoration-dotted underline-offset-4 hover:text-yellow-300 transition-colors"
+            >
+              Give to CURE directly
+            </a>
+            .
+          </p>
           <p className="text-xs text-blue-400 mt-5">
             GatGrid Cruises is an independent donor and is not affiliated with or endorsed by CURE International.
           </p>
