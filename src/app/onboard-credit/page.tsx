@@ -1,23 +1,23 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { Gift, CheckCircle, ArrowRight, Star } from 'lucide-react'
-import { OBC_TIERS } from '@/lib/obc'
+import { getOBC, formatUSD, OBC_EXAMPLE_FARES } from '@/lib/obc'
 import { OBCDisclaimer } from '@/components/ui/obc-disclaimer'
 
 export const metadata: Metadata = {
   title: 'Free Onboard Credit — GatGrid Cruises',
   description:
-    'Plan your Disney cruise with the GatGrid Cruises concierge and receive up to $400 in free onboard credit. Learn what OBC is, what you can spend it on, and how to qualify.',
+    'Plan your Disney cruise with the GatGrid Cruises concierge and receive free onboard credit that scales with your cruise fare. Learn what OBC is, what you can spend it on, and how to qualify.',
   openGraph: {
     title: 'Free Onboard Credit — GatGrid Cruises',
-    description: 'Plan your Disney cruise with the GatGrid Cruises concierge and receive up to $400 in free onboard credit.',
+    description: 'Plan your Disney cruise with the GatGrid Cruises concierge and receive free onboard credit on every booking.',
     url: 'https://gatgridcruises.com/onboard-credit',
     images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Free Onboard Credit — GatGrid Cruises',
-    description: 'Plan your Disney cruise with the GatGrid Cruises concierge and receive up to $400 in free onboard credit.',
+    description: 'Plan your Disney cruise with the GatGrid Cruises concierge and receive free onboard credit on every booking.',
     images: ['https://gatgridcruises.com/og-image.png'],
   },
 }
@@ -47,8 +47,8 @@ const FAQ = [
     a: 'OBC from GatGrid cannot be combined with other travel agent promotions. However, it can generally be used alongside Disney Cruise Line\'s own onboard offers.',
   },
   {
-    q: 'What fare amount is used to calculate my OBC tier?',
-    a: 'OBC is calculated based on the total cruise fare for all guests before taxes and port fees.',
+    q: 'What fare amount is used to calculate my OBC?',
+    a: 'OBC is calculated from the total cruise fare for all guests before taxes and port fees. Enter your fare in our calculator to see the exact dollar amount.',
   },
   {
     q: 'What if I transfer my booking away from Boardwalk Travel?',
@@ -72,7 +72,7 @@ export default function OnboardCreditPage() {
             Exclusive GatGrid Perk
           </div>
           <h1 className="font-fraunces text-4xl md:text-5xl font-bold text-white mb-5">
-            Get Up to $400* in Free Onboard Credit
+            Get Free Onboard Credit on Your Disney Cruise
           </h1>
           <p className="text-blue-200 text-lg max-w-2xl mx-auto mb-8">
             When you plan your Disney cruise with our concierge (via Boardwalk Travel Agency), we pass a portion of our commission back to you as free spending money onboard.
@@ -132,10 +132,10 @@ export default function OnboardCreditPage() {
           </div>
         </section>
 
-        {/* OBC Tier Table */}
+        {/* Example OBC amounts */}
         <section>
-          <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-2">GatGrid OBC Tiers</h2>
-          <p className="text-slate-500 mb-6">The more you cruise, the more free credit you earn. OBC is calculated on your total cruise fare before taxes and port fees.*</p>
+          <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-2">What You&rsquo;d Earn</h2>
+          <p className="text-slate-500 mb-6">The bigger the cruise fare, the more free credit you earn. OBC is calculated on your total cruise fare before taxes and port fees.*</p>
 
           <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-sm">
             <div className="bg-[#1E3A5F] px-6 py-4 grid grid-cols-2 gap-4">
@@ -143,13 +143,13 @@ export default function OnboardCreditPage() {
               <span className="text-[#D4AF37] font-bold text-sm uppercase tracking-widest text-right">Free OBC</span>
             </div>
             <div className="divide-y divide-slate-100">
-              {OBC_TIERS.map((tier, i) => (
-                <div key={i} className="grid grid-cols-2 gap-4 px-6 py-4 items-center hover:bg-amber-50 transition-colors">
+              {OBC_EXAMPLE_FARES.map((exampleFare) => (
+                <div key={exampleFare} className="grid grid-cols-2 gap-4 px-6 py-4 items-center hover:bg-amber-50 transition-colors">
                   <div className="flex items-center gap-3">
                     <Star className="w-4 h-4 text-[#D4AF37] flex-shrink-0" aria-hidden="true" />
-                    <span className="text-slate-700 font-medium text-sm">{tier.label}</span>
+                    <span className="text-slate-700 font-medium text-sm">{formatUSD(exampleFare)}</span>
                   </div>
-                  <span className="font-fraunces font-bold text-xl text-[#1E3A5F] text-right">${tier.obc}</span>
+                  <span className="font-fraunces font-bold text-xl text-[#1E3A5F] text-right">{formatUSD(getOBC(exampleFare))}</span>
                 </div>
               ))}
             </div>
@@ -193,7 +193,7 @@ export default function OnboardCreditPage() {
               {
                 icon: '💰',
                 title: 'Free Onboard Credit',
-                desc: 'Up to $400* in free spending money — automatically applied to your account.',
+                desc: 'Free spending money on every booking* — automatically applied to your account.',
               },
               {
                 icon: '🎯',

@@ -1,5 +1,4 @@
 import { Coins, TrendingDown, UserRound, BadgeCheck } from 'lucide-react'
-import { MAX_OBC } from '@/lib/obc'
 
 interface WhyBookWithUsProps {
   variant?: 'inline' | 'compact'
@@ -11,7 +10,7 @@ const VALUE_PROPS = [
     icon: Coins,
     title: 'Onboard credit on qualifying sailings',
     description:
-      `Up to $${MAX_OBC}* in onboard credit when you book through our partner agency — applied at no extra cost.`,
+      'Free onboard credit on every qualifying booking through our partner agency* — applied at no extra cost.',
   },
   {
     icon: TrendingDown,

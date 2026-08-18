@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { Shield, Star, Phone, Gift, BadgeCheck, Building2 } from 'lucide-react'
 import Link from 'next/link'
-import { OBC_TIERS } from '@/lib/obc'
+import { getOBC, formatUSD, OBC_EXAMPLE_FARES } from '@/lib/obc'
 import { trackLead } from '@/lib/analytics'
 import { OBCDisclaimer } from '@/components/ui/obc-disclaimer'
 import { GraysonFamilyPhoto } from '@/components/ui/grayson-family-photo'
@@ -174,27 +174,27 @@ export default function BookPage() {
             <h2 className="font-fraunces text-xl font-bold text-white">Get Free Onboard Credit With Our Concierge Service</h2>
           </div>
           <p className="text-blue-200 text-sm mb-5">
-            The more you cruise, the more free spending money we add to your onboard account. This perk is available when you book through our partner, Boardwalk Travel Agency.
+            The bigger your cruise fare, the more free spending money we add to your onboard account. This perk is available when you book through our partner, Boardwalk Travel Agency.
           </p>
 
-          {/* Tier Table */}
+          {/* Example amounts */}
           <div className="rounded-xl overflow-hidden border border-white/10 mb-4">
             <div className="grid grid-cols-2 gap-2 px-4 py-2 bg-white/10">
               <span className="text-[#D4AF37] text-xs font-bold uppercase tracking-widest">Cruise Fare</span>
               <span className="text-[#D4AF37] text-xs font-bold uppercase tracking-widest text-right">Free OBC*</span>
             </div>
             <div className="divide-y divide-white/10">
-              {OBC_TIERS.map((tier, i) => (
-                <div key={i} className="grid grid-cols-2 gap-2 px-4 py-2.5 items-center hover:bg-white/5 transition-colors">
-                  <span className="text-blue-100 text-sm">{tier.label}</span>
-                  <span className="font-fraunces font-bold text-white text-right">${tier.obc}</span>
+              {OBC_EXAMPLE_FARES.map((exampleFare) => (
+                <div key={exampleFare} className="grid grid-cols-2 gap-2 px-4 py-2.5 items-center hover:bg-white/5 transition-colors">
+                  <span className="text-blue-100 text-sm">{formatUSD(exampleFare)}</span>
+                  <span className="font-fraunces font-bold text-white text-right">{formatUSD(getOBC(exampleFare))}</span>
                 </div>
               ))}
             </div>
           </div>
 
           <div className="flex items-center justify-between gap-4">
-            <p className="text-blue-300 text-xs">Not sure what tier you&rsquo;d be in?</p>
+            <p className="text-blue-300 text-xs">Not sure what your fare would earn?</p>
             <Link
               href="/tools/obc-calculator"
               className="inline-flex items-center gap-1.5 text-[#D4AF37] font-semibold text-sm hover:text-yellow-300 transition-colors flex-shrink-0"

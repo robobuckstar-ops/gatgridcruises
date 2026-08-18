@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { Gift, ArrowRight, CheckCircle, DollarSign } from 'lucide-react'
-import { OBC_TIERS, MAX_OBC, getOBC, getOBCTierIndex } from '@/lib/obc'
+import { getOBC, formatUSD, OBC_EXAMPLE_FARES } from '@/lib/obc'
 import { OBCDisclaimer } from '@/components/ui/obc-disclaimer'
 
 const SPEND_IDEAS = [
@@ -30,7 +30,6 @@ export default function OBCCalculatorPage() {
 
   const numericFare = hasInput && parsedFare > 0 ? parsedFare : 0
   const obc = getOBC(numericFare)
-  const activeTierIndex = getOBCTierIndex(numericFare)
 
   return (
     <main className="min-h-screen bg-white">
@@ -45,7 +44,7 @@ export default function OBCCalculatorPage() {
             Free Onboard Credit Calculator
           </h1>
           <p className="text-blue-200 text-lg max-w-2xl mx-auto">
-            Plan your cruise through our concierge (via Boardwalk Travel Agency) and earn up to ${MAX_OBC} in free spending money to use onboard — the more you cruise, the more you earn.
+            Plan your cruise through our concierge (via Boardwalk Travel Agency) and earn free spending money to use onboard — the bigger the cruise fare, the more you earn.
           </p>
         </div>
       </section>
@@ -99,7 +98,7 @@ export default function OBCCalculatorPage() {
                     Your Perk
                   </div>
                   <p className="text-sm font-semibold text-[#1E3A5F] mb-1">Plan with GatGrid Concierge</p>
-                  <p className="font-fraunces text-4xl font-bold text-[#1E3A5F]">${obc}</p>
+                  <p className="font-fraunces text-4xl font-bold text-[#1E3A5F]">{formatUSD(obc)}</p>
                   <p className="text-xs text-amber-700 mt-1 font-semibold">Free onboard credit*</p>
                 </div>
               </div>
@@ -114,34 +113,26 @@ export default function OBCCalculatorPage() {
           </div>
         </div>
 
-        {/* Tier Table */}
+        {/* Example amounts — every figure derived from the same calculator */}
         <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
           <div className="px-8 py-5 border-b border-slate-100 bg-slate-50">
-            <h2 className="font-fraunces text-xl font-bold text-slate-900">OBC Tiers at a Glance</h2>
-            <p className="text-slate-500 text-sm mt-0.5">The more you cruise, the more free credit you earn</p>
+            <h2 className="font-fraunces text-xl font-bold text-slate-900">Example Credit Amounts</h2>
+            <p className="text-slate-500 text-sm mt-0.5">The bigger the cruise fare, the more free credit you earn</p>
           </div>
           <div className="divide-y divide-slate-100">
-            {OBC_TIERS.map((tier, i) => (
+            {OBC_EXAMPLE_FARES.map((exampleFare) => (
               <div
-                key={i}
-                className={`flex items-center justify-between px-8 py-4 transition-colors ${
-                  i === activeTierIndex
-                    ? 'bg-amber-50 border-l-4 border-l-[#D4AF37]'
-                    : 'hover:bg-slate-50'
-                }`}
+                key={exampleFare}
+                className="flex items-center justify-between px-8 py-4 transition-colors hover:bg-slate-50"
               >
                 <div className="flex items-center gap-3">
-                  {i === activeTierIndex ? (
-                    <CheckCircle className="w-5 h-5 text-[#D4AF37] flex-shrink-0" aria-hidden="true" />
-                  ) : (
-                    <div className="w-5 h-5 rounded-full border-2 border-slate-200 flex-shrink-0" />
-                  )}
-                  <span className={`text-sm font-medium ${i === activeTierIndex ? 'text-[#1E3A5F] font-semibold' : 'text-slate-700'}`}>
-                    {tier.label}
+                  <CheckCircle className="w-5 h-5 text-[#D4AF37] flex-shrink-0" aria-hidden="true" />
+                  <span className="text-sm font-medium text-slate-700">
+                    {formatUSD(exampleFare)} cruise fare
                   </span>
                 </div>
-                <span className={`font-fraunces font-bold text-lg ${i === activeTierIndex ? 'text-[#1E3A5F]' : 'text-slate-900'}`}>
-                  ${tier.obc} OBC
+                <span className="font-fraunces font-bold text-lg text-slate-900">
+                  {formatUSD(getOBC(exampleFare))} OBC
                 </span>
               </div>
             ))}

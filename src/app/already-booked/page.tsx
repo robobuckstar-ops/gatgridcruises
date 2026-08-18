@@ -15,11 +15,11 @@ import { OBCDisclaimer } from '@/components/ui/obc-disclaimer'
 export const metadata: Metadata = {
   title: 'Already Booked Your Disney Cruise? Get Free Onboard Credit | GatGrid',
   description:
-    'Already booked a Disney cruise direct? You can transfer your reservation to our partner travel agency for free within 30 days of booking — and get up to $400* in onboard credit at no extra cost.',
+    'Already booked a Disney cruise direct? You can transfer your reservation to our partner travel agency for free within 30 days of booking — and get free onboard credit at no extra cost.',
   openGraph: {
     title: 'Already Booked Your Disney Cruise? Get Free Onboard Credit | GatGrid',
     description:
-      'Transfer your existing Disney cruise booking within 30 days and unlock up to $400* in free onboard credit. No extra cost, same sailing.',
+      'Transfer your existing Disney cruise booking within 30 days and unlock free onboard credit. No extra cost, same sailing.',
     url: 'https://gatgridcruises.com/already-booked',
     siteName: 'GatGrid Cruises',
     images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'Transfer your Disney cruise booking for free OBC' }],
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Already Booked Your Disney Cruise? Get Free Onboard Credit | GatGrid',
-    description: 'Transfer your existing Disney cruise booking within 30 days and unlock up to $400* in free onboard credit.',
+    description: 'Transfer your existing Disney cruise booking within 30 days and unlock free onboard credit.',
     images: ['https://gatgridcruises.com/og-image.png'],
   },
 }
@@ -51,9 +51,9 @@ const STEPS = [
   {
     number: 3,
     icon: Gift,
-    title: 'Unlock up to $400* in onboard credit',
+    title: 'Unlock free onboard credit*',
     description:
-      "Once the transfer completes, your booking qualifies for our standard onboard credit tiers — up to $400* for higher cruise fares. The OBC posts to your stateroom folio after final payment and you can spend it on drinks, spa, dining, excursions, almost anything onboard.",
+      "Once the transfer completes, your booking qualifies for our standard onboard credit* — the bigger the cruise fare, the bigger the credit. The OBC posts to your stateroom folio after final payment and you can spend it on drinks, spa, dining, excursions, almost anything onboard.",
   },
 ]
 
@@ -62,7 +62,7 @@ const WHY_TRANSFER = [
     icon: Gift,
     title: 'Free Onboard Credit',
     description:
-      'You get up to $400* in spending money on the ship. Booking direct with Disney earns you $0 in OBC by default.',
+      'You get free spending money on the ship.* Booking direct with Disney earns you $0 in OBC by default.',
   },
   {
     icon: Sparkles,
@@ -103,7 +103,7 @@ const FAQ = [
   },
   {
     q: "How much OBC will I get?",
-    a: "It depends on your total cruise fare (before taxes and port fees). Our tiers go up to $400* on higher fares. Send us your reservation details and we'll confirm the exact amount before you sign anything.",
+    a: "It depends on your total cruise fare (before taxes and port fees) — the bigger the fare, the bigger the credit. Send us your reservation details and we'll confirm the exact amount before you sign anything.",
   },
   {
     q: "What if I'm past the 30-day window?",
@@ -131,7 +131,7 @@ export default function AlreadyBookedPage() {
             </span>
           </div>
           <h1 className="font-fraunces text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-            You Just Left Up to $400* on the Table
+            You Just Left Free Onboard Credit on the Table*
           </h1>
           <p className="font-inter text-lg md:text-xl text-blue-200 max-w-2xl mx-auto mb-8 leading-relaxed">
             If you booked your Disney cruise direct in the last 30 days, you can transfer the

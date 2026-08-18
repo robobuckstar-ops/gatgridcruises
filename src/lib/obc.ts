@@ -1,56 +1,50 @@
-export interface OBCTier {
-  minFare: number
-  maxFare: number | null
-  obc: number
-  label: string
-}
+/**
+ * Onboard credit is a flat share of the total cruise fare — no tiers, no cap.
+ *
+ * This module is the single source of truth for every OBC figure the site
+ * quotes. Nothing else should compute an OBC amount or hardcode one in copy;
+ * import `getOBC` (or `OBC_EXAMPLE_FARES` for illustrative tables) instead.
+ *
+ * Public copy shows DOLLAR amounts only. The rate itself is not advertised.
+ */
 
-/** Ascending by minFare — getOBCTier relies on this ordering. */
-export const OBC_TIERS: OBCTier[] = [
-  { minFare: 0,     maxFare: 1499, obc: 25,  label: 'Under $1,500' },
-  { minFare: 1500,  maxFare: 2999, obc: 75,  label: '$1,500 – $2,999' },
-  { minFare: 3000,  maxFare: 4999, obc: 150, label: '$3,000 – $4,999' },
-  { minFare: 5000,  maxFare: 9999, obc: 300, label: '$5,000 – $9,999' },
-  { minFare: 10000, maxFare: null, obc: 400, label: '$10,000+' },
-]
+/** Share of total cruise fare returned as OBC. Edit here to change the offer. */
+export const OBC_RATE = 0.03
 
-/** The highest OBC any tier pays. Use this instead of hardcoding "$400" in copy. */
-export const MAX_OBC = OBC_TIERS.reduce((max, t) => Math.max(max, t.obc), 0)
+/** Quoted OBC is rounded up to this increment so figures stay clean. */
+export const OBC_ROUNDING = 10
+
+/** No qualifying booking is quoted less than this. */
+export const OBC_MINIMUM = 10
 
 /**
  * A fare is valid if it is a finite number greater than zero. Negative and
- * non-numeric fares are not "tier zero" — they are invalid input.
+ * non-numeric fares are not "zero credit" — they are invalid input.
  */
 export function isValidFare(totalFare: number): boolean {
   return Number.isFinite(totalFare) && totalFare > 0
 }
 
 /**
- * Resolve a fare to its tier by taking the highest tier the fare reaches.
+ * OBC for a total cruise fare (all guests, before taxes and port fees).
  *
- * The tier labels advertise whole-dollar bands ($1,500–$2,999), but fares are
- * not whole dollars. Matching on `fare <= maxFare` left every fractional fare
- * between one tier's maxFare and the next tier's minFare (2999.99, 4999.99,
- * 9999.99) unmatched, which surfaced as $0 OBC. Bands are contiguous, so the
- * lower bound alone is enough to place any fare.
+ * Rounds up to the nearest $10 and never quotes below OBC_MINIMUM, so a small
+ * fare still earns something rather than rounding away to $0.
  */
-export function getOBCTier(totalFare: number): OBCTier | null {
-  if (!isValidFare(totalFare)) return null
-
-  let match: OBCTier | null = null
-  for (const tier of OBC_TIERS) {
-    if (totalFare >= tier.minFare) match = tier
-    else break
-  }
-  return match
-}
-
 export function getOBC(totalFare: number): number {
-  return getOBCTier(totalFare)?.obc ?? 0
+  if (!isValidFare(totalFare)) return 0
+  const raw = totalFare * OBC_RATE
+  return Math.max(OBC_MINIMUM, Math.ceil(raw / OBC_ROUNDING) * OBC_ROUNDING)
 }
 
-/** Index into OBC_TIERS for highlighting the active row, or -1. */
-export function getOBCTierIndex(totalFare: number): number {
-  const tier = getOBCTier(totalFare)
-  return tier ? OBC_TIERS.indexOf(tier) : -1
+/** Formatted with a thousands separator, for display: 1500 -> "$1,500". */
+export function formatUSD(amount: number): string {
+  return `$${Math.round(amount).toLocaleString('en-US')}`
 }
+
+/**
+ * Representative fares for the "what would I earn" tables on the calculator,
+ * /onboard-credit, and /book. These illustrate real amounts without stating a
+ * rate — the credit column is always derived from getOBC, never hardcoded.
+ */
+export const OBC_EXAMPLE_FARES = [2000, 3000, 5000, 7500, 10000] as const

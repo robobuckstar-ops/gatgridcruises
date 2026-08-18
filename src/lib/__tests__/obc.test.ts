@@ -1,35 +1,46 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
-import { getOBC, getOBCTierIndex, isValidFare, MAX_OBC, OBC_TIERS } from '../obc'
+import {
+  getOBC,
+  isValidFare,
+  formatUSD,
+  OBC_RATE,
+  OBC_MINIMUM,
+  OBC_ROUNDING,
+  OBC_EXAMPLE_FARES,
+} from '../obc'
 
-test('whole-dollar fares land in their advertised tier', () => {
+test('headline fares quote the expected credit', () => {
   const cases: [number, number][] = [
-    [1, 25],
-    [1499, 25],
-    [1500, 75],
-    [2999, 75],
-    [3000, 150],
-    [4999, 150],
-    [5000, 300],
-    [9999, 300],
-    [10000, 400],
-    [25000, 400],
+    [3000, 90],
+    [5000, 150],
+    [10000, 300],
   ]
   for (const [fare, expected] of cases) {
     assert.equal(getOBC(fare), expected, `fare ${fare}`)
   }
 })
 
-test('fares in the fractional gap between tiers still resolve (regression)', () => {
-  // These returned $0 before the banding fix.
-  assert.equal(getOBC(1499.99), 25)
-  assert.equal(getOBC(2999.99), 75)
-  assert.equal(getOBC(4999.99), 150)
-  assert.equal(getOBC(9999.99), 300)
-  assert.equal(getOBC(9999.5), 300)
+test('credit rounds up to the nearest $10, never down', () => {
+  // 4100 * 0.03 = 123 -> 130
+  assert.equal(getOBC(4100), 130)
+  // 2999.99 * 0.03 = 89.9997 -> 90
+  assert.equal(getOBC(2999.99), 90)
+  for (let fare = 250; fare < 20000; fare += 137.5) {
+    const obc = getOBC(fare)
+    assert.equal(obc % OBC_ROUNDING, 0, `fare ${fare} not a $${OBC_ROUNDING} increment`)
+    assert.ok(obc >= fare * OBC_RATE, `fare ${fare} rounded down`)
+  }
 })
 
-test('no fare above zero returns $0 OBC', () => {
+test('small fares fall back to the minimum rather than $0', () => {
+  assert.equal(getOBC(1), OBC_MINIMUM)
+  assert.equal(getOBC(100), OBC_MINIMUM)
+  // 333.34 * 0.03 = 10.0002 -> 20 (rounded up), above the floor
+  assert.equal(getOBC(333.34), 20)
+})
+
+test('no fare above zero returns $0 credit', () => {
   for (let fare = 0.01; fare < 15000; fare += 7.13) {
     assert.ok(getOBC(fare) > 0, `fare ${fare} returned $0`)
   }
@@ -39,26 +50,25 @@ test('invalid fares are rejected rather than quoted', () => {
   for (const fare of [-100, -0.01, 0, NaN, Infinity, -Infinity]) {
     assert.equal(isValidFare(fare), false, `isValidFare(${fare})`)
     assert.equal(getOBC(fare), 0, `getOBC(${fare})`)
-    assert.equal(getOBCTierIndex(fare), -1, `getOBCTierIndex(${fare})`)
   }
 })
 
-test('tier index matches the tier the fare resolves to', () => {
-  assert.equal(getOBCTierIndex(2999.99), 1)
-  assert.equal(getOBCTierIndex(3000), 2)
-  assert.equal(getOBCTierIndex(10000), 4)
+test('credit scales monotonically with fare — no cap', () => {
+  assert.ok(getOBC(50000) > getOBC(10000))
+  assert.ok(getOBC(10000) > getOBC(5000))
+  assert.equal(getOBC(100000), 3000)
 })
 
-test('MAX_OBC equals the top tier so marketing copy stays in sync', () => {
-  assert.equal(MAX_OBC, 400)
-  assert.equal(MAX_OBC, OBC_TIERS[OBC_TIERS.length - 1].obc)
-})
-
-test('tiers are contiguous and ascending', () => {
-  for (let i = 1; i < OBC_TIERS.length; i++) {
-    const prev = OBC_TIERS[i - 1]
-    const curr = OBC_TIERS[i]
-    assert.ok(curr.minFare > prev.minFare, `tier ${i} minFare not ascending`)
-    assert.equal(prev.maxFare, curr.minFare - 1, `gap between tier ${i - 1} and ${i}`)
+test('example fares all produce displayable dollar amounts', () => {
+  for (const fare of OBC_EXAMPLE_FARES) {
+    const obc = getOBC(fare)
+    assert.ok(Number.isFinite(obc) && obc > 0, `example fare ${fare}`)
+    assert.match(formatUSD(obc), /^\$[\d,]+$/)
   }
+})
+
+test('formatUSD adds thousands separators', () => {
+  assert.equal(formatUSD(90), '$90')
+  assert.equal(formatUSD(1500), '$1,500')
+  assert.equal(formatUSD(10000), '$10,000')
 })

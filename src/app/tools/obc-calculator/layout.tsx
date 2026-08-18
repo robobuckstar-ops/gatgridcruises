@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Disney Cruise OBC Calculator — GatGridCruises',
   description:
-    'Calculate how much free onboard credit you earn when planning your Disney cruise through GatGrid Cruises. Tiers based on cruise fare.',
+    'Calculate how much free onboard credit you earn when planning your Disney cruise through GatGrid Cruises. Based on your total cruise fare.',
   openGraph: {
     title: 'Disney Cruise OBC Calculator — GatGridCruises',
     description: 'How much free onboard credit can you earn? Calculate your OBC by cruise fare.',
