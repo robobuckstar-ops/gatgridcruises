@@ -471,7 +471,9 @@ Current sailing on the Disney Wish is significantly enhanced compared to the ina
 
 The Disney Wish offers modern accommodations, excellent dining, top-tier entertainment, and innovative design. With two years of continuous improvement, she represents one of Disney Cruise Line's best offerings.
 
-If you haven't yet sailed the Disney Wish, now is an excellent time to book.
+And the Wish's story is about to change again: in 2027 she leaves Port Canaveral for a first European season, calling at three ports new to the fleet. Our guide to the <a href="/blog/disney-wish-europe-2027-ports">Disney Wish Europe 2027 ports</a> covers Zadar, Trieste, and Hellesylt in detail.
+
+If you haven't yet sailed the Disney Wish and want help matching a sailing to your family, <a href="/concierge">talk to our concierge</a> — there's no charge for the conversation.
 
 </div>
     `.trim(),
@@ -1180,7 +1182,7 @@ Many teens who are skeptical before boarding return home having had a genuinely 
 
 <h2>Mistake 6: Booking Excursions Without Reading the Castaway Cay Section First</h2>
 <p>Castaway Cay is Disney's private island in the Bahamas, and it's the highlight of nearly every Caribbean Disney cruise. First-timers sometimes ignore it in favor of more "interesting" excursions at other ports — and then realize too late that Castaway is the best port day of the entire sailing. Worse, the things that make Castaway special (cabanas, parasailing, the 5K) require advance booking and sell out instantly.</p>
-<p><strong>How to avoid it:</strong> Read our <a href="/guides/castaway-cay-guide">complete Castaway Cay guide</a> before your booking window opens. Lock in your cabana or parasailing slot at the 75-day mark. Plan a beach day, not just "we'll figure it out when we get there."</p>
+<p><strong>How to avoid it:</strong> Read our <a href="/guides/castaway-cay-guide">complete Castaway Cay guide</a> before your booking window opens, and if your itinerary offers both, our <a href="/blog/castaway-cay-vs-lookout-cay">Castaway Cay vs. Lookout Cay comparison</a> explains which island suits which kind of family. Lock in your cabana or parasailing slot at the 75-day mark. Plan a beach day, not just "we'll figure it out when we get there."</p>
 
 <h2>Mistake 7: Picking the Wrong Ship for Your Family</h2>
 <p>Disney has six active ships (with the new Disney Destiny launched in late 2025), and they are not interchangeable. The Wish-class ships (Wish, Treasure, Destiny) are massive, theatrically themed, and tuned for first-time Disney cruisers. The classic-class ships (Magic, Wonder) are smaller, warmer, and easier to navigate — often the right pick for families with very young children or grandparents traveling along. The Dream-class (Dream, Fantasy) sits in the middle: large, family-focused, with the AquaDuck waterslide that many kids spend half their cruise on.</p>
@@ -1322,6 +1324,9 @@ Many teens who are skeptical before boarding return home having had a genuinely 
 <p>The honest answer: you can't really go wrong. Both ships deliver the core Disney Cruise Line experience — the same youth clubs, the same Castaway Cay, the same Broadway-caliber entertainment, and the same service standards. The difference is theme execution and which Disney stories resonate most with your family.</p>
 <p>If you'd like a second opinion before you book — including a look at which sailings have the best onboard credit and stateroom pricing for your dates — reach out via the <a href="/concierge">concierge form</a>. We monitor live pricing on both ships every day and can usually find the right sailing within a few minutes of hearing your family's preferences.</p>
 
+<h2>Where the Wish Is Sailing Next</h2>
+<p>One more variable worth factoring in: starting in 2027 the Wish leaves Port Canaveral for its first-ever European season. If a Mediterranean or Norwegian fjords sailing appeals more than another Bahamas run, see our guide to the <a href="/blog/disney-wish-europe-2027-ports">new Disney Wish Europe 2027 ports</a> — Zadar, Trieste, and Hellesylt.</p>
+
 <h2>Looking Beyond the Wish and Treasure</h2>
 <p>If you're open to a third option, the new <a href="/blog/disney-destiny-heroes-villains-guide">Disney Destiny — the Heroes &amp; Villains ship</a> is the most theatrically themed Wish-class ship in the fleet and a natural third comparison point. The Destiny is essentially Treasure-class hardware with the most ambitious storytelling overlay Disney has ever built. For Disney superfans, it's the strongest combination of new-ship excitement and theming density on the market.</p>
     `.trim(),
@@ -1329,8 +1334,8 @@ Many teens who are skeptical before boarding return home having had a genuinely 
   {
     id: '17',
     slug: 'disney-cruise-onboard-credit-guide',
-    title: 'The Complete Guide to Disney Cruise Onboard Credits: How to Get Up to $400 Free',
-    excerpt: 'Onboard credit is essentially free money you spend on board. Here\'s how Disney Cruise Line OBC works, how much you can stack, and why booking through a travel advisor unlocks more.',
+    title: 'The Complete Guide to Disney Cruise Onboard Credits: How to Get Hundreds Free',
+    excerpt: 'Onboard credit is free money you spend on board. Here\'s how Disney Cruise Line OBC works, how much you can realistically stack, and where it comes from.',
     author: 'Dr. Grayson Starbuck, DPT',
     published_date: '2026-05-12',
     category: 'tips',
@@ -1372,11 +1377,11 @@ Many teens who are skeptical before boarding return home having had a genuinely 
 <p>Let's run a concrete example. Family of four, 7-night Caribbean sailing on the <a href="/ships/disney-treasure">Disney Treasure</a> in a Category 4A verandah, August 2026. Published fare: $8,400.</p>
 <ul>
 <li>Disney wave-season promotional OBC (if booked during the active window): <strong>$150</strong></li>
-<li>GatGrid travel advisor OBC at the $7,000–$12,000 verandah tier: <strong>$250</strong></li>
+<li>GatGrid travel advisor OBC on an $8,400 fare: <strong>$260</strong></li>
 <li>Castaway Club Silver bonus (if applicable for repeat guests): <strong>$50</strong></li>
-<li><strong>Total stacked OBC: $450</strong></li>
+<li><strong>Total stacked OBC: $460</strong></li>
 </ul>
-<p>That $450 covers, for example: a Palo dinner for two adults ($90), a half-day spa treatment ($180), and three specialty cocktails per adult across the sailing ($180) — with change left over. Or if your family doesn't drink, it covers an excursion at every port. Or premium photo packages and a few gift-shop pickups. The point: it's real, usable money against costs you'd otherwise pay out of pocket.</p>
+<p>That $460 covers, for example: a Palo dinner for two adults ($90), a half-day spa treatment ($180), and three specialty cocktails per adult across the sailing ($180) — with change left over. Or if your family doesn't drink, it covers an excursion at every port. Or premium photo packages and a few gift-shop pickups. The point: it's real, usable money against costs you'd otherwise pay out of pocket.</p>
 
 <h2>Why Disney Lets Travel Advisors Pass Credit Back</h2>
 <p>The short version: Disney's loyalty model is built around long-term repeat bookings, and travel advisors generate exactly that. When a family books through an advisor who provides good service, they're meaningfully more likely to book a second and third Disney cruise. From Disney's perspective, the commission paid to advisors is a customer acquisition cost — and they don't care whether the advisor rebates part of it as OBC, because the published fare to the guest is the same.</p>
@@ -1393,7 +1398,7 @@ Many teens who are skeptical before boarding return home having had a genuinely 
 <ul>
 <li><strong>Palo or Enchanté dinner</strong> — $50–$150 per person upcharges that are some of the best dining experiences in the fleet.</li>
 <li><strong>Spa treatments</strong> — typically $150–$300 per treatment; the OBC essentially makes one treatment "free" on a stacked sailing.</li>
-<li><strong>Drink packages</strong> — only worth it if you'll actually drink the math; pure cocktail spending without a package can also be a fine OBC use.</li>
+<li><strong>Drink packages</strong> — only worth it if you'll actually drink the math (our <a href="/blog/complete-guide-disney-drink-packages">guide to Disney cruise drink packages</a> runs the numbers); pure cocktail spending without a package is also a fine OBC use.</li>
 <li><strong>Castaway Cay extras</strong> — parasailing, stingray adventures, glass-bottom boat. Charges through your room key.</li>
 </ul>
 
@@ -1424,7 +1429,70 @@ Many teens who are skeptical before boarding return home having had a genuinely 
 <p>If you'd rather skip the calculator and just talk through it with someone who watches Disney pricing every day, use the <a href="/concierge">concierge form</a>. We'll pull your specific sailing, identify any active Disney promotions, and confirm exactly what your stacked credit total would look like. There's no pressure, no obligation, and no charge for the conversation — and your Disney fare is identical to what you'd pay direct, so the only thing you're missing by not asking is the OBC.</p>
 
 <h2>The Bottom Line</h2>
-<p>Onboard credit is one of the most reliable ways to reduce the all-in cost of a Disney cruise. Stack Disney's promotional credit with a travel advisor's rebate, and you're looking at $200–$400 on a typical family booking — enough to cover the experiences that most first-time cruisers regret skipping (Palo, the spa, the cabana). It costs nothing to ask. The hardest part of getting more OBC on your Disney cruise is just knowing to ask in the first place.</p>
+<p>Onboard credit is one of the most reliable ways to reduce the all-in cost of a Disney cruise, and it stacks with everything in our <a href="/blog/save-money-disney-cruise">10 insider tips for saving money on a Disney cruise</a>. Stack Disney's promotional credit with a travel advisor's rebate, and you're looking at $200–$500 on a typical family booking — enough to cover the experiences that most first-time cruisers regret skipping (Palo, the spa, the cabana). It costs nothing to ask. The hardest part of getting more OBC on your Disney cruise is just knowing to ask in the first place.</p>
+    `.trim(),
+  },
+  {
+    id: '18',
+    slug: 'disney-wish-europe-2027-ports',
+    title: 'Disney Wish Europe 2027 Ports: A Guide to Zadar, Trieste, and Hellesylt',
+    excerpt: 'The Disney Wish Europe 2027 season adds three brand-new ports to the fleet. Here is what to expect in Zadar, Trieste, and Hellesylt — and how to plan each day.',
+    author: 'Dr. Grayson Starbuck, DPT',
+    published_date: '2026-08-16',
+    category: 'destinations',
+    tags: ['disney-wish', 'europe', '2027', 'port-guides', 'zadar', 'trieste', 'hellesylt', 'norwegian-fjords'],
+    read_time: '9 min read',
+    featured_image_url: 'https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=1200&h=600&fit=crop',
+    content: `
+<p>For five years the Disney Wish did one thing: short Bahamas sailings out of Port Canaveral. That changes in 2027. The <strong>Disney Wish Europe 2027</strong> season runs from late April through early September, with roughly 20 sail dates of three to ten nights out of Southampton, Barcelona, and Civitavecchia (Rome) — and it brings three ports Disney Cruise Line has never called on before.</p>
+<p>Those new calls are <strong>Zadar, Croatia; Trieste, Italy;</strong> and <strong>Hellesylt, Norway</strong>. If you are weighing a Disney Wish Europe 2027 itinerary, these are the days you know least about and gain most from planning early. Here is a practical guide to each.</p>
+
+<h2>Why the New Ports Matter</h2>
+<p>Disney's European rotation has been stable for years — Barcelona, Naples, Civitavecchia, the familiar fjord stops. Three genuinely new calls means shore excursion inventory will be thinner and less road-tested than at established ports, which makes independent planning unusually valuable on these days.</p>
+<p>Demand is also unpredictable. This is the Wish's first season anywhere other than Florida, so if you want a specific date and stateroom category, treat 2027 like a new-ship launch year rather than a normal European season.</p>
+
+<h2>Zadar, Croatia: The Quiet Alternative to Dubrovnik</h2>
+<p>Zadar is the port most likely to surprise people. It sits on a small walled peninsula on Croatia's Adriatic coast, and while it has the Roman ruins and Venetian stonework you would expect, its headline attraction is stranger: the <strong>Sea Organ</strong>, underwater pipes built into the waterfront steps that play musical tones as waves push air through them. Beside it, the Greeting to the Sun light installation charges by day and puts on a color show at dusk.</p>
+<p>Ships dock at Gaženica, about four kilometers from the old town, with a shuttle covering the gap in roughly fifteen minutes. Port time runs about nine hours and the currency is the euro. Compared with Dubrovnik, Zadar draws a fraction of the crowds — which, with strollers and tired six-year-olds in tow, is not a small thing.</p>
+
+<h3>How to Spend the Day in Zadar</h3>
+<p>With nine hours you have a real choice. Stay local and you can walk the peninsula end to end in a morning, hit the Sea Organ, eat lunch in the old town, and still be aboard early. Go further and <strong>Krka National Park</strong> — waterfalls with family-manageable boardwalks — is the standout excursion, though it eats most of the day. Our <a href="/ports/zadar">Zadar port guide</a> covers timing and what is walkable without a tour.</p>
+
+<h2>Trieste, Italy: Disney's Venice Port</h2>
+<p>Trieste appears on the Adriatic itineraries as "Trieste (Venice)," and the parenthetical is the point. Large cruise ships are no longer permitted in central Venice, so lines dock in Trieste and run shuttles and rail excursions inland. Venice is roughly two hours away by train or bus.</p>
+<p>What most people miss is that Trieste itself is worth the day. As the Austro-Hungarian Empire's primary seaport, it has neoclassical facades, Viennese-style coffee houses, and Piazza Unità d'Italia — the largest seafront square in the world. Port time is a generous eleven hours, which is what makes the Venice day trip feasible at all.</p>
+
+<h3>Venice Day Trip or Stay in Trieste?</h3>
+<p>The honest calculus: if nobody in your party has seen Venice, go — four hours of round-trip travel for St. Mark's and the Grand Canal is a fair trade once. If you have been, or you have kids under six, staying in Trieste gives you a pretty European city day without the transit. Both approaches are in our <a href="/ports/trieste-venice">Trieste (Venice) port guide</a>.</p>
+
+<h2>Hellesylt, Norway: The Port Where the Ship Is the Excursion</h2>
+<p>Hellesylt is the most unusual of the three new Disney Wish Europe 2027 ports, because the best part of the day happens from the deck. The village itself has about 250 residents and sits at the head of Sunnylvsfjord. Ships tender briefly, then sail into <strong>Geirangerfjord</strong> — a UNESCO World Heritage site — with the Seven Sisters and Suitor waterfalls visible from the rails.</p>
+<p>The marquee excursion is a 90-minute bus over the mountain road to Geiranger, where you reboard after the ship has cruised the fjord. It is spectacular — and it is also why some guests miss the fjord cruising itself. Decide in advance, because you cannot have both. Port time runs about six hours and the currency is the Norwegian krone.</p>
+<p>Hellesylt appears on the <strong>7-Night Norwegian Fjords</strong> sailing from Southampton alongside Bergen, Ålesund, and Stavanger — a July 30 to August 6, 2027 departure was listed from around $7,255 for two guests. Our <a href="/ports/hellesylt">Hellesylt port guide</a> covers the tender logistics and what the village offers if you go ashore.</p>
+
+<h2>Which Disney Wish Europe 2027 Itinerary Fits Your Family?</h2>
+<p>Two sailings capture the new ports most efficiently:</p>
+<ul>
+<li><strong>8-Night Adriatic Sea and Greece from Civitavecchia (Rome)</strong> — Corfu, Trieste (Venice), Zadar, and Dubrovnik. A June 7–15, 2027 departure was listed from roughly $6,274 for two guests. This one gets you two of the three new ports on a single sailing.</li>
+<li><strong>7-Night Norwegian Fjords from Southampton</strong> — Bergen, Hellesylt, Ålesund, and Stavanger. Cooler, greener, and far less crowded than the Mediterranean in high summer.</li>
+</ul>
+<p>Broadly: the Mediterranean sailings are heavier on walking, heat, and history, which suits kids eight and up. The Norway sailings are lighter on shore commitments and heavier on scenery you can enjoy from the deck. Browse the full inventory on our <a href="/sailings">sailings page</a>, and see specs on the <a href="/ships/disney-wish">Disney Wish ship page</a>.</p>
+
+<h2>Planning Notes Worth Knowing Now</h2>
+<p>A few things that matter more on a European sailing than a Caribbean one:</p>
+<ul>
+<li><strong>Passports are required</strong> at all three new ports — Croatia, Italy, and Norway are all in the Schengen Area.</li>
+<li><strong>Pack for two climates</strong> in Norway. Fjord mornings are cold even in July — layers, a rain shell, and real walking shoes. Our <a href="/blog/disney-cruise-packing-list">Disney cruise packing list</a> has the full breakdown.</li>
+<li><strong>Port days run long.</strong> Nine to eleven hours ashore is normal in Europe versus five or six in the Caribbean. Plan meals accordingly; kids fade faster than adults.</li>
+<li><strong>New-port excursions sell out unevenly.</strong> Disney has no history at these three, so the tour slate is smaller. Book what you care about the moment your window opens.</li>
+</ul>
+
+<h2>Is the Wish the Right Ship for Europe?</h2>
+<p>Worth asking honestly. The Wish is built around fairy-tale theming and short-sailing rhythms — Cinderella's Grand Hall, Frozen dining, a compact and very well-executed kids' club. On a ten-night itinerary with long port days, you will spend less time enjoying the ship than Wish guests typically do. That is not a knock; it is a different vacation. If you are choosing between ships rather than destinations, our <a href="/blog/disney-treasure-vs-disney-wish-comparison">Disney Treasure vs. Disney Wish comparison</a> lays out how the two Wish-class ships actually differ.</p>
+
+<h2>The Bottom Line</h2>
+<p>Zadar, Trieste, and Hellesylt are the days that will define the Disney Wish Europe 2027 season. Zadar rewards wandering. Trieste is a two-cities-in-one-day decision. Hellesylt is the rare port where staying aboard may be the better call. Plan each one and they become the standout days of the sailing rather than the confusing ones.</p>
+<p>If you want help matching a specific sailing date, itinerary, and stateroom category to your family, <a href="/concierge">talk to our concierge</a> — we track Disney's European inventory daily and can walk through the trade-offs with you. There is no charge for the conversation and no obligation attached to it.</p>
     `.trim(),
   },
 ]

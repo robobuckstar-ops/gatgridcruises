@@ -97,6 +97,8 @@ export interface DestinationPort {
   gettingAround: DestinationGettingAround[]
   shipsThatVisit: { name: string; slug: string }[]
   faqs: DestinationFAQ[]
+  /** Optional editorial cross-links to related blog posts (slug + display title). */
+  relatedPosts?: { slug: string; title: string }[]
 }
 
 export const destinationPorts: DestinationPort[] = [

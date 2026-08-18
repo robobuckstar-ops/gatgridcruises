@@ -414,6 +414,9 @@ export const norwayDenmarkPorts: DestinationPort[] = [
       { question: 'Will I see the waterfalls from the deck?', answer: 'Yes — the ship sails directly past the Seven Sisters and Suitor waterfalls, sometimes within 100 meters of them.' },
       { question: 'Do I need a passport?', answer: 'Yes — Schengen.' },
     ],
+    relatedPosts: [
+      { slug: 'disney-wish-europe-2027-ports', title: 'Disney Wish Europe 2027 Ports: Zadar, Trieste & Hellesylt' },
+    ],
   },
 
   {

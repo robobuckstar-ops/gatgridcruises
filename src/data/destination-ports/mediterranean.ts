@@ -460,6 +460,9 @@ export const mediterraneanPorts: DestinationPort[] = [
       { question: 'Do I need a passport?', answer: 'Yes — Italy is in Schengen.' },
       { question: 'Can I do Venice and Trieste in one day?', answer: 'Tight but possible — most cruisers pick one. Venice if it\'s your first time in Italy; Trieste if you want a quieter day.' },
     ],
+    relatedPosts: [
+      { slug: 'disney-wish-europe-2027-ports', title: 'Disney Wish Europe 2027 Ports: Zadar, Trieste & Hellesylt' },
+    ],
   },
 
   {
@@ -1026,6 +1029,9 @@ export const mediterraneanPorts: DestinationPort[] = [
       { question: 'Is Zadar worth visiting if I\'ve been to Dubrovnik?', answer: 'Yes — it\'s smaller and quieter with unique attractions (Sea Organ) Dubrovnik doesn\'t have.' },
       { question: 'Do I need a passport?', answer: 'Yes — Croatia is in Schengen.' },
       { question: 'Krka or Plitvice?', answer: 'Plitvice is bigger and more famous (and farther). Krka is closer and easier with kids.' },
+    ],
+    relatedPosts: [
+      { slug: 'disney-wish-europe-2027-ports', title: 'Disney Wish Europe 2027 Ports: Zadar, Trieste & Hellesylt' },
     ],
   },
 

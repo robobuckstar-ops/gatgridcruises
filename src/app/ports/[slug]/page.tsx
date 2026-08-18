@@ -590,6 +590,31 @@ export default async function DestinationPortPage({ params }: PageProps) {
         </div>
       </section>
 
+      {/* Related Reading */}
+      {port.relatedPosts && port.relatedPosts.length > 0 && (
+        <section className="py-12 md:py-16 bg-white border-t border-slate-200">
+          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+            <h2 className="font-fraunces text-2xl font-bold text-[#1E3A5F] mb-6">
+              Related Reading
+            </h2>
+            <div className="space-y-3">
+              {port.relatedPosts.map(rp => (
+                <Link
+                  key={rp.slug}
+                  href={`/blog/${rp.slug}`}
+                  className="group flex items-center gap-3 p-4 rounded-xl border border-slate-200 bg-slate-50 hover:border-[#1E3A5F] hover:shadow-md transition-all"
+                >
+                  <span className="font-semibold text-slate-900 group-hover:text-[#1E3A5F] transition-colors">
+                    {rp.title}
+                  </span>
+                  <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-[#D4AF37] group-hover:translate-x-0.5 transition-all ml-auto flex-shrink-0" />
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Other Port Guides */}
       <section className="py-12 md:py-16 bg-slate-50 border-t border-slate-200">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
