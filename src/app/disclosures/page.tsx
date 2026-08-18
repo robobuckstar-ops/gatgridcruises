@@ -15,6 +15,7 @@ export default function DisclosuresPage() {
           <p className="font-inter text-lg text-white/80">
             Complete transparency about our relationships and how we earn revenue.
           </p>
+          <p className="font-inter text-sm text-white/60 mt-4">Last updated: August 2026</p>
         </div>
       </section>
 
@@ -28,14 +29,31 @@ export default function DisclosuresPage() {
             GatGridCruises uses affiliate marketing to support the operation and development of this resource. When you click certain links on our site and complete a booking on the partner site, we may earn a commission.
           </p>
           <div className="bg-slate-50 p-6 rounded-lg border border-slate-200 font-inter text-gray-700">
-            <p className="font-semibold text-[#1E3A5F] mb-3">We have affiliate partnerships with:</p>
+            <p className="font-semibold text-[#1E3A5F] mb-3">The affiliate programs we currently participate in:</p>
             <ul className="list-disc list-inside space-y-2">
-              <li>Booking.com (hotel accommodations)</li>
-              <li>Expedia (flights and hotels)</li>
-              <li>Skyscanner (flight comparisons)</li>
-              <li>Other travel and cruise-related brands as appropriate</li>
+              <li>
+                <strong>Amazon Associates</strong> (tag: <code className="text-sm">gatgridcruise-20</code>) — product
+                links in our packing lists, gear guides, and Fish Extender gift posts.
+              </li>
+              <li>
+                <strong>Travelpayouts</strong> (marker 766218), including its Aviasales, Hotellook, and partner
+                networks — flights, hotels, airport transfers, and travel insurance.
+              </li>
+              <li>
+                <strong>CJ Affiliate</strong> (Commission Junction) — travel insurance and retail partners. Links
+                appear on the pages where we have an active program with the merchant.
+              </li>
+              <li>
+                <strong>Credit card issuer referral links</strong> — Chase, American Express, and Capital One
+                &ldquo;refer a friend&rdquo; links on our credit card pages. We may receive points or a bonus when
+                someone is approved through one of those links.
+              </li>
             </ul>
             <p className="text-sm text-gray-600 mt-4">
+              Where a page names a brand we do <em>not</em> have an affiliate relationship with, the link goes to the
+              company&apos;s own site or to our free concierge form, and we earn nothing from it.
+            </p>
+            <p className="text-sm text-gray-600 mt-3">
               Important: These commissions are paid by the merchant at no extra cost to you. You pay the same price whether you click through our link or go directly to the website.
             </p>
           </div>
@@ -45,15 +63,18 @@ export default function DisclosuresPage() {
         <section className="mb-16">
           <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-4">Display Advertising</h2>
           <p className="font-inter text-lg text-gray-700 leading-relaxed mb-4">
-            This website displays advertising to support ongoing operations and free content for users. Our primary advertising platforms include:
+            We do not currently run a third-party display ad network on this site — there is no AdSense, Mediavine, or
+            similar ad unit on any page. Our revenue comes from the affiliate relationships above and from our free
+            concierge service. What we do run:
           </p>
           <div className="bg-slate-50 p-6 rounded-lg border border-slate-200 font-inter text-gray-700">
             <ul className="list-disc list-inside space-y-2 mb-4">
-              <li><strong>Google AdSense:</strong> Contextual ads served by Google</li>
-              <li><strong>Direct Advertising:</strong> Brand partnerships with travel and lifestyle companies</li>
+              <li><strong>Google Analytics 4 and Google Ads:</strong> measurement and our own advertising campaigns</li>
+              <li><strong>Meta Pixel:</strong> measurement for our own advertising campaigns</li>
             </ul>
             <p className="text-sm text-gray-600">
-              All advertising is clearly distinguished from editorial content. Ads are never integrated into reviews, recommendations, or scoring systems to maintain editorial integrity.
+              If we add display advertising later, ads will be clearly distinguished from editorial content and will
+              never be integrated into reviews, recommendations, or scoring systems.
             </p>
           </div>
         </section>
@@ -62,15 +83,13 @@ export default function DisclosuresPage() {
         <section className="mb-16">
           <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-4">Sponsored Content</h2>
           <p className="font-inter text-lg text-gray-700 leading-relaxed mb-4">
-            Some sections of this site feature paid placements and sponsored content. Examples include:
+            We do not currently sell sponsored posts or paid placements. No brand has paid for a ranking, a Sailing
+            Score, or a spot in any of our guides or comparison tools.
           </p>
           <div className="bg-slate-50 p-6 rounded-lg border border-slate-200 font-inter text-gray-700">
-            <ul className="list-disc list-inside space-y-2 mb-4">
-              <li><strong>Travel Specialist Directory:</strong> Disney travel agents pay to appear in featured placements</li>
-              <li><strong>Brand Features:</strong> Travel companies may sponsor guides and comparison tools</li>
-            </ul>
             <p className="text-sm text-gray-600">
-              All sponsored content is clearly labeled as "Sponsored" or "Paid Placement." We never hide the commercial nature of these relationships.
+              If that ever changes, the placement will be clearly labeled &ldquo;Sponsored&rdquo; or &ldquo;Paid
+              Placement&rdquo; on the page itself. We will never hide the commercial nature of a relationship.
             </p>
           </div>
         </section>

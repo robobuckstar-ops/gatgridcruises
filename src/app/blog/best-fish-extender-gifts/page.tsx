@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft, Gift, ExternalLink } from 'lucide-react'
+import { amazonSearchLink } from '@/lib/affiliate-config'
 
 export const metadata: Metadata = {
   title: 'Best Fish Extender Gifts Under $10 (2026 List)',
@@ -21,8 +22,8 @@ export const metadata: Metadata = {
   },
 }
 
-function amzLink(_searchTerm: string) {
-  return '/concierge'
+function amzLink(searchTerm: string) {
+  return amazonSearchLink(searchTerm)
 }
 
 const gifts = [
@@ -241,7 +242,7 @@ export default function BestFishExtenderGifts() {
                     <a
                       href={amzLink(gift.searchTerm)}
                       target="_blank"
-                      rel="noopener noreferrer sponsored"
+                      rel="noopener noreferrer nofollow sponsored"
                       className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#1E3A5F] hover:text-[#162d4a] transition-colors"
                     >
                       Search on Amazon <ExternalLink className="w-3.5 h-3.5" />
