@@ -3,6 +3,7 @@
 import { useState, useEffect, useId, useRef } from 'react'
 import { CheckCircle, Loader2, Send, X, Anchor, Mail } from 'lucide-react'
 import { readReferralCookie, readUtmCookies } from '@/components/ui/referral-tracker'
+import { trackLead } from '@/lib/analytics'
 
 // Bots typically fill and submit forms in under a second. Real users take
 // at least a few seconds to type a name and email. We block submissions
@@ -160,6 +161,7 @@ export function RequestSailingForm({ open, onClose, context }: RequestSailingFor
         body: JSON.stringify(payload),
       })
       if (!res.ok) throw new Error(`HTTP ${res.status}`)
+      trackLead('request-sailing')
       setStatus('success')
     } catch {
       setStatus('error')

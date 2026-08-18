@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { Shield, Star, Phone, Gift, BadgeCheck, Building2 } from 'lucide-react'
 import Link from 'next/link'
 import { OBC_TIERS } from '@/lib/obc'
+import { trackLead } from '@/lib/analytics'
 import { OBCDisclaimer } from '@/components/ui/obc-disclaimer'
 import { GraysonFamilyPhoto } from '@/components/ui/grayson-family-photo'
 import { ships as DCL_SHIPS } from '@/data/ships'
@@ -94,6 +95,7 @@ export default function BookPage() {
         setFormError('Something went wrong. Please try again or email bookings@gatgridcruises.com.')
         return
       }
+      trackLead('book')
       setSubmitting(false)
       setSubmitted(true)
       window.scrollTo({ top: 0, behavior: 'smooth' })

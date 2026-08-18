@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { CheckCircle, Loader2, Send, Anchor } from 'lucide-react'
 import { readReferralCookie, readUtmCookies } from '@/components/ui/referral-tracker'
+import { trackLead } from '@/lib/analytics'
 
 const TIMEZONES = [
   { value: '', label: 'Select timezone (optional)' },
@@ -108,6 +109,7 @@ export function ConciergeForm() {
         }).catch(() => {})
       }
 
+      trackLead('concierge')
       setStatus('success')
     } catch {
       setStatus('error')

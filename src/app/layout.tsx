@@ -11,6 +11,7 @@ import { StructuredData } from '@/components/ui/structured-data'
 import { CopyProtection } from '@/components/ui/copy-protection'
 import { FamilyPromoBanner } from '@/components/ui/family-promo-banner'
 import { ReferralTracker } from '@/components/ui/referral-tracker'
+import { GOOGLE_ADS_ID, META_PIXEL_ID } from '@/lib/analytics'
 
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-434T744BN1'
 
@@ -75,7 +76,31 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
-        {/* Google Analytics 4 — must be in <head> for Search Console verification */}
+        {/*
+          Travelpayouts Drive — affiliate verification + outbound-link
+          monetization for marker 766218 / project 563685. The loader filename
+          is the base64 of the project id; `t` repeats it. Kept as an inline
+          injector (rather than a plain <Script src>) so the tag lands in
+          <head>, which is where Travelpayouts' "Check Drive connection" looks.
+        */}
+        <Script id="travelpayouts-drive" strategy="afterInteractive">
+          {`
+            (function () {
+              var script = document.createElement("script");
+              script.async = 1;
+              script.setAttribute("data-cmp-ab", "2");
+              script.src = 'https://emrldco.com/NTYzNjg1.js?t=563685';
+              document.head.appendChild(script);
+            })();
+          `}
+        </Script>
+
+        {/*
+          One gtag.js loader serves both GA4 and Google Ads — each gets its own
+          gtag('config'). GA4 must stay in <head> for Search Console
+          verification; the Ads config rides along so conversion events fired
+          from the lead forms have a destination.
+        */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
           strategy="beforeInteractive"
@@ -84,12 +109,40 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
+            window.gtag = gtag;
             gtag('js', new Date());
             gtag('config', '${GA_MEASUREMENT_ID}');
+            gtag('config', '${GOOGLE_ADS_ID}');
+          `}
+        </Script>
+
+        {/* Meta Pixel — base code; lead forms fire fbq('track','Lead') on success. */}
+        <Script id="meta-pixel-init" strategy="afterInteractive">
+          {`
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window,document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '${META_PIXEL_ID}');
+            fbq('track', 'PageView');
           `}
         </Script>
       </head>
       <body className="min-h-screen flex flex-col">
+        <noscript>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            height="1"
+            width="1"
+            style={{ display: 'none' }}
+            alt=""
+            src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`}
+          />
+        </noscript>
 
         <StructuredData data={generateWebsiteSchema()} />
         <StructuredData data={generateOrganizationSchema()} />
