@@ -72,40 +72,79 @@ interface FlightResult {
   departureDate: string
 }
 
+// Every airport offered in the home-airport picker plus every airport listed as
+// "nearest" for a cruise port. A gap here used to fall through to a random
+// distance, which made the estimate change on every render.
+const AIRPORT_COORDINATES: Record<string, [number, number]> = {
+  // Home airports
+  'ATL': [33.6407, -84.4277],   // Atlanta
+  'BOS': [42.3656, -71.0096],   // Boston
+  'BWI': [39.1774, -76.6684],   // Baltimore
+  'CLT': [35.2140, -80.9431],   // Charlotte
+  'DAL': [32.8471, -96.8518],   // Dallas Love Field
+  'DEN': [39.8561, -104.6737],  // Denver
+  'DFW': [32.8975, -97.0380],   // Dallas/Fort Worth
+  'DTW': [42.2124, -83.3534],   // Detroit
+  'HNL': [21.3187, -157.9224],  // Honolulu
+  'JFK': [40.6413, -73.7781],   // New York JFK
+  'LAS': [36.0801, -115.1537],  // Las Vegas
+  'LAX': [33.9425, -118.4081],  // Los Angeles
+  'MDW': [41.7868, -87.7522],   // Chicago Midway
+  'MSP': [44.8848, -93.2223],   // Minneapolis
+  'MSY': [29.9841, -90.2458],   // New Orleans
+  'NYC': [40.6895, -74.0342],   // NYC (mixed airports)
+  'OAK': [37.7126, -122.2197],  // Oakland
+  'ORD': [41.9742, -87.9073],   // Chicago O'Hare
+  'PDX': [45.5898, -122.5951],  // Portland
+  'PHL': [39.8744, -75.2424],   // Philadelphia
+  'PHX': [33.4484, -112.0742],  // Phoenix
+  'PIT': [40.4915, -80.2329],   // Pittsburgh
+  'RDU': [35.8776, -78.7875],   // Raleigh-Durham
+  'SFO': [37.6213, -122.3790],  // San Francisco
+  'SJC': [37.3639, -121.9289],  // San Jose
+  'SLC': [40.7899, -111.9791],  // Salt Lake City
+  'SMF': [38.6951, -121.5908],  // Sacramento
+  'STL': [38.7487, -90.3700],   // St. Louis
+  // Airports serving cruise ports (some double as home airports)
+  'BCN': [41.2974, 2.0833],     // Barcelona
+  'CIA': [41.7994, 12.5949],    // Rome Ciampino
+  'EWR': [40.6895, -74.1745],   // Newark
+  'FCO': [41.8003, 12.2389],    // Rome Fiumicino
+  'FLL': [26.0726, -80.1527],   // Fort Lauderdale
+  'HND': [35.5494, 139.7798],   // Tokyo Haneda
+  'HOU': [29.6454, -95.2789],   // Houston Hobby (Galveston area)
+  'IAH': [29.9902, -95.3368],   // Houston Intercontinental
+  'JAX': [30.4941, -81.6879],   // Jacksonville
+  'LGA': [40.7769, -73.8740],   // New York LaGuardia
+  'LGB': [33.8177, -118.1516],  // Long Beach
+  'LGW': [51.1537, -0.1821],    // London Gatwick
+  'LHR': [51.4700, -0.4543],    // London Heathrow
+  'MCO': [28.4265, -81.3081],   // Orlando (Port Canaveral area)
+  'MIA': [25.7959, -80.2870],   // Miami
+  'MLB': [28.1028, -80.6453],   // Melbourne, FL
+  'NRT': [35.7720, 140.3929],   // Tokyo Narita
+  'SAN': [32.7345, -117.1897],  // San Diego
+  'SEA': [47.4502, -122.3088],  // Seattle
+  'SFB': [28.7776, -81.2375],   // Sanford
+  'SIN': [1.3644, 103.9915],    // Singapore
+  'SJU': [18.4394, -66.0018],   // San Juan
+  'SOU': [50.9503, -1.3568],    // Southampton
+  'SYD': [-33.9399, 151.1753],  // Sydney
+  'TPA': [27.9755, -82.5338],   // Tampa
+  'YVR': [49.1967, -123.1815],  // Vancouver
+}
+
 // Helper: Calculate great-circle distance between two points
 function calculateAirportDistance(homeCode: string, destCode: string): number {
-  const coordinates: Record<string, [number, number]> = {
-    // Home airports
-    'ORD': [41.9742, -87.9073],  // Chicago
-    'LAX': [33.9425, -118.4081], // Los Angeles
-    'ATL': [33.6407, -84.4277],  // Atlanta
-    'DFW': [32.8975, -97.038],   // Dallas
-    'DEN': [39.8561, -104.6737], // Denver
-    'LAS': [36.0801, -115.1537], // Las Vegas
-    'MIA': [25.7959, -80.2870],  // Miami
-    'NYC': [40.6895, -74.0342],  // NYC (mixed airports)
-    'JFK': [40.6413, -73.7781],  // JFK
-    'EWR': [40.6895, -74.1745],  // Newark
-    'BOS': [42.3656, -71.0096],  // Boston
-    'PHX': [33.4484, -112.0742], // Phoenix
-    'SFO': [37.6213, -122.379],  // San Francisco
-    'SEA': [47.4502, -122.3088], // Seattle
-    // Cruise ports
-    'MCO': [28.4265, -81.3081],  // Orlando (Port Canaveral area)
-    'FLL': [26.0726, -80.1527],  // Fort Lauderdale
-    'TPA': [27.9755, -82.5338],  // Tampa
-    'MSY': [29.9841, -90.2458],  // New Orleans
-    'HOU': [29.6452, -95.2113],  // Houston (Galveston area)
-    'LGB': [33.8177, -118.1516], // Long Beach
-    'SAN': [32.7345, -117.1897], // San Diego
-  }
+  const coordinates = AIRPORT_COORDINATES
 
   const homeCoords = coordinates[homeCode]
   const destCoords = coordinates[destCode]
 
   if (!homeCoords || !destCoords) {
-    // Fallback to rough estimate
-    return Math.random() * 1000 + 500
+    // Unknown airport: fall back to a fixed mid-range estimate. It must be
+    // stable, or the distance, duration and price would all disagree.
+    return 1000
   }
 
   // Haversine formula
@@ -125,7 +164,44 @@ function calculateAirportDistance(homeCode: string, destCode: string): number {
   return R * c
 }
 
-// Helper: Generate mock flight results
+const AVERAGE_BLOCK_SPEED_MPH = 500 // cruise speed, averaged over the whole leg
+const GROUND_TIME_MINUTES = 30 // taxi out, climb, descent, taxi in
+const CONNECTION_MINUTES = 90 // layover on a 1-stop itinerary
+
+// Gate-to-gate minutes for a leg of the given distance. Never returns the
+// sub-hour nonsense you get from treating "distance / 500" (hours) as minutes.
+function estimateFlightMinutes(distanceMiles: number): number {
+  const airborne = (distanceMiles / AVERAGE_BLOCK_SPEED_MPH) * 60
+  return Math.max(45, Math.round(airborne + GROUND_TIME_MINUTES))
+}
+
+function formatDuration(totalMinutes: number): string {
+  return `${Math.floor(totalMinutes / 60)}h ${totalMinutes % 60}m`
+}
+
+// Stable pseudo-random in [0, 1). These are sample itineraries, but they must
+// not reshuffle on every render, and the times must agree with the durations.
+function seededUnit(seed: string): number {
+  let h = 2166136261
+  for (let i = 0; i < seed.length; i++) {
+    h ^= seed.charCodeAt(i)
+    h = Math.imul(h, 16777619)
+  }
+  return ((h >>> 0) % 10000) / 10000
+}
+
+// Parse a YYYY-MM-DD date as local midnight. `new Date('2026-08-19')` is parsed
+// as UTC, which lands on the previous evening in US time zones.
+function parseLocalDate(dateStr: string): Date {
+  const [y, m, d] = dateStr.slice(0, 10).split('-').map(Number)
+  if (!y || !m || !d) return new Date(dateStr)
+  return new Date(y, m - 1, d)
+}
+
+const formatClock = (d: Date) =>
+  d.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true })
+
+// Helper: Generate sample flight results
 function generateFlightResults(
   homeAirport: string,
   destAirport: string,
@@ -140,48 +216,44 @@ function generateFlightResults(
   ]
 
   const distance = calculateAirportDistance(homeAirport, destAirport)
-  const estimatedFlightTime = Math.round(distance / 500) // ~500 mph average
-  const connectionTime = 90 // minutes for connections
+  const baseFlightMinutes = estimateFlightMinutes(distance)
 
   const results: FlightResult[] = []
 
-  // Generate 4-5 results
+  // Generate 5 sample itineraries
   for (let i = 0; i < 5; i++) {
     const airline = airlines[i % airlines.length]
     const stops = i < 3 ? 0 : 1 // Mix of nonstop and 1-stop
-    const totalDuration = estimatedFlightTime + (stops > 0 ? connectionTime : 0)
-    const hours = Math.floor(totalDuration / 60)
-    const minutes = totalDuration % 60
+    const jitter = seededUnit(`${homeAirport}-${destAirport}-${date}-${i}`)
 
-    // Vary departure times
-    const departureHours = [6, 8, 10, 12, 2]
+    // ±10 min of routing variance between carriers, plus the layover on 1-stops
+    const totalDuration =
+      baseFlightMinutes +
+      Math.round(jitter * 20) -
+      10 +
+      (stops > 0 ? CONNECTION_MINUTES : 0)
+
+    // Vary departure times across the day (6am, 8am, 11am, 2pm, 5pm)
+    const departureHours = [6, 8, 11, 14, 17]
     const depHour = departureHours[i % departureHours.length]
-    const depMinute = Math.floor(Math.random() * 4) * 15
+    const depMinute = Math.floor(jitter * 4) * 15
 
-    const depTime = new Date(date)
-    depTime.setHours(depHour, depMinute, 0)
+    const depTime = parseLocalDate(date)
+    depTime.setHours(depHour, depMinute, 0, 0)
 
     const arrTime = new Date(depTime.getTime() + totalDuration * 60000)
+    const dayOffset = arrTime.getDate() !== depTime.getDate() ? '+1' : ''
 
-    // Price varies: $150-600 round trip
-    const basePrice = 300
-    const priceVariance = Math.random() * 400 - 200
-    const price = Math.max(150, Math.round(basePrice + priceVariance))
+    // Round trip estimate scaled by distance; nonstops carry a premium
+    const priceEstimate = 120 + distance * 0.22 + (stops === 0 ? 60 : 0)
+    const price = Math.max(129, Math.round((priceEstimate * (0.9 + jitter * 0.3)) / 5) * 5)
 
     results.push({
       id: `flight-${i}`,
       airline: airline.name,
-      departureTime: depTime.toLocaleTimeString('en-US', {
-        hour: 'numeric',
-        minute: '2-digit',
-        hour12: true,
-      }),
-      arrivalTime: arrTime.toLocaleTimeString('en-US', {
-        hour: 'numeric',
-        minute: '2-digit',
-        hour12: true,
-      }),
-      duration: `${hours}h ${minutes}m`,
+      departureTime: formatClock(depTime),
+      arrivalTime: dayOffset ? `${formatClock(arrTime)} ${dayOffset}` : formatClock(arrTime),
+      duration: formatDuration(totalDuration),
       stops,
       price,
       departureDate: date,
@@ -461,7 +533,9 @@ export function FlightFinder({
                     </div>
                   )}
                   <p className="text-xs text-slate-600 mt-4">
-                    Estimated flight time: <strong>~{Math.round((flightDistance / 500) + 1.5)} hours</strong> (including connections)
+                    Estimated nonstop flight time:{' '}
+                    <strong>{formatDuration(estimateFlightMinutes(flightDistance))}</strong> gate to
+                    gate. Add about {formatDuration(CONNECTION_MINUTES)} if you connect.
                   </p>
                 </div>
               </div>
@@ -705,7 +779,10 @@ export function FlightFinder({
               className="w-12 h-12 mx-auto mb-4 text-slate-300"
             />
             <p className="text-slate-600">
-              Enter your home airport and select a sailing or port to get started.
+              Enter your home airport, then select a sailing to get started.
+            </p>
+            <p className="text-slate-500 text-sm mt-2">
+              Choosing a port instead of a sailing? You'll also need to pick a departure date.
             </p>
           </div>
         )}
