@@ -47,6 +47,7 @@ const OPTIONAL_FIELDS = {
   source: 'Source',
   sailingInterest: 'Sailing Interest',
   guests: 'Guests',
+  reservationNumber: 'Reservation Number',
   referralCode: 'Referral Code',
   utmSource: 'UTM Source',
   utmMedium: 'UTM Medium',
@@ -62,10 +63,22 @@ export interface LeadInput {
   source: string
   sailingInterest?: string
   guests?: string
+  /** Disney confirmation number, when the form collected one. */
+  reservationNumber?: string
   referralCode?: string
   utmSource?: string
   utmMedium?: string
   utmCampaign?: string
+  /**
+   * Write the detail columns again when the lead already exists.
+   *
+   * Off by default: a repeat inquiry from a known contact shouldn't clobber
+   * whatever Grayson has since written in the CRM. The transfer form turns it
+   * on because its details — reservation number, sail date — are the whole
+   * point of the submission, and silently dropping them on a returning
+   * visitor's second request would lose the thing he needs to act on.
+   */
+  refreshDetailsOnUpdate?: boolean
 }
 
 export type LeadOutcome = 'created' | 'updated'
@@ -106,13 +119,19 @@ export async function saveLead(
   )
 
   if (existing) {
-    await updateRecord(
-      LEADS_TABLE,
-      existing.id,
-      { [LEAD_FIELDS.lastContactDate]: today() },
-      apiKey,
-      'leads.touch',
-    )
+    const touch: Record<string, unknown> = { [LEAD_FIELDS.lastContactDate]: today() }
+
+    if (input.refreshDetailsOnUpdate) {
+      touch[OPTIONAL_FIELDS.source] = input.source
+      if (input.notes) touch[OPTIONAL_FIELDS.notes] = input.notes
+      if (input.phone) touch[OPTIONAL_FIELDS.phone] = input.phone
+      if (input.sailingInterest) touch[OPTIONAL_FIELDS.sailingInterest] = input.sailingInterest
+      if (input.reservationNumber) {
+        touch[OPTIONAL_FIELDS.reservationNumber] = input.reservationNumber
+      }
+    }
+
+    await updateRecord(LEADS_TABLE, existing.id, touch, apiKey, 'leads.touch')
     return { id: existing.id, outcome: 'updated' }
   }
 
@@ -131,6 +150,9 @@ export async function saveLead(
   if (input.notes) fields[OPTIONAL_FIELDS.notes] = input.notes
   if (input.sailingInterest) fields[OPTIONAL_FIELDS.sailingInterest] = input.sailingInterest
   if (input.guests) fields[OPTIONAL_FIELDS.guests] = input.guests
+  if (input.reservationNumber) {
+    fields[OPTIONAL_FIELDS.reservationNumber] = input.reservationNumber
+  }
   if (input.referralCode) fields[OPTIONAL_FIELDS.referralCode] = input.referralCode
   if (input.utmSource) fields[OPTIONAL_FIELDS.utmSource] = input.utmSource
   if (input.utmMedium) fields[OPTIONAL_FIELDS.utmMedium] = input.utmMedium

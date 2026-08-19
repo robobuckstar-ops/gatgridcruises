@@ -71,8 +71,8 @@ export function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/already-booked" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
-                    Already Booked?
+                  <Link href="/transfer" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
+                    Already Booked? Transfer It
                   </Link>
                 </li>
                 <li>

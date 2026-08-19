@@ -40,6 +40,7 @@ const navItems = [
     href: '/tools',
     children: [
       { label: 'OBC Calculator', href: '/tools/obc-calculator' },
+      { label: '🎟️ Transfer Your Booking', href: '/transfer' },
       { label: '💳 Credit Card Hacks', href: '/tools/credit-cards' },
       { label: '✈️ Flight Search & Tips', href: '/flights' },
       { label: 'Flight Finder', href: '/tools/flights' },

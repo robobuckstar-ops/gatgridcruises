@@ -32,6 +32,10 @@ const nextConfig: NextConfig = {
       { source: '/tools/cost-calculator', destination: '/tools', permanent: true },
       { source: '/tools/cruise-cost-calculator', destination: '/tools', permanent: true },
       { source: '/tools/credit-card-hacks', destination: '/tools/credit-cards', permanent: true },
+      // /already-booked was the same pitch without a capture form. /transfer
+      // supersedes it, so the old URL keeps its inbound links and search equity
+      // rather than competing with the new page for the same query.
+      { source: '/already-booked', destination: '/transfer', permanent: true },
       { source: '/referral', destination: '/refer', permanent: true },
       { source: '/referral/dashboard', destination: '/refer/dashboard', permanent: true },
     ]
