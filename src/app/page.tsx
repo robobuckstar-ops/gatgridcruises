@@ -16,6 +16,7 @@ import {
   ShieldCheck,
   Anchor,
   Star,
+  BookOpen,
 } from 'lucide-react'
 import { SailingCard } from '@/components/ui/sailing-card'
 import { EmailSignup } from '@/components/ui/email-signup'
@@ -236,6 +237,29 @@ export default async function Home() {
                 <p className="text-slate-500 text-xs leading-snug">{desc}</p>
               </Link>
             ))}
+          </div>
+
+          {/* Free lead-magnet guide — the lowest-commitment entry point we have. */}
+          <div className="mt-8 rounded-2xl border-2 border-[#D4AF37]/50 bg-gradient-to-br from-[#0a1628] to-[#1E3A5F] p-6 md:p-8 flex flex-col md:flex-row md:items-center gap-5">
+            <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-[#D4AF37]/15 border border-[#D4AF37]/30 flex items-center justify-center">
+              <BookOpen className="w-6 h-6 text-[#D4AF37]" aria-hidden="true" />
+            </div>
+            <div className="flex-1">
+              <h3 className="font-fraunces text-xl md:text-2xl font-bold text-white mb-1.5">
+                First Disney cruise? Grab the free guide.
+              </h3>
+              <p className="text-blue-200 text-sm leading-relaxed">
+                Booking windows, what&apos;s included, dining rotation, packing, and port-day
+                strategy — one PDF, no cost, instant download.
+              </p>
+            </div>
+            <Link
+              href="/free-guide"
+              className="flex-shrink-0 inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#D4AF37] text-[#0a1628] font-bold rounded-xl hover:bg-yellow-300 transition-colors text-sm whitespace-nowrap"
+            >
+              Get the Free Guide
+              <ArrowRight className="w-4 h-4" aria-hidden="true" />
+            </Link>
           </div>
         </div>
       </section>

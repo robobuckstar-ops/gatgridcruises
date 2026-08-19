@@ -42,6 +42,7 @@ export type LeadSource =
   | 'transfer'
   | 'price-watch'
   | 'group-cruise'
+  | 'free-guide'
 
 /**
  * Report a submitted lead to Meta and Google Ads.

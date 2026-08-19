@@ -272,6 +272,11 @@ export function Footer() {
                     Price-Drop Watch
                   </Link>
                 </li>
+                <li>
+                  <Link href="/free-guide" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
+                    Free First-Timer&apos;s Guide
+                  </Link>
+                </li>
               </ul>
             </div>
 

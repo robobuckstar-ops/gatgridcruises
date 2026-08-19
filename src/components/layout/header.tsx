@@ -39,6 +39,7 @@ const navItems = [
     label: 'Tools',
     href: '/tools',
     children: [
+      { label: '📘 Free First-Timer’s Guide', href: '/free-guide' },
       { label: 'OBC Calculator', href: '/tools/obc-calculator' },
       { label: '🎟️ Transfer Your Booking', href: '/transfer' },
       { label: '💳 Credit Card Hacks', href: '/tools/credit-cards' },
