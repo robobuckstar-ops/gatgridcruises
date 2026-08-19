@@ -10,10 +10,11 @@ import { StructuredData } from '@/components/ui/structured-data'
 import { PriceChart } from '@/components/ui/price-chart'
 import { BuyWaitBadge } from '@/components/ui/buy-wait-badge'
 import { PriceTrend } from '@/components/ui/price-trend'
-import { Ship, Calendar, MapPin, Clock, DollarSign, Anchor, BedDouble, Car, Building2, ArrowRight, Check, X as XIcon, Info, TrendingDown, TrendingUp, ShoppingBag, Flame } from 'lucide-react'
+import { Ship, Calendar, MapPin, Clock, DollarSign, Anchor, BedDouble, Car, Building2, ArrowRight, Check, X as XIcon, Info, TrendingDown, TrendingUp, ShoppingBag, Flame, Gift } from 'lucide-react'
 import { BookingInquiryButton } from '@/components/ui/booking-inquiry-button'
 import { WhyBookWithUs } from '@/components/ui/why-book-with-us'
 import { OBCDisclaimer } from '@/components/ui/obc-disclaimer'
+import { getOBC, formatUSD } from '@/lib/obc'
 import { getPortSlugFromItineraryName } from '@/data/destination-ports'
 
 function getPortGuideUrl(portName: string): string | null {
@@ -91,6 +92,10 @@ function CostBreakdown({
           {isRenderablePrice(pricing.perPerson) && (
             <p className="text-xs text-slate-500 mt-2">{formatPrice(pricing.perPerson)} per person</p>
           )}
+          {/* Credit for this category's fare — derived, never a fixed figure */}
+          <p className="text-xs font-semibold text-amber-700 mt-2">
+            + {formatUSD(getOBC(price))} free onboard credit*
+          </p>
         </>
       ) : (
         <div className="border-t border-slate-200 pt-3">
@@ -143,6 +148,12 @@ export default async function SailingDetailPage({ params }: PageProps) {
   const staterooms = ship ? getStateroomsForShip(ship.id).slice(0, 5) : []
   const hotels = port ? getHotelsForPort(port.id).slice(0, 5) : []
   const transfers = port ? getTransfersForPort(port.id) : []
+
+  // Onboard credit for this sailing's lead-in fare. Derived from lib/obc.ts —
+  // never a fixed "up to $X" figure, and suppressed entirely when the fare is
+  // missing so the panel can't render "$NaN".
+  const leadFare = sailing.current_lowest_price
+  const sailingOBC = isRenderablePrice(leadFare) ? getOBC(leadFare) : 0
 
   const stateroomCategories = [
     { key: 'inside', label: 'Interior', price: sailing.current_inside_price },
@@ -248,6 +259,19 @@ export default async function SailingDetailPage({ params }: PageProps) {
                   </div>
                 ))}
               </div>
+              {/* Onboard credit for this sailing — derived from lib/obc.ts */}
+              {sailingOBC > 0 && (
+                <div className="mt-3 pt-3 border-t border-white/10">
+                  <div className="flex items-center gap-1.5">
+                    <Gift className="h-3.5 w-3.5 text-[#D4AF37] flex-shrink-0" aria-hidden="true" />
+                    <span className="text-xs font-bold uppercase tracking-widest text-[#D4AF37]">Free onboard credit</span>
+                  </div>
+                  <p className="text-2xl font-bold text-white mt-1">{formatUSD(sailingOBC)}*</p>
+                  <p className="text-[11px] text-blue-300 mt-0.5 leading-snug">
+                    On the {formatPrice(leadFare)} fare shown, booked through our concierge. Higher fares earn more.
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         </div>

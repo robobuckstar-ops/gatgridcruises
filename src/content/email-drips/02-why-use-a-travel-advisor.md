@@ -12,7 +12,7 @@ reply_to: hello@gatgridcruises.com
 Why a travel advisor for Disney costs you $0
 
 ## Subject line (B)
-The $200 onboard credit nobody at Disney mentions
+The onboard credit nobody at Disney mentions
 
 ## Preview text
 Same price, more in your pocket — here's how the math actually works.
@@ -39,10 +39,12 @@ upside. Three reasons why:
 Disney sets the cruise fare. It's identical whether you book direct, on the
 Disney site, or through us. Disney pays the advisor's commission — not you.
 
-What we *can* do is layer agency-level group amenities on top: usually
-**$50–$300 in onboard credit**, sometimes a free specialty dinner, sometimes
-both. That credit shows up on your folio the day you board. Buy a Palo
-dinner, a few drinks, an excursion — already paid for.
+What we *can* do is layer agency-level group amenities on top: **free
+onboard credit that scales with your cruise fare**, sometimes a free
+specialty dinner, sometimes both. That credit shows up on your folio the day
+you board. Buy a Palo dinner, a few drinks, an excursion — already paid for.
+Run your fare through the calculator at gatgridcruises.com/tools/obc-calculator
+to see your exact dollar amount.
 
 ### 2. Price-drop monitoring you don't have to do.
 

@@ -1,8 +1,17 @@
 import Anthropic from '@anthropic-ai/sdk'
 import { NextRequest } from 'next/server'
 import { checkRateLimit, getClientIp } from '@/lib/rate-limit'
+import { getOBC, formatUSD, OBC_EXAMPLE_FARES, OBC_RATE, OBC_ROUNDING, OBC_MINIMUM } from '@/lib/obc'
 
 const client = new Anthropic()
+
+/**
+ * Worked OBC examples for the assistant, generated from lib/obc.ts so the bot
+ * can never quote a figure the site itself no longer honors.
+ */
+const OBC_WORKED_EXAMPLES = OBC_EXAMPLE_FARES.map(
+  (fare) => `- ${formatUSD(fare)} fare → ${formatUSD(getOBC(fare))} OBC`
+).join('\n')
 
 const SYSTEM_PROMPT = `You are a friendly and knowledgeable Disney cruise assistant for GatGrid Cruises (gatgridcruises.com).
 
@@ -33,19 +42,15 @@ When discussing ships, give specific, accurate facts. If asked about a compariso
 
 **Onboard Credit (OBC) (Boardwalk Travel Agency, our partner):**
 OBC scales with the total fare (pre-tax, all guests combined). There are no tiers and no cap.
-To work out an amount: multiply the total fare by 0.03, round UP to the nearest $10, and never quote less than $10.
+To work out an amount: multiply the total fare by ${OBC_RATE}, round UP to the nearest $${OBC_ROUNDING}, and never quote less than $${OBC_MINIMUM}.
 
 Worked examples:
-- $2,000 fare → $60 OBC
-- $3,000 fare → $90 OBC
-- $5,000 fare → $150 OBC
-- $7,500 fare → $230 OBC
-- $10,000 fare → $300 OBC
+${OBC_WORKED_EXAMPLES}
 
 CRITICAL: quote DOLLAR amounts only. Never state, print, or imply the percentage, rate, or
 multiplier to the user, and never describe the credit as "cashback" or "a percentage back" —
-that wording is not approved for public use. Say "$5,000 cruise → $150 onboard credit", never
-"3% of your fare". If a user asks what percentage it is, tell them the amount depends on the
+that wording is not approved for public use. Say "${formatUSD(5000)} cruise → ${formatUSD(getOBC(5000))} onboard credit",
+never a rate. If a user asks what percentage it is, tell them the amount depends on the
 fare and point them at /tools/obc-calculator rather than naming a rate.
 
 This is on top of any Disney promotional OBC. Users can model it themselves on /tools/obc-calculator. To lock in OBC for a specific sailing, direct them to submit a booking inquiry.

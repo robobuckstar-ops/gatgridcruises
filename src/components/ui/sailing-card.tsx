@@ -7,7 +7,7 @@ import { formatPrice, formatDate, cn } from '@/lib/utils'
 import { calculateDealScore } from '@/lib/deal-score'
 import { getOutTheDoorTotalForGuests } from '@/lib/pricing'
 import { Ship, Calendar, MapPin, ChevronDown, Bot, Gift } from 'lucide-react'
-import { getOBC } from '@/lib/obc'
+import { getOBC, formatUSD } from '@/lib/obc'
 
 interface SailingCardProps {
   sailing: Sailing
@@ -151,7 +151,7 @@ export function SailingCard({ sailing, percentBelow, guestCount = 2 }: SailingCa
               <div className="flex items-center gap-1.5">
                 <Gift className="w-3.5 h-3.5 text-amber-600 flex-shrink-0" aria-hidden="true" />
                 <span className="text-xs font-semibold text-amber-800">
-                  GatGrid clients get ~${obcAmount} in free onboard credit*
+                  GatGrid clients get {formatUSD(obcAmount)} in free onboard credit*
                 </span>
               </div>
               <p className="text-[10px] text-amber-700/70 mt-0.5 leading-tight">
