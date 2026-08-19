@@ -133,6 +133,37 @@ docs/
 - **JSON-LD Structured Data**: TouristTrip, Vehicle, BreadcrumbList, FAQPage schemas
 - **Accessibility**: Skip navigation, ARIA labels, semantic HTML, keyboard navigation
 
+## Cruise Data Freshness
+
+The sailing catalog is a committed snapshot (`src/data/sailings.json`), so it
+goes stale on its own. Two mechanisms keep that from showing on the site:
+
+1. **Read-time expiry.** `src/lib/data.ts` drops any sailing whose departure
+   date is before today in America/Chicago, plus any row with no usable lead
+   price. Nothing is deleted — the read helpers just stop returning those rows,
+   evaluated per request (the listing pages set `dynamic = 'force-dynamic'`).
+2. **Twice-weekly freshness check.** `GET /api/cron/data-freshness` runs Monday
+   and Thursday at 12:00 UTC (07:00 Central) via the `crons` block in
+   `vercel.json`. It sends nothing and writes nothing — it counts expired,
+   unpriced, and near-term sailings and returns `needs_refresh` with reasons.
+
+Check it by hand at any time:
+
+```bash
+curl "https://gatgridcruises.com/api/cron/data-freshness?secret=$CRON_SECRET"
+```
+
+It flags a refresh when the catalog is empty, has fewer than 60 bookable
+sailings, has fewer than 10 departing inside 90 days, is more than 14 days past
+its newest `updated_at`, is more than 25% expired, or contains unpriced rows.
+It always returns 200 — a stale catalog is a job for a human, not a cron retry.
+
+When it flags, regenerate and commit the catalog:
+
+```bash
+APIFY_TOKEN=… APIFY_DATASET_ID=… npx tsx scripts/fetch-apify-data.ts
+```
+
 ## Seed Data
 
 The MVP includes comprehensive local seed data:
