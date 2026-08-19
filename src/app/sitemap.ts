@@ -27,6 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Concierge / OBC funnel
     { url: `${baseUrl}/concierge`, lastModified: now, changeFrequency: 'weekly', priority: 0.95 },
     { url: `${baseUrl}/onboard-credit`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${baseUrl}/free-quote`, lastModified: now, changeFrequency: 'weekly', priority: 0.95 },
     { url: `${baseUrl}/transfer`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${baseUrl}/price-watch`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${baseUrl}/free-guide`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },

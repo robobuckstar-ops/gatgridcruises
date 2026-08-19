@@ -277,6 +277,11 @@ export function Footer() {
                     Free First-Timer&apos;s Guide
                   </Link>
                 </li>
+                <li>
+                  <Link href="/free-quote" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
+                    Free Cruise Quote
+                  </Link>
+                </li>
               </ul>
             </div>
 

@@ -1,6 +1,7 @@
 /**
  * Conversion tracking for the lead forms (/book, /concierge, /transfer,
- * /price-watch, /group-cruise, and the "Request This Sailing" modal).
+ * /price-watch, /group-cruise, /free-quote, and the "Request This Sailing"
+ * modal).
  *
  * Three tags coexist on the site and each wants its own signal for the same
  * event, so they are fired together from one place rather than duplicated at
@@ -43,6 +44,7 @@ export type LeadSource =
   | 'price-watch'
   | 'group-cruise'
   | 'free-guide'
+  | 'free-quote'
 
 /**
  * Report a submitted lead to Meta and Google Ads.
