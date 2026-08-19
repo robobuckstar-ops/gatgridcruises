@@ -31,6 +31,11 @@ import {
   getFeaturedDeal,
 } from '@/lib/data'
 
+// Sailing lists are filtered against "today" in America/Chicago, so this page
+// has to render per request — prerendering would freeze the expiry cutoff at
+// build time and keep departed sailings on the page until the next deploy.
+export const dynamic = 'force-dynamic'
+
 export const metadata = {
   title: 'Disney Cruise Deal Finder — GatGridCruises',
   description:

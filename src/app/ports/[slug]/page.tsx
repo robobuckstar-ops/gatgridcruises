@@ -26,6 +26,12 @@ import { getSailings } from '@/lib/data'
 import { generateBreadcrumbSchema, generateFAQSchema } from '@/lib/structured-data'
 import { GetQuoteCTA } from '@/components/get-quote-cta'
 
+// Sailing lists are filtered against "today" in America/Chicago, so this page
+// has to render per request — prerendering would freeze the expiry cutoff at
+// build time and keep departed sailings on the page until the next deploy.
+export const dynamic = 'force-dynamic'
+
+
 interface PageProps {
   params: Promise<{ slug: string }>
 }

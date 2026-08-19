@@ -4,6 +4,12 @@ import { Anchor, Calendar, Clock, MapPin, Ship, ArrowRight } from 'lucide-react'
 import { getSailings } from '@/lib/data'
 import { formatPrice, formatDate, daysUntil } from '@/lib/utils'
 
+// Sailing lists are filtered against "today" in America/Chicago, so this page
+// has to render per request — prerendering would freeze the expiry cutoff at
+// build time and keep departed sailings on the page until the next deploy.
+export const dynamic = 'force-dynamic'
+
+
 export const metadata: Metadata = {
   title: 'All Disney Cruise Sailings — Browse Every Itinerary',
   description:

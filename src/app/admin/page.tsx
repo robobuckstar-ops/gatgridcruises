@@ -4,6 +4,12 @@ import { getSailings, getShips, getPorts } from '@/lib/data'
 import { formatPrice, formatDate } from '@/lib/utils'
 import { BarChart3, Ship, MapPin, Anchor, Users, Settings, Plus, TrendingDown, BarChart2 } from 'lucide-react'
 
+// Sailing lists are filtered against "today" in America/Chicago, so this page
+// has to render per request — prerendering would freeze the expiry cutoff at
+// build time and keep departed sailings on the page until the next deploy.
+export const dynamic = 'force-dynamic'
+
+
 export const metadata: Metadata = {
   title: 'Admin Dashboard',
 }

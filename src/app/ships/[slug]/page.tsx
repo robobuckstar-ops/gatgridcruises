@@ -7,6 +7,12 @@ import { Calendar, Anchor, Check, DollarSign, ArrowRight, Ship as ShipIcon } fro
 import { StructuredData } from '@/components/ui/structured-data'
 import { generateShipSchema, generateBreadcrumbSchema } from '@/lib/structured-data'
 
+// Sailing lists are filtered against "today" in America/Chicago, so this page
+// has to render per request — prerendering would freeze the expiry cutoff at
+// build time and keep departed sailings on the page until the next deploy.
+export const dynamic = 'force-dynamic'
+
+
 interface PageProps {
   params: Promise<{ slug: string }>
 }

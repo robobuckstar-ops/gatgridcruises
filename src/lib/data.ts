@@ -13,6 +13,7 @@ import { hotels } from '@/data/hotels'
 import { transfers } from '@/data/transfers'
 import { sailTogetherGroups } from '@/data/sail-together-groups'
 import { blogPosts } from '@/data/blog-posts'
+import { isRenderablePrice } from '@/lib/utils'
 import type { Ship, Port, Sailing, PriceSnapshot, Stateroom, PreCruiseHotel, TransferOption } from '@/types/database'
 import type {
   StateroomCategory,
@@ -87,18 +88,65 @@ function isDisneySailing(s: { ship_id: string }): boolean {
   return DISNEY_SHIP_IDS.has(s.ship_id)
 }
 
+/**
+ * Today's date as `YYYY-MM-DD` in America/Chicago — the clock the agency books
+ * against.
+ *
+ * Deliberately computed on every call rather than cached in a module constant:
+ * a constant would freeze at build time and the "past sailing" cutoff would
+ * stop moving until the next deploy. The pages that list sailings opt out of
+ * static rendering (`export const dynamic = 'force-dynamic'`) so this really is
+ * evaluated per request.
+ */
+export function getTodayInChicago(): string {
+  // en-CA formats as YYYY-MM-DD, which sorts correctly against `sail_date`.
+  return new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'America/Chicago',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  }).format(new Date())
+}
+
+/**
+ * Can this sailing still be sold?
+ *
+ * Two ways a row drops out:
+ *  - it already departed. Same-day departures still count — Disney sells right
+ *    up to the sail date — so only dates strictly before today are cut.
+ *  - it has no usable lead price. A null/NaN `current_lowest_price` renders as
+ *    "Contact for quote" everywhere downstream, which is not a deal listing.
+ *
+ * Nothing is deleted from the catalog; expired rows simply stop being returned
+ * by the public read helpers.
+ */
+export function isBookableSailing(
+  s: { sail_date: string; current_lowest_price: number },
+  today: string = getTodayInChicago(),
+): boolean {
+  if (typeof s.sail_date !== 'string' || s.sail_date.slice(0, 10) < today) return false
+  return isRenderablePrice(s.current_lowest_price) && s.current_lowest_price > 0
+}
+
 // Sailings
 export function getSailings(): Sailing[] {
-  return sailings.filter(isDisneySailing).map(s => ({
-    ...s,
-    ship: getShipById(s.ship_id),
-    departure_port: getPortById(s.departure_port_id),
-  }))
+  const today = getTodayInChicago()
+  return sailings
+    .filter(isDisneySailing)
+    .filter(s => isBookableSailing(s, today))
+    .map(s => ({
+      ...s,
+      ship: getShipById(s.ship_id),
+      departure_port: getPortById(s.departure_port_id),
+    }))
 }
 
 export function getSailingById(id: string): Sailing | undefined {
   const s = sailings.find(s => s.id === id)
   if (!s || !isDisneySailing(s)) return undefined
+  // A departed or unpriced sailing has no bookable detail page either — the
+  // caller turns this into a 404 rather than showing a dead "Book now".
+  if (!isBookableSailing(s)) return undefined
   return {
     ...s,
     ship: getShipById(s.ship_id),
@@ -163,8 +211,10 @@ export function getBiggestPriceDrops(): Sailing[] {
 }
 
 export function getLastMinuteDeals(): Sailing[] {
-  const now = new Date()
-  const ninetyDaysFromNow = new Date(now.getTime() + 90 * 24 * 60 * 60 * 1000)
+  const today = getTodayInChicago()
+  const ninetyDaysOut = new Date(`${today}T00:00:00Z`)
+  ninetyDaysOut.setUTCDate(ninetyDaysOut.getUTCDate() + 90)
+  const cutoff = ninetyDaysOut.toISOString().slice(0, 10)
 
   // Combine last-minute sailings with regular sailings, filtering to Disney only.
   // Dedupe across the union — a sailing could appear in both arrays.
@@ -173,11 +223,12 @@ export function getLastMinuteDeals(): Sailing[] {
     ...sailings
   ]).filter(isDisneySailing)
 
-  // Filter for sailings departing within 90 days
-  const dealsWithin90 = allSailings.filter(s => {
-    const sailDate = new Date(s.sail_date)
-    return sailDate >= now && sailDate <= ninetyDaysFromNow
-  })
+  // Filter for sailings departing within 90 days. `isBookableSailing` handles
+  // the lower bound (nothing already departed, nothing unpriced); this only
+  // adds the upper bound. Plain string compare — both sides are YYYY-MM-DD.
+  const dealsWithin90 = allSailings.filter(
+    s => isBookableSailing(s, today) && s.sail_date.slice(0, 10) <= cutoff
+  )
 
   // Join ship and port data
   const enrichedDeals = dealsWithin90.map(s => ({

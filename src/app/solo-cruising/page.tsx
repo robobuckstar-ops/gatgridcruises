@@ -4,6 +4,12 @@ import { Accordion, type AccordionItem } from '@/components/ui/accordion'
 import Link from 'next/link'
 import { Heart, Users, Zap, Wallet, Shield, MapPin, Calendar, Anchor, ArrowRight } from 'lucide-react'
 
+// Sailing lists are filtered against "today" in America/Chicago, so this page
+// has to render per request — prerendering would freeze the expiry cutoff at
+// build time and keep departed sailings on the page until the next deploy.
+export const dynamic = 'force-dynamic'
+
+
 // Metadata
 export const metadata = {
   title: 'Solo Cruising — Your Guide to Sailing Alone on Disney Cruise Line',

@@ -5,6 +5,12 @@ import { getSailings, getSnapshotsForSailing } from '@/lib/data'
 import { calculateDealScore } from '@/lib/deal-score'
 import { formatPrice, formatDate } from '@/lib/utils'
 
+// Sailing lists are filtered against "today" in America/Chicago, so this page
+// has to render per request — prerendering would freeze the expiry cutoff at
+// build time and keep departed sailings on the page until the next deploy.
+export const dynamic = 'force-dynamic'
+
+
 export const metadata: Metadata = {
   title: 'Restricted Stateroom (GTY) Deals — Disney Cruise',
   description:

@@ -3,6 +3,12 @@ import { getSailings, getSnapshotsForSailing } from '@/lib/data'
 import { getShips, getPorts } from '@/lib/data'
 import { DealGrid } from './deal-grid'
 
+// Sailing lists are filtered against "today" in America/Chicago, so this page
+// has to render per request — prerendering would freeze the expiry cutoff at
+// build time and keep departed sailings on the page until the next deploy.
+export const dynamic = 'force-dynamic'
+
+
 export const metadata: Metadata = {
   title: 'Disney Cruise Deals — Filter by Ship, Duration & Score',
   description:

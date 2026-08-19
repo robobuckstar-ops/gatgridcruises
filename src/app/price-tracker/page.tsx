@@ -8,6 +8,12 @@ import { PriceTrackerClient } from '@/components/ui/price-tracker-client'
 import { formatPrice } from '@/lib/utils'
 import { PRICES_LAST_UPDATED } from '@/lib/constants'
 
+// Sailing lists are filtered against "today" in America/Chicago, so this page
+// has to render per request — prerendering would freeze the expiry cutoff at
+// build time and keep departed sailings on the page until the next deploy.
+export const dynamic = 'force-dynamic'
+
+
 export const metadata: Metadata = {
   title: 'Disney Cruise Price Tracker — Lowest Fare on Every Sailing',
   description: 'Browse the lowest tracked fare for every Disney Cruise Line sailing, filterable by ship, destination, and month.',

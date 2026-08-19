@@ -17,6 +17,10 @@ import { OBCDisclaimer } from '@/components/ui/obc-disclaimer'
 import { getOBC, formatUSD } from '@/lib/obc'
 import { getPortSlugFromItineraryName } from '@/data/destination-ports'
 
+// `getSailingById` returns undefined once a sailing has departed, which sends
+// this page to notFound(). That cutoff is evaluated per request, never baked in.
+export const dynamic = 'force-dynamic'
+
 function getPortGuideUrl(portName: string): string | null {
   const slug = getPortSlugFromItineraryName(portName)
   return slug ? `/ports/${slug}` : null
