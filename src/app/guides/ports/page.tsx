@@ -125,7 +125,7 @@ export default function PortsHubPage() {
             {ports.map((port) => (
               <Link
                 key={port.slug}
-                href={`/guides/ports/${port.slug}`}
+                href={`/ports/${port.slug}`}
                 className="group block rounded-2xl border-2 border-slate-200 hover:border-[#D4AF37] hover:shadow-xl transition-all duration-200 overflow-hidden"
               >
                 {/* Card Header */}

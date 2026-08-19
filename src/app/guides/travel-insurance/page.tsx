@@ -652,11 +652,11 @@ export default function TravelInsurancePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 className="font-fraunces text-2xl font-bold text-slate-900 mb-6">Related Guides</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <Link href="/guides/packing-gear" className="group block p-5 rounded-xl border-2 border-slate-200 hover:border-[#1E3A5F] hover:shadow-md transition-all duration-200">
+            <Link href="/guides/disney-cruise-packing-list" className="group block p-5 rounded-xl border-2 border-slate-200 hover:border-[#1E3A5F] hover:shadow-md transition-all duration-200">
               <p className="text-xs font-semibold text-[#1E3A5F] uppercase tracking-wider mb-2">Gear</p>
               <p className="font-fraunces font-bold text-slate-900 group-hover:text-[#1E3A5F] transition-colors">The Ultimate Disney Cruise Packing List</p>
             </Link>
-            <Link href="/guides/ports" className="group block p-5 rounded-xl border-2 border-slate-200 hover:border-[#1E3A5F] hover:shadow-md transition-all duration-200">
+            <Link href="/ports" className="group block p-5 rounded-xl border-2 border-slate-200 hover:border-[#1E3A5F] hover:shadow-md transition-all duration-200">
               <p className="text-xs font-semibold text-[#1E3A5F] uppercase tracking-wider mb-2">Ports</p>
               <p className="font-fraunces font-bold text-slate-900 group-hover:text-[#1E3A5F] transition-colors">Disney Cruise Port Guides</p>
             </Link>

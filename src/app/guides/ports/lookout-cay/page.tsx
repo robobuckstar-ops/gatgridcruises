@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Lookout Cay at Lighthouse Point Guide — Disney's Eleuthera Private Destination",
     description: "Complete guide to Disney Lookout Cay at Lighthouse Point on Eleuthera — beaches, cabanas, Bahamian cuisine, and insider tips.",
-    url: 'https://gatgridcruises.com/guides/ports/lookout-cay',
+    url: 'https://gatgridcruises.com/ports/lookout-cay',
     images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
   },
   twitter: {
@@ -311,7 +311,7 @@ export default function LookoutCayPage() {
             ))}
           </div>
           <div className="mt-4">
-            <Link href="/guides/packing-gear" className="inline-flex items-center gap-2 text-[#1E3A5F] font-semibold text-sm hover:text-[#D4AF37] transition-colors">
+            <Link href="/guides/disney-cruise-packing-list" className="inline-flex items-center gap-2 text-[#1E3A5F] font-semibold text-sm hover:text-[#D4AF37] transition-colors">
               → See our full packing guide with Amazon picks
             </Link>
           </div>
@@ -328,7 +328,7 @@ export default function LookoutCayPage() {
               { name: 'Nassau', slug: 'nassau', emoji: '🇧🇸', desc: 'Atlantis, Blue Lagoon, and colonial Nassau' },
               { name: 'Port Canaveral', slug: 'port-canaveral', emoji: '🚀', desc: "Disney's Florida embarkation port" },
             ].map(({ name, slug, emoji, desc }) => (
-              <Link key={slug} href={`/guides/ports/${slug}`} className="group flex items-center gap-4 p-5 rounded-xl border-2 border-slate-200 hover:border-[#1E3A5F] hover:shadow-md transition-all duration-200">
+              <Link key={slug} href={`/ports/${slug}`} className="group flex items-center gap-4 p-5 rounded-xl border-2 border-slate-200 hover:border-[#1E3A5F] hover:shadow-md transition-all duration-200">
                 <span className="text-3xl" aria-hidden="true">{emoji}</span>
                 <div>
                   <p className="font-bold text-slate-900 group-hover:text-[#1E3A5F] transition-colors">{name}</p>

@@ -621,7 +621,7 @@ export default function DisneyCruiseWithToddlersGuide() {
                 </p>
               </div>
             </Link>
-            <Link href="/guides/best-disney-cruise-staterooms" className="group">
+            <Link href="/guides/stateroom-comparison" className="group">
               <div className="bg-gray-50 p-6 rounded-lg hover:bg-blue-50 transition">
                 <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-[#1E3A5F]">
                   Best Disney Cruise Staterooms

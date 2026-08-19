@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'The Ultimate Disney Cruise Packing List (With Our Top Picks)',
     description: 'The best gear for Disney cruises — luggage, cruise essentials, sun & beach, kids gear, and health must-haves.',
-    url: 'https://gatgridcruises.com/guides/packing-gear',
+    url: 'https://gatgridcruises.com/guides/disney-cruise-packing-list',
     images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
   },
   twitter: {

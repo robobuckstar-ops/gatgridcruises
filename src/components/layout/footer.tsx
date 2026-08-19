@@ -154,8 +154,8 @@ export function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/guides/packing-gear" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
-                    Packing Gear
+                  <Link href="/guides/disney-cruise-packing-list" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
+                    Packing List
                   </Link>
                 </li>
                 <li>
@@ -164,32 +164,32 @@ export function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/guides/ports" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
+                  <Link href="/ports" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
                     Port Guides
                   </Link>
                 </li>
                 <li>
-                  <Link href="/guides/ports/port-canaveral" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
+                  <Link href="/ports/port-canaveral" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
                     Port Canaveral
                   </Link>
                 </li>
                 <li>
-                  <Link href="/guides/ports/nassau" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
+                  <Link href="/ports/nassau" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
                     Nassau
                   </Link>
                 </li>
                 <li>
-                  <Link href="/guides/ports/castaway-cay" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
+                  <Link href="/ports/castaway-cay" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
                     Castaway Cay
                   </Link>
                 </li>
                 <li>
-                  <Link href="/guides/ports/lookout-cay" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
+                  <Link href="/ports/lookout-cay" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
                     Lookout Cay
                   </Link>
                 </li>
                 <li>
-                  <Link href="/guides/ports/cozumel" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
+                  <Link href="/ports/cozumel" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
                     Cozumel
                   </Link>
                 </li>

@@ -38,6 +38,21 @@ const nextConfig: NextConfig = {
       { source: '/already-booked', destination: '/transfer', permanent: true },
       { source: '/referral', destination: '/refer', permanent: true },
       { source: '/referral/dashboard', destination: '/refer/dashboard', permanent: true },
+      // Duplicate guides that grew up under parallel slugs. Each topic now has
+      // one canonical URL; the runners-up 301 to it so the inbound links and
+      // search equity consolidate instead of competing with each other.
+      //
+      // Packing -> the printable list, which is the fuller of the two.
+      { source: '/guides/packing-gear', destination: '/guides/disney-cruise-packing-list', permanent: true },
+      // Staterooms -> the comparison page: same four categories, but with the
+      // feature table, price ranges, ratings and decision guide.
+      { source: '/guides/best-disney-cruise-staterooms', destination: '/guides/stateroom-comparison', permanent: true },
+      // Ports and islands live under /ports, which is data-driven and already
+      // covers every destination. The hand-written /guides/ports/* copies and
+      // the standalone Castaway Cay guide fold into it.
+      { source: '/guides/ports', destination: '/ports', permanent: true },
+      { source: '/guides/ports/:slug', destination: '/ports/:slug', permanent: true },
+      { source: '/guides/castaway-cay-guide', destination: '/ports/castaway-cay', permanent: true },
     ]
   },
   async headers() {

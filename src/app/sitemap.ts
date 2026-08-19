@@ -114,18 +114,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Guide pages
   const guidePages: MetadataRoute.Sitemap = [
     'disney-cruise-cost-guide',
-    'best-disney-cruise-staterooms',
     'port-canaveral-vs-miami',
     'first-time-disney-cruise-tips',
     'first-time-disney-cruise',
     'disney-cruise-with-toddlers',
-    'castaway-cay-guide',
     'disney-cruise-packing-list',
     'disney-cruise-vs-royal-caribbean',
     'best-time-to-book-disney-cruise',
     'disney-cruise-food-guide',
     'travel-hacks-credit-cards',
-    'packing-gear',
     'travel-insurance',
     'comped-cruises',
     'cruise-countdown',
@@ -154,19 +151,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
-  // Port guide pages
-  const portGuidePages: MetadataRoute.Sitemap = ['castaway-cay', 'lookout-cay', 'cozumel', 'nassau', 'port-canaveral'].map(slug => ({
-    url: `${baseUrl}/guides/ports/${slug}`,
-    lastModified: now,
-    changeFrequency: 'monthly',
-    priority: 0.7,
-  }))
-  portGuidePages.push({
-    url: `${baseUrl}/guides/ports`,
-    lastModified: now,
-    changeFrequency: 'monthly',
-    priority: 0.7,
-  })
+  // Port guide index. The individual ports are emitted by destinationPortPages
+  // below, which covers these five plus every other destination in the data.
+  const portGuidePages: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/ports`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+  ]
 
   // Destination port guide pages (/ports/[slug])
   const destinationPortPages: MetadataRoute.Sitemap = destinationPorts.map(p => ({

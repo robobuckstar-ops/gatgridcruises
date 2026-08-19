@@ -359,7 +359,7 @@ export default function ExcursionSavingsPage() {
                   </div>
                   {port.slug && (
                     <Link
-                      href={`/guides/ports/${port.slug}`}
+                      href={`/ports/${port.slug}`}
                       className="text-[#D4AF37] text-sm font-semibold hover:text-yellow-300 transition-colors flex items-center gap-1"
                     >
                       Port guide
@@ -452,12 +452,12 @@ export default function ExcursionSavingsPage() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {[
               {
-                href: '/guides/ports',
+                href: '/ports',
                 label: 'All Port Guides',
                 desc: 'Detailed breakdowns for every Disney cruise port',
               },
               {
-                href: '/guides/castaway-cay-guide',
+                href: '/ports/castaway-cay',
                 label: 'Castaway Cay Guide',
                 desc: "What to do on Disney's private island",
               },

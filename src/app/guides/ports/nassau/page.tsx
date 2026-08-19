@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Nassau, Bahamas Cruise Guide — Disney Cruise Port Tips',
     description: 'Everything you need to know about Nassau on a Disney cruise — Atlantis, Blue Lagoon, Cable Beach, and insider tips.',
-    url: 'https://gatgridcruises.com/guides/ports/nassau',
+    url: 'https://gatgridcruises.com/ports/nassau',
     images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
   },
   twitter: {
@@ -272,7 +272,7 @@ export default function NassauPage() {
               { name: 'Castaway Cay', slug: 'castaway-cay', emoji: '🏝️', desc: "Disney's magical private island" },
               { name: 'Cozumel', slug: 'cozumel', emoji: '🇲🇽', desc: 'World-class reefs and Mayan ruins' },
             ].map(({ name, slug, emoji, desc }) => (
-              <Link key={slug} href={`/guides/ports/${slug}`} className="group flex items-center gap-4 p-5 rounded-xl border-2 border-slate-200 hover:border-[#1E3A5F] hover:shadow-md transition-all duration-200">
+              <Link key={slug} href={`/ports/${slug}`} className="group flex items-center gap-4 p-5 rounded-xl border-2 border-slate-200 hover:border-[#1E3A5F] hover:shadow-md transition-all duration-200">
                 <span className="text-3xl" aria-hidden="true">{emoji}</span>
                 <div>
                   <p className="font-bold text-slate-900 group-hover:text-[#1E3A5F] transition-colors">{name}</p>

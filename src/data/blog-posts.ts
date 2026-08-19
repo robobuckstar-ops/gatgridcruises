@@ -678,7 +678,7 @@ Many teens who are skeptical before boarding return home having had a genuinely 
 <li><strong>Snorkeling gear</strong> — rentable on the island, but bringing your own saves money. A <a href="/concierge" rel="nofollow sponsored">dry-top snorkel set</a> runs $30–$50</li>
 <li><strong>Reusable water bottle</strong> — the island has water stations</li>
 </ul>
-<p>See our full <a href="/guides/ports/castaway-cay">Castaway Cay guide</a> for beach tips, dining, and activity recommendations.</p>
+<p>See our full <a href="/ports/castaway-cay">Castaway Cay guide</a> for beach tips, dining, and activity recommendations.</p>
 
 <h2>Kids' Extras</h2>
 <ul>
@@ -715,7 +715,7 @@ Many teens who are skeptical before boarding return home having had a genuinely 
 
 <h2>Protect Your Investment</h2>
 <p>A Disney cruise is often $3,000–$12,000 or more for a family. The right credit card provides trip cancellation coverage, lost luggage protection, and purchase protection. See our guide to <a href="/blog/best-credit-cards-disney-cruises">the best credit cards for Disney cruises</a> for which cards offer the best protection and how to trigger coverage on your booking.</p>
-<p>For our full gear guide, visit our <a href="/guides/packing-gear">Disney Cruise Packing Gear Guide</a>. Ready to find your sailing? Our <a href="/search">AI cruise finder</a> scans Disney's inventory for deals, or <a href="/book">reach out to Grayson directly</a> for personalized guidance.</p>
+<p>For our full gear guide, visit our <a href="/guides/disney-cruise-packing-list">Disney Cruise Packing Gear Guide</a>. Ready to find your sailing? Our <a href="/search">AI cruise finder</a> scans Disney's inventory for deals, or <a href="/book">reach out to Grayson directly</a> for personalized guidance.</p>
     `.trim(),
   },
   {
@@ -786,7 +786,7 @@ Many teens who are skeptical before boarding return home having had a genuinely 
 <li><strong>The adult beach is real and worth using.</strong> Adults-only Serenity Bay is at the far end, accessible by tram, with a full bar and hammocks. If your kids are happily in Oceaneer Club, a few hours at Serenity Bay is highly recommended.</li>
 <li><strong>Consider the 5K.</strong> Castaway Cay hosts a morning fun run along island trails — free, low-key, and a memorable experience before the crowds build.</li>
 </ul>
-<p>Read our comprehensive <a href="/guides/castaway-cay-guide">Castaway Cay Guide</a> for the full breakdown.</p>
+<p>Read our comprehensive <a href="/ports/castaway-cay">Castaway Cay Guide</a> for the full breakdown.</p>
 
 <h2>Evening Shows: Attend at Least Two</h2>
 <p>Disney's theatrical productions are one of the biggest differentiators from other cruise lines. Productions like Tangled: The Musical and Frozen: A Musical Spectacular feature professional performers, elaborate sets, and original music at a level that rivals theme park entertainment — not hotel-lobby entertainment.</p>
@@ -1182,7 +1182,7 @@ Many teens who are skeptical before boarding return home having had a genuinely 
 
 <h2>Mistake 6: Booking Excursions Without Reading the Castaway Cay Section First</h2>
 <p>Castaway Cay is Disney's private island in the Bahamas, and it's the highlight of nearly every Caribbean Disney cruise. First-timers sometimes ignore it in favor of more "interesting" excursions at other ports — and then realize too late that Castaway is the best port day of the entire sailing. Worse, the things that make Castaway special (cabanas, parasailing, the 5K) require advance booking and sell out instantly.</p>
-<p><strong>How to avoid it:</strong> Read our <a href="/guides/castaway-cay-guide">complete Castaway Cay guide</a> before your booking window opens, and if your itinerary offers both, our <a href="/blog/castaway-cay-vs-lookout-cay">Castaway Cay vs. Lookout Cay comparison</a> explains which island suits which kind of family. Lock in your cabana or parasailing slot at the 75-day mark. Plan a beach day, not just "we'll figure it out when we get there."</p>
+<p><strong>How to avoid it:</strong> Read our <a href="/ports/castaway-cay">complete Castaway Cay guide</a> before your booking window opens, and if your itinerary offers both, our <a href="/blog/castaway-cay-vs-lookout-cay">Castaway Cay vs. Lookout Cay comparison</a> explains which island suits which kind of family. Lock in your cabana or parasailing slot at the 75-day mark. Plan a beach day, not just "we'll figure it out when we get there."</p>
 
 <h2>Mistake 7: Picking the Wrong Ship for Your Family</h2>
 <p>Disney has six active ships (with the new Disney Destiny launched in late 2025), and they are not interchangeable. The Wish-class ships (Wish, Treasure, Destiny) are massive, theatrically themed, and tuned for first-time Disney cruisers. The classic-class ships (Magic, Wonder) are smaller, warmer, and easier to navigate — often the right pick for families with very young children or grandparents traveling along. The Dream-class (Dream, Fantasy) sits in the middle: large, family-focused, with the AquaDuck waterslide that many kids spend half their cruise on.</p>
@@ -1194,7 +1194,7 @@ Many teens who are skeptical before boarding return home having had a genuinely 
 
 <h2>Mistake 9: Packing Like a Land Vacation</h2>
 <p>Two specific packing failures haunt first-timers every cruise: (1) bringing a power strip with surge protection (it gets confiscated at security — Disney prohibits them because of fire risk), and (2) not bringing waterproof bags for the day at Castaway Cay. The ship's policy on prohibited items is strict and enforced.</p>
-<p><strong>How to avoid it:</strong> Read our <a href="/guides/packing-gear">Disney Cruise packing gear guide</a> before you start packing. A non-surge power strip, a dry bag for beach days, magnetic stateroom hooks, and reusable water bottles for everyone in the family will improve your trip more than another swimsuit.</p>
+<p><strong>How to avoid it:</strong> Read our <a href="/guides/disney-cruise-packing-list">Disney Cruise packing gear guide</a> before you start packing. A non-surge power strip, a dry bag for beach days, magnetic stateroom hooks, and reusable water bottles for everyone in the family will improve your trip more than another swimsuit.</p>
 
 <h2>Mistake 10: Not Buying Travel Insurance</h2>
 <p>Disney's cancellation policy is unforgiving: at 89 days out, your cruise becomes fully non-refundable. A family of four in a verandah category typically sits at $6,000–$10,000. If a family member gets seriously ill, a child breaks an arm, or a hurricane forces you to cancel a flight to your embarkation port, you can lose the entire fare with no recovery.</p>

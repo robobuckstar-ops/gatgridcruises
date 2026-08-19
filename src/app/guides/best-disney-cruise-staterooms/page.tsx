@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Best Disney Cruise Staterooms: Complete Category Guide',
     description: 'Complete guide to Disney cruise cabin categories. Compare inside, oceanview, verandah, and concierge suites.',
-    url: 'https://gatgridcruises.com/guides/best-disney-cruise-staterooms',
+    url: 'https://gatgridcruises.com/guides/stateroom-comparison',
     images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
   },
   twitter: {

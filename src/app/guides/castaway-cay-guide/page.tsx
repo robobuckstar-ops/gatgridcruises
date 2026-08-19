@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Castaway Cay: The Ultimate Guide to Disney's Private Island",
     description: "Complete guide to Castaway Cay — beaches, activities, restaurants, snorkeling, and how to maximize your day.",
-    url: 'https://gatgridcruises.com/guides/castaway-cay-guide',
+    url: 'https://gatgridcruises.com/ports/castaway-cay',
     images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
   },
   twitter: {

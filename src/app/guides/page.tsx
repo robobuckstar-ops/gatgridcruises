@@ -22,7 +22,16 @@ export const metadata: Metadata = {
   },
 }
 
-const guides = [
+// `href` overrides the default `/guides/<slug>` for topics whose canonical page
+// lives elsewhere (the port guides are served from /ports).
+const guides: {
+  slug: string
+  href?: string
+  title: string
+  description: string
+  category: string
+  readTime: string
+}[] = [
   {
     slug: 'cruise-countdown',
     title: 'Disney Cruise Countdown Timeline: Every Deadline & Booking Window',
@@ -30,13 +39,6 @@ const guides = [
       'The complete interactive countdown from booking to post-cruise — every Castaway Club booking window, specialty dining deadline, check-in date, and pro tip from Grayson. Includes timezone alerts so you never miss midnight ET.',
     category: 'Planning',
     readTime: '15 min read',
-  },
-  {
-    slug: 'packing-gear',
-    title: 'The Ultimate Disney Cruise Packing List (With Our Top Picks)',
-    description: 'The 30 Amazon picks that veteran Disney cruisers swear by — from magnetic hooks and non-surge power strips to reef-safe sunscreen and Sea-Band wristbands.',
-    category: 'Gear',
-    readTime: '10 min read',
   },
   {
     slug: 'travel-insurance',
@@ -47,6 +49,7 @@ const guides = [
   },
   {
     slug: 'ports',
+    href: '/ports',
     title: 'Disney Cruise Port Guides — What to Know Before You Dock',
     description: 'In-depth guides for Port Canaveral, Nassau, Castaway Cay, and Cozumel — top excursions, nearby hotels, and insider tips for every Disney cruise port.',
     category: 'Ports',
@@ -60,9 +63,9 @@ const guides = [
     readTime: '12 min read',
   },
   {
-    slug: 'best-disney-cruise-staterooms',
-    title: 'Best Disney Cruise Staterooms: Category-by-Category Guide',
-    description: 'A deep dive into every stateroom category across the Disney fleet — from inside cabins to concierge suites, with noise ratings and location tips.',
+    slug: 'stateroom-comparison',
+    title: 'Best Disney Cruise Staterooms: Inside vs Oceanview vs Verandah vs Concierge',
+    description: 'A deep dive into every stateroom category across the Disney fleet — from inside cabins to concierge suites, with a feature comparison table, price ranges, and a quick decision guide.',
     category: 'Staterooms',
     readTime: '15 min read',
   },
@@ -89,6 +92,7 @@ const guides = [
   },
   {
     slug: 'castaway-cay-guide',
+    href: '/ports/castaway-cay',
     title: 'Castaway Cay: The Ultimate Guide to Disney\'s Private Island',
     description: 'Everything you need to know about Castaway Cay — beaches, excursions, Cookies BBQ, Serenity Bay, snorkeling, and how to make the most of your island day.',
     category: 'Destinations',
@@ -148,7 +152,7 @@ export default function GuidesPage() {
             {guides.map((guide, index) => (
               <div key={guide.slug}>
                 <Link
-                  href={`/guides/${guide.slug}`}
+                  href={guide.href ?? `/guides/${guide.slug}`}
                   className="group block p-6 rounded-xl border-2 border-slate-200 hover:border-[#D4AF37] hover:shadow-lg transition-all duration-200"
                 >
                   <div className="flex items-center gap-3 mb-3">

@@ -342,7 +342,7 @@ export default function DisneyVsCruiseCostGuide() {
         <section className="border-t-2 border-gray-200 pt-12">
           <h2 className="text-2xl font-fraunces font-bold text-slate-900 mb-6">Related Guides</h2>
           <div className="grid md:grid-cols-3 gap-6">
-            <Link href="/guides/best-disney-cruise-staterooms" className="group">
+            <Link href="/guides/stateroom-comparison" className="group">
               <div className="bg-gray-50 p-6 rounded-lg hover:bg-[#1E3A5F]/10 transition">
                 <h3 className="font-fraunces font-bold text-slate-900 mb-2 group-hover:text-[#D4AF37]">
                   Best Disney Cruise Staterooms

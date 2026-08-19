@@ -509,7 +509,7 @@ export default function BestTimeToBookGuide() {
               <p className="font-inter text-gray-600 text-sm">Complete checklist of what to pack for your Disney cruise.</p>
             </Link>
             <Link
-              href="/guides/castaway-cay-guide"
+              href="/ports/castaway-cay"
               className="p-6 border border-gray-200 rounded-lg hover:border-[#1E3A5F] hover:shadow-md transition"
             >
               <h3 className="font-fraunces font-bold text-slate-900 mb-2">Castaway Cay: The Ultimate Guide</h3>

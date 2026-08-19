@@ -629,7 +629,7 @@ export default function PackingListGuide() {
           <h2 className="font-fraunces text-2xl font-bold text-slate-900 mb-6">Related Guides</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Link
-              href="/guides/castaway-cay-guide"
+              href="/ports/castaway-cay"
               className="p-6 border border-gray-200 rounded-lg hover:border-[#1E3A5F] hover:shadow-md transition"
             >
               <h3 className="font-fraunces font-bold text-slate-900 mb-2">Castaway Cay: The Ultimate Guide</h3>

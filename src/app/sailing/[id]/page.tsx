@@ -540,7 +540,7 @@ export default async function SailingDetailPage({ params }: PageProps) {
                 ))}
               </div>
               <Link
-                href="/guides/packing-gear"
+                href="/guides/disney-cruise-packing-list"
                 className="inline-flex items-center gap-1.5 text-sm font-medium text-[#1E3A5F] hover:text-[#162d4a] transition-colors"
               >
                 See the full packing list <ArrowRight className="h-3.5 w-3.5" />
