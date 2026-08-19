@@ -1,6 +1,6 @@
 /**
- * Conversion tracking for the lead forms (/book, /concierge, /transfer, and
- * the "Request This Sailing" modal).
+ * Conversion tracking for the lead forms (/book, /concierge, /transfer,
+ * /price-watch, /group-cruise, and the "Request This Sailing" modal).
  *
  * Three tags coexist on the site and each wants its own signal for the same
  * event, so they are fired together from one place rather than duplicated at
@@ -35,7 +35,13 @@ declare global {
 }
 
 /** Which form produced the lead — passed along for reporting, not required. */
-export type LeadSource = 'book' | 'concierge' | 'request-sailing' | 'transfer'
+export type LeadSource =
+  | 'book'
+  | 'concierge'
+  | 'request-sailing'
+  | 'transfer'
+  | 'price-watch'
+  | 'group-cruise'
 
 /**
  * Report a submitted lead to Meta and Google Ads.

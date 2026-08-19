@@ -48,6 +48,7 @@ const navItems = [
       { label: 'Transfer Guide', href: '/tools/transfers' },
       { label: 'Stateroom Finder', href: '/tools/staterooms' },
       { label: 'Price Tracker', href: '/price-tracker' },
+      { label: '👀 Price-Drop Watch', href: '/price-watch' },
       { label: 'Port Hotels', href: '/hotels' },
     ],
   },
@@ -56,6 +57,7 @@ const navItems = [
     href: '/blog',
     children: [
       { label: 'Blog', href: '/blog' },
+      { label: '🚢 Group Sailing', href: '/group-cruise' },
       { label: 'Sail Together', href: '/community/sail-together' },
       { label: 'Solo Cruising', href: '/solo-cruising' },
       { label: 'Travel Hacks', href: '/travel-hacks' },

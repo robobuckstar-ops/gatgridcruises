@@ -76,6 +76,11 @@ export function Footer() {
                   </Link>
                 </li>
                 <li>
+                  <Link href="/group-cruise" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
+                    Group Sailing
+                  </Link>
+                </li>
+                <li>
                   <Link href="/giving-back" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
                     Giving Back
                   </Link>
@@ -260,6 +265,11 @@ export function Footer() {
                 <li>
                   <Link href="/price-tracker" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
                     Price Tracker
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/price-watch" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
+                    Price-Drop Watch
                   </Link>
                 </li>
               </ul>
