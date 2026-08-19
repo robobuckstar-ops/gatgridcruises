@@ -43,6 +43,7 @@ const navItems = [
       { label: 'Free Cruise Quote', href: '/free-quote' },
       { label: 'Free First-Timer’s Guide', href: '/free-guide' },
       { label: 'OBC Calculator', href: '/tools/obc-calculator' },
+      { label: 'Compare Sailings', href: '/tools/compare' },
       { label: 'Transfer Your Booking', href: '/transfer' },
       { label: 'Credit Card Hacks', href: '/tools/credit-cards' },
       { label: 'Flight Search & Tips', href: '/flights' },
