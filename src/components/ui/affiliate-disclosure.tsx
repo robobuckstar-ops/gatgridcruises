@@ -11,3 +11,18 @@ export function AffiliateDisclosure() {
     </div>
   )
 }
+
+/**
+ * FTC disclosure for travel booking links (flights, hotels, transfers,
+ * insurance). Sits directly next to the links it covers — the disclosure has
+ * to be visible without scrolling or clicking through to /disclosures.
+ */
+export function TravelAffiliateDisclosure({ className = '' }: { className?: string }) {
+  return (
+    <p className={`text-xs italic text-slate-500 leading-relaxed ${className}`}>
+      <strong className="not-italic">Affiliate disclosure:</strong> As an affiliate we may earn a
+      commission from these links, at no cost to you. We don&apos;t sell flights, hotels, or
+      transfers — these open third-party sites where you book directly.
+    </p>
+  )
+}

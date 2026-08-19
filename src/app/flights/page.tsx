@@ -2,9 +2,11 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import {
   Bell,
+  Building2,
   Calendar,
   Clock,
   CreditCard,
+  ExternalLink,
   Luggage,
   MapPin,
   Plane,
@@ -13,6 +15,15 @@ import {
   TrendingDown,
 } from 'lucide-react'
 import { CruisePortGrid, FlightSearchBuilder } from './flight-search-builder'
+import { TravelAffiliateDisclosure } from '@/components/ui/affiliate-disclosure'
+import {
+  FLIGHTS_HOME,
+  HOTELS_HOME,
+  PORT_TRAVEL_LINKS,
+  TP_LINK_ATTRS,
+  flightsTo,
+  hotelsIn,
+} from '@/lib/travelpayouts'
 
 export const metadata: Metadata = {
   title: 'Cheap Flights to Your Cruise Port — GatGrid Cruises',
@@ -134,6 +145,85 @@ export default function FlightsPage() {
               Browse pre-cruise hotels →
             </Link>
           </p>
+        </div>
+      </section>
+
+      {/* Getting to your port — compare fares and pre-cruise hotel rates */}
+      <section id="getting-to-your-port" className="bg-slate-50 py-16 md:py-20 border-t border-slate-200 scroll-mt-16">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="font-fraunces text-3xl md:text-4xl font-bold text-slate-900 mb-3">
+              Getting to your port
+            </h2>
+            <p className="text-slate-600 max-w-2xl mx-auto">
+              Once you know which airport you&apos;re flying into, compare fares and the
+              night-before hotel in one pass. These search links are pre-set for the three ports
+              Disney sails from most.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {PORT_TRAVEL_LINKS.map(port => (
+              <div
+                key={port.port}
+                className="bg-white rounded-xl border border-slate-200 p-5 flex flex-col"
+              >
+                <h3 className="font-fraunces text-lg font-bold text-slate-900 mb-1">
+                  {port.port}
+                </h3>
+                <p className="text-sm text-slate-500 mb-5">Fly into {port.airportLabel}</p>
+
+                <div className="mt-auto space-y-2.5">
+                  <a
+                    href={flightsTo(port.airportCode)}
+                    {...TP_LINK_ATTRS}
+                    className="flex items-center justify-between gap-2 w-full rounded-lg bg-[#1E3A5F] px-4 py-2.5 text-sm font-semibold text-white hover:bg-[#2a4f7a] transition-colors"
+                  >
+                    <span className="inline-flex items-center gap-2">
+                      <Plane className="w-4 h-4" aria-hidden="true" />
+                      Flights to {port.airportCode}
+                    </span>
+                    <ExternalLink className="w-3.5 h-3.5 opacity-70" aria-hidden="true" />
+                  </a>
+                  <a
+                    href={hotelsIn(port.hotelDestination)}
+                    {...TP_LINK_ATTRS}
+                    className="flex items-center justify-between gap-2 w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm font-semibold text-slate-700 hover:border-[#1E3A5F] hover:text-[#1E3A5F] transition-colors"
+                  >
+                    <span className="inline-flex items-center gap-2">
+                      <Building2 className="w-4 h-4" aria-hidden="true" />
+                      Hotels in {port.hotelLabel}
+                    </span>
+                    <ExternalLink className="w-3.5 h-3.5 opacity-70" aria-hidden="true" />
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <p className="mt-6 text-center text-sm text-slate-600">
+            Sailing from somewhere else? Search{' '}
+            <a
+              href={FLIGHTS_HOME}
+              {...TP_LINK_ATTRS}
+              className="text-[#1E3A5F] font-semibold hover:underline"
+            >
+              all flights
+            </a>{' '}
+            or{' '}
+            <a
+              href={HOTELS_HOME}
+              {...TP_LINK_ATTRS}
+              className="text-[#1E3A5F] font-semibold hover:underline"
+            >
+              all hotels
+            </a>
+            .
+          </p>
+
+          <div className="mt-8 flex justify-center">
+            <TravelAffiliateDisclosure className="max-w-2xl text-center" />
+          </div>
         </div>
       </section>
 

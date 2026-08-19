@@ -17,7 +17,7 @@ interface Props {
 export function InsurancePartners({
   variant = 'light',
   heading = 'Compare Travel Insurance for Your Cruise',
-  subheading = "Three options we trust — pick the one that fits your itinerary, age, and risk tolerance. We're not insurance brokers, just honest about who covers what.",
+  subheading = "Four options we trust — pick the one that fits your itinerary, age, and risk tolerance. We're not insurance brokers, just honest about who covers what.",
   showDisclosure = true,
 }: Props) {
   const isDark = variant === 'dark'
@@ -59,7 +59,7 @@ export function InsurancePartners({
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
           {INSURANCE_PARTNERS.map((partner) => {
             const url = getInsurancePartnerLink(partner)
             const affiliated = isInsurancePartnerAffiliated(partner)

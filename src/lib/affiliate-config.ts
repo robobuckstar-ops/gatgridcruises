@@ -15,6 +15,8 @@
  * ============================================================
  */
 
+import { INSURANCE_EKTA_URL } from './travelpayouts'
+
 // ─── AMAZON ASSOCIATES ───────────────────────────────────────
 export const AMAZON_CONFIG = {
   tag: 'gatgridcruise-20',
@@ -223,6 +225,21 @@ export const INSURANCE_PARTNERS: InsurancePartner[] = [
     // TODO: Replace with real CJ Affiliate / ShareASale link
     affiliateUrl: null,
     fallbackUrl: 'https://www.insuremytrip.com/',
+  },
+  {
+    slug: 'ekta',
+    name: 'EKTA',
+    tagline: 'Instant online travel medical cover',
+    bestFor: 'Quick quotes & international sailings',
+    highlights: [
+      'Quote and buy online in a few minutes, policy emailed immediately',
+      'Travel medical coverage for international itineraries',
+      'Useful once a sailing leaves US waters, where domestic health plans stop',
+      'Coverage varies by country of residence and itinerary — read the certificate',
+    ],
+    // Live Travelpayouts affiliate link (marker 766218).
+    affiliateUrl: INSURANCE_EKTA_URL,
+    fallbackUrl: 'https://ektatraveling.com/',
   },
 ]
 

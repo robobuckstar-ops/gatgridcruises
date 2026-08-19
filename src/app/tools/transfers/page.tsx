@@ -1,7 +1,9 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { getPorts, getTransfersForPort } from '@/lib/data'
-import { Car, ArrowRight } from 'lucide-react'
+import { Car, ArrowRight, ExternalLink } from 'lucide-react'
+import { TravelAffiliateDisclosure } from '@/components/ui/affiliate-disclosure'
+import { TRANSFER_PARTNERS, TP_LINK_ATTRS } from '@/lib/travelpayouts'
 
 export const metadata: Metadata = {
   title: 'Transfer Guide — Getting to Your Disney Cruise Port',
@@ -58,6 +60,47 @@ export default function TransfersPage() {
             )
           })}
         </div>
+
+        {/* Pre-booked private transfers — an alternative to Disney's coach
+            and to gambling on rideshare availability at the terminal. */}
+        <section className="mt-16 pt-12 border-t border-slate-200">
+          <h2 className="font-display text-2xl font-bold text-slate-900 mb-2">
+            Book a private airport transfer
+          </h2>
+          <p className="text-slate-600 mb-8 max-w-3xl">
+            If you&apos;d rather have a driver already waiting than queue for a rideshare with four
+            suitcases and a stroller, these two let you lock in a fixed price ahead of time.
+            Popular routes: MCO → Port Canaveral, FLL → Port Everglades, MIA → PortMiami.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {TRANSFER_PARTNERS.map(partner => (
+              <div
+                key={partner.name}
+                className="flex flex-col bg-white border border-slate-300 rounded-xl p-6"
+              >
+                <div className="flex items-center gap-3 mb-3">
+                  <Car className="h-5 w-5 text-[#1E3A5F]" aria-hidden="true" />
+                  <h3 className="font-display text-xl font-bold text-slate-900">{partner.name}</h3>
+                </div>
+                <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-3">
+                  Best for: {partner.bestFor}
+                </p>
+                <p className="text-sm text-slate-600 leading-relaxed mb-6">{partner.description}</p>
+                <a
+                  href={partner.url}
+                  {...TP_LINK_ATTRS}
+                  className="mt-auto inline-flex items-center justify-center gap-2 rounded-lg bg-[#1E3A5F] px-4 py-2.5 text-sm font-semibold text-white hover:bg-[#2a4f7a] transition-colors"
+                >
+                  Check {partner.name} prices
+                  <ExternalLink className="h-3.5 w-3.5 opacity-70" aria-hidden="true" />
+                </a>
+              </div>
+            ))}
+          </div>
+
+          <TravelAffiliateDisclosure className="mt-6" />
+        </section>
       </div>
     </div>
   )
