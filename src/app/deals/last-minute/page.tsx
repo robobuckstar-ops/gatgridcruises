@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import { getLastMinuteDeals, getShips, getPorts } from '@/lib/data'
+import { GuestCountProvider } from '@/context/guest-count-context'
 import { LastMinuteDealGrid } from './last-minute-deal-grid'
 
 // Sailing lists are filtered against "today" in America/Chicago, so this page
@@ -32,5 +33,12 @@ export default function LastMinuteDealsPage() {
   const ships = getShips()
   const ports = getPorts()
 
-  return <LastMinuteDealGrid deals={deals} ships={ships} ports={ports} />
+  // The grid and its guest selector both read `useGuestCount`. Without this
+  // provider the hook falls back to the context default, whose `setGuests` is a
+  // no-op — the guest pills render but clicking them can never change anything.
+  return (
+    <GuestCountProvider>
+      <LastMinuteDealGrid deals={deals} ships={ships} ports={ports} />
+    </GuestCountProvider>
+  )
 }

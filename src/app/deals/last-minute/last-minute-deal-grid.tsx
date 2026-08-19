@@ -4,6 +4,7 @@ import { useState, useMemo } from 'react'
 import Link from 'next/link'
 import type { Sailing, Ship, Port } from '@/types/database'
 import { formatPrice, formatDate, daysUntil, cn } from '@/lib/utils'
+import { getPriceForGuests } from '@/lib/pricing'
 import { CountdownTimer } from '@/components/ui/countdown-timer'
 import { GuestSelector } from '@/components/ui/guest-selector'
 import { GuestQuotePrompt } from '@/components/ui/guest-quote-prompt'
@@ -81,8 +82,9 @@ export function LastMinuteDealGrid({ deals: initialDeals, ships, ports }: LastMi
         break
       case 'savings':
         results.sort((a, b) => {
-          const savingsA = Math.round(a.current_lowest_price * 0.2) // Assume 20% discount
-          const savingsB = Math.round(b.current_lowest_price * 0.2)
+          // Savings scale with party size, so rank on the guest-adjusted fare.
+          const savingsA = Math.round(getPriceForGuests(a.current_lowest_price, guests) * 0.2) // Assume 20% discount
+          const savingsB = Math.round(getPriceForGuests(b.current_lowest_price, guests) * 0.2)
           return savingsB - savingsA
         })
         break
@@ -92,7 +94,7 @@ export function LastMinuteDealGrid({ deals: initialDeals, ships, ports }: LastMi
     }
 
     return results
-  }, [initialDeals, search, selectedShips, selectedNights, selectedRegions, privateIsland, sortBy])
+  }, [initialDeals, search, selectedShips, selectedNights, selectedRegions, privateIsland, sortBy, guests])
 
   const activeFilterCount = [
     selectedShips.length > 0,
@@ -167,7 +169,7 @@ export function LastMinuteDealGrid({ deals: initialDeals, ships, ports }: LastMi
         {/* Filter and Sort Bar */}
         <div className="mb-8 space-y-4">
           {/* Filter Toggle and Sort */}
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3">
             <button
               onClick={() => setShowFilters(!showFilters)}
               className="inline-flex items-center gap-2 px-4 py-2.5 border border-slate-300 rounded-lg bg-white text-slate-700 font-medium hover:bg-slate-50 transition-colors"
@@ -182,6 +184,7 @@ export function LastMinuteDealGrid({ deals: initialDeals, ships, ports }: LastMi
             </button>
 
             <select
+              aria-label="Sort deals"
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value as 'score' | 'soonest' | 'savings')}
               className="px-4 py-2.5 border border-slate-300 rounded-lg bg-white text-slate-700 font-medium hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-[#1E3A5F]"
@@ -194,7 +197,7 @@ export function LastMinuteDealGrid({ deals: initialDeals, ships, ports }: LastMi
             {activeFilterCount > 0 && (
               <button
                 onClick={handleClearFilters}
-                className="inline-flex items-center gap-1 px-4 py-2.5 text-slate-600 hover:text-slate-900 font-medium hover:bg-slate-100 rounded-lg transition-colors"
+                className="inline-flex items-center gap-1 px-4 py-2.5 sm:ml-auto text-slate-600 hover:text-slate-900 font-medium hover:bg-slate-100 rounded-lg transition-colors"
               >
                 <X className="h-4 w-4" />
                 Clear
@@ -321,13 +324,17 @@ export function LastMinuteDealGrid({ deals: initialDeals, ships, ports }: LastMi
         ) : (
           <>
             <p className="text-slate-600 mb-6">
-              Showing <strong>{filtered.length}</strong> last-minute deal{filtered.length !== 1 ? 's' : ''} within 90 days
+              Showing <strong>{filtered.length}</strong> last-minute deal{filtered.length !== 1 ? 's' : ''} within 90 days,
+              priced for <strong>{guests === 4 ? '4+' : guests}</strong> guest{guests !== 1 ? 's' : ''}
             </p>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filtered.map(sailing => {
-                const originalPrice = Math.round(sailing.current_lowest_price / 0.8) // Assume 20% discount
-                const savings = originalPrice - sailing.current_lowest_price
+                // `current_lowest_price` is the double-occupancy fare; scale it
+                // to the selected party size before deriving anything from it.
+                const guestPrice = getPriceForGuests(sailing.current_lowest_price, guests)
+                const originalPrice = Math.round(guestPrice / 0.8) // Assume 20% discount
+                const savings = originalPrice - guestPrice
                 const daysLeft = daysUntil(sailing.sail_date)
 
                 return (
@@ -364,10 +371,12 @@ export function LastMinuteDealGrid({ deals: initialDeals, ships, ports }: LastMi
 
                         {/* Pricing */}
                         <div className="border-t border-slate-100 pt-3">
-                          <p className="text-xs text-slate-500 mb-1">From</p>
+                          <p className="text-xs text-slate-500 mb-1">
+                            From · {guests === 4 ? '4+' : guests} guest{guests !== 1 ? 's' : ''}
+                          </p>
                           <div className="flex items-baseline gap-2">
                             <span className="text-2xl font-bold text-slate-900">
-                              {formatPrice(sailing.current_lowest_price)}
+                              {formatPrice(guestPrice)}
                             </span>
                             <span className="text-sm line-through text-slate-400">
                               {formatPrice(originalPrice)}
@@ -375,7 +384,7 @@ export function LastMinuteDealGrid({ deals: initialDeals, ships, ports }: LastMi
                           </div>
                           {sailing.length_nights > 0 && (
                             <p className="text-xs text-emerald-600 font-semibold mt-1">
-                              {formatPrice(Math.round(sailing.current_lowest_price / 2 / sailing.length_nights))}/night per guest
+                              {formatPrice(Math.round(guestPrice / guests / sailing.length_nights))}/night per guest
                             </p>
                           )}
                           {savings > 0 && (
