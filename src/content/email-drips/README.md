@@ -21,7 +21,7 @@ Total run: ~16 days from signup to soft CTA.
 ## Brevo setup notes
 
 - From name: **GatGrid Cruises**
-- From address: **hello@gatgridcruises.com** (or whichever address is
+- From address: **bookings@gatgridcruises.com** (or whichever address is
   authenticated)
 - Reply-to: a real, monitored inbox — these emails invite replies
 - Personalization tokens: `{{contact.FIRSTNAME | default: "there"}}` — Brevo

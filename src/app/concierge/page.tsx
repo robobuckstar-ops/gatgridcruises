@@ -595,11 +595,11 @@ export default function ConciergePage() {
           <div className="mt-12 bg-[#1E3A5F]/5 border border-[#1E3A5F]/10 rounded-2xl p-6 text-center">
             <p className="font-inter text-sm text-slate-600 mb-3">Still have questions?</p>
             <a
-              href="mailto:grayson@gatgridcruises.com"
+              href="mailto:bookings@gatgridcruises.com"
               className="inline-flex items-center gap-2 text-[#1E3A5F] font-semibold text-sm hover:text-[#D4AF37] transition-colors"
             >
               <Mail className="w-4 h-4" />
-              grayson@gatgridcruises.com
+              bookings@gatgridcruises.com
             </a>
           </div>
 

@@ -102,7 +102,7 @@ export function ReferralForm() {
       setErrorMsg(
         err instanceof Error && err.message && err.message !== 'HTTP 502'
           ? err.message
-          : 'Something went wrong. Please email us directly at grayson@gatgridcruises.com',
+          : 'Something went wrong. Please email us directly at bookings@gatgridcruises.com',
       )
     }
   }

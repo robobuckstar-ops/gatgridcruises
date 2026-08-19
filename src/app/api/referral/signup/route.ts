@@ -75,7 +75,7 @@ export async function POST(request: NextRequest) {
     const result = await createReferralPartner(partner, apiKey)
     if (!result) {
       return NextResponse.json(
-        { error: 'Could not save application. Please email grayson@gatgridcruises.com.' },
+        { error: 'Could not save application. Please email bookings@gatgridcruises.com.' },
         { status: 502 },
       )
     }

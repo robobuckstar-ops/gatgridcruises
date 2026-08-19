@@ -96,7 +96,7 @@ export function weeklyDigestTemplate(data: {
     </div>
 
     <div class="footer">
-      <p>Sent by Dr. Grayson Starbuck, DPT · <a href="mailto:deals@gatgridcruises.com">deals@gatgridcruises.com</a></p>
+      <p>Sent by Dr. Grayson Starbuck, DPT · <a href="mailto:bookings@gatgridcruises.com">bookings@gatgridcruises.com</a></p>
       <p>You're receiving this because you subscribed at GatGridCruises.com</p>
       <p><a href="https://gatgridcruises.com/unsubscribe?token={{unsubscribe_token}}">Unsubscribe</a> · <a href="https://gatgridcruises.com/disclosures">Disclosures</a></p>
       <p style="margin-top: 12px;">Independently owned. Not affiliated with The Walt Disney Company.</p>

@@ -425,10 +425,10 @@ export default function ReferralPage() {
           <p className="text-center text-sm text-blue-300 mt-8">
             Still have questions? Email{' '}
             <a
-              href="mailto:grayson@gatgridcruises.com"
+              href="mailto:bookings@gatgridcruises.com"
               className="text-[#D4AF37] hover:underline"
             >
-              grayson@gatgridcruises.com
+              bookings@gatgridcruises.com
             </a>{' '}
             and we&apos;ll get back to you within a day.
           </p>

@@ -27,7 +27,7 @@ const personSchema = {
   name: 'Dr. Grayson Starbuck, DPT',
   jobTitle: 'Doctor of Physical Therapy & Disney Cruise Specialist',
   url: 'https://gatgridcruises.com/about',
-  email: 'grayson@gatgridcruises.com',
+  email: 'bookings@gatgridcruises.com',
   worksFor: {
     '@type': 'Organization',
     name: 'GatGridCruises',
@@ -86,7 +86,7 @@ export default function AboutPage() {
               </p>
               <p className="font-inter text-lg text-gray-700 leading-relaxed">
                 When you're serious about booking, I'm personally available to help you through the final steps. You can reach me directly at{' '}
-                <a href="mailto:grayson@gatgridcruises.com" className="text-[#1E3A5F] hover:underline">grayson@gatgridcruises.com</a>.
+                <a href="mailto:bookings@gatgridcruises.com" className="text-[#1E3A5F] hover:underline">bookings@gatgridcruises.com</a>.
               </p>
             </div>
           </div>
@@ -221,7 +221,7 @@ export default function AboutPage() {
             Have a question, suggestion, or partnership inquiry?
           </p>
           <a
-            href="mailto:grayson@gatgridcruises.com"
+            href="mailto:bookings@gatgridcruises.com"
             className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-[#D4AF37] text-slate-900 font-semibold hover:bg-yellow-300 transition-colors duration-200"
           >
             Email Us

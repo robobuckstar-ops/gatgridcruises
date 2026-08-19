@@ -65,7 +65,7 @@ const FAQ = [
   },
   {
     q: 'How do I know the donation actually happens?',
-    a: "We donate quarterly through CURE's official donor portal at cure.org. If you'd like a copy of our donation receipts for a given quarter, email grayson@gatgridcruises.com and we'll share them.",
+    a: "We donate quarterly through CURE's official donor portal at cure.org. If you'd like a copy of our donation receipts for a given quarter, email bookings@gatgridcruises.com and we'll share them.",
   },
   {
     q: 'Is GatGrid affiliated with CURE.org?',

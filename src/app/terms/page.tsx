@@ -56,7 +56,7 @@ export default function TermsPage() {
 
           <h2 className="font-fraunces text-2xl font-bold text-[#1E3A5F] mb-4 mt-10">Contact</h2>
           <p className="text-gray-600 mb-6 leading-relaxed">
-            For questions about these terms, contact us at legal@gatgridcruises.com or via our <Link href="/about" className="text-[#D4AF37] hover:underline">About page</Link>.
+            For questions about these terms, contact us at bookings@gatgridcruises.com or via our <Link href="/about" className="text-[#D4AF37] hover:underline">About page</Link>.
           </p>
         </div>
         </div>

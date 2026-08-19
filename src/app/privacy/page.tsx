@@ -60,7 +60,7 @@ export default function PrivacyPage() {
 
           <h2 className="font-fraunces text-2xl font-bold text-[#1E3A5F] mb-4 mt-10">Contact</h2>
           <p className="text-gray-600 mb-6 leading-relaxed">
-            For privacy-related inquiries, contact us at privacy@gatgridcruises.com or via our <Link href="/about" className="text-[#D4AF37] hover:underline">About page</Link>.
+            For privacy-related inquiries, contact us at bookings@gatgridcruises.com or via our <Link href="/about" className="text-[#D4AF37] hover:underline">About page</Link>.
           </p>
         </div>
         </div>

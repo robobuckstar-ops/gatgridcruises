@@ -4,8 +4,8 @@ email_number: 1
 trigger: Signup / opt-in
 send_delay: Immediate
 from_name: GatGrid Cruises
-from_email: hello@gatgridcruises.com
-reply_to: hello@gatgridcruises.com
+from_email: bookings@gatgridcruises.com
+reply_to: bookings@gatgridcruises.com
 ---
 
 ## Subject line (A)

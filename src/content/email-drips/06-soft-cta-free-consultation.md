@@ -4,8 +4,8 @@ email_number: 6
 trigger: After email 5
 send_delay: + 4 days
 from_name: GatGrid Cruises
-from_email: hello@gatgridcruises.com
-reply_to: hello@gatgridcruises.com
+from_email: bookings@gatgridcruises.com
+reply_to: bookings@gatgridcruises.com
 ---
 
 ## Subject line (A)

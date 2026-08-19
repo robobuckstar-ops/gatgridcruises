@@ -91,10 +91,10 @@ export default function ReferralDashboardPage() {
             We&apos;re building a full partner portal with login, live stats, payout history,
             and commission tracking. Until then, email{' '}
             <a
-              href="mailto:grayson@gatgridcruises.com"
+              href="mailto:bookings@gatgridcruises.com"
               className="text-[#D4AF37] hover:underline"
             >
-              grayson@gatgridcruises.com
+              bookings@gatgridcruises.com
             </a>{' '}
             with any questions about your referrals.
           </p>
