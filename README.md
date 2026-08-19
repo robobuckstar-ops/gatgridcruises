@@ -164,6 +164,32 @@ When it flags, regenerate and commit the catalog:
 APIFY_TOKEN=… APIFY_DATASET_ID=… npx tsx scripts/fetch-apify-data.ts
 ```
 
+## Abandoned Quote Follow-Up
+
+`GET /api/cron/abandoned-quotes` reports quote requests that are still sitting
+in the new-lead stage roughly 48 hours after they arrived — someone asked for a
+price and nobody replied. It runs daily at 13:30 UTC via `vercel.json`.
+
+**It identifies and prepares. It does not send.** There is no send path in the
+route or in `src/lib/abandoned-quotes.ts`. Each flagged lead comes back with a
+drafted subject and plain-text body for a human to read, edit, and send from
+the real inbox. The response reports `emails_sent: 0` and
+`sending_enabled: false` so this is obvious from the payload alone.
+
+```bash
+curl "https://gatgridcruises.com/api/cron/abandoned-quotes?secret=$CRON_SECRET"
+```
+
+A lead is flagged when its `Source` came from a quote form (`free-quote`,
+`request-this-sailing`, `group-cruise`, `concierge`, `transfer`), its pipeline
+stage is still unworked, and first contact was 48 hours to 30 days ago. Past 30
+days the nurture drip owns the lead and it drops off this report.
+
+| Env var | Default | Effect |
+| --- | --- | --- |
+| `CRON_SECRET` | — | Required, same as every other cron route |
+| `ABANDONED_QUOTES_MARK_CRM` | off | Set to `true` to also stamp each flagged lead's `Next Follow-Up` with today's date. Still sends no email. |
+
 ## Seed Data
 
 The MVP includes comprehensive local seed data:

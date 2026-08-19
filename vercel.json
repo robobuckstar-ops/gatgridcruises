@@ -42,6 +42,10 @@
     {
       "path": "/api/cron/data-freshness",
       "schedule": "0 12 * * 1,4"
+    },
+    {
+      "path": "/api/cron/abandoned-quotes",
+      "schedule": "30 13 * * *"
     }
   ]
 }
