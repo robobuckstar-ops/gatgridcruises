@@ -43,7 +43,13 @@ export default function TransfersPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {portsWithTransfers.map(port => {
             const transfers = getTransfersForPort(port.id)
-            const cheapest = transfers.reduce((min, t) => t.cost_estimate_min < min.cost_estimate_min ? t : min, transfers[0])
+            // Options like personal car and hotel shuttle carry a $0 floor (parking-only,
+            // or bundled with a hotel stay), which isn't a fare anyone can actually book.
+            // The headline figure should be the cheapest option with a real price on it.
+            const pricedFares = transfers
+              .map(t => t.cost_estimate_min)
+              .filter(cost => cost > 0)
+            const cheapestFare = pricedFares.length > 0 ? Math.min(...pricedFares) : null
             return (
               <Link key={port.id} href={`/tools/transfers/${port.slug}`}
                 className="group bg-white border border-slate-300 rounded-xl p-6 hover:border-blue-400 hover:shadow-lg transition-all">
@@ -52,7 +58,11 @@ export default function TransfersPage() {
                   <h2 className="font-display text-xl font-bold text-slate-900 group-hover:text-[#1E3A5F] transition-colors">{port.name}</h2>
                 </div>
                 <p className="text-sm text-slate-600 mb-3">{transfers.length} transfer options compared</p>
-                <p className="text-sm text-slate-600">Cheapest option from <strong className="text-slate-900">${cheapest.cost_estimate_min}</strong></p>
+                <p className="text-sm text-slate-600">
+                  {cheapestFare !== null
+                    ? <>Cheapest option from <strong className="text-slate-900">${cheapestFare}</strong></>
+                    : <>See options for pricing</>}
+                </p>
                 <span className="inline-flex items-center gap-1 mt-3 text-sm text-[#1E3A5F] font-medium group-hover:text-[#162d4a]">
                   View full comparison <ArrowRight className="h-3.5 w-3.5" />
                 </span>
