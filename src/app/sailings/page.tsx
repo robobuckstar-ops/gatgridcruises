@@ -205,7 +205,7 @@ export default function SailingsIndexPage() {
       <section className="border-t border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 text-sm text-slate-600">
           <p className="mb-2">
-            <strong className="text-slate-900">About these listings.</strong> Prices updated daily. Request a
+            <strong className="text-slate-900">About these listings.</strong> Request a
             quote for exact pricing with your group. We don&apos;t sell cruises directly — we help you
             research them and forward inquiries to a partner agency at no extra cost.
           </p>

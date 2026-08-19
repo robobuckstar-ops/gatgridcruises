@@ -45,6 +45,7 @@ export type LeadSource =
   | 'group-cruise'
   | 'free-guide'
   | 'free-quote'
+  | 'contact'
 
 /**
  * Report a submitted lead to Meta and Google Ads.

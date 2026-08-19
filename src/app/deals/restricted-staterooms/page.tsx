@@ -62,7 +62,7 @@ export default function RestrictedStateroomDealsPage() {
             <strong> exact cabin</strong>, often a few weeks before sailing.
           </p>
           <p className="font-inter text-sm text-blue-300 max-w-3xl">
-            Prices updated daily. Request a quote for exact pricing with your group.
+            Request a quote for exact pricing with your group.
           </p>
         </div>
       </section>

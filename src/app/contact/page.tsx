@@ -1,15 +1,16 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { Mail, MessageSquare, Anchor, Clock } from 'lucide-react'
+import { ContactForm } from './ContactForm'
 
 export const metadata: Metadata = {
   title: 'Contact Us — GatGridCruises',
   description:
-    'Get in touch with GatGridCruises. Email, call, or submit a concierge inquiry. We respond within 1 business day.',
+    'Get in touch with GatGridCruises. Send us a message, email us directly, or submit a concierge inquiry. We respond within 1 business day.',
   openGraph: {
     title: 'Contact Us — GatGridCruises',
     description:
-      'Get in touch with GatGridCruises. Email, call, or submit a concierge inquiry.',
+      'Send us a message, email us directly, or submit a concierge inquiry.',
     url: 'https://gatgridcruises.com/contact',
   },
 }
@@ -89,8 +90,31 @@ export default function ContactPage() {
             </div>
           </div>
 
+          {/* Contact form */}
+          <div className="mt-16">
+            <div className="text-center mb-8">
+              <h2 className="font-fraunces text-2xl md:text-3xl font-bold text-slate-900 mb-2">
+                Send us a message
+              </h2>
+              <p className="text-slate-600 max-w-lg mx-auto">
+                Fill this in and it goes straight to our inbox. Prefer email? Write to{' '}
+                <a
+                  href="mailto:bookings@gatgridcruises.com"
+                  className="text-[#1E3A5F] font-medium hover:underline"
+                >
+                  bookings@gatgridcruises.com
+                </a>
+                .
+              </p>
+            </div>
+
+            <div className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm">
+              <ContactForm />
+            </div>
+          </div>
+
           {/* Response time */}
-          <div className="mt-16 bg-slate-50 rounded-2xl border border-slate-100 p-8 text-center">
+          <div className="mt-12 bg-slate-50 rounded-2xl border border-slate-100 p-8 text-center">
             <div className="inline-flex items-center gap-2 mb-3">
               <Clock className="w-5 h-5 text-[#D4AF37]" />
               <h3 className="font-fraunces text-lg font-bold text-slate-900">
@@ -98,8 +122,10 @@ export default function ContactPage() {
               </h3>
             </div>
             <p className="text-slate-600 max-w-lg mx-auto">
-              Grayson personally responds to every inquiry within 1 business day. For
-              urgent questions, call or text during business hours.
+              Grayson personally responds to every inquiry within 1 business day. We&apos;re a
+              small team and don&apos;t staff a phone line — email and the form above are the
+              fastest ways to reach a real person. Leave your number and we can call or text
+              you back.
             </p>
           </div>
 

@@ -351,7 +351,7 @@ export function OtherLinesGrid({ deals }: OtherLinesGridProps) {
             Looking for Disney Cruises?
           </h2>
           <p className="text-slate-600 mb-4 text-sm">
-            GatGridCruises is primarily a Disney cruise information site. See all Disney cruise deals, scored and tracked daily.
+            GatGridCruises is primarily a Disney cruise information site. See all Disney cruise deals, scored and tracked.
           </p>
           <Link
             href="/deals"

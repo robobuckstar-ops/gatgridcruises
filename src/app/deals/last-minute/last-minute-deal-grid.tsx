@@ -152,7 +152,7 @@ export function LastMinuteDealGrid({ deals: initialDeals, ships, ports }: LastMi
             Sailings within 90 days at steep discounts
           </p>
           <p className="text-base text-blue-300 max-w-2xl mx-auto">
-            Prices updated daily. Request a quote for exact pricing with your group.
+            Request a quote for exact pricing with your group.
           </p>
           <div className="flex justify-center mt-6">
             <GuestSelector />

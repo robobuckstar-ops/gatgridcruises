@@ -184,10 +184,10 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
             Cruise Deals
           </h1>
           <p className="text-blue-200 text-lg">
-            {sailings.length} sailings tracked · Prices updated daily. Request a quote for exact pricing with your group.
+            {sailings.length} sailings tracked · Request a quote for exact pricing with your group.
           </p>
           <p className="text-blue-400 text-sm mt-1">
-            Prices last updated: {PRICES_LAST_UPDATED}
+            Fares last verified {PRICES_LAST_UPDATED} — a starting point for comparison, not a live quote.
           </p>
         </div>
       </div>

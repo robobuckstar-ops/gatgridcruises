@@ -34,18 +34,18 @@ import {
 export const metadata = {
   title: 'Disney Cruise Deal Finder — GatGridCruises',
   description:
-    'Find the best Disney cruise deals with our Deal Score system. Compare prices, filter by ship, duration, and guest count. Deals tracked daily — honest advice, no booking pressure.',
+    'Find the best Disney cruise deals with our Deal Score system. Compare prices, filter by ship, duration, and guest count. Honest advice, no booking pressure.',
   openGraph: {
     title: 'Disney Cruise Deal Finder — GatGridCruises',
     description:
-      'Find the best Disney cruise deals with our Deal Score system. Filter by ship, duration, and guests. Updated daily.',
+      'Find the best Disney cruise deals with our Deal Score system. Filter by ship, duration, and guests.',
     url: 'https://gatgridcruises.com',
     images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises — Magically Valuable Disney Cruises' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Disney Cruise Deal Finder — GatGridCruises',
-    description: 'Find the best Disney cruise deals with our Deal Score system. Filter by ship, duration, and guests. Updated daily.',
+    description: 'Find the best Disney cruise deals with our Deal Score system. Filter by ship, duration, and guests.',
     images: ['https://gatgridcruises.com/og-image.png'],
   },
 }

@@ -14,6 +14,7 @@ import {
   Crown,
   Quote,
   HelpCircle,
+  ArrowRight,
 } from 'lucide-react'
 import { ReferralForm } from './ReferralForm'
 
@@ -125,30 +126,6 @@ const WHO_ITS_FOR = [
   {
     label: 'Facebook Group Admins',
     desc: 'Disney cruise groups are full of people looking for experts.',
-  },
-]
-
-const TESTIMONIALS = [
-  {
-    quote:
-      'Sent three families our way last summer and the OBC bonus paid for a full balcony upgrade on our Wish sailing. The tracking dashboard makes it stupid simple.',
-    name: 'Active Partner',
-    role: 'Family travel blogger · 38K followers',
-    placeholder: true,
-  },
-  {
-    quote:
-      'Grayson actually takes the time to walk my followers through their options before quoting. That trust is why I keep recommending GatGrid — and the monthly commission checks are real.',
-    name: 'Ambassador',
-    role: 'Disney TikTok creator · 220K followers',
-    placeholder: true,
-  },
-  {
-    quote:
-      "I'm not a creator — just a Facebook group admin. I sent a few friends and got a really thoughtful thank-you package in the mail. Felt like a real partnership, not an algorithm.",
-    name: 'Casual Referrer',
-    role: 'Disney Cruise Families FB group',
-    placeholder: true,
   },
 ]
 
@@ -352,42 +329,26 @@ export default function ReferralPage() {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Testimonials — intentionally empty until real partner quotes exist */}
       <section className="py-16 px-4">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-10">
-            <p className="text-xs font-bold text-[#D4AF37] uppercase tracking-widest mb-3">
-              What Partners Are Saying
-            </p>
-            <h2 className="font-fraunces text-3xl font-bold text-white mb-3">
-              Real People, Real Rewards
+        <div className="max-w-3xl mx-auto">
+          <div className="bg-[#1E3A5F]/50 border border-white/10 rounded-2xl px-8 py-10 backdrop-blur-sm text-center">
+            <Quote className="w-8 h-8 text-[#D4AF37]/40 mx-auto mb-4" />
+            <h2 className="font-fraunces text-2xl font-bold text-white mb-3">
+              This is where partner stories will go
             </h2>
-            <p className="font-inter text-sm text-blue-400 max-w-xl mx-auto">
-              Placeholder testimonials shown below — real partner quotes are added as the
-              program grows. Want yours featured? Become an Ambassador.
+            <p className="font-inter text-sm text-blue-200 leading-relaxed max-w-xl mx-auto">
+              The partner program is new, so we don&apos;t have quotes to show you yet — and we&apos;d
+              rather leave this space honest than fill it with words nobody said. Join now and
+              yours could be the first one here.
             </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {TESTIMONIALS.map(({ quote, name, role, placeholder }, idx) => (
-              <div
-                key={idx}
-                className="relative bg-[#1E3A5F]/50 border border-white/10 rounded-2xl px-6 py-7 backdrop-blur-sm"
-              >
-                <Quote className="w-7 h-7 text-[#D4AF37]/40 mb-3" />
-                <p className="font-inter text-sm text-blue-100 leading-relaxed mb-5 italic">
-                  &ldquo;{quote}&rdquo;
-                </p>
-                <div className="pt-4 border-t border-white/10">
-                  <p className="font-semibold text-white text-sm">{name}</p>
-                  <p className="text-xs text-blue-300">{role}</p>
-                </div>
-                {placeholder && (
-                  <span className="absolute top-3 right-3 text-[10px] text-blue-400/60 uppercase tracking-wider">
-                    Placeholder
-                  </span>
-                )}
-              </div>
-            ))}
+            <a
+              href="#apply"
+              className="inline-flex items-center gap-2 mt-6 px-6 py-3 bg-[#D4AF37] text-[#1E3A5F] font-inter font-bold rounded-lg hover:bg-yellow-300 transition-colors"
+            >
+              Become a partner
+              <ArrowRight className="w-4 h-4" />
+            </a>
           </div>
         </div>
       </section>

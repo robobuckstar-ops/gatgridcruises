@@ -6,7 +6,7 @@ import { DealGrid } from './deal-grid'
 export const metadata: Metadata = {
   title: 'Disney Cruise Deals — Filter by Ship, Duration & Score',
   description:
-    'Browse every Disney cruise sailing with our Deal Score system. Filter by ship, departure port, duration, and guest count. Prices tracked daily.',
+    'Browse every Disney cruise sailing with our Deal Score system. Filter by ship, departure port, duration, and guest count.',
   openGraph: {
     title: 'Disney Cruise Deals — Filter by Ship, Duration & Score',
     description:

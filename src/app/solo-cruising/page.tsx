@@ -31,7 +31,7 @@ const BENEFITS = [
   {
     icon: Users,
     title: 'Meet Amazing People',
-    description: 'Cruise ships are incredible for making new friends. Solo cabins bring together like-minded travelers.',
+    description: 'Disney ships are unusually social — shared dinner tables, adult-exclusive lounges, and deck events make it easy to find company when you want it.',
   },
   {
     icon: Heart,
@@ -40,28 +40,34 @@ const BENEFITS = [
   },
   {
     icon: Wallet,
-    title: 'Better Value Than You Think',
-    description: 'Single supplement fees have dropped significantly. Compare per-person to group travel and you might be surprised.',
+    title: 'A Whole Stateroom to Yourself',
+    description: 'Disney charges you for the full stateroom rather than offering a solo cabin — so the trade is real privacy and space at a genuine premium. Know the maths before you book.',
   },
 ]
 
 const SOLO_TIPS: AccordionItem[] = [
   {
     id: 'single-supplement',
-    title: 'Understanding Single Supplement Fees',
+    title: 'Understanding the Single Supplement on Disney',
     content: (
       <div className="space-y-3">
         <p>
-          A single supplement is an additional fee charged when one person occupies a cabin designed for two. However, Disney has made solo cruising more affordable:
+          Be aware of this before you plan: <strong>Disney Cruise Line does not sell dedicated
+          solo or studio staterooms</strong>, and it does not discount a stateroom because only one
+          person is sleeping in it. Disney quotes cruise fare on double occupancy, so a solo guest
+          pays the full stateroom fare — in practice, close to twice the advertised per-person rate.
         </p>
         <ul className="list-disc list-inside space-y-2 text-slate-700">
-          <li>Many solo staterooms (Studio cabins) have no or reduced supplemental fees</li>
-          <li>On some sailings, the supplement is as low as 10-20% of the base rate</li>
-          <li>Studio passengers enjoy exclusive perks like a private lounge and concierge service</li>
-          <li>Book early to find the best rates for your preferred sailing dates</li>
+          <li>There is no solo cabin category and no reduced single supplement on DCL</li>
+          <li>You pay the whole stateroom, whether one guest sails or two</li>
+          <li>Government taxes, fees, and port expenses <em>are</em> charged per guest, so you pay one set of those instead of two</li>
+          <li>Gratuities are also per guest, so a solo sailing carries a single guest&rsquo;s gratuities</li>
         </ul>
         <p className="text-sm pt-2">
-          <strong>Pro tip:</strong> Compare the per-person cost of a studio cabin to sharing a stateroom with another guest. Often solo travel is just as affordable!
+          <strong>How to actually cut the cost:</strong> shorter 3&ndash;4 night sailings, an inside
+          stateroom, off-peak dates (September, early December, late January), and the smaller
+          classic ships (Magic and Wonder) all move the number far more than any solo-specific
+          discount will, because there isn&rsquo;t one.
         </p>
       </div>
     ),
@@ -75,8 +81,8 @@ const SOLO_TIPS: AccordionItem[] = [
           Cruise ships are social environments. Here are the best ways to connect with fellow passengers:
         </p>
         <ul className="list-disc list-inside space-y-2 text-slate-700">
-          <li><strong>Studio Lounge:</strong> Exclusive for Studio cabin guests — complimentary drinks and a welcoming crowd</li>
-          <li><strong>Dining:</strong> Request a shared table at dinner or join a table for two with another solo traveler</li>
+          <li><strong>Rotational dining:</strong> Disney seats guests at shared tables and rotates you through restaurants with the same servers and tablemates all week — ask for a larger shared table and you have built-in dinner company every night</li>
+          <li><strong>Adult-exclusive districts:</strong> every ship has one, and they&rsquo;re the easiest place to strike up a conversation</li>
           <li><strong>Trivia & Games:</strong> Deck competitions, wine tastings, and game shows attract friendly groups</li>
           <li><strong>Fitness & Wellness:</strong> Group yoga, fitness classes, and wellness seminars</li>
           <li><strong>Entertainment:</strong> Shows, dancing, and themed events happen every night</li>
@@ -115,8 +121,7 @@ const SOLO_TIPS: AccordionItem[] = [
           Where you stay affects your cruise experience:
         </p>
         <ul className="list-disc list-inside space-y-2 text-slate-700">
-          <li><strong>Studio Cabins:</strong> Compact, modern, and located near the exclusive Studio Lounge — perfect for meeting other solo travelers</li>
-          <li><strong>Inside Cabins:</strong> Lower deck locations near dining areas and activity zones are convenient</li>
+          <li><strong>Inside staterooms:</strong> the cheapest way to sail solo on Disney, and the one lever that most reduces the stateroom fare you&rsquo;re carrying alone</li>
           <li><strong>Ocean View/Verandah:</strong> Higher decks offer quieter environments if you prefer solitude, great for sunrise/sunset viewing</li>
           <li><strong>Midship Locations:</strong> Less rocking motion and centrally located to most amenities</li>
           <li><strong>Avoid:</strong> Cabins directly below nightclubs or above engine rooms (noise)</li>
@@ -130,15 +135,17 @@ const SOLO_TIPS: AccordionItem[] = [
     content: (
       <div className="space-y-3">
         <p>
-          All Disney ships welcome solo travelers, but newer ships have better Solo accommodations:
+          Every Disney ship welcomes solo guests, and none of them has a solo stateroom category —
+          so pick on atmosphere and fare, not on solo accommodations:
         </p>
         <ul className="list-disc list-inside space-y-2 text-slate-700">
-          <li><strong>Wish, Treasure, Destiny:</strong> The newest ships with the most modern Studio cabins and dedicated Studio Lounge experiences</li>
-          <li><strong>Dream, Fantasy:</strong> Excellent amenities and welcoming atmosphere for solo guests</li>
-          <li><strong>Magic, Wonder:</strong> Smaller, more intimate ships — great if you prefer a quieter sailing</li>
+          <li><strong>Magic, Wonder:</strong> the smallest and usually the cheapest ships in the fleet — the best value when you&rsquo;re paying for a whole stateroom yourself, and intimate enough that you see the same faces all week</li>
+          <li><strong>Dream, Fantasy:</strong> larger, with more adult-exclusive space to spread out into</li>
+          <li><strong>Wish, Treasure, Destiny:</strong> the newest ships and the highest fares — the most expensive way to sail solo</li>
         </ul>
         <p className="text-sm pt-2">
-          <strong>Pro tip:</strong> Check the sailing date — newer ships tend to attract younger, more social crowds, while older ships attract families and experienced cruisers.
+          <strong>Pro tip:</strong> Because you&rsquo;re carrying the full stateroom cost, the ship
+          and the season move your total far more than they would for a couple splitting the fare.
         </p>
       </div>
     ),
@@ -217,7 +224,8 @@ export default function SoloCruisingPage() {
             Perfect Solo-Friendly Sailings
           </h2>
           <p className="text-center text-slate-600 mb-12 font-inter">
-            Short, affordable voyages perfect for first-time solo cruisers
+            Short, lower-cost voyages that suit a first solo sailing. Fares shown are for the whole
+            stateroom — sailing solo, that&rsquo;s the figure you pay.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -322,13 +330,13 @@ export default function SoloCruisingPage() {
               {/* Example 1 */}
               <div className="border border-slate-200 rounded-lg p-6">
                 <h3 className="font-fraunces font-bold text-slate-900 mb-4">
-                  7-Night Eastern Caribbean on Dream
+                  7-Night Eastern Caribbean on Dream (sailing solo)
                 </h3>
 
                 <div className="grid grid-cols-2 gap-6 mb-4">
                   <div>
                     <p className="text-xs text-slate-600 uppercase tracking-wide mb-1 font-inter">
-                      Base Price
+                      Stateroom fare you pay alone
                     </p>
                     <p className="font-fraunces text-2xl font-bold text-slate-900">
                       {formatPrice(6384)}
@@ -346,7 +354,11 @@ export default function SoloCruisingPage() {
 
                 <div className="bg-[#1E3A5F]/5 border border-[#1E3A5F]/20 rounded p-4">
                   <p className="text-sm text-slate-700 font-inter">
-                    <strong>Compare:</strong> Resort stay (luxury) = {formatPrice(200)}/night | Hotel + flights = ~{formatPrice(250)}/day | All-inclusive = ~{formatPrice(300)}/day
+                    <strong>Being straight with you:</strong> that per-night figure is well above a
+                    land holiday, because you&rsquo;re absorbing a two-person stateroom on your own.
+                    Meals, entertainment, and kids&rsquo; clubs are included, but Disney is a premium
+                    solo choice — not a budget one. If cost is the deciding factor, a shorter sailing
+                    on Magic or Wonder is where to look.
                   </p>
                 </div>
               </div>
@@ -354,16 +366,16 @@ export default function SoloCruisingPage() {
               {/* Example 2 */}
               <div className="border border-slate-200 rounded-lg p-6">
                 <h3 className="font-fraunces font-bold text-slate-900 mb-4">
-                  4-Night Bahamian on Wish (Studio)
+                  4-Night Bahamian on Wish (inside stateroom, sailing solo)
                 </h3>
 
                 <div className="grid grid-cols-2 gap-6 mb-4">
                   <div>
                     <p className="text-xs text-slate-600 uppercase tracking-wide mb-1 font-inter">
-                      Studio + 10% Supplement
+                      Stateroom fare — same for one guest as for two
                     </p>
                     <p className="font-fraunces text-2xl font-bold text-slate-900">
-                      {formatPrice(Math.round(4288 * 1.1))}
+                      {formatPrice(4288)}
                     </p>
                   </div>
                   <div>
@@ -371,14 +383,17 @@ export default function SoloCruisingPage() {
                       Per Night
                     </p>
                     <p className="font-fraunces text-2xl font-bold text-[#1E3A5F]">
-                      {formatPrice(Math.round((4288 * 1.1) / 4))}
+                      {formatPrice(Math.round(4288 / 4))}
                     </p>
                   </div>
                 </div>
 
-                <div className="bg-green-50 border border-green-200 rounded p-4">
+                <div className="bg-amber-50 border border-amber-200 rounded p-4">
                   <p className="text-sm text-slate-700 font-inter">
-                    <strong>Pro Tip:</strong> Studio cabins on newer ships often have no supplement at all! Check availability for even better deals.
+                    <strong>Read this before you budget:</strong> sailing solo does not halve the
+                    fare on Disney. The stateroom costs what it costs, and one guest pays all of it.
+                    What you do save is the second guest&rsquo;s taxes, port fees, and gratuities,
+                    which are charged per person.
                   </p>
                 </div>
               </div>

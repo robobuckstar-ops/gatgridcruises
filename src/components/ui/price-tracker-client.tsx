@@ -10,6 +10,8 @@ interface Props {
   sailings: SailingWithTrend[]
   ships: string[]
   regions: string[]
+  /** False until the snapshot feed has enough data to compare fares against. */
+  hasHistory: boolean
 }
 
 const REGION_LABELS: Record<string, string> = {
@@ -51,11 +53,11 @@ function MiniSparkline({ prices, isGood }: { prices: number[]; isGood: boolean }
   )
 }
 
-export function PriceTrackerClient({ sailings, ships, regions }: Props) {
+export function PriceTrackerClient({ sailings, ships, regions, hasHistory }: Props) {
   const [shipFilter, setShipFilter] = useState('all')
   const [regionFilter, setRegionFilter] = useState('all')
   const [monthFilter, setMonthFilter] = useState('all')
-  const [sortBy, setSortBy] = useState<'deal' | 'price' | 'date'>('deal')
+  const [sortBy, setSortBy] = useState<'deal' | 'price' | 'date'>(hasHistory ? 'deal' : 'price')
 
   const months = useMemo(
     () => [...new Set(sailings.map(s => s.sail_date.slice(0, 7)))].sort(),
@@ -128,7 +130,7 @@ export function PriceTrackerClient({ sailings, ships, regions }: Props) {
               onChange={e => setSortBy(e.target.value as typeof sortBy)}
               className={selectClass}
             >
-              <option value="deal">Best Deal First</option>
+              {hasHistory && <option value="deal">Best Deal First</option>}
               <option value="price">Lowest Price</option>
               <option value="date">Earliest Date</option>
             </select>
@@ -151,8 +153,10 @@ export function PriceTrackerClient({ sailings, ships, regions }: Props) {
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
           {filtered.map(s => {
             const { trend } = s
-            const isGood = trend.dealRating === 'good'
-            const isAbove = trend.dealRating === 'above-average'
+            // Only trust the trend once this sailing has its own price history.
+            const showTrend = hasHistory && s.snapshot_count >= 2
+            const isGood = showTrend && trend.dealRating === 'good'
+            const isAbove = showTrend && trend.dealRating === 'above-average'
             const pctAbs = Math.abs(trend.percentVsAvg)
 
             return (
@@ -173,15 +177,17 @@ export function PriceTrackerClient({ sailings, ships, regions }: Props) {
                         {s.itinerary_name}
                       </h3>
                     </div>
-                    <span className={`flex-shrink-0 text-xs font-bold px-2.5 py-0.5 rounded-full ${
-                      isGood
-                        ? 'bg-emerald-100 text-emerald-700'
-                        : isAbove
-                          ? 'bg-red-100 text-red-600'
-                          : 'bg-slate-100 text-slate-600'
-                    }`}>
-                      {isGood ? 'Good Deal' : isAbove ? 'Above Avg' : 'Average'}
-                    </span>
+                    {showTrend && (
+                      <span className={`flex-shrink-0 text-xs font-bold px-2.5 py-0.5 rounded-full ${
+                        isGood
+                          ? 'bg-emerald-100 text-emerald-700'
+                          : isAbove
+                            ? 'bg-red-100 text-red-600'
+                            : 'bg-slate-100 text-slate-600'
+                      }`}>
+                        {isGood ? 'Good Deal' : isAbove ? 'Above Avg' : 'Average'}
+                      </span>
+                    )}
                   </div>
 
                   {/* Trip details */}
@@ -204,36 +210,46 @@ export function PriceTrackerClient({ sailings, ships, regions }: Props) {
                   <div className="flex items-end justify-between border-t border-slate-100 pt-3 gap-3">
                     <div>
                       <p className="text-xl font-bold text-slate-900">{formatPrice(s.current_lowest_price)}</p>
-                      <p className={`text-xs font-semibold flex items-center gap-0.5 mt-0.5 ${
-                        trend.percentVsAvg < 0
-                          ? 'text-emerald-600'
-                          : trend.percentVsAvg > 0
-                            ? 'text-red-500'
-                            : 'text-slate-400'
-                      }`}>
-                        {trend.trend === 'down'
-                          ? <TrendingDown className="w-3 h-3" />
-                          : trend.trend === 'up'
-                            ? <TrendingUp className="w-3 h-3" />
-                            : <Minus className="w-3 h-3" />}
-                        {trend.percentVsAvg === 0
-                          ? 'At average'
-                          : trend.percentVsAvg < 0
-                            ? `${pctAbs}% below avg`
-                            : `${pctAbs}% above avg`}
-                      </p>
+                      {showTrend ? (
+                        <p className={`text-xs font-semibold flex items-center gap-0.5 mt-0.5 ${
+                          trend.percentVsAvg < 0
+                            ? 'text-emerald-600'
+                            : trend.percentVsAvg > 0
+                              ? 'text-red-500'
+                              : 'text-slate-400'
+                        }`}>
+                          {trend.trend === 'down'
+                            ? <TrendingDown className="w-3 h-3" />
+                            : trend.trend === 'up'
+                              ? <TrendingUp className="w-3 h-3" />
+                              : <Minus className="w-3 h-3" />}
+                          {trend.percentVsAvg === 0
+                            ? 'At average'
+                            : trend.percentVsAvg < 0
+                              ? `${pctAbs}% below avg`
+                              : `${pctAbs}% above avg`}
+                        </p>
+                      ) : (
+                        <p className="text-xs text-slate-400 mt-0.5">
+                          lowest tracked fare
+                        </p>
+                      )}
                     </div>
 
-                    <div className="flex flex-col items-end gap-1">
-                      <MiniSparkline prices={s.recent_prices} isGood={trend.percentVsAvg <= 0} />
-                      <p className="text-xs text-slate-400">avg {formatPrice(trend.avgPrice)}</p>
-                    </div>
+                    {showTrend && (
+                      <div className="flex flex-col items-end gap-1">
+                        <MiniSparkline prices={s.recent_prices} isGood={trend.percentVsAvg <= 0} />
+                        <p className="text-xs text-slate-400">avg {formatPrice(trend.avgPrice)}</p>
+                      </div>
+                    )}
                   </div>
 
                   <div className="mt-3 flex items-center justify-between">
-                    <span className="text-xs text-slate-400">{s.snapshot_count} data points</span>
+                    <span className="text-xs text-slate-400">
+                      {showTrend ? `${s.snapshot_count} data points` : `${s.length_nights} nights`}
+                    </span>
                     <span className="text-xs font-medium text-blue-500 group-hover:text-[#162d4a] flex items-center gap-0.5 transition-colors">
-                      View full history <ArrowRight className="w-3 h-3" />
+                      {showTrend ? 'View full history' : 'View sailing'} <ArrowRight className="w-3 h-3" />
                     </span>
                   </div>
                 </div>

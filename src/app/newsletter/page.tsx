@@ -3,18 +3,18 @@ import { NewsletterSignupForm } from './newsletter-signup-form'
 import { Star, TrendingDown, CreditCard, Lightbulb, Mail, Check } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Disney Cruise Insider — Monthly Newsletter',
-  description: 'Get the best Disney cruise deals, insider tips, and credit card hacks delivered monthly. Join 3,000+ savvy Disney cruisers.',
+  title: 'Disney Cruise Insider — Weekly Newsletter',
+  description: 'Get the best Disney cruise deals, insider tips, and credit card hacks delivered every Sunday. Join 3,000+ savvy Disney cruisers.',
   openGraph: {
-    title: 'Disney Cruise Insider — Monthly Newsletter',
-    description: 'Get the best Disney cruise deals, insider tips, and credit card hacks delivered monthly.',
+    title: 'Disney Cruise Insider — Weekly Newsletter',
+    description: 'Get the best Disney cruise deals, insider tips, and credit card hacks delivered every Sunday.',
     url: 'https://gatgridcruises.com/newsletter',
     images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Disney Cruise Insider — Monthly Newsletter',
-    description: 'Disney cruise deals, insider tips, and credit card hacks delivered monthly. Join 3,000+ savvy cruisers.',
+    title: 'Disney Cruise Insider — Weekly Newsletter',
+    description: 'Disney cruise deals, insider tips, and credit card hacks delivered every Sunday. Join 3,000+ savvy cruisers.',
     images: ['https://gatgridcruises.com/og-image.png'],
   },
 }
@@ -58,7 +58,7 @@ export default function NewsletterPage() {
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#D4AF37]/20 rounded-full mb-6">
             <Star className="w-4 h-4 text-[#D4AF37] fill-[#D4AF37]" aria-hidden="true" />
-            <span className="text-[#D4AF37] text-sm font-bold tracking-wide">Free Monthly Newsletter</span>
+            <span className="text-[#D4AF37] text-sm font-bold tracking-wide">Free Weekly Newsletter</span>
           </div>
 
           <h1 className="font-display text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
@@ -67,7 +67,7 @@ export default function NewsletterPage() {
           </h1>
 
           <p className="text-blue-100 text-xl md:text-2xl max-w-2xl mx-auto leading-relaxed mb-8">
-            The best Disney cruise deals, insider tips, and credit card hacks — delivered to your inbox every month.
+            The best Disney cruise deals, insider tips, and credit card hacks — delivered to your inbox every Sunday.
           </p>
 
           <div className="flex flex-wrap justify-center gap-6 mb-10 text-sm text-blue-300">
