@@ -10,6 +10,7 @@ export const dynamic = 'force-dynamic'
 
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/deals' },
   title: 'Disney Cruise Deals — Filter by Ship, Duration & Score',
   description:
     'Browse every Disney cruise sailing with our Deal Score system. Filter by ship, departure port, duration, and guest count.',

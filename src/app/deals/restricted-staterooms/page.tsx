@@ -12,6 +12,7 @@ export const dynamic = 'force-dynamic'
 
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/deals/restricted-staterooms' },
   title: 'Restricted Stateroom (GTY) Deals — Disney Cruise',
   description:
     'Restricted / Guarantee (GTY) stateroom rates on Disney cruises — lower prices in exchange for letting Disney pick your exact cabin. See how it works and which sailings have the best inside-cabin value right now.',

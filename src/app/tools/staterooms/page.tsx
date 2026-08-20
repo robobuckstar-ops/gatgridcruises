@@ -3,6 +3,7 @@ import { getShips, getStateroomsForShip } from '@/lib/data'
 import { StateroomFinder } from './stateroom-finder'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/tools/staterooms' },
   title: 'Stateroom Finder — Pick the Perfect Disney Cruise Stateroom',
   description: 'Find your ideal Disney cruise stateroom with noise ratings, view ratings, and honest pros/cons for every room.',
   openGraph: {

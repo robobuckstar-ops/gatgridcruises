@@ -13,6 +13,7 @@ import {
 import { GetQuoteCTA } from '@/components/get-quote-cta'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/guides/excursion-savings' },
   title: 'Disney Cruise Excursion Savings Guide — Book Direct vs. DCL',
   description:
     'How to save on Disney cruise shore excursions: booking direct vs through DCL, child discounts, port-by-port tips, and insider tricks to stretch your budget at every stop.',

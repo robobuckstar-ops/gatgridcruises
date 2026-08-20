@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import { BarChart3, Link2, DollarSign, MousePointerClick, Clock, Lock } from 'lucide-react'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/refer/dashboard' },
   title: 'Referral Dashboard | GatGrid Cruises',
   description: 'Track your referral clicks, conversions, and commissions.',
   robots: { index: false, follow: false },

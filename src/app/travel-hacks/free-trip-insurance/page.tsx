@@ -5,6 +5,7 @@ import { CreditCardRecommendation } from '@/components/ui/credit-card-recommenda
 import { getCardBySlug } from '@/lib/credit-card-config'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/travel-hacks/free-trip-insurance' },
   title: 'Free Trip Insurance You Already Have | Travel Hacks',
   description:
     "Most cruise travelers buy expensive trip insurance without realizing their credit card already covers them. Learn what's actually covered and when to buy separate insurance.",

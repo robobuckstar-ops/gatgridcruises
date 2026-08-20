@@ -5,6 +5,7 @@ import { getOBC, formatUSD, OBC_EXAMPLE_FARES } from '@/lib/obc'
 import { OBCDisclaimer } from '@/components/ui/obc-disclaimer'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/onboard-credit' },
   title: 'Free Onboard Credit — GatGrid Cruises',
   description:
     'Plan your Disney cruise with the GatGrid Cruises concierge and receive free onboard credit that scales with your cruise fare. Learn what OBC is, what you can spend it on, and how to qualify.',

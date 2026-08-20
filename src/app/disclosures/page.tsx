@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/disclosures' },
   title: 'Affiliate & Advertising Disclosures',
   description: 'Full transparency about affiliate relationships, advertising, and sponsored content on GatGridCruises.',
 }

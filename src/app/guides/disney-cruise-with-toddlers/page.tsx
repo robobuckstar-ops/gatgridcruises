@@ -5,6 +5,7 @@ import { ArrowRight, CheckCircle2, AlertCircle } from 'lucide-react';
 import { GetQuoteCTA } from '@/components/get-quote-cta';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/guides/disney-cruise-with-toddlers' },
   title: "Disney Cruise with Toddlers: Complete Parent's Guide",
   description: 'Expert guide for cruising with toddlers: nursery, dining, stroller policy, packing, best itineraries, and Castaway Cay with young kids.',
   openGraph: {

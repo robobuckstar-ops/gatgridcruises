@@ -37,6 +37,7 @@ import {
 export const dynamic = 'force-dynamic'
 
 export const metadata = {
+  alternates: { canonical: '/' },
   title: 'Disney Cruise Deal Finder — GatGridCruises',
   description:
     'Find the best Disney cruise deals with our Deal Score system. Compare prices, filter by ship, duration, and guest count. Honest advice, no booking pressure.',

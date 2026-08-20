@@ -6,6 +6,7 @@ import { TravelAffiliateDisclosure } from '@/components/ui/affiliate-disclosure'
 import { TRANSFER_PARTNERS, TP_LINK_ATTRS } from '@/lib/travelpayouts'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/tools/transfers' },
   title: 'Transfer Guide — Getting to Your Disney Cruise Port',
   description: 'Compare transportation options to every Disney cruise departure port. Disney transfer vs Uber vs rental car vs driving.',
   openGraph: {

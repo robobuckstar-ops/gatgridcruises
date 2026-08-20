@@ -16,6 +16,7 @@ const PAGE_TITLE = `Giving Back — ${CURE_PLEDGE_PERCENT}% of Commission to CUR
 const PAGE_DESCRIPTION = `GatGrid Cruises donates ${CURE_PLEDGE_PERCENT}% of our commission from every cruise booking to CURE.org, helping children around the world receive life-changing surgical care.`
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/giving-back' },
   title: PAGE_TITLE,
   description: PAGE_DESCRIPTION,
   openGraph: {

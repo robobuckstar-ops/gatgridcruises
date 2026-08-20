@@ -4,6 +4,7 @@ import { Calendar, TrendingDown, AlertCircle, Zap, DollarSign } from 'lucide-rea
 import { GetQuoteCTA } from '@/components/get-quote-cta';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/guides/best-time-to-book-disney-cruise' },
   title: 'Best Time to Book a Disney Cruise (Price Data Analysis)',
   description: 'Data-driven guide to booking Disney cruises at the lowest prices. Learn about wave season, price cycles, cheapest months, and booking strategies.',
   openGraph: {

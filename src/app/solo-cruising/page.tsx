@@ -12,6 +12,7 @@ export const dynamic = 'force-dynamic'
 
 // Metadata
 export const metadata = {
+  alternates: { canonical: '/solo-cruising' },
   title: 'Solo Cruising — Your Guide to Sailing Alone on Disney Cruise Line',
   description: 'Discover the freedom of solo cruising. Find solo-friendly sailings, tips for meeting people, safety advice, and the best value cruises for solo travelers.',
   openGraph: {

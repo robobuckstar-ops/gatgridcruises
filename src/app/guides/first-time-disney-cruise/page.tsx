@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { NewsletterSignup } from '@/components/newsletter-signup'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/guides/first-time-disney-cruise' },
   title: 'First-Timer\'s Guide to Disney Cruises 2026 | GatGridCruises',
   description:
     'Everything first-time Disney cruisers need to know — what\'s included, what costs extra, embarkation day tips, Pirate Night, Castaway Cay, stateroom types, tipping, and more.',

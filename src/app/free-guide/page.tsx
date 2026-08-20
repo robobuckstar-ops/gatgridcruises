@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   title: 'Free Disney Cruise First-Timer’s Guide (PDF) | GatGrid',
   description:
     'A free, no-fluff PDF guide for your first Disney cruise — booking windows, what’s included, dining rotation, packing, port day strategy, and the mistakes first-timers make. Instant download.',
-  alternates: { canonical: 'https://gatgridcruises.com/free-guide' },
+  alternates: { canonical: '/free-guide' },
   openGraph: {
     title: 'Free Disney Cruise First-Timer’s Guide (PDF) | GatGrid',
     description:

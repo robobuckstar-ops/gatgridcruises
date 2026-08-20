@@ -14,6 +14,7 @@ import { CreditCardRecommendation } from '@/components/ui/credit-card-recommenda
 import { getBestCardsFor, creditCards } from '@/lib/credit-card-config'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/travel-hacks' },
   title: 'Travel Hacks: Make Your Disney Cruise Cheaper (or Free)',
   description:
     'Insider strategies for using credit card rewards, points, and perks to dramatically reduce your cruise vacation costs. Learn how to fly free, get trip insurance, and stack points for free cruises.',

@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { amazonSearchLink } from '@/lib/affiliate-config'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/blog/disney-cruise-packing-list' },
   title: 'The Ultimate Disney Cruise Packing List 2026 | GatGridCruises',
   description:
     'Complete Disney cruise packing list organized by category — essentials, clothing, toiletries, electronics, kids items, and cruise-specific gear like fish extenders and door magnets. With Amazon links.',

@@ -4,6 +4,7 @@ import { CheckCircle, AlertCircle, Printer, MapPin } from 'lucide-react';
 import { GetQuoteCTA } from '@/components/get-quote-cta';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/guides/disney-cruise-packing-list' },
   title: 'The Ultimate Disney Cruise Packing List (Printable)',
   description: 'Complete Disney cruise packing list with categories for clothing, documents, toiletries, electronics, and Castaway Cay essentials. Includes pro tips and what NOT to pack.',
   openGraph: {

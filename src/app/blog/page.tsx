@@ -4,6 +4,7 @@ import { getBlogPosts, getFeaturedBlogPost } from '@/lib/data'
 import { BlogList } from './blog-list'
 
 export const metadata = {
+  alternates: { canonical: '/blog' },
   title: 'Blog — Disney Cruise Tips, Deals & News',
   description:
     'Disney cruise news, money-saving tips, deal analyses, and first-hand reviews. Practical advice for planning the perfect Disney Cruise Line vacation.',

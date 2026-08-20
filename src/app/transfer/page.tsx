@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   title: 'Transfer Your Disney Cruise Booking — Free Onboard Credit | GatGrid',
   description:
     'Already booked your Disney cruise directly? Take the 60-second eligibility check — you may be able to add GatGrid as your travel agent and unlock free onboard credit and concierge help, at no additional cost to you.',
-  alternates: { canonical: 'https://gatgridcruises.com/transfer' },
+  alternates: { canonical: '/transfer' },
   openGraph: {
     title: 'Transfer Your Disney Cruise Booking — Free Onboard Credit | GatGrid',
     description:

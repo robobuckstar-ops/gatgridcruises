@@ -12,6 +12,7 @@ import { MESSAGES_COOKIE, getMessagesSecret, isValidSessionCookie } from '@/lib/
 export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/admin/messages' },
   title: 'Messages · GatGrid Cruises',
   robots: { index: false, follow: false },
 }

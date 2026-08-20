@@ -9,6 +9,7 @@ export const dynamic = 'force-dynamic'
 
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/tools/flights' },
   title: 'Flight Finder — Find Flights to Your Cruise Port',
   description: 'Find the best flights to your Disney cruise departure port. Get arrival time recommendations and booking links.',
   openGraph: {

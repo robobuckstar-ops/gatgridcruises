@@ -5,6 +5,7 @@ import { ArrowRight, DollarSign, TrendingUp } from 'lucide-react';
 import { GetQuoteCTA } from '@/components/get-quote-cta';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/guides/disney-cruise-cost-guide' },
   title: 'The True Cost of a Disney Cruise (2026 Breakdown)',
   description: 'Complete breakdown of Disney cruise costs including base fares, gratuities, drinks, excursions, specialty dining, and hidden fees. Plus a sample family budget.',
   openGraph: {

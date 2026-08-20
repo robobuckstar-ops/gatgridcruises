@@ -49,7 +49,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: port.metaTitle,
     description: port.metaDescription,
     keywords: port.seoKeywords,
-    alternates: { canonical: url },
+    alternates: { canonical: `/ports/${port.slug}` },
     openGraph: {
       title: port.metaTitle,
       description: port.metaDescription,

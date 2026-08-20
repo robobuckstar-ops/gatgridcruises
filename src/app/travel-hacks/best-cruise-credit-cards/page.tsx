@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { CARD_REFERRAL_LINKS } from '@/lib/affiliate-config'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/travel-hacks/best-cruise-credit-cards' },
   title: 'Best Business Credit Cards for Disney Cruises 2026 | GatGridCruises',
   description:
     'Compare the best business credit cards for Disney cruise bookings. Chase Ink, Capital One Spark, and Amex Business Platinum — earn points, get trip insurance, and save on your next cruise.',

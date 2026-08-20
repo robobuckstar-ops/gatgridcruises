@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { ArrowRight, CheckCircle2, DollarSign, Star, Anchor, Users, Gift } from 'lucide-react'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/guides/comped-cruises' },
   title: 'How to Get a Free or Comped Cruise | GatGridCruises',
   description: 'A complete guide to getting comped cruises through casino programs, loyalty tiers, repositioning sailings, travel agent FAM trips, and credit card strategies.',
   openGraph: {

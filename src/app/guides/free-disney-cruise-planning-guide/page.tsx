@@ -4,6 +4,7 @@ import { BookOpen, Check, Download, Ship, Anchor, Compass, Sparkles } from 'luci
 import { GuideDownloadForm } from './guide-download-form'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/guides/free-disney-cruise-planning-guide' },
   title: 'Free Disney Cruise Planning Guide (PDF) — GatGrid Cruises',
   description:
     'A free 24-page Disney Cruise planning guide: ship comparisons, stateroom decoder, packing checklists, port tips, and a realistic cruise budget. No fluff.',

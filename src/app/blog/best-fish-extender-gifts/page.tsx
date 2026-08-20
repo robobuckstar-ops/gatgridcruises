@@ -4,6 +4,7 @@ import { ArrowLeft, Gift, ExternalLink } from 'lucide-react'
 import { amazonSearchLink } from '@/lib/affiliate-config'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/blog/best-fish-extender-gifts' },
   title: 'Best Fish Extender Gifts Under $10 (2026 List)',
   description:
     '18 creative Fish Extender gift ideas under $10 with Amazon links. Perfect for Disney Cruise Line FE groups — small, lightweight gifts that delight kids and adults alike.',

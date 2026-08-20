@@ -3,6 +3,7 @@ import { NewsletterSignupForm } from './newsletter-signup-form'
 import { Star, TrendingDown, CreditCard, Lightbulb, Mail, Check } from 'lucide-react'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/newsletter' },
   title: 'Disney Cruise Insider — Weekly Newsletter',
   description: 'Get the best Disney cruise deals, insider tips, and credit card hacks delivered every Sunday. Join 3,000+ savvy Disney cruisers.',
   openGraph: {

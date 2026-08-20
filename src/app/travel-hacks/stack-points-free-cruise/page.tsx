@@ -5,6 +5,7 @@ import { CreditCardRecommendation } from '@/components/ui/credit-card-recommenda
 import { creditCards } from '@/lib/credit-card-config'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/travel-hacks/stack-points-free-cruise' },
   title: 'How to Stack Points for a Free Cruise | Travel Hacks',
   description:
     'Learn the math of earning 200K+ points to cover a $6,000 7-night cruise. We break down three proven strategies using Chase, Amex, and Capital One cards.',

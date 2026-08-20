@@ -4,6 +4,7 @@ import { MapPin, ChevronRight, Clock, Hotel, Lightbulb, Waves } from 'lucide-rea
 import { GetQuoteCTA } from '@/components/get-quote-cta'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/guides/ports/nassau' },
   title: 'Nassau, Bahamas Cruise Guide — Disney Cruise Port Tips',
   description: 'Everything you need to know about Nassau on a Disney cruise — top excursions, Atlantis Paradise Island, Blue Lagoon, Cable Beach, and insider tips for your port day.',
   keywords: ['nassau bahamas disney cruise', 'nassau cruise port guide', 'atlantis paradise island day pass', 'nassau excursions', 'disney cruise nassau tips'],

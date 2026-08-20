@@ -5,6 +5,7 @@ import { OBCDisclaimer } from '@/components/ui/obc-disclaimer'
 import { GraysonFamilyPhoto } from '@/components/ui/grayson-family-photo'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/about' },
   title: 'About GatGridCruises — Dr. Grayson Starbuck, DPT',
   description: 'Learn about GatGridCruises — founded by Dr. Grayson Starbuck, DPT. An independent Disney cruise planning resource built for families who want transparent, honest information.',
   openGraph: {

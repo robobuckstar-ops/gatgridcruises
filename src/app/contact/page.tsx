@@ -4,6 +4,7 @@ import { Mail, MessageSquare, Anchor, Clock } from 'lucide-react'
 import { ContactForm } from './ContactForm'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/contact' },
   title: 'Contact Us — GatGridCruises',
   description:
     'Get in touch with GatGridCruises. Send us a message, email us directly, or submit a concierge inquiry. We respond within 1 business day.',

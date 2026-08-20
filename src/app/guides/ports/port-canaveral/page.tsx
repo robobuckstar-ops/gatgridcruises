@@ -4,6 +4,7 @@ import { MapPin, ChevronRight, Clock, Car, Hotel, Lightbulb } from 'lucide-react
 import { GetQuoteCTA } from '@/components/get-quote-cta'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/guides/ports/port-canaveral' },
   title: 'Port Canaveral Cruise Guide — Disney Cruise Departure Tips',
   description: 'Everything you need to know about departing from Port Canaveral on Disney Cruise Line — parking, pre-cruise hotels, getting there, Kennedy Space Center, and embarkation tips.',
   keywords: ['port canaveral disney cruise', 'port canaveral cruise guide', 'disney cruise embarkation', 'port canaveral parking', 'pre-cruise hotel port canaveral'],

@@ -5,6 +5,7 @@ import { CreditCardRecommendation } from '@/components/ui/credit-card-recommenda
 import { getCardBySlug, getBestCardsFor } from '@/lib/credit-card-config'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/travel-hacks/fly-free-to-cruise-port' },
   title: 'How to Fly Free to Your Cruise Port | Travel Hacks',
   description:
     'Turn credit card signup bonuses into free flights to your cruise port. Learn which cards offer the best travel values and how to maximize your points.',

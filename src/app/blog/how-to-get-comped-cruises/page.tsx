@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { ArrowLeft, Star, Shield, Anchor, Plane, DollarSign } from 'lucide-react'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/blog/how-to-get-comped-cruises' },
   title: 'How to Get Comped Cruises: 6 Proven Strategies',
   description:
     'Casino comps, loyalty programs, travel agent FAM trips, military discounts, repositioning deals — six real ways to cruise for free or deeply discounted on Disney Cruise Line.',

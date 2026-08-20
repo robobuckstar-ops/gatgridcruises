@@ -20,6 +20,7 @@ export async function generateMetadata(
   return {
     title: `Transfer Options to ${port.name} — Disney Cruise Port Guide`,
     description: `Compare Disney ground transfer, Uber, rental car, and other transportation options to ${port.name}. Find the cheapest and fastest way to get to your cruise.`,
+    alternates: { canonical: `/tools/transfers/${port.slug}` },
   }
 }
 

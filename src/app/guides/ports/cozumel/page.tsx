@@ -4,6 +4,7 @@ import { MapPin, ChevronRight, Lightbulb, Waves, Hotel } from 'lucide-react'
 import { GetQuoteCTA } from '@/components/get-quote-cta'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/guides/ports/cozumel' },
   title: 'Cozumel Cruise Guide — Disney Cruise Port Tips & Excursions',
   description: 'Everything you need to know about Cozumel on a Disney cruise — top excursions, Palancar Reef snorkeling, Chichen Itza day trips, best restaurants, and insider tips.',
   keywords: ['cozumel disney cruise', 'cozumel cruise guide', 'palancar reef snorkeling', 'cozumel excursions', 'chichen itza day trip cozumel', 'disney cruise western caribbean'],

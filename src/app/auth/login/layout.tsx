@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/auth/login' },
   title: 'Sign In | GatGridCruises',
   description: 'Sign in to your GatGrid Cruises account to manage deal alerts, saved sailings, and your watchlist.',
   robots: { index: false, follow: false },

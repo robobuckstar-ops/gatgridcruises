@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
   return {
     title: `${post.title} | GatGridCruises`,
     description: post.excerpt,
-    alternates: { canonical },
+    alternates: { canonical: `/blog/${post.slug}` },
     openGraph: {
       type: 'article',
       url: canonical,

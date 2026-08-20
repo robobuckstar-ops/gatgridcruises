@@ -5,6 +5,7 @@ import { GetQuoteCTA } from '@/components/get-quote-cta'
 import { amazonSearchLink } from '@/lib/affiliate-config'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/guides/packing-gear' },
   title: 'The Ultimate Disney Cruise Packing List (With Our Top Picks)',
   description: 'The best gear for Disney cruises — luggage, cruise essentials, sun & beach, kids gear, formal night, and health must-haves. Honest picks for every budget.',
   keywords: ['disney cruise packing list', 'what to pack disney cruise', 'cruise essentials', 'disney cruise gear', 'cruise packing tips'],

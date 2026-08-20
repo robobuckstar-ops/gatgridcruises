@@ -4,6 +4,7 @@ import { BarChart3, Users, Utensils, Zap, Heart, TrendingUp } from 'lucide-react
 import { GetQuoteCTA } from '@/components/get-quote-cta';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/guides/disney-cruise-vs-royal-caribbean' },
   title: 'Disney Cruise vs. Royal Caribbean: Honest Comparison',
   description: 'Fair comparison of Disney Cruise Line and Royal Caribbean cruises. Compare pricing, ship size, entertainment, dining, and which line is best for your family.',
   openGraph: {

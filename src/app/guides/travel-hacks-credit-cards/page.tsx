@@ -8,6 +8,7 @@ import { creditCards, getBestCardsFor } from '@/lib/credit-card-config'
 import { Lightbulb } from 'lucide-react'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/guides/travel-hacks-credit-cards' },
   title: 'Travel Hacks: Credit Cards for Cruise Rewards | GatGrid Cruises',
   description:
     'The insider guide to maximizing credit card rewards on Disney cruises. Compare top cards for signup bonuses, lounge access, and travel insurance.',

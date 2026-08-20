@@ -5,6 +5,7 @@ import { GetQuoteCTA } from '@/components/get-quote-cta'
 import { InsurancePartners } from '@/components/ui/insurance-partners'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/guides/travel-insurance' },
   title: 'Do You Need Travel Insurance for a Disney Cruise?',
   description: 'Disney cruise travel insurance explained — medical at sea, trip cancellation, missed ports, Disney\'s own plan vs. third-party options, and how Amex Business Platinum helps.',
   keywords: ['disney cruise travel insurance', 'cruise travel insurance', 'disney cruise cancellation', 'medical at sea insurance', 'trip cancellation cruise'],

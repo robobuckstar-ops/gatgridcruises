@@ -16,6 +16,11 @@ import { GOOGLE_ADS_ID, META_PIXEL_ID } from '@/lib/analytics'
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-434T744BN1'
 
 export const metadata: Metadata = {
+  // Every route declares its own `alternates.canonical` as a root-relative
+  // path; Next resolves those against this base. Deliberately NOT setting a
+  // canonical here — metadata is inherited, so a root canonical would make
+  // every page that doesn't override it claim to be the homepage.
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://gatgridcruises.com'),
   title: {
     default: 'Disney Cruise Deal Finder — GatGridCruises',
     template: '%s | Disney Cruise Deal Finder',
@@ -63,9 +68,6 @@ export const metadata: Metadata = {
     noarchive: true,
     nocache: true,
     nosnippet: false,
-  },
-  alternates: {
-    canonical: 'https://gatgridcruises.com',
   },
   verification: {
     google: 'xxlVbTclSd-rAUoo-92p1-0adoSj0Ys8PLX4R96VTag',

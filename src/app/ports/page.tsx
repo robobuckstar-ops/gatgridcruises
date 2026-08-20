@@ -5,6 +5,7 @@ import { allDestinationPorts } from '@/data/destination-ports'
 import { MapPin, Plane, DollarSign, Calendar, Anchor, ChevronRight } from 'lucide-react'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/ports' },
   title: 'Disney Cruise Ports — Destination Guides & Departure Ports',
   description: 'Complete Disney Cruise Line port guides. In-depth destination guides for Nassau, Castaway Cay, Lookout Cay, Cozumel, Grand Cayman, and St. Thomas — plus departure-port info for every Disney embarkation port.',
   openGraph: {

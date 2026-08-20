@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   title: 'Price-Drop Guarantee — We Watch Your Disney Cruise Fare | GatGrid',
   description:
     "Book your Disney cruise with GatGrid and we monitor Disney's pricing after you book. When DCL's rules permit, we request a price adjustment so you don't overpay.",
-  alternates: { canonical: 'https://gatgridcruises.com/price-watch' },
+  alternates: { canonical: '/price-watch' },
   openGraph: {
     title: 'Price-Drop Guarantee — We Watch Your Disney Cruise Fare | GatGrid',
     description:

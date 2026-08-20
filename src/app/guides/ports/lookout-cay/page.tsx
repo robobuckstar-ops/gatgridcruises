@@ -4,6 +4,7 @@ import { MapPin, ChevronRight, Lightbulb, Star, Waves } from 'lucide-react'
 import { GetQuoteCTA } from '@/components/get-quote-cta'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/guides/ports/lookout-cay' },
   title: "Lookout Cay at Lighthouse Point Guide — Disney's Eleuthera Private Destination",
   description: "The complete guide to Disney Lookout Cay at Lighthouse Point — Disney's second private destination on Eleuthera, Bahamas. Beaches, cabanas, Bahamian-inspired food, cultural experiences, and insider tips.",
   keywords: ['lookout cay guide', 'lighthouse point disney', 'disney lookout cay', 'eleuthera disney', 'disney second private island', 'lookout cay tips'],

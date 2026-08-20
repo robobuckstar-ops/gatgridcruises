@@ -27,6 +27,7 @@ import { OBCDisclaimer } from '@/components/ui/obc-disclaimer'
 import { GraysonFamilyPhoto } from '@/components/ui/grayson-family-photo'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/concierge' },
   title: 'Your Personal Disney Cruise Concierge | GatGridCruises',
   description:
     'Plan your Disney cruise with a personal concierge who guides you every step — from quote to boarding and beyond. Free onboard credit included via our partner travel agency.',

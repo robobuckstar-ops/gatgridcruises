@@ -15,6 +15,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${portData.name} Port Guide & Pre-Cruise Hotels`,
     description: `Complete guide to ${portData.name}: parking, driving directions, weather, terminal tips, pre-cruise activities, and honest hotel recommendations for Disney cruisers.`,
+    alternates: { canonical: `/hotels/${portData.slug}` },
   }
 }
 

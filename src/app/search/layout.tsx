@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/search' },
   title: 'AI Disney Cruise Finder — Find Your Perfect Sailing | GatGridCruises',
   description:
     'Tell us your budget, dates, and preferences. Our AI finds the best Disney cruise match — filtering by ship, port, duration, and deal score.',

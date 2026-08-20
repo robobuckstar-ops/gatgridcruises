@@ -4,6 +4,7 @@ import { BookOpen, ArrowRight } from 'lucide-react'
 import { GetQuoteCTA } from '@/components/get-quote-cta'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/guides' },
   title: 'Disney Cruise Guides — In-Depth Planning Resources',
   description:
     'In-depth Disney Cruise Line guides: true cost breakdown, best staterooms, port comparisons, packing lists, first-timer tips, and dining rankings. Honest, no-fluff advice.',

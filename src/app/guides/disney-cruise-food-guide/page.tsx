@@ -4,6 +4,7 @@ import { Utensils, Wine, ChefHat, Heart, Star } from 'lucide-react';
 import { GetQuoteCTA } from '@/components/get-quote-cta';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/guides/disney-cruise-food-guide' },
   title: 'Disney Cruise Food Guide: Every Restaurant Ranked',
   description: 'Complete guide to every Disney cruise restaurant. Ranked reviews of rotational dining, buffets, specialty restaurants, and the best dishes to order.',
   openGraph: {

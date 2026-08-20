@@ -5,6 +5,7 @@ import { ArrowRight, MapPin, Clock, DollarSign } from 'lucide-react';
 import { GetQuoteCTA } from '@/components/get-quote-cta';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/guides/port-canaveral-vs-miami' },
   title: 'Port Canaveral vs. Miami: Which Disney Cruise Port Is Better?',
   description: 'Compare Disney cruise ports: Port Canaveral vs Miami. Which is better for your family? Distance, parking, itineraries, and terminal facilities compared.',
   openGraph: {

@@ -4,6 +4,7 @@ import { MapPin, ArrowRight, Anchor } from 'lucide-react'
 import { GetQuoteCTA } from '@/components/get-quote-cta'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/guides/ports' },
   title: 'Disney Cruise Port Guides — What to Know Before You Dock',
   description: 'Complete guides for every major Disney Cruise Line port: Port Canaveral, Nassau, Castaway Cay, and Cozumel. Excursion tips, hotel recommendations, and insider advice.',
   keywords: ['disney cruise ports', 'port canaveral guide', 'nassau bahamas cruise', 'castaway cay guide', 'cozumel cruise port'],

@@ -5,6 +5,7 @@ import { GroupBrowser } from './group-browser'
 import { Users, Heart, TrendingUp, Gift, MessageCircle, MapPin } from 'lucide-react'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/community/sail-together' },
   title: 'Sail Together | Find Your Cruise Crew',
   description: 'Connect with fellow Disney cruisers sailing on the same dates. Share excursion tips, split costs, make lifelong friends.',
   openGraph: {

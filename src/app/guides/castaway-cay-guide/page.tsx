@@ -5,6 +5,7 @@ import { GetQuoteCTA } from '@/components/get-quote-cta';
 import { GraysonFamilyPhoto } from '@/components/ui/grayson-family-photo';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/guides/castaway-cay-guide' },
   title: "Castaway Cay: The Ultimate Guide to Disney's Private Island",
   description: "Complete guide to Disney's private island paradise. Learn about beaches, activities, restaurants, snorkeling, parasailing, and how to maximize your 8+ hours on the island.",
   openGraph: {

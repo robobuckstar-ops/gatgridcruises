@@ -13,6 +13,7 @@ import { GetQuoteCTA } from '@/components/get-quote-cta'
 import { OBCDisclaimer } from '@/components/ui/obc-disclaimer'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/deals/military' },
   title: 'Military Disney Cruise Deals & Discounts 2026 | GatGridCruises',
   description:
     'Exclusive $250 onboard credit for military members on Disney Cruise Line 2026 sailings. Active duty, retired, Guard, Reserves, Coast Guard, Space Force, PHS, and NOAA eligible.',

@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/tools/obc-calculator' },
   title: 'Disney Cruise OBC Calculator — GatGridCruises',
   description:
     'Calculate how much free onboard credit you earn when planning your Disney cruise through GatGrid Cruises. Based on your total cruise fare.',

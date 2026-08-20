@@ -11,6 +11,7 @@ export const dynamic = 'force-dynamic'
 
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/sailings' },
   title: 'All Disney Cruise Sailings — Browse Every Itinerary',
   description:
     'Every Disney Cruise Line sailing in our index, organized by region. Compare itineraries, ships, dates, and starting prices — info-only, no booking required.',

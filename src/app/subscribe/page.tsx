@@ -3,6 +3,7 @@ import { Mail, TrendingDown, Ship, Anchor } from 'lucide-react'
 import { EmailSignup } from '@/components/ui/email-signup'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/subscribe' },
   title: 'Subscribe to Weekly Deals',
   description: 'Get the best Disney cruise deals delivered to your inbox every Sunday. Free weekly digest with price drops, travel tips, and exclusive insights.',
 }

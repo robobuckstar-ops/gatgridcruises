@@ -5,6 +5,7 @@ import { CreditCardRecommendation } from '@/components/ui/credit-card-recommenda
 import { creditCards } from '@/lib/credit-card-config'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/travel-hacks/cruise-port-lounge-access' },
   title: 'Cruise Port Lounge Access | Travel Hacks',
   description:
     'Get premium lounge access at major cruise ports (Miami, Port Canaveral, Houston, etc.) with the right credit card. Priority Pass and Amex lounge strategies for cruisers.',

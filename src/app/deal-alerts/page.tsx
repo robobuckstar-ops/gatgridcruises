@@ -5,6 +5,7 @@ import { DealAlertsForm } from './deal-alerts-form'
 import { SegmentedEmailSignup } from '@/components/ui/segmented-email-signup'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/deal-alerts' },
   title: 'Disney Cruise Deal Alerts — GatGrid Cruises',
   description: 'Get notified when Disney cruise prices drop on your preferred dates. Free deal alerts from Dr. Grayson Starbuck, DPT — AI-curated cruise deals.',
 }

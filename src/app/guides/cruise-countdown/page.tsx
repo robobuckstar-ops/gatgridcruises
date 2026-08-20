@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import { CruiseCountdownTimeline } from './cruise-countdown-timeline'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/guides/cruise-countdown' },
   title: 'Disney Cruise Countdown Timeline: Every Deadline & Booking Window | GatGrid',
   description:
     'The ultimate Disney Cruise Line countdown guide. Never miss a booking window for excursions, specialty dining, spa, or online check-in. Includes Castaway Club tier breakdown, midnight ET alerts, and pro tips from Grayson.',

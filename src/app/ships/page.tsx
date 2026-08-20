@@ -5,6 +5,7 @@ import { getShips } from '@/lib/data'
 import { ShipHeroImage } from '@/components/ui/ship-hero-image'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/ships' },
   title: 'Disney Cruise Line Ships — Fleet Guide & Comparison',
   description:
     'Compare every Disney Cruise Line ship — Disney Magic, Wonder, Dream, Fantasy, Wish, Treasure, Destiny, and Adventure. Specs, highlights, staterooms, and deals for each vessel.',
