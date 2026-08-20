@@ -22,7 +22,19 @@ export const metadata: Metadata = {
   },
 }
 
-const ports = [
+// `href` overrides the default `/ports/<slug>` for guides whose canonical page
+// lives under /guides/ports instead of the destination-ports data.
+const ports: {
+  slug: string
+  href?: string
+  name: string
+  location: string
+  flag: string
+  description: string
+  highlights: string[]
+  sailings: string
+  color: string
+}[] = [
   {
     slug: 'port-canaveral',
     name: 'Port Canaveral',
@@ -72,6 +84,17 @@ const ports = [
     highlights: ['Palancar Reef snorkeling', 'Chichen Itza day trip', 'El Cedral Mayan ruins', 'Dolphin Discovery', 'Authentic Mexican cuisine'],
     sailings: '7-night Western Caribbean itineraries',
     color: 'orange',
+  },
+  {
+    slug: 'ketchikan',
+    href: '/guides/ports/ketchikan',
+    name: 'Ketchikan, Alaska',
+    location: 'Revillagigedo Island, Alaska',
+    flag: '🌲',
+    description: "Alaska's rainiest town and its most walkable cruise port — you step off the gangway straight into Creek Street, totem parks, and the floatplane dock for Misty Fjords.",
+    highlights: ['Misty Fjords flightseeing', 'Great Alaskan Lumberjack Show', 'Creek Street boardwalk', 'Largest standing totem collection', 'Docked — no tender'],
+    sailings: '7-night Alaska itineraries from Vancouver',
+    color: 'emerald',
   },
 ]
 
@@ -126,7 +149,7 @@ export default function PortsHubPage() {
             {ports.map((port) => (
               <Link
                 key={port.slug}
-                href={`/ports/${port.slug}`}
+                href={port.href ?? `/ports/${port.slug}`}
                 className="group block rounded-2xl border-2 border-slate-200 hover:border-[#D4AF37] hover:shadow-xl transition-all duration-200 overflow-hidden"
               >
                 {/* Card Header */}
@@ -197,6 +220,7 @@ export default function PortsHubPage() {
                   { port: 'Castaway Cay', bestFor: 'Everyone — pure Disney magic', activity: 'All levels', time: '7–8 hrs' },
                   { port: 'Lookout Cay', bestFor: 'Bahamian culture, quieter beaches, food', activity: 'Relaxed–Moderate', time: '7–8 hrs' },
                   { port: 'Cozumel', bestFor: 'Snorkeling, diving, Mexican culture', activity: 'Active', time: '7–9 hrs in port' },
+                  { port: 'Ketchikan', bestFor: 'Flightseeing, totems, walkable town', activity: 'All levels', time: '6–9 hrs, often afternoon' },
                 ].map((row, i) => (
                   <tr key={row.port} className={i % 2 === 0 ? 'bg-slate-50' : 'bg-white'}>
                     <td className="p-4 font-semibold text-[#1E3A5F]">{row.port}</td>

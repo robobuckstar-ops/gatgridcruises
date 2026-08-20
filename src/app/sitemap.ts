@@ -135,6 +135,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
+  // Alaska port guides. These live under /guides/ports/<slug> rather than in the
+  // destination-ports data that powers /ports/<slug>, so they need listing here.
+  const alaskaPortGuidePages: MetadataRoute.Sitemap = [
+    'ketchikan',
+  ].map(slug => ({
+    url: `${baseUrl}/guides/ports/${slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  }))
+
   // Travel Hacks pages
   const travelHacksPages: MetadataRoute.Sitemap = [
     'fly-free-to-cruise-port',
@@ -186,6 +197,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...hotelPages,
     ...transferPages,
     ...guidePages,
+    ...alaskaPortGuidePages,
     ...portGuidePages,
     ...destinationPortPages,
     ...travelHacksPages,

@@ -57,6 +57,13 @@ const guides: {
     readTime: '5 min read',
   },
   {
+    slug: 'ports/ketchikan',
+    title: 'Ketchikan, Alaska Cruise Guide — Disney Cruise Port Tips',
+    description: 'Misty Fjords flightseeing, the Great Alaskan Lumberjack Show, Creek Street, and totem parks — plus why Disney\'s afternoon arrival changes what you can actually book.',
+    category: 'Ports',
+    readTime: '10 min read',
+  },
+  {
     slug: 'disney-cruise-cost-guide',
     title: 'The True Cost of a Disney Cruise (2026 Breakdown)',
     description: 'What a Disney cruise really costs beyond the sticker price — gratuities, excursions, drink packages, Wi-Fi, and every hidden fee explained.',
