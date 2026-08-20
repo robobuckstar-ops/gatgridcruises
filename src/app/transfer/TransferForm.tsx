@@ -1,41 +1,70 @@
 'use client'
 
 import { useState } from 'react'
-import { CheckCircle, Loader2, Send } from 'lucide-react'
+import { CheckCircle, Loader2, Plus, Send } from 'lucide-react'
 import { readReferralCookie, readUtmCookies } from '@/components/ui/referral-tracker'
 import { trackLead } from '@/lib/analytics'
+
+/**
+ * The transfer lead form.
+ *
+ * Deliberately short: name, email, reservation number, ship, sail date. Phone
+ * and free-text notes are real fields but live behind a disclosure so the
+ * default state is four visible inputs. Ship and the eligibility answers ride
+ * along inside `notes`, which is the field /api/transfer already stores and
+ * emails to the agent — no endpoint change needed to carry them.
+ */
+
+/** What the visitor told the eligibility check, forwarded to the agent. */
+export interface TransferQuizContext {
+  bookedRecently: boolean
+  paidInFull: boolean
+  hasAgent: boolean
+}
 
 interface FormData {
   name: string
   email: string
   phone: string
   reservation_number: string
+  ship: string
   sail_date: string
-  booking_date: string
   notes: string
   _honeypot: string
 }
+
+const SHIPS = [
+  'Disney Magic',
+  'Disney Wonder',
+  'Disney Dream',
+  'Disney Fantasy',
+  'Disney Wish',
+  'Disney Treasure',
+  'Disney Destiny',
+  'Disney Adventure',
+]
 
 const inputClass =
   'w-full bg-white/5 border border-white/15 rounded-lg px-4 py-2.5 text-white placeholder-blue-400/50 text-sm focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:ring-offset-1 focus:ring-offset-[#0d1f3c] focus:border-[#D4AF37]/70 transition-colors'
 const labelClass = 'block text-xs font-semibold text-blue-300 uppercase tracking-wider mb-1.5'
 
-export function TransferForm() {
+export function TransferForm({ quiz }: { quiz?: TransferQuizContext } = {}) {
   const [form, setForm] = useState<FormData>({
     name: '',
     email: '',
     phone: '',
     reservation_number: '',
+    ship: '',
     sail_date: '',
-    booking_date: '',
     notes: '',
     _honeypot: '',
   })
+  const [showOptional, setShowOptional] = useState(false)
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [errorMsg, setErrorMsg] = useState('')
 
   function handleChange(
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
   ) {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
@@ -48,8 +77,24 @@ export function TransferForm() {
     try {
       const referralCode = readReferralCookie()
       const utm = readUtmCookies()
+
+      // Everything the agent needs to triage the request in one block, whether
+      // or not the visitor typed a note of their own.
+      const notes = [
+        form.ship ? `Ship: ${form.ship}` : null,
+        quiz
+          ? `Self-check — booked within ~30 days: ${quiz.bookedRecently ? 'yes' : 'no'}; ` +
+            `final payment made: ${quiz.paidInFull ? 'yes' : 'no'}; ` +
+            `already with another agency: ${quiz.hasAgent ? 'yes' : 'no'}`
+          : null,
+        form.notes.trim() || null,
+      ]
+        .filter(Boolean)
+        .join('\n')
+
       const payload = {
         ...form,
+        notes,
         ...(referralCode ? { referral_code: referralCode } : {}),
         ...utm,
       }
@@ -152,40 +197,11 @@ export function TransferForm() {
           />
         </div>
         <div>
-          <label htmlFor="transfer-phone" className={labelClass}>
-            Phone <span className="text-blue-400/70 normal-case tracking-normal">(optional)</span>
-          </label>
-          <input
-            id="transfer-phone"
-            type="tel"
-            name="phone"
-            autoComplete="tel"
-            value={form.phone}
-            onChange={handleChange}
-            placeholder="(555) 000-0000"
-            className={inputClass}
-          />
-        </div>
-        <div>
-          <label htmlFor="transfer-sail-date" className={labelClass}>
-            Sail Date <span className="text-[#D4AF37]" aria-hidden="true">*</span>
-            <span className="sr-only">(required)</span>
-          </label>
-          <input
-            id="transfer-sail-date"
-            type="date"
-            name="sail_date"
-            required
-            aria-required="true"
-            value={form.sail_date}
-            onChange={handleChange}
-            className={`${inputClass} [color-scheme:dark]`}
-          />
-        </div>
-        <div>
           <label htmlFor="transfer-reservation" className={labelClass}>
-            Reservation #{' '}
-            <span className="text-blue-400/70 normal-case tracking-normal">(optional)</span>
+            Booking / Reservation #{' '}
+            <span className="text-blue-400/70 normal-case tracking-normal">
+              (if it&apos;s handy)
+            </span>
           </label>
           <input
             id="transfer-reservation"
@@ -198,38 +214,87 @@ export function TransferForm() {
           />
         </div>
         <div>
-          <label htmlFor="transfer-booking-date" className={labelClass}>
-            Date You Booked{' '}
-            <span className="text-blue-400/70 normal-case tracking-normal">(optional)</span>
+          <label htmlFor="transfer-ship" className={labelClass}>
+            Ship <span className="text-blue-400/70 normal-case tracking-normal">(optional)</span>
           </label>
-          <input
-            id="transfer-booking-date"
-            type="date"
-            name="booking_date"
-            value={form.booking_date}
+          <select
+            id="transfer-ship"
+            name="ship"
+            value={form.ship}
             onChange={handleChange}
             className={`${inputClass} [color-scheme:dark]`}
-          />
-          <p className="mt-1.5 text-[11px] text-blue-400/80 leading-relaxed">
-            This is what decides eligibility — if you know it, it saves us a round trip.
-          </p>
+          >
+            <option value="">Select your ship</option>
+            {SHIPS.map((ship) => (
+              <option key={ship} value={ship}>
+                {ship}
+              </option>
+            ))}
+          </select>
         </div>
       </div>
 
       <div>
-        <label htmlFor="transfer-notes" className={labelClass}>
-          Anything else we should know? (optional)
+        <label htmlFor="transfer-sail-date" className={labelClass}>
+          Sail Date <span className="text-[#D4AF37]" aria-hidden="true">*</span>
+          <span className="sr-only">(required)</span>
         </label>
-        <textarea
-          id="transfer-notes"
-          name="notes"
-          value={form.notes}
+        <input
+          id="transfer-sail-date"
+          type="date"
+          name="sail_date"
+          required
+          aria-required="true"
+          value={form.sail_date}
           onChange={handleChange}
-          rows={3}
-          placeholder="Ship, stateroom, who's sailing, whether you've made final payment..."
-          className={`${inputClass} resize-none`}
+          className={`${inputClass} [color-scheme:dark]`}
         />
       </div>
+
+      {/* Kept off the default view so the form reads as four fields. */}
+      {showOptional ? (
+        <div className="space-y-4 rounded-xl border border-white/10 bg-black/10 p-4">
+          <div>
+            <label htmlFor="transfer-phone" className={labelClass}>
+              Phone <span className="text-blue-400/70 normal-case tracking-normal">(optional)</span>
+            </label>
+            <input
+              id="transfer-phone"
+              type="tel"
+              name="phone"
+              autoComplete="tel"
+              value={form.phone}
+              onChange={handleChange}
+              placeholder="(555) 000-0000"
+              className={inputClass}
+            />
+          </div>
+          <div>
+            <label htmlFor="transfer-notes" className={labelClass}>
+              Anything else we should know?{' '}
+              <span className="text-blue-400/70 normal-case tracking-normal">(optional)</span>
+            </label>
+            <textarea
+              id="transfer-notes"
+              name="notes"
+              value={form.notes}
+              onChange={handleChange}
+              rows={3}
+              placeholder="Stateroom, who's sailing, the date you booked..."
+              className={`${inputClass} resize-none`}
+            />
+          </div>
+        </div>
+      ) : (
+        <button
+          type="button"
+          onClick={() => setShowOptional(true)}
+          className="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-300 hover:text-[#D4AF37] transition-colors"
+        >
+          <Plus className="w-3 h-3" aria-hidden="true" />
+          Add a phone number or a note (optional)
+        </button>
+      )}
 
       {status === 'error' && (
         <p className="text-red-400 text-sm" role="alert" aria-live="assertive">
@@ -251,14 +316,14 @@ export function TransferForm() {
         ) : (
           <>
             <Send className="w-4 h-4" aria-hidden="true" />
-            Check My Eligibility
+            Claim My Onboard Credit
           </>
         )}
       </button>
 
       <p className="text-center text-xs text-blue-400 leading-relaxed">
         No cost, no obligation. We&apos;ll confirm whether Disney allows the transfer before
-        anything is signed.
+        anything is signed — and your fare never changes.
       </p>
     </form>
   )

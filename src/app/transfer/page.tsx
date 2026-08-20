@@ -2,22 +2,26 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import {
   Anchor,
+  BadgeDollarSign,
   CheckCircle,
   Clock,
+  FileSignature,
   Gift,
+  Lock,
   Mail,
   ShieldCheck,
   Sparkles,
   TrendingDown,
+  Wallet,
 } from 'lucide-react'
 import { OBCDisclaimer } from '@/components/ui/obc-disclaimer'
 import { OBC_EXAMPLE_FARES, formatUSD, getOBC } from '@/lib/obc'
-import { TransferForm } from './TransferForm'
+import { EligibilityCheck } from './EligibilityCheck'
 
 export const metadata: Metadata = {
   title: 'Transfer Your Disney Cruise Booking — Free Onboard Credit | GatGrid',
   description:
-    'Already booked your Disney cruise directly? You may be able to add GatGrid as your travel agent and unlock free onboard credit and concierge help — at no additional cost to you.',
+    'Already booked your Disney cruise directly? Take the 60-second eligibility check — you may be able to add GatGrid as your travel agent and unlock free onboard credit and concierge help, at no additional cost to you.',
   alternates: { canonical: 'https://gatgridcruises.com/transfer' },
   openGraph: {
     title: 'Transfer Your Disney Cruise Booking — Free Onboard Credit | GatGrid',
@@ -44,6 +48,40 @@ export const metadata: Metadata = {
   },
 }
 
+/** The six-point reassurance bar. Short enough to read in one pass. */
+const TRUST_POINTS = [
+  'Same price you already paid',
+  'Free onboard credit',
+  'Keep your exact reservation',
+  'Takes ~2 minutes',
+  'Disney pays our commission, not you',
+  'No cost, no catch',
+]
+
+const STEPS = [
+  {
+    icon: FileSignature,
+    title: 'You send the request',
+    time: '2 minutes',
+    description:
+      'Name, email, sail date, and your reservation number if you have it handy. That is the whole ask — no fare details, no payment information, nothing sensitive.',
+  },
+  {
+    icon: ShieldCheck,
+    title: 'We submit the transfer form to Disney',
+    time: 'Same business day',
+    description:
+      'We check your reservation against Disney Cruise Line’s current transfer rules and, if it qualifies, send you Disney’s own one-page transfer form to sign. You sign it, we file it. Disney does the rest.',
+  },
+  {
+    icon: Gift,
+    title: 'Onboard credit and concierge land on the booking',
+    time: 'After the transfer completes',
+    description:
+      'Your onboard credit is confirmed in writing in dollars, and posts to your stateroom folio after final payment. From that day on you have a real person for dining strategy, booking-window reminders, and price-drop watching.',
+  },
+]
+
 /**
  * Disney sets these rules and can change them, so the page states them as the
  * general shape of the policy and promises a human check rather than an
@@ -68,6 +106,30 @@ const ELIGIBILITY = [
     title: 'You have not made final payment',
     description:
       'A reservation that is paid in full is not eligible for transfer. As long as you are still on a deposit and final payment has not been processed, this part is usually satisfied.',
+  },
+]
+
+/** The four objections people actually have before they fill anything in. */
+const OBJECTIONS = [
+  {
+    icon: Lock,
+    q: 'Is this a scam?',
+    a: 'Fair question — the offer sounds too good until you know how travel agencies get paid. Disney pays a standard commission to the agency of record on every booking. If you booked direct, Disney simply keeps it. We give part of ours back to you as onboard credit. We never ask for a card number, a Disney password, or a payment on this page — the only thing you send is your name, email, and sail date, and Disney itself processes the transfer.',
+  },
+  {
+    icon: Wallet,
+    q: 'What does it cost me?',
+    a: 'Nothing. Your cruise fare, taxes, and port fees are exactly what Disney already quoted you — a travel agent cannot change them. There is no agency fee, no service charge, and no membership. The onboard credit comes out of the commission Disney pays us, not out of your pocket.',
+  },
+  {
+    icon: ShieldCheck,
+    q: 'Do I lose control of my booking?',
+    a: 'No. You keep your Disney account and still log in for online check-in, port arrival time, dining preferences, and Port Adventures. You can call us or email us any time, and you can request the booking be moved back or cancelled under Disney’s normal terms. We are added as the contact of record — we are not a gatekeeper between you and your cruise.',
+  },
+  {
+    icon: BadgeDollarSign,
+    q: 'What actually changes?',
+    a: 'One line on Disney’s side: who the agency of record is. Same reservation number, same ship, same sail date, same stateroom, same dining rotation, same Castaway Club status, same price. What is added is onboard credit, price-drop monitoring through final payment, and a human who answers.',
   },
 ]
 
@@ -117,7 +179,7 @@ const FAQ = [
   },
   {
     q: 'How much onboard credit will I get?',
-    a: 'It scales with your total cruise fare before taxes and port fees — see the examples above. We will confirm your exact amount in writing before you sign anything.',
+    a: 'It scales with your total cruise fare before taxes and port fees — see the dollar examples above. We will confirm your exact amount in writing before you sign anything.',
   },
   {
     q: 'What if my booking turns out not to be eligible?',
@@ -132,8 +194,9 @@ const FAQ = [
 export default function TransferPage() {
   return (
     <main className="min-h-screen bg-slate-50">
-      {/* Hero */}
-      <section className="relative bg-gradient-to-br from-[#0a1628] to-[#1E3A5F] py-20 md:py-28 overflow-hidden">
+      {/* Hero + the eligibility check share one dark band so the check is the
+          first thing on screen rather than something to scroll for. */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#0a1628] to-[#1E3A5F] pt-16 pb-16 md:pt-20 md:pb-20">
         <div
           className="absolute inset-0 opacity-10"
           style={{
@@ -141,131 +204,172 @@ export default function TransferPage() {
               'radial-gradient(circle at 20% 50%, #D4AF37 0%, transparent 50%), radial-gradient(circle at 80% 20%, #2563EB 0%, transparent 50%)',
           }}
         />
-        <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 bg-[#D4AF37]/10 border border-[#D4AF37]/30 rounded-full px-4 py-1.5 mb-6">
-            <Clock className="w-3.5 h-3.5 text-[#D4AF37]" aria-hidden="true" />
-            <span className="text-[#D4AF37] text-xs font-bold uppercase tracking-widest">
+        <div className="relative mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10 px-4 py-1.5">
+            <Clock className="h-3.5 w-3.5 text-[#D4AF37]" aria-hidden="true" />
+            <span className="text-xs font-bold uppercase tracking-widest text-[#D4AF37]">
               Already Booked Direct?
             </span>
           </div>
-          <h1 className="font-fraunces text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-            Transfer Your Disney Cruise Booking to Us
+          <h1 className="mb-5 font-fraunces text-4xl font-bold leading-tight text-white md:text-5xl lg:text-6xl">
+            Get Free Onboard Credit on the Cruise You Already Booked
           </h1>
-          <p className="font-inter text-lg md:text-xl text-blue-200 max-w-2xl mx-auto mb-8 leading-relaxed">
-            Already booked your Disney cruise directly? You can add us as your travel agent — and
-            unlock free onboard credit and concierge help, at no additional cost to you. Same ship,
-            same sail date, same stateroom, same price.
+          <p className="mx-auto mb-7 max-w-2xl font-inter text-lg leading-relaxed text-blue-200 md:text-xl">
+            If you booked direct with Disney in the last 30 days, you can add us as your travel
+            agent and unlock onboard credit in real dollars — same ship, same sail date, same
+            stateroom, same price. Find out in 60 seconds.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="#request"
-              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#D4AF37] text-[#0a1628] font-bold rounded-xl hover:bg-yellow-300 transition-colors shadow-lg text-base"
-            >
-              Check My Eligibility
-            </a>
-            <a
-              href="#eligibility"
-              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-white/10 text-white font-semibold rounded-xl hover:bg-white/20 transition-colors border border-white/20 text-base"
-            >
-              Am I Eligible?
-            </a>
-          </div>
-          <p className="text-xs text-blue-400 mt-6">
+
+          {/* Trust bar — the six objections answered before they are asked. */}
+          <ul className="mb-9 flex flex-wrap justify-center gap-2">
+            {TRUST_POINTS.map((point) => (
+              <li
+                key={point}
+                className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 font-inter text-xs font-semibold text-blue-100"
+              >
+                <CheckCircle className="h-3.5 w-3.5 flex-shrink-0 text-[#D4AF37]" aria-hidden="true" />
+                {point}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Eligibility check */}
+        <div id="request" className="relative mx-auto max-w-2xl scroll-mt-16 px-4 sm:px-6 lg:px-8">
+          <EligibilityCheck />
+          <p className="mt-5 text-center font-inter text-xs leading-relaxed text-blue-400">
             Eligibility and timing are set by Disney Cruise Line — we&apos;ll confirm yours for
-            free.
+            free, and tell you honestly either way.
           </p>
         </div>
       </section>
 
-      {/* Eligibility */}
-      <section id="eligibility" className="py-16 md:py-24 bg-white scroll-mt-16">
+      {/* Objection handling */}
+      <section className="border-b border-slate-200 bg-white py-16 md:py-24">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <p className="text-[#D4AF37] text-xs font-bold uppercase tracking-widest mb-3">
-              Eligibility
+          <div className="mb-12 text-center">
+            <p className="mb-3 text-xs font-bold uppercase tracking-widest text-[#D4AF37]">
+              The Honest Answers
             </p>
-            <h2 className="font-fraunces text-3xl md:text-4xl font-bold text-[#1E3A5F] mb-4">
-              If You Booked Directly With Disney, You May Be Eligible
+            <h2 className="mb-4 font-fraunces text-3xl font-bold text-[#1E3A5F] md:text-4xl">
+              &quot;Wait — What&apos;s the Catch?&quot;
             </h2>
-            <p className="font-inter text-lg text-slate-600 max-w-2xl mx-auto">
-              Here&apos;s the general shape of Disney Cruise Line&apos;s policy. If you booked
-              directly with Disney and haven&apos;t yet transferred it,{' '}
-              <strong className="text-[#1E3A5F]">you may be eligible — we&apos;ll confirm for you.</strong>
+            <p className="mx-auto max-w-2xl font-inter text-lg text-slate-600">
+              There isn&apos;t one, but you shouldn&apos;t take that on faith. Here is exactly how
+              this works and what it does and doesn&apos;t change.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {ELIGIBILITY.map((item) => {
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+            {OBJECTIONS.map((item) => {
               const Icon = item.icon
               return (
                 <div
-                  key={item.title}
-                  className="bg-slate-50 border border-slate-200 rounded-2xl p-6"
+                  key={item.q}
+                  className="rounded-2xl border border-slate-200 bg-slate-50 p-6 md:p-7"
                 >
-                  <div className="w-11 h-11 rounded-xl bg-[#1E3A5F]/5 flex items-center justify-center mb-4">
-                    <Icon className="w-5 h-5 text-[#1E3A5F]" aria-hidden="true" />
+                  <div className="mb-4 flex items-center gap-3">
+                    <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-[#1E3A5F]">
+                      <Icon className="h-5 w-5 text-[#D4AF37]" aria-hidden="true" />
+                    </div>
+                    <h3 className="font-fraunces text-lg font-bold text-[#1E3A5F]">{item.q}</h3>
                   </div>
-                  <h3 className="font-fraunces text-lg font-bold text-[#1E3A5F] mb-2">
-                    {item.title}
-                  </h3>
-                  <p className="font-inter text-sm text-slate-600 leading-relaxed">
-                    {item.description}
-                  </p>
+                  <p className="font-inter text-sm leading-relaxed text-slate-600">{item.a}</p>
                 </div>
               )
             })}
           </div>
+        </div>
+      </section>
 
-          {/* Honest disclaimer — Disney owns these rules, not us. */}
-          <div className="mt-10 bg-amber-50 border-l-4 border-[#D4AF37] rounded-r-2xl p-6 md:p-7">
-            <h3 className="font-fraunces text-base font-bold text-[#1E3A5F] mb-2">
-              A straight word about eligibility
-            </h3>
-            <p className="font-inter text-sm text-slate-700 leading-relaxed">
-              Eligibility and timing for transferring a reservation are determined by Disney Cruise
-              Line and are subject to their current rules, which can change at any time and are
-              applied at Disney&apos;s discretion. The conditions above describe the policy as we
-              understand it today — they are not a guarantee, and nothing on this page is an offer
-              from or an approval by Disney Cruise Line. We&apos;ll check your specific reservation
-              against Disney&apos;s current policy and tell you honestly whether it qualifies,
-              before anything is signed and at no cost to you.
+      {/* How it works */}
+      <section id="how-it-works" className="scroll-mt-16 bg-slate-50 py-16 md:py-24">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-14 text-center">
+            <p className="mb-3 text-xs font-bold uppercase tracking-widest text-[#D4AF37]">
+              How It Works
             </p>
+            <h2 className="mb-4 font-fraunces text-3xl font-bold text-[#1E3A5F] md:text-4xl">
+              Three Steps. You Do One of Them.
+            </h2>
+            <p className="mx-auto max-w-2xl font-inter text-lg text-slate-600">
+              Start to finish, your part is a short form and a signature on Disney&apos;s own
+              transfer request.
+            </p>
+          </div>
+
+          <ol className="grid grid-cols-1 gap-6 md:grid-cols-3">
+            {STEPS.map((step, i) => {
+              const Icon = step.icon
+              return (
+                <li
+                  key={step.title}
+                  className="relative rounded-2xl border border-slate-200 bg-white p-6 md:p-7"
+                >
+                  <div className="mb-4 flex items-center gap-3">
+                    <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-[#D4AF37] font-inter text-sm font-bold text-[#0a1628]">
+                      {i + 1}
+                    </span>
+                    <Icon className="h-5 w-5 text-[#1E3A5F]" aria-hidden="true" />
+                  </div>
+                  <h3 className="mb-1.5 font-fraunces text-lg font-bold text-[#1E3A5F]">
+                    {step.title}
+                  </h3>
+                  <p className="mb-3 inline-flex items-center gap-1.5 rounded-full bg-[#1E3A5F]/5 px-2.5 py-1 font-inter text-[11px] font-bold uppercase tracking-wider text-[#1E3A5F]">
+                    <Clock className="h-3 w-3" aria-hidden="true" />
+                    {step.time}
+                  </p>
+                  <p className="font-inter text-sm leading-relaxed text-slate-600">
+                    {step.description}
+                  </p>
+                </li>
+              )
+            })}
+          </ol>
+
+          <div className="mt-10 text-center">
+            <a
+              href="#request"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#1E3A5F] px-7 py-3.5 font-inter text-base font-bold text-white shadow-lg transition-colors hover:bg-[#0a1628]"
+            >
+              Start the 60-second check
+            </a>
           </div>
         </div>
       </section>
 
       {/* What you get */}
-      <section className="py-16 md:py-24 bg-slate-50 border-y border-slate-200">
+      <section className="border-y border-slate-200 bg-white py-16 md:py-24">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <p className="text-[#D4AF37] text-xs font-bold uppercase tracking-widest mb-3">
+          <div className="mb-12 text-center">
+            <p className="mb-3 text-xs font-bold uppercase tracking-widest text-[#D4AF37]">
               What You Get
             </p>
-            <h2 className="font-fraunces text-3xl md:text-4xl font-bold text-[#1E3A5F] mb-4">
+            <h2 className="mb-4 font-fraunces text-3xl font-bold text-[#1E3A5F] md:text-4xl">
               Same Cruise. Same Price. More Perks.
             </h2>
-            <p className="font-inter text-lg text-slate-600 max-w-2xl mx-auto">
+            <p className="mx-auto max-w-2xl font-inter text-lg text-slate-600">
               Disney charges you the same either way. The only question is whether you want the
               benefits that come with having a travel agent on the booking.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
             {BENEFITS.map((item) => {
               const Icon = item.icon
               return (
                 <div
                   key={item.title}
-                  className="flex gap-4 bg-white rounded-2xl p-6 border border-slate-200"
+                  className="flex gap-4 rounded-2xl border border-slate-200 bg-slate-50 p-6"
                 >
-                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#1E3A5F] flex items-center justify-center">
-                    <Icon className="w-5 h-5 text-[#D4AF37]" aria-hidden="true" />
+                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-[#1E3A5F]">
+                    <Icon className="h-5 w-5 text-[#D4AF37]" aria-hidden="true" />
                   </div>
                   <div>
-                    <h3 className="font-fraunces text-base font-bold text-[#1E3A5F] mb-1.5">
+                    <h3 className="mb-1.5 font-fraunces text-base font-bold text-[#1E3A5F]">
                       {item.title}
                     </h3>
-                    <p className="font-inter text-sm text-slate-600 leading-relaxed">
+                    <p className="font-inter text-sm leading-relaxed text-slate-600">
                       {item.description}
                     </p>
                   </div>
@@ -275,9 +379,9 @@ export default function TransferPage() {
           </div>
 
           {/* OBC examples — dollar figures only, all derived from lib/obc.ts */}
-          <div className="mt-12 bg-white border border-slate-200 rounded-2xl overflow-hidden">
-            <div className="px-6 py-5 border-b border-slate-200">
-              <h3 className="font-fraunces text-xl font-bold text-[#1E3A5F] mb-1">
+          <div className="mt-12 overflow-hidden rounded-2xl border border-slate-200 bg-white">
+            <div className="border-b border-slate-200 px-6 py-5">
+              <h3 className="mb-1 font-fraunces text-xl font-bold text-[#1E3A5F]">
                 What the onboard credit looks like*
               </h3>
               <p className="font-inter text-sm text-slate-600">
@@ -290,10 +394,16 @@ export default function TransferPage() {
               </caption>
               <thead>
                 <tr className="bg-slate-50 text-left">
-                  <th scope="col" className="px-6 py-3 font-inter text-xs font-bold uppercase tracking-wider text-slate-500">
+                  <th
+                    scope="col"
+                    className="px-6 py-3 font-inter text-xs font-bold uppercase tracking-wider text-slate-500"
+                  >
                     Your cruise fare
                   </th>
-                  <th scope="col" className="px-6 py-3 font-inter text-xs font-bold uppercase tracking-wider text-slate-500">
+                  <th
+                    scope="col"
+                    className="px-6 py-3 font-inter text-xs font-bold uppercase tracking-wider text-slate-500"
+                  >
                     Onboard credit
                   </th>
                 </tr>
@@ -311,82 +421,138 @@ export default function TransferPage() {
                 ))}
               </tbody>
             </table>
-            <div className="px-6 py-4 bg-slate-50 border-t border-slate-200">
+            <div className="border-t border-slate-200 bg-slate-50 px-6 py-4">
               <p className="font-inter text-xs text-slate-500">
                 Illustrative amounts. Want your exact figure? Run the{' '}
                 <Link
                   href="/tools/obc-calculator"
-                  className="text-[#1E3A5F] font-semibold hover:underline"
+                  className="font-semibold text-[#1E3A5F] hover:underline"
                 >
                   OBC calculator
                 </Link>{' '}
-                or just ask us below.
+                or just ask us.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Capture form */}
-      <section id="request" className="py-16 md:py-24 bg-[#0d1f3c] scroll-mt-16">
-        <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10">
-            <p className="text-[#D4AF37] text-xs font-bold uppercase tracking-widest mb-3">
-              Free Eligibility Check
+      {/* Eligibility, in detail */}
+      <section id="eligibility" className="scroll-mt-16 bg-slate-50 py-16 md:py-24">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-14 text-center">
+            <p className="mb-3 text-xs font-bold uppercase tracking-widest text-[#D4AF37]">
+              Eligibility, In Detail
             </p>
-            <h2 className="font-fraunces text-3xl md:text-4xl font-bold text-white mb-4">
-              Send Us Your Booking Details
+            <h2 className="mb-4 font-fraunces text-3xl font-bold text-[#1E3A5F] md:text-4xl">
+              The Three Rules Behind Those Three Questions
             </h2>
-            <p className="font-inter text-base text-blue-200 leading-relaxed">
-              Two required fields. We&apos;ll check your reservation against Disney&apos;s current
-              transfer rules and email you back the same business day — yes or no, either way.
+            <p className="mx-auto max-w-2xl font-inter text-lg text-slate-600">
+              Here&apos;s the general shape of Disney Cruise Line&apos;s policy. If you booked
+              directly with Disney and haven&apos;t yet transferred it,{' '}
+              <strong className="text-[#1E3A5F]">
+                you may be eligible — we&apos;ll confirm for you.
+              </strong>
             </p>
           </div>
 
-          <div className="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8">
-            <TransferForm />
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+            {ELIGIBILITY.map((item) => {
+              const Icon = item.icon
+              return (
+                <div key={item.title} className="rounded-2xl border border-slate-200 bg-white p-6">
+                  <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-[#1E3A5F]/5">
+                    <Icon className="h-5 w-5 text-[#1E3A5F]" aria-hidden="true" />
+                  </div>
+                  <h3 className="mb-2 font-fraunces text-lg font-bold text-[#1E3A5F]">
+                    {item.title}
+                  </h3>
+                  <p className="font-inter text-sm leading-relaxed text-slate-600">
+                    {item.description}
+                  </p>
+                </div>
+              )
+            })}
+          </div>
+
+          {/* Honest disclaimer — Disney owns these rules, not us. */}
+          <div className="mt-10 rounded-r-2xl border-l-4 border-[#D4AF37] bg-amber-50 p-6 md:p-7">
+            <h3 className="mb-2 font-fraunces text-base font-bold text-[#1E3A5F]">
+              A straight word about eligibility
+            </h3>
+            <p className="font-inter text-sm leading-relaxed text-slate-700">
+              Eligibility and timing for transferring a reservation are determined by Disney Cruise
+              Line and are subject to their current rules, which can change at any time and are
+              applied at Disney&apos;s discretion. The conditions above describe the policy as we
+              understand it today — they are not a guarantee, and nothing on this page is an offer
+              from or an approval by Disney Cruise Line. We&apos;ll check your specific reservation
+              against Disney&apos;s current policy and tell you honestly whether it qualifies,
+              before anything is signed and at no cost to you.
+            </p>
           </div>
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="py-16 md:py-24 bg-slate-50 border-t border-slate-200">
+      <section className="border-t border-slate-200 bg-white py-16 md:py-24">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <p className="text-[#D4AF37] text-xs font-bold uppercase tracking-widest mb-3">FAQ</p>
-            <h2 className="font-fraunces text-3xl md:text-4xl font-bold text-[#1E3A5F] mb-4">
+          <div className="mb-12 text-center">
+            <p className="mb-3 text-xs font-bold uppercase tracking-widest text-[#D4AF37]">FAQ</p>
+            <h2 className="mb-4 font-fraunces text-3xl font-bold text-[#1E3A5F] md:text-4xl">
               Common Questions
             </h2>
           </div>
           <div className="space-y-4">
             {FAQ.map((item, i) => (
-              <div key={item.q} className="border border-slate-200 rounded-2xl p-6 bg-white">
-                <h3 className="font-fraunces text-base md:text-lg font-bold text-[#1E3A5F] mb-3 flex items-start gap-3">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#D4AF37]/10 flex items-center justify-center text-[#D4AF37] text-xs font-bold mt-0.5">
+              <div key={item.q} className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+                <h3 className="mb-3 flex items-start gap-3 font-fraunces text-base font-bold text-[#1E3A5F] md:text-lg">
+                  <span className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#D4AF37]/10 text-xs font-bold text-[#D4AF37]">
                     {i + 1}
                   </span>
                   {item.q}
                 </h3>
-                <p className="font-inter text-sm text-slate-600 leading-relaxed pl-9">{item.a}</p>
+                <p className="pl-9 font-inter text-sm leading-relaxed text-slate-600">{item.a}</p>
               </div>
             ))}
           </div>
 
-          <div className="mt-12 bg-[#1E3A5F]/5 border border-[#1E3A5F]/10 rounded-2xl p-6 text-center">
-            <p className="font-inter text-sm text-slate-600 mb-3">Still have questions?</p>
+          <div className="mt-12 rounded-2xl border border-[#1E3A5F]/10 bg-[#1E3A5F]/5 p-6 text-center">
+            <p className="mb-3 font-inter text-sm text-slate-600">Still have questions?</p>
             <a
               href="mailto:bookings@gatgridcruises.com?subject=Booking%20Transfer%20Question"
-              className="inline-flex items-center gap-2 text-[#1E3A5F] font-semibold text-sm hover:text-[#D4AF37] transition-colors"
+              className="inline-flex items-center gap-2 font-semibold text-[#1E3A5F] text-sm transition-colors hover:text-[#D4AF37]"
             >
-              <Mail className="w-4 h-4" aria-hidden="true" />
+              <Mail className="h-4 w-4" aria-hidden="true" />
               bookings@gatgridcruises.com
             </a>
           </div>
         </div>
       </section>
 
+      {/* Closing CTA */}
+      <section className="bg-gradient-to-br from-[#0a1628] to-[#1E3A5F] py-16 md:py-20">
+        <div className="mx-auto max-w-2xl px-4 text-center sm:px-6 lg:px-8">
+          <h2 className="mb-4 font-fraunces text-3xl font-bold text-white md:text-4xl">
+            Your Cruise Is Already Booked. The Credit Isn&apos;t.
+          </h2>
+          <p className="mb-8 font-inter text-base leading-relaxed text-blue-200 md:text-lg">
+            The transfer window closes about 30 days after you booked, and final payment closes it
+            for good. Sixty seconds now is the difference between onboard credit and none.
+          </p>
+          <a
+            href="#request"
+            className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#D4AF37] px-8 py-4 font-inter text-base font-bold text-[#0a1628] shadow-lg transition-colors hover:bg-yellow-300"
+          >
+            Check My Eligibility
+          </a>
+          <p className="mt-5 font-inter text-xs text-blue-400">
+            Free, no obligation, and we&apos;ll tell you straight if it doesn&apos;t qualify.
+          </p>
+        </div>
+      </section>
+
       {/* Disclaimer */}
-      <section className="py-10 bg-white border-t border-slate-200">
+      <section className="border-t border-slate-200 bg-white py-10">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <OBCDisclaimer />
         </div>
