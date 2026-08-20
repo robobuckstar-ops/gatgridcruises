@@ -1,4 +1,4 @@
-export const PRICES_LAST_UPDATED = 'April 20, 2026'
+export const PRICES_LAST_UPDATED = 'August 20, 2026'
 
 export const PRICES_DISCLAIMER =
   'Prices are approximate and may vary. All fares shown are per-cabin (2 guests) base fare. ' +
