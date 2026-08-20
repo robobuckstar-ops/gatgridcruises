@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next'
 import { getSailings, getShips, getPorts, getHotelsForPort, getBlogPosts } from '@/lib/data'
-import { destinationPorts } from '@/data/destination-ports'
+import { allDestinationPorts } from '@/data/destination-ports'
 
 // The sailing URLs below come from `getSailings()`, which drops anything that
 // has already departed. Generated statically, that list would freeze at build
@@ -142,19 +142,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
-  // Alaska port guides. These live under /guides/ports/<slug> rather than in the
-  // destination-ports data that powers /ports/<slug>, so they need listing here.
-  const alaskaPortGuidePages: MetadataRoute.Sitemap = [
-    'ketchikan',
-    'skagway',
-    'juneau',
-  ].map(slug => ({
-    url: `${baseUrl}/guides/ports/${slug}`,
-    lastModified: now,
-    changeFrequency: 'monthly',
-    priority: 0.8,
-  }))
-
   // Travel Hacks pages
   const travelHacksPages: MetadataRoute.Sitemap = [
     'fly-free-to-cruise-port',
@@ -182,8 +169,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
-  // Destination port guide pages (/ports/[slug])
-  const destinationPortPages: MetadataRoute.Sitemap = destinationPorts.map(p => ({
+  // Destination port guide pages (/ports/[slug]). Must use allDestinationPorts,
+  // not the destinationPorts base array — /ports/[slug] builds its routes from
+  // allDestinationPorts, so anything in the region files (Caribbean, Alaska,
+  // Mediterranean, Iberian, Norway, British Isles, Mexico-Pacific, home ports)
+  // renders a real page and belongs here too.
+  const destinationPortPages: MetadataRoute.Sitemap = allDestinationPorts.map(p => ({
     url: `${baseUrl}/ports/${p.slug}`,
     lastModified: now,
     changeFrequency: 'monthly',
@@ -206,7 +197,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...hotelPages,
     ...transferPages,
     ...guidePages,
-    ...alaskaPortGuidePages,
     ...portGuidePages,
     ...destinationPortPages,
     ...travelHacksPages,

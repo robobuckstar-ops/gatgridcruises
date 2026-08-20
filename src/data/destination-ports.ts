@@ -1437,7 +1437,7 @@ export const destinationPorts: DestinationPort[] = [
     region: 'Caribbean',
     flag: '🇰🇾',
     dockType: 'tender',
-    typicalDockTime: '8:00 AM – 5:00 PM (~9 hours, less tendering)',
+    typicalDockTime: '8:00 AM – 5:00 PM (~7.5 hours ashore; last tender ~4:30 PM)',
     currency: 'Cayman Islands Dollar (KYD) — USD widely accepted ($1 USD = $0.83 KYD)',
     language: 'English',
     heroTagline: 'Stingray City, Seven Mile Beach, and the most expensive port day in the Caribbean.',
@@ -1458,7 +1458,7 @@ export const destinationPorts: DestinationPort[] = [
       'The single best reason to go ashore on Grand Cayman is Stingray City — a sandbar in the middle of the harbor where Southern stingrays have been hand-fed for decades and are remarkably gentle. It\'s genuinely one of the great wildlife encounters in the Caribbean and unlike anywhere else. Beyond Stingray City, Seven Mile Beach is among the best beaches in the world, the Cayman Turtle Centre is well-done conservation tourism, and George Town offers some of the best duty-free shopping in the region. Skip if you\'re budget-conscious; go all-in if Stingray City is on your bucket list.',
     ],
     keyFacts: [
-      { label: 'Typical Port Time', value: '~9 hours (less tendering)', icon: '⏱️' },
+      { label: 'Typical Port Time', value: '~7.5 hours ashore (after tendering)', icon: '⏱️' },
       { label: 'Dock Type', value: 'Tender (no pier)', icon: '⛵' },
       { label: 'Currency', value: 'KYD or USD ($1 = $0.83 KYD)', icon: '💵' },
       { label: 'Language', value: 'English', icon: '🗣️' },
