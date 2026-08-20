@@ -6,7 +6,10 @@ import { usePathname } from 'next/navigation'
 import { Menu, X, ChevronDown } from 'lucide-react'
 import { SrOnly } from '@/components/ui/sr-only'
 
-const navItems = [
+type NavChild = { label: string; href: string; badge?: string }
+type NavItem = { label: string; href: string; children?: NavChild[] }
+
+const navItems: NavItem[] = [
   { label: 'Ships', href: '/ships' },
   {
     label: 'Deals',
@@ -17,7 +20,7 @@ const navItems = [
       { label: 'Last-Minute Deals', href: '/deals/last-minute' },
       { label: 'Deal Alerts', href: '/deal-alerts' },
       { label: 'Military Deals', href: '/deals/military' },
-      { label: 'Restricted Stateroom Deals', href: '/deals/restricted-staterooms' },
+      { label: 'Restricted Stateroom Deals', href: '/deals/restricted-staterooms', badge: 'NEW' },
     ],
   },
   {
@@ -225,11 +228,16 @@ export function Header() {
                         <Link
                           key={child.href}
                           href={child.href}
-                          className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-navy transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-0 focus-visible:outline-[#1E3A5F]"
+                          className="flex items-center gap-1.5 px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-navy transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-0 focus-visible:outline-[#1E3A5F]"
                           role="menuitem"
                           onClick={() => setOpenDropdown(null)}
                         >
                           {child.label}
+                          {child.badge && (
+                            <span className="px-1.5 py-px rounded-full bg-[#D4AF37] text-[#1E3A5F] text-[9px] font-bold tracking-wide">
+                              {child.badge}
+                            </span>
+                          )}
                         </Link>
                       ))}
                     </div>
@@ -326,7 +334,7 @@ export function Header() {
                               setMobileOpen(false)
                               announceMenuState(false)
                             }}
-                            className={`block px-3 py-2 text-sm rounded-lg transition-colors duration-200 ${
+                            className={`flex items-center gap-1.5 px-3 py-2 text-sm rounded-lg transition-colors duration-200 ${
                               isCurrentPage(child.href)
                                 ? 'text-navy font-medium bg-slate-50'
                                 : 'text-slate-600 hover:text-navy hover:bg-slate-50'
@@ -334,6 +342,11 @@ export function Header() {
                             aria-current={isCurrentPage(child.href) ? 'page' : undefined}
                           >
                             {child.label}
+                            {child.badge && (
+                              <span className="px-1.5 py-px rounded-full bg-[#D4AF37] text-[#1E3A5F] text-[9px] font-bold tracking-wide">
+                                {child.badge}
+                              </span>
+                            )}
                           </Link>
                         ))}
                       </div>

@@ -431,12 +431,18 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {filtered.map((sailing, index) => (
               <div key={sailing.id} className={index === 11 ? 'contents' : ''}>
-                <div>
+                <div className="relative">
                   <SailingCard
                     sailing={sailing}
                     percentBelow={sailing.percentBelow}
                     guestCount={guestCount}
                   />
+                  {/* Merchandising pill — only for drops big enough to be worth calling out */}
+                  {sailing.percentBelow >= 10 && (
+                    <span className="pointer-events-none absolute top-4 right-4 z-10 inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-full bg-[#D4AF37] border border-[#D4AF37] text-slate-900 text-[10px] font-bold whitespace-nowrap shadow-sm">
+                      <span aria-hidden="true">▼</span> {Math.round(sailing.percentBelow)}% price drop
+                    </span>
+                  )}
                   {/* Insert ad after 6th card */}
                 </div>
                 {/* Email CTA after 11th card (0-indexed) */}
