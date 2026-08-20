@@ -43,7 +43,7 @@ const navItems = [
     label: 'Tools',
     href: '/tools',
     children: [
-      { label: 'Free Cruise Quote', href: '/free-quote' },
+      { label: 'Free Cruise Quote', href: '/book' },
       { label: 'Free First-Timer’s Guide', href: '/free-guide' },
       { label: 'OBC Calculator', href: '/tools/obc-calculator' },
       { label: 'Compare Sailings', href: '/tools/compare' },

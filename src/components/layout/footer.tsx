@@ -61,7 +61,7 @@ export function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/alerts" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
+                  <Link href="/deal-alerts" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
                     Deal Alerts
                   </Link>
                 </li>
@@ -278,7 +278,7 @@ export function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/free-quote" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
+                  <Link href="/book" className="text-slate-600 hover:text-[#1E3A5F] transition-colors duration-200">
                     Free Cruise Quote
                   </Link>
                 </li>

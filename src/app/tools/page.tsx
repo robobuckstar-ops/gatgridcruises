@@ -148,7 +148,7 @@ const toolGroups = [
     blurb: 'No cost, no obligation — our concierge service is free to use.',
     tools: [
       {
-        href: '/free-quote',
+        href: '/book',
         icon: Plane,
         title: 'Free Cruise Quote',
         description: 'Tell us your dates and party size and we will price the sailing for you.',

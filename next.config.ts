@@ -38,6 +38,14 @@ const nextConfig: NextConfig = {
       { source: '/already-booked', destination: '/transfer', permanent: true },
       { source: '/referral', destination: '/refer', permanent: true },
       { source: '/referral/dashboard', destination: '/refer/dashboard', permanent: true },
+      // Two quote pages competed. /book is the canonical one — the site-wide
+      // Get-a-Quote CTA, the header, and the homepage all point to it — so the
+      // lighter /free-quote folds in and stops splitting search + link equity.
+      { source: '/free-quote', destination: '/book', permanent: true },
+      // Two deal-alert pages. /deal-alerts is the richer, primary one (header and
+      // the deals grid link to it, with testimonials and segmented signup), so
+      // the older /alerts folds into it.
+      { source: '/alerts', destination: '/deal-alerts', permanent: true },
       // Duplicate guides that grew up under parallel slugs. Each topic now has
       // one canonical URL; the runners-up 301 to it so the inbound links and
       // search equity consolidate instead of competing with each other.
