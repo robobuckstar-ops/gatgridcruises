@@ -148,6 +148,30 @@ const guides: {
     category: 'Dining',
     readTime: '14 min read',
   },
+  {
+    slug: 'comped-cruises',
+    title: 'How to Get a Free or Comped Disney Cruise',
+    description:
+      'The legitimate ways cruisers earn free or heavily discounted sailings — casino offers, onboard-credit stacking, loyalty perks, and price-drop reclaims — and which actually work for Disney.',
+    category: 'Deals',
+    readTime: '12 min read',
+  },
+  {
+    slug: 'excursion-savings',
+    title: 'Disney Cruise Excursion Savings: Book Direct vs. DCL',
+    description:
+      'When booking shore excursions directly with trusted local operators saves you money over Disney\'s port adventures — and when the ship\'s guarantee is worth the premium.',
+    category: 'Ports',
+    readTime: '10 min read',
+  },
+  {
+    slug: 'travel-hacks-credit-cards',
+    title: 'Travel Hacks: Best Credit Cards for Cruise Rewards',
+    description:
+      'How to use points and travel cards to offset cruise costs — earning on the deposit and final payment, transfer partners, and the perks that matter most at sea.',
+    category: 'Deals',
+    readTime: '9 min read',
+  },
 ]
 
 export default function GuidesPage() {
