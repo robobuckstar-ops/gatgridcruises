@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
 import { checkRateLimit } from '@/lib/rate-limit'
 import { saveLeadSafely } from '@/lib/airtable-leads'
+import { AGENT_REPLY_TO, agentNotifyRecipients } from '@/lib/agent-inbox'
 
 // Booking-transfer requests from visitors who already booked direct with
 // Disney. Same delivery contract as /api/concierge: the lead is written to the
@@ -10,7 +11,7 @@ import { saveLeadSafely } from '@/lib/airtable-leads'
 // after that scenario was paused, so the direct paths are the only ones.
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-const AGENT_INBOX = 'bookings@gatgridcruises.com'
+const AGENT_INBOX = AGENT_REPLY_TO
 
 function sanitize(value: unknown, maxLen: number): string {
   return String(value ?? '').replace(/[<>]/g, '').trim().slice(0, maxLen)
@@ -177,7 +178,9 @@ export async function POST(request: NextRequest) {
     try {
       await resend.emails.send({
         from: '"GatGrid Transfers" <bookings@gatgridcruises.com>',
-        to: AGENT_INBOX,
+        // Internal alert — goes to the inbox Grayson actually watches, not just
+        // the public bookings@ address. Never customer-visible.
+        to: agentNotifyRecipients(),
         replyTo: email,
         subject: `Transfer request — ${name} (sails ${sail_date})`,
         html: agentNotificationHtml({

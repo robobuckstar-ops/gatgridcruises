@@ -104,16 +104,20 @@ export function TransferForm({ quiz }: { quiz?: TransferQuizContext } = {}) {
         body: JSON.stringify(payload),
       })
       if (!res.ok) throw new Error(`HTTP ${res.status}`)
-
-      // Only counted as a conversion once the request actually reached us.
-      trackLead('transfer')
       setStatus('success')
     } catch {
       setStatus('error')
       setErrorMsg(
         'Something went wrong. Please email us directly at bookings@gatgridcruises.com',
       )
+      return
     }
+
+    // Only counted as a conversion once the request actually reached us — and
+    // deliberately outside the try above. Third-party tags on this page (the
+    // Travelpayouts loader has been 503ing) must not be able to turn a lead we
+    // already delivered into an error message for the visitor.
+    trackLead('transfer')
   }
 
   if (status === 'success') {

@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
 import { checkRateLimit } from '@/lib/rate-limit'
 import { saveLeadSafely } from '@/lib/airtable-leads'
+import { AGENT_REPLY_TO, agentNotifyRecipients } from '@/lib/agent-inbox'
 
 // Price-drop watch opt-ins from /price-watch. Same delivery contract as
 // /api/transfer: the lead is written to the Airtable CRM and emailed to the
@@ -12,7 +13,7 @@ import { saveLeadSafely } from '@/lib/airtable-leads'
 // last-contact date.
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-const AGENT_INBOX = 'bookings@gatgridcruises.com'
+const AGENT_INBOX = AGENT_REPLY_TO
 
 function sanitize(value: unknown, maxLen: number): string {
   return String(value ?? '').replace(/[<>]/g, '').trim().slice(0, maxLen)
@@ -171,7 +172,8 @@ export async function POST(request: NextRequest) {
     try {
       await resend.emails.send({
         from: '"GatGrid Price Watch" <bookings@gatgridcruises.com>',
-        to: AGENT_INBOX,
+        // Internal alert — the inbox Grayson actually watches. Not customer-visible.
+        to: agentNotifyRecipients(),
         replyTo: email,
         subject: `Price watch — ${name}${sail_date ? ` (sails ${sail_date})` : ''}`,
         html: agentNotificationHtml({

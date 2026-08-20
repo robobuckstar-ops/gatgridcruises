@@ -9,6 +9,8 @@
 // exists; a lead simply no longer depends on it.
 
 import {
+  AIRTABLE_BASE,
+  AirtableRequestError,
   createRecord,
   escapeFormulaValue,
   findFirstRecord,
@@ -17,6 +19,22 @@ import {
 } from './airtable-client'
 
 export const LEADS_TABLE = 'tblc8JHpcgEOnmCoj'
+
+/**
+ * The email column's field NAME — used only to build the dedupe formula.
+ *
+ * Airtable resolves a `{...}` reference inside filterByFormula by field *name*.
+ * A field ID there is not recognized: the API rejects the whole read with a 422
+ * INVALID_FILTER_BY_FORMULA. This module originally passed LEAD_FIELDS.email
+ * (an ID) into the formula, which meant the dedupe lookup threw on every single
+ * submission — before either the create or the update branch could run — and
+ * saveLeadSafely swallowed it. Leads emailed fine and never reached the CRM.
+ *
+ * Field IDs remain correct everywhere else: writing `fields` keyed by ID and
+ * selecting with `fields[]=` are both ID-addressable, which is why the
+ * lead-nurture cron (names in the formula, IDs in the field list) kept working.
+ */
+const EMAIL_FIELD_NAME = process.env.AIRTABLE_LEAD_EMAIL_FIELD?.trim() || 'Email'
 
 /** Field IDs from the GatGrid Leads table — stable across Airtable renames. */
 export const LEAD_FIELDS = {
@@ -96,6 +114,35 @@ export function isLeadStoreConfigured(): boolean {
 }
 
 /**
+ * Turn a thrown Airtable error into something actionable in the Vercel log.
+ *
+ * A bare `console.error(err)` on an AirtableRequestError prints the class name
+ * and little else, which is how a 401 (bad/expired token), a 403 (token lacks
+ * data.records:write, or the base isn't in its scope) and a 404 (wrong base or
+ * table id) all looked identical — and identical to "nothing happened".
+ */
+function describeAirtableError(err: unknown): Record<string, unknown> {
+  if (err instanceof AirtableRequestError) {
+    const hint =
+      err.status === 401
+        ? 'AIRTABLE_API_KEY is missing, malformed, or revoked.'
+        : err.status === 403
+          ? `Token lacks scope for this base. It needs data.records:read + data.records:write on base ${AIRTABLE_BASE}.`
+          : err.status === 404
+            ? `Base ${AIRTABLE_BASE} or table ${LEADS_TABLE} not found — or the token cannot see that base.`
+            : err.status === 422
+              ? 'Airtable rejected the payload (unknown field name, or a bad filterByFormula).'
+              : 'Unexpected Airtable failure.'
+    return { status: err.status, body: err.body.slice(0, 500), base: AIRTABLE_BASE, table: LEADS_TABLE, hint }
+  }
+  return {
+    error: err instanceof Error ? `${err.name}: ${err.message}` : String(err),
+    base: AIRTABLE_BASE,
+    table: LEADS_TABLE,
+  }
+}
+
+/**
  * Upsert by email so a repeat inquiry doesn't create a duplicate CRM row or
  * restart the nurture drip. An existing lead only gets its contact dates
  * refreshed — pipeline stage and drip progress are Grayson's to manage.
@@ -103,20 +150,31 @@ export function isLeadStoreConfigured(): boolean {
 export async function saveLead(
   input: LeadInput,
 ): Promise<{ id: string; outcome: LeadOutcome } | null> {
+  // saveLeadSafely logs the actionable version of this; don't double-report.
   const apiKey = getAirtableKey()
-  if (!apiKey) {
-    console.error('[leads] AIRTABLE_API_KEY not set — lead not written to the CRM')
-    return null
-  }
+  if (!apiKey) return null
 
   const email = input.email.trim().toLowerCase()
   if (!email) return null
 
-  const existing = await findFirstRecord(
-    LEADS_TABLE,
-    `LOWER({${LEAD_FIELDS.email}})="${escapeFormulaValue(email)}"`,
-    apiKey,
-  )
+  // A failed dedupe lookup must not sink the write. The worst case if this
+  // read is wrong is a duplicate CRM row, which Grayson can merge; the worst
+  // case if we propagate the error is a lead that exists only in an email.
+  // So: look up, and on failure fall through to create.
+  let existing = null
+  try {
+    existing = await findFirstRecord(
+      LEADS_TABLE,
+      `LOWER({${EMAIL_FIELD_NAME}})="${escapeFormulaValue(email)}"`,
+      apiKey,
+    )
+  } catch (err) {
+    console.error(
+      `[leads] dedupe lookup failed on {${EMAIL_FIELD_NAME}} in ${LEADS_TABLE} — creating a new record instead (a duplicate row is possible). ` +
+        `If this repeats, the email column is named something other than "${EMAIL_FIELD_NAME}"; set AIRTABLE_LEAD_EMAIL_FIELD to its real name.`,
+      describeAirtableError(err),
+    )
+  }
 
   if (existing) {
     const touch: Record<string, unknown> = { [LEAD_FIELDS.lastContactDate]: today() }
@@ -158,18 +216,40 @@ export async function saveLead(
   if (input.utmMedium) fields[OPTIONAL_FIELDS.utmMedium] = input.utmMedium
   if (input.utmCampaign) fields[OPTIONAL_FIELDS.utmCampaign] = input.utmCampaign
 
-  const record = await createRecord(LEADS_TABLE, fields, apiKey, 'leads.create')
+  // Name and email are what make the row a lead at all. Everything else may be
+  // shed by the field-fallback if the base lacks the column ("Source" and
+  // "Reservation Number" are known to be absent); these two may not.
+  const record = await createRecord(LEADS_TABLE, fields, apiKey, 'leads.create', [
+    LEAD_FIELDS.leadName,
+    LEAD_FIELDS.email,
+  ])
   return { id: record.id, outcome: 'created' }
 }
 
-/** Never let a CRM write break a form submission — the email path is the SLA. */
+/**
+ * Never let a CRM write break a form submission — the email path is the SLA.
+ *
+ * Swallowing the error is deliberate, but it must be *loud*: this returning
+ * null is the difference between a lead in the CRM and a lead that exists only
+ * as an email, so the log line has to carry enough to diagnose without a repro.
+ */
 export async function saveLeadSafely(
   input: LeadInput,
 ): Promise<{ id: string; outcome: LeadOutcome } | null> {
   try {
-    return await saveLead(input)
+    const result = await saveLead(input)
+    if (!result) {
+      console.error(
+        `[leads] LEAD NOT PERSISTED (source=${input.source}, email=${input.email}) — the lead store is not configured. ` +
+          'Set AIRTABLE_API_KEY in the Vercel project env.',
+      )
+    }
+    return result
   } catch (err) {
-    console.error('[leads] failed to write lead to Airtable:', err)
+    console.error(
+      `[leads] LEAD NOT PERSISTED (source=${input.source}, email=${input.email}) — Airtable write failed.`,
+      describeAirtableError(err),
+    )
     return null
   }
 }

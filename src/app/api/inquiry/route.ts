@@ -2,9 +2,10 @@ import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
 import { checkRateLimit, getClientIp } from '@/lib/rate-limit'
 import { saveLeadSafely } from '@/lib/airtable-leads'
+import { AGENT_REPLY_TO, agentNotifyRecipients } from '@/lib/agent-inbox'
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-const INBOX = 'bookings@gatgridcruises.com'
+const INBOX = AGENT_REPLY_TO
 
 function sanitize(value: unknown, maxLen: number): string {
   return String(value ?? '')
@@ -206,7 +207,8 @@ export async function POST(request: NextRequest) {
       // Notify the agent
       await resend.emails.send({
         from: '"GatGrid Inquiries" <bookings@gatgridcruises.com>',
-        to: INBOX,
+        // Internal alert — the inbox Grayson actually watches. Not customer-visible.
+        to: agentNotifyRecipients(),
         replyTo: email,
         subject: sailing?.itineraryName
           ? `Sailing inquiry: ${sailing.itineraryName} — ${name}`

@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
 import { checkRateLimit } from '@/lib/rate-limit'
 import { saveLeadSafely } from '@/lib/airtable-leads'
+import { AGENT_REPLY_TO, agentNotifyRecipients } from '@/lib/agent-inbox'
 
 // Interest capture for the hosted GatGrid group sailing (/group-cruise).
 // Same delivery contract as /api/transfer and /api/price-watch: the lead is
@@ -9,7 +10,7 @@ import { saveLeadSafely } from '@/lib/airtable-leads'
 // only fails if BOTH paths fail.
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-const AGENT_INBOX = 'bookings@gatgridcruises.com'
+const AGENT_INBOX = AGENT_REPLY_TO
 
 function sanitize(value: unknown, maxLen: number): string {
   return String(value ?? '').replace(/[<>]/g, '').trim().slice(0, maxLen)
@@ -162,7 +163,8 @@ export async function POST(request: NextRequest) {
     try {
       await resend.emails.send({
         from: '"GatGrid Group Sailings" <bookings@gatgridcruises.com>',
-        to: AGENT_INBOX,
+        // Internal alert — the inbox Grayson actually watches. Not customer-visible.
+        to: agentNotifyRecipients(),
         replyTo: email,
         subject: `Group sailing interest — ${name} (${timeframe}, ${party_size})`,
         html: agentNotificationHtml({

@@ -15,6 +15,10 @@
 
 import { AIRTABLE_BASE } from './portal-airtable'
 
+// Re-exported so callers can name the base in their diagnostics without
+// reaching into the portal module for it.
+export { AIRTABLE_BASE }
+
 const API_ROOT = 'https://api.airtable.com/v0'
 
 /** Airtable's documented ceiling is 5 requests/second/base. */
@@ -116,6 +120,7 @@ async function writeWithFieldFallback(
   fields: Record<string, unknown>,
   apiKey: string,
   context: string,
+  protectedFields: readonly string[] = [],
 ): Promise<AirtableRecord> {
   const payload: Record<string, unknown> = { ...fields }
   const dropped: string[] = []
@@ -141,6 +146,16 @@ async function writeWithFieldFallback(
     const unknownField = res.status === 422 ? parseUnknownFieldName(body) : null
 
     if (unknownField && unknownField in payload) {
+      // Shedding an optional detail column keeps the record; shedding an
+      // identity column would write an unusable husk — a CRM row with no name
+      // or email is indistinguishable from a lost lead, and worse, it looks
+      // like a success. Fail loudly instead so the caller reports it.
+      if (protectedFields.includes(unknownField)) {
+        throw new AirtableRequestError(
+          422,
+          `${context}: required field "${unknownField}" does not exist in this table — refusing to write a record without it. Original response: ${body.slice(0, 200)}`,
+        )
+      }
       delete payload[unknownField]
       dropped.push(unknownField)
       continue
@@ -157,8 +172,10 @@ export async function createRecord(
   fields: Record<string, unknown>,
   apiKey: string,
   context = table,
+  /** Keys that must survive; a missing one fails the write instead of shedding. */
+  protectedFields: readonly string[] = [],
 ): Promise<AirtableRecord> {
-  return writeWithFieldFallback(tableUrl(table), 'POST', fields, apiKey, context)
+  return writeWithFieldFallback(tableUrl(table), 'POST', fields, apiKey, context, protectedFields)
 }
 
 export async function updateRecord(
@@ -167,6 +184,7 @@ export async function updateRecord(
   fields: Record<string, unknown>,
   apiKey: string,
   context = table,
+  protectedFields: readonly string[] = [],
 ): Promise<AirtableRecord> {
   return writeWithFieldFallback(
     tableUrl(table, `/${recordId}`),
@@ -174,6 +192,7 @@ export async function updateRecord(
     fields,
     apiKey,
     context,
+    protectedFields,
   )
 }
 
