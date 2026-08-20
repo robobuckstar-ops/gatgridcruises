@@ -1503,13 +1503,31 @@ export const destinationPorts: DestinationPort[] = [
         bestFor: 'Low-energy port days',
       },
       {
-        name: 'Snorkel Eden Rock',
+        name: 'Snorkel Eden Rock & Cheeseburger Reef',
         category: 'Snorkeling',
         duration: '1–3 hours',
         cost: '$15 entry / $25 with gear rental',
         description:
-          'A walk-in shore snorkel right at the edge of George Town — caves, swim-throughs, and big schools of sergeant majors. Less than 10 minutes from the tender dock on foot. The best free/cheap snorkel in port.',
+          'A walk-in shore snorkel right at the edge of George Town — caves, swim-throughs, and big schools of sergeant majors. Less than 10 minutes from the tender dock on foot. Cheeseburger Reef sits just up the waterfront (named for the Burger King on shore), a shallower 15–25 foot reef with tarpon and easy shore entry. The best cheap snorkel in port.',
         bestFor: 'Confident snorkelers; budget-conscious families',
+      },
+      {
+        name: 'Starfish Point',
+        category: 'Beach / Wildlife',
+        duration: '1–2 hours (usually part of a boat tour)',
+        cost: 'Included on most Stingray City tours',
+        description:
+          'A shin-deep sandy shallows on the North Sound where dozens of orange cushion sea stars rest on the bottom. Most Stingray City boats stop here as their second or third stop. You can look and photograph, but do not lift the starfish out of the water — air kills them, and Cayman law and every guide enforce this.',
+        bestFor: 'Young kids and non-swimmers',
+      },
+      {
+        name: 'Pedro St. James',
+        category: 'Historic Site',
+        duration: '2–3 hours',
+        cost: '$10–$12 adult / children free',
+        description:
+          'A restored 1780s great house on the south coast at Savannah, about 20 minutes by taxi. Known locally as "Cayman\'s Castle," it is where the 1831 meeting that created the first elected legislature was held and where the 1835 emancipation declaration was read. Includes a short multimedia theater show and cliff-top gardens over the sea.',
+        bestFor: 'History-minded families; a cheap, quiet alternative to the beach',
       },
       {
         name: 'Bioluminescent Bay Tour',
@@ -1659,6 +1677,11 @@ export const destinationPorts: DestinationPort[] = [
         detail:
           'By midday, multiple cruise ships have sent boats to the sandbar and it gets crowded. Morning slots are the best wildlife experience.',
       },
+      {
+        title: 'Smith Cove is the closest real beach to the tender dock',
+        detail:
+          'A small free local cove about a mile south of George Town — 20 minutes on foot or a $5 taxi. Sand, shade, calm water, and decent rock snorkeling. Not Seven Mile Beach, but the only swimmable beach you can reach without committing to a taxi run up West Bay Road. Restrooms, no rentals — bring your own gear.',
+      },
     ],
     bestTimeSummary:
       'Grand Cayman is sail-able year-round but tender operations are weather-sensitive. December–April has the calmest seas and lowest cancellation risk. Hurricane season (June–November) sees periodic disruption — Cayman cancels about 4–7% of cruise calls per year, mostly in September and October.',
@@ -1748,6 +1771,16 @@ export const destinationPorts: DestinationPort[] = [
         question: 'Is Grand Cayman safe?',
         answer:
           'Among the safest destinations in the Caribbean. Standard travel awareness applies, but families have very few safety issues.',
+      },
+      {
+        question: 'Which Disney itineraries stop at Grand Cayman?',
+        answer:
+          'Grand Cayman is a Western Caribbean call — it shows up mostly on 6-, 7-, and 8-night Western Caribbean sailings from Port Canaveral and Fort Lauderdale, often paired with Cozumel, Falmouth, or Costa Maya. Disney rotates which ships run those routes each season, so check the itinerary on your specific sail date rather than assuming a ship always calls here.',
+      },
+      {
+        question: 'What happens if the tenders are cancelled?',
+        answer:
+          'The call is dropped and the ship stays at sea or substitutes another port. Tendering stops in sustained 25+ knot winds or heavy swell, which is why Cayman loses a handful of calls each year. Disney refunds any excursion you booked through them automatically; independently booked tours are between you and the operator, so check their weather policy before paying a deposit.',
       },
     ],
   },
