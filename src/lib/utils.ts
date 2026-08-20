@@ -1,5 +1,6 @@
 import { type ClassValue, clsx } from 'clsx'
 import { twMerge } from 'tailwind-merge'
+import { daysUntilInChicago } from '@/lib/today'
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -37,11 +38,17 @@ export function formatDateShort(date: string): string {
   })
 }
 
+/**
+ * Whole calendar days until `date`, counted on the same America/Chicago clock
+ * the sailing catalog expires against.
+ *
+ * Previously this subtracted a UTC-parsed `YYYY-MM-DD` from the viewer's local
+ * clock, so "days left" could disagree with the booking cutoff by a day and a
+ * sailing that was still on sale could read as gone. `0` means it sails today —
+ * still bookable. Unparseable dates count as departed.
+ */
 export function daysUntil(date: string): number {
-  const now = new Date()
-  const target = new Date(date)
-  const diff = target.getTime() - now.getTime()
-  return Math.ceil(diff / (1000 * 60 * 60 * 24))
+  return daysUntilInChicago(date) ?? -1
 }
 
 export function calculateSailingScore(

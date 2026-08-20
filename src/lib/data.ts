@@ -15,6 +15,7 @@ import { sailTogetherGroups } from '@/data/sail-together-groups'
 import { blogPosts } from '@/data/blog-posts'
 import { isRenderablePrice } from '@/lib/utils'
 import { normalizeStateroomPrices } from '@/lib/stateroom-pricing'
+import { getTodayInChicago } from '@/lib/today'
 import type { Ship, Port, Sailing, PriceSnapshot, Stateroom, PreCruiseHotel, TransferOption } from '@/types/database'
 import type {
   StateroomCategory,
@@ -89,25 +90,10 @@ function isDisneySailing(s: { ship_id: string }): boolean {
   return DISNEY_SHIP_IDS.has(s.ship_id)
 }
 
-/**
- * Today's date as `YYYY-MM-DD` in America/Chicago — the clock the agency books
- * against.
- *
- * Deliberately computed on every call rather than cached in a module constant:
- * a constant would freeze at build time and the "past sailing" cutoff would
- * stop moving until the next deploy. The pages that list sailings opt out of
- * static rendering (`export const dynamic = 'force-dynamic'`) so this really is
- * evaluated per request.
- */
-export function getTodayInChicago(): string {
-  // en-CA formats as YYYY-MM-DD, which sorts correctly against `sail_date`.
-  return new Intl.DateTimeFormat('en-CA', {
-    timeZone: 'America/Chicago',
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit',
-  }).format(new Date())
-}
+// The booking clock lives in `lib/today` so client components can share it
+// without pulling the whole sailings catalog into the browser bundle. Re-export
+// it here — server code has always imported it from `lib/data`.
+export { getTodayInChicago } from '@/lib/today'
 
 /**
  * Can this sailing still be sold?
