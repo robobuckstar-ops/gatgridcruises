@@ -26,6 +26,7 @@ import * as fs from 'fs'
 import * as path from 'path'
 
 import type { ItineraryDay, Sailing } from '../src/types/database'
+import { normalizeStateroomPrices } from '../src/lib/stateroom-pricing'
 
 // ─── Config ──────────────────────────────────────────────────────
 
@@ -290,7 +291,9 @@ function transform(records: ApifyRecord[]): { sailings: Sailing[]; stats: Transf
       theme,
     }
 
-    sailings.push(sailing)
+    // The feed sometimes reports Oceanview above Verandah; keep the four
+    // category fares on their correct rungs before writing them out.
+    sailings.push(normalizeStateroomPrices(sailing))
   }
 
   // Sort by departure date for stable output, then mark the top 12 by score

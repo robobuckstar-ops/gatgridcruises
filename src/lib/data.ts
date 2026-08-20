@@ -14,6 +14,7 @@ import { transfers } from '@/data/transfers'
 import { sailTogetherGroups } from '@/data/sail-together-groups'
 import { blogPosts } from '@/data/blog-posts'
 import { isRenderablePrice } from '@/lib/utils'
+import { normalizeStateroomPrices } from '@/lib/stateroom-pricing'
 import type { Ship, Port, Sailing, PriceSnapshot, Stateroom, PreCruiseHotel, TransferOption } from '@/types/database'
 import type {
   StateroomCategory,
@@ -69,8 +70,8 @@ function dedupeSailings<T extends { ship_id: string; sail_date: string; departur
   return out
 }
 
-const sailings = dedupeSailings(rawSailings)
-const lastMinuteSailings = dedupeSailings(rawLastMinuteSailings)
+const sailings = dedupeSailings(rawSailings).map(normalizeStateroomPrices)
+const lastMinuteSailings = dedupeSailings(rawLastMinuteSailings).map(normalizeStateroomPrices)
 
 // Disney Cruise Line ship IDs — only these ships should ever appear on the site
 const DISNEY_SHIP_IDS = new Set([
