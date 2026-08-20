@@ -64,6 +64,13 @@ const guides: {
     readTime: '10 min read',
   },
   {
+    slug: 'ports/skagway',
+    title: 'Skagway, Alaska Cruise Guide — Disney Cruise Port Tips',
+    description: 'The White Pass & Yukon Route railroad, Klondike gold rush history, berth logistics that catch families out, and the passport rule that can end a tour at the Canadian border.',
+    category: 'Ports',
+    readTime: '11 min read',
+  },
+  {
     slug: 'disney-cruise-cost-guide',
     title: 'The True Cost of a Disney Cruise (2026 Breakdown)',
     description: 'What a Disney cruise really costs beyond the sticker price — gratuities, excursions, drink packages, Wi-Fi, and every hidden fee explained.',

@@ -2,6 +2,13 @@ import { MetadataRoute } from 'next'
 import { getSailings, getShips, getPorts, getHotelsForPort, getBlogPosts } from '@/lib/data'
 import { destinationPorts } from '@/data/destination-ports'
 
+// The sailing URLs below come from `getSailings()`, which drops anything that
+// has already departed. Generated statically, that list would freeze at build
+// time and keep advertising sailings to crawlers after they sail — and those
+// detail pages 404 once `getSailingById` stops returning them. Build it per
+// request so the sitemap only ever lists sailings that still resolve.
+export const dynamic = 'force-dynamic'
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://gatgridcruises.com'
   const now = new Date()
@@ -139,6 +146,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // destination-ports data that powers /ports/<slug>, so they need listing here.
   const alaskaPortGuidePages: MetadataRoute.Sitemap = [
     'ketchikan',
+    'skagway',
   ].map(slug => ({
     url: `${baseUrl}/guides/ports/${slug}`,
     lastModified: now,

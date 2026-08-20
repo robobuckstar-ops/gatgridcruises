@@ -96,6 +96,17 @@ const ports: {
     sailings: '7-night Alaska itineraries from Vancouver',
     color: 'emerald',
   },
+  {
+    slug: 'skagway',
+    href: '/guides/ports/skagway',
+    name: 'Skagway, Alaska',
+    location: 'Head of the Lynn Canal, Alaska',
+    flag: '🚂',
+    description: 'A preserved 1898 gold rush townscape at the head of North America\'s deepest fjord, and the departure point for the White Pass & Yukon Route railroad.',
+    highlights: ['White Pass railroad', 'Klondike Gold Rush park', 'Glacier helicopter & dog sledding', 'Yukon Suspension Bridge', 'Long 8–11 hour port days'],
+    sailings: '7-night Alaska itineraries from Vancouver',
+    color: 'blue',
+  },
 ]
 
 const colorMap: Record<string, string> = {
@@ -221,6 +232,7 @@ export default function PortsHubPage() {
                   { port: 'Lookout Cay', bestFor: 'Bahamian culture, quieter beaches, food', activity: 'Relaxed–Moderate', time: '7–8 hrs' },
                   { port: 'Cozumel', bestFor: 'Snorkeling, diving, Mexican culture', activity: 'Active', time: '7–9 hrs in port' },
                   { port: 'Ketchikan', bestFor: 'Flightseeing, totems, walkable town', activity: 'All levels', time: '6–9 hrs, often afternoon' },
+                  { port: 'Skagway', bestFor: 'Railroad, gold rush history, glaciers', activity: 'All levels', time: '8–11 hrs' },
                 ].map((row, i) => (
                   <tr key={row.port} className={i % 2 === 0 ? 'bg-slate-50' : 'bg-white'}>
                     <td className="p-4 font-semibold text-[#1E3A5F]">{row.port}</td>

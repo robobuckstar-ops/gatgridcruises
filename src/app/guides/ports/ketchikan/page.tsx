@@ -370,8 +370,8 @@ export default function KetchikanPage() {
           <h2 className="font-fraunces text-2xl font-bold text-slate-900 mb-6">More Port Guides</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {[
+              { name: 'Skagway', href: '/guides/ports/skagway', emoji: '🚂', desc: 'The White Pass railroad and gold rush history' },
               { name: 'All Port Guides', href: '/ports', emoji: '🧭', desc: 'Every Disney Cruise Line destination' },
-              { name: 'Castaway Cay', href: '/ports/castaway-cay', emoji: '🏝️', desc: "Disney's private island in the Bahamas" },
               { name: 'Packing List', href: '/guides/disney-cruise-packing-list', emoji: '🧳', desc: 'What to bring — including cold-weather layers' },
             ].map(({ name, href, emoji, desc }) => (
               <Link key={href} href={href} className="group flex items-center gap-4 p-5 rounded-xl border-2 border-slate-200 hover:border-[#1E3A5F] hover:shadow-md transition-all duration-200">
