@@ -107,6 +107,17 @@ const ports: {
     sailings: '7-night Alaska itineraries from Vancouver',
     color: 'blue',
   },
+  {
+    slug: 'juneau',
+    href: '/guides/ports/juneau',
+    name: 'Juneau, Alaska',
+    location: 'Gastineau Channel, Alaska',
+    flag: '🐋',
+    description: 'The only US state capital no road reaches — a walkable downtown under the Juneau Icefield, with Mendenhall Glacier twelve miles out and humpbacks in the channel all summer.',
+    highlights: ['Mendenhall Glacier & Nugget Falls', 'Humpback whale watching', 'Mount Roberts Tramway', 'Glacier helicopter treks', '2026 passenger caps in effect'],
+    sailings: '7-night Alaska itineraries from Vancouver',
+    color: 'cyan',
+  },
 ]
 
 const colorMap: Record<string, string> = {
@@ -233,6 +244,7 @@ export default function PortsHubPage() {
                   { port: 'Cozumel', bestFor: 'Snorkeling, diving, Mexican culture', activity: 'Active', time: '7–9 hrs in port' },
                   { port: 'Ketchikan', bestFor: 'Flightseeing, totems, walkable town', activity: 'All levels', time: '6–9 hrs, often afternoon' },
                   { port: 'Skagway', bestFor: 'Railroad, gold rush history, glaciers', activity: 'All levels', time: '8–11 hrs' },
+                  { port: 'Juneau', bestFor: 'Glacier walks, whale watching, the tram', activity: 'All levels', time: '8–10 hrs' },
                 ].map((row, i) => (
                   <tr key={row.port} className={i % 2 === 0 ? 'bg-slate-50' : 'bg-white'}>
                     <td className="p-4 font-semibold text-[#1E3A5F]">{row.port}</td>

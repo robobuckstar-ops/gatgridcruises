@@ -164,8 +164,8 @@ export default function SkagwayPage() {
             </p>
             <p>
               Skagway appears on the great majority of those weeks, typically alongside{' '}
-              <Link href="/guides/ports/ketchikan" className="text-[#1E3A5F] font-semibold hover:text-[#D4AF37] transition-colors">Ketchikan</Link>,
-              Juneau, and a scenic glacier day — usually Dawes Glacier in Endicott Arm or a Stikine
+              <Link href="/guides/ports/ketchikan" className="text-[#1E3A5F] font-semibold hover:text-[#D4AF37] transition-colors">Ketchikan</Link>,{' '}
+              <Link href="/guides/ports/juneau" className="text-[#1E3A5F] font-semibold hover:text-[#D4AF37] transition-colors">Juneau</Link>, and a scenic glacier day — usually Dawes Glacier in Endicott Arm or a Stikine
               Icecap cruise-by. Magic itineraries have also included Icy Strait Point near Hoonah.
               Because the Skagway call is long and the Ketchikan call is often short, it is worth
               loading your one big-ticket excursion into the Skagway day rather than the other way
@@ -388,9 +388,9 @@ export default function SkagwayPage() {
           <h2 className="font-fraunces text-2xl font-bold text-slate-900 mb-6">More Port Guides</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {[
+              { name: 'Juneau', href: '/guides/ports/juneau', emoji: '🐋', desc: 'Mendenhall Glacier and humpback whales' },
               { name: 'Ketchikan', href: '/guides/ports/ketchikan', emoji: '🌲', desc: 'Misty Fjords, totems, and a walkable port' },
               { name: 'All Port Guides', href: '/ports', emoji: '🧭', desc: 'Every Disney Cruise Line destination' },
-              { name: 'Packing List', href: '/guides/disney-cruise-packing-list', emoji: '🧳', desc: 'What to bring — including cold-weather layers' },
             ].map(({ name, href, emoji, desc }) => (
               <Link key={href} href={href} className="group flex items-center gap-4 p-5 rounded-xl border-2 border-slate-200 hover:border-[#1E3A5F] hover:shadow-md transition-all duration-200">
                 <span className="text-3xl" aria-hidden="true">{emoji}</span>

@@ -71,6 +71,13 @@ const guides: {
     readTime: '11 min read',
   },
   {
+    slug: 'ports/juneau',
+    title: 'Juneau, Alaska Cruise Guide — Disney Cruise Port Tips',
+    description: 'Mendenhall Glacier, near-guaranteed humpback whales, and the Mount Roberts Tramway — plus the 2026 passenger caps and reserved-return shuttle rules that changed how you plan the day.',
+    category: 'Ports',
+    readTime: '11 min read',
+  },
+  {
     slug: 'disney-cruise-cost-guide',
     title: 'The True Cost of a Disney Cruise (2026 Breakdown)',
     description: 'What a Disney cruise really costs beyond the sticker price — gratuities, excursions, drink packages, Wi-Fi, and every hidden fee explained.',

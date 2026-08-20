@@ -133,8 +133,10 @@ export default function KetchikanPage() {
               September. Both ships are scheduled back in Alaska for summer 2027.
             </p>
             <p>
-              Ketchikan appears on the large majority of those itineraries, usually paired with
-              Juneau and Skagway plus a scenic glacier-viewing day. Magic sailings additionally
+              Ketchikan appears on the large majority of those itineraries, usually paired with{' '}
+              <Link href="/guides/ports/juneau" className="text-[#1E3A5F] font-semibold hover:text-[#D4AF37] transition-colors">Juneau</Link> and{' '}
+              <Link href="/guides/ports/skagway" className="text-[#1E3A5F] font-semibold hover:text-[#D4AF37] transition-colors">Skagway</Link> plus
+              a scenic glacier-viewing day. Magic sailings additionally
               tend to feature Icy Strait Point near Hoonah, while glacier days are typically Dawes
               Glacier in Endicott Arm or a Stikine Icecap cruise-by, depending on the week.
             </p>
@@ -371,8 +373,8 @@ export default function KetchikanPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {[
               { name: 'Skagway', href: '/guides/ports/skagway', emoji: '🚂', desc: 'The White Pass railroad and gold rush history' },
+              { name: 'Juneau', href: '/guides/ports/juneau', emoji: '🐋', desc: 'Mendenhall Glacier and humpback whales' },
               { name: 'All Port Guides', href: '/ports', emoji: '🧭', desc: 'Every Disney Cruise Line destination' },
-              { name: 'Packing List', href: '/guides/disney-cruise-packing-list', emoji: '🧳', desc: 'What to bring — including cold-weather layers' },
             ].map(({ name, href, emoji, desc }) => (
               <Link key={href} href={href} className="group flex items-center gap-4 p-5 rounded-xl border-2 border-slate-200 hover:border-[#1E3A5F] hover:shadow-md transition-all duration-200">
                 <span className="text-3xl" aria-hidden="true">{emoji}</span>

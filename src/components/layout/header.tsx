@@ -33,6 +33,7 @@ const navItems = [
       { label: 'Lookout Cay', href: '/ports/lookout-cay' },
       { label: 'Ketchikan, Alaska', href: '/guides/ports/ketchikan' },
       { label: 'Skagway, Alaska', href: '/guides/ports/skagway' },
+      { label: 'Juneau, Alaska', href: '/guides/ports/juneau' },
       { label: 'With Toddlers', href: '/guides/disney-cruise-with-toddlers' },
       { label: 'Port Canaveral vs Miami', href: '/guides/port-canaveral-vs-miami' },
       { label: 'Excursion Savings', href: '/guides/excursion-savings' },

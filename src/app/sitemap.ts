@@ -147,6 +147,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const alaskaPortGuidePages: MetadataRoute.Sitemap = [
     'ketchikan',
     'skagway',
+    'juneau',
   ].map(slug => ({
     url: `${baseUrl}/guides/ports/${slug}`,
     lastModified: now,
