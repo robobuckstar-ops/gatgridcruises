@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { Hash, User, Mail, ArrowRight, Lock, Star, Send, AlertTriangle } from 'lucide-react'
@@ -30,16 +30,10 @@ export default function MyTripPage() {
   const [resendMessage, setResendMessage] = useState('')
   const [resendError, setResendError] = useState('')
 
-  // Surface ?error=… messages from the magic-link callback. Read from
-  // window.location to avoid pulling in a Suspense boundary for useSearchParams.
-  useEffect(() => {
-    if (typeof window === 'undefined') return
-    const params = new URLSearchParams(window.location.search)
-    const errCode = params.get('error')
-    if (errCode && ERROR_MESSAGES[errCode]) {
-      setError(ERROR_MESSAGES[errCode])
-    }
-  }, [])
+  // ?error=… from the magic-link callback is rendered once, by the banner above
+  // the card (see `bannerMessage`). A second effect used to copy the same code
+  // into `error` as well, so redirected visitors saw the identical sentence
+  // twice. `error` is now only for submit failures.
 
   function setField(field: keyof typeof form, value: string) {
     setForm(prev => ({ ...prev, [field]: value }))
@@ -98,8 +92,6 @@ export default function MyTripPage() {
       setResendLoading(false)
     }
   }
-
-  const isValid = form.bookingNumber && form.lastName && form.email
 
   return (
     <div className="min-h-[calc(100vh-64px)] bg-gradient-to-br from-[#0a1628] to-[#1E3A5F] flex items-center justify-center px-4 py-12">
@@ -204,10 +196,15 @@ export default function MyTripPage() {
                 </div>
               )}
 
+              {/* Only disabled while a request is in flight. It used to also be
+                  disabled until all three fields were filled, which meant the
+                  page's one primary action was greyed out on arrival. The inputs
+                  are `required`, so an incomplete form still can't submit — the
+                  browser points at the offending field instead. */}
               <button
                 type="submit"
-                disabled={loading || !isValid}
-                className="w-full flex items-center justify-center gap-2 py-3 px-4 bg-[#D4AF37] text-[#0a1628] font-bold rounded-xl hover:bg-yellow-400 transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed shadow-sm"
+                disabled={loading}
+                className="w-full flex items-center justify-center gap-2 py-3.5 px-4 bg-[#D4AF37] text-[#0a1628] font-bold rounded-xl hover:bg-yellow-400 transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed shadow-md"
               >
                 {loading ? (
                   <>

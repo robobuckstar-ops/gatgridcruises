@@ -254,8 +254,8 @@ export default function DisneyCruiseFoodGuide() {
                 <p className="font-inter text-slate-600 text-sm">Botanical garden theme with multiple levels.</p>
               </div>
               <div className="p-4 bg-gray-50 rounded border-l-4 border-[#1E3A5F]">
-                <p className="font-inter font-bold text-slate-900 mb-1">Goofy"s Galley or Lumiere's</p>
-"                <p className="font-inter text-slate-600 text-sm">Character-themed casual dining (varies by ship).</p>
+                <p className="font-inter font-bold text-slate-900 mb-1">Goofy&rsquo;s Galley or Lumiere&rsquo;s</p>
+                <p className="font-inter text-slate-600 text-sm">Character-themed casual dining (varies by ship).</p>
               </div>
             </div>
           </div>
@@ -421,7 +421,7 @@ export default function DisneyCruiseFoodGuide() {
 
             <div className="p-4 bg-green-50 rounded">
               <p className="font-inter text-slate-600 text-sm">
-                <strong>Quality:</strong> Accommodations aren't just \"safe\" meals—they're delicious, full-menu alternatives. Vegan, gluten-free, and allergy-friendly meals are prepared with care and taste. Disney takes pride in ensuring all guests eat well.
+                <strong>Quality:</strong> Accommodations aren&rsquo;t just &ldquo;safe&rdquo; meals—they&rsquo;re delicious, full-menu alternatives. Vegan, gluten-free, and allergy-friendly meals are prepared with care and taste. Disney takes pride in ensuring all guests eat well.
               </p>
             </div>
           </div>

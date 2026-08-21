@@ -257,9 +257,14 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <p className="text-lg text-blue-100 mb-8">
             Subscribe to get the latest Disney cruise news and tips delivered to your inbox
           </p>
-          <button className="inline-block px-8 py-3 bg-[#D4AF37] text-[#0a1628] font-semibold rounded-lg hover:bg-yellow-300 transition-colors duration-200">
+          {/* Was a bare <button> with no handler — it looked like a CTA and did
+              nothing. Points at the real signup page now. */}
+          <Link
+            href="/subscribe"
+            className="inline-block px-8 py-3 bg-[#D4AF37] text-[#0a1628] font-semibold rounded-lg hover:bg-yellow-300 transition-colors duration-200"
+          >
             Subscribe Now
-          </button>
+          </Link>
         </div>
       </div>
     </main>
