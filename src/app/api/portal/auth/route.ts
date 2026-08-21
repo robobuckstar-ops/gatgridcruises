@@ -32,6 +32,10 @@ export async function GET(request: NextRequest) {
     const payload = verifyMagicLinkToken(token)
     if (!payload) return redirectWithError(request, 'expired')
 
+    // bookingId is optional on MagicLinkPayload — the simple confirmation-email
+    // token shape carries only an email. Without it there is no booking to look up.
+    if (!payload.bookingId) return redirectWithError(request, 'booking_not_found')
+
     // Re-verify the booking still exists and the email on file still matches
     // the one in the token. Protects against bookings being deleted/reassigned
     // while a magic link is in flight.
