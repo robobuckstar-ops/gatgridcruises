@@ -4,6 +4,7 @@ import { checkRateLimit } from '@/lib/rate-limit'
 import { CONCIERGE_RECEIVED } from '@/lib/email-templates'
 import { saveLeadSafely } from '@/lib/airtable-leads'
 import { AGENT_REPLY_TO, agentNotifyRecipients } from '@/lib/agent-inbox'
+import { readSmsConsent, smsConsentNote } from '@/lib/sms-consent'
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 const AGENT_INBOX = AGENT_REPLY_TO
@@ -108,7 +109,12 @@ export async function POST(request: NextRequest) {
   }
 
   const timezone = sanitize(body.timezone, 20)
-  const notes = sanitize(body.notes, 2000)
+  // A2P 10DLC: the opt-in answer rides along in notes so it lands in the CRM,
+  // the Make.com payload, and the agent email without a new Airtable column.
+  const smsConsent = readSmsConsent(body.sms_consent)
+  const notes = [sanitize(body.notes, 2000), smsConsentNote(smsConsent, 'concierge')]
+    .filter(Boolean)
+    .join('\n')
   const sailing_interest = body.sailing_interest ? sanitize(body.sailing_interest, 200) : undefined
   const referral_code = body.referral_code ? sanitize(body.referral_code, 60) : undefined
   const utm_source = body.utm_source ? sanitize(body.utm_source, 80) : undefined
@@ -125,6 +131,7 @@ export async function POST(request: NextRequest) {
     family_members,
     how_found_us,
     notes,
+    sms_consent: smsConsent,
     ...(sailing_interest ? { sailing_interest } : {}),
     ...(referral_code ? { referral_code } : {}),
     ...(utm_source ? { utm_source } : {}),

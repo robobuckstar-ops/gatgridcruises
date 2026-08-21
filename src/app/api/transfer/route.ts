@@ -3,6 +3,7 @@ import { Resend } from 'resend'
 import { checkRateLimit } from '@/lib/rate-limit'
 import { saveLeadSafely } from '@/lib/airtable-leads'
 import { AGENT_REPLY_TO, agentNotifyRecipients } from '@/lib/agent-inbox'
+import { readSmsConsent, smsConsentNote } from '@/lib/sms-consent'
 
 // Booking-transfer requests from visitors who already booked direct with
 // Disney. Same delivery contract as /api/concierge: the lead is written to the
@@ -135,7 +136,12 @@ export async function POST(request: NextRequest) {
   const phone = sanitize(body.phone, 50)
   const reservation_number = sanitize(body.reservation_number, 40)
   const booking_date = sanitize(body.booking_date, 40)
-  const notes = sanitize(body.notes, 2000)
+  // A2P 10DLC: the opt-in answer rides along in notes so it lands in the CRM
+  // and the agent email without needing a new Airtable column.
+  const smsConsent = readSmsConsent(body.sms_consent)
+  const notes = [sanitize(body.notes, 2000), smsConsentNote(smsConsent, 'transfer')]
+    .filter(Boolean)
+    .join('\n')
   const referral_code = body.referral_code ? sanitize(body.referral_code, 60) : undefined
   const utm_source = body.utm_source ? sanitize(body.utm_source, 80) : undefined
   const utm_medium = body.utm_medium ? sanitize(body.utm_medium, 80) : undefined

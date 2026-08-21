@@ -5,6 +5,7 @@ import { useSearchParams } from 'next/navigation'
 import { CheckCircle, Loader2, Send, Anchor } from 'lucide-react'
 import { readReferralCookie, readUtmCookies } from '@/components/ui/referral-tracker'
 import { trackLead } from '@/lib/analytics'
+import { SmsConsentCheckbox } from '@/components/ui/sms-consent-checkbox'
 
 const TIMEZONES = [
   { value: '', label: 'Select timezone (optional)' },
@@ -62,6 +63,8 @@ export function ConciergeForm() {
   })
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [errorMsg, setErrorMsg] = useState('')
+  // Separate from `form` (all-string) so the string-keyed handleChange is unaffected.
+  const [smsConsent, setSmsConsent] = useState(false)
 
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -79,6 +82,7 @@ export function ConciergeForm() {
       const utm = readUtmCookies()
       const payload = {
         ...form,
+        sms_consent: smsConsent,
         ...(sailingParam ? { sailing_interest: sailingParam } : {}),
         ...(referralCode ? { referral_code: referralCode } : {}),
         ...utm,
@@ -231,6 +235,8 @@ export function ConciergeForm() {
           </select>
         </div>
       </div>
+
+      <SmsConsentCheckbox id="concierge-sms-consent" checked={smsConsent} onChange={setSmsConsent} dark />
 
       <div>
         <label htmlFor="concierge-family" className={labelClass}>

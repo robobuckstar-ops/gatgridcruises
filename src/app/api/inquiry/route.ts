@@ -3,6 +3,7 @@ import { Resend } from 'resend'
 import { checkRateLimit, getClientIp } from '@/lib/rate-limit'
 import { saveLeadSafely } from '@/lib/airtable-leads'
 import { AGENT_REPLY_TO, agentNotifyRecipients } from '@/lib/agent-inbox'
+import { readSmsConsent, smsConsentNote } from '@/lib/sms-consent'
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 const INBOX = AGENT_REPLY_TO
@@ -149,7 +150,12 @@ export async function POST(request: NextRequest) {
   const email = sanitize(body.email, 200).toLowerCase()
   const phone = sanitize(body.phone, 50)
   const guests = sanitize(body.guests, 10)
-  const notes = sanitize(body.notes, 2000)
+  // A2P 10DLC: the opt-in answer rides along in notes so it lands in the CRM
+  // and the agent email without needing a new Airtable column.
+  const smsConsent = readSmsConsent(body.sms_consent)
+  const notes = [sanitize(body.notes, 2000), smsConsentNote(smsConsent, 'quote request')]
+    .filter(Boolean)
+    .join('\n')
   const referralCode = sanitize(body.referral_code, 60)
   const utm_source = sanitize(body.utm_source, 80) || undefined
   const utm_medium = sanitize(body.utm_medium, 80) || undefined
@@ -249,6 +255,7 @@ export async function POST(request: NextRequest) {
           phone,
           guests,
           notes,
+          sms_consent: smsConsent,
           sailing,
           referral_code: referralCode || undefined,
           ...(utm_source ? { utm_source } : {}),

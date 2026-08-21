@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { CheckCircle, Loader2, Plus, Send } from 'lucide-react'
 import { readReferralCookie, readUtmCookies } from '@/components/ui/referral-tracker'
 import { trackLead } from '@/lib/analytics'
+import { SmsConsentCheckbox } from '@/components/ui/sms-consent-checkbox'
 
 /**
  * The transfer lead form.
@@ -60,6 +61,8 @@ export function TransferForm({ quiz }: { quiz?: TransferQuizContext } = {}) {
     _honeypot: '',
   })
   const [showOptional, setShowOptional] = useState(false)
+  // Separate from `form` (all-string) so the string-keyed handleChange is unaffected.
+  const [smsConsent, setSmsConsent] = useState(false)
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [errorMsg, setErrorMsg] = useState('')
 
@@ -95,6 +98,7 @@ export function TransferForm({ quiz }: { quiz?: TransferQuizContext } = {}) {
       const payload = {
         ...form,
         notes,
+        sms_consent: smsConsent,
         ...(referralCode ? { referral_code: referralCode } : {}),
         ...utm,
       }
@@ -273,6 +277,7 @@ export function TransferForm({ quiz }: { quiz?: TransferQuizContext } = {}) {
               className={inputClass}
             />
           </div>
+          <SmsConsentCheckbox id="transfer-sms-consent" checked={smsConsent} onChange={setSmsConsent} dark />
           <div>
             <label htmlFor="transfer-notes" className={labelClass}>
               Anything else we should know?{' '}

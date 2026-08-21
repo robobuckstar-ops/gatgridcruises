@@ -7,6 +7,7 @@ import { getOBC, formatUSD, OBC_EXAMPLE_FARES } from '@/lib/obc'
 import { trackLead } from '@/lib/analytics'
 import { OBCDisclaimer } from '@/components/ui/obc-disclaimer'
 import { GraysonFamilyPhoto } from '@/components/ui/grayson-family-photo'
+import { SmsConsentCheckbox } from '@/components/ui/sms-consent-checkbox'
 import { ships as DCL_SHIPS } from '@/data/ships'
 
 export default function BookPage() {
@@ -14,6 +15,8 @@ export default function BookPage() {
   const [submitting, setSubmitting] = useState(false)
   const [honeypot, setHoneypot] = useState('')
   const [formError, setFormError] = useState('')
+  // Kept out of `form` so the string-keyed handleChange stays string-only.
+  const [smsConsent, setSmsConsent] = useState(false)
   const [form, setForm] = useState({
     fullName: '',
     email: '',
@@ -86,6 +89,7 @@ export default function BookPage() {
           name: form.fullName,
           email: form.email,
           phone: form.phone,
+          sms_consent: smsConsent,
           guests: `${form.adults}A/${form.children}C`,
           notes: notesParts.join('\n'),
         }),
@@ -318,6 +322,9 @@ export default function BookPage() {
                     className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-slate-900 text-sm"
                   />
                 </div>
+              </div>
+              <div className="mt-4">
+                <SmsConsentCheckbox id="book-sms-consent" checked={smsConsent} onChange={setSmsConsent} />
               </div>
             </div>
 
