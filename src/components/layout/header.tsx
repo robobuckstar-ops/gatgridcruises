@@ -180,6 +180,12 @@ export function Header() {
           {/* Desktop CTAs */}
           <div className="hidden md:flex items-center gap-2">
             <Link
+              href="/transfer"
+              className="hidden lg:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg border border-[#D4AF37] text-[#1E3A5F] text-sm font-semibold hover:bg-[#D4AF37] transition-colors duration-200"
+            >
+              Already Booked? Free Bonus →
+            </Link>
+            <Link
               href="/my-trip"
               className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-navy text-navy text-sm font-semibold hover:bg-navy hover:text-white transition-colors duration-200"
             >
