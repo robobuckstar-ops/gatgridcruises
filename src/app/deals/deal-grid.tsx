@@ -180,15 +180,35 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
       {/* Page header */}
       <div className="bg-gradient-to-br from-slate-900 via-[#1E3A5F] to-slate-900 text-white border-b border-white/10 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="font-display text-3xl sm:text-4xl font-bold mb-2">
-            Cruise Deals
-          </h1>
-          <p className="text-blue-200 text-lg">
-            {sailings.length} sailings tracked · Request a quote for exact pricing with your group.
-          </p>
-          <p className="text-blue-400 text-sm mt-1">
-            Fares last verified {PRICES_LAST_UPDATED} — a starting point for comparison, not a live quote.
-          </p>
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+            <div>
+              <h1 className="font-display text-3xl sm:text-4xl font-bold mb-2">
+                Disney Cruise Deals
+              </h1>
+              <p className="text-blue-200 text-lg">
+                {sailings.length} sailings tracked and scored by value — filter by ship, port,
+                duration, and guest count.
+              </p>
+              <p className="text-blue-400 text-sm mt-1">
+                Fares last verified {PRICES_LAST_UPDATED} — a starting point for comparison, not a live quote.
+              </p>
+            </div>
+
+            {/* The header used to only mention quotes in prose. This is the page's
+                single conversion action, so it gets a real button above the fold. */}
+            <div className="flex-shrink-0">
+              <Link
+                href="/book"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-[#D4AF37] text-[#0a1628] font-bold hover:bg-yellow-300 transition-colors shadow-lg shadow-yellow-900/30 w-full sm:w-auto"
+              >
+                Get Exact Pricing — Free Quote
+                <ArrowRight className="w-4 h-4" aria-hidden="true" />
+              </Link>
+              <p className="text-blue-300 text-xs mt-2 lg:text-right">
+                No obligation · free onboard credit when you book with us
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 

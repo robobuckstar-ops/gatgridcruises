@@ -26,15 +26,20 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
   }
 
   const canonical = `https://gatgridcruises.com/blog/${post.slug}`
+  const metaTitle = post.meta_title ?? post.title
+  const metaDescription = post.meta_description ?? post.excerpt
   return {
-    title: `${post.title} | GatGridCruises`,
-    description: post.excerpt,
+    // `absolute` opts out of the root layout's "%s | Disney Cruise Deal Finder"
+    // template. Combined with the old "| GatGridCruises" suffix this page was
+    // emitting titles well past 100 characters, so Google rewrote most of them.
+    title: { absolute: metaTitle },
+    description: metaDescription,
     alternates: { canonical: `/blog/${post.slug}` },
     openGraph: {
       type: 'article',
       url: canonical,
-      title: post.title,
-      description: post.excerpt,
+      title: metaTitle,
+      description: metaDescription,
       publishedTime: post.published_date,
       authors: [post.author],
       siteName: 'GatGridCruises',
@@ -44,8 +49,8 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
     },
     twitter: {
       card: 'summary_large_image',
-      title: post.title,
-      description: post.excerpt,
+      title: metaTitle,
+      description: metaDescription,
       images: post.featured_image_url ? [post.featured_image_url] : [],
     },
   }

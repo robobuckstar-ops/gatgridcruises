@@ -15,13 +15,17 @@ import {
   Wallet,
 } from 'lucide-react'
 import { OBCDisclaimer } from '@/components/ui/obc-disclaimer'
+import { StructuredData } from '@/components/ui/structured-data'
+import { generateBreadcrumbSchema, generateFAQSchema } from '@/lib/structured-data'
 import { OBC_EXAMPLE_FARES, formatUSD, getOBC } from '@/lib/obc'
 import { EligibilityCheck } from './EligibilityCheck'
 
 export const metadata: Metadata = {
-  title: 'Transfer Your Disney Cruise Booking — Free Onboard Credit | GatGrid',
+  // `absolute` opts out of the root layout's "%s | Disney Cruise Deal Finder"
+  // template, which stacked on top of the "| GatGrid" suffix this already had.
+  title: { absolute: 'Transfer a Disney Cruise Booking for Onboard Credit' },
   description:
-    'Already booked your Disney cruise directly? Take the 60-second eligibility check — you may be able to add GatGrid as your travel agent and unlock free onboard credit and concierge help, at no additional cost to you.',
+    'Booked direct with Disney in the last 30 days? Add us as your travel agent and get free onboard credit — same ship, same price. 60-second eligibility check.',
   alternates: { canonical: '/transfer' },
   openGraph: {
     title: 'Transfer Your Disney Cruise Booking — Free Onboard Credit | GatGrid',
@@ -48,14 +52,22 @@ export const metadata: Metadata = {
   },
 }
 
-/** The six-point reassurance bar. Short enough to read in one pass. */
+/**
+ * Concrete dollar anchor for the hero. Always derived from lib/obc — the rate
+ * itself is never advertised, only the resulting dollar figure.
+ */
+const HERO_EXAMPLE_FARE = formatUSD(5000)
+const HERO_EXAMPLE_OBC = formatUSD(getOBC(5000))
+
+/**
+ * Reassurance bar above the eligibility check. Deliberately three points, not
+ * six — the extra three pushed the form itself below the fold on a phone, and
+ * every one of them is restated in the objections and benefits sections below.
+ */
 const TRUST_POINTS = [
   'Same price you already paid',
-  'Free onboard credit',
-  'Keep your exact reservation',
-  'Takes ~2 minutes',
-  'Disney pays our commission, not you',
-  'No cost, no catch',
+  'Nothing about your booking changes',
+  'Free — Disney pays our commission',
 ]
 
 const STEPS = [
@@ -194,9 +206,19 @@ const FAQ = [
 export default function TransferPage() {
   return (
     <main className="min-h-screen bg-slate-50">
+      {/* The page already answers these on-screen; emitting them as FAQPage
+          makes the same answers eligible for rich results. Built from the FAQ
+          array so the markup can never drift from the rendered copy. */}
+      <StructuredData data={generateFAQSchema(FAQ.map((f) => ({ question: f.q, answer: f.a })))} />
+      <StructuredData
+        data={generateBreadcrumbSchema([
+          { name: 'Home', url: 'https://gatgridcruises.com' },
+          { name: 'Transfer Your Booking', url: 'https://gatgridcruises.com/transfer' },
+        ])}
+      />
       {/* Hero + the eligibility check share one dark band so the check is the
           first thing on screen rather than something to scroll for. */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#0a1628] to-[#1E3A5F] pt-16 pb-16 md:pt-20 md:pb-20">
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#0a1628] to-[#1E3A5F] pt-10 pb-14 md:pt-14 md:pb-20">
         <div
           className="absolute inset-0 opacity-10"
           style={{
@@ -205,23 +227,27 @@ export default function TransferPage() {
           }}
         />
         <div className="relative mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10 px-4 py-1.5">
+          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10 px-4 py-1.5">
             <Clock className="h-3.5 w-3.5 text-[#D4AF37]" aria-hidden="true" />
             <span className="text-xs font-bold uppercase tracking-widest text-[#D4AF37]">
               Already Booked Direct?
             </span>
           </div>
-          <h1 className="mb-5 font-fraunces text-4xl font-bold leading-tight text-white md:text-5xl lg:text-6xl">
-            Get Free Onboard Credit on the Cruise You Already Booked
+          {/* Hook, then the check — everything else on this page lives below the
+              fold on purpose. The dollar figure is derived from lib/obc so the
+              headline can never drift from the offer. */}
+          <h1 className="mb-4 font-fraunces text-3xl font-bold leading-[1.15] text-white sm:text-4xl md:text-5xl">
+            Booked Direct? You&apos;re Leaving Onboard Credit on the Table.
           </h1>
-          <p className="mx-auto mb-7 max-w-2xl font-inter text-lg leading-relaxed text-blue-200 md:text-xl">
-            If you booked direct with Disney in the last 30 days, you can add us as your travel
-            agent and unlock onboard credit in real dollars — same ship, same sail date, same
-            stateroom, same price. Find out in 60 seconds.
+          <p className="mx-auto mb-6 max-w-xl font-inter text-base leading-relaxed text-blue-200 md:text-lg">
+            Add us as your travel agent within 30 days of booking and a{' '}
+            {HERO_EXAMPLE_FARE} fare turns into{' '}
+            <strong className="font-bold text-[#D4AF37]">{HERO_EXAMPLE_OBC} of onboard credit</strong> —
+            same ship, same stateroom, same price you already paid.
           </p>
 
-          {/* Trust bar — the six objections answered before they are asked. */}
-          <ul className="mb-9 flex flex-wrap justify-center gap-2">
+          {/* Trust bar — the three objections that stop people mid-form. */}
+          <ul className="mb-7 flex flex-wrap justify-center gap-2">
             {TRUST_POINTS.map((point) => (
               <li
                 key={point}

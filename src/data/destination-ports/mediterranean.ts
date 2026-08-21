@@ -96,12 +96,13 @@ export const mediterraneanPorts: DestinationPort[] = [
     currency: 'Euro (EUR)',
     language: 'Italian / English',
     heroTagline: 'Naples\' busy old town, the Amalfi Coast 90 minutes south, and Pompeii\'s preserved Roman ruins 20 minutes away.',
-    metaTitle: 'Naples Disney Cruise Port Guide — Pompeii, Amalfi & Tips',
-    metaDescription: 'Naples cruise port guide for Disney cruisers. Pompeii, Amalfi Coast, Capri, pizza, family tips, and excursion advice.',
+    metaTitle: 'Naples Cruise Port Guide: Pompeii, Amalfi Coast & Capri',
+    metaDescription: 'Naples cruise port guide for Disney cruisers: getting to Pompeii in 20 minutes, the Amalfi Coast drive, Capri by boat, real pizza, and excursion costs.',
     seoKeywords: ['disney cruise naples', 'pompeii from naples cruise', 'amalfi coast disney cruise', 'capri from naples'],
     overview: [
       'Naples is one of the busiest cruise ports in the Mediterranean and the access point to four major day-trip destinations: Pompeii (20 min), Capri (1 hour boat), the Amalfi Coast (90 min), and central Naples itself. Disney ships dock right at the city center.',
       'Naples is the city most Disney cruisers find most chaotic in Europe — busy traffic, less polished than other Italian ports. But the food (Naples invented pizza) and the day-trip range are unmatched.',
+      'The practical problem in Naples is that you can realistically do one of those four things, not two. Pompeii plus a Sorrento stop fills a day; the Amalfi Coast drive is eight hours door to door; Capri is a boat ride on each end. Only central Naples leaves room for anything else. With a ~12-hour port call there is time to spare on paper, but the return-to-ship margin is what makes families pick a single anchor activity and build the rest of the day around it. If you want ruins without the full Pompeii commitment, Herculaneum sits closer to the pier and takes roughly half the time.',
     ],
     keyFacts: [
       { label: 'Typical Port Time', value: '~12 hours', icon: '⏱️' },
@@ -142,8 +143,11 @@ export const mediterraneanPorts: DestinationPort[] = [
     shipsThatVisit: MED_SHIPS,
     faqs: [
       { question: 'Should I do Pompeii, Amalfi, or Capri?', answer: 'For first-time visitors: Pompeii for history, Amalfi for views, Capri for beach. You can only do one per port day.' },
+      { question: 'How far is Pompeii from the Naples cruise port?', answer: 'About 20 minutes by car and roughly 40 minutes on the Circumvesuviana train from Napoli Garibaldi to the Pompei Scavi stop. Plan on around five hours for the round trip plus a proper walk through the site.' },
+      { question: 'Is Pompeii worth doing independently instead of a Disney excursion?', answer: 'It is the cheapest option by a wide margin — a few euros for the train plus site admission, against roughly $199 per person for the Disney coach tour. The trade-off is that the train is crowded and dated, and nothing holds the ship for you. Naples is one of the stronger cases for booking through Disney if a guaranteed return matters more than the savings.' },
+      { question: 'Can I do Pompeii and the Amalfi Coast in the same port day?', answer: 'Realistically no. The Amalfi Coast drive alone runs about eight hours, and Pompeii with a Sorrento stop fills a day on its own. Pick one as the anchor of your day.' },
       { question: 'Do I need a passport?', answer: 'Yes — Italy is in Schengen.' },
-      { question: 'Is Naples safe?', answer: 'Standard precautions — busy and chaotic but not particularly dangerous in tourist zones during the day.' },
+      { question: 'Is Naples safe?', answer: 'Standard precautions — busy and chaotic but not particularly dangerous in tourist zones during the day. Pickpocketing is the realistic risk, especially in central Naples and on the Circumvesuviana train.' },
     ],
   },
 

@@ -813,9 +813,9 @@ export const destinationPorts: DestinationPort[] = [
     currency: 'USD (charged to DCL Navigator)',
     language: 'English',
     heroTagline: "Disney's newest private destination — opened June 2024 on Eleuthera's southern tip.",
-    metaTitle: 'Lookout Cay at Lighthouse Point Disney Cruise Guide — Things to Do & Tips',
+    metaTitle: 'Lookout Cay Guide: Things to Do, Beaches & Cabanas',
     metaDescription:
-      'Complete guide to Disney\'s newest private destination, Lookout Cay at Lighthouse Point on Eleuthera. Beaches, water slides, Bahamian culture, cabanas, dining, and tips for your port day.',
+      'Lookout Cay at Lighthouse Point, Disney\'s Eleuthera island: beaches, Rush-Out Gully slides, cabanas, free lunch, and how it compares to Castaway Cay.',
     seoKeywords: [
       'lookout cay disney cruise',
       'lighthouse point disney',
@@ -1800,9 +1800,9 @@ export const destinationPorts: DestinationPort[] = [
     currency: 'US Dollar (USD)',
     language: 'English',
     heroTagline: 'No passport needed, the best duty-free shopping in the Caribbean, and Magens Bay.',
-    metaTitle: 'St. Thomas USVI Disney Cruise Port Guide — Magens Bay, Shopping, Snorkeling & Tips',
+    metaTitle: 'St. Thomas Cruise Port Guide: Magens Bay, Shopping & Tips',
     metaDescription:
-      'Complete St. Thomas cruise port guide for Disney cruisers. Magens Bay beach, Charlotte Amalie shopping, Coral World snorkeling, ziplining, family tips, and money-saving tricks for your USVI port day.',
+      'What to do in St. Thomas on a Disney cruise: Magens Bay, Charlotte Amalie duty-free shopping, snorkeling, taxi costs, and the tips that save a port day.',
     seoKeywords: [
       'disney cruise st thomas guide',
       'things to do in st thomas on a disney cruise',

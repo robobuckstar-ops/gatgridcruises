@@ -1,13 +1,15 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { Gift } from 'lucide-react'
+import { ArrowRight, Gift } from 'lucide-react'
 import { OBCDisclaimer } from '@/components/ui/obc-disclaimer'
 import { GraysonFamilyPhoto } from '@/components/ui/grayson-family-photo'
 
 export const metadata: Metadata = {
   alternates: { canonical: '/about' },
-  title: 'About GatGridCruises — Dr. Grayson Starbuck, DPT',
-  description: 'Learn about GatGridCruises — founded by Dr. Grayson Starbuck, DPT. An independent Disney cruise planning resource built for families who want transparent, honest information.',
+  // `absolute` opts out of the root layout's "%s | Disney Cruise Deal Finder"
+  // template, which pushed this to 76 characters in search results.
+  title: { absolute: 'About GatGridCruises — Dr. Grayson Starbuck, DPT' },
+  description: 'Independent Disney cruise planning from Dr. Grayson Starbuck, DPT — AI price tracking, honest deal scoring, and free onboard credit when you book with us.',
   openGraph: {
     title: 'About GatGridCruises — Dr. Grayson Starbuck, DPT',
     description: 'Learn about GatGridCruises — founded by Dr. Grayson Starbuck, DPT. An independent Disney cruise planning resource.',
@@ -48,8 +50,21 @@ export default function AboutPage() {
       <section className="bg-gradient-to-br from-slate-900 via-[#1E3A5F] to-slate-900 text-white py-16 md:py-20 border-b border-white/10">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="font-fraunces text-4xl md:text-5xl font-bold mb-4">About GatGridCruises</h1>
-          <p className="font-inter text-lg text-blue-200">
+          <p className="font-inter text-lg text-blue-200 mb-8">
             Independent Disney cruise planning. Honest advice. No booking pressure.
+          </p>
+
+          {/* This page had no CTA above the fold — readers who arrive here are
+              usually deciding whether to trust us, and had nowhere to go next. */}
+          <Link
+            href="/book"
+            className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-[#D4AF37] text-[#0a1628] font-bold text-base hover:bg-yellow-300 transition-colors shadow-lg shadow-yellow-900/30"
+          >
+            Get a Free Quote
+            <ArrowRight className="w-4 h-4" aria-hidden="true" />
+          </Link>
+          <p className="font-inter text-blue-300 text-sm mt-3">
+            Free, no obligation — and every booking earns onboard credit.
           </p>
         </div>
       </section>

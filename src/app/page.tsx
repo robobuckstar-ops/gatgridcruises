@@ -71,7 +71,7 @@ export default async function Home() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-slate-900 via-[#0a1628] to-slate-900 text-white py-24 md:py-36">
+      <section className="relative overflow-hidden bg-gradient-to-b from-slate-900 via-[#0a1628] to-slate-900 text-white py-16 md:py-28">
         <div className="absolute inset-0 opacity-20 pointer-events-none">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500 rounded-full blur-[120px]"></div>
           <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-500 rounded-full blur-[120px]"></div>
@@ -82,25 +82,31 @@ export default async function Home() {
             The Smarter Way to<br className="hidden md:block" /> Plan a Disney Cruise
           </h1>
 
-          <p className="font-inter text-lg md:text-xl text-blue-100 mb-10 max-w-2xl mx-auto leading-relaxed">
+          <p className="font-inter text-lg md:text-xl text-blue-100 mb-9 max-w-2xl mx-auto leading-relaxed">
             Real-time deal tracking, honest guides, and free tools — everything you need
             before you book Disney Cruise Line.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+          {/* One primary action. The quote path is still one tap away, but it no
+              longer competes with the deals CTA for the same visual weight. */}
+          <div className="flex flex-col items-center gap-4">
             <Link
               href="/deals"
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-lg bg-[#D4AF37] text-slate-900 font-semibold hover:bg-yellow-300 transition-colors duration-200 shadow-lg shadow-yellow-900/20 w-full sm:w-auto max-w-[280px]"
+              className="inline-flex items-center justify-center gap-2.5 px-10 py-4 rounded-xl bg-[#D4AF37] text-[#0a1628] font-bold text-lg hover:bg-yellow-300 transition-colors duration-200 shadow-xl shadow-yellow-900/30 w-full sm:w-auto"
             >
-              <TrendingDown className="w-4 h-4" aria-hidden="true" />
+              <TrendingDown className="w-5 h-5" aria-hidden="true" />
               View Current Deals
             </Link>
-            <Link
-              href="/book"
-              className="inline-flex items-center justify-center px-8 py-3.5 rounded-lg bg-white/10 border border-white/25 text-white font-semibold hover:bg-white/20 transition-colors duration-200 backdrop-blur-sm w-full sm:w-auto max-w-[280px]"
-            >
-              Get a Free Quote
-            </Link>
+            <p className="text-blue-200 text-sm">
+              Ready to book?{' '}
+              <Link
+                href="/book"
+                className="font-semibold text-white underline decoration-[#D4AF37] decoration-2 underline-offset-4 hover:text-[#D4AF37] transition-colors"
+              >
+                Get a free quote
+              </Link>{' '}
+              — no obligation, and we&apos;ll add onboard credit.
+            </p>
           </div>
         </div>
       </section>

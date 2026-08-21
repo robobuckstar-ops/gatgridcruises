@@ -1,12 +1,18 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { Utensils, Wine, ChefHat, Heart, Star } from 'lucide-react';
-import { GetQuoteCTA } from '@/components/get-quote-cta';
+import { Utensils, ChefHat, Star, HelpCircle } from 'lucide-react';
+import { StructuredData } from '@/components/ui/structured-data';
+import { generateBreadcrumbSchema, generateFAQSchema } from '@/lib/structured-data';
+
+const PUBLISHED = '2025-08-01';
+const UPDATED = '2026-08-21';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/guides/disney-cruise-food-guide' },
-  title: 'Disney Cruise Food Guide: Every Restaurant Ranked',
-  description: 'Complete guide to every Disney cruise restaurant. Ranked reviews of rotational dining, buffets, specialty restaurants, and the best dishes to order.',
+  // `absolute` opts out of the root layout's "%s | Disney Cruise Deal Finder"
+  // template, which was pushing this title to 76 characters in search results.
+  title: { absolute: 'Disney Cruise Food Guide: Every Restaurant Ranked' },
+  description: 'Every Disney cruise restaurant ranked — rotational dining, Palo and Remy, buffets, free room service, and what each specialty venue costs per person.',
   openGraph: {
     title: 'Disney Cruise Food Guide: Every Restaurant Ranked',
     description: 'Ranked reviews of every Disney cruise restaurant — rotational dining, buffets, specialty restaurants, and best dishes.',
@@ -21,9 +27,83 @@ export const metadata: Metadata = {
   },
 };
 
+/**
+ * Q&A block for the questions this guide was already answering in prose but
+ * never surfaced as questions. Rendered on the page and emitted as FAQPage
+ * structured data from the same array, so the two can never drift.
+ */
+const FAQS = [
+  {
+    question: 'Is food included on a Disney cruise?',
+    answer:
+      'Yes. Your fare covers the three rotational dining rooms, the main buffet, quick-service venues, and 24-hour room service. Soft drinks, coffee, and tea at meals are included too. What is not included: alcohol, specialty coffee, and the adults-only specialty restaurants, which carry a per-person upcharge.',
+  },
+  {
+    question: 'What is rotational dining on a Disney cruise?',
+    answer:
+      'You are assigned to three main dining rooms and rotate through a different one each night — but your servers rotate with you. That means new menus and new theming every evening while the same team learns your family\'s preferences, allergies, and drink orders over the course of the sailing.',
+  },
+  {
+    question: 'How much does Palo cost on a Disney cruise?',
+    answer:
+      'Palo runs about $45 per person and is available on every Disney ship. It is the fleet\'s Italian fine-dining venue, adults only (18+), and reservations open before you sail. The higher-end venues — Remy on the Dream and Fantasy, Enchanté on the Wish, and The Rose on the Treasure — run around $125 per person.',
+  },
+  {
+    question: 'Is room service free on a Disney cruise?',
+    answer:
+      'Room service is complimentary and available 24 hours a day, every day of the sailing. Breakfast items, sandwiches, pizza, salads, fruit, and desserts are all on the menu. Gratuity for the delivery crew member is customary and not included.',
+  },
+  {
+    question: 'Can Disney Cruise Line handle food allergies and dietary restrictions?',
+    answer:
+      'Yes, and this is one of the strongest parts of the program. Declare allergies and dietary needs during pre-cruise check-in, then remind your server on the first night. Gluten-free, dairy-free, vegan, and kosher options are prepared as full menu alternatives rather than plain substitutes, and the chef will come to your table if you ask.',
+  },
+  {
+    question: 'Do I need to book specialty dining in advance?',
+    answer:
+      'Yes. Palo, Remy, Enchanté, and The Rose fill within hours of your online booking window opening, and the popular sea-day brunch slots go first. Book the moment your window unlocks — cancellations do open up onboard, but you should not count on them.',
+  },
+  {
+    question: 'Which Disney ship has the best food?',
+    answer:
+      'The newer Wish-class ships (Wish, Treasure, Destiny) carry the most ambitious rotational concepts — Arendelle, Worlds of Marvel, and Plaza de Coco are show-and-dinner experiences rather than themed rooms. The classic ships (Dream, Fantasy, Magic, Wonder) trade that for Remy, the fleet\'s most acclaimed fine-dining room. Ship for ship, base quality is consistent; what differs is the theming and which specialty venues are aboard.',
+  },
+];
+
 export default function DisneyCruiseFoodGuide() {
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'Disney Cruise Food Guide: Every Restaurant Ranked',
+    description:
+      'Every Disney cruise restaurant ranked — rotational dining, Palo and Remy, buffets, free room service, and what each specialty venue costs per person.',
+    url: 'https://gatgridcruises.com/guides/disney-cruise-food-guide',
+    image: 'https://gatgridcruises.com/og-image.png',
+    datePublished: PUBLISHED,
+    dateModified: UPDATED,
+    author: { '@type': 'Person', name: 'Dr. Grayson Starbuck, DPT' },
+    publisher: {
+      '@type': 'Organization',
+      name: 'GatGridCruises',
+      logo: { '@type': 'ImageObject', url: 'https://gatgridcruises.com/favicon.svg' },
+    },
+  };
+
   return (
     <div className="min-h-screen bg-white">
+      <StructuredData data={articleSchema} />
+      <StructuredData
+        data={generateBreadcrumbSchema([
+          { name: 'Home', url: 'https://gatgridcruises.com' },
+          { name: 'Guides', url: 'https://gatgridcruises.com/guides' },
+          {
+            name: 'Disney Cruise Food Guide',
+            url: 'https://gatgridcruises.com/guides/disney-cruise-food-guide',
+          },
+        ])}
+      />
+      <StructuredData data={generateFAQSchema(FAQS)} />
+
       {/* Hero Section */}
       <section className="relative py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#0a1628] to-[#1E3A5F]">
         <div className="max-w-4xl mx-auto">
@@ -435,6 +515,40 @@ export default function DisneyCruiseFoodGuide() {
           </div>
         </section>
 
+        {/* FAQ — the questions this guide answers in prose, asked directly.
+            Same array feeds the FAQPage structured data above. */}
+        <section className="mb-12">
+          <div className="flex items-center gap-3 mb-4">
+            <HelpCircle className="w-7 h-7 text-[#D4AF37]" aria-hidden="true" />
+            <h2 className="font-fraunces text-3xl font-bold text-slate-900">
+              Disney Cruise Dining FAQs
+            </h2>
+          </div>
+          <div className="space-y-3">
+            {FAQS.map((faq) => (
+              <details
+                key={faq.question}
+                className="group rounded-xl border border-slate-200 bg-slate-50 overflow-hidden"
+              >
+                <summary className="cursor-pointer list-none p-5 flex items-center justify-between gap-3 hover:bg-slate-100 transition-colors">
+                  <h3 className="font-inter font-semibold text-slate-900 text-base">
+                    {faq.question}
+                  </h3>
+                  <span
+                    className="text-[#1E3A5F] font-bold text-xl leading-none group-open:rotate-45 transition-transform flex-shrink-0"
+                    aria-hidden="true"
+                  >
+                    +
+                  </span>
+                </summary>
+                <p className="px-5 pb-5 font-inter text-slate-600 text-sm leading-relaxed">
+                  {faq.answer}
+                </p>
+              </details>
+            ))}
+          </div>
+        </section>
+
         {/* CTA Section */}
         <section className="my-12 p-8 bg-gradient-to-r from-blue-50 to-[#0a1628] text-white rounded-lg">
           <h2 className="font-fraunces text-3xl font-bold mb-4">Ready to Experience Disney Dining?</h2>
@@ -487,6 +601,34 @@ export default function DisneyCruiseFoodGuide() {
             >
               <h3 className="font-fraunces font-bold text-slate-900 mb-2">Best Time to Book a Disney Cruise</h3>
               <p className="font-inter text-gray-600 text-sm">Save money so you can splurge on specialty dining experiences.</p>
+            </Link>
+            <Link
+              href="/guides/disney-cruise-cost-guide"
+              className="p-6 border border-gray-200 rounded-lg hover:border-[#1E3A5F] hover:shadow-md transition"
+            >
+              <h3 className="font-fraunces font-bold text-slate-900 mb-2">What a Disney Cruise Really Costs</h3>
+              <p className="font-inter text-gray-600 text-sm">Where specialty dining, drinks, and gratuities land in a full trip budget.</p>
+            </Link>
+            <Link
+              href="/ports/lookout-cay"
+              className="p-6 border border-gray-200 rounded-lg hover:border-[#1E3A5F] hover:shadow-md transition"
+            >
+              <h3 className="font-fraunces font-bold text-slate-900 mb-2">Lookout Cay at Lighthouse Point</h3>
+              <p className="font-inter text-gray-600 text-sm">Disney&rsquo;s Eleuthera island — including the included Goombay lunch.</p>
+            </Link>
+            <Link
+              href="/ports"
+              className="p-6 border border-gray-200 rounded-lg hover:border-[#1E3A5F] hover:shadow-md transition"
+            >
+              <h3 className="font-fraunces font-bold text-slate-900 mb-2">Every Disney Cruise Port Guide</h3>
+              <p className="font-inter text-gray-600 text-sm">Where to eat ashore in each port — and when it beats staying onboard.</p>
+            </Link>
+            <Link
+              href="/sailings"
+              className="p-6 border border-gray-200 rounded-lg hover:border-[#1E3A5F] hover:shadow-md transition"
+            >
+              <h3 className="font-fraunces font-bold text-slate-900 mb-2">Browse Every Tracked Sailing</h3>
+              <p className="font-inter text-gray-600 text-sm">Find the ship whose restaurant lineup fits your family, then compare prices.</p>
             </Link>
           </div>
         </section>

@@ -11,9 +11,11 @@ export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
   alternates: { canonical: '/deals' },
-  title: 'Disney Cruise Deals — Filter by Ship, Duration & Score',
+  // `absolute` opts out of the root layout's "%s | Disney Cruise Deal Finder"
+  // template, which pushed this to 81 characters in search results.
+  title: { absolute: 'Disney Cruise Deals — Filter by Ship, Duration & Score' },
   description:
-    'Browse every Disney cruise sailing with our Deal Score system. Filter by ship, departure port, duration, and guest count.',
+    'Every Disney cruise sailing we track, scored by value. Filter by ship, departure port, duration, and guest count, then get free exact pricing for your group.',
   openGraph: {
     title: 'Disney Cruise Deals — Filter by Ship, Duration & Score',
     description:

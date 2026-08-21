@@ -46,7 +46,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!port) return { title: 'Port Guide Not Found' }
   const url = `https://gatgridcruises.com/ports/${port.slug}`
   return {
-    title: port.metaTitle,
+    // `absolute` opts out of the root layout's "%s | Disney Cruise Deal Finder"
+    // template. Port titles already carry the brand-relevant keywords, and the
+    // extra 28 characters pushed every one of them past Google's display cut.
+    title: { absolute: port.metaTitle },
     description: port.metaDescription,
     keywords: port.seoKeywords,
     alternates: { canonical: `/ports/${port.slug}` },
@@ -78,6 +81,44 @@ function itineraryMatchesPort(itineraryPortName: string, port: DestinationPort):
   return getPortSlugFromItineraryName(itineraryPortName) === port.slug
 }
 
+/**
+ * Cross-links every port guide carries. Port pages pull strong impressions but
+ * dead-ended into other port guides; these push readers toward the guides and
+ * deal surfaces that actually convert.
+ */
+const PLANNING_LINKS = [
+  {
+    href: '/guides/excursion-savings',
+    title: 'Cut your excursion costs',
+    blurb: 'When to book Disney and when to go independent, port by port.',
+  },
+  {
+    href: '/guides/disney-cruise-food-guide',
+    title: 'Disney cruise food guide',
+    blurb: 'Every restaurant ranked, so you know which port days to eat ashore.',
+  },
+  {
+    href: '/guides/disney-cruise-cost-guide',
+    title: 'What a Disney cruise really costs',
+    blurb: 'Fares, port fees, excursions, and the extras nobody budgets for.',
+  },
+  {
+    href: '/deals',
+    title: 'Current Disney cruise deals',
+    blurb: 'Every tracked sailing, scored by value and filterable by ship.',
+  },
+  {
+    href: '/tools/obc-calculator',
+    title: 'Onboard credit calculator',
+    blurb: 'See the free onboard credit your fare would earn through us.',
+  },
+  {
+    href: '/ports',
+    title: 'All Disney cruise port guides',
+    blurb: 'Every destination Disney sails to, with the same depth as this one.',
+  },
+] as const
+
 function dockTypeLabel(type: DestinationPort['dockType']): string {
   if (type === 'pier') return 'Pier docking'
   if (type === 'tender') return 'Tender port'
@@ -96,7 +137,12 @@ export default async function DestinationPortPage({ params }: PageProps) {
     )
     .slice(0, 6)
 
-  const otherPorts = allDestinationPorts.filter(p => p.slug !== port.slug).slice(0, 5)
+  // Prefer ports in the same region — a St. Thomas reader is far likelier to
+  // click Tortola than Bergen, and same-region links pass more topical relevance
+  // than the alphabetical first-five this used to show.
+  const candidates = allDestinationPorts.filter(p => p.slug !== port.slug)
+  const sameRegion = candidates.filter(p => p.region === port.region)
+  const otherPorts = [...sameRegion, ...candidates.filter(p => p.region !== port.region)].slice(0, 6)
 
   // JSON-LD: TouristDestination + Breadcrumbs + FAQ
   const placeSchema = {
@@ -163,8 +209,16 @@ export default async function DestinationPortPage({ params }: PageProps) {
               {port.flag}
             </span>
             <div className="min-w-0">
+              {/* Single H1 that carries the query people actually search —
+                  "<port> disney cruise port guide" — without shouting the
+                  keyword at the reader. */}
               <h1 className="font-fraunces text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
                 {port.name}
+                <span className="mt-1.5 block font-inter text-base font-semibold tracking-wide text-blue-200 sm:text-lg">
+                  {port.isPrivateIsland
+                    ? 'Disney Cruise Island Guide'
+                    : 'Disney Cruise Port Guide'}
+                </span>
               </h1>
               <div className="flex items-center gap-2 mt-2 flex-wrap">
                 <MapPin className="w-4 h-4 text-[#D4AF37] flex-shrink-0" />
@@ -620,6 +674,36 @@ export default async function DestinationPortPage({ params }: PageProps) {
           </div>
         </section>
       )}
+
+      {/* Keep planning — ports ↔ guides ↔ deals cross-links */}
+      <section className="py-12 md:py-16 bg-white border-t border-slate-200">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <h2 className="font-fraunces text-2xl font-bold text-[#1E3A5F] mb-2">
+            Keep Planning Your {port.shortName} Sailing
+          </h2>
+          <p className="text-slate-600 mb-6">
+            The rest of the trip, covered — what a port day costs, what you&apos;ll eat onboard,
+            and which sailings are worth booking right now.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {PLANNING_LINKS.map(link => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 bg-slate-50 hover:border-[#D4AF37] hover:shadow-md transition-all"
+              >
+                <div className="min-w-0">
+                  <p className="font-bold text-slate-900 group-hover:text-[#1E3A5F] transition-colors text-sm leading-snug">
+                    {link.title}
+                  </p>
+                  <p className="text-slate-500 text-xs mt-1 leading-relaxed">{link.blurb}</p>
+                </div>
+                <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-[#D4AF37] group-hover:translate-x-0.5 transition-all ml-auto flex-shrink-0 mt-0.5" />
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Other Port Guides */}
       <section className="py-12 md:py-16 bg-slate-50 border-t border-slate-200">

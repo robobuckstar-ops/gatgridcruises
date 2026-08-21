@@ -428,12 +428,13 @@ export const britishIslesPorts: DestinationPort[] = [
     currency: 'Euro (EUR)',
     language: 'Dutch / English fluent',
     heroTagline: 'Rotterdam\'s ultra-modern skyline and an 80-minute train to Amsterdam — two Dutch cities in one port day if you hustle.',
-    metaTitle: 'Rotterdam Disney Cruise Port Guide — Amsterdam & Tips',
-    metaDescription: 'Rotterdam cruise port guide for Disney cruisers. Amsterdam day trip, Cube Houses, Markthal, family tips, and excursion advice.',
+    metaTitle: 'Rotterdam Cruise Port Guide: Amsterdam Day Trip & Tips',
+    metaDescription: 'Rotterdam cruise port guide for Disney cruisers: the 80-minute train to Amsterdam, Cube Houses, Markthal, Kinderdijk windmills, and what a day costs.',
     seoKeywords: ['disney cruise rotterdam', 'rotterdam to amsterdam disney', 'cube houses rotterdam', 'markthal rotterdam'],
     overview: [
       'Rotterdam is the second-largest city in the Netherlands and famously modern — most of the old town was destroyed in WWII, so the current cityscape is post-1945 architecture, including the iconic Cube Houses and the Markthal food market. Disney ships dock at Wilhelminakade, walking distance from the city center.',
       'The trade-off Disney passengers face here is whether to explore Rotterdam itself or take the train to Amsterdam (80 minutes each way). Rotterdam is unique architecturally; Amsterdam is the cultural icon. Most first-time Dutch cruisers do Amsterdam; repeat visitors stay in Rotterdam.',
+      'Run the math before you decide. An ~11-hour port call minus about 2 hours 40 minutes of round-trip rail leaves a solid Amsterdam day, but it is a travel day — you will spend most of it moving. Staying in Rotterdam buys you a walkable port: Rotterdam Centraal is roughly 15 minutes on foot from the pier, and the Markthal and Cube Houses about 20. Families with young kids, or anyone who wants the Kinderdijk windmills and a harbor tour rather than a museum queue, generally get more out of the local day. One planning note either way: Anne Frank House is the single Amsterdam sight that requires advance timed tickets, so book it yourself online well ahead rather than assuming you can walk up.',
     ],
     keyFacts: [
       { label: 'Typical Port Time', value: '~11 hours', icon: '⏱️' },
@@ -480,6 +481,9 @@ export const britishIslesPorts: DestinationPort[] = [
     shipsThatVisit: BRITISH_ISLES_SHIPS,
     faqs: [
       { question: 'Should I do Amsterdam or stay in Rotterdam?', answer: 'Amsterdam for first-time visitors. Rotterdam for return cruisers or anyone who has done Amsterdam already and wants something different.' },
+      { question: 'How long does it take to get from Rotterdam to Amsterdam?', answer: 'About 80 minutes each way on the intercity train from Rotterdam Centraal to Amsterdam Centraal, and trains run frequently. Round-trip fare is roughly €30. Add the 15-minute walk from the pier to Rotterdam Centraal at each end.' },
+      { question: 'Can I get to Amsterdam on my own, or should I book the Disney excursion?', answer: 'Dutch trains are reliable and easy, so Amsterdam is genuinely doable independently — you pay about €30 in rail fare instead of roughly $165 per person. The Disney coach buys you a guaranteed return to the ship and a guided canal cruise. If your sail-away timing is tight or you would rather not manage connections, that guarantee is what you are paying for.' },
+      { question: 'Do I need to pre-book anything in Amsterdam?', answer: 'Only the Anne Frank House, which sells timed tickets online and regularly sells out. A Disney excursion cannot guarantee you a slot, so book it yourself in advance if it is a must-see. The Rijksmuseum, Dam Square, and canal cruises can all be done same-day.' },
       { question: 'Do I need a passport?', answer: 'Yes — the Netherlands is in Schengen.' },
       { question: 'Is the cruise pier walking distance to anything?', answer: 'Yes — Rotterdam Centraal train station is 15 minutes; the Markthal and Cube Houses are 20 minutes. Walking from the pier is reasonable.' },
     ],

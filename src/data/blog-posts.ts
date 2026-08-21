@@ -2,6 +2,15 @@ export interface BlogPost {
   id: string
   slug: string
   title: string
+  /**
+   * SEO <title> override. Post headlines are written for the page, where a long
+   * one reads fine; search results cut around 60 characters. Set this when the
+   * headline is too long or buries the query people actually type. Falls back
+   * to `title`.
+   */
+  meta_title?: string
+  /** SEO meta description override. Falls back to `excerpt`. */
+  meta_description?: string
   excerpt: string
   content: string
   author: string
@@ -1209,6 +1218,9 @@ Many teens who are skeptical before boarding return home having had a genuinely 
     id: '16',
     slug: 'disney-treasure-vs-disney-wish-comparison',
     title: 'Disney Treasure vs Disney Wish: Which Ship Is Right for Your Family?',
+    meta_title: 'Disney Treasure vs Disney Wish: Which Ship to Pick',
+    meta_description:
+      'Disney Treasure vs Disney Wish compared: rotational dining, theming, shows, kids\' clubs, itineraries, and price — and which sister ship fits your family.',
     excerpt: 'A detailed side-by-side comparison of Disney Treasure and Disney Wish — dining, theming, staterooms, and which Wish-class sister ship fits your family best.',
     author: 'Dr. Grayson Starbuck, DPT',
     published_date: '2026-05-12',
