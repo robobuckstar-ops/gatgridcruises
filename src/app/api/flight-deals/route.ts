@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { checkRateLimit } from '@/lib/rate-limit'
+import { isSubscriberStoreConfigured, upsertSubscriber } from '@/lib/subscriber-store'
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 const ALLOWED_DESTINATIONS = new Set(['MCO', 'MIA', 'FLL', 'TPA', 'JAX'])
@@ -50,10 +51,28 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Invalid destination airport' }, { status: 400 })
     }
 
+    // Guaranteed capture: write to the Airtable Subscribers store first so a
+    // flight-deal signup is never silently lost even if Brevo isn't configured.
+    // The Brevo call below is a best-effort marketing-list sync on top of this.
+    let persistedToAirtable = false
+    if (isSubscriberStoreConfigured()) {
+      try {
+        await upsertSubscriber({
+          email: sanitizedEmail,
+          source: `flight_deals:${sanitizedDeparture}->${destCode}:${sanitizedMonth}`,
+        })
+        persistedToAirtable = true
+      } catch (storeErr) {
+        console.error('[flight-deals] Airtable subscriber write failed:', storeErr)
+      }
+    }
+
     if (!process.env.BREVO_API_KEY) {
-      console.error('BREVO_API_KEY not configured — flight deal signup not persisted', {
-        email: sanitizedEmail,
-      })
+      if (!persistedToAirtable) {
+        console.error('[flight-deals] signup NOT persisted — neither Airtable nor Brevo captured it', {
+          email: sanitizedEmail,
+        })
+      }
       return NextResponse.json({ success: true, message: 'Signup received' })
     }
 
