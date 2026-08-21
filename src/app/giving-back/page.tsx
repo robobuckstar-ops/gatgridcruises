@@ -176,8 +176,8 @@ export default function GivingBackPage() {
             </div>
             <p className="mt-6 text-xs text-slate-500 leading-relaxed">
               The {formatGivingAmount(FOUNDER_PERSONAL_GIVING_TOTAL)} figure reflects Grayson&apos;s personal
-              donations, confirmed by CURE International&apos;s donor relations team. It is separate from the
-              company tracker below, which counts only what GatGrid Cruises gives as a business.
+              donations, confirmed by CURE International&apos;s donor relations team. The running total below starts
+              from this and grows as GatGrid Cruises adds its business giving on top.
             </p>
           </div>
         </div>
@@ -226,31 +226,28 @@ export default function GivingBackPage() {
               Our Running Total
             </p>
             <p className="font-inter text-blue-200 text-sm mb-2">
-              Raised for CURE by GatGrid Cruises
+              Given to CURE since {FOUNDER_PERSONAL_GIVING_SINCE}
             </p>
             <p className="font-fraunces text-5xl md:text-7xl font-bold text-[#D4AF37] mb-5 leading-none tabular-nums">
-              {formatGivingAmount(CURE_BUSINESS_DONATED_TOTAL)}
+              {formatGivingAmount(FOUNDER_PERSONAL_GIVING_TOTAL + CURE_BUSINESS_DONATED_TOTAL)}
             </p>
-            {CURE_BUSINESS_DONATED_TOTAL > 0 ? (
-              <p className="font-inter text-blue-200 max-w-xl mx-auto leading-relaxed">
-                That&apos;s {CURE_PLEDGE_PERCENT}% of our commission from every booking we&apos;ve processed,
-                donated to CURE. This number goes up every time someone books a cruise with us.
-              </p>
-            ) : (
-              <p className="font-inter text-blue-200 max-w-xl mx-auto leading-relaxed">
-                We&apos;re starting at zero, and we&apos;d rather show you that honestly than pad the number. The
-                pledge begins with our next booking — {CURE_PLEDGE_PERCENT}% of that commission goes to CURE, and
-                this total goes up from there.
-              </p>
-            )}
+            <p className="font-inter text-blue-200 max-w-xl mx-auto leading-relaxed">
+              That&apos;s Grayson&apos;s personal giving to CURE since {FOUNDER_PERSONAL_GIVING_SINCE}
+              {CURE_BUSINESS_DONATED_TOTAL > 0
+                ? `, plus ${formatGivingAmount(CURE_BUSINESS_DONATED_TOTAL)} donated by GatGrid Cruises as a business`
+                : ''}
+              . Now the company is joining in — {CURE_PLEDGE_PERCENT}% of our commission on every booking goes to
+              CURE, so this number keeps climbing with every cruise.
+            </p>
             <div className="mt-8 pt-6 border-t border-white/10">
               <p className="font-inter text-sm text-blue-300 leading-relaxed">
                 {CURE_PLEDGE_PERCENT}% of every cruise commission, every booking, every time. No fine print, no
                 &ldquo;up to,&rdquo; no marketing-only campaign.
               </p>
               <p className="text-xs text-blue-400 mt-3">
-                Business donations only — updated {CURE_DONATIONS_LAST_UPDATED}. Grayson&apos;s personal giving is
-                tracked separately and isn&apos;t counted here.
+                Total giving to CURE since {FOUNDER_PERSONAL_GIVING_SINCE} — Grayson&apos;s personal donations
+                (confirmed by CURE International&apos;s donor relations team) plus GatGrid Cruises&apos; business
+                pledge as it grows. Updated {CURE_DONATIONS_LAST_UPDATED}.
               </p>
             </div>
           </div>

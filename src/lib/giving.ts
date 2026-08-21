@@ -23,7 +23,7 @@ export const CURE_PLEDGE_PERCENT: number = 5
 export const CURE_BUSINESS_DONATED_TOTAL: number = 0
 
 /** Date of the most recent donation reflected in the total above. */
-export const CURE_DONATIONS_LAST_UPDATED = 'August 18, 2026'
+export const CURE_DONATIONS_LAST_UPDATED = 'August 21, 2026'
 
 /**
  * Grayson's PERSONAL giving to CURE — his own money, separate from the
