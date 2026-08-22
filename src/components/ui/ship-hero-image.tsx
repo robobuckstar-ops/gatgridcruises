@@ -12,8 +12,10 @@ interface ShipHeroImageProps {
 }
 
 // Per-ship accent colors so the placeholders are visually distinct until real photos drop in.
-// Once /public/images/ships/<slug>.jpg exists, the photo is rendered automatically; the
-// placeholder shows only when the image fails to load.
+// The placeholder shows when `src` is empty or when the image fails to load.
+// Dropping a file into /public/images/ships/ is NOT enough on its own — that ship's
+// `hero_image_url` in src/data/ships.ts must be pointed at it too. See CREDITS.md
+// in that folder for which photos are still outstanding.
 const ACCENT_BY_SHIP: Record<string, string> = {
   'Disney Magic':     'from-amber-700 via-rose-700 to-amber-900',
   'Disney Wonder':    'from-sky-700 via-cyan-600 to-sky-900',
