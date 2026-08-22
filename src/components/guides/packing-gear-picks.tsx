@@ -1,31 +1,17 @@
-import { Metadata } from 'next'
 import Link from 'next/link'
-import { ShoppingBag, ExternalLink, Star, ChevronRight } from 'lucide-react'
-import { GetQuoteCTA } from '@/components/get-quote-cta'
+import { ShoppingBag, ExternalLink, Star } from 'lucide-react'
 import { amazonSearchLink } from '@/lib/affiliate-config'
 
-export const metadata: Metadata = {
-  alternates: { canonical: '/guides/packing-gear' },
-  title: 'The Ultimate Disney Cruise Packing List (With Our Top Picks)',
-  description: 'The best gear for Disney cruises — luggage, cruise essentials, sun & beach, kids gear, formal night, and health must-haves. Honest picks for every budget.',
-  keywords: ['disney cruise packing list', 'what to pack disney cruise', 'cruise essentials', 'disney cruise gear', 'cruise packing tips'],
-  openGraph: {
-    title: 'The Ultimate Disney Cruise Packing List (With Our Top Picks)',
-    description: 'The best gear for Disney cruises — luggage, cruise essentials, sun & beach, kids gear, and health must-haves.',
-    url: 'https://gatgridcruises.com/guides/disney-cruise-packing-list',
-    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Disney Cruise Packing List — Top Gear Picks',
-    description: 'The best gear for Disney cruises — luggage, cruise essentials, kids gear, and health must-haves.',
-    images: ['https://gatgridcruises.com/og-image.png'],
-  },
-}
-
-function amazonLink(searchTerm: string) {
-  return amazonSearchLink(searchTerm)
-}
+/**
+ * The curated Amazon gear picks that used to live at /guides/packing-gear.
+ *
+ * That route now 301s to /guides/disney-cruise-packing-list (the two pages
+ * were competing for the same query), but the redirect landed on a page with
+ * no product links at all — so all 31 tagged Amazon buttons became
+ * unreachable and stopped earning. The picks live here now and render on the
+ * destination page, which keeps the SEO consolidation and the affiliate
+ * revenue at the same time.
+ */
 
 interface Product {
   name: string
@@ -255,179 +241,84 @@ const categories: Category[] = [
   },
 ]
 
-export default function PackingGearPage() {
+/** Total number of curated picks, so the copy never drifts from the data. */
+export const PACKING_GEAR_PICK_COUNT = categories.reduce(
+  (n, cat) => n + cat.products.length,
+  0
+)
+
+export function PackingGearPicks() {
   return (
-    <main>
-      {/* Hero */}
-      <section className="bg-[#1E3A5F] py-16 md:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-2 mb-4">
-            <Link href="/guides" className="text-blue-300 hover:text-[#D4AF37] text-sm transition-colors">
-              Guides
-            </Link>
-            <ChevronRight className="w-4 h-4 text-blue-400" />
-            <span className="text-blue-300 text-sm">Packing Gear</span>
-          </div>
-          <div className="flex items-start gap-4 mb-6">
-            <span className="text-5xl" aria-hidden="true">🧳</span>
-            <div>
-              <h1 className="font-fraunces text-4xl md:text-5xl font-bold text-white leading-tight">
-                The Ultimate Disney Cruise Packing List
-              </h1>
-              <p className="font-fraunces text-xl text-[#D4AF37] mt-1">With Our Top Amazon Picks</p>
-            </div>
-          </div>
-          <p className="text-blue-100 text-lg max-w-3xl leading-relaxed">
-            Veteran Disney cruisers know the difference between packing and packing <em>right</em>.
-            We've curated the 30 items that regularly separate a stressful embarkation from a smooth,
-            magical one — with honest reasons why each one earns its bag space.
-          </p>
-          <div className="mt-6 inline-flex items-center gap-2 bg-[#0a1628]/50 text-blue-200 text-sm px-4 py-2 rounded-full">
-            <Star className="w-4 h-4 text-[#D4AF37]" />
-            <span>Product links below are Amazon Associates affiliate links (tag: gatgridcruise-20) — we earn a small commission at no cost to you. See our <Link href="/disclosures" className="underline hover:text-white">disclosure</Link>.</span>
-          </div>
-        </div>
-      </section>
+    <section id="gear-picks" className="my-12">
+      <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-3">
+        Our Top {PACKING_GEAR_PICK_COUNT} Gear Picks
+      </h2>
+      <p className="font-inter text-slate-600 mb-4 max-w-3xl leading-relaxed">
+        The checklist above covers <em>what</em> to bring. These are the specific items that
+        regularly separate a stressful embarkation from a smooth one — with an honest reason
+        each one earns its bag space.
+      </p>
 
-      {/* Jump Links */}
-      <section className="bg-white border-b border-slate-200 sticky top-16 z-40">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex gap-1 overflow-x-auto py-3 scrollbar-hide">
-            {categories.map((cat) => (
-              <a
-                key={cat.id}
-                href={`#${cat.id}`}
-                className="flex-shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-100 hover:bg-[#1E3A5F] hover:text-white text-slate-700 text-sm font-medium transition-all duration-200"
-              >
-                <span>{cat.icon}</span>
-                <span>{cat.title}</span>
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
+      <p className="inline-flex items-start gap-2 text-sm text-slate-600 bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 mb-10">
+        <Star className="w-4 h-4 text-[#D4AF37] flex-shrink-0 mt-0.5" aria-hidden="true" />
+        <span>
+          Product links below are Amazon Associates affiliate links — we earn a small
+          commission at no cost to you. See our{' '}
+          <Link href="/disclosures" className="underline hover:text-[#1E3A5F]">
+            disclosure
+          </Link>
+          .
+        </span>
+      </p>
 
-      {/* Product Sections */}
-      <section className="py-12 md:py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-20">
-          {categories.map((cat) => (
-            <div key={cat.id} id={cat.id}>
-              {/* Category Header */}
-              <div className="mb-8 pb-6 border-b-2 border-[#D4AF37]">
-                <div className="flex items-center gap-3 mb-2">
-                  <span className="text-4xl" aria-hidden="true">{cat.icon}</span>
-                  <h2 className="font-fraunces text-3xl font-bold text-[#1E3A5F]">{cat.title}</h2>
-                </div>
-                <p className="text-slate-600 text-base max-w-2xl">{cat.description}</p>
+      <div className="space-y-16">
+        {categories.map((cat) => (
+          <div key={cat.id} id={cat.id}>
+            <div className="mb-6 pb-4 border-b-2 border-[#D4AF37]">
+              <div className="flex items-center gap-3 mb-2">
+                <span className="text-3xl" aria-hidden="true">{cat.icon}</span>
+                <h3 className="font-fraunces text-2xl font-bold text-[#1E3A5F]">{cat.title}</h3>
               </div>
+              <p className="text-slate-600 text-base max-w-2xl">{cat.description}</p>
+            </div>
 
-              {/* Product Cards */}
-              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-                {cat.products.map((product) => (
-                  <div
-                    key={product.name}
-                    className="group relative flex flex-col bg-white rounded-2xl border border-slate-200 hover:border-[#D4AF37] hover:shadow-lg transition-all duration-200 overflow-hidden"
-                  >
-                    {product.badge && (
-                      <div className="absolute top-4 right-4 bg-[#1E3A5F] text-[#D4AF37] text-xs font-bold px-2.5 py-1 rounded-full">
-                        {product.badge}
-                      </div>
-                    )}
-                    <div className="p-6 flex-1">
-                      <div className="flex items-start gap-3 mb-4">
-                        <ShoppingBag className="w-5 h-5 text-[#D4AF37] flex-shrink-0 mt-0.5" />
-                        <h3 className="font-semibold text-slate-900 text-base leading-snug group-hover:text-[#1E3A5F] transition-colors">
-                          {product.name}
-                        </h3>
-                      </div>
-                      <p className="text-slate-600 text-sm leading-relaxed">{product.why}</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+              {cat.products.map((product) => (
+                <div
+                  key={product.name}
+                  className="group relative flex flex-col bg-white rounded-2xl border border-slate-200 hover:border-[#D4AF37] hover:shadow-lg transition-all duration-200 overflow-hidden"
+                >
+                  {product.badge && (
+                    <div className="absolute top-4 right-4 bg-[#1E3A5F] text-[#D4AF37] text-xs font-bold px-2.5 py-1 rounded-full">
+                      {product.badge}
                     </div>
-                    <div className="px-6 pb-6">
-                      <a
-                        href={amazonLink(product.search)}
-                        target="_blank"
-                        rel="noopener noreferrer nofollow sponsored"
-                        className="flex items-center justify-center gap-2 w-full bg-[#D4AF37] hover:bg-yellow-400 text-[#1E3A5F] font-bold text-sm py-3 px-4 rounded-xl transition-colors duration-200"
-                      >
-                        <span>Shop on Amazon</span>
-                        <ExternalLink className="w-4 h-4" />
-                      </a>
+                  )}
+                  <div className="p-6 flex-1">
+                    <div className="flex items-start gap-3 mb-4">
+                      <ShoppingBag className="w-5 h-5 text-[#D4AF37] flex-shrink-0 mt-0.5" aria-hidden="true" />
+                      <h4 className="font-semibold text-slate-900 text-base leading-snug group-hover:text-[#1E3A5F] transition-colors">
+                        {product.name}
+                      </h4>
                     </div>
+                    <p className="text-slate-600 text-sm leading-relaxed">{product.why}</p>
                   </div>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Mid-page Amex CTA */}
-      <section className="py-8">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <a
-            href="/concierge"
-            className="block rounded-2xl overflow-hidden border border-[#D4AF37] shadow-md hover:shadow-lg transition-shadow"
-          >
-            <div className="bg-gradient-to-r from-[#1E3A5F] to-[#2a4f7a] px-6 py-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-              <div>
-                <p className="text-[#D4AF37] font-bold text-lg leading-tight">Plan Your Disney Cruise</p>
-                <p className="text-blue-200 text-sm mt-1">Connect with our concierge team to find the perfect sailing</p>
-              </div>
-              <span className="flex-shrink-0 bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm px-5 py-2.5 rounded-xl whitespace-nowrap">
-                Get Started →
-              </span>
-            </div>
-          </a>
-        </div>
-      </section>
-
-      {/* Packing Tips Callout */}
-      <section className="py-12 md:py-16 bg-slate-50 border-t border-slate-200">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <h2 className="font-fraunces text-2xl font-bold text-[#1E3A5F] mb-6">Pro Packing Tips</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {[
-              { tip: 'Pack magnetic hooks in your carry-on', detail: 'You\'ll want them as soon as you board — before your checked bags arrive.' },
-              { tip: 'Wear your formal shoes on the plane', detail: 'Shoes are the biggest space problem. One pair of dress shoes on your feet saves a shoe bag.' },
-              { tip: 'Label everything with your cabin number', detail: 'Not just luggage tags — put a small label inside bags, on camera cases, beach bags.' },
-              { tip: 'Bring a dry erase marker for the cabin TV', detail: 'Disney cabin TVs have a port tracker and activity guide — you can write reminders on the screen edge.' },
-              { tip: 'Pack a night light', detail: 'Disney cabins are pitch black when the curtain is drawn. A small USB night light helps kids navigate to the bathroom at 2 AM.' },
-              { tip: 'Amazon Locker at Cape Canaveral Holiday Inn', detail: 'If you\'re staying pre-cruise, you can ship Amazon packages to the hotel before you arrive.' },
-            ].map(({ tip, detail }) => (
-              <div key={tip} className="flex gap-3 bg-white p-5 rounded-xl border border-slate-200">
-                <span className="text-[#D4AF37] font-bold text-xl flex-shrink-0">→</span>
-                <div>
-                  <p className="font-semibold text-slate-900 text-sm">{tip}</p>
-                  <p className="text-slate-500 text-sm mt-1">{detail}</p>
+                  <div className="px-6 pb-6">
+                    <a
+                      href={amazonSearchLink(product.search)}
+                      target="_blank"
+                      rel="noopener noreferrer nofollow sponsored"
+                      className="flex items-center justify-center gap-2 w-full bg-[#D4AF37] hover:bg-yellow-400 text-[#1E3A5F] font-bold text-sm py-3 px-4 rounded-xl transition-colors duration-200"
+                    >
+                      <span>Shop on Amazon</span>
+                      <ExternalLink className="w-4 h-4" aria-hidden="true" />
+                    </a>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
-
-      {/* Related Guides */}
-      <section className="py-12 md:py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="font-fraunces text-2xl font-bold text-slate-900 mb-6">Related Guides</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <Link href="/guides/travel-insurance" className="group block p-5 rounded-xl border-2 border-slate-200 hover:border-[#1E3A5F] hover:shadow-md transition-all duration-200">
-              <p className="text-xs font-semibold text-[#1E3A5F] uppercase tracking-wider mb-2">Insurance</p>
-              <p className="font-fraunces font-bold text-slate-900 group-hover:text-[#1E3A5F] transition-colors">Do You Need Travel Insurance for a Disney Cruise?</p>
-            </Link>
-            <Link href="/guides/ports" className="group block p-5 rounded-xl border-2 border-slate-200 hover:border-[#1E3A5F] hover:shadow-md transition-all duration-200">
-              <p className="text-xs font-semibold text-[#1E3A5F] uppercase tracking-wider mb-2">Ports</p>
-              <p className="font-fraunces font-bold text-slate-900 group-hover:text-[#1E3A5F] transition-colors">Disney Cruise Port Guides</p>
-            </Link>
-            <Link href="/guides/disney-cruise-cost-guide" className="group block p-5 rounded-xl border-2 border-slate-200 hover:border-[#1E3A5F] hover:shadow-md transition-all duration-200">
-              <p className="text-xs font-semibold text-[#1E3A5F] uppercase tracking-wider mb-2">Planning</p>
-              <p className="font-fraunces font-bold text-slate-900 group-hover:text-[#1E3A5F] transition-colors">The True Cost of a Disney Cruise</p>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <GetQuoteCTA />
-    </main>
+        ))}
+      </div>
+    </section>
   )
 }

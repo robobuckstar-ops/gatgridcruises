@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { CheckCircle, AlertCircle, Printer, MapPin } from 'lucide-react';
 import { GetQuoteCTA } from '@/components/get-quote-cta';
+import { PackingGearPicks } from '@/components/guides/packing-gear-picks';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/guides/disney-cruise-packing-list' },
@@ -596,6 +597,10 @@ export default function PackingListGuide() {
             </div>
           </div>
         </section>
+
+        {/* Curated Amazon picks — moved here from the retired /guides/packing-gear
+            page, whose 301 landed on this page and stranded every product link. */}
+        <PackingGearPicks />
 
         {/* CTA Section */}
         <section className="my-12 p-8 bg-gradient-to-r from-blue-50 to-[#0a1628] text-white rounded-lg">
