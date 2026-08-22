@@ -484,7 +484,8 @@ export default async function SailingDetailPage({ params }: PageProps) {
               </div>
               {missingItineraryDays.length > 0 && (
                 <p className="mt-3 text-xs text-slate-500 bg-slate-50 border border-slate-200 rounded-lg px-4 py-3">
-                  Day {formatDayRanges(missingItineraryDays)} of this{' '}
+                  {missingItineraryDays.length === 1 ? 'Day' : 'Days'}{' '}
+                  {formatDayRanges(missingItineraryDays)} of this{' '}
                   {sailing.length_nights}-night sailing{' '}
                   {missingItineraryDays.length === 1 ? 'is' : 'are'} not in our feed yet — most
                   unlisted days on a route like this are sea days, but we would rather not
