@@ -142,6 +142,41 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 }
 
+/**
+ * A sailing's itinerary is complete when it has one entry per day from
+ * embarkation (day 1) through disembarkation (day `length_nights + 1`).
+ *
+ * Most of the imported Apify records are partial — a 13-night transatlantic
+ * that lists days 1-5 and then jumps to day 14 renders as a schedule with a
+ * hole in it, which reads as a site bug rather than as missing source data.
+ * We cannot invent the missing days, so the page says so instead.
+ */
+function findMissingItineraryDays(
+  itinerary: { day: number }[] | null | undefined,
+  nights: number | null | undefined
+): number[] {
+  if (!itinerary?.length || !Number.isFinite(nights) || (nights as number) <= 0) return []
+  const present = new Set(itinerary.map((d) => d.day))
+  const missing: number[] = []
+  for (let day = 1; day <= (nights as number) + 1; day++) {
+    if (!present.has(day)) missing.push(day)
+  }
+  return missing
+}
+
+/** "6-13" / "6-8 and 11" / "6, 9 and 12" — a readable list of day gaps. */
+function formatDayRanges(days: number[]): string {
+  const ranges: string[] = []
+  for (let i = 0; i < days.length; ) {
+    let j = i
+    while (j + 1 < days.length && days[j + 1] === days[j] + 1) j++
+    ranges.push(i === j ? `${days[i]}` : `${days[i]}–${days[j]}`)
+    i = j + 1
+  }
+  if (ranges.length === 1) return ranges[0]
+  return `${ranges.slice(0, -1).join(', ')} and ${ranges[ranges.length - 1]}`
+}
+
 export default async function SailingDetailPage({ params }: PageProps) {
   const { id } = await params
   const sailing = getSailingById(id)
@@ -153,6 +188,10 @@ export default async function SailingDetailPage({ params }: PageProps) {
   const staterooms = ship ? getStateroomsForShip(ship.id).slice(0, 5) : []
   const hotels = port ? getHotelsForPort(port.id).slice(0, 5) : []
   const transfers = port ? getTransfersForPort(port.id) : []
+  const missingItineraryDays = findMissingItineraryDays(
+    sailing.itinerary_details,
+    sailing.length_nights
+  )
 
   // Onboard credit for this sailing's lead-in fare. Derived from lib/obc.ts —
   // never a fixed "up to $X" figure, and suppressed entirely when the fare is
@@ -412,7 +451,7 @@ export default async function SailingDetailPage({ params }: PageProps) {
             <section>
               <h2 className="font-display text-2xl font-bold text-slate-900 mb-4">Itinerary</h2>
               <div className="space-y-3">
-                {sailing.itinerary_details.map((day) => {
+                {[...sailing.itinerary_details].sort((a, b) => a.day - b.day).map((day) => {
                   const isAtSea = day.port === 'At Sea'
                   const portUrl = isAtSea
                     ? (ship?.slug ? `/ships/${ship.slug}` : null)
@@ -443,6 +482,19 @@ export default async function SailingDetailPage({ params }: PageProps) {
                   )
                 })}
               </div>
+              {missingItineraryDays.length > 0 && (
+                <p className="mt-3 text-xs text-slate-500 bg-slate-50 border border-slate-200 rounded-lg px-4 py-3">
+                  Day {formatDayRanges(missingItineraryDays)} of this{' '}
+                  {sailing.length_nights}-night sailing{' '}
+                  {missingItineraryDays.length === 1 ? 'is' : 'are'} not in our feed yet — most
+                  unlisted days on a route like this are sea days, but we would rather not
+                  guess.{' '}
+                  <Link href="/book" className="text-[#1E3A5F] font-medium hover:underline">
+                    Ask us for the full day-by-day schedule
+                  </Link>{' '}
+                  and we will confirm it against Disney&apos;s own listing.
+                </p>
+              )}
             </section>
 
             {/* What's Included vs Extra (if ship data exists) */}
