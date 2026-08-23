@@ -166,7 +166,7 @@ export function EligibilityCheck() {
           const set = setters[i]
           return (
             <fieldset key={q.id} className="rounded-2xl border border-white/10 bg-[#0a1628]/40 p-5">
-              <legend className="px-1 font-fraunces text-base font-bold text-white md:text-lg">
+              <legend className="px-1 font-inter text-base font-bold text-white md:text-lg">
                 <span className="mr-2 text-[#D4AF37]">{i + 1}.</span>
                 {q.prompt}
               </legend>
