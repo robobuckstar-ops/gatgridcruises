@@ -171,6 +171,8 @@ Watch Disney's wave season (the period immediately after their annual meeting) f
 
 September delivers an exceptional value proposition: dramatically lower prices, fewer crowds, and weather that's perfectly suitable for Caribbean cruising. If your vacation calendar allows flexibility, September Caribbean cruising should definitely be on your shortlist.
 
+One more reason to look at September specifically: the seasonal overlay starts on September 4, so a low-season fare also gets you the full <a href="/blog/halloween-on-the-high-seas-2026-guide">Halloween on the High Seas 2026</a> programming at no extra charge.
+
 </div>
     `.trim(),
   },
@@ -178,6 +180,7 @@ September delivers an exceptional value proposition: dramatically lower prices, 
     id: '4',
     slug: 'castaway-cay-vs-lookout-cay',
     title: 'Castaway Cay vs. Lookout Cay: Disney\'s Private Islands Compared',
+    meta_title: 'Castaway Cay vs. Lookout Cay: Which Island Wins?',
     excerpt: 'Disney operates two private island destinations. Here\'s how Castaway Cay and Lookout Cay compare and what to expect at each.',
     author: 'Dr. Grayson Starbuck, DPT',
     published_date: '2025-04-08',
@@ -606,6 +609,8 @@ Cruising with teens can be genuinely enjoyable for everyone if you approach it t
 
 Many teens who are skeptical before boarding return home having had a genuinely memorable experience and requesting to cruise again.
 
+If you have any flexibility on dates, a fall sailing is worth a look — <a href="/blog/halloween-on-the-high-seas-2026-guide">Halloween on the High Seas</a> includes a costume dance party that reliably pulls in the age group least likely to admit it's having fun.
+
 </div>
     `.trim(),
   },
@@ -812,6 +817,7 @@ Many teens who are skeptical before boarding return home having had a genuinely 
 <h2>Finding the Best Deal on Your Sailing</h2>
 <p>Disney cruise pricing changes frequently — sometimes daily. Getting timing right can save hundreds or thousands of dollars. GatGridCruises monitors Disney's pricing and surfaces deals as they appear.</p>
 <p>Try the <a href="/search">AI cruise finder</a> to search available sailings by dates, ship, and budget, or browse the <a href="/deals">deal grid</a> for current pricing across all sailings. Our <a href="/deals/last-minute">last-minute deals page</a> tracks price-reduced inventory in real time.</p>
+<p>Once you've got the basics down, our companion piece on the <a href="/blog/first-time-disney-cruise-mistakes">10 things first-time Disney cruisers always get wrong</a> covers the specific errors that cost people the most.</p>
 <p>For personalized advice on timing and itinerary selection, use the <a href="/book">free booking inquiry form</a> to reach Grayson directly.</p>
     `.trim(),
   },
@@ -929,6 +935,7 @@ Many teens who are skeptical before boarding return home having had a genuinely 
     id: '12',
     slug: 'disney-cruise-comparison',
     title: 'Disney Cruise vs. Royal Caribbean vs. Carnival: Which Is Right for Your Family?',
+    meta_title: 'Disney vs. Royal Caribbean vs. Carnival Compared',
     excerpt: 'An honest side-by-side comparison of the three most popular family cruise lines — covering price, entertainment, dining, kids clubs, and private islands.',
     author: 'Dr. Grayson Starbuck, DPT',
     published_date: '2026-04-12',
@@ -1087,6 +1094,7 @@ Many teens who are skeptical before boarding return home having had a genuinely 
 <li><a href="/tools/staterooms">Stateroom Finder</a> — compare cabin categories and find the right balance of space vs. price</li>
 <li><a href="/tools/flights">Flight Finder</a> — find the best flights to your embarkation port</li>
 </ul>
+<p>Two companion reads if you want to go deeper: <a href="/blog/error-fares-how-to-find-deals">error fares explained</a> covers how mispriced inventory actually happens and how to catch it, and our shorter <a href="/blog/5-ways-save-money-disney-cruise">5 ways to save money on a Disney cruise</a> is the quick version of this list.</p>
 <p>For personalized advice on timing, stateroom selection, and which sailing fits your family's preferences and budget, use the <a href="/book">free booking inquiry form</a> to reach Grayson directly. He monitors Disney pricing every day and can help you identify the right moment and the right sailing — no booking required, no pressure.</p>
     `.trim(),
   },
@@ -1094,6 +1102,7 @@ Many teens who are skeptical before boarding return home having had a genuinely 
     id: '14',
     slug: 'disney-destiny-heroes-villains-guide',
     title: 'Disney Destiny Heroes and Villains Ship: A First-Look Guide for 2026',
+    meta_title: 'Disney Destiny Heroes and Villains Ship Guide',
     excerpt: 'Disney Destiny — the newest Wish-class ship — is themed around heroes and villains. Our complete first-look guide to dining, shows, and 2026 itineraries.',
     author: 'Dr. Grayson Starbuck, DPT',
     published_date: '2026-05-11',
@@ -1152,6 +1161,7 @@ Many teens who are skeptical before boarding return home having had a genuinely 
 
 <h2>The Bottom Line on the Disney Destiny Heroes and Villains Ship</h2>
 <p>Disney Destiny is the most fully-realized themed ship Disney Cruise Line has ever built, and in 2026 it represents the strongest combination of new-ship excitement, theatrical ambition, and refined operational polish in the fleet. Whether it's the right ship for your family depends on what you value most — but for anyone drawn to story-driven Disney experiences, the Destiny is hard to beat.</p>
+<p>If you're weighing a fall sailing, note that 2026 is the Destiny's first year hosting <a href="/blog/halloween-on-the-high-seas-2026-guide">Halloween on the High Seas</a> — a natural fit for a heroes-and-villains ship, and worth understanding before you pick your dates.</p>
 <p>Need help deciding between the Destiny and another ship, or want personalized recommendations on which sailing fits your timing and budget? <a href="/book">Get a free quote from our team</a> or reach out via our <a href="/concierge">concierge inquiry form</a>. We'll walk you through the options — no pressure, no obligation.</p>
     `.trim(),
   },
@@ -1211,6 +1221,7 @@ Many teens who are skeptical before boarding return home having had a genuinely 
 
 <h2>The Common Thread</h2>
 <p>The pattern across all ten of these is the same: <strong>Disney rewards planning more than any other cruise line in the market.</strong> First-timers who treat a Disney cruise like a Royal Caribbean or Carnival sailing — buy a fare, show up, figure it out on board — leave feeling like they missed half the magic. First-timers who do the planning work ahead of time consistently rate their first cruise as one of their best family vacations ever.</p>
+<p>If you're still at the earlier stage of planning, start with our <a href="/blog/first-time-disney-cruise-tips">first-time Disney cruise tips</a>, which walks through the basics this list assumes you already know.</p>
 <p>If you want a head start, the <a href="/concierge">concierge form</a> is the fastest way to get personalized guidance — we'll help you pick the right ship, the right sailing, and the right stateroom, plus identify your onboard credit options. No pressure, no booking obligation, and the rate you pay Disney is the same whether you book directly or through us.</p>
     `.trim(),
   },
@@ -1337,6 +1348,7 @@ Many teens who are skeptical before boarding return home having had a genuinely 
 <p>If you'd like a second opinion before you book — including a look at which sailings have the best onboard credit and stateroom pricing for your dates — reach out via the <a href="/concierge">concierge form</a>. We monitor live pricing on both ships every day and can usually find the right sailing within a few minutes of hearing your family's preferences.</p>
 
 <h2>Where the Wish Is Sailing Next</h2>
+<p>If you want a fuller picture of how the Wish has held up in service rather than on paper, our review of <a href="/blog/whats-new-disney-wish-2-years">what's new on Disney Wish after two years at sea</a> covers the refinements Disney has made since launch.</p>
 <p>One more variable worth factoring in: starting in 2027 the Wish leaves Port Canaveral for its first-ever European season. If a Mediterranean or Norwegian fjords sailing appeals more than another Bahamas run, see our guide to the <a href="/blog/disney-wish-europe-2027-ports">new Disney Wish Europe 2027 ports</a> — Zadar, Trieste, and Hellesylt.</p>
 
 <h2>Looking Beyond the Wish and Treasure</h2>
@@ -1347,6 +1359,7 @@ Many teens who are skeptical before boarding return home having had a genuinely 
     id: '17',
     slug: 'disney-cruise-onboard-credit-guide',
     title: 'The Complete Guide to Disney Cruise Onboard Credits: How to Get Hundreds Free',
+    meta_title: 'Disney Cruise Onboard Credit: How to Get Hundreds',
     excerpt: 'Onboard credit is free money you spend on board. Here\'s how Disney Cruise Line OBC works, how much you can realistically stack, and where it comes from.',
     author: 'Dr. Grayson Starbuck, DPT',
     published_date: '2026-05-12',
@@ -1448,6 +1461,7 @@ Many teens who are skeptical before boarding return home having had a genuinely 
     id: '18',
     slug: 'disney-wish-europe-2027-ports',
     title: 'Disney Wish Europe 2027 Ports: A Guide to Zadar, Trieste, and Hellesylt',
+    meta_title: 'Disney Wish Europe 2027 Ports: A Planning Guide',
     excerpt: 'The Disney Wish Europe 2027 season adds three brand-new ports to the fleet. Here is what to expect in Zadar, Trieste, and Hellesylt — and how to plan each day.',
     author: 'Dr. Grayson Starbuck, DPT',
     published_date: '2026-08-16',
@@ -1507,4 +1521,74 @@ Many teens who are skeptical before boarding return home having had a genuinely 
 <p>If you want help matching a specific sailing date, itinerary, and stateroom category to your family, <a href="/concierge">talk to our concierge</a> — we track Disney's European inventory daily and can walk through the trade-offs with you. There is no charge for the conversation and no obligation attached to it.</p>
     `.trim(),
   },
+  {
+    id: '19',
+    slug: 'halloween-on-the-high-seas-2026-guide',
+    title: 'Halloween on the High Seas 2026: What to Expect Before You Sail',
+    meta_title: 'Halloween on the High Seas 2026: What to Expect',
+    meta_description:
+      'Halloween on the High Seas 2026 runs from September 4 across seven Disney ships. What is included, the costume rules, and how to plan your sea days.',
+    excerpt: 'Halloween on the High Seas 2026 starts September 4 and runs through the end of October on seven ships. Here is what is actually included and how to plan for it.',
+    author: 'Dr. Grayson Starbuck, DPT',
+    published_date: '2026-08-23',
+    category: 'tips',
+    tags: ['halloween-on-the-high-seas', 'seasonal-sailings', 'onboard-experiences', 'disney-destiny', 'disney-wonder', 'fall-cruising', 'disney-cruise-line'],
+    read_time: '9 min read',
+    featured_image_url: 'https://images.unsplash.com/photo-1509557965875-b88c97052f0e?w=1200&h=600&fit=crop',
+    content: `
+<p><strong>Halloween on the High Seas 2026</strong> begins on September 4 and runs through the end of October, layering a full seasonal overlay onto more than 70 regularly scheduled sailings. If you have been eyeing a fall Disney cruise, this is the window — and because the overlay is included in your fare rather than sold as an add-on, it is one of the better value seasons Disney Cruise Line runs.</p>
+<p>The catch is that most first-timers do not realize how much of Halloween on the High Seas happens on a single evening, and they plan their sea days around the wrong things. Here is what the 2026 season actually includes, which ships are sailing it, what the costume rules are, and how to structure your days so you do not miss the parts that matter.</p>
+
+<h2>What Halloween on the High Seas 2026 Actually Includes</h2>
+<p>Everything below is bundled into your cruise fare. There is no separate ticketed party the way there is at the theme parks, which is the single biggest difference between a Halloween cruise and a Halloween park day — and the reason the value math works out so differently.</p>
+
+<h3>The Pumpkin Tree and Tree-Lighting Ceremony</h3>
+<p>On the first night of the sailing, the atrium — the Grand Hall on the newer ships — hosts a tree-lighting ceremony that brings the Pumpkin Tree to life. It is short, it is crowded, and it is the moment most photo-conscious families build their embarkation evening around. If you want a clear shot of your kids in front of the tree, go back the following morning when the atrium is nearly empty. The tree stays lit all week.</p>
+
+<h3>Mickey's Mouse-querade Party</h3>
+<p>This is the centerpiece of the season and the one event worth protecting on your itinerary. Mickey, Minnie, Donald, and Goofy trade their nautical outfits for costumes you will only see during Halloween on the High Seas, and the deck turns into a dance party with seasonal shows. It is usually held on a sea day evening, and it is the night everyone dresses up.</p>
+<p>Practical note: character lines during Mouse-querade are long because the costumes are exclusive. If a photo with costumed Mickey is a priority, get in line early rather than waiting until after dinner.</p>
+
+<h3>Trick-or-Treating Around the Ship</h3>
+<p>Kids follow designated trick-or-treat trails through the ship, collecting candy at stations along the way. It is contained, it is safe, and it takes far less time than a neighborhood run — plan on 30 to 45 minutes rather than an evening. Beyond that, the youth clubs run Halloween-twisted crafts and games all week, and the ship layers in seasonal decor, themed treats, and Halloween films.</p>
+
+<h2>Which Ships Are Sailing Halloween on the High Seas 2026</h2>
+<p>Seven ships carry the overlay this season, which is the widest coverage Disney has offered:</p>
+<ul>
+<li><strong>From Port Canaveral and Fort Lauderdale</strong> — Disney Magic, Disney Dream, Disney Fantasy, Disney Wish, Disney Treasure, and Disney Destiny, on 3- to 7-night Bahamian and Caribbean itineraries.</li>
+<li><strong>From San Diego</strong> — Disney Wonder, on 3- to 7-night Baja and Mexican Riviera sailings. A 3-night September 28 departure was recently listed from around $1,569 for an inside stateroom, which is among the least expensive ways into the season.</li>
+</ul>
+<p>You can filter the full fall inventory on our <a href="/sailings">sailings page</a>, and the <a href="/ports/san-diego">San Diego port guide</a> covers logistics if the West Coast option is new to you.</p>
+
+<h3>Disney Destiny's First Halloween Season</h3>
+<p>The headline for 2026 is that the <strong>Disney Destiny</strong> hosts Halloween on the High Seas for the first time. The Destiny is already the most theatrically themed ship in the fleet — its heroes-and-villains concept leans into exactly the aesthetic the season is going for, and the villain-forward spaces read differently in October than they do in June.</p>
+<p>Two honest caveats. First, first-season overlays on a new ship tend to have rougher edges than the versions running on the Magic, which has done this for years. Second, the Destiny is in its debut year, so fares are running above comparable sailings on older ships. If Halloween is the priority and the ship is secondary, the Magic or the Dream will cost less and execute the season more smoothly. Our <a href="/ships/disney-destiny">Disney Destiny ship page</a> has the specs, and the <a href="/blog/disney-destiny-heroes-villains-guide">Disney Destiny heroes and villains guide</a> walks through the theming in detail.</p>
+
+<h2>Costume Rules to Know Before You Pack</h2>
+<p>Halloween on the High Seas is one of the few times adults can go all-in on Disney costumes onboard, which is a real part of the appeal. Disney's rules are straightforward but strictly enforced:</p>
+<ul>
+<li>Costumes must be family-friendly — nothing offensive, violent, or obstructive.</li>
+<li>No toy weapons or props resembling guns, knives, or similar implements.</li>
+<li>Full-face masks may only be worn while standing still at character photo locations, and must be carried while you move around the ship.</li>
+<li>You can dress as your favorite character, but you may not pose for photos with other guests or sign autographs as that character.</li>
+</ul>
+<p>The practical advice, especially for the Caribbean sailings: pick something breathable and easy to move in. Mouse-querade is a dance party in September and October humidity, and elaborate costumes get abandoned in the stateroom by the second song. Coordinated t-shirts and light accessories outperform full builds nearly every time. Our <a href="/blog/disney-cruise-packing-list">Disney cruise packing list</a> covers how to fit costumes around everything else you actually need.</p>
+
+<h2>How to Plan Your Sea Days Around the Season</h2>
+<p>The biggest planning mistake is treating Halloween on the High Seas as an all-week atmosphere and then discovering the marquee events landed on nights you had booked something else.</p>
+<p><strong>Sailing length matters more than you would think.</strong> On a 3- or 4-night sailing, the tree lighting and Mouse-querade may fall on back-to-back nights, and a single Palo reservation or an early port day can knock out one of them. On a 5- to 7-night sailing there is enough room for the seasonal programming to spread out, and you can hit everything without trading away a dinner.</p>
+<p><strong>Read the Navigator app the moment you board.</strong> Event timing is not published far in advance and shifts by ship and itinerary. Check the schedule on embarkation day and book dining and spa around Mouse-querade rather than the other way around.</p>
+<p><strong>Do not over-schedule the port days.</strong> Fall itineraries lean heavily on Castaway Cay and Lookout Cay, and a full excursion day followed by a costume party is a lot for kids under eight. Our <a href="/blog/castaway-cay-vs-lookout-cay">Castaway Cay vs. Lookout Cay comparison</a> is useful for deciding which island day is worth the energy. If you are sailing with older kids, <a href="/blog/cruising-with-teens-activities">activities teens will actually enjoy</a> is worth a read — Mouse-querade is genuinely one of them.</p>
+
+<h2>Is a Halloween Sailing Worth the Fall Premium?</h2>
+<p>Fall is hurricane season in the Caribbean, and that is priced in — September and early October sailings are often among the cheapest of the year, even with the overlay, which is the case we make in detail in <a href="/blog/september-best-month-caribbean-cruise">why September is the best month to cruise the Caribbean</a>. The trade-off is real: itineraries do get modified for weather, and travel insurance is worth more in this window than in March.</p>
+<p>Value-wise, the season is included rather than ticketed, which means you are getting the full overlay at standard fare. Stack that against the usual levers — our <a href="/blog/disney-cruise-onboard-credit-guide">onboard credit guide</a> covers how to layer promotional credit with an advisor rebate — and a Halloween sailing is frequently the best cost-per-day Disney cruise on the calendar.</p>
+<p>One more thing worth knowing: many families sailing this window are repeat cruisers who book the same weeks every year, so the Bahamian short sailings around the last week of October fill earliest. If your dates are fixed to a school break, that is the constraint to solve first.</p>
+
+<h2>The Bottom Line</h2>
+<p>Halloween on the High Seas 2026 is a well-executed, fully included seasonal overlay that rewards a little planning and punishes none. Know that the Pumpkin Tree lights on night one, that Mouse-querade is the night that matters, and that a longer sailing gives the season room to breathe. Pack a costume you can dance in, check the Navigator on embarkation day, and let the rest happen.</p>
+<p>If you want help matching a specific fall sailing, ship, and stateroom category to your family — including which dates still have availability and what credit you would qualify for — <a href="/concierge">talk to our concierge</a>. We track Disney's fall inventory daily, the conversation is free, and there is no obligation attached to it.</p>
+    `.trim(),
+  },
 ]
+
