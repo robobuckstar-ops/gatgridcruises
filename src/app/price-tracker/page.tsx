@@ -143,7 +143,15 @@ export default function PriceTrackerPage() {
             </div>
           )}
 
-          <p className="text-blue-400 text-xs mt-6">
+          <p className="text-blue-200 text-sm mt-6">
+            Want to be told when a fare moves instead of checking back?{' '}
+            <Link href="/price-watch" className="text-[#D4AF37] underline underline-offset-2 hover:text-yellow-300">
+              Set up a price-drop watch
+            </Link>
+            .
+          </p>
+
+          <p className="text-blue-400 text-xs mt-4">
             Fares shown are per stateroom, base fare only, and exclude taxes and port fees.
             Last verified {PRICES_LAST_UPDATED}. Request a quote for live pricing on your dates.
           </p>

@@ -190,6 +190,46 @@ html {
   }
 }
 
+/* Slow diagonal sheen that sweeps across the header's "Already Booked?" CTA.
+   Travels far enough off both edges that the button sits unlit most of the cycle. */
+@keyframes ctaShimmer {
+  0% {
+    transform: translateX(-160%) skewX(-20deg);
+  }
+  100% {
+    transform: translateX(260%) skewX(-20deg);
+  }
+}
+
+.cta-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-shimmer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 45%;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.22) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: ctaShimmer 5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta-shimmer::before {
+    animation: none;
+    opacity: 0;
+  }
+}
+
 /* Animation utility classes */
 .animate-fade-up {
   opacity: 0;

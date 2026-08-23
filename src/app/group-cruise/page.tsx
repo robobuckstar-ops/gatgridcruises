@@ -385,6 +385,13 @@ export default function GroupCruisePage() {
               Start a booking with us
             </Link>
           </div>
+
+          <p className="mt-6 text-center text-sm text-slate-500">
+            Don&apos;t have a group yet?{' '}
+            <Link href="/community/sail-together" className="text-[#1E3A5F] font-semibold hover:underline">
+              Find other families sailing your dates →
+            </Link>
+          </p>
         </div>
       </section>
 

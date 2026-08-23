@@ -574,6 +574,16 @@ export default function TransferPage() {
           <p className="mt-5 font-inter text-xs text-blue-400">
             Free, no obligation, and we&apos;ll tell you straight if it doesn&apos;t qualify.
           </p>
+          <p className="mt-4 font-inter text-sm text-blue-200">
+            Want the mechanics first?{' '}
+            <Link
+              href="/tools/transfers"
+              className="text-[#D4AF37] underline underline-offset-2 hover:text-yellow-300"
+            >
+              Read the full transfer guide
+            </Link>
+            .
+          </p>
         </div>
       </section>
 

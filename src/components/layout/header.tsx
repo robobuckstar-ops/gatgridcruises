@@ -31,12 +31,8 @@ const navItems: NavItem[] = [
       { label: 'First-Time Tips', href: '/guides/first-time-disney-cruise-tips' },
       { label: 'Stateroom Comparison', href: '/guides/stateroom-comparison' },
       { label: 'Packing List', href: '/guides/disney-cruise-packing-list' },
+      // Individual port pages stay live; they're reached from /ports rather than the nav.
       { label: 'Port Guides', href: '/ports' },
-      { label: 'Castaway Cay', href: '/ports/castaway-cay' },
-      { label: 'Lookout Cay', href: '/ports/lookout-cay' },
-      { label: 'Ketchikan, Alaska', href: '/ports/ketchikan' },
-      { label: 'Skagway, Alaska', href: '/ports/skagway' },
-      { label: 'Juneau, Alaska', href: '/ports/juneau' },
       { label: 'With Toddlers', href: '/guides/disney-cruise-with-toddlers' },
       { label: 'Port Canaveral vs Miami', href: '/guides/port-canaveral-vs-miami' },
       { label: 'Excursion Savings', href: '/guides/excursion-savings' },
@@ -45,20 +41,18 @@ const navItems: NavItem[] = [
   {
     label: 'Tools',
     href: '/tools',
+    // Trimmed to the eight tools people actually open. The flight and price pages
+    // each collapse to a single hub entry, and /tools/transfers now hangs off
+    // /transfer — all of those pages stay live and linked from their hub.
     children: [
-      { label: 'Free Cruise Quote', href: '/book' },
       { label: 'Free First-Timer’s Guide', href: '/free-guide' },
       { label: 'OBC Calculator', href: '/tools/obc-calculator' },
       { label: 'Compare Sailings', href: '/tools/compare' },
       { label: 'Transfer Your Booking', href: '/transfer' },
       { label: 'Credit Card Hacks', href: '/tools/credit-cards' },
-      { label: 'Flight Search & Tips', href: '/flights' },
-      { label: 'Flight Finder', href: '/tools/flights' },
-      { label: 'Flight Deal Alerts', href: '/flight-deals' },
-      { label: 'Transfer Guide', href: '/tools/transfers' },
+      { label: 'Flights', href: '/flights' },
       { label: 'Stateroom Finder', href: '/tools/staterooms' },
       { label: 'Price Tracker', href: '/price-tracker' },
-      { label: 'Price-Drop Watch', href: '/price-watch' },
       { label: 'Port Hotels', href: '/hotels' },
     ],
   },
@@ -67,8 +61,8 @@ const navItems: NavItem[] = [
     href: '/blog',
     children: [
       { label: 'Blog', href: '/blog' },
+      // Sail Together stays live, reached from /group-cruise.
       { label: 'Group Sailing', href: '/group-cruise' },
-      { label: 'Sail Together', href: '/community/sail-together' },
       { label: 'Solo Cruising', href: '/solo-cruising' },
       { label: 'Travel Hacks', href: '/travel-hacks' },
     ],
@@ -181,9 +175,9 @@ export function Header() {
           <div className="hidden md:flex items-center gap-2">
             <Link
               href="/transfer"
-              className="hidden lg:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg border border-[#D4AF37] text-[#1E3A5F] text-sm font-semibold hover:bg-[#D4AF37] transition-colors duration-200"
+              className="cta-shimmer hidden lg:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-[#1E3A5F] text-white text-sm font-semibold shadow-[0_1px_6px_rgba(30,58,95,0.28)] hover:bg-[#2a4d75] transition-colors duration-200"
             >
-              Already Booked? Free Bonus →
+              <span className="relative">Already Booked? Free Bonus →</span>
             </Link>
             <Link
               href="/my-trip"
@@ -304,9 +298,16 @@ export function Header() {
             <Link
               href="/my-trip"
               onClick={() => { setMobileOpen(false); announceMenuState(false) }}
-              className="block px-3 py-2.5 text-base font-semibold rounded-lg border-2 border-navy text-navy text-center mb-3"
+              className="block px-3 py-2.5 text-base font-semibold rounded-lg border-2 border-navy text-navy text-center mb-2"
             >
               ⚓ My Trip
+            </Link>
+            <Link
+              href="/transfer"
+              onClick={() => { setMobileOpen(false); announceMenuState(false) }}
+              className="block px-3 py-2.5 text-base font-semibold rounded-lg border border-[#1E3A5F]/40 text-[#1E3A5F] text-center mb-3"
+            >
+              Already Booked? Free Bonus →
             </Link>
 
             {navItems.map((item) => (

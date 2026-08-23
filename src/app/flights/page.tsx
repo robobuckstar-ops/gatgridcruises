@@ -145,6 +145,17 @@ export default function FlightsPage() {
               Browse pre-cruise hotels →
             </Link>
           </p>
+
+          <p className="mt-3 text-center text-sm text-slate-500">
+            More flight help:{' '}
+            <Link href="/tools/flights" className="text-[#1E3A5F] font-semibold hover:underline">
+              Flight Finder
+            </Link>{' '}
+            ·{' '}
+            <Link href="/flight-deals" className="text-[#1E3A5F] font-semibold hover:underline">
+              Flight Deal Alerts
+            </Link>
+          </p>
         </div>
       </section>
 
