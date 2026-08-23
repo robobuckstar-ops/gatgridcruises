@@ -713,7 +713,7 @@ export const ships: Ship[] = [
       }
     ],
     editorial_take: 'The Disney Treasure shows Disney learning from the Wish while charting its own course. The adventure-theme resonates more than some might expect, and the ship manages to feel fresh without feeling like a rehash. If you want cutting-edge experiences at a slightly better price point than the Wish, this is genuinely worth considering.',
-    hero_image_url: '',
+    hero_image_url: '/images/ships/disney-treasure.jpg',
     created_at: '2026-01-01T00:00:00Z',
     updated_at: '2026-01-01T00:00:00Z'
   },
@@ -833,7 +833,7 @@ export const ships: Ship[] = [
       }
     ],
     editorial_take: 'The Disney Destiny represents everything Disney has learned about modern family cruising distilled into one ship. It\'s the most refined version of the newer fleet, with all the tech and entertainment bells and whistles but without feeling experimental. This is Disney saying "we know how to do this really, really well now."',
-    hero_image_url: '',
+    hero_image_url: '/images/ships/disney-destiny.jpg',
     created_at: '2026-01-01T00:00:00Z',
     updated_at: '2026-01-01T00:00:00Z'
   },
@@ -955,7 +955,7 @@ export const ships: Ship[] = [
       }
     ],
     editorial_take: 'The Disney Adventure redefines what a cruise ship can be—it\'s so massive that Disney had to rethink how to make it feel personal. The neighborhood concept is genuinely clever, and with over 6,700 passengers, you\'d expect chaos but somehow it works. This is the future of cruising, whether you\'re excited or intimidated by the scale.',
-    hero_image_url: '',
+    hero_image_url: '/images/ships/disney-adventure.jpg',
     created_at: '2026-01-01T00:00:00Z',
     updated_at: '2026-01-01T00:00:00Z'
   }
