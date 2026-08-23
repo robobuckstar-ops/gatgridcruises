@@ -305,7 +305,7 @@ export function Header() {
             <Link
               href="/transfer"
               onClick={() => { setMobileOpen(false); announceMenuState(false) }}
-              className="block px-3 py-2.5 text-base font-semibold rounded-lg border border-[#1E3A5F]/40 text-[#1E3A5F] text-center mb-3"
+              className="block px-3 py-2.5 text-base font-bold rounded-lg bg-[#1E3A5F] text-white text-center mb-3"
             >
               Already Booked? Free Bonus →
             </Link>
