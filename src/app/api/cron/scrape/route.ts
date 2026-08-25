@@ -1,17 +1,16 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { scrapeDisneyOffers, ingestScrapedData, recalculateSailingScores } from '@/lib/scraper'
+import { isAuthorizedCronRequest } from '@/lib/cron-auth'
 
 // Vercel Cron: runs daily at 6 AM EST
 // Configure in vercel.json: { "crons": [{ "path": "/api/cron/scrape", "schedule": "0 11 * * *" }] }
 
 export async function GET(request: NextRequest) {
-  // Verify this is called by Vercel Cron (not a random visitor)
-  const authHeader = request.headers.get('authorization')
-  if (authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
-    // In development, allow without auth
-    if (process.env.NODE_ENV === 'production') {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
-    }
+  // Verify this is called by Vercel Cron (not a random visitor). Uses the same
+  // helper as every other cron route so all of them accept the same three
+  // credentials (Bearer / x-cron-secret / ?secret=) and apply the same rule.
+  if (!isAuthorizedCronRequest(request)) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 
   const startTime = Date.now()

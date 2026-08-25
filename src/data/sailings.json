@@ -21,6 +21,11 @@
         "description": "Port of call"
       },
       {
+        "day": 4,
+        "port": "At Sea",
+        "description": "Day at sea"
+      },
+      {
         "day": 5,
         "port": "Port Canaveral",
         "description": "Disembarkation"
@@ -64,11 +69,6 @@
       },
       {
         "day": 4,
-        "port": "At Sea",
-        "description": "Day at sea"
-      },
-      {
-        "day": 5,
         "port": "At Sea",
         "description": "Day at sea"
       },
@@ -1836,23 +1836,63 @@
       },
       {
         "day": 2,
+        "port": "At Sea",
+        "description": "Day at sea"
+      },
+      {
+        "day": 3,
         "port": "Vigo, Spain",
         "description": "Port of call"
       },
       {
-        "day": 3,
+        "day": 4,
         "port": "Lisbon, Portugal",
         "description": "Port of call"
       },
       {
-        "day": 4,
+        "day": 5,
+        "port": "At Sea",
+        "description": "Day at sea"
+      },
+      {
+        "day": 6,
         "port": "Funchal (Madeira), Portugal",
         "description": "Port of call"
       },
       {
-        "day": 5,
-        "port": "Fort Lauderdale, Florida",
-        "description": "Port of call"
+        "day": 7,
+        "port": "At Sea",
+        "description": "Day at sea"
+      },
+      {
+        "day": 8,
+        "port": "At Sea",
+        "description": "Day at sea"
+      },
+      {
+        "day": 9,
+        "port": "At Sea",
+        "description": "Day at sea"
+      },
+      {
+        "day": 10,
+        "port": "At Sea",
+        "description": "Day at sea"
+      },
+      {
+        "day": 11,
+        "port": "At Sea",
+        "description": "Day at sea"
+      },
+      {
+        "day": 12,
+        "port": "At Sea",
+        "description": "Day at sea"
+      },
+      {
+        "day": 13,
+        "port": "At Sea",
+        "description": "Day at sea"
       },
       {
         "day": 14,
@@ -1869,7 +1909,7 @@
     "current_concierge_price": null,
     "sailing_score": 100,
     "is_featured": true,
-    "notes": "Sourced from Disney Cruise Line via Apify dataset m64FPMoCl1covPssa",
+    "notes": "Sourced from Disney Cruise Line via Apify dataset m64FPMoCl1covPssa Itinerary day-by-day reconstructed 2026-08-24: the imported record listed Fort Lauderdale as a day-5 port of call (impossible) and omitted days 6-13. Port calls are from the source; sea days are inferred from the crossing distance. Verify against Disney before quoting day-level detail to a client.",
     "disney_booking_url": "https://disneycruise.disney.go.com/en-us/cruises-destinations/list/DD1515/13-Night-Westbound-Transatlantic-Cruise-from-Southampton-ending-in-Fort-Lauderdale/2026-09-14-Disney-Dream",
     "created_at": "2026-05-04T00:00:00Z",
     "updated_at": "2026-08-16T20:00:37.659Z",

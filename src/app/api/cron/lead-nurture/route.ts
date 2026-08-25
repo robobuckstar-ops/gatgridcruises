@@ -7,6 +7,7 @@ import {
   leadNurtureDay30,
 } from '@/lib/email-templates'
 import { LEAD_FIELDS, LEADS_TABLE } from '@/lib/airtable-leads'
+import { isAuthorizedCronRequest } from '@/lib/cron-auth'
 
 export const runtime = 'nodejs'
 
@@ -107,10 +108,12 @@ async function sendBrevoEmail(
 }
 
 export async function GET(request: NextRequest) {
-  const secret =
-    request.headers.get('x-cron-secret') ??
-    new URL(request.url).searchParams.get('secret')
-  if (secret !== process.env.CRON_SECRET) {
+  // Vercel Cron authenticates with `Authorization: Bearer $CRON_SECRET`, which
+  // this route did not accept — it only read `x-cron-secret` / `?secret=`. So
+  // the scheduled 13:00 run 401'd every day and the nurture drip never sent,
+  // even though leads were landing in the CRM correctly. The shared helper
+  // accepts all three forms (and still requires the secret in production).
+  if (!isAuthorizedCronRequest(request)) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 

@@ -1590,5 +1590,181 @@ If you have any flexibility on dates, a fall sailing is worth a look — <a href
 <p>If you want help matching a specific fall sailing, ship, and stateroom category to your family — including which dates still have availability and what credit you would qualify for — <a href="/concierge">talk to our concierge</a>. We track Disney's fall inventory daily, the conversation is free, and there is no obligation attached to it.</p>
     `.trim(),
   },
+  {
+    id: '20',
+    slug: 'transfer-disney-cruise-booking-to-travel-agent',
+    title: 'How to Transfer a Disney Cruise Booking to a Travel Agent for Onboard Credit',
+    meta_title: 'Transfer a Disney Cruise Booking to a Travel Agent',
+    meta_description:
+      'Booked direct with Disney? You can transfer the reservation to a travel agent and get onboard credit — same ship, same fare. Rules, timing, and how it works.',
+    excerpt: 'If you booked directly with Disney in the last month, you can usually move the reservation to a travel agent and pick up onboard credit for it. Here\'s how the transfer works and who qualifies.',
+    author: 'Dr. Grayson Starbuck, DPT',
+    published_date: '2026-08-24',
+    category: 'tips',
+    tags: ['booking-transfer', 'onboard-credit', 'obc', 'travel-advisor', 'disney-cruise-line', 'save-money'],
+    read_time: '8 min read',
+    featured_image_url: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=600&fit=crop',
+    content: `
+<p>Here is a thing most Disney cruisers never find out: if you booked your sailing <strong>directly with Disney Cruise Line</strong> and it has been less than about a month, you can usually hand that reservation to a travel agent — and the agent can give you onboard credit for it. Same ship, same sail date, same stateroom, same reservation number, same fare you already paid.</p>
+<p>It sounds like a catch waiting to happen. It isn't. It's a commission that Disney is going to pay out either way, and right now it's going nowhere. This guide covers how a Disney cruise booking transfer actually works, the three rules that decide whether yours qualifies, how much credit is realistically on the table, and the situations where transferring is the wrong move.</p>
+
+<h2>What "Transferring a Booking" Actually Means</h2>
+<p>A Disney cruise reservation has an <em>agency of record</em> — the party Disney treats as the booking contact. When you book on disneycruise.com, through the app, or over the phone with Disney, that field is Disney itself. A transfer changes that one field to a travel agency.</p>
+<p>That is the entire change. Your reservation number stays the same. Your ship, sail date, stateroom number, dining rotation, and Castaway Club status stay the same. Your fare, taxes, and port fees stay the same — a travel agent cannot alter Disney's published price in either direction, which is also why nobody can charge you more for booking through them.</p>
+<p>What gets added is an agent working the booking on your behalf: onboard credit, price-drop monitoring through final payment, and a human being who answers when you have a question about dining rotations at 9pm on a Tuesday.</p>
+
+<h2>Why Disney Allows This at All</h2>
+<p>Disney Cruise Line pays a standard commission to the agency of record on every booking. If you book direct, there is no agency, so Disney keeps it. If an agency is attached, Disney pays the commission — and agencies like ours give a share of it back to the client as onboard credit.</p>
+<p>From Disney's side the economics are unchanged: the fare you pay is identical and the commission is a customer acquisition cost they've already budgeted. From your side, the difference between booking direct and booking through an agent is the credit. That's the whole mechanism, and it's the reason the offer can be free without being a trick. We break the broader picture down in our <a href="/blog/disney-cruise-onboard-credit-guide">complete guide to Disney cruise onboard credit</a>.</p>
+
+<h2>The Three Rules That Decide If You Qualify</h2>
+<p>Disney sets these rules and can apply or change them at its discretion, so treat the below as the general shape of the policy rather than a guarantee.</p>
+
+<h3>1. You booked directly with Disney</h3>
+<p>Disney will move a reservation out of its own direct channel to an agency. It will <strong>not</strong> move a reservation from one travel agency to another. If your cruise is already sitting with another agency, it stays there for that sailing — full stop. That one catches people, because they assume a transfer is a transfer.</p>
+
+<h3>2. You booked recently — commonly within about 30 days</h3>
+<p>Disney generally accepts a transfer request within roughly 30 days of the original booking date. If you booked this week, you are almost certainly inside the window. If you booked in the spring, you are almost certainly outside it. This is the rule that turns "I'll deal with it later" into a few hundred dollars left behind, so if you booked recently, handle it now rather than after you've picked your excursions.</p>
+
+<h3>3. You have not made final payment</h3>
+<p>A reservation paid in full is not eligible. As long as you're still sitting on a deposit — which, for a sailing more than 90 to 120 days out, you almost certainly are — this rule is usually satisfied without you doing anything.</p>
+<p>There are also fare types that generally can't move, including bookings made with Disney Vacation Club points and certain restricted or promotional rates. That is a check worth having someone do for you rather than guessing at, and it takes about a minute.</p>
+
+<h2>How Much Onboard Credit Are We Talking About?</h2>
+<p>Onboard credit scales with your total cruise fare before taxes and port fees. Here's what a qualifying transfer looks like in dollars:</p>
+<table>
+<thead>
+<tr><th>Total Cruise Fare</th><th>Onboard Credit</th></tr>
+</thead>
+<tbody>
+<tr><td>$3,000</td><td>$90</td></tr>
+<tr><td>$5,000</td><td>$150</td></tr>
+<tr><td>$7,500</td><td>$225</td></tr>
+<tr><td>$10,000</td><td>$300</td></tr>
+</tbody>
+</table>
+<p>The credit posts to your stateroom folio after final payment is received — typically 90 to 120 days before you sail — and you spend it on anything that bills to your room key: Palo or Enchanté, the spa, drink packages, port adventures, photo packages, internet, the gift shops. To see the figure for your own fare, run it through our <a href="/tools/obc-calculator">free OBC calculator</a>.</p>
+<p>A note on expectations: this is a rebate on a commission, not a discount on Disney. Nobody is going to hand you $2,000 on a $5,000 booking, and an agency promising that is telling you something about the service you'd get afterward. What you should expect is a real, confirmed-in-writing dollar amount that shows up on your folio.</p>
+
+<h2>How the Transfer Actually Works</h2>
+<p>Three steps, and you're only involved in two of them:</p>
+<ol>
+<li><strong>You send the request.</strong> Name, email, sail date, and your reservation number if you have it in front of you. No fare details, no payment information, no Disney account password. Any agency asking for those on a transfer request is asking for things it doesn't need.</li>
+<li><strong>The agency checks eligibility and sends Disney's form.</strong> If your reservation qualifies, you get Disney Cruise Line's own one-page booking transfer request. You sign it; the agency files it with Disney.</li>
+<li><strong>Disney processes it, and the credit attaches.</strong> Your onboard credit is confirmed in writing in dollars, and posts to the folio after final payment.</li>
+</ol>
+<p>Start-to-finish, your part is a short form and a signature. Our <a href="/transfer">booking transfer page</a> has a 60-second eligibility check that tells you where you stand before you commit to anything.</p>
+
+<h2>What Changes, and What Doesn't</h2>
+<p>The single most common worry is losing control of the reservation. You don't. You keep your Disney account and still log in for online check-in, port arrival time, dining preferences, and Port Adventures. The agency handles the fare side — price-drop rebooking and final payment processing — and you can call either Disney or your agent.</p>
+<p>What genuinely doesn't change: reservation number, ship, sail date, stateroom, dining rotation, Castaway Club status, and price. What's added: onboard credit, fare monitoring, and planning help. What you give up: nothing, other than being the only name Disney has on the file.</p>
+
+<h2>When You Should <em>Not</em> Transfer</h2>
+<p>Being straight about this matters more than closing the booking:</p>
+<ul>
+<li><strong>You're already with an agency you like.</strong> Disney won't move it anyway, and if you have a good agent, you already have the thing this article is about.</li>
+<li><strong>You're past final payment.</strong> Not eligible. Save the effort for the next sailing.</li>
+<li><strong>You booked with DVC points or a restricted fare.</strong> Often excluded. Worth checking, not worth counting on.</li>
+<li><strong>You'd be giving up a better perk.</strong> If you booked through a credit-card travel portal or a program that already attached a benefit, compare before you move anything. Our <a href="/blog/best-credit-cards-disney-cruises">guide to the best credit cards for Disney cruises</a> covers what those portal perks are typically worth.</li>
+</ul>
+
+<h2>The Mistakes That Cost People the Credit</h2>
+<p><strong>Waiting.</strong> By a wide margin the most expensive one. The window is short and it starts on your booking date, not your sail date. People discover the transfer option while researching excursions four months out — long past the point where anything can be done.</p>
+<p><strong>Calling Disney to arrange it.</strong> Disney's phone agents are not going to walk you through moving your booking away from Disney's direct channel. The request comes from the agency side with your signature on Disney's form.</p>
+<p><strong>Assuming it's too late without asking.</strong> The window is approximate, dates get read wrong, and the check costs nothing. "Probably past it" is a guess; a real answer takes a minute.</p>
+<p><strong>Booking direct next time.</strong> The cleanest version of all of this is to never need a transfer. Book through the agent from the start and the credit attaches at booking, with no 30-day clock running in the background. If you're still shopping sailings, you can <a href="/book">start the booking with us</a> and skip this whole article next time.</p>
+
+<h2>The Bottom Line</h2>
+<p>If you booked a Disney cruise direct within the last month and haven't made final payment, a booking transfer converts a commission Disney is already paying into onboard credit you can actually spend. Nothing about the cruise changes and the fare is fixed by Disney either way, so the only real variable is whether anyone is attached to the reservation to pass the credit back.</p>
+<p>Run the <a href="/transfer">60-second eligibility check</a> if you want a straight answer on your specific reservation, or <a href="/concierge">talk to our concierge</a> if you'd rather ask a person. We'll tell you plainly if your booking doesn't qualify — and if it's your first Disney sailing, our <a href="/blog/first-time-disney-cruise-tips">first-time Disney cruise tips</a> are the next thing worth reading.</p>
+    `.trim(),
+  },
+  {
+    id: '21',
+    slug: 'port-canaveral-disney-cruise-embarkation-day',
+    title: 'Port Canaveral Embarkation Day: A Terminal 8 Walkthrough for Disney Cruisers',
+    meta_title: 'Port Canaveral Disney Cruise Embarkation Day Guide',
+    meta_description:
+      'How embarkation day works at Port Canaveral Terminal 8: getting there from MCO, parking, port arrival times, luggage, and what to do first once you board.',
+    excerpt: 'Embarkation day at Port Canaveral is the day most first-timers plan least and stress about most. Here is how Terminal 8 actually works, hour by hour.',
+    author: 'Dr. Grayson Starbuck, DPT',
+    published_date: '2026-08-24',
+    category: 'destinations',
+    tags: ['port-canaveral', 'terminal-8', 'embarkation-day', 'port-guides', 'first-time-cruisers', 'orlando', 'disney-cruise-line'],
+    read_time: '9 min read',
+    featured_image_url: 'https://images.unsplash.com/photo-1599640842225-85d111c60e6b?w=1200&h=600&fit=crop',
+    content: `
+<p>Most of a Disney cruise plans itself. Embarkation day does not. It's the one day with a hard deadline, real logistics, and a hundred small decisions — when to leave the hotel, where to park, what to keep in the backpack, what to do the second you step aboard — and it's the day first-timers spend the most energy worrying about.</p>
+<p><strong>Port Canaveral</strong> is Disney Cruise Line's flagship home port and where the large majority of Bahamian and Caribbean sailings begin. Disney uses <strong>Terminal 8</strong> here, a purpose-built terminal it doesn't share. Once you know how the morning is structured, the whole thing takes about 45 minutes of actual effort. Here's the walkthrough.</p>
+
+<h2>Where Port Canaveral Is, and How Far From Everything</h2>
+<p>Port Canaveral sits on Florida's Space Coast, east of Orlando. The distances that matter:</p>
+<ul>
+<li><strong>Orlando International Airport (MCO)</strong> — about 45 minutes by car.</li>
+<li><strong>Walt Disney World</strong> — about 60 minutes.</li>
+<li><strong>Kennedy Space Center</strong> — about 15 minutes.</li>
+<li><strong>Cocoa Beach</strong> — about 10 minutes.</li>
+</ul>
+<p>That geography drives the single biggest embarkation-day decision: whether to fly in the morning of, or the night before. Our <a href="/ports/port-canaveral">Port Canaveral port guide</a> has the full picture of the area, including what's worth doing with a spare day.</p>
+
+<h3>Fly In the Day Before. Really.</h3>
+<p>A same-day flight into MCO can work — an early arrival plus a 45-minute drive lands you at the terminal in plenty of time. It also means a single delayed flight, one mechanical, or one line of Florida thunderstorms costs you the entire cruise, because the ship does not wait. A night in Cocoa Beach or near the port removes that risk for the price of a hotel room, and it's the recommendation we make to every client who asks.</p>
+
+<h2>Getting to Terminal 8</h2>
+
+<h3>Driving and parking</h3>
+<p>On-port parking at Port Canaveral runs about <strong>$17 per day</strong>, paid at the garage, which on a 7-night sailing is roughly $120. Park-and-cruise hotels in Cocoa Beach and Titusville frequently bundle a night's stay with free parking for the length of your cruise plus a terminal shuttle — for longer sailings that package often costs less than the parking alone. Worth ten minutes of math before you book anything.</p>
+
+<h3>From MCO</h3>
+<p>You have three reasonable options: a rental car (cheapest if you're already driving elsewhere in Florida, but you have to return it), a rideshare or taxi (fine for two adults, less fine for a family of five with a week of luggage), or a pre-booked shuttle or private transfer (the least eventful, and the one families with young kids tend to prefer). Our <a href="/tools/transfers/port-canaveral">Port Canaveral transfer tool</a> compares the options with real pricing so you're not guessing at what a van for six actually costs.</p>
+
+<h3>From a Walt Disney World resort</h3>
+<p>If you're doing a park-and-cruise combination, Disney runs motorcoach transfers between Walt Disney World resort hotels and the cruise terminal, with luggage handling included. It is the most expensive per person and by a distance the easiest — bags leave your resort room and reappear outside your stateroom.</p>
+
+<h2>Port Arrival Time: The Thing to Get Right</h2>
+<p>Disney assigns every stateroom a <strong>port arrival time</strong> — a window during which you're meant to show up at the terminal. You select it during online check-in, and the earlier slots go first.</p>
+<p>Online check-in opens roughly a month before sailing, with earlier access for concierge guests and higher Castaway Club tiers. Your exact date is shown in your Disney account, and it is worth setting a reminder for: check in the morning it opens and you'll have the run of the available times. Check in a week later and you may be taking what's left.</p>
+<p>Two practical notes. First, the terminal opens for check-in around <strong>10:30am</strong>, so arriving at 9:00 buys you a parking lot, not a head start. Second, an early arrival time is genuinely useful — it means lunch aboard, an unhurried look around the ship, and your kids registered at the youth clubs before the line forms. If your window is late morning, you have not lost anything meaningful.</p>
+
+<h2>What the Morning Actually Looks Like</h2>
+<p>The sequence at Terminal 8 is short and the same every time:</p>
+<ol>
+<li><strong>Luggage drop.</strong> Porters take your checked bags curbside before you enter the building. Every bag needs a Disney luggage tag with your stateroom number — print them at home or pick them up here. Tip the porters; they're handling your entire week.</li>
+<li><strong>Security screening.</strong> Airport-style, slightly gentler. Empty pockets, bags on the belt.</li>
+<li><strong>Check-in.</strong> Passports or birth certificates for everyone, plus your completed online check-in. Even though Port Canaveral is a US port, bring the documents you registered — this is a customs checkpoint.</li>
+<li><strong>Waiting area, by boarding group.</strong> You'll be given a number and called in sequence. There's seating, and on a good day some character appearances.</li>
+<li><strong>Boarding.</strong> Your family name is announced as you step aboard, which sounds like a small thing and is somehow not. Then you're on the ship.</li>
+</ol>
+<p>From curb to deck, plan on 30 to 60 minutes depending on where your arrival time falls. The window closes well before the ship's departure — all-aboard is typically an hour or so before sail-away, and the posted time on your Navigator is the one that counts.</p>
+
+<h2>What to Keep in Your Carry-On</h2>
+<p>Checked bags are delivered to your stateroom over the course of the afternoon, and some don't arrive until dinnertime. Your day bag should therefore carry:</p>
+<ul>
+<li><strong>Swimsuits.</strong> The pools and slides open immediately and the deck is half-empty for the first two hours. This is the tip veterans give first.</li>
+<li><strong>Medications, documents, and valuables.</strong> Never checked, ever.</li>
+<li><strong>A change of clothes for young kids</strong>, plus whatever they need for a nap.</li>
+<li><strong>A refillable water bottle</strong> and any sunscreen you want before the bags land.</li>
+</ul>
+<p>Our <a href="/blog/disney-cruise-packing-list">Disney cruise packing list</a> covers the full breakdown, including what not to bring aboard at all.</p>
+
+<h2>The First Two Hours Aboard</h2>
+<p>Most people wander. The families who get the most out of embarkation day do four things first:</p>
+<ul>
+<li><strong>Eat.</strong> The buffet — Cabanas on most ships — is open and busy; the quick-service windows up on the pool deck are open and are not.</li>
+<li><strong>Register the kids at the youth clubs.</strong> The Oceaneer Club and Lab run an open house on embarkation afternoon. Walking through with your kids now is the difference between a child who runs in on night one and a child who clings to your leg.</li>
+<li><strong>Confirm dining and anything still unbooked.</strong> Check your rotation, and if a Palo reservation, a spa treatment, or an excursion you wanted was full online, ask in person today. Cancellations release here first.</li>
+<li><strong>Open the Navigator app.</strong> The full schedule appears once you're aboard, including the sail-away party and the first evening's shows. It's the single most useful thing on the ship and it's free over the onboard network.</li>
+</ul>
+<p>Then the safety drill — you'll check in at your assigned muster station after watching the briefing in the app — and after that the day is genuinely yours. If you'd like the wider list of things people wish they'd known, <a href="/blog/first-time-disney-cruise-mistakes">10 things first-time Disney cruisers always get wrong</a> is the companion piece to this one.</p>
+
+<h2>If You Have a Spare Day at the Port</h2>
+<p>Port Canaveral rewards an extra day more than most home ports. <strong>Kennedy Space Center</strong> is 15 minutes away and is a legitimate full-day attraction — Space Shuttle Atlantis, the Saturn V, bus tours past active launch complexes. <strong>Cocoa Beach</strong> is ten minutes out and free. Both work as a pre-cruise afternoon or a post-cruise buffer before an evening flight.</p>
+<p>On disembarkation morning, the reverse of all this happens fast: bags go outside your stateroom the night before, breakfast is early, and most guests are off the ship by 9:00am. Don't book a flight out of MCO before about noon — the drive is 45 minutes and customs is not always instant.</p>
+
+<h2>The Bottom Line</h2>
+<p>Embarkation day at Port Canaveral is a solved problem. Fly in the night before, check in online the morning your window opens, take the earliest port arrival time you can get, put swimsuits in the carry-on, and register the kids at the clubs before you do anything else. The terminal itself is the easy part.</p>
+<p>If you're still choosing a sailing, browse what's leaving from Port Canaveral on our <a href="/sailings">sailings page</a>, and when you're ready to lock it in, <a href="/book">book with us</a> — a $5,000 fare comes with $150 in onboard credit at the same price Disney charges direct, and you can check your own number with the <a href="/tools/obc-calculator">OBC calculator</a>. Already booked direct in the last month? Our guide to <a href="/blog/transfer-disney-cruise-booking-to-travel-agent">transferring a Disney cruise booking to a travel agent</a> explains how to capture that credit on a reservation you've already made.</p>
+    `.trim(),
+  },
 ]
 
