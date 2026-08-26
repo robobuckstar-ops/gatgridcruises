@@ -98,7 +98,11 @@ export async function fetchBookingByName(
   const safe = bookingName.replace(/"/g, '\\"')
   const formula = encodeURIComponent(`FIND(LOWER("${safe}"), LOWER({Booking Name})) > 0`)
   const fieldParams = Object.values(BOOKING_FIELDS).map(id => `fields[]=${id}`).join('&')
-  const url = `https://api.airtable.com/v0/${AIRTABLE_BASE}/${BOOKINGS_TABLE}?filterByFormula=${formula}&${fieldParams}`
+  // returnFieldsByFieldId is required: this whole module reads fields by their
+  // stable field ID, but Airtable keys the response by field NAME unless asked
+  // otherwise. Without it every field reads back undefined, which made login
+  // reject every real booking as "details do not match".
+  const url = `https://api.airtable.com/v0/${AIRTABLE_BASE}/${BOOKINGS_TABLE}?filterByFormula=${formula}&${fieldParams}&returnFieldsByFieldId=true`
   const data = await airtableGet(url, apiKey)
   const records = (data.records as Array<{ id: string; fields: Record<string, unknown> }>) ?? []
   return records[0] ?? null
@@ -111,14 +115,14 @@ export async function fetchBookingByEmail(
   const normalized = email.trim().toLowerCase().replace(/"/g, '\\"')
   const formula = encodeURIComponent(`LOWER({Client Email})="${normalized}"`)
   const fieldParams = Object.values(BOOKING_FIELDS).map(id => `fields[]=${id}`).join('&')
-  const url = `https://api.airtable.com/v0/${AIRTABLE_BASE}/${BOOKINGS_TABLE}?filterByFormula=${formula}&${fieldParams}`
+  const url = `https://api.airtable.com/v0/${AIRTABLE_BASE}/${BOOKINGS_TABLE}?filterByFormula=${formula}&${fieldParams}&returnFieldsByFieldId=true`
   const data = await airtableGet(url, apiKey)
   const records = (data.records as Array<{ id: string; fields: Record<string, unknown> }>) ?? []
   return records[0] ?? null
 }
 
 export async function fetchClientName(clientId: string, apiKey: string): Promise<string> {
-  const url = bookingUrl(CLIENTS_TABLE, `${clientId}?fields[]=${CLIENT_FIELDS.name}`)
+  const url = bookingUrl(CLIENTS_TABLE, `${clientId}?fields[]=${CLIENT_FIELDS.name}&returnFieldsByFieldId=true`)
   try {
     const record = await airtableGet(url, apiKey)
     const fields = record.fields as Record<string, unknown> | undefined
@@ -180,7 +184,7 @@ export async function fetchBookingById(
   const fieldIds: string[] = [...Object.values(BOOKING_FIELDS)]
   if (DOCUMENTS_FIELD_ID) fieldIds.push(DOCUMENTS_FIELD_ID)
   const fieldParams = fieldIds.map(id => `fields[]=${id}`).join('&')
-  const url = bookingUrl(BOOKINGS_TABLE, `${bookingId}?${fieldParams}`)
+  const url = bookingUrl(BOOKINGS_TABLE, `${bookingId}?${fieldParams}&returnFieldsByFieldId=true`)
 
   let record: Record<string, unknown>
   try {

@@ -27,8 +27,12 @@ export const dynamic = 'force-dynamic'
 
 /** The cell that answers the business line. Overridable for testing. */
 const FORWARD_TO = normalizePhone(process.env.VOICE_FORWARD_NUMBER) || '+15804306511'
-/** Ring Grayson's cell this long before giving up as a missed call. */
-const RING_SECONDS = 20
+// Ring Grayson's cell this long before rolling to the GatGrid voicemail. Kept
+// short on purpose: a personal cell's own carrier voicemail usually answers
+// around 25 seconds, and if it picks up first Twilio counts the call as
+// "answered" and never reaches our greeting. Giving up at 13s beats the carrier
+// voicemail to the punch so callers hear GatGrid, not Grayson's personal box.
+const RING_SECONDS = 13
 
 function xml(body: string): NextResponse {
   return new NextResponse(`<?xml version="1.0" encoding="UTF-8"?>${body}`, {
