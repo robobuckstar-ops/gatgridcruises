@@ -122,7 +122,10 @@ export async function fetchBookingByEmail(
 }
 
 export async function fetchClientName(clientId: string, apiKey: string): Promise<string> {
-  const url = bookingUrl(CLIENTS_TABLE, `${clientId}?fields[]=${CLIENT_FIELDS.name}&returnFieldsByFieldId=true`)
+  // Same as fetchBookingById: the get-one-record endpoint rejects `fields[]`, so
+  // fetch the whole client record by ID. Without this the lookup 422'd and
+  // returned "", which also silently skipped the last-name check at login.
+  const url = bookingUrl(CLIENTS_TABLE, `${clientId}?returnFieldsByFieldId=true`)
   try {
     const record = await airtableGet(url, apiKey)
     const fields = record.fields as Record<string, unknown> | undefined
