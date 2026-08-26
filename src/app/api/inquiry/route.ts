@@ -4,7 +4,12 @@ import { checkRateLimit, getClientIp } from '@/lib/rate-limit'
 import { saveLeadSafely } from '@/lib/airtable-leads'
 import { AGENT_REPLY_TO, agentNotifyRecipients } from '@/lib/agent-inbox'
 import { readSmsConsent, smsConsentNote } from '@/lib/sms-consent'
-import { leadFirstName, missingLeadDetails, sendLeadAutoText } from '@/lib/lead-autotext'
+import {
+  leadFirstName,
+  missingLeadDetails,
+  sendLeadAutoText,
+  type LeadSource,
+} from '@/lib/lead-autotext'
 import { sendPushover } from '@/lib/pushover'
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -208,11 +213,17 @@ export async function POST(request: NextRequest) {
   const sailingSummary = buildSailingSummary(sailing)
   const customerSailingSummary = buildSailingSummary(sailing, { includePrice: false })
 
+  // This route serves two front doors: "Request this sailing", which always
+  // carries a sailing, and the /contact form, which never does. Without the
+  // split, a contact message got a welcome text thanking them for a request on
+  // a sailing they never picked.
+  const leadSource: LeadSource = sailing ? 'inquiry' : 'contact'
+
   // A picked sailing already names its itinerary and dates, so the only thing
   // still worth asking is who is coming. A general inquiry gets all three.
   const openQuestions = missingLeadDetails({
     name,
-    source: 'inquiry',
+    source: leadSource,
     knownTimeframe: sailing?.sailDate ?? '',
     knownPartySize: guests,
     knownDeparturePort: sailing?.itineraryName ?? '',
@@ -227,7 +238,7 @@ export async function POST(request: NextRequest) {
     const textOk = phone
       ? await sendLeadAutoText(phone, {
           name,
-          source: 'inquiry',
+          source: leadSource,
           knownTimeframe: sailing?.sailDate ?? '',
           knownPartySize: guests,
           knownDeparturePort: sailing?.itineraryName ?? '',
@@ -241,7 +252,9 @@ export async function POST(request: NextRequest) {
         `Name: ${name}`,
         `Phone: ${phone || 'not provided'}`,
         `Email: ${email}`,
-        'Source: inquiry (request this sailing)',
+        leadSource === 'contact'
+          ? 'Source: contact (general message)'
+          : 'Source: inquiry (request this sailing)',
         `Interest: ${sailingSummary}`,
         `Guests: ${guests || 'not provided'}`,
         `SMS opt-in: ${smsConsent ? 'yes' : 'no'}`,

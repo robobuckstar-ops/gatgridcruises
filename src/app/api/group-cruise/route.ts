@@ -3,11 +3,18 @@ import { Resend } from 'resend'
 import { checkRateLimit } from '@/lib/rate-limit'
 import { saveLeadSafely } from '@/lib/airtable-leads'
 import { AGENT_REPLY_TO, agentNotifyRecipients } from '@/lib/agent-inbox'
+import { sendLeadAutoText } from '@/lib/lead-autotext'
+import { sendPushover } from '@/lib/pushover'
 
 // Interest capture for the hosted GatGrid group sailing (/group-cruise).
 // Same delivery contract as /api/transfer and /api/price-watch: the lead is
 // written to the Airtable CRM and emailed to the agent inbox, and the request
 // only fails if BOTH paths fail.
+//
+// Once the lead is recorded, the same best-effort follow-ups as /api/free-quote
+// fire: the email acknowledgment, a welcome text, and a high-priority push to
+// Grayson. None of them can fail the submission. The form has no phone field
+// today, so the text only goes out for a submission that carries one.
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 const AGENT_INBOX = AGENT_REPLY_TO
@@ -125,6 +132,9 @@ export async function POST(request: NextRequest) {
   }
 
   const notes = sanitize(body.notes, 2000)
+  // Optional and not on the form yet, but read here so the welcome text starts
+  // working the day a phone field is added rather than needing a code change.
+  const phone = sanitize(body.phone, 50)
   const referral_code = body.referral_code ? sanitize(body.referral_code, 60) : undefined
   const utm_source = body.utm_source ? sanitize(body.utm_source, 80) : undefined
   const utm_medium = body.utm_medium ? sanitize(body.utm_medium, 80) : undefined
@@ -197,6 +207,7 @@ export async function POST(request: NextRequest) {
 
   // Best-effort acknowledgment — a delivery path already succeeded, so this
   // never fails the request.
+  let ackOk = false
   if (resend) {
     try {
       await resend.emails.send({
@@ -206,10 +217,42 @@ export async function POST(request: NextRequest) {
         subject: "You're on the list for the GatGrid group sailing",
         html: confirmationHtml(name),
       })
+      ackOk = true
     } catch (err) {
       console.error('[group-cruise] auto-ack email failed:', err)
     }
   }
+
+  // Awaited, not fire-and-forget: the serverless invocation freezes the moment
+  // the response goes out, which would kill an in-flight text or push.
+  const textOk = phone
+    ? await sendLeadAutoText(phone, {
+        name,
+        source: 'group-cruise',
+        // Both are required fields on this form, so neither gets asked again.
+        knownTimeframe: timeframe,
+        knownPartySize: party_size,
+      })
+    : false
+
+  await sendPushover({
+    title: `New GatGrid lead: ${name}`,
+    priority: 1,
+    message: [
+      `Name: ${name}`,
+      `Phone: ${phone || 'not provided'}`,
+      `Email: ${email}`,
+      'Source: group-cruise (hosted group sailing interest)',
+      `Timeframe: ${timeframe}`,
+      `Party: ${party_size}`,
+      notes ? `Notes: ${notes.replace(/\s+/g, ' ').slice(0, 200)}` : null,
+      '',
+      `Auto-text: ${textOk ? 'sent' : phone ? 'not sent (check Twilio env)' : 'no phone on the form'}`,
+      `Auto-email: ${ackOk ? 'sent' : 'not sent (check Resend)'}`,
+    ]
+      .filter((line) => line !== null)
+      .join('\n'),
+  })
 
   return NextResponse.json({ success: true })
 }

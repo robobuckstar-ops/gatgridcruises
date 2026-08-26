@@ -4,12 +4,20 @@ import { checkRateLimit } from '@/lib/rate-limit'
 import { saveLeadSafely } from '@/lib/airtable-leads'
 import { AGENT_REPLY_TO, agentNotifyRecipients } from '@/lib/agent-inbox'
 import { readSmsConsent, smsConsentNote } from '@/lib/sms-consent'
+import { sendLeadAutoText } from '@/lib/lead-autotext'
+import { sendPushover } from '@/lib/pushover'
 
 // Booking-transfer requests from visitors who already booked direct with
 // Disney. Same delivery contract as /api/concierge: the lead is written to the
 // Airtable CRM and emailed to the agent inbox, and the request only fails if
 // BOTH paths fail. There is no Make.com webhook on this form — it was built
 // after that scenario was paused, so the direct paths are the only ones.
+//
+// This is the most time-sensitive form on the site: the visitor has already
+// paid Disney, and Disney's transfer window is measured in days. So once the
+// lead is recorded, three best-effort follow-ups fire the way /api/free-quote
+// does it: the email acknowledgment, a welcome text, and a high-priority push
+// to Grayson. None of them can fail the submission.
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 const AGENT_INBOX = AGENT_REPLY_TO
@@ -221,6 +229,7 @@ export async function POST(request: NextRequest) {
 
   // Best-effort acknowledgment — a delivery path already succeeded, so this
   // never fails the request.
+  let ackOk = false
   if (resend) {
     try {
       await resend.emails.send({
@@ -230,10 +239,43 @@ export async function POST(request: NextRequest) {
         subject: "We got your transfer request — I'll confirm eligibility today",
         html: confirmationHtml(name),
       })
+      ackOk = true
     } catch (err) {
       console.error('[transfer] auto-ack email failed:', err)
     }
   }
+
+  // Awaited, not fire-and-forget: the serverless invocation freezes the moment
+  // the response goes out, which would kill an in-flight text or push.
+  const textOk = phone
+    ? await sendLeadAutoText(phone, {
+        name,
+        source: 'transfer',
+        // The form collects the sail date, so the welcome text never asks for
+        // it back.
+        knownTimeframe: sail_date,
+      })
+    : false
+
+  await sendPushover({
+    title: `New GatGrid lead: ${name}`,
+    priority: 1,
+    message: [
+      `Name: ${name}`,
+      `Phone: ${phone || 'not provided'}`,
+      `Email: ${email}`,
+      'Source: transfer (already booked direct with Disney)',
+      `Sail date: ${sail_date}`,
+      `Reservation #: ${reservation_number || 'not provided'}`,
+      booking_date ? `Booked direct on: ${booking_date}` : null,
+      `SMS opt-in: ${smsConsent ? 'yes' : 'no'}`,
+      '',
+      `Auto-text: ${textOk ? 'sent' : phone ? 'not sent (check Twilio env)' : 'no phone on the form'}`,
+      `Auto-email: ${ackOk ? 'sent' : 'not sent (check Resend)'}`,
+    ]
+      .filter((line) => line !== null)
+      .join('\n'),
+  })
 
   return NextResponse.json({ success: true })
 }

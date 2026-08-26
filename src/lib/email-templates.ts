@@ -134,6 +134,26 @@ const BRAND_FOOTER_HTML = `
   </div>
 `
 
+/**
+ * "Save my contact" block for the auto-acknowledgment emails. Tapping the button
+ * opens the phone's contact card so the lead saves Grayson's cell and email in
+ * one step — which is the single best thing they can do to keep the follow-up
+ * text and email out of spam and the Promotions tab. The .vcf link works the
+ * same on iPhone and Android; both open their "Add Contact" screen from it.
+ */
+export const SAVE_CONTACT_BLOCK = `
+  <div style="background-color:#F0F7FF;border:1px solid #BFDBFE;border-radius:8px;padding:20px;margin:0 0 24px;text-align:center;">
+    <p style="margin:0 0 6px;color:#1E3A5F;font-weight:600;font-size:15px;">📇 Save my contact so we don't get lost in spam</p>
+    <p style="margin:0 0 14px;color:#64748B;font-size:13px;line-height:1.5;">
+      My texts and emails sometimes land in spam or the Promotions tab. Tap below to save my number and email (works on iPhone and Android), and you won't miss anything I send.
+    </p>
+    <a href="https://gatgridcruises.com/grayson-gatgrid.vcf" style="display:inline-block;background:#1E3A5F;color:#D4AF37;padding:12px 26px;border-radius:8px;text-decoration:none;font-weight:600;font-size:14px;">Save Grayson's Contact →</a>
+    <p style="margin:14px 0 0;color:#94A3B8;font-size:12px;line-height:1.5;">
+      Prefer to add it by hand? Cell <strong>(405) 526-4956</strong> · <strong>bookings@gatgridcruises.com</strong>
+    </p>
+  </div>
+`
+
 function wrapBookingEmail(body: string): string {
   return `<!DOCTYPE html>
 <html lang="en">
@@ -207,6 +227,7 @@ export function INQUIRY_RECEIVED(data: InquiryData): string {
       <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">${summaryHTML}</table>
     </div>
     ${data.notes ? `<p style="margin:0 0 20px;color:#334155;font-size:14px;"><strong>Your notes:</strong> ${data.notes}</p>` : ''}
+    ${SAVE_CONTACT_BLOCK}
     <p style="margin:0 0 8px;color:#334155;font-size:14px;line-height:1.6;">While you wait, check out our free planning tools:</p>
     <ul style="margin:0 0 24px;padding-left:20px;color:#1E3A5F;font-size:14px;">
       <li style="margin-bottom:6px;"><a href="https://gatgridcruises.com/guides" style="color:#1E3A5F;">Disney Cruise Guides</a></li>
@@ -240,6 +261,7 @@ export function CONCIERGE_RECEIVED(data: ConciergeAckData): string {
         <li><a href="https://gatgridcruises.com/deals" style="color:#1E3A5F;">Current Deals</a></li>
       </ul>
     </div>
+    ${SAVE_CONTACT_BLOCK}
     <p style="margin:0 0 8px;color:#334155;font-size:14px;line-height:1.6;">
       Talk soon,
     </p>

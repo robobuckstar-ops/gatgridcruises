@@ -112,7 +112,12 @@ function confirmationHtml(name: string, questions: string[]): string {
 <p style="margin:0 0 14px;">It's Grayson. Your request just landed and I'm on it. I'll put together options that fit your dates and your group and send them back to you today.</p>
 ${asks ? `<p style="margin:0 0 8px;">A couple of quick things would help me get this right the first time:</p>${asks}` : ''}
 <p style="margin:0 0 14px;">Just hit reply and tell me. I may have texted you the same questions, so whichever is easier is fine by me.</p>
-<p style="margin:0 0 14px;font-size:13px;color:#64748B;">Quick heads up: my emails and texts sometimes get filtered into spam or the Promotions tab. If you add bookings@gatgridcruises.com to your contacts and save my cell (405) 526-4956, you won't miss anything I send.</p>
+<div style="background:#F0F7FF;border:1px solid #BFDBFE;border-radius:8px;padding:20px;margin:0 0 14px;text-align:center;">
+<p style="margin:0 0 6px;color:#1E3A5F;font-weight:600;font-size:15px;">📇 Save my contact so we don't get lost in spam</p>
+<p style="margin:0 0 14px;color:#64748B;font-size:13px;line-height:1.5;">My texts and emails sometimes land in spam or the Promotions tab. Tap below to save my number and email (works on iPhone and Android), and you won't miss anything I send.</p>
+<a href="https://gatgridcruises.com/grayson-gatgrid.vcf" style="display:inline-block;background:#1E3A5F;color:#D4AF37;padding:12px 26px;border-radius:8px;text-decoration:none;font-weight:600;font-size:14px;">Save Grayson's Contact &rarr;</a>
+<p style="margin:14px 0 0;color:#94A3B8;font-size:12px;line-height:1.5;">Prefer to add it by hand? Cell <strong>(405) 526-4956</strong> · <strong>bookings@gatgridcruises.com</strong></p>
+</div>
 <p style="margin:0 0 14px;">One thing worth saying up front: Disney sets the fare, so booking through me costs you nothing extra. The onboard credit your booking earns comes out of the commission Disney pays the agency, not out of your pocket.</p>
 <p style="margin:0 0 14px;">There's no obligation either. If you look everything over and decide to book somewhere else, that is completely fine.</p>
 <p style="margin:0 0 4px;">Talk soon,</p>
