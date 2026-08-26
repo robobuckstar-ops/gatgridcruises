@@ -29,7 +29,24 @@ const DOCUMENTS_FIELD_ID = process.env.AIRTABLE_DOCUMENTS_FIELD_ID || ''
 
 export const CLIENT_FIELDS = {
   name: 'fldKgygvHS6sTCMQG',
+  phone: 'fldecebHVzszBrxjd',
 } as const
+
+/** Name + phone for a linked client, used to text a client their portal link. */
+export async function fetchClientContact(
+  clientId: string,
+  apiKey: string,
+): Promise<{ name: string; phone: string }> {
+  const url = bookingUrl(CLIENTS_TABLE, `${clientId}?returnFieldsByFieldId=true`)
+  try {
+    const record = await airtableGet(url, apiKey)
+    const f = record.fields as Record<string, unknown>
+    const str = (v: unknown) => (typeof v === 'string' ? v.trim() : '')
+    return { name: str(f[CLIENT_FIELDS.name]), phone: str(f[CLIENT_FIELDS.phone]) }
+  } catch {
+    return { name: '', phone: '' }
+  }
+}
 
 // Long-text field on Bookings holding the JSON the client submits through the
 // portal's Traveler Readiness section (name, travel-doc expiration, issuing
@@ -106,6 +123,7 @@ export interface ClientDetails {
   fullName: string
   firstName: string
   email: string
+  phone: string
 }
 
 export class AirtableError extends Error {
@@ -251,11 +269,14 @@ export async function fetchBookingById(
   const email = String(fields[BOOKING_FIELDS.clientEmail] ?? '')
   const clientIds = fields[BOOKING_FIELDS.client] as string[] | undefined
 
-  const fullName = clientIds?.length ? await fetchClientName(clientIds[0], apiKey) : ''
+  const contact = clientIds?.length
+    ? await fetchClientContact(clientIds[0], apiKey)
+    : { name: '', phone: '' }
+  const fullName = contact.name
   const firstName = fullName.trim().split(/\s+/)[0] || email.split('@')[0] || 'there'
 
   return {
     booking,
-    client: { fullName, firstName, email },
+    client: { fullName, firstName, email, phone: contact.phone },
   }
 }
