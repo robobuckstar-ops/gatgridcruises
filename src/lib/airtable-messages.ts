@@ -31,9 +31,16 @@ export const MESSAGE_FIELDS = {
   conversationId: 'ConversationId',
   status: 'Status',
   readyToBook: 'ReadyToBook',
+  // Which channel the touch came in on. Optional column: if the base doesn't
+  // have it yet, the shared client drops it and still writes the row, so a text
+  // and a call land in the same thread even before the column is added.
+  channel: 'Channel',
 } as const
 
 export type Direction = 'inbound' | 'outbound'
+
+/** The channel a message came in on. Texts default to SMS when unset. */
+export type Channel = 'SMS' | 'Voice' | 'Email'
 
 /** Inbound rows carry read state; outbound rows carry delivery state. */
 export type MessageStatus = 'Unread' | 'Read' | 'Sent' | 'Failed'
@@ -60,6 +67,8 @@ export interface SaveMessageInput {
   status?: MessageStatus
   /** Defaults to now; Twilio doesn't send a usable send-time in the webhook. */
   timestamp?: string
+  /** SMS when unset. Voice and Email land in the same per-contact thread. */
+  channel?: Channel
 }
 
 export function isMessageStoreConfigured(): boolean {
@@ -155,6 +164,7 @@ export async function saveMessage(input: SaveMessageInput): Promise<StoredMessag
     [MESSAGE_FIELDS.conversationId]: conversationId,
     [MESSAGE_FIELDS.status]: input.status || (input.direction === 'inbound' ? 'Unread' : 'Sent'),
     [MESSAGE_FIELDS.readyToBook]: readyToBook,
+    [MESSAGE_FIELDS.channel]: input.channel || 'SMS',
   }
   if (input.contactName) fields[MESSAGE_FIELDS.contactName] = input.contactName
 
