@@ -11,21 +11,17 @@ import { createHmac, timingSafeEqual } from 'crypto'
 export const DEFAULT_BUSINESS_NUMBER = '+14055264956'
 
 /**
- * The A2P-registered Messaging Service. Sending through this instead of the raw
- * From number is what keeps carriers from bouncing traffic with error 30034
- * ("message from an unregistered number") once volume picks up. Built in as a
- * default so a deploy sends registered without another env var to set; override
- * with TWILIO_MESSAGING_SERVICE_SID, or blank it to fall back to From.
+ * The A2P-registered Messaging Service, opt-in only. Sending through a Messaging
+ * Service (instead of the raw From number) pools numbers and adds failover, but
+ * an invalid or unassigned service SID makes Twilio reject every send with a 404
+ * (error 20404) — which is exactly what happened when this was hardcoded on. So
+ * it now defaults OFF: texts go from the registered From number, which works
+ * because the A2P 10DLC campaign is approved and the number is attached to it.
+ * To turn the Messaging Service back on, set TWILIO_MESSAGING_SERVICE_SID in
+ * Vercel to the real MG... SID from Twilio Console > Messaging > Services.
  */
-export const DEFAULT_MESSAGING_SERVICE_SID = 'MG533fff6462df2c6ac9cc5b444dd8bc83'
-
-/** The messaging service to send through, or '' to send from the raw number. */
 export function getMessagingServiceSid(): string {
-  const override = env('TWILIO_MESSAGING_SERVICE_SID')
-  if (override) return override
-  // An explicit empty string in the env means "use the From number instead".
-  if (process.env.TWILIO_MESSAGING_SERVICE_SID !== undefined) return ''
-  return DEFAULT_MESSAGING_SERVICE_SID
+  return env('TWILIO_MESSAGING_SERVICE_SID')
 }
 
 export interface TwilioConfig {
