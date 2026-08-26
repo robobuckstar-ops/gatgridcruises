@@ -12,7 +12,7 @@
 
 import { NextRequest, NextResponse } from 'next/server'
 import { lookupContactName, saveMessageSafely } from '@/lib/airtable-messages'
-import { sendPushover, PRIORITY_HIGH } from '@/lib/pushover'
+import { sendPushover } from '@/lib/pushover'
 import {
   DEFAULT_BUSINESS_NUMBER,
   formatPhoneDisplay,
@@ -49,6 +49,38 @@ function hangupTwiml(): NextResponse {
   return xml('<Response><Hangup/></Response>')
 }
 
+// Grayson's own recorded greeting, hosted on the site. When present it plays
+// instead of the robotic fallback; drop the file at public/voicemail-greeting.mp3
+// (or point VOICE_GREETING_URL at any mp3/wav) and callers hear his voice.
+const GREETING_URL =
+  process.env.VOICE_GREETING_URL?.trim() || 'https://gatgridcruises.com/voicemail-greeting.mp3'
+const USE_RECORDED_GREETING = process.env.VOICE_GREETING_READY === 'true'
+
+const FALLBACK_GREETING =
+  "Hi, you've reached Grayson with GatGrid Cruises. I'm sorry I missed your call. " +
+  'Please leave your name, your number, and a little about the Disney cruise you are planning, ' +
+  "and I'll call you right back. Thanks so much."
+
+/**
+ * Played when the forward goes unanswered, so callers hear GatGrid instead of
+ * Grayson's personal voicemail. Records a message, transcribes it, and hands
+ * both off to /api/voice/voicemail for the alert + CRM log.
+ */
+function voicemailTwiml(): NextResponse {
+  const greeting = USE_RECORDED_GREETING
+    ? `<Play>${GREETING_URL}</Play>`
+    : `<Say voice="alice">${FALLBACK_GREETING}</Say>`
+  return xml(
+    `<Response>` +
+      greeting +
+      `<Record maxLength="120" playBeep="true" timeout="5" transcribe="true" ` +
+      `transcribeCallback="/api/voice/voicemail" action="/api/voice/voicemail" method="POST"/>` +
+      `<Say voice="alice">I did not catch a message. Goodbye.</Say>` +
+      `<Hangup/>` +
+      `</Response>`,
+  )
+}
+
 export async function POST(request: NextRequest) {
   const params: Record<string, string> = {}
   try {
@@ -81,6 +113,16 @@ export async function POST(request: NextRequest) {
   const to = normalizePhone(params.To)
   const dialStatus = (params.DialCallStatus ?? '').trim()
 
+  // Second hit: the forward has finished. If it went unanswered, send the caller
+  // to the GatGrid voicemail (which logs + alerts from /api/voice/voicemail).
+  // An answered call already reached his phone, so just end cleanly.
+  if (dialStatus) {
+    const missed = dialStatus !== 'completed' && dialStatus !== 'answered'
+    return missed ? voicemailTwiml() : hangupTwiml()
+  }
+
+  // First hit: a call is coming in. Match the caller, log it, buzz once at
+  // normal priority (the phone is already ringing), then forward.
   let contactName = ''
   try {
     contactName = await lookupContactName(from)
@@ -89,31 +131,6 @@ export async function POST(request: NextRequest) {
   }
   const who = contactName ? `${contactName} (${formatPhoneDisplay(from)})` : formatPhoneDisplay(from)
 
-  // Second hit: the forward has finished. Alert only when it went unanswered —
-  // an answered call already reached his phone, so a push would just be noise.
-  if (dialStatus) {
-    const missed = dialStatus !== 'completed' && dialStatus !== 'answered'
-    if (missed) {
-      await saveMessageSafely({
-        from,
-        to,
-        body: `Missed call (${dialStatus})`,
-        direction: 'inbound',
-        channel: 'Voice',
-        contactName: contactName || undefined,
-        status: 'Unread',
-      })
-      await sendPushover({
-        title: 'Missed call',
-        message: `${who} called the business line and it went unanswered (${dialStatus}). Call them back.`,
-        priority: PRIORITY_HIGH,
-      })
-    }
-    return hangupTwiml()
-  }
-
-  // First hit: a call is coming in. Log it, buzz once at normal priority (the
-  // phone is already ringing), then forward.
   if (from) {
     await saveMessageSafely({
       from,
