@@ -31,6 +31,53 @@ export const CLIENT_FIELDS = {
   name: 'fldKgygvHS6sTCMQG',
 } as const
 
+// Long-text field on Bookings holding the JSON the client submits through the
+// portal's Traveler Readiness section (name, travel-doc expiration, issuing
+// country, name-match). Deliberately holds NO passport numbers or images.
+export const READINESS_FIELD = 'flduYrNxJZkiDgDzN'
+
+export interface TravelerReadiness {
+  name: string
+  /** ISO date (YYYY-MM-DD) the traveler's passport / travel doc expires. */
+  expiration: string
+  /** Issuing country, free text (e.g. "United States"). */
+  country: string
+  /** Client confirmed the name matches the booking exactly. */
+  nameMatches: boolean
+}
+
+export async function fetchReadiness(bookingId: string, apiKey: string): Promise<TravelerReadiness[]> {
+  const url = bookingUrl(BOOKINGS_TABLE, `${bookingId}?returnFieldsByFieldId=true`)
+  const record = await airtableGet(url, apiKey)
+  const fields = record.fields as Record<string, unknown> | undefined
+  const raw = fields?.[READINESS_FIELD]
+  if (typeof raw !== 'string' || !raw.trim()) return []
+  try {
+    const parsed = JSON.parse(raw)
+    return Array.isArray(parsed) ? (parsed as TravelerReadiness[]) : []
+  } catch {
+    return []
+  }
+}
+
+export async function saveReadiness(
+  bookingId: string,
+  apiKey: string,
+  travelers: TravelerReadiness[],
+): Promise<void> {
+  const url = bookingUrl(BOOKINGS_TABLE, bookingId)
+  const res = await fetch(url, {
+    method: 'PATCH',
+    headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({ fields: { [READINESS_FIELD]: JSON.stringify(travelers) } }),
+    cache: 'no-store',
+  })
+  if (!res.ok) {
+    const text = await res.text()
+    throw new AirtableError(res.status, `Airtable ${res.status}: ${text}`)
+  }
+}
+
 export interface BookingDocument {
   id: string
   filename: string

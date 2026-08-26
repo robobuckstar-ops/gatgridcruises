@@ -22,6 +22,7 @@ import {
   Download,
 } from 'lucide-react'
 import { OBCDisclaimer } from '@/components/ui/obc-disclaimer'
+import TravelerReadiness from '@/components/portal/TravelerReadiness'
 
 // ─── Timezone Options ─────────────────────────────────────────────────────────
 
@@ -866,6 +867,9 @@ export default function DashboardPage() {
             </div>
           </section>
         </div>
+
+        {/* ── Traveler Readiness ── */}
+        <TravelerReadiness returnDate={booking.returnDate} />
 
         {/* ── Concierge + Reminders ── */}
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
