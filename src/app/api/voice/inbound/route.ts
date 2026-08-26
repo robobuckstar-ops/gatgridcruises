@@ -54,7 +54,9 @@ function hangupTwiml(): NextResponse {
 // (or point VOICE_GREETING_URL at any mp3/wav) and callers hear his voice.
 const GREETING_URL =
   process.env.VOICE_GREETING_URL?.trim() || 'https://gatgridcruises.com/voicemail-greeting.mp3'
-const USE_RECORDED_GREETING = process.env.VOICE_GREETING_READY === 'true'
+// Grayson's recording (public/voicemail-greeting.mp3) plays by default now that
+// it's in place; set VOICE_GREETING_READY=false to fall back to the spoken text.
+const USE_RECORDED_GREETING = process.env.VOICE_GREETING_READY !== 'false'
 
 const FALLBACK_GREETING =
   "Hi, you've reached Grayson with GatGrid Cruises. I'm sorry I missed your call. " +
