@@ -10,6 +10,24 @@ import { createHmac, timingSafeEqual } from 'crypto'
 /** The GatGrid business line. Overridable so a test number can be swapped in. */
 export const DEFAULT_BUSINESS_NUMBER = '+14055264956'
 
+/**
+ * The A2P-registered Messaging Service. Sending through this instead of the raw
+ * From number is what keeps carriers from bouncing traffic with error 30034
+ * ("message from an unregistered number") once volume picks up. Built in as a
+ * default so a deploy sends registered without another env var to set; override
+ * with TWILIO_MESSAGING_SERVICE_SID, or blank it to fall back to From.
+ */
+export const DEFAULT_MESSAGING_SERVICE_SID = 'MG533fff6462df2c6ac9cc5b444dd8bc83'
+
+/** The messaging service to send through, or '' to send from the raw number. */
+export function getMessagingServiceSid(): string {
+  const override = env('TWILIO_MESSAGING_SERVICE_SID')
+  if (override) return override
+  // An explicit empty string in the env means "use the From number instead".
+  if (process.env.TWILIO_MESSAGING_SERVICE_SID !== undefined) return ''
+  return DEFAULT_MESSAGING_SERVICE_SID
+}
+
 export interface TwilioConfig {
   accountSid: string
   authToken: string
@@ -144,6 +162,16 @@ export async function sendSms(to: string, body: string): Promise<SendSmsResult> 
   const endpoint = `https://api.twilio.com/2010-04-01/Accounts/${encodeURIComponent(config.accountSid)}/Messages.json`
   const auth = Buffer.from(`${config.accountSid}:${config.authToken}`).toString('base64')
 
+  // Prefer the A2P-registered Messaging Service; Twilio picks the sending number
+  // from the service's pool. Fall back to the raw From only if it is blanked out.
+  const messagingServiceSid = getMessagingServiceSid()
+  const params: Record<string, string> = { To: toNumber, Body: body }
+  if (messagingServiceSid) {
+    params.MessagingServiceSid = messagingServiceSid
+  } else {
+    params.From = config.fromNumber
+  }
+
   try {
     const res = await fetch(endpoint, {
       method: 'POST',
@@ -151,7 +179,7 @@ export async function sendSms(to: string, body: string): Promise<SendSmsResult> 
         Authorization: `Basic ${auth}`,
         'Content-Type': 'application/x-www-form-urlencoded',
       },
-      body: new URLSearchParams({ To: toNumber, From: config.fromNumber, Body: body }).toString(),
+      body: new URLSearchParams(params).toString(),
       cache: 'no-store',
     })
 
