@@ -181,10 +181,10 @@ export async function fetchBookingById(
   bookingId: string,
   apiKey: string,
 ): Promise<{ booking: BookingDetails; client: ClientDetails } | null> {
-  const fieldIds: string[] = [...Object.values(BOOKING_FIELDS)]
-  if (DOCUMENTS_FIELD_ID) fieldIds.push(DOCUMENTS_FIELD_ID)
-  const fieldParams = fieldIds.map(id => `fields[]=${id}`).join('&')
-  const url = bookingUrl(BOOKINGS_TABLE, `${bookingId}?${fieldParams}&returnFieldsByFieldId=true`)
+  // The get-one-record endpoint rejects the `fields[]` selector that the list
+  // endpoints accept (Airtable 422, parameter validation failed), so ask for the
+  // whole record keyed by field ID and let shapeBooking pick out what it needs.
+  const url = bookingUrl(BOOKINGS_TABLE, `${bookingId}?returnFieldsByFieldId=true`)
 
   let record: Record<string, unknown>
   try {
