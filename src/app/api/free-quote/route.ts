@@ -3,14 +3,20 @@ import { Resend } from 'resend'
 import { checkRateLimit } from '@/lib/rate-limit'
 import { saveLeadSafely } from '@/lib/airtable-leads'
 import { AGENT_REPLY_TO, agentNotifyRecipients } from '@/lib/agent-inbox'
+import { leadFirstName, missingLeadDetails, sendLeadAutoText } from '@/lib/lead-autotext'
+import { sendPushover } from '@/lib/pushover'
 
 // Quote requests from the /free-quote paid-ad landing page.
 //
 // Same delivery contract as /api/transfer: the lead is written to the Airtable
 // CRM and emailed to the agent inbox, and the request only fails if BOTH paths
 // fail. Kept as its own route rather than folded into /api/concierge so the
-// Source column reads "free-quote" — ad spend is only worth measuring if the
+// Source column reads "free-quote": ad spend is only worth measuring if the
 // leads it buys are distinguishable in the CRM.
+//
+// Once the lead is safely recorded, three best-effort follow-ups fire: the
+// email acknowledgment, a welcome text to the lead, and a high-priority push to
+// Grayson. None of them can fail the submission.
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 const AGENT_INBOX = AGENT_REPLY_TO
@@ -73,27 +79,44 @@ function agentNotificationHtml(p: {
 <tr><td style="background:#1E3A5F;padding:18px 24px;color:#D4AF37;font-family:Georgia,serif;font-size:18px;font-weight:bold;">Free quote request (paid ad)</td></tr>
 <tr><td style="padding:22px 24px;">
 <div style="margin-bottom:16px;background:#FEF3C7;border-left:4px solid #D4AF37;padding:10px 14px;font-size:13px;color:#78350F;line-height:1.5;">
-<strong>Paid traffic.</strong> This lead cost money to acquire — reply today while the ad click is still fresh.
+<strong>Paid traffic.</strong> This lead cost money to acquire, so reply today while the ad click is still fresh.
 </div>
 <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;border:1px solid #E2E8F0;border-radius:6px;overflow:hidden;">${rowsHtml}</table>
 ${notesBlock}
-<p style="margin:24px 0 0;font-size:11px;color:#94A3B8;">Submitted via gatgridcruises.com /free-quote — reply directly to respond to ${escapeHtml(p.name)}.</p>
+<p style="margin:24px 0 0;font-size:11px;color:#94A3B8;">Submitted via gatgridcruises.com /free-quote. Reply directly to respond to ${escapeHtml(p.name)}.</p>
 </td></tr></table>
 </td></tr></table></body></html>`
 }
 
-function confirmationHtml(name: string): string {
+function questionListHtml(questions: string[]): string {
+  if (!questions.length) return ''
+  const items = questions
+    .map((q) => `<li style="margin:0 0 6px;">${escapeHtml(q.charAt(0).toUpperCase() + q.slice(1))}?</li>`)
+    .join('')
+  return `<ul style="margin:0 0 14px;padding-left:20px;color:#334155;">${items}</ul>`
+}
+
+// Customer-facing acknowledgment. Written as Grayson, first person, no dashes,
+// and no fare quoted anywhere. The questions come from the same helper the
+// welcome text uses, so the email and the SMS never ask different things.
+function confirmationHtml(name: string, questions: string[]): string {
+  const firstName = leadFirstName(name)
+  const asks = questionListHtml(questions)
   return `<!DOCTYPE html>
 <html><body style="margin:0;background:#F1F5F9;font-family:Arial,sans-serif;">
 <table width="100%" cellpadding="0" cellspacing="0" style="background:#F1F5F9;padding:24px 12px;"><tr><td align="center">
 <table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#FFFFFF;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
-<tr><td style="background:#1E3A5F;padding:20px 24px;color:#D4AF37;font-family:Georgia,serif;font-size:20px;font-weight:bold;">Your Disney cruise quote is on its way</td></tr>
+<tr><td style="background:#1E3A5F;padding:20px 24px;color:#D4AF37;font-family:Georgia,serif;font-size:20px;font-weight:bold;">I got your quote request</td></tr>
 <tr><td style="padding:24px;font-size:15px;color:#334155;line-height:1.6;">
-<p style="margin:0 0 14px;">Hi ${escapeHtml(name)},</p>
-<p style="margin:0 0 14px;">Thanks for reaching out. I'll put together options that fit your dates and your party, and email them back to you — usually within a few hours, always the same business day.</p>
-<p style="margin:0 0 14px;">Your quote will show Disney's current fare along with the onboard credit your booking would earn through us. Disney sets the fare either way, so booking with us costs you nothing extra — the credit comes out of the standard travel-agent commission Disney pays the agency, not out of your pocket.</p>
-<p style="margin:0 0 14px;">There's no obligation. If you'd rather book elsewhere after seeing the numbers, that's completely fine.</p>
-<p style="margin:0 0 4px;">— Dr. Grayson Starbuck, DPT</p>
+<p style="margin:0 0 14px;">Hi ${escapeHtml(firstName)},</p>
+<p style="margin:0 0 14px;">It's Grayson. Your request just landed and I'm on it. I'll put together options that fit your dates and your group and send them back to you today.</p>
+${asks ? `<p style="margin:0 0 8px;">A couple of quick things would help me get this right the first time:</p>${asks}` : ''}
+<p style="margin:0 0 14px;">Just hit reply and tell me. I may have texted you the same questions, so whichever is easier is fine by me.</p>
+<p style="margin:0 0 14px;font-size:13px;color:#64748B;">Quick heads up: my emails and texts sometimes get filtered into spam or the Promotions tab. If you add bookings@gatgridcruises.com to your contacts and save my cell (405) 526-4956, you won't miss anything I send.</p>
+<p style="margin:0 0 14px;">One thing worth saying up front: Disney sets the fare, so booking through me costs you nothing extra. The onboard credit your booking earns comes out of the commission Disney pays the agency, not out of your pocket.</p>
+<p style="margin:0 0 14px;">There's no obligation either. If you look everything over and decide to book somewhere else, that is completely fine.</p>
+<p style="margin:0 0 4px;">Talk soon,</p>
+<p style="margin:0 0 4px;">Dr. Grayson Starbuck, DPT</p>
 <p style="margin:0;font-size:13px;color:#64748B;">GatGrid Cruises · bookings@gatgridcruises.com</p>
 </td></tr></table>
 </td></tr></table></body></html>`
@@ -121,7 +144,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Invalid request' }, { status: 400 })
   }
 
-  // Honeypot — bots fill it, humans never see it. Silently 200 to avoid hinting.
+  // Honeypot: bots fill it, humans never see it. Silently 200 to avoid hinting.
   if (body._honeypot) {
     return NextResponse.json({ success: true })
   }
@@ -180,10 +203,10 @@ export async function POST(request: NextRequest) {
     try {
       await resend.emails.send({
         from: '"GatGrid Quotes" <bookings@gatgridcruises.com>',
-        // Internal alert — the inbox Grayson actually watches. Not customer-visible.
+        // Internal alert: the inbox Grayson actually watches. Not customer-visible.
         to: agentNotifyRecipients(),
         replyTo: email,
-        subject: `Free quote request — ${name} (${timeframe}, ${party_size})`,
+        subject: `Free quote request: ${name} (${timeframe}, ${party_size})`,
         html: agentNotificationHtml({
           name,
           email,
@@ -210,25 +233,68 @@ export async function POST(request: NextRequest) {
   const crmOk = (await leadWrite) !== null
 
   if (!crmOk && !notifyOk) {
-    console.error('[free-quote] all delivery paths failed — request lost', { email, name })
+    console.error('[free-quote] all delivery paths failed, request lost', { email, name })
     return NextResponse.json({ error: 'Submission failed' }, { status: 502 })
   }
 
-  // Best-effort acknowledgment — a delivery path already succeeded, so this
+  // The quote form never asks for a departure port, so that question is always
+  // still open. Timeframe and party size are required fields, so in practice
+  // the port is the one thing left to ask.
+  const openQuestions = missingLeadDetails({
+    name,
+    source: 'free-quote',
+    knownTimeframe: timeframe,
+    knownPartySize: party_size,
+  })
+
+  // Best-effort acknowledgment. A delivery path already succeeded, so this
   // never fails the request.
+  let ackOk = false
   if (resend) {
     try {
       await resend.emails.send({
         from: '"Dr. Grayson Starbuck, DPT" <bookings@gatgridcruises.com>',
         replyTo: AGENT_INBOX,
         to: email,
-        subject: 'Your free Disney cruise quote — working on it now',
-        html: confirmationHtml(name),
+        subject: 'Got your quote request, working on it now',
+        html: confirmationHtml(name, openQuestions),
       })
+      ackOk = true
     } catch (err) {
       console.error('[free-quote] auto-ack email failed:', err)
     }
   }
+
+  // Awaited, not fire-and-forget: the serverless invocation freezes the moment
+  // the response goes out, which would kill an in-flight text or push.
+  const textOk = phone
+    ? await sendLeadAutoText(phone, {
+        name,
+        source: 'free-quote',
+        knownTimeframe: timeframe,
+        knownPartySize: party_size,
+      })
+    : false
+
+  await sendPushover({
+    title: `New GatGrid lead: ${name}`,
+    priority: 1,
+    message: [
+      `Name: ${name}`,
+      `Phone: ${phone || 'not provided'}`,
+      `Email: ${email}`,
+      'Source: free-quote (paid ad landing page)',
+      `Timeframe: ${timeframe}`,
+      `Party: ${party_size}`,
+      `Interest: ${sailing_interest || 'not specified'}`,
+      notes ? `Notes: ${notes.replace(/\s+/g, ' ').slice(0, 200)}` : null,
+      '',
+      `Auto-text: ${textOk ? 'sent' : phone ? 'not sent (check Twilio env)' : 'no phone on the form'}`,
+      `Auto-email: ${ackOk ? 'sent' : 'not sent (check Resend)'}`,
+    ]
+      .filter((line) => line !== null)
+      .join('\n'),
+  })
 
   return NextResponse.json({ success: true })
 }

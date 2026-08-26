@@ -4,6 +4,8 @@ import { checkRateLimit, getClientIp } from '@/lib/rate-limit'
 import { saveLeadSafely } from '@/lib/airtable-leads'
 import { AGENT_REPLY_TO, agentNotifyRecipients } from '@/lib/agent-inbox'
 import { readSmsConsent, smsConsentNote } from '@/lib/sms-consent'
+import { leadFirstName, missingLeadDetails, sendLeadAutoText } from '@/lib/lead-autotext'
+import { sendPushover } from '@/lib/pushover'
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 const INBOX = AGENT_REPLY_TO
@@ -34,15 +36,20 @@ interface SailingContext {
   startingPrice?: number
 }
 
-function buildSailingSummary(ctx: SailingContext | null): string {
+function buildSailingSummary(ctx: SailingContext | null, opts?: { includePrice?: boolean }): string {
   if (!ctx) return 'General Disney cruise inquiry (no specific sailing)'
+  const includePrice = opts?.includePrice ?? true
   const parts: string[] = []
   if (ctx.itineraryName) parts.push(ctx.itineraryName)
   if (ctx.shipName) parts.push(ctx.shipName)
   if (ctx.sailDate) parts.push(`Sails ${ctx.sailDate}`)
   if (typeof ctx.lengthNights === 'number') parts.push(`${ctx.lengthNights} nights`)
   if (ctx.cabinCategory) parts.push(`Cabin: ${ctx.cabinCategory}`)
-  if (typeof ctx.startingPrice === 'number') parts.push(`Listed from $${ctx.startingPrice.toLocaleString()}`)
+  // The listed price is useful to the agent but must never be echoed back to
+  // the customer, who would read it as a quote.
+  if (includePrice && typeof ctx.startingPrice === 'number') {
+    parts.push(`Listed from $${ctx.startingPrice.toLocaleString()}`)
+  }
   return parts.length ? parts.join(' · ') : 'General Disney cruise inquiry'
 }
 
@@ -92,17 +99,34 @@ ${notesBlock}
 </td></tr></table></body></html>`
 }
 
-function ackHtml(name: string, sailingSummary: string): string {
-  const firstName = name.split(/\s+/)[0] || 'there'
+function questionListHtml(questions: string[]): string {
+  if (!questions.length) return ''
+  const items = questions
+    .map(
+      (q) =>
+        `<li style="margin:0 0 6px;">${escapeHtml(q.charAt(0).toUpperCase() + q.slice(1))}?</li>`,
+    )
+    .join('')
+  return `<ul style="margin:0 0 14px;padding-left:20px;color:#334155;font-size:15px;line-height:1.6;">${items}</ul>`
+}
+
+// Customer-facing acknowledgment. First person as Grayson, no dashes anywhere,
+// no fare quoted. The questions come from the same helper the welcome text
+// uses so the email and the SMS stay in step.
+function ackHtml(name: string, sailingSummary: string, questions: string[]): string {
+  const firstName = leadFirstName(name)
+  const asks = questionListHtml(questions)
   return `<!DOCTYPE html>
 <html><body style="margin:0;background:#F1F5F9;font-family:Arial,sans-serif;">
 <table width="100%" cellpadding="0" cellspacing="0" style="background:#F1F5F9;padding:32px 16px;"><tr><td align="center">
 <table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#FFFFFF;border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.08);">
 <tr><td style="background:#1E3A5F;padding:20px 28px;color:#D4AF37;font-family:Georgia,serif;font-size:20px;font-weight:bold;">GatGrid Cruises</td></tr>
 <tr><td style="padding:28px;">
-<h2 style="margin:0 0 12px;color:#1E3A5F;font-family:Georgia,serif;font-size:20px;">Hi ${escapeHtml(firstName)} —</h2>
-<p style="margin:0 0 14px;color:#334155;font-size:15px;line-height:1.6;">Thanks for the inquiry! I got the request about <strong>${escapeHtml(sailingSummary)}</strong> and I'll personally follow up <strong>within the hour</strong>.</p>
-<p style="margin:0 0 14px;color:#334155;font-size:15px;line-height:1.6;">As a reminder, your quote will be at the same Disney public rate, plus any onboard credit and perks I can layer on through Boardwalk Travel Agency. There's no extra cost — Disney pays the agency commission, not you.</p>
+<h2 style="margin:0 0 12px;color:#1E3A5F;font-family:Georgia,serif;font-size:20px;">Hi ${escapeHtml(firstName)},</h2>
+<p style="margin:0 0 14px;color:#334155;font-size:15px;line-height:1.6;">It's Grayson. I got your request about <strong>${escapeHtml(sailingSummary)}</strong> and I'm looking at it now. You'll hear back from me today.</p>
+${asks ? `<p style="margin:0 0 8px;color:#334155;font-size:15px;line-height:1.6;">A few quick things would help me get this right the first time:</p>${asks}` : ''}
+<p style="margin:0 0 14px;color:#334155;font-size:15px;line-height:1.6;">Just hit reply and tell me. I may have texted you the same questions, so answer wherever is easier.</p>
+<p style="margin:0 0 14px;color:#334155;font-size:15px;line-height:1.6;">Worth saying up front: you'll pay the same Disney public rate either way. Booking through me costs you nothing extra, and any onboard credit or perks I can layer on through Boardwalk Travel Agency come out of the commission Disney pays the agency, not out of your pocket.</p>
 <div style="background:#F0F7FF;border-left:4px solid #1E3A5F;border-radius:6px;padding:16px 18px;margin:20px 0;">
   <p style="margin:0 0 8px;color:#1E3A5F;font-size:14px;font-weight:600;">While you wait:</p>
   <ul style="margin:0;padding-left:20px;color:#1E3A5F;font-size:14px;line-height:1.7;">
@@ -110,6 +134,7 @@ function ackHtml(name: string, sailingSummary: string): string {
     <li><a href="https://gatgridcruises.com/deals" style="color:#1E3A5F;">Browse current deals</a></li>
   </ul>
 </div>
+<p style="margin:0 0 14px;color:#334155;font-size:15px;line-height:1.6;">Talk soon,</p>
 <p style="margin:18px 0 0;color:#64748B;font-size:13px;line-height:1.5;"><strong style="color:#1E3A5F;">Dr. Grayson Starbuck, DPT</strong><br>GatGrid Cruises · Boardwalk Travel Agency<br><a href="mailto:bookings@gatgridcruises.com" style="color:#1E3A5F;">bookings@gatgridcruises.com</a></p>
 </td></tr></table>
 </td></tr></table></body></html>`
@@ -118,7 +143,7 @@ function ackHtml(name: string, sailingSummary: string): string {
 export async function POST(request: NextRequest) {
   const ip = getClientIp({ headers: request.headers })
 
-  // 5 inquiries per hour per IP — looser than the heavier concierge form
+  // 5 inquiries per hour per IP, looser than the heavier concierge form
   // because this is the primary CTA across the site.
   const { allowed, retryAfter } = checkRateLimit(ip, 'inquiry', 5, 60 * 60 * 1000)
   if (!allowed) {
@@ -135,7 +160,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Invalid request' }, { status: 400 })
   }
 
-  // Honeypot — silently 200 so bots don't probe.
+  // Honeypot: silently 200 so bots don't probe.
   if (body._honeypot) return NextResponse.json({ success: true })
 
   // Time-based bot check (server-side mirror of the client check). Humans
@@ -181,6 +206,51 @@ export async function POST(request: NextRequest) {
     : null
 
   const sailingSummary = buildSailingSummary(sailing)
+  const customerSailingSummary = buildSailingSummary(sailing, { includePrice: false })
+
+  // A picked sailing already names its itinerary and dates, so the only thing
+  // still worth asking is who is coming. A general inquiry gets all three.
+  const openQuestions = missingLeadDetails({
+    name,
+    source: 'inquiry',
+    knownTimeframe: sailing?.sailDate ?? '',
+    knownPartySize: guests,
+    knownDeparturePort: sailing?.itineraryName ?? '',
+  })
+
+  /**
+   * The two instant follow-ups that fire once the lead is safely recorded:
+   * a welcome text to the lead and a high-priority push to Grayson. Both are
+   * best effort and awaited, since the invocation freezes at the response.
+   */
+  const fireInstantFollowUps = async (ackOk: boolean): Promise<void> => {
+    const textOk = phone
+      ? await sendLeadAutoText(phone, {
+          name,
+          source: 'inquiry',
+          knownTimeframe: sailing?.sailDate ?? '',
+          knownPartySize: guests,
+          knownDeparturePort: sailing?.itineraryName ?? '',
+        })
+      : false
+
+    await sendPushover({
+      title: `New GatGrid lead: ${name}`,
+      priority: 1,
+      message: [
+        `Name: ${name}`,
+        `Phone: ${phone || 'not provided'}`,
+        `Email: ${email}`,
+        'Source: inquiry (request this sailing)',
+        `Interest: ${sailingSummary}`,
+        `Guests: ${guests || 'not provided'}`,
+        `SMS opt-in: ${smsConsent ? 'yes' : 'no'}`,
+        '',
+        `Auto-text: ${textOk ? 'sent' : phone ? 'not sent (check Twilio env)' : 'no phone on the form'}`,
+        `Auto-email: ${ackOk ? 'sent' : 'not sent (check Resend)'}`,
+      ].join('\n'),
+    })
+  }
 
   // Write the lead straight into the Airtable Leads CRM. This used to happen
   // only as a side effect of the Make.com webhook; with that scenario paused,
@@ -203,7 +273,7 @@ export async function POST(request: NextRequest) {
 
   // Resend is the primary path. If unconfigured, fall back to the existing
   // concierge webhook so this endpoint still works in environments that
-  // already have Make.com wired up — same destination inbox either way.
+  // already have Make.com wired up. Same destination inbox either way.
   const resendKey = process.env.RESEND_API_KEY
   const webhookUrl = process.env.CONCIERGE_WEBHOOK_URL
 
@@ -213,29 +283,32 @@ export async function POST(request: NextRequest) {
       // Notify the agent
       await resend.emails.send({
         from: '"GatGrid Inquiries" <bookings@gatgridcruises.com>',
-        // Internal alert — the inbox Grayson actually watches. Not customer-visible.
+        // Internal alert: the inbox Grayson actually watches. Not customer-visible.
         to: agentNotifyRecipients(),
         replyTo: email,
         subject: sailing?.itineraryName
-          ? `Sailing inquiry: ${sailing.itineraryName} — ${name}`
-          : `Disney cruise inquiry — ${name}`,
+          ? `Sailing inquiry: ${sailing.itineraryName} (${name})`
+          : `Disney cruise inquiry: ${name}`,
         html: notificationHtml({ name, email, phone, guests, notes, sailing, referralCode }),
       })
       // Auto-ack to the user (best effort)
+      let ackOk = false
       try {
         await resend.emails.send({
           from: '"Dr. Grayson Starbuck, DPT" <bookings@gatgridcruises.com>',
           to: email,
           replyTo: INBOX,
-          subject: "Got your inquiry — I'll be in touch within the hour",
-          html: ackHtml(name, sailingSummary),
+          subject: "Got your inquiry, I'll be in touch today",
+          html: ackHtml(name, customerSailingSummary, openQuestions),
         })
+        ackOk = true
       } catch (ackErr) {
         console.error('[inquiry] auto-ack email failed:', ackErr)
       }
       // Awaited before responding: a serverless invocation is frozen once the
       // response is returned, which would kill an in-flight CRM write.
       await leadWrite
+      await fireInstantFollowUps(ackOk)
       return NextResponse.json({ success: true })
     } catch (err) {
       console.error('[inquiry] resend send failed:', err)
@@ -271,6 +344,7 @@ export async function POST(request: NextRequest) {
         return NextResponse.json({ error: 'Submission failed' }, { status: 502 })
       }
       await leadWrite
+      await fireInstantFollowUps(false)
       return NextResponse.json({ success: true })
     } catch (err) {
       console.error('[inquiry] webhook error:', err)
@@ -279,10 +353,13 @@ export async function POST(request: NextRequest) {
     }
   }
 
-  // No email transport, but the lead is still in the CRM — report success on
+  // No email transport, but the lead is still in the CRM, so report success on
   // the strength of the durable write rather than dropping the inquiry.
   const lead = await leadWrite
   console.error('[inquiry] no email transport configured (set RESEND_API_KEY or CONCIERGE_WEBHOOK_URL)')
-  if (lead) return NextResponse.json({ success: true })
+  if (lead) {
+    await fireInstantFollowUps(false)
+    return NextResponse.json({ success: true })
+  }
   return NextResponse.json({ error: 'Service unavailable' }, { status: 503 })
 }
