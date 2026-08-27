@@ -60,19 +60,34 @@ function greetingVerb(): string {
  * a voicemail. A bridged (accepted) call ends when the parties hang up and never
  * reaches the voicemail verbs.
  */
+/** Greeting + voicemail capture (no forwarding). Shared by both flows. */
+function voicemailBody(): string {
+  return (
+    greetingVerb() +
+    `<Record maxLength="120" playBeep="true" timeout="5" transcribe="true" ` +
+    `transcribeCallback="/api/voice/voicemail" action="/api/voice/voicemail" method="POST"/>` +
+    `<Say voice="alice">I did not catch a message. Goodbye.</Say>` +
+    `<Hangup/>`
+  )
+}
+
 function callTwiml(): NextResponse {
   return xml(
     `<Response>` +
       `<Dial callerId="${DEFAULT_BUSINESS_NUMBER}" answerOnBridge="true" timeout="${RING_SECONDS}">` +
       `<Number url="/api/voice/screen" method="POST">${FORWARD_TO}</Number>` +
       `</Dial>` +
-      greetingVerb() +
-      `<Record maxLength="120" playBeep="true" timeout="5" transcribe="true" ` +
-      `transcribeCallback="/api/voice/voicemail" action="/api/voice/voicemail" method="POST"/>` +
-      `<Say voice="alice">I did not catch a message. Goodbye.</Say>` +
-      `<Hangup/>` +
+      voicemailBody() +
       `</Response>`,
   )
+}
+
+/** Straight to the GatGrid greeting + voicemail, no forwarding. Used when the
+ * caller IS the forward-to cell (self-call), which otherwise tries to ring the
+ * same busy line and ends the call abruptly. Also lets Grayson test the greeting
+ * from his own phone. */
+function voicemailOnlyTwiml(): NextResponse {
+  return xml(`<Response>` + voicemailBody() + `</Response>`)
 }
 
 export async function POST(request: NextRequest) {
@@ -134,6 +149,13 @@ export async function POST(request: NextRequest) {
     })
   } else {
     console.error('[voice/inbound] webhook had no From number; params:', Object.keys(params).join(','))
+  }
+
+  // Self-call guard: if the caller is the same cell we'd forward to, don't try to
+  // ring that (busy) line — it ends the call abruptly. Go straight to voicemail,
+  // which also lets Grayson hear his own greeting when he tests from his cell.
+  if (from && from === FORWARD_TO) {
+    return voicemailOnlyTwiml()
   }
 
   return callTwiml()
