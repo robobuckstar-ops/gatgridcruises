@@ -19,6 +19,160 @@ const BLANK: Flight = { direction: 'arrival', airline: '', flightNumber: '', dat
 
 const FORWARD_TO = 'bookings@gatgridcruises.com'
 
+// Per-airline tips shown in a fold-away panel when a client picks their carrier.
+// Verified against 2026 policies; still caveated, since airlines change fees often.
+interface AirlineTip {
+  name: string
+  match: string[]
+  tips: string[]
+}
+
+const AIRLINE_TIPS: AirlineTip[] = [
+  {
+    name: 'Delta',
+    match: ['delta'],
+    tips: [
+      'Online check-in and seat selection open 24 hours before departure in the Fly Delta app.',
+      'One free carry-on plus a personal item on every fare, even Basic Economy (Main Basic).',
+      'First checked bag is about $35, and free with a Delta SkyMiles card or Medallion status.',
+    ],
+  },
+  {
+    name: 'American Airlines',
+    match: ['american', 'aa '],
+    tips: [
+      'Online check-in opens 24 hours before departure.',
+      'Basic Economy is personal-item-only on domestic flights (no full-size carry-on), so book Main Cabin if you need a roller bag.',
+      'First checked bag runs about $40.',
+    ],
+  },
+  {
+    name: 'United',
+    match: ['united'],
+    tips: [
+      'Online check-in opens 24 hours before departure.',
+      'Basic Economy allows a personal item only on domestic flights, and a roller bag at the gate is a $65 surprise, so avoid Basic if you plan to carry on.',
+      'First checked bag is about $40.',
+    ],
+  },
+  {
+    name: 'Southwest',
+    match: ['southwest', 'swa'],
+    tips: [
+      'Online check-in opens 24 hours before departure.',
+      'Heads-up: Southwest ended free checked bags in 2025. First bag is now about $35 and the second about $45, unless you are on a top fare or A-List Preferred.',
+      'Southwest moved to assigned seating in early 2026, so you pick or are assigned a seat instead of the old open-boarding scramble.',
+    ],
+  },
+  {
+    name: 'JetBlue',
+    match: ['jetblue', 'jet blue'],
+    tips: [
+      'Online check-in opens 24 hours before departure.',
+      'Blue Basic, the cheapest fare, is the most restrictive on bags; standard Blue fares include a carry-on.',
+      'Checked-bag fees are cheaper pre-paid online than at the airport.',
+    ],
+  },
+  {
+    name: 'Alaska Airlines',
+    match: ['alaska'],
+    tips: [
+      'Online check-in opens 24 hours before departure.',
+      'Free carry-on plus a personal item on all fares.',
+      'First checked bag is about $35, and Alaska is known for a strong on-time record.',
+    ],
+  },
+  {
+    name: 'Spirit',
+    match: ['spirit'],
+    tips: [
+      'Online check-in opens 24 hours before departure.',
+      'Ultra-low-cost: only a free personal item is included. A carry-on and checked bags cost extra and are far cheaper bought online in advance than at the gate.',
+      'Gate agents strictly enforce the bag sizer, so measure before you go.',
+    ],
+  },
+  {
+    name: 'Frontier',
+    match: ['frontier'],
+    tips: [
+      'Online check-in opens 24 hours before departure.',
+      'Ultra-low-cost: free personal item only, and it must fit 14x18x8 inches and slide under the seat. A carry-on runs roughly $54 to $99, cheapest online and priciest at the gate.',
+      'Frontier strictly enforces the gate sizer. If a personal item does not fit, it is reclassified as a paid carry-on, so pack to size.',
+    ],
+  },
+  {
+    name: 'Allegiant',
+    match: ['allegiant'],
+    tips: [
+      'Online check-in opens 24 hours before departure.',
+      'Ultra-low-cost: free personal item only; carry-on and checked bags cost extra and are cheapest added online.',
+      'Allegiant flies limited schedules (often a few days a week) from smaller airports, so double-check your travel-day options.',
+    ],
+  },
+  {
+    name: 'Hawaiian Airlines',
+    match: ['hawaiian'],
+    tips: [
+      'Online check-in opens 24 hours before departure.',
+      'First checked bag has a fee on North America routes; policies differ on inter-island and international flights.',
+    ],
+  },
+]
+
+const AIRLINE_NAMES = AIRLINE_TIPS.map(a => a.name)
+
+function findAirlineTip(airline: string): AirlineTip | null {
+  const q = airline.trim().toLowerCase()
+  if (!q) return null
+  return AIRLINE_TIPS.find(a => a.match.some(m => q.includes(m.trim()))) ?? null
+}
+
+/** Fold-away tips panel for the chosen airline. Renders nothing for unknown carriers. */
+function AirlineTips({ airline }: { airline: string }) {
+  const [open, setOpen] = useState(false)
+  const tip = findAirlineTip(airline)
+  if (!tip) return null
+
+  return (
+    <div style={{ marginTop: 12 }}>
+      <button
+        type="button"
+        onClick={() => setOpen(o => !o)}
+        style={{
+          background: '#F8FAFC',
+          border: '1px solid #E2E8F0',
+          borderRadius: 8,
+          padding: '8px 12px',
+          fontSize: 13,
+          fontWeight: 600,
+          color: '#1E3A5F',
+          cursor: 'pointer',
+          width: '100%',
+          textAlign: 'left',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        }}
+      >
+        <span>✈️ Tips &amp; reminders for {tip.name}</span>
+        <span style={{ color: '#94A3B8' }}>{open ? '▲' : '▼'}</span>
+      </button>
+      {open && (
+        <div style={{ border: '1px solid #E2E8F0', borderTop: 'none', borderRadius: '0 0 8px 8px', padding: '12px 14px', background: '#fff' }}>
+          <ul style={{ margin: 0, paddingLeft: 18, color: '#334155', fontSize: 13, lineHeight: 1.5 }}>
+            {tip.tips.map((t, k) => (
+              <li key={k} style={{ marginBottom: 6 }}>{t}</li>
+            ))}
+          </ul>
+          <p style={{ margin: '8px 0 0', color: '#94A3B8', fontSize: 11 }}>
+            Airline policies change often, so always confirm current rules on {tip.name}&apos;s website before you fly.
+          </p>
+        </div>
+      )}
+    </div>
+  )
+}
+
 export default function Flights() {
   const [flights, setFlights] = useState<Flight[]>([])
   const [state, setState] = useState<'loading' | 'ready'>('loading')
@@ -90,6 +244,11 @@ export default function Flights() {
         <p style={{ color: '#94A3B8', fontSize: 14 }}>Loading…</p>
       ) : (
         <>
+          <datalist id="gg-airlines">
+            {AIRLINE_NAMES.map(n => (
+              <option key={n} value={n} />
+            ))}
+          </datalist>
           {flights.map((f, i) => (
             <div key={i} style={{ border: '1px solid #E2E8F0', borderRadius: 10, padding: 16, marginBottom: 12 }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
@@ -119,6 +278,7 @@ export default function Flights() {
                     value={f.airline}
                     onChange={e => update(i, { airline: e.target.value })}
                     placeholder="Delta"
+                    list="gg-airlines"
                     style={inputStyle}
                   />
                 </label>
@@ -141,6 +301,9 @@ export default function Flights() {
                   style={inputStyle}
                 />
               </label>
+
+              <AirlineTips airline={f.airline} />
+
               {flights.length > 1 && (
                 <button onClick={() => removeRow(i)} style={linkBtn}>Remove</button>
               )}
