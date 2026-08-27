@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { CheckCircle, Loader2, Send } from 'lucide-react'
 import { readReferralCookie, readUtmCookies } from '@/components/ui/referral-tracker'
 import { trackLead } from '@/lib/analytics'
+import { LEAD_CONFIRMATION_HEADS_UP } from '@/lib/constants'
 
 interface FormData {
   name: string
@@ -91,7 +92,7 @@ export function FreeQuoteForm() {
           <CheckCircle className="w-8 h-8 text-[#D4AF37]" aria-hidden="true" />
         </div>
         <h3 className="font-fraunces text-2xl font-bold text-white mb-3">
-          Got it — your quote is being put together.
+          Got it, your quote is being put together.
         </h3>
         <p className="font-inter text-blue-200 max-w-md mx-auto leading-relaxed mb-3">
           Grayson will email you sailing options that fit your dates and party, along with the
@@ -99,8 +100,7 @@ export function FreeQuoteForm() {
           business day.
         </p>
         <p className="font-inter text-sm text-blue-300/80 max-w-md mx-auto">
-          Check your inbox for a confirmation (and your spam folder if it&apos;s not there in a
-          few minutes).
+          {LEAD_CONFIRMATION_HEADS_UP}
         </p>
       </div>
     )
@@ -273,7 +273,7 @@ export function FreeQuoteForm() {
       </button>
 
       <p className="text-center text-xs text-blue-400 leading-relaxed">
-        Free and no obligation. We&apos;ll email your options — no pressure to book, and you can
+        Free and no obligation. We&apos;ll email your options with no pressure to book, and you can
         walk away at any point.
       </p>
     </form>

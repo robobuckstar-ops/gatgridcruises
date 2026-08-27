@@ -4,6 +4,7 @@ import { useState, useEffect, useId, useRef } from 'react'
 import { CheckCircle, Loader2, Send, X, Anchor, Mail } from 'lucide-react'
 import { readReferralCookie, readUtmCookies } from '@/components/ui/referral-tracker'
 import { trackLead } from '@/lib/analytics'
+import { LEAD_CONFIRMATION_HEADS_UP } from '@/lib/constants'
 
 // Bots typically fill and submit forms in under a second. Real users take
 // at least a few seconds to type a name and email. We block submissions
@@ -68,7 +69,7 @@ function buildMailtoFallback(ctx: RequestSailingContext | undefined, form: FormS
     ? `Sailing inquiry: ${ctx.itineraryName}`
     : 'Disney cruise inquiry'
   const lines = [
-    'Hi Grayson —',
+    'Hi Grayson,',
     '',
     "I'd like more info on this sailing:",
     buildSummary(ctx) || '(general Disney cruise inquiry)',
@@ -166,7 +167,7 @@ export function RequestSailingForm({ open, onClose, context }: RequestSailingFor
     } catch {
       setStatus('error')
       setErrorMsg(
-        "Something went wrong. You can email us directly at bookings@gatgridcruises.com — your details are still in the form below.",
+        "Something went wrong. You can email us directly at bookings@gatgridcruises.com and your details are still in the form below.",
       )
     }
   }
@@ -216,11 +217,14 @@ export function RequestSailingForm({ open, onClose, context }: RequestSailingFor
               <CheckCircle className="w-7 h-7 text-emerald-600" />
             </div>
             <h3 className="font-display text-xl font-bold text-slate-900 mb-2">
-              Got it — we&apos;ll be in touch.
+              Got it, we&apos;ll be in touch.
             </h3>
-            <p className="text-slate-600 text-sm leading-relaxed max-w-sm mx-auto mb-4">
+            <p className="text-slate-600 text-sm leading-relaxed max-w-sm mx-auto mb-3">
               Grayson personally follows up on every inquiry, usually within the hour. A confirmation
               email is also on its way to <strong>{form.email}</strong>.
+            </p>
+            <p className="text-slate-500 text-xs leading-relaxed max-w-sm mx-auto mb-4">
+              {LEAD_CONFIRMATION_HEADS_UP}
             </p>
             <button
               type="button"
@@ -383,7 +387,7 @@ export function RequestSailingForm({ open, onClose, context }: RequestSailingFor
 
             <p className="text-[11px] text-slate-500 text-center leading-relaxed">
               We email <strong>bookings@gatgridcruises.com</strong>. No spam, no auto-enrollment in
-              anything — Grayson follows up personally. Quotes go through Boardwalk Travel Agency.
+              anything. Grayson follows up personally. Quotes go through Boardwalk Travel Agency.
             </p>
           </form>
         )}

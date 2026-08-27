@@ -5,6 +5,8 @@ import { saveLeadSafely } from '@/lib/airtable-leads'
 import { AGENT_REPLY_TO, agentNotifyRecipients } from '@/lib/agent-inbox'
 import { leadFirstName, missingLeadDetails, sendLeadAutoText } from '@/lib/lead-autotext'
 import { sendPushover } from '@/lib/pushover'
+import { SAVE_CONTACT_BLOCK } from '@/lib/email-templates'
+import { BUSINESS_PHONE_DISPLAY } from '@/lib/constants'
 
 // Quote requests from the /free-quote paid-ad landing page.
 //
@@ -99,9 +101,14 @@ function questionListHtml(questions: string[]): string {
 // Customer-facing acknowledgment. Written as Grayson, first person, no dashes,
 // and no fare quoted anywhere. The questions come from the same helper the
 // welcome text uses, so the email and the SMS never ask different things.
-function confirmationHtml(name: string, questions: string[]): string {
+function confirmationHtml(name: string, questions: string[], textedThem: boolean): string {
   const firstName = leadFirstName(name)
   const asks = questionListHtml(questions)
+  // Only claim a text went out when one actually did, so the email never sends
+  // someone hunting through their phone for a message that was never sent.
+  const textLine = textedThem
+    ? `<p style="margin:0 0 14px;">I also just texted you from <strong>${BUSINESS_PHONE_DISPLAY}</strong>. If it isn't there, check your blocked or spam messages, and save that number so my texts come through.</p>`
+    : ''
   return `<!DOCTYPE html>
 <html><body style="margin:0;background:#F1F5F9;font-family:Arial,sans-serif;">
 <table width="100%" cellpadding="0" cellspacing="0" style="background:#F1F5F9;padding:24px 12px;"><tr><td align="center">
@@ -111,13 +118,10 @@ function confirmationHtml(name: string, questions: string[]): string {
 <p style="margin:0 0 14px;">Hi ${escapeHtml(firstName)},</p>
 <p style="margin:0 0 14px;">It's Grayson. Your request just landed and I'm on it. I'll put together options that fit your dates and your group and send them back to you today.</p>
 ${asks ? `<p style="margin:0 0 8px;">A couple of quick things would help me get this right the first time:</p>${asks}` : ''}
-<p style="margin:0 0 14px;">Just hit reply and tell me. I may have texted you the same questions, so whichever is easier is fine by me.</p>
-<div style="background:#F0F7FF;border:1px solid #BFDBFE;border-radius:8px;padding:20px;margin:0 0 14px;text-align:center;">
-<p style="margin:0 0 6px;color:#1E3A5F;font-weight:600;font-size:15px;">📇 Save my contact so we don't get lost in spam</p>
-<p style="margin:0 0 14px;color:#64748B;font-size:13px;line-height:1.5;">My texts and emails sometimes land in spam or the Promotions tab. Tap below to save my number and email (works on iPhone and Android), and you won't miss anything I send.</p>
-<a href="https://gatgridcruises.com/grayson-gatgrid.vcf" style="display:inline-block;background:#1E3A5F;color:#D4AF37;padding:12px 26px;border-radius:8px;text-decoration:none;font-weight:600;font-size:14px;">Save Grayson's Contact &rarr;</a>
-<p style="margin:14px 0 0;color:#94A3B8;font-size:12px;line-height:1.5;">Prefer to add it by hand? Cell <strong>(405) 526-4956</strong> · <strong>bookings@gatgridcruises.com</strong></p>
-</div>
+<p style="margin:0 0 14px;">Just hit reply and tell me, or answer by text. Whichever is easier is fine by me.</p>
+${textLine}
+<p style="margin:0 0 14px;">One housekeeping note: my emails sometimes land in spam or the Promotions tab. Add <strong>bookings@gatgridcruises.com</strong> to your contacts or safe senders list and save <strong>${BUSINESS_PHONE_DISPLAY}</strong> in your phone, and nothing I send will get lost.</p>
+${SAVE_CONTACT_BLOCK}
 <p style="margin:0 0 14px;">One thing worth saying up front: Disney sets the fare, so booking through me costs you nothing extra. The onboard credit your booking earns comes out of the commission Disney pays the agency, not out of your pocket.</p>
 <p style="margin:0 0 14px;">There's no obligation either. If you look everything over and decide to book somewhere else, that is completely fine.</p>
 <p style="margin:0 0 4px;">Talk soon,</p>
@@ -252,6 +256,18 @@ export async function POST(request: NextRequest) {
     knownPartySize: party_size,
   })
 
+  // The text goes first so the acknowledgment email can say truthfully that a
+  // text is waiting, and name the number it came from. Awaited, not
+  // fire-and-forget: the invocation freezes the moment the response goes out.
+  const textOk = phone
+    ? await sendLeadAutoText(phone, {
+        name,
+        source: 'free-quote',
+        knownTimeframe: timeframe,
+        knownPartySize: party_size,
+      })
+    : false
+
   // Best-effort acknowledgment. A delivery path already succeeded, so this
   // never fails the request.
   let ackOk = false
@@ -262,24 +278,13 @@ export async function POST(request: NextRequest) {
         replyTo: AGENT_INBOX,
         to: email,
         subject: 'Got your quote request, working on it now',
-        html: confirmationHtml(name, openQuestions),
+        html: confirmationHtml(name, openQuestions, textOk),
       })
       ackOk = true
     } catch (err) {
       console.error('[free-quote] auto-ack email failed:', err)
     }
   }
-
-  // Awaited, not fire-and-forget: the serverless invocation freezes the moment
-  // the response goes out, which would kill an in-flight text or push.
-  const textOk = phone
-    ? await sendLeadAutoText(phone, {
-        name,
-        source: 'free-quote',
-        knownTimeframe: timeframe,
-        knownPartySize: party_size,
-      })
-    : false
 
   await sendPushover({
     title: `New GatGrid lead: ${name}`,

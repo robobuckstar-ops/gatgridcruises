@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from 'react'
 import { CheckCircle, Loader2, Send } from 'lucide-react'
 import { readReferralCookie, readUtmCookies } from '@/components/ui/referral-tracker'
 import { trackLead } from '@/lib/analytics'
+import { LEAD_CONFIRMATION_HEADS_UP } from '@/lib/constants'
 
 interface FormData {
   name: string
@@ -86,9 +87,12 @@ export function ContactForm() {
         <h3 className="font-fraunces text-xl font-bold text-slate-900 mb-2">
           Message sent
         </h3>
-        <p className="text-slate-600 text-sm max-w-md mx-auto">
-          Thanks {form.name.split(' ')[0] || 'for reaching out'} — it landed in our inbox.
+        <p className="text-slate-600 text-sm max-w-md mx-auto mb-3">
+          Thanks {form.name.split(' ')[0] || 'for reaching out'}, it landed in our inbox.
           Grayson replies to every message personally, usually within one business day.
+        </p>
+        <p className="text-slate-500 text-xs max-w-md mx-auto">
+          {LEAD_CONFIRMATION_HEADS_UP}
         </p>
       </div>
     )

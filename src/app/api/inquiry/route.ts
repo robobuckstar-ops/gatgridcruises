@@ -11,6 +11,8 @@ import {
   type LeadSource,
 } from '@/lib/lead-autotext'
 import { sendPushover } from '@/lib/pushover'
+import { SAVE_CONTACT_BLOCK } from '@/lib/email-templates'
+import { BUSINESS_PHONE_DISPLAY } from '@/lib/constants'
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 const INBOX = AGENT_REPLY_TO
@@ -118,9 +120,19 @@ function questionListHtml(questions: string[]): string {
 // Customer-facing acknowledgment. First person as Grayson, no dashes anywhere,
 // no fare quoted. The questions come from the same helper the welcome text
 // uses so the email and the SMS stay in step.
-function ackHtml(name: string, sailingSummary: string, questions: string[]): string {
+function ackHtml(
+  name: string,
+  sailingSummary: string,
+  questions: string[],
+  textedThem: boolean,
+): string {
   const firstName = leadFirstName(name)
   const asks = questionListHtml(questions)
+  // Only claim a text went out when one actually did, so the email never sends
+  // someone hunting through their phone for a message that was never sent.
+  const textLine = textedThem
+    ? `<p style="margin:0 0 14px;color:#334155;font-size:15px;line-height:1.6;">I also just texted you from <strong>${BUSINESS_PHONE_DISPLAY}</strong>. If it isn't there, check your blocked or spam messages, and save that number so my texts come through.</p>`
+    : ''
   return `<!DOCTYPE html>
 <html><body style="margin:0;background:#F1F5F9;font-family:Arial,sans-serif;">
 <table width="100%" cellpadding="0" cellspacing="0" style="background:#F1F5F9;padding:32px 16px;"><tr><td align="center">
@@ -130,7 +142,10 @@ function ackHtml(name: string, sailingSummary: string, questions: string[]): str
 <h2 style="margin:0 0 12px;color:#1E3A5F;font-family:Georgia,serif;font-size:20px;">Hi ${escapeHtml(firstName)},</h2>
 <p style="margin:0 0 14px;color:#334155;font-size:15px;line-height:1.6;">It's Grayson. I got your request about <strong>${escapeHtml(sailingSummary)}</strong> and I'm looking at it now. You'll hear back from me today.</p>
 ${asks ? `<p style="margin:0 0 8px;color:#334155;font-size:15px;line-height:1.6;">A few quick things would help me get this right the first time:</p>${asks}` : ''}
-<p style="margin:0 0 14px;color:#334155;font-size:15px;line-height:1.6;">Just hit reply and tell me. I may have texted you the same questions, so answer wherever is easier.</p>
+<p style="margin:0 0 14px;color:#334155;font-size:15px;line-height:1.6;">Just hit reply and tell me, or answer by text. Whichever is easier is fine by me.</p>
+${textLine}
+<p style="margin:0 0 14px;color:#334155;font-size:15px;line-height:1.6;">One housekeeping note: my emails sometimes land in spam or the Promotions tab. Add <strong>bookings@gatgridcruises.com</strong> to your contacts or safe senders list and save <strong>${BUSINESS_PHONE_DISPLAY}</strong> in your phone, and nothing I send will get lost.</p>
+${SAVE_CONTACT_BLOCK}
 <p style="margin:0 0 14px;color:#334155;font-size:15px;line-height:1.6;">Worth saying up front: you'll pay the same Disney public rate either way. Booking through me costs you nothing extra, and any onboard credit or perks I can layer on through Boardwalk Travel Agency come out of the commission Disney pays the agency, not out of your pocket.</p>
 <div style="background:#F0F7FF;border-left:4px solid #1E3A5F;border-radius:6px;padding:16px 18px;margin:20px 0;">
   <p style="margin:0 0 8px;color:#1E3A5F;font-size:14px;font-weight:600;">While you wait:</p>
@@ -229,22 +244,24 @@ export async function POST(request: NextRequest) {
     knownDeparturePort: sailing?.itineraryName ?? '',
   })
 
-  /**
-   * The two instant follow-ups that fire once the lead is safely recorded:
-   * a welcome text to the lead and a high-priority push to Grayson. Both are
-   * best effort and awaited, since the invocation freezes at the response.
-   */
-  const fireInstantFollowUps = async (ackOk: boolean): Promise<void> => {
-    const textOk = phone
-      ? await sendLeadAutoText(phone, {
-          name,
-          source: leadSource,
-          knownTimeframe: sailing?.sailDate ?? '',
-          knownPartySize: guests,
-          knownDeparturePort: sailing?.itineraryName ?? '',
-        })
-      : false
+  // Sent before the acknowledgment email so that email can say truthfully that
+  // a text is waiting, and name the number it came from. Best effort and
+  // awaited, since the invocation freezes at the response.
+  let textOk = false
+  const sendWelcomeText = async (): Promise<boolean> => {
+    if (!phone) return false
+    textOk = await sendLeadAutoText(phone, {
+      name,
+      source: leadSource,
+      knownTimeframe: sailing?.sailDate ?? '',
+      knownPartySize: guests,
+      knownDeparturePort: sailing?.itineraryName ?? '',
+    })
+    return textOk
+  }
 
+  /** High-priority push to Grayson, with what already went out to the lead. */
+  const pushLeadAlert = async (ackOk: boolean): Promise<void> => {
     await sendPushover({
       title: `New GatGrid lead: ${name}`,
       priority: 1,
@@ -304,6 +321,8 @@ export async function POST(request: NextRequest) {
           : `Disney cruise inquiry: ${name}`,
         html: notificationHtml({ name, email, phone, guests, notes, sailing, referralCode }),
       })
+      // Text first, so the ack email can point at it by number.
+      await sendWelcomeText()
       // Auto-ack to the user (best effort)
       let ackOk = false
       try {
@@ -312,7 +331,7 @@ export async function POST(request: NextRequest) {
           to: email,
           replyTo: INBOX,
           subject: "Got your inquiry, I'll be in touch today",
-          html: ackHtml(name, customerSailingSummary, openQuestions),
+          html: ackHtml(name, customerSailingSummary, openQuestions, textOk),
         })
         ackOk = true
       } catch (ackErr) {
@@ -321,7 +340,7 @@ export async function POST(request: NextRequest) {
       // Awaited before responding: a serverless invocation is frozen once the
       // response is returned, which would kill an in-flight CRM write.
       await leadWrite
-      await fireInstantFollowUps(ackOk)
+      await pushLeadAlert(ackOk)
       return NextResponse.json({ success: true })
     } catch (err) {
       console.error('[inquiry] resend send failed:', err)
@@ -357,7 +376,8 @@ export async function POST(request: NextRequest) {
         return NextResponse.json({ error: 'Submission failed' }, { status: 502 })
       }
       await leadWrite
-      await fireInstantFollowUps(false)
+      await sendWelcomeText()
+      await pushLeadAlert(false)
       return NextResponse.json({ success: true })
     } catch (err) {
       console.error('[inquiry] webhook error:', err)
@@ -371,7 +391,8 @@ export async function POST(request: NextRequest) {
   const lead = await leadWrite
   console.error('[inquiry] no email transport configured (set RESEND_API_KEY or CONCIERGE_WEBHOOK_URL)')
   if (lead) {
-    await fireInstantFollowUps(false)
+    await sendWelcomeText()
+    await pushLeadAlert(false)
     return NextResponse.json({ success: true })
   }
   return NextResponse.json({ error: 'Service unavailable' }, { status: 503 })
