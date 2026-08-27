@@ -21,8 +21,36 @@ export const dynamic = 'force-dynamic'
 /** Empty TwiML — accept the text without auto-replying to the sender. */
 const EMPTY_TWIML = '<?xml version="1.0" encoding="UTF-8"?><Response/>'
 
-function twiml(): NextResponse {
-  return new NextResponse(EMPTY_TWIML, {
+// Rotating auto-acknowledgment so every inbound text gets an instant, human
+// reply instead of silence. Variations keep it from reading like a robot.
+const AUTO_ACKS = [
+  "I see your message! I'll get to you ASAP. Is text better, or should I give you a call?",
+  "Got your message, thank you! I'll reply as soon as I can. Do you prefer text or a call?",
+  "Message received! I'm on it and will get back to you ASAP. Text or call, whichever's easier?",
+  "Thanks for reaching out! I'll be with you shortly. Is text good, or would a call be better?",
+  "I see this and I'll respond ASAP! Would you rather keep it on text or hop on a quick call?",
+]
+
+// Carrier-handled opt-out / help keywords. Never auto-reply to these — Twilio
+// manages STOP/HELP itself and an extra message would be non-compliant.
+const OPTOUT_KEYWORDS = new Set([
+  'stop', 'stopall', 'unsubscribe', 'cancel', 'end', 'quit',
+  'help', 'info', 'start', 'unstop', 'yes', 'no',
+])
+
+function pickAck(): string {
+  return AUTO_ACKS[Math.floor(Math.random() * AUTO_ACKS.length)]
+}
+
+function escapeXml(s: string): string {
+  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
+}
+
+function twiml(reply?: string): NextResponse {
+  const xml = reply
+    ? `<?xml version="1.0" encoding="UTF-8"?><Response><Message>${escapeXml(reply)}</Message></Response>`
+    : EMPTY_TWIML
+  return new NextResponse(xml, {
     status: 200,
     headers: { 'Content-Type': 'text/xml; charset=utf-8' },
   })
@@ -106,6 +134,25 @@ export async function POST(request: NextRequest) {
   // Awaited on purpose: the serverless invocation freezes the moment we
   // respond, which would kill an in-flight alert send.
   await notifyInboundMessage({ from, body, contactName, readyToBook, inboxUrl: inboxUrl() })
+
+  // Auto-acknowledge every real inbound text so the sender never hears silence.
+  // Skip opt-out/help keywords (carrier handles those) and empty bodies.
+  const firstWord = body.toLowerCase().split(/\s+/)[0] || ''
+  const shouldAck = body.length > 0 && !OPTOUT_KEYWORDS.has(firstWord)
+
+  if (shouldAck) {
+    const ack = pickAck()
+    // Log the auto-reply as outbound so the inbox thread stays complete.
+    await saveMessageSafely({
+      from: to,
+      to: from,
+      body: ack,
+      direction: 'outbound',
+      contactName: contactName || undefined,
+      status: 'Sent',
+    }).catch(() => {})
+    return twiml(ack)
+  }
 
   return twiml()
 }

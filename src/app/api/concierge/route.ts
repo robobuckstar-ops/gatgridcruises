@@ -109,8 +109,8 @@ export async function POST(request: NextRequest) {
   }
 
   const timezone = sanitize(body.timezone, 20)
-  // A2P 10DLC: the opt-in answer rides along in notes so it lands in the CRM,
-  // the Make.com payload, and the agent email without a new Airtable column.
+  // A2P 10DLC: the opt-in answer rides along in notes so it lands in the CRM
+  // and the agent email without a new Airtable column.
   const smsConsent = readSmsConsent(body.sms_consent)
   const notes = [sanitize(body.notes, 2000), smsConsentNote(smsConsent, 'concierge')]
     .filter(Boolean)
@@ -120,37 +120,16 @@ export async function POST(request: NextRequest) {
   const utm_source = body.utm_source ? sanitize(body.utm_source, 80) : undefined
   const utm_medium = body.utm_medium ? sanitize(body.utm_medium, 80) : undefined
   const utm_campaign = body.utm_campaign ? sanitize(body.utm_campaign, 80) : undefined
-  const utm_content = body.utm_content ? sanitize(body.utm_content, 80) : undefined
-  const utm_term = body.utm_term ? sanitize(body.utm_term, 80) : undefined
 
-  const payload = {
-    name,
-    email,
-    phone,
-    timezone,
-    family_members,
-    how_found_us,
-    notes,
-    sms_consent: smsConsent,
-    ...(sailing_interest ? { sailing_interest } : {}),
-    ...(referral_code ? { referral_code } : {}),
-    ...(utm_source ? { utm_source } : {}),
-    ...(utm_medium ? { utm_medium } : {}),
-    ...(utm_campaign ? { utm_campaign } : {}),
-    ...(utm_content ? { utm_content } : {}),
-    ...(utm_term ? { utm_term } : {}),
-  }
-
-  const webhookUrl = process.env.CONCIERGE_WEBHOOK_URL?.trim()
   const resendKey = process.env.RESEND_API_KEY
 
-  // Three parallel delivery paths so leads are never silently lost:
+  // Two delivery paths so leads are never silently lost:
   //   1. Direct Airtable write into the Leads CRM (what the nurture drip reads)
-  //   2. Make.com webhook (kept for whatever else that scenario does)
-  //   3. Direct email notification to the agent inbox
-  // Success requires AT LEAST ONE path to succeed. The CRM write is now its
-  // own path rather than a side effect of (2), so a paused Make scenario no
-  // longer starves /api/cron/lead-nurture of new leads.
+  //   2. Direct email notification to the agent inbox
+  // Success requires AT LEAST ONE path to succeed. (The old Make.com webhook was
+  // retired — it duplicated the CRM write, the agent alert, and the client
+  // welcome email this endpoint already sends directly, and it crashed on any
+  // lead whose notes contained a line break.)
   const leadWrite = saveLeadSafely({
     name,
     email,
@@ -165,36 +144,7 @@ export async function POST(request: NextRequest) {
     utmCampaign: utm_campaign,
   })
 
-  let webhookOk = false
   let notifyOk = false
-
-  if (webhookUrl) {
-    // 8s cap — Make.com queueing is usually instant, but we never want a
-    // hung scenario to block the response or eat the serverless budget.
-    const controller = new AbortController()
-    const timeout = setTimeout(() => controller.abort(), 8000)
-    try {
-      const res = await fetch(webhookUrl, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-        signal: controller.signal,
-      })
-      if (res.ok) {
-        webhookOk = true
-        console.log('[concierge] webhook delivered', { status: res.status, email })
-      } else {
-        const responseText = await res.text().catch(() => '')
-        console.error('[concierge] webhook returned non-2xx:', res.status, responseText.slice(0, 500))
-      }
-    } catch (err) {
-      console.error('[concierge] webhook error:', err)
-    } finally {
-      clearTimeout(timeout)
-    }
-  } else {
-    console.error('[concierge] CONCIERGE_WEBHOOK_URL not configured')
-  }
 
   const resend = resendKey ? new Resend(resendKey) : null
 
@@ -234,13 +184,9 @@ export async function POST(request: NextRequest) {
   // Awaited here because a serverless invocation is frozen once it responds.
   const crmOk = (await leadWrite) !== null
 
-  if (!crmOk && !webhookOk && !notifyOk) {
+  if (!crmOk && !notifyOk) {
     console.error('[concierge] all delivery paths failed — lead lost', { email, name })
     return NextResponse.json({ error: 'Submission failed' }, { status: 502 })
-  }
-
-  if (!webhookOk) {
-    console.warn('[concierge] webhook path failed but agent notification succeeded — Make.com scenario may be paused or misconfigured')
   }
 
   // Auto-acknowledgment email to the user. Best-effort — at least one delivery

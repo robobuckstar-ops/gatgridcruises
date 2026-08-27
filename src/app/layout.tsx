@@ -4,9 +4,7 @@ import './globals.css'
 import { Header } from '@/components/layout/header'
 import { Footer } from '@/components/layout/footer'
 import { SkipNav } from '@/components/ui/skip-nav'
-import { ChatWidget } from '@/components/ui/chat-widget'
-import { ObcBadge } from '@/components/ui/obc-badge'
-import { NewsletterPopup } from '@/components/ui/newsletter-popup'
+import { PortalChromeGate } from '@/components/ui/portal-chrome-gate'
 import { generateWebsiteSchema, generateOrganizationSchema } from '@/lib/structured-data'
 import { StructuredData } from '@/components/ui/structured-data'
 import { CopyProtection } from '@/components/ui/copy-protection'
@@ -162,9 +160,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <FamilyPromoBanner />
         <main id="main-content" className="flex-1 pb-28 sm:pb-0">{children}</main>
         <Footer />
-        <ChatWidget />
-        <ObcBadge />
-        <NewsletterPopup />
+        <PortalChromeGate />
       </body>
     </html>
   )

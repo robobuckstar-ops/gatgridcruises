@@ -46,6 +46,10 @@
     {
       "path": "/api/cron/abandoned-quotes",
       "schedule": "30 13 * * *"
+    },
+    {
+      "path": "/api/cron/booking-milestones",
+      "schedule": "0 16 * * *"
     }
   ]
 }

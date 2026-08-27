@@ -23,6 +23,8 @@ import {
 } from 'lucide-react'
 import { OBCDisclaimer } from '@/components/ui/obc-disclaimer'
 import TravelerReadiness from '@/components/portal/TravelerReadiness'
+import Flights from '@/components/portal/Flights'
+import CalendarInvites from '@/components/portal/CalendarInvites'
 
 // ─── Timezone Options ─────────────────────────────────────────────────────────
 
@@ -102,6 +104,23 @@ function addDaysIso(date: Date, days: number): string {
   const d = new Date(date)
   d.setDate(d.getDate() + days)
   return d.toISOString().slice(0, 10)
+}
+
+// Disney online check-in opens a set number of days before sailing, based on the
+// guest's Castaway Club tier (widened for 2026). Falls back to the first-timer
+// window when the tier isn't recorded yet. Always confirm the exact date against
+// the Navigator app per booking.
+const CASTAWAY_CHECKIN_DAYS: Record<string, number> = {
+  concierge: 40,
+  pearl: 40,
+  platinum: 38,
+  gold: 35,
+  silver: 33,
+  'first-time': 30,
+}
+
+function castawayCheckInDays(tier: string): number {
+  return CASTAWAY_CHECKIN_DAYS[tier.trim().toLowerCase()] ?? 30
 }
 
 function shortDateLabel(iso: string): string {
@@ -213,6 +232,7 @@ interface PortalApiResponse {
     obcAmount: number | null
     bookingPrice: number | null
     phase: string
+    castawayTier: string
     documents: PortalDocument[]
   }
   client: {
@@ -507,7 +527,7 @@ export default function DashboardPage() {
 
   const checklistItems: ChecklistItem[] = sailingDate
     ? (() => {
-        const checkInIso = addDaysIso(sailingDate, -30)
+        const checkInIso = addDaysIso(sailingDate, -castawayCheckInDays(booking.castawayTier))
         const finalPrepIso = addDaysIso(sailingDate, -7)
         const daysToSail = Math.ceil((sailingDate.getTime() - Date.now()) / 86_400_000)
         return [
@@ -590,7 +610,7 @@ export default function DashboardPage() {
   const reminders: Reminder[] = sailingDate
     ? [
         {
-          isoDate: addDaysIso(sailingDate, -30),
+          isoDate: addDaysIso(sailingDate, -castawayCheckInDays(booking.castawayTier)),
           label: 'Online check-in opens',
           isMidnightET: isDisney,
           priority: 'high',
@@ -870,6 +890,18 @@ export default function DashboardPage() {
 
         {/* ── Traveler Readiness ── */}
         <TravelerReadiness returnDate={booking.returnDate} />
+
+        <CalendarInvites
+          sailingIso={booking.sailingDate}
+          returnIso={booking.returnDate}
+          checkInIso={
+            sailingDate ? addDaysIso(sailingDate, -castawayCheckInDays(booking.castawayTier)) : ''
+          }
+          shipLabel={booking.ship}
+          itinerary={booking.itinerary}
+        />
+
+        <Flights />
 
         {/* ── Concierge + Reminders ── */}
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">

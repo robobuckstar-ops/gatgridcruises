@@ -20,6 +20,7 @@ export const BOOKING_FIELDS = {
   phase: 'fldv7osctT7kB1QAI',
   clientEmail: 'fldo5NBN0Vra8wgYj',
   client: 'fld6tu0nat2TiEgCZ',
+  castawayTier: 'fldaSGLS4BS7alE66',
 } as const
 
 // Optional attachment field on the Bookings table (e.g. "Travel Details").
@@ -95,6 +96,54 @@ export async function saveReadiness(
   }
 }
 
+// Long-text field on Bookings holding the JSON a client submits through the
+// portal's Flights section. Holds only what the concierge needs to keep an eye
+// on arrivals/departures — airline, flight number, date, direction. No manual
+// parsing pipeline: the agent reads forwarded confirmations by hand.
+export const FLIGHTS_FIELD = 'fldpkGIF6OleAzM6q'
+
+export interface FlightInfo {
+  /** "arrival" (flying in before the cruise) or "departure" (flying home). */
+  direction: string
+  airline: string
+  flightNumber: string
+  /** ISO date (YYYY-MM-DD) of the flight. */
+  date: string
+  notes: string
+}
+
+export async function fetchFlights(bookingId: string, apiKey: string): Promise<FlightInfo[]> {
+  const url = bookingUrl(BOOKINGS_TABLE, `${bookingId}?returnFieldsByFieldId=true`)
+  const record = await airtableGet(url, apiKey)
+  const fields = record.fields as Record<string, unknown> | undefined
+  const raw = fields?.[FLIGHTS_FIELD]
+  if (typeof raw !== 'string' || !raw.trim()) return []
+  try {
+    const parsed = JSON.parse(raw)
+    return Array.isArray(parsed) ? (parsed as FlightInfo[]) : []
+  } catch {
+    return []
+  }
+}
+
+export async function saveFlights(
+  bookingId: string,
+  apiKey: string,
+  flights: FlightInfo[],
+): Promise<void> {
+  const url = bookingUrl(BOOKINGS_TABLE, bookingId)
+  const res = await fetch(url, {
+    method: 'PATCH',
+    headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({ fields: { [FLIGHTS_FIELD]: JSON.stringify(flights) } }),
+    cache: 'no-store',
+  })
+  if (!res.ok) {
+    const text = await res.text()
+    throw new AirtableError(res.status, `Airtable ${res.status}: ${text}`)
+  }
+}
+
 export interface BookingDocument {
   id: string
   filename: string
@@ -116,6 +165,8 @@ export interface BookingDetails {
   obcAmount: number | null
   bookingPrice: number | null
   phase: string
+  /** Disney Castaway Club tier (Pearl/Platinum/Gold/Silver/First-time/Concierge). Drives check-in window. */
+  castawayTier: string
   documents: BookingDocument[]
 }
 
@@ -241,6 +292,7 @@ function shapeBooking(id: string, fields: Record<string, unknown>): BookingDetai
     obcAmount: toNumberOrNull(fields[BOOKING_FIELDS.obcAmount]),
     bookingPrice: toNumberOrNull(fields[BOOKING_FIELDS.bookingPrice]),
     phase: String(fields[BOOKING_FIELDS.phase] ?? ''),
+    castawayTier: String(fields[BOOKING_FIELDS.castawayTier] ?? ''),
     documents: DOCUMENTS_FIELD_ID ? shapeDocuments(fields[DOCUMENTS_FIELD_ID]) : [],
   }
 }
