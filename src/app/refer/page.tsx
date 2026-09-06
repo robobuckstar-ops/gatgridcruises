@@ -24,6 +24,19 @@ export const metadata: Metadata = {
     'Share your unique link, earn rewards when friends book Disney cruises. Three reward tiers: thank-you gifts, onboard credit bonuses, and commission percentages for ambassadors.',
   robots: { index: true, follow: true },
   alternates: { canonical: '/refer' },
+  openGraph: {
+    title: 'Partner & Referral Program',
+    description: 'Share your link and earn rewards when friends sail. Three tiers: thank-you gifts, onboard credit bonuses, and ambassador commission.',
+    url: 'https://gatgridcruises.com/refer',
+    siteName: 'GatGridCruises',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Partner & Referral Program',
+    description: 'Share your link and earn rewards when friends sail with GatGrid Cruises.',
+    images: ['https://gatgridcruises.com/og-image.png'],
+  },
 }
 
 const HOW_IT_WORKS = [

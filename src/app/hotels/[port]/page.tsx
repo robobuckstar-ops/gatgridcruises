@@ -16,6 +16,19 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: `${portData.name} Port Guide & Pre-Cruise Hotels`,
     description: `Complete guide to ${portData.name}: parking, driving directions, weather, terminal tips, pre-cruise activities, and honest hotel recommendations for Disney cruisers.`,
     alternates: { canonical: `/hotels/${portData.slug}` },
+    openGraph: {
+      title: `${portData.name} Port Guide & Pre-Cruise Hotels`,
+      description: `Parking, directions, terminal tips, and honest pre-cruise hotel picks for Disney cruisers sailing from ${portData.name}.`,
+      url: `https://gatgridcruises.com/hotels/${portData.slug}`,
+      siteName: 'GatGridCruises',
+      images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${portData.name} Port Guide & Pre-Cruise Hotels`,
+      description: `Parking, directions, and pre-cruise hotel picks for ${portData.name}.`,
+      images: ['https://gatgridcruises.com/og-image.png'],
+    },
   }
 }
 

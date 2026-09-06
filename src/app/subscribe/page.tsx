@@ -6,6 +6,19 @@ export const metadata: Metadata = {
   alternates: { canonical: '/subscribe' },
   title: 'Subscribe to Weekly Deals',
   description: 'Get the best Disney cruise deals delivered to your inbox every Sunday. Free weekly digest with price drops, travel tips, and exclusive insights.',
+  openGraph: {
+    title: 'Subscribe to Weekly Disney Cruise Deals',
+    description: 'A free Sunday digest of Disney cruise price drops, planning tips, and deals worth acting on.',
+    url: 'https://gatgridcruises.com/subscribe',
+    siteName: 'GatGridCruises',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Subscribe to Weekly Disney Cruise Deals',
+    description: 'A free Sunday digest of Disney cruise price drops and planning tips.',
+    images: ['https://gatgridcruises.com/og-image.png'],
+  },
 }
 
 export default function SubscribePage() {

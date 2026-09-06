@@ -8,6 +8,19 @@ export const metadata: Metadata = {
   alternates: { canonical: '/deal-alerts' },
   title: 'Disney Cruise Deal Alerts — GatGrid Cruises',
   description: 'Get notified when Disney cruise prices drop on your preferred dates. Free deal alerts from Dr. Grayson Starbuck, DPT — AI-curated cruise deals.',
+  openGraph: {
+    title: 'Disney Cruise Deal Alerts',
+    description: 'Free alerts when Disney cruise prices drop on your dates. Pick your ships and sail windows and we watch the fares for you.',
+    url: 'https://gatgridcruises.com/deal-alerts',
+    siteName: 'GatGridCruises',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Disney Cruise Deal Alerts',
+    description: 'Free alerts when Disney cruise prices drop on your dates.',
+    images: ['https://gatgridcruises.com/og-image.png'],
+  },
 }
 
 const WHAT_YOU_GET = [

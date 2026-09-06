@@ -27,6 +27,8 @@ export const blogPosts: BlogPost[] = [
     id: '1',
     slug: 'disney-treasure-first-look',
     title: 'Disney Treasure: First Look at the Newest Ship',
+    meta_description:
+      'Disney Treasure first look: inside the 144,000-ton ship\'s staterooms, 15 dining venues, new entertainment, and its Caribbean itineraries from Port Canaveral.',
     excerpt: 'Disney Cruise Line\'s latest flagship promises to redefine luxury Disney cruising. Here\'s what we know about Disney Treasure.',
     author: 'Dr. Grayson Starbuck, DPT',
     published_date: '2025-04-15',
@@ -35,43 +37,32 @@ export const blogPosts: BlogPost[] = [
     read_time: '6 min read',
     featured_image_url: 'https://images.unsplash.com/photo-1548574505-5e239809f9db?w=1200&h=600&fit=crop',
     content: `
-<div class="prose prose-invert max-w-none">
+<p>Disney Cruise Line has officially unveiled the Disney Treasure, a groundbreaking new ship that combines the best of Disney's nautical heritage with cutting-edge modern design. This 144,000-ton vessel represents a significant leap forward in cruise ship innovation and represents the future of Disney's fleet.</p>
 
-Disney Cruise Line has officially unveiled the Disney Treasure, a groundbreaking new ship that combines the best of Disney's nautical heritage with cutting-edge modern design. This 144,000-ton vessel represents a significant leap forward in cruise ship innovation and represents the future of Disney's fleet.
-"
-## What Makes Disney Treasure Special?
+<h2>What Makes Disney Treasure Special?</h2>
+<p>The Disney Treasure stands out for several reasons. First and foremost, the ship incorporates revolutionary new technology that sets industry standards. The navigation and propulsion systems are state-of-the-art, making the ship more fuel-efficient while maintaining the comfort and safety Disney is known for.</p>
+<p>The design philosophy behind Disney Treasure draws inspiration from classic Disney films and characters, woven throughout the ship's public spaces. Each area tells a unique story, from the atrium featuring characters from across Disney's cinematic universe to specialty restaurants celebrating different Disney movie franchises.</p>
 
-The Disney Treasure stands out for several reasons. First and foremost, the ship incorporates revolutionary new technology that sets industry standards. The navigation and propulsion systems are state-of-the-art, making the ship more fuel-efficient while maintaining the comfort and safety Disney is known for.
+<h2>Accommodations and Staterooms</h2>
+<p>Disney hasn't skimped on guest accommodations. The Disney Treasure features over 1,200 staterooms with multiple categories to suit different budgets and preferences. Standard inside cabins have been redesigned with better layouts and lighting, while the premium suites feature private verandas with ocean views that are truly spectacular.</p>
+<p>One standout feature is the introduction of new "Enchanted Suites" that include interactive elements allowing guests to customize their cabin ambiance with Disney-themed experiences. This innovative approach to cabin living brings new meaning to Disney hospitality.</p>
 
-The design philosophy behind Disney Treasure draws inspiration from classic Disney films and characters, woven throughout the ship's public spaces. Each area tells a unique story, from the atrium featuring characters from across Disney's cinematic universe to specialty restaurants celebrating different Disney movie franchises.
-"
-## Accommodations and Staterooms
+<h2>Dining and Entertainment</h2>
+<p>The ship boasts 15 different dining venues, ranging from quick-service options to fine dining experiences. New restaurants include the Luminara Dining Hall (inspired by Coco) and Arendelle (inspired by Frozen). Each venue features menus crafted by world-class chefs that honor the Disney themes while delivering genuinely excellent cuisine.</p>
+<p>Entertainment has been elevated across the board, with new theater productions and nightly shows that leverage Disney's storytelling legacy. The main theater features advanced projection technology and immersive staging that creates unforgettable experiences.</p>
 
-Disney hasn't skimped on guest accommodations. The Disney Treasure features over 1,200 staterooms with multiple categories to suit different budgets and preferences. Standard inside cabins have been redesigned with better layouts and lighting, while the premium suites feature private verandas with ocean views that are truly spectacular.
-
-One standout feature is the introduction of new "Enchanted Suites" that include interactive elements allowing guests to customize their cabin ambiance with Disney-themed experiences. This innovative approach to cabin living brings new meaning to Disney hospitality.
-
-## Dining and Entertainment
-
-The ship boasts 15 different dining venues, ranging from quick-service options to fine dining experiences. New restaurants include the Luminara Dining Hall (inspired by Coco) and Arendelle (inspired by Frozen). Each venue features menus crafted by world-class chefs that honor the Disney themes while delivering genuinely excellent cuisine.
-
-Entertainment has been elevated across the board, with new theater productions and nightly shows that leverage Disney's storytelling legacy. The main theater features advanced projection technology and immersive staging that creates unforgettable experiences.
-
-## When Can You Sail?
-
-The Disney Treasure's maiden voyage is scheduled for late 2025, with sailings from Port Canaveral initially focusing on 4, 5, and 7-night Caribbean itineraries. Given Disney's track record with new ships, we expect these sailings to book up quickly. If you're interested in experiencing the Treasure, we recommend getting on Disney's interest list early or monitoring pricing closely as the debut date approaches.
-"
-The Disney Treasure represents Disney Cruise Line's commitment to innovation while maintaining the quality and magic that guests have come to expect. This is a ship worth getting excited about.
-
-If you're comparing newer Wish-class options, the recently launched <a href="/blog/disney-destiny-heroes-villains-guide">Disney Destiny — the Heroes &amp; Villains ship</a> is the Treasure's most direct sibling and the most theatrically themed ship in the fleet right now.
-
-</div>
+<h2>When Can You Sail?</h2>
+<p>The Disney Treasure's maiden voyage is scheduled for late 2025, with sailings from Port Canaveral initially focusing on 4, 5, and 7-night Caribbean itineraries. Given Disney's track record with new ships, we expect these sailings to book up quickly. If you're interested in experiencing the Treasure, we recommend getting on Disney's interest list early or monitoring pricing closely as the debut date approaches.</p>
+<p>The Disney Treasure represents Disney Cruise Line's commitment to innovation while maintaining the quality and magic that guests have come to expect. This is a ship worth getting excited about.</p>
+<p>If you're comparing newer Wish-class options, the recently launched <a href="/blog/disney-destiny-heroes-villains-guide">Disney Destiny — the Heroes &amp; Villains ship</a> is the Treasure's most direct sibling and the most theatrically themed ship in the fleet right now.</p>
     `.trim(),
   },
   {
     id: '2',
     slug: '5-ways-save-money-disney-cruise',
     title: '5 Ways to Save Money on Your Disney Cruise',
+    meta_description:
+      'Five proven ways to save money on a Disney cruise: shoulder-season timing, the DVC discount, back-to-back pricing, onboard credit, and booking air separately.',
     excerpt: 'Disney cruises don\'t have to break the bank. Here are five proven strategies to reduce your cruise costs without sacrificing the magic.',
     author: 'Dr. Grayson Starbuck, DPT',
     published_date: '2025-04-12',
@@ -80,55 +71,41 @@ If you're comparing newer Wish-class options, the recently launched <a href="/bl
     read_time: '7 min read',
     featured_image_url: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1200&h=600&fit=crop',
     content: `
-<div class="prose prose-invert max-w-none">
+<p>Disney cruises are undeniably premium experiences, but they don't have to drain your savings account. With smart planning and insider knowledge, you can reduce your costs significantly while still enjoying the magic that makes Disney Cruise Line special.</p>
 
-Disney cruises are undeniably premium experiences, but they don't have to drain your savings account. With smart planning and insider knowledge, you can reduce your costs significantly while still enjoying the magic that makes Disney Cruise Line special.
+<h2>1. Book During Shoulder Season</h2>
+<p>The timing of your cruise dramatically impacts pricing. Travel during shoulder seasons—late August through early September, or late January through early February—when demand is lower but the ship experience remains top-notch. You'll find 15-30% savings compared to peak summer or holiday periods.</p>
+<p>Similarly, avoid school holiday weeks if you can. While spring break and winter break periods are family-friendly for obvious reasons, they come with premium pricing. If your schedule allows flexibility, you'll unlock significant savings.</p>
 
-## 1. Book During Shoulder Season
+<h2>2. Leverage the Disney Vacation Club Discount</h2>
+<p>Even if you don't own Disney Vacation Club points, you might be able to access the DVC discount. The standard DVC member discount on cruise base fares is often 10% or more off published rates. Consider asking friends or family with DVC memberships if they can book your cruise under their account—you then pay them for the booking and handle the balance yourself.</p>
+<p>Alternatively, if you're considering purchasing DVC, using the member discount on a single cruise can help offset the purchase price over time.</p>
 
-The timing of your cruise dramatically impacts pricing. Travel during shoulder seasons—late August through early September, or late January through early February—when demand is lower but the ship experience remains top-notch. You'll find 15-30% savings compared to peak summer or holiday periods.
+<h2>3. Book Back-to-Back Cruises (B2B)</h2>
+<p>Booking two consecutive cruises on Disney Cruise Line opens up special promotional pricing. Disney offers incentive discounts when you commit to sailing back-to-back, sometimes reaching 10-15% off your second sailing. This works especially well if you're planning extended vacation time or want to experience different itineraries.</p>
+<p>You don't need to sail the same route twice—you can mix and match different ships and itineraries.</p>
 
-Similarly, avoid school holiday weeks if you can. While spring break and winter break periods are family-friendly for obvious reasons, they come with premium pricing. If your schedule allows flexibility, you'll unlock significant savings.
+<h2>4. Use Onboard Credit Wisely</h2>
+<p>When you book your cruise, take advantage of any included onboard credit (OCB) promotions. These typically cover beverage packages, spa treatments, or specialty dining. Calculate the retail value of these offers versus their costs—onboard credit is essentially free money when used strategically.</p>
+<p>Book specialty dining far in advance and use your OCB to cover those costs, freeing up cash for other expenses. The same applies to beverage packages.</p>
 
-## 2. Leverage the Disney Vacation Club Discount
+<h2>5. Fly Free or Cheap</h2>
+<p>One hidden cost of Disney cruises is air travel. Instead of paying for flight packages through Disney, which adds significant cost, book your flights separately using airfare tools. You can often find better deals through discount airlines or by monitoring sales closely.</p>
+<p>Alternatively, drive to your port of embarkation if feasible. This eliminates airfare entirely and gives you the flexibility to leave early or return on your schedule.</p>
 
-Even if you don't own Disney Vacation Club points, you might be able to access the DVC discount. The standard DVC member discount on cruise base fares is often 10% or more off published rates. Consider asking friends or family with DVC memberships if they can book your cruise under their account—you then pay them for the booking and handle the balance yourself.
+<h2>The Bottom Line</h2>
+<p>Disney cruises represent exceptional value when you consider what's included—meals, entertainment, and accommodations all in one price. By employing these strategies, you can reduce your per-person costs while still experiencing the magic that makes Disney Cruise Line special.</p>
 
-Alternatively, if you're considering purchasing DVC, using the member discount on a single cruise can help offset the purchase price over time.
-
-## 3. Book Back-to-Back Cruises (B2B)
-
-Booking two consecutive cruises on Disney Cruise Line opens up special promotional pricing. Disney offers incentive discounts when you commit to sailing back-to-back, sometimes reaching 10-15% off your second sailing. This works especially well if you're planning extended vacation time or want to experience different itineraries.
-
-You don't need to sail the same route twice—you can mix and match different ships and itineraries.
-
-## 4. Use Onboard Credit Wisely
-
-When you book your cruise, take advantage of any included onboard credit (OCB) promotions. These typically cover beverage packages, spa treatments, or specialty dining. Calculate the retail value of these offers versus their costs—onboard credit is essentially free money when used strategically.
-
-Book specialty dining far in advance and use your OCB to cover those costs, freeing up cash for other expenses. The same applies to beverage packages.
-
-## 5. Fly Free or Cheap
-
-One hidden cost of Disney cruises is air travel. Instead of paying for flight packages through Disney, which adds significant cost, book your flights separately using airfare tools. You can often find better deals through discount airlines or by monitoring sales closely.
-
-Alternatively, drive to your port of embarkation if feasible. This eliminates airfare entirely and gives you the flexibility to leave early or return on your schedule.
-
-## The Bottom Line
-
-Disney cruises represent exceptional value when you consider what's included—meals, entertainment, and accommodations all in one price. By employing these strategies, you can reduce your per-person costs while still experiencing the magic that makes Disney Cruise Line special.
-
-## One More: Protect What You've Saved
-
-All the money-saving strategies above mean nothing if an emergency forces you to cancel or cut your cruise short. A Disney cruise represents a $3,000–$15,000+ investment per family — and Disney's cancellation policy becomes fully non-refundable 89 days out. A comprehensive <a href="/guides/travel-insurance">cruise travel insurance policy</a> typically costs 4–8% of your trip and can recover the entire fare if you cancel for a covered reason. For September sailings during hurricane season, it's especially valuable. Don't save $800 on airfare only to lose $10,000 to an uncovered cancellation.
-
-</div>
+<h2>One More: Protect What You've Saved</h2>
+<p>All the money-saving strategies above mean nothing if an emergency forces you to cancel or cut your cruise short. A Disney cruise represents a $3,000–$15,000+ investment per family — and Disney's cancellation policy becomes fully non-refundable 89 days out. A comprehensive <a href="/guides/travel-insurance">cruise travel insurance policy</a> typically costs 4–8% of your trip and can recover the entire fare if you cancel for a covered reason. For September sailings during hurricane season, it's especially valuable. Don't save $800 on airfare only to lose $10,000 to an uncovered cancellation.</p>
     `.trim(),
   },
   {
     id: '3',
     slug: 'september-best-month-caribbean-cruise',
     title: 'Why September Is the Best Month to Cruise the Caribbean',
+    meta_description:
+      'Why September is the best month to cruise the Caribbean: the lowest fares of the year, thinner crowds, and the hurricane-season trade-off you should weigh.',
     excerpt: 'September offers an underrated opportunity for Caribbean cruising. Discover why this month delivers exceptional value and fewer crowds.',
     author: 'Dr. Grayson Starbuck, DPT',
     published_date: '2025-04-10',
@@ -137,49 +114,36 @@ All the money-saving strategies above mean nothing if an emergency forces you to
     read_time: '5 min read',
     featured_image_url: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&h=600&fit=crop',
     content: `
-<div class="prose prose-invert max-w-none">
+<p>Most cruisers avoid September, but savvy travelers know this month offers an extraordinary combination of low prices, manageable crowds, and beautiful Caribbean weather. If you're flexible on timing, September should be on your radar.</p>
 
-Most cruisers avoid September, but savvy travelers know this month offers an extraordinary combination of low prices, manageable crowds, and beautiful Caribbean weather. If you're flexible on timing, September should be on your radar.
+<h2>Pricing That Can't Be Beat</h2>
+<p>September represents the absolute low point in cruise pricing for Caribbean itineraries. With summer vacation over and holiday planning still months away, demand plummets. Disney Cruise Line responds with deeply discounted rates—we're talking 30-40% off peak season pricing for comparable sailings.</p>
+<p>These discounts apply to both base fares and upgrade availability. Suites and premium staterooms that might be $2,500+ per night in winter suddenly become accessible at $1,500 or less. The value proposition is extraordinary.</p>
 
-## Pricing That Can't Be Beat
+<h2>Smaller Ships, Better Experience</h2>
+<p>Lower demand means fewer guests aboard. Disney often deploys smaller ships to the Caribbean in September, resulting in less crowded dining venues, shorter lines at attractions, and more opportunities to enjoy the ship and ports at your own pace. This makes the experience feel more intimate and refined.</p>
+<p>The pool decks are less congested, making it easier to find a lounger. Specialty dining is easier to book. Character meet-and-greets have shorter waits. These small things accumulate into a significantly better cruise experience.</p>
 
-September represents the absolute low point in cruise pricing for Caribbean itineraries. With summer vacation over and holiday planning still months away, demand plummets. Disney Cruise Line responds with deeply discounted rates—we're talking 30-40% off peak season pricing for comparable sailings.
+<h2>Caribbean Weather Myths</h2>
+<p>September falls within hurricane season, which is why many cruise lines discount rates. However, hurricanes are statistically rare, and modern ships are equipped to navigate around weather patterns. Disney's itineraries are carefully planned to minimize risk, and the line has excellent protocols for guest safety.</p>
+<p>The reality? September weather in the Caribbean is typically sunny with afternoon showers—perfect vacation conditions. You'll experience the same warm tropical climate and beautiful ocean days as you would in any other season.</p>
+<p>One caveat: hurricane season does introduce meaningful cancellation risk. If Disney cancels your sailing due to a storm, they'll refund your cruise fare — but your non-refundable flights and pre-cruise hotel won't automatically be covered. This is exactly why <a href="/guides/travel-insurance">travel insurance becomes especially important for September sailings</a>. The cost is typically 4–8% of your trip and can recover your entire non-refundable investment.</p>
 
-These discounts apply to both base fares and upgrade availability. Suites and premium staterooms that might be $2,500+ per night in winter suddenly become accessible at $1,500 or less. The value proposition is extraordinary.
+<h2>Strategic Booking</h2>
+<p>The key to maximizing September savings is booking strategically. Disney often releases September inventory in January and February, with the best discounts appearing in March and April. Early bookers can lock in low rates before demand ticks up.</p>
+<p>Watch Disney's wave season (the period immediately after their annual meeting) for special promotions. September sailings frequently feature bonus onboard credit and promotional rates that sweeten the deal even further.</p>
 
-## Smaller Ships, Better Experience
-
-Lower demand means fewer guests aboard. Disney often deploys smaller ships to the Caribbean in September, resulting in less crowded dining venues, shorter lines at attractions, and more opportunities to enjoy the ship and ports at your own pace. This makes the experience feel more intimate and refined.
-
-The pool decks are less congested, making it easier to find a lounger. Specialty dining is easier to book. Character meet-and-greets have shorter waits. These small things accumulate into a significantly better cruise experience.
-
-## Caribbean Weather Myths
-
-September falls within hurricane season, which is why many cruise lines discount rates. However, hurricanes are statistically rare, and modern ships are equipped to navigate around weather patterns. Disney's itineraries are carefully planned to minimize risk, and the line has excellent protocols for guest safety.
-
-The reality? September weather in the Caribbean is typically sunny with afternoon showers—perfect vacation conditions. You'll experience the same warm tropical climate and beautiful ocean days as you would in any other season.
-
-One caveat: hurricane season does introduce meaningful cancellation risk. If Disney cancels your sailing due to a storm, they'll refund your cruise fare — but your non-refundable flights and pre-cruise hotel won't automatically be covered. This is exactly why <a href="/guides/travel-insurance">travel insurance becomes especially important for September sailings</a>. The cost is typically 4–8% of your trip and can recover your entire non-refundable investment.
-
-## Strategic Booking
-
-The key to maximizing September savings is booking strategically. Disney often releases September inventory in January and February, with the best discounts appearing in March and April. Early bookers can lock in low rates before demand ticks up.
-
-Watch Disney's wave season (the period immediately after their annual meeting) for special promotions. September sailings frequently feature bonus onboard credit and promotional rates that sweeten the deal even further.
-
-## The Verdict
-
-September delivers an exceptional value proposition: dramatically lower prices, fewer crowds, and weather that's perfectly suitable for Caribbean cruising. If your vacation calendar allows flexibility, September Caribbean cruising should definitely be on your shortlist.
-
-One more reason to look at September specifically: the seasonal overlay starts on September 4, so a low-season fare also gets you the full <a href="/blog/halloween-on-the-high-seas-2026-guide">Halloween on the High Seas 2026</a> programming at no extra charge.
-
-</div>
+<h2>The Verdict</h2>
+<p>September delivers an exceptional value proposition: dramatically lower prices, fewer crowds, and weather that's perfectly suitable for Caribbean cruising. If your vacation calendar allows flexibility, September Caribbean cruising should definitely be on your shortlist.</p>
+<p>One more reason to look at September specifically: the seasonal overlay starts on September 4, so a low-season fare also gets you the full <a href="/blog/halloween-on-the-high-seas-2026-guide">Halloween on the High Seas 2026</a> programming at no extra charge.</p>
     `.trim(),
   },
   {
     id: '4',
     slug: 'castaway-cay-vs-lookout-cay',
     title: 'Castaway Cay vs. Lookout Cay: Disney\'s Private Islands Compared',
+    meta_description:
+      'Castaway Cay vs Lookout Cay compared: beaches, dining, excursions, and cost at Disney\'s two private islands, plus which one is worth planning a sailing around.',
     meta_title: 'Castaway Cay vs. Lookout Cay: Which Island Wins?',
     excerpt: 'Disney operates two private island destinations. Here\'s how Castaway Cay and Lookout Cay compare and what to expect at each.',
     author: 'Dr. Grayson Starbuck, DPT',
@@ -189,63 +153,42 @@ One more reason to look at September specifically: the seasonal overlay starts o
     read_time: '8 min read',
     featured_image_url: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1200&h=600&fit=crop',
     content: `
-<div class="prose prose-invert max-w-none">
+<p>Disney's private island experiences are highlight destinations for most cruisers. Castaway Cay in the Bahamas and Lookout Cay (formerly Lighthouse Point) in Eleuthera both offer pristine beaches and island activities, but they cater to different preferences. Let's break down the differences.</p>
 
-Disney's private island experiences are highlight destinations for most cruisers. Castaway Cay in the Bahamas and Lookout Cay (formerly Lighthouse Point) in Eleuthera both offer pristine beaches and island activities, but they cater to different preferences. Let's break down the differences.
-"
-## Castaway Cay: The Established Classic
+<h2>Castaway Cay: The Established Classic</h2>
+<p>Castaway Cay has been Disney's private island destination since 1998. Located in the Bahamas, it's a fully developed island experience with multiple beach areas, restaurants, and activities.</p>
+<p><strong>The Beaches</strong>: Castaway Cay features several distinct beach areas. Family Beach is the main hub with plenty of lounge chairs and shallow water perfect for kids. Teen Beach caters to older guests with volleyball and water sports. Adults get their own adults-only beach with premium lounging and a full bar.</p>
+<p><strong>Activities</strong>: Beyond lounging, you can enjoy snorkeling (though it's relatively basic), windsurfing, paddleboarding, and parasailing. There's also a splash pad for toddlers and various recreational activities like volleyball and cornhole.</p>
+<p><strong>Dining</strong>: The island features multiple food venues, including themed restaurants. IC Ice is famous for its frozen treats, and portions are generous. Barbecue lunch buffet options range from casual to premium.</p>
+<p><strong>The Experience</strong>: Castaway Cay feels like a well-established, slightly busier island destination. With ships visiting regularly, it's managed to maintain infrastructure and quality, but popularity means crowds.</p>
 
-Castaway Cay has been Disney's private island destination since 1998. Located in the Bahamas, it's a fully developed island experience with multiple beach areas, restaurants, and activities.
-"
-**The Beaches**: Castaway Cay features several distinct beach areas. Family Beach is the main hub with plenty of lounge chairs and shallow water perfect for kids. Teen Beach caters to older guests with volleyball and water sports. Adults get their own adults-only beach with premium lounging and a full bar.
+<h2>Lookout Cay: The Newer Luxury Experience</h2>
+<p>Lookout Cay is Disney's newest private island destination, having reopened as a Disney property in 2024. It represents a significant upgrade from the previous incarnation and signals Disney's commitment to enhancing private island experiences.</p>
+<p><strong>The Beaches</strong>: Lookout Cay features beautifully maintained beach areas with premium amenities. The main beach is immaculate and well-groomed. Premium stateroom guests get access to exclusive beach areas with premium facilities.</p>
+<p><strong>Activities</strong>: While activities are similar to Castaway Cay (snorkeling, paddleboarding, etc.), Lookout Cay's facilities feel more modern and polished. The island features upscale dining options and lounge areas that feel more resort-like.</p>
+<p><strong>Dining</strong>: Multiple dining venues range from casual to elevated. Food quality is notably higher than Castaway Cay, with more sophisticated menu options reflecting modern culinary trends.</p>
+<p><strong>The Experience</strong>: Lookout Cay feels newer, less crowded, and more upscale. It caters to those seeking a more premium island experience and is less hectic than Castaway Cay.</p>
 
-**Activities**: Beyond lounging, you can enjoy snorkeling (though it's relatively basic), windsurfing, paddleboarding, and parasailing. There's also a splash pad for toddlers and various recreational activities like volleyball and cornhole.
-"
-**Dining**: The island features multiple food venues, including themed restaurants. IC Ice is famous for its frozen treats, and portions are generous. Barbecue lunch buffet options range from casual to premium.
+<h2>Side-by-Side Comparison</h2>
+<p><strong>Crowds</strong>: Castaway Cay sees regular traffic from multiple Disney ships. Lookout Cay currently has lighter traffic, resulting in a less crowded experience.</p>
+<p><strong>Amenities</strong>: Both islands offer excellent facilities, but Lookout Cay's are newer and feel more upscale.</p>
+<p><strong>Food Quality</strong>: Lookout Cay edges out Castaway Cay with more sophisticated dining options and higher-quality preparations.</p>
+<p><strong>Beach Quality</strong>: Both offer beautiful beaches. Lookout Cay's feel newer and are slightly less crowded.</p>
+<p><strong>Snorkeling</strong>: Both offer snorkeling, though neither is world-class. Snorkeling typically occurs in managed areas with controlled environments.</p>
+<p><strong>Cost</strong>: Castaway Cay is included on most Caribbean itineraries. Lookout Cay appears on select itineraries, particularly newer routes.</p>
 
-**The Experience**: Castaway Cay feels like a well-established, slightly busier island destination. With ships visiting regularly, it's managed to maintain infrastructure and quality, but popularity means crowds.
-
-## Lookout Cay: The Newer Luxury Experience
-
-Lookout Cay is Disney's newest private island destination, having reopened as a Disney property in 2024. It represents a significant upgrade from the previous incarnation and signals Disney's commitment to enhancing private island experiences.
-"
-**The Beaches**: Lookout Cay features beautifully maintained beach areas with premium amenities. The main beach is immaculate and well-groomed. Premium stateroom guests get access to exclusive beach areas with premium facilities.
-
-**Activities**: While activities are similar to Castaway Cay (snorkeling, paddleboarding, etc.), Lookout Cay's facilities feel more modern and polished. The island features upscale dining options and lounge areas that feel more resort-like.
-
-**Dining**: Multiple dining venues range from casual to elevated. Food quality is notably higher than Castaway Cay, with more sophisticated menu options reflecting modern culinary trends.
-
-**The Experience**: Lookout Cay feels newer, less crowded, and more upscale. It caters to those seeking a more premium island experience and is less hectic than Castaway Cay.
-
-## Side-by-Side Comparison
-
-**Crowds**: Castaway Cay sees regular traffic from multiple Disney ships. Lookout Cay currently has lighter traffic, resulting in a less crowded experience.
-
-**Amenities**: Both islands offer excellent facilities, but Lookout Cay's are newer and feel more upscale.
-
-**Food Quality**: Lookout Cay edges out Castaway Cay with more sophisticated dining options and higher-quality preparations.
-
-**Beach Quality**: Both offer beautiful beaches. Lookout Cay's feel newer and are slightly less crowded.
-
-**Snorkeling**: Both offer snorkeling, though neither is world-class. Snorkeling typically occurs in managed areas with controlled environments.
-
-**Cost**: Castaway Cay is included on most Caribbean itineraries. Lookout Cay appears on select itineraries, particularly newer routes.
-
-## Which Should You Choose?
-
-Choose Castaway Cay if you value established infrastructure, want to experience Disney's classic private island, or are sailing Caribbean itineraries that make stopping there convenient.
-
-Choose Lookout Cay if you want a newer, less crowded experience with premium amenities and don't mind the potential premium pricing for certain stateroom categories that get exclusive access.
-
-Ideally, if you cruise multiple times, experience both. Each offers something unique and valuable.
-
-</div>
+<h2>Which Should You Choose?</h2>
+<p>Choose Castaway Cay if you value established infrastructure, want to experience Disney's classic private island, or are sailing Caribbean itineraries that make stopping there convenient.</p>
+<p>Choose Lookout Cay if you want a newer, less crowded experience with premium amenities and don't mind the potential premium pricing for certain stateroom categories that get exclusive access.</p>
+<p>Ideally, if you cruise multiple times, experience both. Each offers something unique and valuable.</p>
     `.trim(),
   },
   {
     id: '5',
     slug: 'complete-guide-disney-drink-packages',
     title: 'The Complete Guide to Disney Cruise Drink Packages',
+    meta_description:
+      'A complete guide to Disney cruise drink packages: what your fare already includes, what beer, wine, and cocktails cost onboard, and when a package pays off.',
     excerpt: 'Deciding whether to purchase a Disney drink package can be confusing. Here\'s everything you need to know to make the right choice.',
     author: 'Dr. Grayson Starbuck, DPT',
     published_date: '2025-04-05',
@@ -254,91 +197,75 @@ Ideally, if you cruise multiple times, experience both. Each offers something un
     read_time: '9 min read',
     featured_image_url: 'https://images.unsplash.com/photo-1519046904884-53103b34b206?w=1200&h=600&fit=crop',
     content: `
-<div class="prose prose-invert max-w-none">
+<p>Navigating Disney Cruise Line's beverage offerings can be complex. Should you purchase a drink package? Which one? Let's break down the options and help you make an informed decision.</p>
 
-Navigating Disney Cruise Line's beverage offerings can be complex. Should you purchase a drink package? Which one? Let's break down the options and help you make an informed decision.
-"
-## Understanding the Options
+<h2>Understanding the Options</h2>
+<p>Disney offers several beverage package tiers, each with different inclusions and price points.</p>
+<p><strong>Soft Drinks Package</strong>: Includes soft drinks, coffee, tea, and water throughout the day. This is the entry-level option, best suited for families with young children or anyone who doesn't drink alcohol.</p>
+<p><strong>Deluxe Beverage Package</strong>: Includes unlimited alcoholic and non-alcoholic beverages throughout your cruise. This is Disney's mid-tier option covering everything from sodas to premium cocktails.</p>
+<p><strong>Topped Off Beverage Package</strong>: This newer option provides unlimited non-alcoholic beverages plus select alcoholic drinks. It's priced between soft drinks and deluxe packages.</p>
+<p><strong>Premium Alcohol Package</strong>: For serious wine and spirit enthusiasts, this package includes premium selections often excluded from standard packages.</p>
 
-Disney offers several beverage package tiers, each with different inclusions and price points.
+<h2>The Math: Package vs. À La Carte</h2>
+<p>The key question is whether a package makes financial sense for your cruise.</p>
+<p><strong>Average Drink Costs</strong>:</p>
+<ul>
+<li>Soft drinks: $3-4</li>
+<li>Beer: $8-10</li>
+<li>Cocktails: $14-16</li>
+<li>Wine: $10-20</li>
+<li>Premium spirits: $18-25</li>
+</ul>
+<p>A typical drinker might consume 2-3 beverages daily. Over a 7-night cruise, that's 14-21 drinks, representing roughly $200-400 in costs.</p>
+<p><strong>Deluxe Package Pricing</strong>:</p>
+<ul>
+<li>3-night cruise: ~$65 per person per day</li>
+<li>4-night cruise: ~$60 per person per day</li>
+<li>5-7 night cruise: ~$55 per person per day</li>
+</ul>
+<p>For a 7-night cruise, the deluxe package costs approximately $385 for one person. If you drink 3+ beverages daily and include alcohol, the package likely pays for itself.</p>
 
-**Soft Drinks Package**: Includes soft drinks, coffee, tea, and water throughout the day. This is the entry-level option, best suited for families with young children or anyone who doesn't drink alcohol.
+<h2>Who Should Buy?</h2>
+<p><strong>Buy a Package If</strong>:</p>
+<ul>
+<li>You and/or your travel companions enjoy alcoholic beverages regularly</li>
+<li>You like specialty coffee drinks and expensive coffee options</li>
+<li>You want simplicity and don't want to think about costs during your cruise</li>
+<li>You're on a longer sailing (5+ nights) where daily costs add up</li>
+<li>You plan to enjoy wine with dinner regularly</li>
+</ul>
+<p><strong>Skip the Package If</strong>:</p>
+<ul>
+<li>You primarily drink water or complimentary beverages</li>
+<li>You're uncomfortable with the upfront cost</li>
+<li>You're on a shorter sailing (3 nights) with limited budget</li>
+<li>You drink occasionally and can self-monitor expenses</li>
+<li>You prefer to avoid pre-purchasing to maintain budget control</li>
+</ul>
 
-**Deluxe Beverage Package**: Includes unlimited alcoholic and non-alcoholic beverages throughout your cruise. This is Disney's mid-tier option covering everything from sodas to premium cocktails.
+<h2>Strategic Considerations</h2>
+<p><strong>Timing</strong>: Drink package prices increase closer to sail date. Book during wave season (late October-early December) or monitor pricing regularly.</p>
+<p><strong>Family Dynamics</strong>: A family of four where two drink regularly and two don't might purchase one or two packages rather than four. You don't need to buy for everyone.</p>
+<p><strong>Onboard Credit</strong>: Check if your booking includes onboard credit. This can offset drink package costs significantly.</p>
+<p><strong>Specialty Venues</strong>: Premium venues like Palo Steakhouse may not honor drink packages for wine pairings. Confirm restrictions when considering your options — and if you're deciding whether those rooms are worth booking at all, our comparison of <a href="/blog/disney-cruise-adult-dining-palo-remy-enchante">Disney cruise adult dining at Palo, Remy, and Enchanté</a> has the current pricing.</p>
 
-**Topped Off Beverage Package**: This newer option provides unlimited non-alcoholic beverages plus select alcoholic drinks. It's priced between soft drinks and deluxe packages.
+<h2>Maximizing Package Value</h2>
+<p><strong>1. Use It Liberally</strong>: You've paid upfront, so enjoy the package throughout your cruise. Many people feel guilty using packages, but that's the whole point.</p>
+<p><strong>2. Try New Drinks</strong>: Use the package to experiment with specialty cocktails and wines you might not order à la carte due to cost concerns.</p>
+<p><strong>3. Venue Awareness</strong>: Different venues have different selections. Explore throughout the ship to find your favorites.</p>
+<p><strong>4. Time Your Drinks</strong>: All-you-can-drink beverage packages don't have consumption limits. You can order multiple drinks to consume later or share.</p>
 
-**Premium Alcohol Package**: For serious wine and spirit enthusiasts, this package includes premium selections often excluded from standard packages.
-
-## The Math: Package vs. À La Carte
-
-The key question is whether a package makes financial sense for your cruise.
-
-**Average Drink Costs**:
-- Soft drinks: $3-4
-- Beer: $8-10
-- Cocktails: $14-16
-- Wine: $10-20
-- Premium spirits: $18-25
-
-A typical drinker might consume 2-3 beverages daily. Over a 7-night cruise, that's 14-21 drinks, representing roughly $200-400 in costs.
-
-**Deluxe Package Pricing**:
-- 3-night cruise: ~$65 per person per day
-- 4-night cruise: ~$60 per person per day
-- 5-7 night cruise: ~$55 per person per day
-
-For a 7-night cruise, the deluxe package costs approximately $385 for one person. If you drink 3+ beverages daily and include alcohol, the package likely pays for itself.
-
-## Who Should Buy?
-
-**Buy a Package If**:
-- You and/or your travel companions enjoy alcoholic beverages regularly
-- You like specialty coffee drinks and expensive coffee options
-- You want simplicity and don't want to think about costs during your cruise
-- You're on a longer sailing (5+ nights) where daily costs add up
-- You plan to enjoy wine with dinner regularly
-
-**Skip the Package If**:
-- You primarily drink water or complimentary beverages
-- You're uncomfortable with the upfront cost
-- You're on a shorter sailing (3 nights) with limited budget
-- You drink occasionally and can self-monitor expenses
-- You prefer to avoid pre-purchasing to maintain budget control
-
-## Strategic Considerations
-
-**Timing**: Drink package prices increase closer to sail date. Book during wave season (late October-early December) or monitor pricing regularly.
-
-**Family Dynamics**: A family of four where two drink regularly and two don't might purchase one or two packages rather than four. You don't need to buy for everyone.
-"
-**Onboard Credit**: Check if your booking includes onboard credit. This can offset drink package costs significantly.
-
-**Specialty Venues**: Premium venues like Palo Steakhouse may not honor drink packages for wine pairings. Confirm restrictions when considering your options.
-
-## Maximizing Package Value
-
-**1. Use It Liberally**: You've paid upfront, so enjoy the package throughout your cruise. Many people feel guilty using packages, but that's the whole point.
-"
-**2. Try New Drinks**: Use the package to experiment with specialty cocktails and wines you might not order à la carte due to cost concerns.
-
-**3. Venue Awareness**: Different venues have different selections. Explore throughout the ship to find your favorites.
-
-**4. Time Your Drinks**: All-you-can-drink beverage packages don't have consumption limits. You can order multiple drinks to consume later or share.
-
-## The Bottom Line
-
-For many cruisers, a deluxe beverage package represents excellent value, especially on longer sailings. The convenience of unlimited beverages and simplified billing often justifies the upfront cost. However, the decision should be based on your personal drinking habits and budget preferences.
-
-Calculate your expected consumption, compare to package pricing, and choose accordingly. There's no universally "right" answer—only the right choice for your situation.
-
-</div>
+<h2>The Bottom Line</h2>
+<p>For many cruisers, a deluxe beverage package represents excellent value, especially on longer sailings. The convenience of unlimited beverages and simplified billing often justifies the upfront cost. However, the decision should be based on your personal drinking habits and budget preferences.</p>
+<p>Calculate your expected consumption, compare to package pricing, and choose accordingly. There's no universally "right" answer—only the right choice for your situation.</p>
     `.trim(),
   },
   {
     id: '6',
     slug: 'error-fares-how-to-find-deals',
     title: 'Error Fares Explained: How to Score 50%+ Off Your Cruise',
+    meta_description:
+      'Cruise error fares explained: how mispriced fares happen, where to find them, how fast you have to book, and the odds a cruise line actually honors the rate.',
     excerpt: 'Error fares represent the cruising world\'s best-kept secret. Learn how to spot them and book massive discounts before they\'re corrected.',
     author: 'Dr. Grayson Starbuck, DPT',
     published_date: '2025-04-02',
@@ -347,72 +274,52 @@ Calculate your expected consumption, compare to package pricing, and choose acco
     read_time: '6 min read',
     featured_image_url: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1200&h=600&fit=crop',
     content: `
-<div class="prose prose-invert max-web">
+<p>Error fares are glitches in cruise line pricing systems that result in significantly underpriced sailings. These rare opportunities can save you 50% or more on cruise costs—if you know how to spot and book them.</p>
 
-Error fares are glitches in cruise line pricing systems that result in significantly underpriced sailings. These rare opportunities can save you 50% or more on cruise costs—if you know how to spot and book them.
+<h2>How Error Fares Happen</h2>
+<p>Cruise lines process thousands of price changes daily across multiple systems and channels. Occasionally, a pricing system error results in a sailing being offered at an incorrect (lower) rate.</p>
+<p>Common causes include:</p>
+<ul>
+<li>Decimal point errors (pricing $2,000 as $200)</li>
+<li>System synchronization failures between channels</li>
+<li>Accidental application of employee discounts to public bookings</li>
+<li>Currency conversion errors</li>
+<li>Computer glitches during price updates</li>
+</ul>
 
-## How Error Fares Happen
+<h2>Historical Examples</h2>
+<p>One famous error involved a cruise priced at approximately $1 per night—obviously a glitch, but some travelers managed to book before it was corrected. Another saw a 7-night cruise listed at $199 instead of $1,999.</p>
+<p>While these extreme examples are rare, error fares that represent 30-50% discounts occur multiple times yearly across different cruise lines.</p>
 
-Cruise lines process thousands of price changes daily across multiple systems and channels. Occasionally, a pricing system error results in a sailing being offered at an incorrect (lower) rate.
+<h2>How to Find Error Fares</h2>
+<p><strong>1. Follow Cruise Deal Communities</strong>: Join CruisesPlease, Cruise Hive, and similar communities that actively track and alert followers to error fares. These communities often alert within minutes of errors appearing.</p>
+<p><strong>2. Monitor Specific Ships</strong>: If you have a target ship or itinerary, monitor that specific sailing regularly. Set price alerts on cruise booking sites.</p>
+<p><strong>3. Check Multiple Booking Channels</strong>: Errors might appear on one channel before others. Check Disney's official site, Costco Travel, travel agents, and other booking partners.</p>
+<p><strong>4. Watch Wave Season</strong>: Pricing errors are more common during heavy promotional periods when systems are processing more transactions.</p>
+<p><strong>5. Enable Notifications</strong>: Set up email alerts on your target sailings. When prices drop significantly, investigate immediately—it might be an error.</p>
 
-Common causes include:
-- Decimal point errors (pricing $2,000 as $200)
-- System synchronization failures between channels
-- Accidental application of employee discounts to public bookings
-- Currency conversion errors
-- Computer glitches during price updates
+<h2>Booking an Error Fare (Legally and Ethically)</h2>
+<p>When you spot a potential error fare, here's what to do:</p>
+<p><strong>1. Act Quickly</strong>: Error fares are corrected within minutes to hours. Speed is essential.</p>
+<p><strong>2. Complete Your Booking</strong>: Book the sailing at the error fare price. Legally, once your booking is confirmed, the price is locked in—cruise lines cannot retroactively change pricing on confirmed reservations.</p>
+<p><strong>3. Document Everything</strong>: Take screenshots of your confirmation, pricing details, and any communications.</p>
+<p><strong>4. Be Prepared</strong>: In extremely rare cases, cruise lines have cancelled error fare bookings and offered refunds. This is not standard practice, but save your documentation just in case.</p>
 
-## Historical Examples
+<h2>Ethical Considerations</h2>
+<p>Booking error fares is completely legal and ethical. You're not committing fraud—you're capitalizing on a publicly available offer. Once your booking is confirmed, the price is locked in.</p>
+<p>However, it's poor form to "game the system" by booking multiple copies of the same error fare across different accounts or credit cards. Book once, enjoy your discounted cruise, and let others have the opportunity.</p>
 
-One famous error involved a cruise priced at approximately $1 per night—obviously a glitch, but some travelers managed to book before it was corrected. Another saw a 7-night cruise listed at $199 instead of $1,999.
+<h2>Are Error Fares Worth Chasing?</h2>
+<p>For serious cruisers and deal-hunters, absolutely. The savings can be substantial—$500-$2,000+ per booking. However, error fares are not reliable or predictable. You can't plan a cruise around finding an error fare.</p>
+<p>The best approach: identify your target sailings and monitor them regularly. When an error fare appears on something you actually want to book, jump on it. Otherwise, don't let perfect be the enemy of good—book at regular rates and enjoy your cruise.</p>
 
-While these extreme examples are rare, error fares that represent 30-50% discounts occur multiple times yearly across different cruise lines.
-
-## How to Find Error Fares
-
-**1. Follow Cruise Deal Communities**: Join CruisesPlease, Cruise Hive, and similar communities that actively track and alert followers to error fares. These communities often alert within minutes of errors appearing.
-
-**2. Monitor Specific Ships**: If you have a target ship or itinerary, monitor that specific sailing regularly. Set price alerts on cruise booking sites.
-
-**3. Check Multiple Booking Channels**: Errors might appear on one channel before others. Check Disney's official site, Costco Travel, travel agents, and other booking partners.
-
-**4. Watch Wave Season**: Pricing errors are more common during heavy promotional periods when systems are processing more transactions.
-
-**5. Enable Notifications**: Set up email alerts on your target sailings. When prices drop significantly, investigate immediately—it might be an error.
-
-## Booking an Error Fare (Legally and Ethically)
-
-When you spot a potential error fare, here's what to do:
-
-**1. Act Quickly**: Error fares are corrected within minutes to hours. Speed is essential.
-
-**2. Complete Your Booking**: Book the sailing at the error fare price. Legally, once your booking is confirmed, the price is locked in—cruise lines cannot retroactively change pricing on confirmed reservations.
-
-**3. Document Everything**: Take screenshots of your confirmation, pricing details, and any communications.
-
-**4. Be Prepared**: In extremely rare cases, cruise lines have cancelled error fare bookings and offered refunds. This is not standard practice, but save your documentation just in case.
-
-## Ethical Considerations
-
-Booking error fares is completely legal and ethical. You're not committing fraud—you're capitalizing on a publicly available offer. Once your booking is confirmed, the price is locked in.
-"
-However, it's poor form to "game the system" by booking multiple copies of the same error fare across different accounts or credit cards. Book once, enjoy your discounted cruise, and let others have the opportunity.
-
-## Are Error Fares Worth Chasing?
-
-For serious cruisers and deal-hunters, absolutely. The savings can be substantial—$500-$2,000+ per booking. However, error fares are not reliable or predictable. You can't plan a cruise around finding an error fare.
-
-The best approach: identify your target sailings and monitor them regularly. When an error fare appears on something you actually want to book, jump on it. Otherwise, don't let perfect be the enemy of good—book at regular rates and enjoy your cruise.
-
-## Pro Tips
-
-- **Act on Inner Ear**: Trust your instincts. Prices that seem too good to be true usually indicate genuine errors.
-- **Check the Terms**: Some error fares have restrictions or conditions. Read carefully before booking.
-- **Consider Timing**: Book even if your cruise is 18+ months away. Most sites allow free cancellation, so locking in an error fare price is advantageous.
-
-Error fares represent the ultimate cruising bargain. Stay alert, monitor your target sailings, and you might just score the deal of a lifetime.
-
-</div>
+<h2>Pro Tips</h2>
+<ul>
+<li><strong>Act on Inner Ear</strong>: Trust your instincts. Prices that seem too good to be true usually indicate genuine errors.</li>
+<li><strong>Check the Terms</strong>: Some error fares have restrictions or conditions. Read carefully before booking.</li>
+<li><strong>Consider Timing</strong>: Book even if your cruise is 18+ months away. Most sites allow free cancellation, so locking in an error fare price is advantageous.</li>
+</ul>
+<p>Error fares represent the ultimate cruising bargain. Stay alert, monitor your target sailings, and you might just score the deal of a lifetime.</p>
     `.trim(),
   },
   {
@@ -427,73 +334,52 @@ Error fares represent the ultimate cruising bargain. Stay alert, monitor your ta
     read_time: '7 min read',
     featured_image_url: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200&h=600&fit=crop',
     content: `
-<div class="prose prose-invert max-w-none">
+<p>The Disney Wish debuted in 2023 with tremendous anticipation and has now completed two years of operation. Disney has implemented numerous improvements and enhancements based on guest feedback. Here's what's new and what it means for future passengers.</p>
 
-The Disney Wish debuted in 2023 with tremendous anticipation and has now completed two years of operation. Disney has implemented numerous improvements and enhancements based on guest feedback. Here's what's new and what it means for future passengers.
-"
-## Dining Enhancements
+<h2>Dining Enhancements</h2>
+<p>Disney has expanded dining options throughout the ship, particularly in specialty venues. The chef's table experience at Lumiere's has been enhanced with new menu offerings that rotate seasonally. Themes of Enchantment dining has undergone renovations that improved sightlines to the ocean and added new menu items.</p>
+<p>The main dining rooms have also received subtle updates, with new courses rotated into the standard menus and special dietary accommodations expanded significantly.</p>
 
-Disney has expanded dining options throughout the ship, particularly in specialty venues. The chef's table experience at Lumiere's has been enhanced with new menu offerings that rotate seasonally. Themes of Enchantment dining has undergone renovations that improved sightlines to the ocean and added new menu items.
-"
-The main dining rooms have also received subtle updates, with new courses rotated into the standard menus and special dietary accommodations expanded significantly.
+<h2>Technology Upgrades</h2>
+<p>The ship's onboard technology has been continuously updated. The Disney Cruise Line app functionality has expanded, offering more real-time information about dining reservations, show times, and port information.</p>
+<p>Stateroom entertainment systems now include expanded Disney+ content and new interactive features that weren't available at launch. WiFi infrastructure has been upgraded to handle the increasing demand for connectivity.</p>
 
-## Technology Upgrades
+<h2>Deck and Pool Area Improvements</h2>
+<p>The pool deck has received enhancements including new lounge furniture that's more comfortable and durable. Shade structures have been added in strategic locations. The hot tub areas have been redesigned with improved circulation systems.</p>
+<p>The water slide has been enhanced with updated graphics and faster throughput improvements.</p>
 
-The ship's onboard technology has been continuously updated. The Disney Cruise Line app functionality has expanded, offering more real-time information about dining reservations, show times, and port information.
+<h2>Entertainment Upgrades</h2>
+<p>Theater productions have been updated and refined based on the feedback from the inaugural year. New specialty acts and performer lineups have been incorporated into the nightly entertainment schedule.</p>
+<p>The main theater's technical systems have been optimized for better sound and lighting effects.</p>
 
-Stateroom entertainment systems now include expanded Disney+ content and new interactive features that weren't available at launch. WiFi infrastructure has been upgraded to handle the increasing demand for connectivity.
+<h2>Guest Services and Staff Training</h2>
+<p>Based on two years of operation, Disney has refined staff training and guest service protocols. Crew members are now better equipped to handle various situations and provide enhanced service based on lessons learned from the inaugural year.</p>
+<p>Special services like accessible accommodations and dietary needs have been expanded and improved.</p>
 
-## Deck and Pool Area Improvements
+<h2>Safety and Maintenance</h2>
+<p>The ship has undergone extensive maintenance and safety updates during scheduled dry-docks. Modern safety equipment has been installed, and all critical systems have been inspected and upgraded.</p>
+<p>The ship now meets the latest international maritime safety standards with enhancements beyond minimum requirements.</p>
 
-The pool deck has received enhancements including new lounge furniture that's more comfortable and durable. Shade structures have been added in strategic locations. The hot tub areas have been redesigned with improved circulation systems.
+<h2>Guest Feedback Integration</h2>
+<p>Disney has actively solicited guest feedback and implemented changes accordingly. Common suggestions from early voyagers have been addressed through updates and operational changes.</p>
+<p>This guest-centric approach has improved the overall experience and sets an excellent precedent for how Disney approaches ship management.</p>
 
-The water slide has been enhanced with updated graphics and faster throughput improvements.
+<h2>What This Means for You</h2>
+<p>If you're considering the Disney Wish, you're sailing a mature, well-refined ship with excellent amenities and a responsive management team. The early operational challenges have been addressed, and the guest experience has been continuously improved.</p>
+<p>Current sailing on the Disney Wish is significantly enhanced compared to the inaugural year, making her an excellent choice for cruisers seeking a newer ship experience with proven reliability.</p>
 
-## Entertainment Upgrades
-
-Theater productions have been updated and refined based on the feedback from the inaugural year. New specialty acts and performer lineups have been incorporated into the nightly entertainment schedule.
-
-The main theater's technical systems have been optimized for better sound and lighting effects.
-
-## Guest Services and Staff Training
-
-Based on two years of operation, Disney has refined staff training and guest service protocols. Crew members are now better equipped to handle various situations and provide enhanced service based on lessons learned from the inaugural year.
-
-Special services like accessible accommodations and dietary needs have been expanded and improved.
-
-## Safety and Maintenance
-
-The ship has undergone extensive maintenance and safety updates during scheduled dry-docks. Modern safety equipment has been installed, and all critical systems have been inspected and upgraded.
-
-The ship now meets the latest international maritime safety standards with enhancements beyond minimum requirements.
-
-## Guest Feedback Integration
-
-Disney has actively solicited guest feedback and implemented changes accordingly. Common suggestions from early voyagers have been addressed through updates and operational changes.
-
-This guest-centric approach has improved the overall experience and sets an excellent precedent for how Disney approaches ship management.
-
-## What This Means for You
-
-If you're considering the Disney Wish, you're sailing a mature, well-refined ship with excellent amenities and a responsive management team. The early operational challenges have been addressed, and the guest experience has been continuously improved.
-"
-Current sailing on the Disney Wish is significantly enhanced compared to the inaugural year, making her an excellent choice for cruisers seeking a newer ship experience with proven reliability.
-
-## Sailing the Wish
-
-The Disney Wish offers modern accommodations, excellent dining, top-tier entertainment, and innovative design. With two years of continuous improvement, she represents one of Disney Cruise Line's best offerings.
-
-And the Wish's story is about to change again: in 2027 she leaves Port Canaveral for a first European season, calling at three ports new to the fleet. Our guide to the <a href="/blog/disney-wish-europe-2027-ports">Disney Wish Europe 2027 ports</a> covers Zadar, Trieste, and Hellesylt in detail.
-
-If you haven't yet sailed the Disney Wish and want help matching a sailing to your family, <a href="/concierge">talk to our concierge</a> — there's no charge for the conversation.
-
-</div>
+<h2>Sailing the Wish</h2>
+<p>The Disney Wish offers modern accommodations, excellent dining, top-tier entertainment, and innovative design. With two years of continuous improvement, she represents one of Disney Cruise Line's best offerings.</p>
+<p>And the Wish's story is about to change again: in 2027 she leaves Port Canaveral for a first European season, calling at three ports new to the fleet. Our guide to the <a href="/blog/disney-wish-europe-2027-ports">Disney Wish Europe 2027 ports</a> covers Zadar, Trieste, and Hellesylt in detail.</p>
+<p>If you haven't yet sailed the Disney Wish and want help matching a sailing to your family, <a href="/concierge">talk to our concierge</a> — there's no charge for the conversation.</p>
     `.trim(),
   },
   {
     id: '8',
     slug: 'cruising-with-teens-activities',
     title: 'Cruising with Teens: Activities They\'ll Actually Enjoy',
+    meta_description:
+      'Cruising with teens on Disney: Vibe club access, onboard activities, excursions, and the scheduling choices that keep older kids happy for a full week at sea.',
     excerpt: 'Cruising with teenagers doesn\'t have to be a challenge. Here are proven strategies and activities that keep teens engaged and entertained.',
     author: 'Dr. Grayson Starbuck, DPT',
     published_date: '2025-03-25',
@@ -502,116 +388,100 @@ If you haven't yet sailed the Disney Wish and want help matching a sailing to yo
     read_time: '8 min read',
     featured_image_url: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&h=600&fit=crop',
     content: `
-<div class="prose prose-invert max-w-none">
+<p>Cruising with teenagers requires a different approach than family cruises with younger children. Teens want independence, social interaction, and activities that feel relevant to them. Here's how to ensure your teen actually enjoys their cruise.</p>
 
-Cruising with teenagers requires a different approach than family cruises with younger children. Teens want independence, social interaction, and activities that feel relevant to them. Here's how to ensure your teen actually enjoys their cruise.
+<h2>Understanding Teenage Expectations</h2>
+<p>Modern teenagers are socially connected, independently minded, and selective about activities. A Disney character meet-and-greet won't excite them, but meeting other teens from across the country might. Understanding this distinction is key to planning a successful teen cruise experience.</p>
 
-## Understanding Teenage Expectations
+<h2>Utilize the Teen Club (Vibe)</h2>
+<p>Disney's teen club, called Vibe, is specifically designed for guests ages 14-17. It features:</p>
+<ul>
+<li>Social mixers where teens meet other cruisers their age</li>
+<li>Nightly parties with DJs and dancing</li>
+<li>Video game tournaments</li>
+<li>Movie nights with snacks</li>
+<li>Shore excursion groups exclusively for teens</li>
+<li>Karaoke competitions</li>
+</ul>
+<p>Encourage your teen to spend time in Vibe. The social component often becomes the highlight of their cruise, and they'll bond with other teens from around the world.</p>
 
-Modern teenagers are socially connected, independently minded, and selective about activities. A Disney character meet-and-greet won't excite them, but meeting other teens from across the country might. Understanding this distinction is key to planning a successful teen cruise experience.
+<h2>Embrace Independence</h2>
+<p>Give your teens reasonable independence. Let them explore the ship with friends, attend activities without parental supervision, and make some decisions about their itinerary. This autonomy makes cruising feel more like an adventure and less like a family obligation.</p>
+<p>Set clear expectations about curfews, check-ins, and boundaries, then trust them to operate within those parameters. Most teens will reward this autonomy with good behavior and genuine enthusiasm.</p>
 
-## Utilize the Teen Club (Vibe)
+<h2>Adventure-Based Activities</h2>
+<p>Teens often thrive on activities that feel adventurous:</p>
+<ul>
+<li><strong>Port excursions</strong>: Book activities that offer genuine adventure—snorkeling, zip-lining, kayaking. Avoid generic group tours.</li>
+<li><strong>Surfing and water sports</strong>: Many ports offer surfing, wakeboarding, or other adrenaline activities. These appeal strongly to teens.</li>
+<li><strong>Zip-lining</strong>: Costa Rica and other ports offer zip-line canopy tours that are thrilling and memorable.</li>
+<li><strong>Hiking and exploration</strong>: Self-guided port exploration is often more appealing than organized tours.</li>
+</ul>
 
-Disney's teen club, called Vibe, is specifically designed for guests ages 14-17. It features:
+<h2>Entertainment That Resonates</h2>
+<p>Disney's nightly shows in the theater appeal to a broad age range. However, teens also appreciate:</p>
+<ul>
+<li><strong>Comedy shows</strong>: Disney brings comedy acts specifically designed for adult and teen audiences.</li>
+<li><strong>Deck parties</strong>: The energy and social aspect appeal to teens who enjoy being part of something larger.</li>
+<li><strong>Specialty entertainment</strong>: Trivia contests, game shows, and talent competitions offer interactive entertainment.</li>
+</ul>
+<p>Encourage your teen to attend at least one evening show. Many teens report that these become favorite memories.</p>
 
-- Social mixers where teens meet other cruisers their age
-- Nightly parties with DJs and dancing
-- Video game tournaments
-- Movie nights with snacks
-- Shore excursion groups exclusively for teens
-- Karaoke competitions
+<h2>Food and Dining</h2>
+<p>Dining is often an area where teens' interests align with family activities. The main dining room rotations are usually well-received, but also:</p>
+<ul>
+<li>Let teens order what they want (within reason). Room service is available if they prefer something different.</li>
+<li>Specialty restaurants like Palo or Remy might appeal to more sophisticated teen palates.</li>
+<li>Encourage trying new cuisines at ports—this is a low-stakes way to expand their food horizons.</li>
+</ul>
 
-Encourage your teen to spend time in Vibe. The social component often becomes the highlight of their cruise, and they'll bond with other teens from around the world.
+<h2>Technology and Connectivity</h2>
+<p>Teens care about staying connected. The Disney Cruise Line app allows them to:</p>
+<ul>
+<li>Communicate with other teens met on the ship</li>
+<li>Check show times and dining reservations</li>
+<li>Navigate the ship</li>
+<li>Access real-time information</li>
+</ul>
+<p>WiFi packages are worth the investment for teens who want to check in with friends back home or share their experience on social media.</p>
 
-## Embrace Independence
+<h2>Social Activities and Making Friends</h2>
+<p>One of the biggest draws for teens is the opportunity to meet other teenagers. Disney facilitates this through:</p>
+<ul>
+<li>Vibe teen club events</li>
+<li>Group dinners assigned at the start of the cruise</li>
+<li>Shore excursion groups</li>
+<li>Deck parties and nightly gatherings</li>
+</ul>
+<p>Don't underestimate the social component. Many teens request to cruise again specifically because they made new friends.</p>
 
-Give your teens reasonable independence. Let them explore the ship with friends, attend activities without parental supervision, and make some decisions about their itinerary. This autonomy makes cruising feel more like an adventure and less like a family obligation.
+<h2>Personal Space and Privacy</h2>
+<p>Ensure your teen has some personal space on the ship. If budgets allow, a connecting stateroom setup gives everyone their own retreat. If sharing cabins, establish boundaries around alone time.</p>
+<p>Let them decorate their bunk area with personal items. These small touches help them feel more invested in the cruise experience.</p>
 
-Set clear expectations about curfews, check-ins, and boundaries, then trust them to operate within those parameters. Most teens will reward this autonomy with good behavior and genuine enthusiasm.
+<h2>Realistic Expectations</h2>
+<p>Not every teen will be enthusiastic about cruising, and that's okay. Set realistic expectations:</p>
+<ul>
+<li>They might not attend every activity (and that's fine).</li>
+<li>They might prefer socializing to organized events.</li>
+<li>They might want to sleep in rather than make early breakfast.</li>
+<li>They might prefer independence to family bonding.</li>
+</ul>
+<p>These preferences are normal and healthy. Work with them rather than against them.</p>
 
-## Adventure-Based Activities
+<h2>Pro Tips</h2>
+<ol>
+<li><strong>Book longer sailings</strong>: 5+ night cruises give teens time to settle in and truly socialize.</li>
+<li><strong>Sail during wave season</strong>: Younger ship capacity means more teens on board and more peer interaction.</li>
+<li><strong>Communicate expectations upfront</strong>: Discuss the cruise and what you hope everyone will enjoy.</li>
+<li><strong>Be flexible</strong>: If your teen wants to skip an activity, don't force it.</li>
+<li><strong>Capture memories</strong>: Encourage photo-taking and memory-making without being intrusive.</li>
+</ol>
 
-Teens often thrive on activities that feel adventurous:
-
-- **Port excursions**: Book activities that offer genuine adventure—snorkeling, zip-lining, kayaking. Avoid generic group tours.
-- **Surfing and water sports**: Many ports offer surfing, wakeboarding, or other adrenaline activities. These appeal strongly to teens.
-- **Zip-lining**: Costa Rica and other ports offer zip-line canopy tours that are thrilling and memorable.
-- **Hiking and exploration**: Self-guided port exploration is often more appealing than organized tours.
-
-## Entertainment That Resonates
-
-Disney's nightly shows in the theater appeal to a broad age range. However, teens also appreciate:
-
-- **Comedy shows**: Disney brings comedy acts specifically designed for adult and teen audiences.
-- **Deck parties**: The energy and social aspect appeal to teens who enjoy being part of something larger.
-- **Specialty entertainment**: Trivia contests, game shows, and talent competitions offer interactive entertainment.
-
-Encourage your teen to attend at least one evening show. Many teens report that these become favorite memories.
-
-## Food and Dining
-
-Dining is often an area where teens' interests align with family activities. The main dining room rotations are usually well-received, but also:
-
-- Let teens order what they want (within reason). Room service is available if they prefer something different.
-- Specialty restaurants like Palo or Remy might appeal to more sophisticated teen palates.
-- Encourage trying new cuisines at ports—this is a low-stakes way to expand their food horizons.
-
-## Technology and Connectivity
-
-Teens care about staying connected. The Disney Cruise Line app allows them to:
-
-- Communicate with other teens met on the ship
-- Check show times and dining reservations
-- Navigate the ship
-- Access real-time information
-
-WiFi packages are worth the investment for teens who want to check in with friends back home or share their experience on social media.
-
-## Social Activities and Making Friends
-
-One of the biggest draws for teens is the opportunity to meet other teenagers. Disney facilitates this through:
-
-- Vibe teen club events
-- Group dinners assigned at the start of the cruise
-- Shore excursion groups
-- Deck parties and nightly gatherings
-
-Don't underestimate the social component. Many teens request to cruise again specifically because they made new friends.
-
-## Personal Space and Privacy
-
-Ensure your teen has some personal space on the ship. If budgets allow, a connecting stateroom setup gives everyone their own retreat. If sharing cabins, establish boundaries around alone time.
-
-Let them decorate their bunk area with personal items. These small touches help them feel more invested in the cruise experience.
-
-## Realistic Expectations
-
-Not every teen will be enthusiastic about cruising, and that's okay. Set realistic expectations:
-
-- They might not attend every activity (and that's fine).
-- They might prefer socializing to organized events.
-- They might want to sleep in rather than make early breakfast.
-- They might prefer independence to family bonding.
-
-These preferences are normal and healthy. Work with them rather than against them.
-
-## Pro Tips
-
-1. **Book longer sailings**: 5+ night cruises give teens time to settle in and truly socialize.
-2. **Sail during wave season**: Younger ship capacity means more teens on board and more peer interaction.
-3. **Communicate expectations upfront**: Discuss the cruise and what you hope everyone will enjoy.
-4. **Be flexible**: If your teen wants to skip an activity, don't force it.
-5. **Capture memories**: Encourage photo-taking and memory-making without being intrusive.
-
-## The Bottom Line
-
-Cruising with teens can be genuinely enjoyable for everyone if you approach it thoughtfully. Give them autonomy, facilitate social interaction, provide adventure-based activities, and let them enjoy the experience on their terms.
-
-Many teens who are skeptical before boarding return home having had a genuinely memorable experience and requesting to cruise again.
-
-If you have any flexibility on dates, a fall sailing is worth a look — <a href="/blog/halloween-on-the-high-seas-2026-guide">Halloween on the High Seas</a> includes a costume dance party that reliably pulls in the age group least likely to admit it's having fun.
-
-</div>
+<h2>The Bottom Line</h2>
+<p>Cruising with teens can be genuinely enjoyable for everyone if you approach it thoughtfully. Give them autonomy, facilitate social interaction, provide adventure-based activities, and let them enjoy the experience on their terms.</p>
+<p>Many teens who are skeptical before boarding return home having had a genuinely memorable experience and requesting to cruise again.</p>
+<p>If you have any flexibility on dates, a fall sailing is worth a look — <a href="/blog/halloween-on-the-high-seas-2026-guide">Halloween on the High Seas</a> includes a costume dance party that reliably pulls in the age group least likely to admit it's having fun.</p>
     `.trim(),
   },
   {
@@ -634,7 +504,7 @@ If you have any flexibility on dates, a fall sailing is worth a look — <a href
 <li><strong>Wine and champagne only:</strong> Adults may bring two 750ml bottles of wine or champagne aboard at embarkation. Beer, spirits, and hard seltzers are not permitted.</li>
 <li><strong>Surge-protected power strips only:</strong> Plain power strips without surge protection may be confiscated at security. Always use a surge-protected model.</li>
 <li><strong>No irons or steamers:</strong> These are prohibited due to fire risk. Use the ship's laundry service or self-service laundry rooms for anything that needs pressing.</li>
-<li><strong>Luggage arrives in your stateroom by evening:</strong> Bags are porter-tagged at the port and delivered throughout the afternoon. Pack a carry-on with day-one essentials — you won't see your checked luggage until dinner.</li>
+<li><strong>Luggage arrives in your stateroom by evening:</strong> Bags are porter-tagged at the port and delivered throughout the afternoon. Pack a carry-on with day-one essentials — you won't see your checked luggage until dinner. Our <a href="/blog/port-canaveral-disney-cruise-embarkation-day">Port Canaveral embarkation day guide</a> walks through how the handoff works at Terminal 8.</li>
 </ul>
 
 <h2>Carry-On Essentials (Never Check These)</h2>
@@ -729,6 +599,7 @@ If you have any flexibility on dates, a fall sailing is worth a look — <a href
 
 <h2>Protect Your Investment</h2>
 <p>A Disney cruise is often $3,000–$12,000 or more for a family. The right credit card provides trip cancellation coverage, lost luggage protection, and purchase protection. See our guide to <a href="/blog/best-credit-cards-disney-cruises">the best credit cards for Disney cruises</a> for which cards offer the best protection and how to trigger coverage on your booking.</p>
+<p>Sailing over the holidays? Add festive outfits and matching pajamas to the list — the photo backdrops on a <a href="/blog/very-merrytime-cruises-2026-guide">Very Merrytime cruise</a> are the best the ship offers all year, and almost everyone wishes they had packed for them.</p>
 <p>For our full gear guide, visit our <a href="/guides/disney-cruise-packing-list">Disney Cruise Packing Gear Guide</a>. Ready to find your sailing? Our <a href="/search">AI cruise finder</a> scans Disney's inventory for deals, or <a href="/book">reach out to Grayson directly</a> for personalized guidance.</p>
     `.trim(),
   },
@@ -761,6 +632,7 @@ If you have any flexibility on dates, a fall sailing is worth a look — <a href
 <h2>Embarkation Day: Your First Two Hours Set the Tone</h2>
 
 <h3>Your Stateroom Won't Be Ready Until ~1:30 PM</h3>
+<p>Sailing out of Florida's busiest home port? Our <a href="/blog/port-canaveral-disney-cruise-embarkation-day">Port Canaveral embarkation day walkthrough</a> covers Terminal 8 hour by hour, including parking and the drive from MCO.</p>
 <p>Don't head to your stateroom first — it won't be ready. Go straight to the pool deck. The Lido buffet (Cabanas) is open, pools are active, and the ship is yours. Change into swimwear in a pool-deck restroom and enjoy the first few hours while cabin cleaning finishes.</p>
 
 <h3>Don't Miss the Sail Away Party</h3>
@@ -1124,7 +996,7 @@ If you have any flexibility on dates, a fall sailing is worth a look — <a href
 <li><strong>1923</strong> — a tribute to the year Walt Disney Company was founded, with more than 1,000 original drawings, props, and artifacts from Disney films lining the walls. Elegant Hollywood Golden Age atmosphere, classic American menu.</li>
 <li><strong>Worlds of Marvel</strong> — returning from the Wish, but the Destiny version features an updated Rocket and Groot interactive story that's longer and more involved than its predecessor.</li>
 </ul>
-<p>Adults-only options include <strong>Palo Steakhouse</strong> (the fleet's signature Italian-steakhouse fusion) and <strong>Enchanté by Chef Arnaud Lallement</strong>, a Michelin-starred French dining experience that has quickly become one of the most sought-after reservations on any Disney ship. Both are upcharges, and both fill within hours of online check-in opening — book the moment your window unlocks.</p>
+<p>Adults-only options include <strong>Palo Steakhouse</strong> (the fleet's signature Italian-steakhouse fusion) and <strong>Enchanté by Chef Arnaud Lallement</strong>, a Michelin-starred French dining experience that has quickly become one of the most sought-after reservations on any Disney ship. Both are upcharges, and both fill within hours of online check-in opening — book the moment your window unlocks. If you're weighing whether either is worth the fee, our comparison of <a href="/blog/disney-cruise-adult-dining-palo-remy-enchante">Disney cruise adult dining at Palo, Remy, and Enchanté</a> breaks down the pricing and who each room actually suits.</p>
 
 <h3>Bars and Lounges Built Around the Villains</h3>
 <p>The lounges are where the villains really get to shine. <strong>De Vil's</strong> is a 101 Dalmatians-themed piano bar in a striking black, white, and red palette. <strong>Cask and Cannon</strong> brings Pirates of the Caribbean to life as a working tavern. <strong>The Sanctum</strong> takes inspiration from Doctor Strange and serves as the ship's most atmospheric cocktail lounge. Even if you're not a drinker, these spaces are worth visiting as on-ship attractions in their own right.</p>
@@ -1169,6 +1041,8 @@ If you have any flexibility on dates, a fall sailing is worth a look — <a href
     id: '15',
     slug: 'first-time-disney-cruise-mistakes',
     title: '10 Things First-Time Disney Cruisers Always Get Wrong',
+    meta_description:
+      'Ten things first-time Disney cruisers get wrong, from booking windows and port arrival times to dining reservations, gratuities, and carry-on packing.',
     excerpt: 'The ten most common (and most expensive) mistakes first-time Disney cruisers make — and exactly how to avoid each one before you sail.',
     author: 'Dr. Grayson Starbuck, DPT',
     published_date: '2026-05-12',
@@ -1421,7 +1295,7 @@ If you have any flexibility on dates, a fall sailing is worth a look — <a href
 
 <h3>Highest-Value Uses</h3>
 <ul>
-<li><strong>Palo or Enchanté dinner</strong> — $50–$150 per person upcharges that are some of the best dining experiences in the fleet.</li>
+<li><strong>Palo or Enchanté dinner</strong> — $55–$145 per person upcharges that are some of the best dining experiences in the fleet. Our guide to <a href="/blog/disney-cruise-adult-dining-palo-remy-enchante">Disney cruise adult dining</a> compares what each one costs and which is worth the credit.</li>
 <li><strong>Spa treatments</strong> — typically $150–$300 per treatment; the OBC essentially makes one treatment "free" on a stacked sailing.</li>
 <li><strong>Drink packages</strong> — only worth it if you'll actually drink the math (our <a href="/blog/complete-guide-disney-drink-packages">guide to Disney cruise drink packages</a> runs the numbers); pure cocktail spending without a package is also a fine OBC use.</li>
 <li><strong>Castaway Cay extras</strong> — parasailing, stingray adventures, glass-bottom boat. Charges through your room key.</li>
@@ -1587,6 +1461,7 @@ If you have any flexibility on dates, a fall sailing is worth a look — <a href
 
 <h2>The Bottom Line</h2>
 <p>Halloween on the High Seas 2026 is a well-executed, fully included seasonal overlay that rewards a little planning and punishes none. Know that the Pumpkin Tree lights on night one, that Mouse-querade is the night that matters, and that a longer sailing gives the season room to breathe. Pack a costume you can dance in, check the Navigator on embarkation day, and let the rest happen.</p>
+<p>If the fall dates do not work, the same overlay logic applies one season later: our <a href="/blog/very-merrytime-cruises-2026-guide">guide to Very Merrytime cruises 2026</a> covers the holiday version, which runs November through December and is built the same way — fully included, fleet-wide, and dramatically cheaper in November than over Christmas week.</p>
 <p>If you want help matching a specific fall sailing, ship, and stateroom category to your family — including which dates still have availability and what credit you would qualify for — <a href="/concierge">talk to our concierge</a>. We track Disney's fall inventory daily, the conversation is free, and there is no obligation attached to it.</p>
     `.trim(),
   },
@@ -1766,5 +1641,149 @@ If you have any flexibility on dates, a fall sailing is worth a look — <a href
 <p>If you're still choosing a sailing, browse what's leaving from Port Canaveral on our <a href="/sailings">sailings page</a>, and when you're ready to lock it in, <a href="/book">book with us</a> — a $5,000 fare comes with $150 in onboard credit at the same price Disney charges direct, and you can check your own number with the <a href="/tools/obc-calculator">OBC calculator</a>. Already booked direct in the last month? Our guide to <a href="/blog/transfer-disney-cruise-booking-to-travel-agent">transferring a Disney cruise booking to a travel agent</a> explains how to capture that credit on a reservation you've already made.</p>
     `.trim(),
   },
-]
+  {
+    id: '22',
+    slug: 'disney-cruise-adult-dining-palo-remy-enchante',
+    title: 'Disney Cruise Adult Dining: Is Palo, Remy, or Enchanté Actually Worth It?',
+    meta_title: 'Disney Cruise Adult Dining: Palo, Remy, Enchanté',
+    meta_description:
+      'Disney cruise adult dining compared: what Palo, Palo Steakhouse, Remy, and Enchanté cost in 2026, which ships have which, and which one is worth your money.',
+    excerpt: 'Every Disney ship has at least one adults-only restaurant, and they range from $55 to $145 a head. Here is what each one is, which ship it is on, and which is worth booking.',
+    author: 'Dr. Grayson Starbuck, DPT',
+    published_date: '2026-08-30',
+    category: 'reviews',
+    tags: ['palo', 'remy', 'enchante', 'adult-dining', 'disney-cruise-food', 'specialty-dining', 'disney-cruise-line'],
+    read_time: '9 min read',
+    featured_image_url: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&h=600&fit=crop',
+    content: `
+<p>Your cruise fare already covers an enormous amount of food. Three rotational dining rooms, a buffet, room service, pool-deck quick service, unlimited soft-serve — nobody has ever gone hungry on a Disney ship. So the obvious question about <strong>Disney cruise adult dining</strong> is why anyone would pay another $55 to $145 per person for a meal they could get for free two decks down.</p>
+<p>It's a fair question, and the answer isn't the same for every restaurant or every traveler. Disney runs four distinct adults-only venues across the fleet, they are not interchangeable, and the gap between the cheapest and the most expensive is nearly three times the price. Here's what each one actually is, which ship you'll find it on, and which is worth the money.</p>
 
+<h2>What "Adult Dining" Actually Means on a Disney Ship</h2>
+<p>These restaurants are strictly 18 and over — no exceptions, not even for a very well-behaved twelve-year-old. That is the entire product. You are buying a room with no strollers in it, no character cavalcade, and no ambient noise of four hundred people having a great time with small children.</p>
+<p>All of them require a reservation, carry a per-person fee on top of your fare, and enforce a dress code that is a real step up from the rotational dining rooms — think jacket-optional-but-encouraged for men, no shorts, no flip-flops. Every price below excludes the automatic <strong>18% gratuity</strong>, so mentally add that before deciding what you can stomach. And every one of them is a reason to leave the kids at the Oceaneer Club for two hours, which the clubs are staffed and delighted to handle.</p>
+
+<h2>Palo and Palo Steakhouse: The $55 Sweet Spot</h2>
+<p>Palo is the original, and on a per-dollar basis it is the easiest recommendation in this entire article. Northern Italian, adults-only, and — as of the 2026 season — <strong>$55 per person for either brunch or dinner</strong>.</p>
+
+<h3>Palo brunch is the one to book</h3>
+<p>If you only do one adult meal all week, make it Palo brunch. It's a hybrid buffet and à la carte service: you graze a spread of antipasti, cheeses, seafood, and pastries, then order hot dishes from a menu on top of that. A glass of champagne or a mimosa is included; anything else you drink is extra. It runs on sea days only, the room is small, and it is consistently the hardest reservation on the ship to get. That scarcity is not marketing — it is a genuinely small restaurant with two hours of service on a limited number of days.</p>
+
+<h3>Palo Steakhouse on the newer ships</h3>
+<p>On Disney Wish, Disney Treasure, and the brand-new <a href="/ships/disney-destiny">Disney Destiny</a>, Palo has been reworked as <strong>Palo Steakhouse</strong> — same DNA, heavier emphasis on prime and wagyu cuts, and on the Destiny it's dressed in Cogsworth-inspired clockwork detailing to match the ship's Beauty and the Beast theming. It also offers a first-night tasting experience, Prima Notte, which is a smart pick if your embarkation-day evening is otherwise unstructured.</p>
+<p>One perk worth knowing: <strong>Platinum and Pearl Castaway Club members receive a complimentary dinner at Palo or Palo Steakhouse.</strong> If you've sailed ten or more times, you are leaving a free $55 meal on the table by not booking it.</p>
+
+<h2>Remy and Enchanté: The $145 Splurge</h2>
+<p>The tier above Palo is a different category of restaurant and a different category of evening. Both are French, both are built around a Michelin-starred consulting chef, and both run three hours or more.</p>
+<p><strong>Remy</strong> lives on Disney Dream and Disney Fantasy. Prix-fixe dinner is <strong>$145 per person</strong>. There is also a Champagne Brunch at $85 and a Dessert Experience at $70 — the latter being the most underrated item on this whole list, because it gets you the room, the service, and the pastry kitchen for half the price of dinner.</p>
+<p><strong>Enchanté</strong>, created with chef Arnaud Lallement, is the equivalent on Disney Wish, Disney Treasure, and Disney Destiny. Lunch and dinner are both <strong>$145 per person</strong>. The room is themed to Beauty and the Beast with Lumière woven through the design, and it is arguably the prettiest space on any Disney ship.</p>
+<p>The honest framing: if you know Walt Disney World restaurants, Palo is roughly a Citricos or California Grill, and Remy and Enchanté are closer to Victoria &amp; Albert's. That's the gap. Whether it's worth $290 for two depends far more on whether you enjoy a three-hour tasting menu than on anything Disney does or doesn't do well.</p>
+
+<h2>Which Disney Cruise Adult Dining Room Is on Your Ship?</h2>
+<ul>
+<li><strong>Disney Magic and Disney Wonder</strong> — Palo only.</li>
+<li><strong>Disney Dream and Disney Fantasy</strong> — Palo and Remy.</li>
+<li><strong>Disney Wish, Disney Treasure, and Disney Destiny</strong> — Palo Steakhouse and Enchanté.</li>
+</ul>
+<p>This matters more than people expect when choosing between two otherwise similar itineraries. If a Remy dinner is on your list, you need a Dream- or Fantasy-class sailing specifically; if Enchanté is the draw, you're looking at the three newest ships. Our <a href="/sailings">sailings page</a> lets you filter by ship, and each ship page lists the full dining lineup so you can check before you commit.</p>
+
+<h2>How to Actually Get a Reservation</h2>
+<p>This is where most people lose the meal they wanted. Adult dining opens for pre-booking well before you sail, and the window is staggered by Castaway Club status:</p>
+<ul>
+<li><strong>Pearl</strong> — 123 days before sailing</li>
+<li><strong>Platinum</strong> — 120 days</li>
+<li><strong>Gold</strong> — 105 days</li>
+<li><strong>Silver</strong> — 90 days</li>
+<li><strong>First-time cruisers</strong> — 75 days</li>
+</ul>
+<p>Book the morning your window opens, not the afternoon. By the time a first-time cruiser's window opens at 75 days, repeat guests have had seven weeks at the inventory, and Palo brunch on a one-sea-day itinerary may already be gone.</p>
+<p>If you miss it, you are not finished. Walk up to the restaurant on embarkation afternoon and ask in person — cancellations are released at the podium before they ever reappear in the app, and the first afternoon is when the reshuffling happens. This is one of several things worth doing in your first hour aboard, which we cover in our <a href="/blog/first-time-disney-cruise-tips">first-time Disney cruise tips</a>.</p>
+
+<h2>Is Disney Cruise Adult Dining Worth It?</h2>
+<p>Here's how we actually advise clients:</p>
+<ul>
+<li><strong>Sailing with kids?</strong> Book one Palo brunch. It is the single best-value purchase on the ship — two quiet hours, real food, and a $55 price that hasn't outrun what it delivers.</li>
+<li><strong>Adults-only trip, or a milestone?</strong> Remy or Enchanté earns the money, but book it for a sea day evening so you're not rushing back from an excursion, and don't schedule anything after it.</li>
+<li><strong>Sailing three or four nights?</strong> Probably skip the $145 rooms entirely. On a short cruise you'd be spending a meaningful fraction of your onboard time in one restaurant.</li>
+<li><strong>Curious but not ready to spend $145?</strong> The Remy Dessert Experience at $70 is the low-commitment way in.</li>
+</ul>
+<p>One more angle worth pulling: onboard credit pays for these meals exactly like cash. A couple with $150 in credit can cover a Palo dinner for two and most of the tip without touching their card. Our <a href="/blog/disney-cruise-onboard-credit-guide">guide to Disney cruise onboard credits</a> covers where that credit comes from and how much you should expect. And if you're budgeting the whole food side of the trip, the <a href="/guides/disney-cruise-food-guide">Disney cruise food guide</a> and our <a href="/blog/complete-guide-disney-drink-packages">breakdown of Disney drink packages</a> round out the picture.</p>
+
+<h2>The Bottom Line</h2>
+<p>Disney cruise adult dining is one of the few onboard upcharges that consistently delivers what it promises — but only if you match the restaurant to the trip. Palo brunch is close to a universal yes. Remy and Enchanté are a yes for the right occasion and an easy no otherwise. Book the morning your window opens, and if you miss out, ask at the podium on day one.</p>
+<p>Not sure which ship gives you the dining lineup you want, or how to fit an adult meal around an itinerary with only one sea day? <a href="/concierge">Talk to our concierge</a> — we'll walk through the ships and sailings that fit what you're after, and you can <a href="/free-quote">get a free quote from our team</a> with no obligation attached.</p>
+    `.trim(),
+  },
+  {
+    id: '23',
+    slug: 'very-merrytime-cruises-2026-guide',
+    title: 'Very Merrytime Cruises 2026: What to Expect and When to Sail',
+    meta_title: 'Very Merrytime Cruises 2026: What to Expect',
+    meta_description:
+      'Very Merrytime cruises 2026 sail November through December on every U.S. Disney ship. What is included, which weeks cost the least, and how to plan yours.',
+    excerpt: 'Disney decorates the entire U.S. fleet for the holidays from November through December. Here is what a Very Merrytime cruise actually includes, which ships and ports have them, and the week most families should book.',
+    author: 'Dr. Grayson Starbuck, DPT',
+    published_date: '2026-09-06',
+    category: 'tips',
+    tags: ['very-merrytime', 'holiday-cruise', 'christmas-cruise', 'onboard-experiences', 'seasonal', 'disney-cruise-line'],
+    read_time: '9 min read',
+    featured_image_url: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200&h=600&fit=crop',
+    content: `
+<p>You walk into the atrium on embarkation afternoon, and instead of the usual open, bright space, there is a Christmas tree several decks tall, a gingerbread house the size of a golf cart, and the smell of cocoa coming from somewhere you cannot identify. That is the pitch for <strong>Very Merrytime cruises 2026</strong> in one sentence, and it is why these sailings book differently than the rest of the calendar.</p>
+<p>Disney runs Very Merrytime sailings from early November through the end of December, and in 2026 the treatment covers the entire U.S.-based fleet. Here is what is actually included, which ships and departure ports have them, and — the part most guides skip — which week you should be booking if you want the decorations without the holiday-week fare.</p>
+
+<h2>What Makes a Very Merrytime Cruise Different</h2>
+<p>Everything you already get on a Disney cruise is still there: rotational dining, the Broadway-scale shows, the kids' clubs, the pool deck, the soft-serve. Very Merrytime is layered on top of a normal sailing rather than replacing it, which matters if you are traveling with someone lukewarm on Christmas.</p>
+<p>What gets added is scale. Every public space is decorated, and each tree is themed to the room it stands in. Mickey, Minnie, and the rest of the characters appear in holiday costumes that are used only on these sailings — Daisy's, for the record, is the one people photograph most. There are seasonal snacks, drinks, and a holiday merchandise line that exists for about eight weeks a year and then disappears.</p>
+
+<h2>When Very Merrytime Cruises 2026 Sail — and Which Weeks Cost Less</h2>
+<p>Merrytime sailings run November through the end of December. That is a wide window, and the price difference across it is enormous.</p>
+
+<h3>Early and mid-November: the value window</h3>
+<p>This is the recommendation we give most families. The ship is fully decorated from the first Merrytime sailing onward — Disney does not phase the decor in gradually — but early November is still shoulder season on the pricing calendar. You get the trees, the tree lighting, the characters in their holiday best, and the specialty menus at a fare that has nothing to do with December demand. If someone tells you they got a holiday cruise cheap, this is almost always the week they sailed.</p>
+
+<h3>Christmas and New Year's week: the premium</h3>
+<p>Sailings that straddle December 24 through January 1 are the most expensive weeks Disney sells all year, frequently double a comparable spring itinerary. They also sell out first, sometimes eighteen months ahead. Christmas morning at sea is a real thing and people plan multi-generational trips around it — but know that you are paying a holiday-week premium on top of a Disney premium, and that the discounting which happens on other itineraries mostly does not happen here.</p>
+
+<h3>The first half of December: the compromise</h3>
+<p>December 1 through roughly the 18th sits between the two. Pricing is above November but well below Christmas week, and the ship feels unmistakably like December. This is the window worth checking if November does not work with school schedules.</p>
+
+<h2>What's Included on Very Merrytime Cruises 2026</h2>
+<p>None of the following costs extra. It is all part of the fare.</p>
+
+<h3>Mickey and Minnie's Merrytime Tree Lighting</h3>
+<p>The signature event of the sailing. Mickey and friends gather in the atrium or Grand Hall to light the ship's main tree, usually on the first or second evening. It is short, it is crowded, and it is the thing everyone remembers. Arrive twenty minutes early if you want a sightline for photos rather than a view of the back of someone's head.</p>
+
+<h3>Mickey and Minnie's Holiday Party</h3>
+<p>A deck party on the upper decks with music, dancing, and the full character lineup in holiday costume. Same energy as the sail-away party, different soundtrack.</p>
+
+<h3>Holiday activities and crafts for kids</h3>
+<p>Seasonal crafts and themed activities run throughout the sailing, both in the youth clubs and in family spaces. This is the quiet highlight for anyone traveling with elementary-age kids — it fills the gaps between big events without any planning on your part.</p>
+
+<h3>Santa</h3>
+<p>He makes multiple appearances across the sailing. Bring the list.</p>
+
+<h2>Which Ships and Ports Have Very Merrytime Sailings</h2>
+<p>In 2026 the holiday treatment covers the entire U.S. fleet: Disney Magic, Disney Wonder, Disney Dream, Disney Fantasy, Disney Wish, <a href="/ships/disney-treasure">Disney Treasure</a>, and <a href="/ships/disney-destiny">Disney Destiny</a>. If you have been waiting for a reason to try one of the newest ships, a Merrytime sailing on the Destiny or Treasure stacks two novelties into one trip.</p>
+<p>Departures run from <a href="/ports/port-canaveral">Port Canaveral</a> and <a href="/ports/fort-lauderdale">Fort Lauderdale</a> in Florida, <a href="/ports/galveston">Galveston</a> in Texas, and <a href="/ports/san-diego">San Diego</a> in California. Itinerary lengths range from 3- and 4-night Bahamian runs up through 5-night and longer Caribbean and Mexican Riviera sailings. Our <a href="/sailings">sailings page</a> lets you filter by ship, port, and date, which is the fastest way to see what is still open in the window you want.</p>
+
+<h2>The Holidays Follow You to Castaway Cay and Lookout Cay</h2>
+<p>The part people do not expect: the decorations extend to Disney's private island destinations. Both Castaway Cay and Lookout Cay at Lighthouse Point get trees, holiday music, and seasonal food, which produces the specific surreal pleasure of a decorated Christmas tree on a beach in seventy-eight-degree weather. If you are new to the island day, our <a href="/guides/castaway-cay-guide">Castaway Cay guide</a> covers how to plan it.</p>
+
+<h2>How to Plan a Very Merrytime Cruise</h2>
+<p>A few things that make a real difference:</p>
+<ul>
+<li><strong>Book the November sailing if the calendar allows.</strong> Same decorations, materially different fare.</li>
+<li><strong>Pack festive.</strong> Matching pajamas and holiday outfits are common on these sailings, and the photo backdrops are the best the ship offers all year. Our <a href="/blog/disney-cruise-packing-list">Disney cruise packing list</a> covers the rest.</li>
+<li><strong>Learn the Navigator app before you board.</strong> Merrytime events are layered on top of the normal daily schedule, and the tree lighting in particular is easy to miss if you are not looking for it.</li>
+<li><strong>Book dining and activities the morning your window opens.</strong> Holiday sailings fill their reservation inventory faster than an average week.</li>
+<li><strong>Stack your onboard credit.</strong> Holiday merchandise and specialty menus are exactly what credit is for. Our <a href="/blog/disney-cruise-onboard-credit-guide">onboard credit guide</a> explains where it comes from and how much to expect.</li>
+</ul>
+<p>If you are deciding between seasonal sailings, it is worth reading our <a href="/blog/halloween-on-the-high-seas-2026-guide">Halloween on the High Seas 2026 guide</a> alongside this one — the two events are structured similarly, and families who love one usually love the other.</p>
+
+<h2>The Bottom Line</h2>
+<p>Very Merrytime cruises 2026 are the rare seasonal overlay that genuinely changes the feel of the ship rather than adding a decoration or two. The decor is fleet-wide, the added events cost nothing, and the experience is identical whether you sail the second week of November or the week of Christmas — while the price very much is not. For most families, an early-November Merrytime sailing is the best value Disney sells during the holidays.</p>
+<p>Not sure which ship and week fit your school calendar, or whether a 4-night Bahamian or a 7-night Caribbean makes more sense for your group? <a href="/concierge">Talk to our concierge</a> for personalized recommendations, or <a href="/free-quote">get a free quote from our team</a> — no obligation, and no pressure either way.</p>
+    `.trim(),
+  },
+]

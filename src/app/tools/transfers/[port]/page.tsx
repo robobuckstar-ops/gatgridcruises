@@ -21,6 +21,19 @@ export async function generateMetadata(
     title: `Transfer Options to ${port.name} — Disney Cruise Port Guide`,
     description: `Compare Disney ground transfer, Uber, rental car, and other transportation options to ${port.name}. Find the cheapest and fastest way to get to your cruise.`,
     alternates: { canonical: `/tools/transfers/${port.slug}` },
+    openGraph: {
+      title: `Transfer Options to ${port.name}`,
+      description: `Compare Disney ground transfer, rideshare, rental car, and private shuttle pricing for getting to ${port.name}.`,
+      url: `https://gatgridcruises.com/tools/transfers/${port.slug}`,
+      siteName: 'GatGridCruises',
+      images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `Transfer Options to ${port.name}`,
+      description: `Compare ground transfer, rideshare, and shuttle pricing for ${port.name}.`,
+      images: ['https://gatgridcruises.com/og-image.png'],
+    },
   }
 }
 
