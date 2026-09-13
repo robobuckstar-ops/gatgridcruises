@@ -249,7 +249,7 @@ export const ports: Port[] = [
       { month: 'December', highF: 45, lowF: 33, rainyDays: 11 },
     ],
     terminalTips: [
-      'The cruise terminal is in Bayonne, NJ—not Manhattan. Many visitors get confused. Plan accordingly!',
+      'Check which terminal your ship uses. Cape Liberty is in Bayonne, NJ; Disney Cruise Line\'s fall 2027 Disney Wish sailings depart from the Manhattan Cruise Terminal on the West Side instead. Many visitors get confused. Plan accordingly!',
       'Free shuttle service is incredibly valuable here. Parking at the terminal ($25) is expensive; off-site with shuttle ($12) saves money.',
       'No free Wi-Fi in the terminal. Bring a charged phone or mobile hotspot.',
       'Winter sailing from NYC requires realistic expectations: Jan-March can be cold and windy. Bring layers for port days.',

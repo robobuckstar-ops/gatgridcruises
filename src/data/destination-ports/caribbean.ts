@@ -1307,6 +1307,9 @@ export const caribbeanPorts: DestinationPort[] = [
         answer: 'Yes — the main attractions (La Coca Falls, Yokahu Tower, and a short trail) can be visited in 4–5 hours including drive time. Hiking to El Yunque\'s peak is a full day and not realistic on port time.',
       },
     ],
+    relatedPosts: [
+      { slug: 'disney-cruise-from-new-york-2027', title: 'Disney Cruise from New York 2027: Every Disney Wish Sailing from Manhattan' },
+    ],
   },
 
   {

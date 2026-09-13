@@ -24,6 +24,70 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '24',
+    slug: 'disney-cruise-from-new-york-2027',
+    title: 'Disney Cruise from New York 2027: Every Disney Wish Sailing from Manhattan',
+    meta_title: 'Disney Cruise from New York 2027: All 7 Sailings',
+    meta_description:
+      'Disney cruise from New York 2027: all seven Disney Wish sailings from Manhattan to Bermuda and Canada, dates, ports, and which one fits your family.',
+    excerpt: 'Disney Cruise Line returns to New York City in fall 2027 with seven Disney Wish sailings to Bermuda, Canada, and New England. Here are all the dates and ports, which sailing suits which kind of traveler, and how to plan around the school calendar.',
+    author: 'Dr. Grayson Starbuck, DPT',
+    published_date: '2026-09-13',
+    category: 'destinations',
+    tags: ['new-york', 'disney-wish', 'bermuda', 'canada-new-england', 'fall-2027', 'port-guides', 'disney-cruise-line'],
+    read_time: '8 min read',
+    featured_image_url: 'https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=1200&h=600&fit=crop',
+    content: `
+<p>If you live anywhere in the Northeast, a <strong>Disney cruise from New York in 2027</strong> is the announcement you have been waiting on since 2023. The <a href="/ships/disney-wish">Disney Wish</a> will spend five weeks at the Manhattan Cruise Terminal that fall, running seven sailings to Bermuda, Atlantic Canada, and New England between September 29 and October 31, 2027. No flight to Orlando, no hotel night before embarkation, and, for a lot of families in the tri-state area, a cruise terminal you can reach by train.</p>
+<p>General booking opened on September 8, 2026, so the inventory is live and already moving. Here is every sailing, what each one is actually like, and the school-calendar reality nobody in the press release mentions.</p>
+
+<h2>Why a Disney Cruise from New York 2027 Is a Big Deal</h2>
+<p>Disney has sailed from New York before, most recently in fall 2023 on the Disney Dream, but those seasons were short and the ships were older. The 2027 season is the first time a Wish-class ship has been based in the city. The Wish is Disney's most modern design: the Hyperspace Lounge, the Worlds of Marvel dinner show, AquaMouse, and the Frozen and Arendelle dining experience. If you have only seen the Wish in a Port Canaveral context, our <a href="/blog/whats-new-disney-wish-2-years">look at what has changed on the Disney Wish</a> covers how the ship has settled in.</p>
+<p>Timing matters too. Six of the seven New York departures fall inside the Halloween on the High Seas window, so you get the pumpkin tree in the atrium, Mickey's Mouse-querade party, and the costume-friendly deck parties on top of the itinerary. Our <a href="/blog/halloween-on-the-high-seas-2026-guide">Halloween on the High Seas guide</a> explains how those sea-day events run.</p>
+<p>The ship arrives in New York straight from its first European season. If you want to see where it has been that summer, our <a href="/blog/disney-wish-europe-2027-ports">Disney Wish Europe 2027 ports guide</a> walks through the Mediterranean and Northern Europe stops.</p>
+
+<h2>All Seven Disney Wish Sailings from New York, 2027</h2>
+<p>Every sailing departs from the Manhattan Cruise Terminal in Midtown on the Hudson River. Dates below are departure dates.</p>
+<h3>Bermuda sailings</h3>
+<ul>
+<li><strong>September 29, 2027 — 4 nights to Bermuda.</strong> Two days docked at King's Wharf. The shortest and most affordable way to try the ship from New York.</li>
+<li><strong>October 14, 2027 — 5 nights to Bermuda.</strong> Two days at King's Wharf with an extra sea day, which is the version to pick if you want more of the ship itself.</li>
+<li><strong>October 19, 2027 — 5 nights to Bermuda.</strong> Same pattern as the October 14 sailing, one week later and deeper into the Halloween season.</li>
+<li><strong>October 31, 2027 — 5 nights, Bermuda to San Juan.</strong> A one-way sailing: two days at King's Wharf, then the ship continues to <a href="/ports/san-juan">San Juan, Puerto Rico</a>, where the cruise ends. You fly home from San Juan. This is how the Wish repositions south for the winter, and it is the only one-way sailing of the season.</li>
+</ul>
+<h3>Canada and New England sailings</h3>
+<ul>
+<li><strong>October 3, 2027 — 5 nights, Canada and New England.</strong> Saint John, New Brunswick, then Boston. Saint John is the gateway to the Bay of Fundy tides; Boston is a full city day.</li>
+<li><strong>October 8, 2027 — 6 nights, Bermuda and Canada.</strong> The combination itinerary: King's Wharf first, then Halifax, Nova Scotia. Beach and foliage on the same trip.</li>
+<li><strong>October 24, 2027 — 7 nights, Canada.</strong> Charlottetown on Prince Edward Island, Sydney on Cape Breton Island, then Halifax. The longest sailing of the season, and the only one with three ports.</li>
+</ul>
+<p>Four of those ports — Boston, Saint John, Charlottetown, and Sydney — appear nowhere else on Disney's current schedule, so if one of them is on your list, the New York season is your only route to it.</p>
+
+<h2>Which Disney Cruise from New York 2027 Fits Your Family</h2>
+<h3>The honest school-calendar problem</h3>
+<p>Here is the part the announcement glossed over: none of the seven sailings line up with a long weekend or a school break. They depart on weekdays and weekends alike across late September and October, which in most Northeast districts is uninterrupted school time. Families with school-age children will need to pull kids out for at least three days on even the 4-night sailing. If that is a hard no in your household, the sensible move is to look at the Wish's Florida winter schedule on our <a href="/sailings">sailings page</a> and use New York for a different year.</p>
+<p>The flip side is that this makes the New York season unusually good for grandparents, adults sailing without kids, and families with children under school age. The Canada itineraries in particular skew toward that crowd: fall foliage, cool weather, walkable historic ports. It is not a splash-pad cruise, and it does not pretend to be.</p>
+<h3>If you want a beach</h3>
+<p>Choose a Bermuda sailing. King's Wharf is the Royal Naval Dockyard on Bermuda's western tip, with a ferry to Hamilton and a short ride to Horseshoe Bay and the other pink-sand beaches. Two full days docked means you can do a beach day and a town day without rushing. Water temperatures in late September and early October are still comfortable for swimming; by late October it is cooler, so the September 29 and October 14 sailings are the safer beach bets.</p>
+<h3>If you want foliage and cities</h3>
+<p>Choose October 24. Seven nights, three ports, and the timing lands squarely in peak color for Prince Edward Island and Nova Scotia. Charlottetown is a small, walkable capital; Sydney is the jumping-off point for the Cabot Trail; Halifax has the waterfront boardwalk and the Maritime Museum. Bring layers — daytime highs in the 50s are normal that week.</p>
+<h3>If you want the most unusual trip</h3>
+<p>Choose October 31. Ending in San Juan means you can tack on a few days in Old San Juan or Puerto Rico's beaches before flying home, and the one-way structure tends to attract a quieter, more experienced cruising crowd. Just budget for the one-way flights on both ends.</p>
+
+<h2>Practical Planning Notes for Sailing from Manhattan</h2>
+<p><strong>Getting to the terminal.</strong> The Manhattan Cruise Terminal sits on the West Side between roughly West 46th and West 54th Streets. It is a short taxi or rideshare from Penn Station and Grand Central, and a straightforward drive with on-site parking, though parking is expensive and the West Side Highway backs up on turnaround mornings. Arrive early. Our <a href="/hotels/new-york-bayonne">New York area cruise hotel guide</a> covers airports and pre-cruise stays; note that Disney's 2027 sailings use the Manhattan terminal, not Cape Liberty in Bayonne, so favor Midtown West hotels if you are staying the night before.</p>
+<p><strong>Passports.</strong> Bermuda and Canada both require travel documents, and the one-way San Juan sailing complicates the closed-loop rules further. Bring a valid passport for everyone in the party and do not rely on a birth certificate.</p>
+<p><strong>Weather.</strong> The North Atlantic in October can be lively. If anyone in your group is prone to seasickness, a midship stateroom on a lower deck is worth the request, and the Bermuda sailings involve a full day of open ocean in each direction.</p>
+<p><strong>Packing.</strong> You may need a swimsuit and a fleece on the same trip. Our <a href="/blog/disney-cruise-packing-list">Disney cruise packing list</a> has a cool-weather section that applies directly here.</p>
+<p><strong>Already booked on opening day?</strong> If you grabbed a stateroom yourself on September 8 and are wondering whether a travel advisor can still help with the reservation, our <a href="/blog/transfer-disney-cruise-booking-to-travel-agent">guide to transferring a Disney cruise booking</a> explains the 30-day window and what changes.</p>
+
+<h2>Will Prices Drop If You Wait?</h2>
+<p>Probably not by much. Disney's pricing model raises fares as staterooms sell, and the Wish's Europe season showed that when this class of ship goes somewhere new, demand follows the ship. The seven-night Canada sailing and the one-way to San Juan have no equivalents elsewhere in the fleet, so those two have the least reason to soften. Verandah and connecting staterooms go first on every Disney launch, and the mid-ship rooms people want for a choppy Atlantic go earlier still. If a New York sailing is on your radar, the practical advice is to lock in the stateroom you want now and let your advisor watch for any fare adjustments afterward.</p>
+
+<p>Trying to decide between the beach and the foliage, or figuring out whether the school-day math works for your family? <a href="/concierge">Talk to our concierge</a> for personalized recommendations, or <a href="/free-quote">get a free quote from our team</a>. We will lay out the options honestly, including the years when the answer is "wait for a better fit."</p>
+`,
+  },
+  {
     id: '1',
     slug: 'disney-treasure-first-look',
     title: 'Disney Treasure: First Look at the Newest Ship',
@@ -370,7 +434,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2>Sailing the Wish</h2>
 <p>The Disney Wish offers modern accommodations, excellent dining, top-tier entertainment, and innovative design. With two years of continuous improvement, she represents one of Disney Cruise Line's best offerings.</p>
-<p>And the Wish's story is about to change again: in 2027 she leaves Port Canaveral for a first European season, calling at three ports new to the fleet. Our guide to the <a href="/blog/disney-wish-europe-2027-ports">Disney Wish Europe 2027 ports</a> covers Zadar, Trieste, and Hellesylt in detail.</p>
+<p>And the Wish's story is about to change again: in 2027 she leaves Port Canaveral for a first European season, calling at three ports new to the fleet. Our guide to the <a href="/blog/disney-wish-europe-2027-ports">Disney Wish Europe 2027 ports</a> covers Zadar, Trieste, and Hellesylt in detail. After Europe, she sails seven fall cruises from Manhattan — see our <a href="/blog/disney-cruise-from-new-york-2027">Disney cruise from New York 2027</a> guide.</p>
 <p>If you haven't yet sailed the Disney Wish and want help matching a sailing to your family, <a href="/concierge">talk to our concierge</a> — there's no charge for the conversation.</p>
     `.trim(),
   },
@@ -1392,6 +1456,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2>The Bottom Line</h2>
 <p>Zadar, Trieste, and Hellesylt are the days that will define the Disney Wish Europe 2027 season. Zadar rewards wandering. Trieste is a two-cities-in-one-day decision. Hellesylt is the rare port where staying aboard may be the better call. Plan each one and they become the standout days of the sailing rather than the confusing ones.</p>
+<p>And when the European season ends, the Wish does not go straight home: it crosses the Atlantic to spend October in Manhattan. Our guide to the <a href="/blog/disney-cruise-from-new-york-2027">Disney cruise from New York 2027</a> season covers all seven Bermuda and Canada sailings.</p>
 <p>If you want help matching a specific sailing date, itinerary, and stateroom category to your family, <a href="/concierge">talk to our concierge</a> — we track Disney's European inventory daily and can walk through the trade-offs with you. There is no charge for the conversation and no obligation attached to it.</p>
     `.trim(),
   },
@@ -1461,6 +1526,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2>The Bottom Line</h2>
 <p>Halloween on the High Seas 2026 is a well-executed, fully included seasonal overlay that rewards a little planning and punishes none. Know that the Pumpkin Tree lights on night one, that Mouse-querade is the night that matters, and that a longer sailing gives the season room to breathe. Pack a costume you can dance in, check the Navigator on embarkation day, and let the rest happen.</p>
+<p>Looking further ahead: in fall 2027 the overlay reaches New York for the first time on a Wish-class ship, with six Halloween-branded sailings to Bermuda and Canada. Our <a href="/blog/disney-cruise-from-new-york-2027">Disney cruise from New York 2027</a> guide lists every date.</p>
 <p>If the fall dates do not work, the same overlay logic applies one season later: our <a href="/blog/very-merrytime-cruises-2026-guide">guide to Very Merrytime cruises 2026</a> covers the holiday version, which runs November through December and is built the same way — fully included, fleet-wide, and dramatically cheaper in November than over Christmas week.</p>
 <p>If you want help matching a specific fall sailing, ship, and stateroom category to your family — including which dates still have availability and what credit you would qualify for — <a href="/concierge">talk to our concierge</a>. We track Disney's fall inventory daily, the conversation is free, and there is no obligation attached to it.</p>
     `.trim(),
