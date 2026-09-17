@@ -3,9 +3,22 @@
 // the inquiry and concierge routes already send from.
 
 import { Resend } from 'resend'
+import { agentNotifyRecipients } from './agent-inbox'
 import { formatPhoneDisplay } from './twilio'
 
-const NOTIFY_TO = process.env.SMS_NOTIFY_EMAIL?.trim() || 'bookings@gatgridcruises.com'
+// Where the inbound-text alert lands. Previously this defaulted to
+// bookings@gatgridcruises.com — the public-facing address Grayson does NOT read
+// on his phone — so a customer's text reply was logged but never surfaced to
+// him. Now it reuses agentNotifyRecipients() (his real inbox first, bookings@
+// as archive), matching how lead-form alerts already route. SMS_NOTIFY_EMAIL
+// (comma-separated) still overrides.
+const smsNotifyOverride = (process.env.SMS_NOTIFY_EMAIL?.trim() || '')
+  .split(',')
+  .map(a => a.trim())
+  .filter(a => a.includes('@'))
+// Fall back to the shared agent recipients if the override is unset/malformed,
+// so an inbound-text alert is never sent to nobody.
+const NOTIFY_TO: string[] = smsNotifyOverride.length ? smsNotifyOverride : agentNotifyRecipients()
 const FROM = '"GatGrid Texts" <bookings@gatgridcruises.com>'
 
 function escapeHtml(value: string): string {

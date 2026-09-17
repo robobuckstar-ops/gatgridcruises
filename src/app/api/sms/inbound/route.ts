@@ -8,6 +8,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import {
   hasBookingIntent,
+  listRecentMessages,
   lookupContactName,
   saveMessageSafely,
 } from '@/lib/airtable-messages'
@@ -30,6 +31,11 @@ const AUTO_ACKS = [
   "Thanks for reaching out! I'll be with you shortly. Is text good, or would a call be better?",
   "I see this and I'll respond ASAP! Would you rather keep it on text or hop on a quick call?",
 ]
+
+// Fast membership check to recognize our own prior auto-acks in the thread, and
+// the window during which we won't send a second one to the same number.
+const AUTO_ACK_SET = new Set<string>(AUTO_ACKS)
+const ACK_WINDOW_MS = 12 * 60 * 60 * 1000 // 12 hours
 
 // Carrier-handled opt-out / help keywords. Never auto-reply to these — Twilio
 // manages STOP/HELP itself and an extra message would be non-compliant.
@@ -135,10 +141,33 @@ export async function POST(request: NextRequest) {
   // respond, which would kill an in-flight alert send.
   await notifyInboundMessage({ from, body, contactName, readyToBook, inboxUrl: inboxUrl() })
 
-  // Auto-acknowledge every real inbound text so the sender never hears silence.
-  // Skip opt-out/help keywords (carrier handles those) and empty bodies.
+  // Auto-acknowledge a NEW inbound conversation so the sender never hears
+  // silence — but only ONCE per window. Sending the ack on every inbound is
+  // what made a real back-and-forth read as a loop: each reply re-fired the
+  // same "text or call?" message. So skip the ack if we've already auto-acked
+  // this number within the last 12 hours.
   const firstWord = body.toLowerCase().split(/\s+/)[0] || ''
-  const shouldAck = body.length > 0 && !OPTOUT_KEYWORDS.has(firstWord)
+
+  let alreadyAckedRecently = false
+  try {
+    const recent = await listRecentMessages(500)
+    const now = Date.now()
+    alreadyAckedRecently = recent.some(
+      m =>
+        m.direction === 'outbound' &&
+        m.conversationId === from &&
+        AUTO_ACK_SET.has(m.body.trim()) &&
+        m.timestamp !== '' &&
+        now - Date.parse(m.timestamp) < ACK_WINDOW_MS,
+    )
+  } catch (err) {
+    // If the lookup fails, fall back to the old behavior (ack) rather than
+    // going silent — a duplicate greeting is less harmful than none.
+    console.error('[sms/inbound] auto-ack dedupe lookup failed; will still ack:', err)
+  }
+
+  const shouldAck =
+    body.length > 0 && !OPTOUT_KEYWORDS.has(firstWord) && !alreadyAckedRecently
 
   if (shouldAck) {
     const ack = pickAck()

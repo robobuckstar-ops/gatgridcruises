@@ -21,6 +21,7 @@ export type LeadSource =
   | 'transfer'
   | 'referral'
   | 'group-cruise'
+  | 'concierge'
   | 'contact'
 
 export interface LeadAutoTextInput {
@@ -106,6 +107,10 @@ const SOURCE_COPY: Record<LeadSource, SourceCopy> = {
   },
   'group-cruise': {
     got: 'your group cruise request',
+    why: 'so I can put the right options together',
+  },
+  concierge: {
+    got: 'your concierge request',
     why: 'so I can put the right options together',
   },
   contact: {

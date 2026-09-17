@@ -4,6 +4,7 @@ import { checkRateLimit } from '@/lib/rate-limit'
 import { CONCIERGE_RECEIVED } from '@/lib/email-templates'
 import { saveLeadSafely } from '@/lib/airtable-leads'
 import { AGENT_REPLY_TO, agentNotifyRecipients } from '@/lib/agent-inbox'
+import { sendLeadAutoText } from '@/lib/lead-autotext'
 import { readSmsConsent, smsConsentNote } from '@/lib/sms-consent'
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -187,6 +188,17 @@ export async function POST(request: NextRequest) {
   if (!crmOk && !notifyOk) {
     console.error('[concierge] all delivery paths failed — lead lost', { email, name })
     return NextResponse.json({ error: 'Submission failed' }, { status: 502 })
+  }
+
+  // Welcome text — best-effort, same first-touch the other high-intent forms
+  // send. Only fires with SMS consent and a phone number; never fails the
+  // request (the lead is already recorded above).
+  if (smsConsent && phone) {
+    await sendLeadAutoText(phone, {
+      name,
+      source: 'concierge',
+      knownPartySize: family_members,
+    }).catch(() => {})
   }
 
   // Auto-acknowledgment email to the user. Best-effort — at least one delivery
