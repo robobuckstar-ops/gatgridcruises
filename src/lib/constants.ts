@@ -1,5 +1,13 @@
 export const PRICES_LAST_UPDATED = 'August 20, 2026'
 
+/**
+ * Minimum days out a sailing must be to show as a bookable deal. Cruises that
+ * leave sooner than this can't realistically be booked (flights, PTO, Disney's
+ * payment window), so they're hidden everywhere — which also clears out any
+ * already-departed dates. Tune this single number to widen/narrow the window.
+ */
+export const MIN_BOOKING_LEAD_DAYS = 10
+
 export const PRICES_DISCLAIMER =
   'Prices are approximate and may vary. All fares shown are per-cabin (2 guests) base fare. ' +
   'Port fees, taxes, and gratuities are estimated. Verify current pricing directly with the cruise line before booking.'

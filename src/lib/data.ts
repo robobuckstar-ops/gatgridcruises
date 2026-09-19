@@ -15,7 +15,8 @@ import { sailTogetherGroups } from '@/data/sail-together-groups'
 import { blogPosts } from '@/data/blog-posts'
 import { isRenderablePrice } from '@/lib/utils'
 import { normalizeStateroomPrices } from '@/lib/stateroom-pricing'
-import { getTodayInChicago } from '@/lib/today'
+import { getTodayInChicago, addDaysToDateKey } from '@/lib/today'
+import { MIN_BOOKING_LEAD_DAYS, PRICES_LAST_UPDATED } from '@/lib/constants'
 import type { Ship, Port, Sailing, PriceSnapshot, Stateroom, PreCruiseHotel, TransferOption } from '@/types/database'
 import type {
   StateroomCategory,
@@ -111,8 +112,35 @@ export function isBookableSailing(
   s: { sail_date: string; current_lowest_price: number },
   today: string = getTodayInChicago(),
 ): boolean {
-  if (typeof s.sail_date !== 'string' || s.sail_date.slice(0, 10) < today) return false
+  if (typeof s.sail_date !== 'string') return false
+  // Drop anything that leaves sooner than the booking lead time. A cruise
+  // departing in a few days can't actually be booked, and this also removes
+  // already-departed sailings (their date is < the cutoff too).
+  const cutoff = addDaysToDateKey(today, MIN_BOOKING_LEAD_DAYS)
+  if (s.sail_date.slice(0, 10) < cutoff) return false
   return isRenderablePrice(s.current_lowest_price) && s.current_lowest_price > 0
+}
+
+/**
+ * The freshest `updated_at` in the catalog, formatted for display, so the
+ * "fares last verified" line always reflects the real data date instead of a
+ * hardcoded string. Falls back to the PRICES_LAST_UPDATED constant if the data
+ * carries no usable timestamp.
+ */
+export function getCatalogLastUpdated(): string {
+  let max = ''
+  for (const s of rawSailings) {
+    const u = typeof s.updated_at === 'string' ? s.updated_at : ''
+    if (u > max) max = u
+  }
+  const d = max ? new Date(max) : null
+  if (!d || Number.isNaN(d.getTime())) return PRICES_LAST_UPDATED
+  return d.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    timeZone: 'America/Chicago',
+  })
 }
 
 // Sailings

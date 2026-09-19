@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { getSailings, getSnapshotsForSailing } from '@/lib/data'
+import { getSailings, getSnapshotsForSailing, getCatalogLastUpdated } from '@/lib/data'
 import { getShips, getPorts } from '@/lib/data'
 import { DealGrid } from './deal-grid'
 
@@ -47,5 +47,12 @@ export default function DealsPage() {
     return { ...s, price_snapshots: snapshots, percentBelow: Math.max(0, percentBelow) }
   })
 
-  return <DealGrid sailings={sailingsWithDrops} ships={ships} ports={ports} />
+  return (
+    <DealGrid
+      sailings={sailingsWithDrops}
+      ships={ships}
+      ports={ports}
+      lastUpdated={getCatalogLastUpdated()}
+    />
+  )
 }

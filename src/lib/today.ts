@@ -36,6 +36,17 @@ export function getTodayInChicago(now: Date = new Date()): DateKey {
   }).format(now)
 }
 
+/**
+ * A `YYYY-MM-DD` date key shifted by `days` (may be negative). Used to build a
+ * booking lead-time cutoff — e.g. "today + 10 days" — that still sorts as a
+ * plain string against `sail_date`.
+ */
+export function addDaysToDateKey(dateKey: DateKey, days: number): DateKey {
+  const d = new Date(`${dateKey}T00:00:00Z`)
+  d.setUTCDate(d.getUTCDate() + days)
+  return d.toISOString().slice(0, 10)
+}
+
 /** The current hour (0–23) in America/Chicago. */
 function getHourInChicago(now: Date): number {
   const hour = new Intl.DateTimeFormat('en-US', {

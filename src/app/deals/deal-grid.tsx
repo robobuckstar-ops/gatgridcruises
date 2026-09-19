@@ -19,9 +19,11 @@ interface DealGridProps {
   sailings: SailingWithDrop[]
   ships: Ship[]
   ports: Port[]
+  /** Real "fares last verified" date from the catalog; falls back to the constant. */
+  lastUpdated?: string
 }
 
-export function DealGrid({ sailings, ships, ports }: DealGridProps) {
+export function DealGrid({ sailings, ships, ports, lastUpdated }: DealGridProps) {
   const [search, setSearch] = useState('')
   const [selectedCruiseLines, setSelectedCruiseLines] = useState<string[]>([])
   const [selectedPorts, setSelectedPorts] = useState<string[]>([])
@@ -190,7 +192,7 @@ export function DealGrid({ sailings, ships, ports }: DealGridProps) {
                 duration, and guest count.
               </p>
               <p className="text-blue-400 text-sm mt-1">
-                Fares last verified {PRICES_LAST_UPDATED} — a starting point for comparison, not a live quote.
+                Fares last verified {lastUpdated ?? PRICES_LAST_UPDATED} — a starting point for comparison, not a live quote.
               </p>
             </div>
 
