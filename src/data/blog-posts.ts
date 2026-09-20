@@ -24,12 +24,75 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '26',
+    slug: 'marvel-day-at-sea-2027-guide',
+    title: 'Marvel Day at Sea 2027: Every Sailing, Show, and Character on the Disney Magic',
+    meta_title: 'Marvel Day at Sea 2027: Dates, Shows, Characters',
+    meta_description:
+      'Marvel Day at Sea 2027 on the Disney Magic: all ten Galveston sailing dates, the shows and characters to plan around, and tips for doing the day with kids.',
+    excerpt:
+      'Marvel Day at Sea returns to the Disney Magic for ten sailings from Galveston between January and March 2027. Here are all the dates, the shows worth planning your day around, which heroes actually show up, and how to survive the whole thing with small kids in tow.',
+    author: 'Dr. Grayson Starbuck, DPT',
+    published_date: '2026-09-20',
+    category: 'tips',
+    tags: ['marvel-day-at-sea', 'disney-magic', 'galveston', '2027', 'kids-and-family', 'onboard-activities'],
+    read_time: '6 min read',
+    featured_image_url: 'https://images.unsplash.com/photo-1599640842225-85d111c60e6b?w=1200&h=600&fit=crop',
+    content: `
+<p><strong>Marvel Day at Sea 2027</strong> is back on the Disney Magic, and if you have a kid who has ever worn a Spider-Man costume to the grocery store, this is the one day of a Disney cruise they will talk about for a year. Ten sailings out of Galveston carry the event between January and March 2027. Below is every date, what actually happens on the day, and the handful of planning decisions that separate a great Marvel Day from a day of standing in lines.</p>
+
+<h2>What Marvel Day at Sea Actually Is</h2>
+<p>It is one day — a single sea day — where the entire ship flips into Marvel mode. Over thirty Super Heroes and villains circulate through the public spaces, the Walt Disney Theatre swaps in a Marvel stage show, the atrium hosts a Wakandan warrior performance, and the night ends with a pyrotechnic deck show over the water. The dining rooms change their menus. The coffee bar starts pouring Iron Man lattes.</p>
+<p>Two things surprise first-timers. The first: every bit of the core programming is included in your cruise fare. You are not buying a separate ticket; the only Marvel-specific upcharges are merchandise, alcohol, and a few specialty treats. The second: it is genuinely just one day. The other three, four, or six nights of the sailing are a normal Disney cruise, with the usual Broadway-caliber shows, Oceaneer Club, and Quiet Cove. Families who are lukewarm on Marvel do not need to avoid these sailings — they need to know which day to plan around.</p>
+
+<h2>Every Marvel Day at Sea 2027 Sailing from Galveston</h2>
+<p>All ten 2027 dates sail on the <a href="/ships/disney-magic">Disney Magic</a> from Galveston, Texas. Eight are Western Caribbean itineraries; two are seven-night Bahamian runs, which is the longer format the event has only recently started appearing on.</p>
+<ul>
+<li><strong>Jan. 20, 2027</strong> — 4-night Western Caribbean</li>
+<li><strong>Jan. 24, 2027</strong> — 7-night Bahamian</li>
+<li><strong>Jan. 31, 2027</strong> — 7-night Bahamian</li>
+<li><strong>Feb. 7, 2027</strong> — 5-night Western Caribbean</li>
+<li><strong>Feb. 12, 2027</strong> — 5-night Western Caribbean</li>
+<li><strong>Feb. 17, 2027</strong> — 4-night Western Caribbean</li>
+<li><strong>Feb. 21, 2027</strong> — 5-night Western Caribbean</li>
+<li><strong>Feb. 26, 2027</strong> — 5-night Western Caribbean</li>
+<li><strong>March 3, 2027</strong> — 4-night Western Caribbean</li>
+<li><strong>March 7, 2027</strong> — 5-night Western Caribbean</li>
+</ul>
+<p>The Western Caribbean sailings typically call at <a href="/ports/cozumel">Cozumel</a>, which pairs well with the event: you get a real port day and a full Marvel day without either feeling rushed. You can see current pricing and availability across the fleet on our <a href="/sailings">sailings page</a>, and if you are driving in, our <a href="/hotels/galveston">Galveston embarkation guide</a> covers parking lots, rates, and the shuttle situation before you ever reach the terminal.</p>
+
+<h3>Which Length Should You Pick?</h3>
+<p>The 4-night sailings are the cheapest way in and the easiest sell to a skeptical spouse, but they run tight — one sea day, and that sea day is Marvel Day, so there is no decompression built in. The 5-night dates are the sweet spot for most families. The two 7-night Bahamian sailings in late January are the pick if you want the Marvel event <em>and</em> a genuinely relaxed week, and they are also the two dates most likely to still have verandah availability late.</p>
+
+<h2>The Shows Worth Planning Your Day Around</h2>
+<p><strong>Marvel Heroes Unite</strong> is the headliner: a nighttime deck show with stunts, pyrotechnics, and a multiverse-spanning battle that ends in fireworks at sea. Stake out a spot on an upper deck railing well before showtime; the pool deck fills early and sightlines there are poor for anyone under four feet tall.</p>
+<p><strong>Strange Academy: A Spellbinding Spectacular</strong> runs in the Walt Disney Theatre and leans mystic — Doctor Strange, Agatha Harkness, and Wong. It is the most theatrical offering of the day and the one adults consistently rate highest.</p>
+<p><strong>Warriors of Wakanda</strong> takes over the atrium with Okoye and the Dora Milaje. Short, loud, and a crowd magnet; the second-floor overlook is the underrated viewing spot. The <strong>Star-Spangled USO Show</strong> at the Evolution dance club is a period piece with a decent chance of a Captain America appearance. And the <strong>Marvel Costume Celebration</strong> is the low-stakes one for little kids — Mickey, Minnie, Donald, and the gang dressed as heroes, no line anxiety.</p>
+
+<h2>Which Characters Actually Show Up</h2>
+<p>Scheduled meet-and-greets generally include Spider-Man, Captain America, Thor, Iron Man, Black Panther, Shuri, Captain Marvel, and Loki. Roaming appearances rotate through a deeper bench: Sam Wilson's Captain America, Okoye, Star-Lord and Gamora, Black Widow, Hawkeye and Kate Bishop, Shang-Chi, Mighty Thor, and Ant-Man and the Wasp.</p>
+<p>The practical advice is the same as it is for any Disney cruise character day: open the Disney Cruise Line Navigator app the moment you board, find the Marvel Day schedule, and pick two or three must-meets rather than chasing everyone. Pack an autograph book. If your kids want to wear costumes — and they will — bring them from home, because onboard merchandise sells out fast and costs what you would expect. Our <a href="/blog/disney-cruise-packing-list">Disney cruise packing list</a> has the rest of the what-to-bring math.</p>
+
+<h2>Doing Marvel Day at Sea With Little Kids</h2>
+<p>The day is loud. Deck shows use pyro, the atrium performances draw dense crowds, and the schedule is front-to-back full. Families with toddlers do better treating it as a half-day: hit the Costume Celebration and one scheduled meet-and-greet in the morning, use Oceaneer Club's superhero activities for the middle stretch, and decide on the deck show based on how nap-day went. Kids four to twelve get the best deal here — the Oceaneer Club programming is built around them and runs all day.</p>
+<p>Teenagers, oddly, are the sleeper win. Marvel is the one shipboard overlay they will not roll their eyes at, and the trivia and movie screenings are legitimately fun for that age. Our guide to <a href="/blog/cruising-with-teens-activities">cruising with teens</a> covers what else keeps them occupied on the other days.</p>
+
+<h2>Booking Timing and Value</h2>
+<p>These sailings opened to the general public in February 2026 and have been selling steadily since; the 4-night dates over Presidents' Day weekend move fastest. Themed-day sailings do not always carry a premium over the equivalent non-themed date on the same ship, which is worth checking before you assume the event costs extra. If you are already holding a Disney booking for one of these dates, it may still be eligible for onboard credit — our guide on <a href="/blog/disney-cruise-onboard-credit-guide">Disney cruise onboard credits</a> explains how that works and what the deadlines are.</p>
+<p>And if a themed sea day is what you are after but these dates do not fit, the same playbook applies to the fall overlay — see our <a href="/blog/halloween-on-the-high-seas-2026-guide">Halloween on the High Seas guide</a>.</p>
+
+<h2>Planning a Marvel Day at Sea 2027 Sailing</h2>
+<p>Ten dates, three itinerary lengths, one very good day in the middle of each. The decision usually comes down to sailing length, school calendar, and how much of a Marvel household you actually are — and that is a conversation, not a search result.</p>
+<p><a href="/concierge">Talk to our concierge</a> about which of the ten dates fits your family, or <a href="/free-quote">get a free quote from our team</a> and we will pull current pricing across all of them side by side.</p>
+`,
+  },
+  {
     id: '25',
     slug: 'disney-believe-new-ship-2027',
     title: 'Disney Believe: What We Know About Disney Cruise Line’s New Ship Sailing in Late 2027',
     meta_title: 'Disney Believe 2027: Disney’s New Cruise Ship',
     meta_description:
-      'Disney Believe, a new Disney Cruise Line ship, sets sail in late 2027 with venues inspired by Encanto, Frozen, Moana and more. Here’s what has been confirmed so far.',
+      'Disney Believe, a new Disney Cruise Line ship, sails in late 2027 with venues inspired by Encanto, Frozen and Moana. Here’s everything confirmed so far.',
     excerpt: 'Disney Cruise Line has confirmed a new ship, the Disney Believe, setting sail in late 2027 with one-of-a-kind venues shaped by Encanto, Frozen, Snow White, Moana and The Little Mermaid. Here is everything confirmed so far, and how to think about it if you are already planning that far out.',
     author: 'Dr. Grayson Starbuck, DPT',
     published_date: '2026-09-18',
@@ -154,6 +217,7 @@ export const blogPosts: BlogPost[] = [
 <p>The Disney Treasure's maiden voyage is scheduled for late 2025, with sailings from Port Canaveral initially focusing on 4, 5, and 7-night Caribbean itineraries. Given Disney's track record with new ships, we expect these sailings to book up quickly. If you're interested in experiencing the Treasure, we recommend getting on Disney's interest list early or monitoring pricing closely as the debut date approaches.</p>
 <p>The Disney Treasure represents Disney Cruise Line's commitment to innovation while maintaining the quality and magic that guests have come to expect. This is a ship worth getting excited about.</p>
 <p>If you're comparing newer Wish-class options, the recently launched <a href="/blog/disney-destiny-heroes-villains-guide">Disney Destiny — the Heroes &amp; Villains ship</a> is the Treasure's most direct sibling and the most theatrically themed ship in the fleet right now.</p>
+<p>And the fleet is not done growing: Disney has confirmed the <a href="/blog/disney-believe-new-ship-2027">Disney Believe for late 2027</a>, with venues drawn from <em>Encanto</em>, <em>Frozen</em>, <em>Moana</em> and more. Worth reading before you decide how far ahead to plan.</p>
     `.trim(),
   },
   {
@@ -580,7 +644,7 @@ export const blogPosts: BlogPost[] = [
 <h2>The Bottom Line</h2>
 <p>Cruising with teens can be genuinely enjoyable for everyone if you approach it thoughtfully. Give them autonomy, facilitate social interaction, provide adventure-based activities, and let them enjoy the experience on their terms.</p>
 <p>Many teens who are skeptical before boarding return home having had a genuinely memorable experience and requesting to cruise again.</p>
-<p>If you have any flexibility on dates, a fall sailing is worth a look — <a href="/blog/halloween-on-the-high-seas-2026-guide">Halloween on the High Seas</a> includes a costume dance party that reliably pulls in the age group least likely to admit it's having fun.</p>
+<p>If you have any flexibility on dates, a fall sailing is worth a look — <a href="/blog/halloween-on-the-high-seas-2026-guide">Halloween on the High Seas</a> includes a costume dance party that reliably pulls in the age group least likely to admit it's having fun. The other reliable teen magnet is a themed sea day: <a href="/blog/marvel-day-at-sea-2027-guide">Marvel Day at Sea 2027</a> runs on ten Disney Magic sailings out of Galveston, and the trivia and deck show land with this age group better than almost anything else onboard.</p>
     `.trim(),
   },
   {
@@ -1133,6 +1197,7 @@ export const blogPosts: BlogPost[] = [
 <h2>The Bottom Line on the Disney Destiny Heroes and Villains Ship</h2>
 <p>Disney Destiny is the most fully-realized themed ship Disney Cruise Line has ever built, and in 2026 it represents the strongest combination of new-ship excitement, theatrical ambition, and refined operational polish in the fleet. Whether it's the right ship for your family depends on what you value most — but for anyone drawn to story-driven Disney experiences, the Destiny is hard to beat.</p>
 <p>If you're weighing a fall sailing, note that 2026 is the Destiny's first year hosting <a href="/blog/halloween-on-the-high-seas-2026-guide">Halloween on the High Seas</a> — a natural fit for a heroes-and-villains ship, and worth understanding before you pick your dates.</p>
+<p>If the Destiny's hero-and-villain storytelling is the specific draw, the fleet's other take on it is a one-day overlay rather than a whole ship: our <a href="/blog/marvel-day-at-sea-2027-guide">Marvel Day at Sea 2027 guide</a> covers the ten Disney Magic dates from Galveston, where over thirty Marvel heroes and villains take the ship for a sea day.</p>
 <p>Need help deciding between the Destiny and another ship, or want personalized recommendations on which sailing fits your timing and budget? <a href="/book">Get a free quote from our team</a> or reach out via our <a href="/concierge">concierge inquiry form</a>. We'll walk you through the options — no pressure, no obligation.</p>
     `.trim(),
   },
@@ -1563,6 +1628,7 @@ export const blogPosts: BlogPost[] = [
 <p>Halloween on the High Seas 2026 is a well-executed, fully included seasonal overlay that rewards a little planning and punishes none. Know that the Pumpkin Tree lights on night one, that Mouse-querade is the night that matters, and that a longer sailing gives the season room to breathe. Pack a costume you can dance in, check the Navigator on embarkation day, and let the rest happen.</p>
 <p>Looking further ahead: in fall 2027 the overlay reaches New York for the first time on a Wish-class ship, with six Halloween-branded sailings to Bermuda and Canada. Our <a href="/blog/disney-cruise-from-new-york-2027">Disney cruise from New York 2027</a> guide lists every date.</p>
 <p>If the fall dates do not work, the same overlay logic applies one season later: our <a href="/blog/very-merrytime-cruises-2026-guide">guide to Very Merrytime cruises 2026</a> covers the holiday version, which runs November through December and is built the same way — fully included, fleet-wide, and dramatically cheaper in November than over Christmas week.</p>
+<p>And if the overlay format is the appeal more than the season, Disney runs the same idea on a single-day scale: our <a href="/blog/marvel-day-at-sea-2027-guide">Marvel Day at Sea 2027 guide</a> covers all ten Galveston dates on the Disney Magic between January and March.</p>
 <p>If you want help matching a specific fall sailing, ship, and stateroom category to your family — including which dates still have availability and what credit you would qualify for — <a href="/concierge">talk to our concierge</a>. We track Disney's fall inventory daily, the conversation is free, and there is no obligation attached to it.</p>
     `.trim(),
   },

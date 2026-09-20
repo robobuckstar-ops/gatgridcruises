@@ -1424,6 +1424,9 @@ export const destinationPorts: DestinationPort[] = [
           'Disney rotates between Punta Langosta, International Pier, and Puerta Maya. The DCL Navigator app updates with your specific dock 24–48 hours before arrival.',
       },
     ],
+    relatedPosts: [
+      { slug: 'marvel-day-at-sea-2027-guide', title: 'Marvel Day at Sea 2027: Every Sailing, Show, and Character on the Disney Magic' },
+    ],
   },
 
   // ───────────────────────────────────────────────────────────────
