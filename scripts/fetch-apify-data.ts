@@ -31,6 +31,10 @@ import { normalizeStateroomPrices } from '../src/lib/stateroom-pricing'
 // ─── Config ──────────────────────────────────────────────────────
 
 const APIFY_TOKEN = process.env.APIFY_TOKEN
+// Preferred: pull the actor's LATEST successful run automatically, so the
+// dataset id never has to be updated by hand. Falls back to a fixed dataset id.
+// Accepts `username/actor-name` or `username~actor-name`.
+const ACTOR_ID = (process.env.APIFY_ACTOR_ID || '').trim().replace('/', '~')
 const DATASET_ID = process.env.APIFY_DATASET_ID || 'm64FPMoCl1covPssa'
 const FROM_FILE = process.env.FROM_FILE
 const OUTPUT_PATH =
@@ -207,13 +211,27 @@ async function fetchRecords(): Promise<ApifyRecord[]> {
       'APIFY_TOKEN env var is required (or set FROM_FILE to read a local dump).'
     )
   }
-  const url = `https://api.apify.com/v2/datasets/${DATASET_ID}/items?token=${APIFY_TOKEN}&format=json`
-  console.log(`[apify] Fetching dataset ${DATASET_ID}…`)
+  // Preferred path: pull the actor's LATEST successful run automatically.
+  // No dataset id to maintain — Apify resolves `runs/last` to the newest run.
+  const url = ACTOR_ID
+    ? `https://api.apify.com/v2/acts/${ACTOR_ID}/runs/last/dataset/items?token=${APIFY_TOKEN}&status=SUCCEEDED&format=json`
+    : `https://api.apify.com/v2/datasets/${DATASET_ID}/items?token=${APIFY_TOKEN}&format=json`
+  console.log(
+    ACTOR_ID
+      ? `[apify] Fetching latest SUCCEEDED run of actor ${ACTOR_ID}…`
+      : `[apify] Fetching dataset ${DATASET_ID}…`
+  )
   const res = await fetch(url)
   if (!res.ok) {
     throw new Error(`Apify fetch failed: ${res.status} ${res.statusText}`)
   }
-  return (await res.json()) as ApifyRecord[]
+  const records = (await res.json()) as ApifyRecord[]
+  if (!Array.isArray(records) || records.length === 0) {
+    throw new Error(
+      'Apify returned no records — refusing to overwrite sailings.json with an empty set.'
+    )
+  }
+  return records
 }
 
 // ─── Transform ───────────────────────────────────────────────────
