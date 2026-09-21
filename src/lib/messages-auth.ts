@@ -75,3 +75,56 @@ export function isAuthorizedMessagesRequest(request: NextRequest): boolean {
 
   return false
 }
+
+// ---- Magic-link login -------------------------------------------------------
+// Lets an allow-listed admin sign in by clicking a one-time link emailed to
+// them, instead of typing MESSAGES_ADMIN_SECRET. The link's token is signed
+// with that same secret, so the operator never needs to know the passphrase —
+// the server holds it. A successful link mints the normal session cookie above.
+
+const MAGIC_TTL_SECONDS = 15 * 60 // links expire in 15 minutes
+
+/** Emails allowed to request a login link (ADMIN_MAGIC_EMAILS, comma-separated). */
+export function getAdminEmails(): string[] {
+  const raw = process.env.ADMIN_MAGIC_EMAILS?.trim()
+  return (raw && raw.length ? raw : 'robobuckstar@gmail.com')
+    .split(',')
+    .map(e => e.trim().toLowerCase())
+    .filter(e => e.includes('@'))
+}
+
+export function isAdminEmail(email: string): boolean {
+  return getAdminEmails().includes(email.trim().toLowerCase())
+}
+
+/**
+ * A signed, expiring token bound to an email. Format: `email~exp~sig`, where
+ * the email is percent-encoded (so it never contains the `~` separator) and
+ * `sig` is base64url (also `~`-free). Returns null if no secret is configured.
+ */
+export function createMagicToken(email: string): string | null {
+  const secret = getMessagesSecret()
+  if (!secret) return null
+  const exp = Math.floor(Date.now() / 1000) + MAGIC_TTL_SECONDS
+  const data = `${encodeURIComponent(email.trim().toLowerCase())}~${exp}`
+  return `${data}~${sign(data, secret)}`
+}
+
+/** Returns the email if the token is valid, unexpired, and an admin; else null. */
+export function verifyMagicToken(token: string | undefined): string | null {
+  const secret = getMessagesSecret()
+  if (!secret || !token) return null
+
+  const [emailEnc, exp, sig] = token.split('~')
+  if (!emailEnc || !exp || !sig) return null
+  if (!/^\d+$/.test(exp) || Number(exp) < Math.floor(Date.now() / 1000)) return null
+  if (!safeEqual(sig, sign(`${emailEnc}~${exp}`, secret))) return null
+
+  let email: string
+  try {
+    email = decodeURIComponent(emailEnc)
+  } catch {
+    return null
+  }
+  return isAdminEmail(email) ? email : null
+}
