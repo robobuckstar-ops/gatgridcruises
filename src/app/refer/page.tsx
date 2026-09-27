@@ -21,7 +21,7 @@ import { ReferralForm } from './ReferralForm'
 export const metadata: Metadata = {
   title: 'Partner & Referral Program | GatGrid Cruises',
   description:
-    'Share your unique link, earn rewards when friends book Disney cruises. Three reward tiers: thank-you gifts, onboard credit bonuses, and commission percentages for ambassadors.',
+    'Share your GatGrid link and earn rewards when friends plan Disney cruises. Three tiers: thank-you gifts, onboard credit bonuses and ambassador commissions.',
   robots: { index: true, follow: true },
   alternates: { canonical: '/refer' },
   openGraph: {

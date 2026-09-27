@@ -28,7 +28,7 @@ import {
 export const metadata: Metadata = {
   title: 'Cheap Flights to Your Cruise Port — GatGrid Cruises',
   description:
-    'Build a flight search for your Disney cruise in 30 seconds. Pre-filled Google Flights, Southwest, and Kayak links plus tips on the best airports, when to book, and how to save.',
+    'Build a flight search for your Disney cruise in 30 seconds. Pre-filled Google Flights, Southwest and Kayak links, plus the best airports and when to book.',
   alternates: { canonical: '/flights' },
   openGraph: {
     title: 'Flight Tips & Search Helper for Cruisers',

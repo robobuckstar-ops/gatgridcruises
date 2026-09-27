@@ -8,6 +8,7 @@ export const metadata: Metadata = {
     title: 'Get a Free Disney Cruise Quote',
     description: 'A licensed Disney cruise specialist will send you personalized pricing within 24 hours. Free, no obligation.',
     url: 'https://gatgridcruises.com/book',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
   },
 }
 

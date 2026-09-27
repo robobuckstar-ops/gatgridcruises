@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/guides/stateroom-comparison' },
   title: 'Disney Cruise Stateroom Comparison: Inside vs Verandah vs Concierge | GatGridCruises',
   description:
-    'Full comparison of Disney cruise stateroom types — Inside, Oceanview, Verandah, and Concierge. Price ranges, square footage, pros/cons, and which is best for families, couples, and budget travelers.',
+    'Compare Disney cruise stateroom types — Inside, Oceanview, Verandah and Concierge. Price ranges, square footage, and which suits families or couples.',
   openGraph: {
     title: 'Disney Cruise Stateroom Comparison 2026',
     description:

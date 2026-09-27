@@ -9,6 +9,7 @@ export const metadata: Metadata = {
     title: 'AI Disney Cruise Finder',
     description: 'Find the best Disney cruise for your family with our AI-powered search tool.',
     url: 'https://gatgridcruises.com/search',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
   },
 }
 

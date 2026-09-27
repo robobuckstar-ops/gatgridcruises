@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/deals/last-minute' },
   title: 'Last-Minute Disney Cruise Deals — Departing Within 90 Days',
   description:
-    "Last-minute Disney cruise deals on sailings departing within 90 days. Steep discounts, limited availability. Prices update daily — request a quote for exact pricing with your group.",
+    "Last-minute Disney cruise deals on sailings departing within 90 days. Steep discounts, limited availability, prices updated daily. Request exact pricing.",
   openGraph: {
     title: 'Last-Minute Disney Cruise Deals — Departing Within 90 Days',
     description:

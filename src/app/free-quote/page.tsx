@@ -25,7 +25,7 @@ import { FreeQuoteForm } from './FreeQuoteForm'
 export const metadata: Metadata = {
   title: 'Free Disney Cruise Quote — No Obligation | GatGrid Cruises',
   description:
-    'Get a free, no-obligation Disney cruise quote. Book through GatGrid and your sailing earns free onboard credit plus concierge planning and price-drop monitoring — at no additional cost versus booking direct.',
+    'Get a free, no-obligation Disney cruise quote. Plan with our concierge and earn onboard credit plus price-drop monitoring, at no cost versus booking direct.',
   alternates: { canonical: '/free-quote' },
   openGraph: {
     title: 'Free Disney Cruise Quote — No Obligation | GatGrid Cruises',

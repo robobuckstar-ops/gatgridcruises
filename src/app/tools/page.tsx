@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/tools' },
   title: 'Disney Cruise Planning Tools — Calculators, Finders & Trackers',
   description:
-    'Every free GatGrid tool for planning a Disney cruise: onboard credit and credit card calculators, stateroom and flight finders, sailing comparison, price tracking, transfers and port hotels.',
+    'Free GatGrid tools for planning a Disney cruise: onboard credit and credit card calculators, stateroom and flight finders, price tracking and transfers.',
   openGraph: {
     title: 'Disney Cruise Planning Tools — Calculators, Finders & Trackers',
     description:

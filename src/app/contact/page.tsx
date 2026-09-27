@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description:
       'Send us a message, email us directly, or submit a concierge inquiry.',
     url: 'https://gatgridcruises.com/contact',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
   },
 }
 

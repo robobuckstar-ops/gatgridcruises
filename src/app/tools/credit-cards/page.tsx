@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/tools/credit-cards' },
   title: 'Best Credit Cards for Disney Cruises 2026 | GatGrid Cruises',
   description:
-    'The best credit cards for Disney cruise families — compare signup bonuses, points multipliers, lounge access, and trip insurance. Maximize every cruise dollar with our expert picks.',
+    'The best credit cards for Disney cruise families. Compare signup bonuses, points multipliers, lounge access and trip insurance to stretch every dollar.',
   openGraph: {
     title: 'Best Credit Cards for Disney Cruises 2026',
     description:

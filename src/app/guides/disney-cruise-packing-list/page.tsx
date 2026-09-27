@@ -7,7 +7,8 @@ import { PackingGearPicks } from '@/components/guides/packing-gear-picks';
 export const metadata: Metadata = {
   alternates: { canonical: '/guides/disney-cruise-packing-list' },
   title: 'The Ultimate Disney Cruise Packing List (Printable)',
-  description: 'Complete Disney cruise packing list with categories for clothing, documents, toiletries, electronics, and Castaway Cay essentials. Includes pro tips and what NOT to pack.',
+  description:
+    'A complete Disney cruise packing list covering clothing, documents, toiletries, electronics and Castaway Cay essentials, plus what not to bother packing.',
   openGraph: {
     title: 'The Ultimate Disney Cruise Packing List (Printable)',
     description: 'Complete Disney cruise packing list for clothing, documents, toiletries, electronics, and Castaway Cay. Includes what NOT to pack.',

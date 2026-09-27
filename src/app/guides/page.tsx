@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/guides' },
   title: 'Disney Cruise Guides — In-Depth Planning Resources',
   description:
-    'In-depth Disney Cruise Line guides: true cost breakdown, best staterooms, port comparisons, packing lists, first-timer tips, and dining rankings. Honest, no-fluff advice.',
+    'In-depth Disney Cruise Line guides: true cost breakdowns, best staterooms, port comparisons, packing lists, first-timer tips and dining rankings.',
   openGraph: {
     title: 'Disney Cruise Guides — In-Depth Planning Resources',
     description:

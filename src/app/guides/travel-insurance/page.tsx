@@ -7,7 +7,8 @@ import { InsurancePartners } from '@/components/ui/insurance-partners'
 export const metadata: Metadata = {
   alternates: { canonical: '/guides/travel-insurance' },
   title: 'Do You Need Travel Insurance for a Disney Cruise?',
-  description: 'Disney cruise travel insurance explained — medical at sea, trip cancellation, missed ports, Disney\'s own plan vs. third-party options, and how Amex Business Platinum helps.',
+  description:
+    'Disney cruise travel insurance explained: medical at sea, trip cancellation, missed ports, and Disney\'s own plan versus third-party card coverage.',
   keywords: ['disney cruise travel insurance', 'cruise travel insurance', 'disney cruise cancellation', 'medical at sea insurance', 'trip cancellation cruise'],
   openGraph: {
     title: 'Do You Need Travel Insurance for a Disney Cruise?',

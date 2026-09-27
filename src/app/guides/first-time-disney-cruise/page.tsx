@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/guides/first-time-disney-cruise' },
   title: 'First-Timer\'s Guide to Disney Cruises 2026 | GatGridCruises',
   description:
-    'Everything first-time Disney cruisers need to know — what\'s included, what costs extra, embarkation day tips, Pirate Night, Castaway Cay, stateroom types, tipping, and more.',
+    'Everything first-time Disney cruisers need: what is included, what costs extra, embarkation day, Pirate Night, Castaway Cay, stateroom types and tipping.',
   openGraph: {
     title: 'First-Timer\'s Complete Guide to Disney Cruises (2026)',
     description:

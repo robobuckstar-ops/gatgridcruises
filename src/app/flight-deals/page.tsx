@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/flight-deals' },
   title: 'Flight Deal Alerts for Your Cruise — GatGrid Cruises',
   description:
-    "Get notified the moment Southwest releases flights or runs a promo matching your cruise dates. Free flight deal alerts to MCO, MIA, and FLL — built for cruisers.",
+    "Get notified the moment Southwest releases flights or runs a promo matching your cruise dates. Free flight deal alerts to MCO, MIA and FLL for cruisers.",
   openGraph: {
     title: 'Never Miss a Flight Deal for Your Cruise',
     description:

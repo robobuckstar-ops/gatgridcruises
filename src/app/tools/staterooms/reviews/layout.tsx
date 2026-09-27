@@ -8,6 +8,7 @@ export const metadata: Metadata = {
     title: 'Disney Cruise Stateroom Reviews',
     description: 'Real reviews for Disney cruise staterooms — best views, quietest locations, and top ratings.',
     url: 'https://gatgridcruises.com/tools/staterooms/reviews',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
   },
 }
 

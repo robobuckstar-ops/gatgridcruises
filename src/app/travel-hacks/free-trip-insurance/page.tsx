@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/travel-hacks/free-trip-insurance' },
   title: 'Free Trip Insurance You Already Have | Travel Hacks',
   description:
-    "Most cruise travelers buy expensive trip insurance without realizing their credit card already covers them. Learn what's actually covered and when to buy separate insurance.",
+    "Many cruisers buy trip insurance their credit card already provides. What card coverage actually includes, and when you still need a separate policy.",
   keywords: [
     'trip insurance',
     'trip cancellation',

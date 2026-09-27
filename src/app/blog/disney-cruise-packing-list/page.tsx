@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/disney-cruise-packing-list' },
   title: 'The Ultimate Disney Cruise Packing List 2026 | GatGridCruises',
   description:
-    'Complete Disney cruise packing list organized by category — essentials, clothing, toiletries, electronics, kids items, and cruise-specific gear like fish extenders and door magnets. With Amazon links.',
+    'A complete Disney cruise packing list by category: clothing, toiletries, electronics, kids\' items, fish extenders and door magnets, with Amazon links.',
   openGraph: {
     title: 'The Ultimate Disney Cruise Packing List 2026',
     description:

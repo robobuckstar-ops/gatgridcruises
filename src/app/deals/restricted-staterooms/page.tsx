@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/deals/restricted-staterooms' },
   title: 'Restricted Stateroom (GTY) Deals — Disney Cruise',
   description:
-    'Restricted / Guarantee (GTY) stateroom rates on Disney cruises — lower prices in exchange for letting Disney pick your exact cabin. See how it works and which sailings have the best inside-cabin value right now.',
+    'Restricted and Guarantee (GTY) Disney cruise rates: a lower price in exchange for letting Disney pick your cabin. How it works and where the value is now.',
   openGraph: {
     title: 'Restricted Stateroom (GTY) Deals — Disney Cruise',
     description:

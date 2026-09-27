@@ -17,7 +17,7 @@ import { GroupCruiseForm } from './GroupCruiseForm'
 export const metadata: Metadata = {
   title: 'GatGrid Group Sailing — Join a Hosted Disney Cruise | GatGrid',
   description:
-    'Sail a Disney cruise with a group instead of alone. Join the GatGrid hosted group sailing interest list — meet-ups, a community onboard, and potential group perks when cabin minimums are met.',
+    'Sail a Disney cruise with a group instead of alone. Join the GatGrid hosted group interest list for onboard meet-ups and perks when minimums are met.',
   alternates: { canonical: '/group-cruise' },
   openGraph: {
     title: 'GatGrid Group Sailing — Join a Hosted Disney Cruise | GatGrid',

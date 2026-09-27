@@ -795,6 +795,10 @@ export const destinationPorts: DestinationPort[] = [
           'Castaway Cay is mature, well-developed, and offers the most activities — Pelican Plunge, the snorkel trail, the 5K, the bike trail. Lookout Cay (Disney\'s newer 2024 private island at Lighthouse Point, Eleuthera) is more pristine and less crowded but has fewer in-water attractions. For first-time Disney cruisers and families with kids who want maximum activity options, Castaway is the better port day. For couples or families wanting a quieter beach day, Lookout Cay is the stronger pick.',
       },
     ],
+    relatedPosts: [
+      { slug: 'castaway-cay-vs-lookout-cay', title: 'Castaway Cay vs. Lookout Cay: Disney\'s Private Islands Compared' },
+      { slug: 'disney-destiny-vs-disney-treasure', title: 'Disney Destiny vs Disney Treasure: Which Wish-Class Ship Fits Your Family?' },
+    ],
   },
 
   // ───────────────────────────────────────────────────────────────
@@ -1096,6 +1100,9 @@ export const destinationPorts: DestinationPort[] = [
         answer:
           'On calm days, yes — exceptionally so. On windy days the windward side picks up more chop than Castaway\'s sheltered lagoon, so visibility for snorkeling is more variable.',
       },
+    ],
+    relatedPosts: [
+      { slug: 'disney-destiny-vs-disney-treasure', title: 'Disney Destiny vs Disney Treasure: Which Wish-Class Ship Fits Your Family?' },
     ],
   },
 

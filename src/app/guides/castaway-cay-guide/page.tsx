@@ -7,7 +7,8 @@ import { GraysonFamilyPhoto } from '@/components/ui/grayson-family-photo';
 export const metadata: Metadata = {
   alternates: { canonical: '/guides/castaway-cay-guide' },
   title: "Castaway Cay: The Ultimate Guide to Disney's Private Island",
-  description: "Complete guide to Disney's private island paradise. Learn about beaches, activities, restaurants, snorkeling, parasailing, and how to maximize your 8+ hours on the island.",
+  description:
+    "A complete guide to Castaway Cay, Disney's private island: beaches, activities, dining, snorkeling and how to make the most of your day ashore.",
   openGraph: {
     title: "Castaway Cay: The Ultimate Guide to Disney's Private Island",
     description: "Complete guide to Castaway Cay — beaches, activities, restaurants, snorkeling, and how to maximize your day.",

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/deals/military' },
   title: 'Military Disney Cruise Deals & Discounts 2026 | GatGridCruises',
   description:
-    'Exclusive $250 onboard credit for military members on Disney Cruise Line 2026 sailings. Active duty, retired, Guard, Reserves, Coast Guard, Space Force, PHS, and NOAA eligible.',
+    'A $250 onboard credit for military members on Disney Cruise Line 2026 sailings. Active duty, retired, Guard, Reserves, Coast Guard and Space Force qualify.',
   openGraph: {
     title: 'Military Disney Cruise Deals 2026 — $250 OBC Offer',
     description:

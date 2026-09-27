@@ -16,7 +16,7 @@ import { GuideForm } from './GuideForm'
 export const metadata: Metadata = {
   title: 'Free Disney Cruise First-Timer’s Guide (PDF) | GatGrid',
   description:
-    'A free, no-fluff PDF guide for your first Disney cruise — booking windows, what’s included, dining rotation, packing, port day strategy, and the mistakes first-timers make. Instant download.',
+    'A free, no-fluff PDF for your first Disney cruise: booking windows, what is included, dining rotation, packing, port days and first-timer mistakes.',
   alternates: { canonical: '/free-guide' },
   openGraph: {
     title: 'Free Disney Cruise First-Timer’s Guide (PDF) | GatGrid',

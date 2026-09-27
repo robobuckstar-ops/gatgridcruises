@@ -24,6 +24,66 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '27',
+    slug: 'disney-destiny-vs-disney-treasure',
+    title: 'Disney Destiny vs Disney Treasure: Which Wish-Class Ship Fits Your Family?',
+    meta_title: 'Disney Destiny vs Disney Treasure: How to Choose',
+    meta_description:
+      'Disney Destiny vs Disney Treasure: same hull, very different trips. Compare itineraries, home ports, theming, dining and price before you pick a sailing.',
+    excerpt:
+      'The Disney Destiny and Disney Treasure are sister ships with the same hull, the same AquaMouse and the same kids’ clubs — and almost nothing else in common about the vacation you actually book. Here is how the two differ on itinerary, home port, theming, dining and price, and which families are better off on each.',
+    author: 'Dr. Grayson Starbuck, DPT',
+    published_date: '2026-09-27',
+    category: 'reviews',
+    tags: ['disney-destiny', 'disney-treasure', 'ship-comparison', 'wish-class', 'fort-lauderdale', 'port-canaveral'],
+    read_time: '6 min read',
+    featured_image_url: 'https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=1200&h=600&fit=crop',
+    content: `
+<p>If you are weighing <strong>Disney Destiny vs Disney Treasure</strong>, you have found the hardest comparison in the Disney fleet — and also the one most people get backwards. These are sister ships. Same 144,000-ton hull, same guest count, same Grand Hall layout, same AquaMouse, same kids' clubs, same adult district forward. Walk a deck plan side by side and you would struggle to tell them apart.</p>
+<p>The ships are nearly twins. The <em>vacations</em> are not. The Treasure sails week-long Caribbean itineraries out of Port Canaveral; the Destiny runs short Bahamian hops out of Fort Lauderdale. That single difference will shape your trip far more than which lounge has a better chandelier.</p>
+
+<h2>What the Disney Destiny and Disney Treasure Share</h2>
+<p>Start with what you do not have to think about. Both are Wish-class ships — the Treasure debuted at the end of 2024, the Destiny in late 2025 — and both carry roughly 4,000 guests across the same footprint.</p>
+<ul>
+<li><strong>AquaMouse</strong>, the Disney-storytelling water coaster, on both.</li>
+<li><strong>The same kids' programming:</strong> Oceaneer Club and Oceaneer Lab for ages 3–12, Edge for tweens, Vibe for teens, plus nursery care.</li>
+<li><strong>Rotational dining</strong> across three family restaurants, included in your fare.</li>
+<li><strong>The same adult-dining upcharges:</strong> Palo around $45 per person and Enchanté around $145 per person.</li>
+<li><strong>1923</strong>, the Walt-and-Roy tribute restaurant, appears on both ships.</li>
+</ul>
+<p>If a family member's dealbreaker is "does it have the water coaster" or "is there a real teen club," both ships answer yes. Our <a href="/blog/disney-treasure-vs-disney-wish-comparison">Disney Treasure vs Disney Wish comparison</a> covers how this class stacks up against the original Wish, if that is the other ship on your list.</p>
+
+<h2>Disney Destiny vs Disney Treasure: The Itinerary Difference That Decides It</h2>
+<p>This is the real fork in the road, and it is worth settling before you look at a single photo of either ship.</p>
+
+<h3>Disney Destiny: Short Sailings, Private Islands, Fort Lauderdale</h3>
+<p>The <a href="/ships/disney-destiny">Disney Destiny</a> is built around convenience. She sails from Port Everglades in Fort Lauderdale on mostly 4- and 5-night Bahamian itineraries, with a selection of 7-night Eastern and Western Caribbean sailings added for the fall 2026 and early 2027 season. Her calling card is frequency of private-island days: <a href="/ports/castaway-cay">Castaway Cay</a> and <a href="/ports/lookout-cay">Lookout Cay at Lighthouse Point</a> show up on her schedule constantly, usually alongside <a href="/ports/nassau">Nassau</a>.</p>
+<p>One planning note worth putting on your calendar: the Destiny opens the fall 2027 season in Fort Lauderdale and then relocates to <a href="/hotels/port-canaveral">Port Canaveral</a> in November 2027. If your reason for choosing her is the South Florida drive or a cheap flight into FLL, that advantage has an expiration date.</p>
+
+<h3>Disney Treasure: Seven Nights, Real Ports, Port Canaveral</h3>
+<p>The <a href="/ships/disney-treasure">Disney Treasure</a> is the traditional cruise of the two. She runs 7-night Eastern and Western Caribbean itineraries from Port Canaveral. The Eastern sailings typically pair Tortola and St. Thomas with a Castaway Cay day; the Western rotation leans on <a href="/ports/cozumel">Cozumel</a>, <a href="/ports/grand-cayman">Grand Cayman</a> and <a href="/ports/falmouth-jamaica">Falmouth, Jamaica</a>.</p>
+<p>A week gets you something the short sailings structurally cannot: sea days that are not doing double duty. On a 4-night Bahamian run, your one sea day is also your only chance at the spa, the adult brunch, the character meets and the theater show you missed. On seven nights, the ship stops feeling like a to-do list.</p>
+
+<h2>Theming: Heroes and Villains vs. the Disney Parks</h2>
+<p>Same canvas, very different paint. The Destiny is themed to <strong>heroes and villains</strong> — a deliberate dichotomy running through the whole ship. Its rotational dining includes <em>Pride Lands: Feast of the Lion King</em>, where the room is built like a boma and the meal comes with a performance, and <em>Worlds of Marvel</em>. It also carries <em>The Sanctum</em>, Disney Cruise Line's first Marvel-themed lounge, done up as Doctor Strange's collection of arcane artifacts, plus Café Megara and Café Merida nodding to <em>Hercules</em> and <em>Brave</em>. Our <a href="/blog/disney-destiny-heroes-villains-guide">Disney Destiny heroes and villains guide</a> goes deeper on the overlay.</p>
+<p>The Treasure is themed to <strong>adventure and the Disney parks</strong>, and it is the more collectible ship for park fans. <em>Plaza de Coco</em> is the <em>Coco</em>-inspired dinner show. The lounges are the draw: the <em>Haunted Mansion Parlor</em> (a first at sea), <em>Skipper Society</em> pulled from Jungle Cruise down to the monkey chandelier, and <em>Periscope Pub</em> built to feel like the interior of a submarine. <em>Sarabi</em>, the two-story <em>Lion King</em> lounge, is the ship's daytime hub.</p>
+<p>Blunt version: if your family's Disney love runs through the parks, the Treasure will delight you more. If it runs through Marvel and the animated canon, the Destiny will.</p>
+
+<h2>Price: What the Gap Actually Looks Like</h2>
+<p>Comparisons published this year have put the Treasure several hundred dollars per person above the Destiny on comparable stateroom categories — meaningful money for a family of four. But read that carefully, because it is mostly a length difference, not a quality one. Seven nights costs more than four nights. Per night, the two ships price much closer together than the sticker totals suggest, and the gap moves constantly with season, cabin category and how full the sailing is.</p>
+<p>The honest framing: do not pick the Destiny to save money on a Disney cruise, pick it because a short sailing is the trip you want. If you are optimizing spend, the bigger levers are timing and credit — our <a href="/blog/disney-cruise-onboard-credit-guide">guide to Disney cruise onboard credits</a> is worth more than the ship choice, and our <a href="/deals">deal finder</a> scores current sailings across the whole fleet by value.</p>
+
+<h2>Which Ship Should You Actually Pick?</h2>
+<p><strong>Choose the Disney Destiny if:</strong> this is a first Disney cruise and you want a lower-commitment test run; you have young kids who do better with a shorter trip; beach days at Disney's private islands are the whole point; or Fort Lauderdale is the easy airport. Note that if you are island-focused, our <a href="/blog/castaway-cay-vs-lookout-cay">Castaway Cay vs. Lookout Cay comparison</a> will tell you which one you actually want on the itinerary.</p>
+<p><strong>Choose the Disney Treasure if:</strong> you want genuine ports rather than sea-day-plus-beach; you are a parks family who will get real joy out of the lounges; you have sailed Disney before and know a short cruise leaves you wanting; or a week off is the point of the vacation.</p>
+<p><strong>It is close to a coin flip if:</strong> you are doing the 7-night Caribbean option that the Destiny also offers in early 2027. At that point the ships are genuinely comparable, and the decision comes down to theming preference and which home port you can reach cheaply.</p>
+
+<h2>Planning a Disney Destiny or Disney Treasure Sailing</h2>
+<p>The Disney Destiny vs Disney Treasure question almost always resolves itself once you answer two smaller ones: how many nights can you take, and which airport is cheap for you. Everything else is a preference, not a mistake. You can compare live dates and pricing for both ships on our <a href="/sailings">sailings page</a>.</p>
+<p>If you would rather have someone lay the two calendars side by side for your specific dates, <a href="/concierge">talk to our concierge</a> for personalized recommendations, or <a href="/free-quote">get a free quote from our team</a> and we will pull current pricing on both.</p>
+`,
+  },
+  {
     id: '26',
     slug: 'marvel-day-at-sea-2027-guide',
     title: 'Marvel Day at Sea 2027: Every Sailing, Show, and Character on the Disney Magic',
@@ -214,9 +274,9 @@ export const blogPosts: BlogPost[] = [
 <p>Entertainment has been elevated across the board, with new theater productions and nightly shows that leverage Disney's storytelling legacy. The main theater features advanced projection technology and immersive staging that creates unforgettable experiences.</p>
 
 <h2>When Can You Sail?</h2>
-<p>The Disney Treasure's maiden voyage is scheduled for late 2025, with sailings from Port Canaveral initially focusing on 4, 5, and 7-night Caribbean itineraries. Given Disney's track record with new ships, we expect these sailings to book up quickly. If you're interested in experiencing the Treasure, we recommend getting on Disney's interest list early or monitoring pricing closely as the debut date approaches.</p>
+<p>The Disney Treasure entered service at the end of 2024 and now sails 7-night Eastern and Western Caribbean itineraries from Port Canaveral. Given Disney's track record with newer ships, the school-holiday and spring-break weeks book up well ahead — monitor pricing early if your dates are fixed.</p>
 <p>The Disney Treasure represents Disney Cruise Line's commitment to innovation while maintaining the quality and magic that guests have come to expect. This is a ship worth getting excited about.</p>
-<p>If you're comparing newer Wish-class options, the recently launched <a href="/blog/disney-destiny-heroes-villains-guide">Disney Destiny — the Heroes &amp; Villains ship</a> is the Treasure's most direct sibling and the most theatrically themed ship in the fleet right now.</p>
+<p>If you're comparing newer Wish-class options, the recently launched <a href="/blog/disney-destiny-heroes-villains-guide">Disney Destiny — the Heroes &amp; Villains ship</a> is the Treasure's most direct sibling and the most theatrically themed ship in the fleet right now. The two share a hull but sail very different itineraries from different home ports — our head-to-head on <a href="/blog/disney-destiny-vs-disney-treasure">Disney Destiny vs Disney Treasure</a> breaks down which one fits which kind of family.</p>
 <p>And the fleet is not done growing: Disney has confirmed the <a href="/blog/disney-believe-new-ship-2027">Disney Believe for late 2027</a>, with venues drawn from <em>Encanto</em>, <em>Frozen</em>, <em>Moana</em> and more. Worth reading before you decide how far ahead to plan.</p>
     `.trim(),
   },
@@ -1198,7 +1258,8 @@ export const blogPosts: BlogPost[] = [
 <p>Disney Destiny is the most fully-realized themed ship Disney Cruise Line has ever built, and in 2026 it represents the strongest combination of new-ship excitement, theatrical ambition, and refined operational polish in the fleet. Whether it's the right ship for your family depends on what you value most — but for anyone drawn to story-driven Disney experiences, the Destiny is hard to beat.</p>
 <p>If you're weighing a fall sailing, note that 2026 is the Destiny's first year hosting <a href="/blog/halloween-on-the-high-seas-2026-guide">Halloween on the High Seas</a> — a natural fit for a heroes-and-villains ship, and worth understanding before you pick your dates.</p>
 <p>If the Destiny's hero-and-villain storytelling is the specific draw, the fleet's other take on it is a one-day overlay rather than a whole ship: our <a href="/blog/marvel-day-at-sea-2027-guide">Marvel Day at Sea 2027 guide</a> covers the ten Disney Magic dates from Galveston, where over thirty Marvel heroes and villains take the ship for a sea day.</p>
-<p>Need help deciding between the Destiny and another ship, or want personalized recommendations on which sailing fits your timing and budget? <a href="/book">Get a free quote from our team</a> or reach out via our <a href="/concierge">concierge inquiry form</a>. We'll walk you through the options — no pressure, no obligation.</p>
+<p>The closest call is the Destiny against her own sister ship, and that one turns on itinerary rather than theming — our <a href="/blog/disney-destiny-vs-disney-treasure">Disney Destiny vs Disney Treasure comparison</a> lays out the 4-night Bahamian versus 7-night Caribbean trade-off in detail.</p>
+<p>Need help deciding between the Destiny and another ship, or want personalized recommendations on which sailing fits your timing and budget? <a href="/free-quote">Get a free quote from our team</a> or reach out via our <a href="/concierge">concierge inquiry form</a>. We'll walk you through the options — no pressure, no obligation.</p>
     `.trim(),
   },
   {
@@ -1390,7 +1451,7 @@ export const blogPosts: BlogPost[] = [
 <p>One more variable worth factoring in: starting in 2027 the Wish leaves Port Canaveral for its first-ever European season. If a Mediterranean or Norwegian fjords sailing appeals more than another Bahamas run, see our guide to the <a href="/blog/disney-wish-europe-2027-ports">new Disney Wish Europe 2027 ports</a> — Zadar, Trieste, and Hellesylt.</p>
 
 <h2>Looking Beyond the Wish and Treasure</h2>
-<p>If you're open to a third option, the new <a href="/blog/disney-destiny-heroes-villains-guide">Disney Destiny — the Heroes &amp; Villains ship</a> is the most theatrically themed Wish-class ship in the fleet and a natural third comparison point. The Destiny is essentially Treasure-class hardware with the most ambitious storytelling overlay Disney has ever built. For Disney superfans, it's the strongest combination of new-ship excitement and theming density on the market.</p>
+<p>If you're open to a third option, the new <a href="/blog/disney-destiny-heroes-villains-guide">Disney Destiny — the Heroes &amp; Villains ship</a> is the most theatrically themed Wish-class ship in the fleet and a natural third comparison point. The Destiny is essentially Treasure-class hardware with the most ambitious storytelling overlay Disney has ever built. For Disney superfans, it's the strongest combination of new-ship excitement and theming density on the market. If the Destiny makes your short list, read our direct comparison of <a href="/blog/disney-destiny-vs-disney-treasure">Disney Destiny vs Disney Treasure</a> next — the itinerary and home-port differences matter more than the theming does.</p>
     `.trim(),
   },
   {

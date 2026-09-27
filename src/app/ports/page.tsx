@@ -7,7 +7,8 @@ import { MapPin, Plane, DollarSign, Calendar, Anchor, ChevronRight } from 'lucid
 export const metadata: Metadata = {
   alternates: { canonical: '/ports' },
   title: 'Disney Cruise Ports — Destination Guides & Departure Ports',
-  description: 'Complete Disney Cruise Line port guides. In-depth destination guides for Nassau, Castaway Cay, Lookout Cay, Cozumel, Grand Cayman, and St. Thomas — plus departure-port info for every Disney embarkation port.',
+  description:
+    'Disney Cruise Line port guides for Nassau, Castaway Cay, Lookout Cay, Cozumel, Grand Cayman and St. Thomas, plus every Disney embarkation port.',
   openGraph: {
     title: 'Disney Cruise Ports — Destination Guides & Departure Ports',
     description: 'In-depth port guides for every Disney Cruise Line destination — Nassau, Castaway Cay, Lookout Cay, Cozumel, Grand Cayman, St. Thomas — plus departure-port info.',

@@ -8,6 +8,7 @@ export const metadata: Metadata = {
     title: 'Compare Travel Credit Cards for Disney Cruises',
     description: 'Side-by-side comparison of the best travel credit cards for booking Disney cruises.',
     url: 'https://gatgridcruises.com/travel-hacks/compare-cards',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
   },
 }
 

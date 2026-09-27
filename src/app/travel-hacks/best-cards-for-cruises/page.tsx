@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/travel-hacks/best-cards-for-cruises' },
   title: 'Best Credit Cards for Cruise Purchases | Travel Hacks',
   description:
-    'Learn which credit cards offer the best rewards on cruise fares, onboard dining, excursions, and specialty experiences. Strategic card stacking can earn 50,000+ bonus points.',
+    'Which credit cards earn the best rewards on cruise fares, onboard dining and excursions. Strategic card stacking can earn 50,000+ bonus points per trip.',
   keywords: [
     'cruise rewards',
     'credit card points',

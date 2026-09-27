@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/guides/cruise-countdown' },
   title: 'Disney Cruise Countdown Timeline: Every Deadline & Booking Window | GatGrid',
   description:
-    'The ultimate Disney Cruise Line countdown guide. Never miss a booking window for excursions, specialty dining, spa, or online check-in. Includes Castaway Club tier breakdown, midnight ET alerts, and pro tips from Grayson.',
+    'Never miss a Disney cruise booking window — excursions, specialty dining, spa and online check-in. Castaway Club tiers, midnight ET timing, and pro tips.',
   openGraph: {
     title: 'Disney Cruise Countdown Timeline | GatGrid',
     description:

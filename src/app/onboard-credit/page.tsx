@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/onboard-credit' },
   title: 'Free Onboard Credit — GatGrid Cruises',
   description:
-    'Plan your Disney cruise with the GatGrid Cruises concierge and receive free onboard credit that scales with your cruise fare. Learn what OBC is, what you can spend it on, and how to qualify.',
+    'Plan your Disney cruise with the GatGrid concierge and receive free onboard credit that scales with your fare. What OBC covers and how to qualify.',
   openGraph: {
     title: 'Free Onboard Credit — GatGrid Cruises',
     description: 'Plan your Disney cruise with the GatGrid Cruises concierge and receive free onboard credit on every booking.',
