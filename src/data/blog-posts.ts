@@ -24,6 +24,72 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '28',
+    slug: 'disney-cruise-from-san-diego-2027',
+    title: 'Disney Cruise from San Diego: Your Guide to the 2026–27 Baja and Mexican Riviera Season',
+    meta_title: 'Disney Cruise from San Diego: 2026–27 Season Guide',
+    meta_description:
+      'A Disney cruise from San Diego sails 3- to 7-night Baja and Mexican Riviera itineraries through May 2027. Ports, prices, ships, and how to choose a length.',
+    excerpt:
+      'The Disney Magic and Disney Wonder are both working the West Coast this season, running 3- to 7-night Baja and Mexican Riviera itineraries out of San Diego through May 2027. Here is what each length actually gets you, what the sailings are pricing at, and who should choose San Diego over Florida.',
+    author: 'Dr. Grayson Starbuck, DPT',
+    published_date: '2026-10-04',
+    category: 'destinations',
+    tags: ['san-diego', 'baja', 'mexican-riviera', 'disney-wonder', 'disney-magic', 'port-guide', 'west-coast'],
+    read_time: '8 min read',
+    featured_image_url: 'https://images.unsplash.com/photo-1519046904884-53103b34b206?w=1200&h=600&fit=crop',
+    content: `
+<p>Almost every Disney cruise guide assumes you are flying to Orlando. If you live west of the Rockies, that assumption costs you a travel day in each direction and a flight that is rarely cheap. Which is why a <strong>Disney cruise from San Diego</strong> deserves a closer look than it gets — and why this season is the best West Coast calendar Disney has offered in years.</p>
+<p>Both classic ships are out here. The <a href="/ships/disney-magic">Disney Magic</a> and the <a href="/ships/disney-wonder">Disney Wonder</a> are working San Diego from October 2026 through early May 2027, with 3- through 14-night options on the schedule. Here is how the itineraries differ, what they cost, and how to pick a length.</p>
+
+<h2>Which Ships Sail from San Diego This Season</h2>
+<p>The season runs on the two original ships rather than the newer Wish-class vessels, and the trade-off is worth naming up front: no AquaMouse water coaster, no Marvel lounge. What you get instead is a smaller ship — roughly 2,700 guests instead of 4,000 — with shorter lines, faster tendering, and the Broadway-caliber shows that built Disney Cruise Line's reputation.</p>
+<p>The Disney Wonder carries most of the schedule, and she arrives fresh: a two-week dry dock in Victoria, British Columbia in late summer 2026 covered more than a hundred projects — twelve miles of new carpet, a rebuilt Edge tween club, repainted hull, reconditioned stern statues. If you remember the Wonder showing its age, that is not the ship you would board now. The Disney Magic splits the season with her, taking several of the longer Mexican Riviera runs and the repositioning sailings at either end.</p>
+
+<h2>The Four Itineraries on a Disney Cruise from San Diego</h2>
+<p>The schedule is not a grab bag — four core itineraries on rotation, plus two repositioning oddities. Pick the shape of the trip first, dates second.</p>
+
+<h3>3-Night Baja: San Diego → Ensenada → San Diego</h3>
+<p>The shortest option and the most-sold: one port call in Ensenada, one sea day, home Sunday. The sampler — right if you want to learn whether rotational dining and the character programming land with your kids before committing a week to it.</p>
+
+<h3>4-Night Baja: Catalina Island and Ensenada</h3>
+<p>The sweet spot of the whole season. One extra night adds <strong>Catalina Island</strong>, a tender port with nothing like it on a Caribbean itinerary: Avalon's harbor is walkable straight off the tender and the snorkeling at Lover's Cove is legitimately good. Pay for the extra night.</p>
+
+<h3>5- and 6-Night Mexican Riviera: Cabo San Lucas</h3>
+<p>Here the itinerary stops being a weekend and becomes a vacation. These runs swap in <strong>Cabo San Lucas</strong>, the best port on the West Coast schedule: El Arco, the sea lion colony, Medano Beach, and a tender ride worth being on deck for. The 6-night adds a second sea day, which on a smaller ship with good adult spaces is a feature, not filler.</p>
+
+<h3>7-Night Mexican Riviera: Puerto Vallarta, Cabo, and Ensenada</h3>
+<p>Three ports and the only itinerary out here that reaches <strong>Puerto Vallarta</strong>. It also has the most sea-day breathing room, which matters more than people expect: on a 3-night run, your single sea day absorbs the spa, the adult brunch, the character meets and the show you missed. On seven nights, nothing competes.</p>
+
+<h3>The two outliers worth knowing about</h3>
+<p>A 4-night Pacific Coast repositioning run goes San Diego to <a href="/ports/vancouver">Vancouver</a> at season's end, feeding the Alaska summer. And on November 6, 2026, the Magic runs a 14-night eastbound Panama Canal crossing to <a href="/ports/galveston">Galveston</a> via Cabo, Cartagena and Grand Cayman — there is exactly one, and it will not repeat.</p>
+
+<h2>What a Disney Cruise from San Diego Costs</h2>
+<p>West Coast sailings price softer than the Florida schedule as a rule — fewer families chase them, and the private-island draw does not apply. Across the sailings in our index this season:</p>
+<ul>
+<li><strong>3-night Baja:</strong> inside staterooms have been listed from about $1,180, with the busier weeks pushing past $1,900.</li>
+<li><strong>4-night Baja:</strong> from about $1,140 at the low end — which is the quiet headline here, because the 4-night sometimes prices <em>below</em> the 3-night depending on the week.</li>
+<li><strong>5- and 6-night Mexican Riviera:</strong> generally $1,350 to $2,250.</li>
+<li><strong>7-night Mexican Riviera:</strong> from about $2,100, up to around $5,100 over the holidays.</li>
+</ul>
+<p>Those are stateroom totals for the lowest category available when we last captured each sailing, and they move constantly — check live numbers on our <a href="/sailings">sailings page</a>. The real arbitrage: compare the 3-night and 4-night departures in the same week. They are often within a hundred dollars, and the 4-night adds Catalina. For what sits on top of the fare, our <a href="/guides/disney-cruise-cost-guide">Disney cruise cost guide</a> builds a realistic all-in number.</p>
+
+<h2>Getting to the Terminal</h2>
+<p>San Diego is the easiest major cruise port in the country to reach, and it is not close. The B Street Cruise Ship Terminal sits on the downtown Embarcadero about three miles from San Diego International — a ten-minute rideshare, against the Orlando-to-Port-Canaveral haul. A pre-cruise night downtown becomes a pleasure rather than a logistics tax, with the Gaslamp Quarter, the USS Midway and Little Italy all walkable. Our <a href="/ports/san-diego">San Diego port guide</a> covers parking, terminal logistics and what to do with an extra day.</p>
+<p>One document note: every San Diego sailing calls in Mexico. Closed-loop sailings can generally be done with a passport card or a birth certificate plus photo ID for U.S. citizens, but a passport book is the only document that covers you cleanly if you have to fly home from Mexico — and it is required outright on the Panama Canal and Vancouver sailings.</p>
+
+<h2>Who Should Sail West Coast Instead of Florida</h2>
+<p><strong>Choose San Diego if:</strong> the flight math is obvious from where you live; you want a short trip with a real port rather than a sea day; you prefer a smaller ship with shorter lines; or Catalina and Cabo appeal more than another Nassau day.</p>
+<p><strong>Choose Florida if:</strong> Castaway Cay or Lookout Cay is the point — Disney's private islands are the one thing the West Coast schedule cannot offer; you want a Wish-class ship; or your group needs a 7-night Caribbean run with more beach days.</p>
+<p>One more angle: the season overlaps the holidays, and the Wonder gets the full seasonal overlay from November. Our <a href="/blog/very-merrytime-cruises-2026-guide">Very Merrytime cruises 2026 guide</a> explains which weeks get the decorations without the Christmas-week fare — early-November Baja out of San Diego is one of the better value plays in the fleet.</p>
+
+<h2>The Bottom Line</h2>
+<p>A Disney cruise from San Diego is the most underrated corner of the calendar: two refreshed classic ships, four distinct itineraries, a terminal ten minutes from the airport, and fares that generally run below the Florida equivalents. Start with the 4-night Baja run for Catalina; graduate to the 7-night Mexican Riviera.</p>
+<p>Two things to read before you commit: our <a href="/blog/disney-cruise-onboard-credit-guide">onboard credit guide</a>, and our <a href="/blog/disney-cruise-packing-list">Disney cruise packing list</a> — Baja in December is not Caribbean weather, and people pack for the wrong ocean constantly.</p>
+<p>Still deciding between a 3-night sampler and a full week, or trying to work out which ship and date fit your school calendar? <a href="/concierge">Talk to our concierge</a> for personalized recommendations, or <a href="/free-quote">get a free quote from our team</a> — no obligation either way.</p>
+    `.trim(),
+  },
+  {
     id: '27',
     slug: 'disney-destiny-vs-disney-treasure',
     title: 'Disney Destiny vs Disney Treasure: Which Wish-Class Ship Fits Your Family?',
@@ -1656,7 +1722,7 @@ export const blogPosts: BlogPost[] = [
 <p>Seven ships carry the overlay this season, which is the widest coverage Disney has offered:</p>
 <ul>
 <li><strong>From Port Canaveral and Fort Lauderdale</strong> — Disney Magic, Disney Dream, Disney Fantasy, Disney Wish, Disney Treasure, and Disney Destiny, on 3- to 7-night Bahamian and Caribbean itineraries.</li>
-<li><strong>From San Diego</strong> — Disney Wonder, on 3- to 7-night Baja and Mexican Riviera sailings. A 3-night September 28 departure was recently listed from around $1,569 for an inside stateroom, which is among the least expensive ways into the season.</li>
+<li><strong>From San Diego</strong> — Disney Wonder, on 3- to 7-night Baja and Mexican Riviera sailings. A 3-night September 28 departure was recently listed from around $1,569 for an inside stateroom, which is among the least expensive ways into the season. Our full guide to a <a href="/blog/disney-cruise-from-san-diego-2027">Disney cruise from San Diego</a> breaks down each itinerary length.</li>
 </ul>
 <p>You can filter the full fall inventory on our <a href="/sailings">sailings page</a>, and the <a href="/ports/san-diego">San Diego port guide</a> covers logistics if the West Coast option is new to you.</p>
 
@@ -1994,6 +2060,7 @@ export const blogPosts: BlogPost[] = [
 <h2>Which Ships and Ports Have Very Merrytime Sailings</h2>
 <p>In 2026 the holiday treatment covers the entire U.S. fleet: Disney Magic, Disney Wonder, Disney Dream, Disney Fantasy, Disney Wish, <a href="/ships/disney-treasure">Disney Treasure</a>, and <a href="/ships/disney-destiny">Disney Destiny</a>. If you have been waiting for a reason to try one of the newest ships, a Merrytime sailing on the Destiny or Treasure stacks two novelties into one trip.</p>
 <p>Departures run from <a href="/ports/port-canaveral">Port Canaveral</a> and <a href="/ports/fort-lauderdale">Fort Lauderdale</a> in Florida, <a href="/ports/galveston">Galveston</a> in Texas, and <a href="/ports/san-diego">San Diego</a> in California. Itinerary lengths range from 3- and 4-night Bahamian runs up through 5-night and longer Caribbean and Mexican Riviera sailings. Our <a href="/sailings">sailings page</a> lets you filter by ship, port, and date, which is the fastest way to see what is still open in the window you want.</p>
+<p>West Coast families have the best Merrytime value in the fleet this year: the decorated Disney Wonder runs short Baja sailings in November at off-peak fares. Our guide to taking a <a href="/blog/disney-cruise-from-san-diego-2027">Disney cruise from San Diego</a> covers that season in full.</p>
 
 <h2>The Holidays Follow You to Castaway Cay and Lookout Cay</h2>
 <p>The part people do not expect: the decorations extend to Disney's private island destinations. Both Castaway Cay and Lookout Cay at Lighthouse Point get trees, holiday music, and seasonal food, which produces the specific surreal pleasure of a decorated Christmas tree on a beach in seventy-eight-degree weather. If you are new to the island day, our <a href="/guides/castaway-cay-guide">Castaway Cay guide</a> covers how to plan it.</p>

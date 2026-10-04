@@ -4,7 +4,23 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   alternates: { canonical: '/privacy' },
   title: 'Privacy Policy',
-  description: 'GatGridCruises privacy policy — how we collect, use, and protect your information.',
+  description:
+    'The GatGridCruises privacy policy — what information we collect, how we use and protect it, which cookies we set, and the rights you have over your data.',
+  openGraph: {
+    type: 'website',
+    title: 'Privacy Policy — GatGridCruises',
+    description:
+      'What information GatGridCruises collects, how we use and protect it, which cookies we set, and the rights you have over your data.',
+    url: 'https://gatgridcruises.com/privacy',
+    siteName: 'GatGridCruises',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Privacy Policy — GatGridCruises',
+    description: 'What we collect, how we use it, and the rights you have over your data.',
+    images: ['https://gatgridcruises.com/og-image.png'],
+  },
 }
 
 export default function PrivacyPage() {

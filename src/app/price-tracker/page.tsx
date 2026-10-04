@@ -17,7 +17,8 @@ export const dynamic = 'force-dynamic'
 export const metadata: Metadata = {
   alternates: { canonical: '/price-tracker' },
   title: 'Disney Cruise Price Tracker — Lowest Fare on Every Sailing',
-  description: 'Browse the lowest tracked fare for every Disney Cruise Line sailing, filterable by ship, destination, and month.',
+  description:
+    'Browse the lowest tracked fare for every Disney Cruise Line sailing, filterable by ship, destination, and month. Updated from public pricing data.',
   keywords: ['disney cruise price tracker', 'disney cruise prices', 'disney cruise deals', 'cruise price comparison'],
   openGraph: {
     title: 'Disney Cruise Price Tracker — Lowest Fare on Every Sailing',

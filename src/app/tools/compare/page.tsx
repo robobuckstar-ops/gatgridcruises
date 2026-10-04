@@ -11,7 +11,8 @@ export const dynamic = 'force-dynamic'
 export const metadata: Metadata = {
   alternates: { canonical: '/tools/compare' },
   title: 'Compare Sailings — Side-by-Side Disney Cruise Comparison',
-  description: 'Compare up to 4 Disney cruise sailings side by side. See prices, ships, itineraries, cabin categories, and deal scores.',
+  description:
+    'Compare up to 4 Disney cruise sailings side by side. See prices, ships, itineraries, cabin categories, and our deal score for each sailing.',
   openGraph: {
     title: 'Compare Sailings — Side-by-Side Disney Cruise Comparison',
     description: 'Compare up to 4 Disney cruise sailings side by side — prices, ships, itineraries, cabin categories, and deal scores.',

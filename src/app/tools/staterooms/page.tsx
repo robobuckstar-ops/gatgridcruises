@@ -5,7 +5,8 @@ import { StateroomFinder } from './stateroom-finder'
 export const metadata: Metadata = {
   alternates: { canonical: '/tools/staterooms' },
   title: 'Stateroom Finder — Pick the Perfect Disney Cruise Stateroom',
-  description: 'Find your ideal Disney cruise stateroom with noise ratings, view ratings, and honest pros/cons for every room.',
+  description:
+    'Find your ideal Disney cruise stateroom with noise ratings, view ratings, and honest pros and cons for every category on every ship in the fleet.',
   openGraph: {
     title: 'Stateroom Finder — Pick the Perfect Disney Cruise Stateroom',
     description: 'Find your ideal Disney cruise stateroom with noise ratings, view ratings, and honest pros/cons.',

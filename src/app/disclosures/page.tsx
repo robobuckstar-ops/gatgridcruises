@@ -3,7 +3,23 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   alternates: { canonical: '/disclosures' },
   title: 'Affiliate & Advertising Disclosures',
-  description: 'Full transparency about affiliate relationships, advertising, and sponsored content on GatGridCruises.',
+  description:
+    'Full transparency about the affiliate relationships, advertising, and sponsored content on GatGridCruises — which programs we use and how we earn revenue.',
+  openGraph: {
+    type: 'website',
+    title: 'Affiliate & Advertising Disclosures — GatGridCruises',
+    description:
+      'Which affiliate programs we participate in, how advertising works on the site, and why those relationships do not influence our editorial scores.',
+    url: 'https://gatgridcruises.com/disclosures',
+    siteName: 'GatGridCruises',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Affiliate & Advertising Disclosures',
+    description: 'How GatGridCruises earns revenue, and why it does not influence our editorial scores.',
+    images: ['https://gatgridcruises.com/og-image.png'],
+  },
 }
 
 export default function DisclosuresPage() {

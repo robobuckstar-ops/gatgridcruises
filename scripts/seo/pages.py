@@ -37,13 +37,33 @@ def brace_block(s, key):
     return None
 
 
-def str_field(block, key):
+def str_field(block, key, page=''):
+    """Read a string field out of a metadata block.
+
+    `description: SOME_CONST` used to fall through this regex, which then matched
+    the *next* `description:` in the block (usually the twitter one) and reported
+    a length for the wrong string. Resolve the identifier against the file first.
+    """
+    m = re.search(rf"(?<![\w.]){key}:\s*(?:\n\s*)?([A-Z][A-Z0-9_]*)\s*,", block)
+    if m and page:
+        c = re.search(rf"const {m.group(1)}\s*=\s*(['\"`])((?:[^\\]|\\.)*?)\1", page, re.S)
+        if c:
+            return c.group(2)
     m = re.search(rf"(?<![\w.]){key}:\s*(?:\n\s*)?(['\"`])((?:[^\\]|\\.)*?)\1", block, re.S)
     return m.group(2) if m else None
 
 
+def is_noindex(block):
+    """robots: { index: false } pages are deliberately out of the index."""
+    robots = brace_block(block, 'robots')
+    return bool(robots and re.search(r'index:\s*false', robots))
+
+
 def desc_len(d):
-    return len(d.replace('\\n', ' ').replace("\\'", "'").replace('\\"', '"'))
+    d = d.replace('\\n', ' ').replace("\\'", "'").replace('\\"', '"')
+    # template interpolations render as a short value, not as the expression text
+    d = re.sub(r'\$\{[^}]*\}', 'NN', d)
+    return len(d)
 
 
 def is_redirect_only(s):
@@ -73,21 +93,22 @@ def collect():
                 break
             if 'export const metadata' in s:
                 meta, kind = brace_block(s, 'export const metadata'), 'static'
+                page = s  # consts the metadata references live in this file
                 break
-        routes.append((route, kind, meta))
+        routes.append((route, kind, meta, page))
     return sorted(routes)
 
 
 def main():
     findings = []
-    routes = collect()
-    for route, kind, meta in routes:
+    routes = [r for r in collect() if not (r[2] and is_noindex(r[2]))]
+    for route, kind, meta, page in routes:
         if kind == 'dynamic':
             continue
         if kind is None or meta is None:
             findings.append(('NO-METADATA', route, ''))
             continue
-        desc = str_field(meta, 'description')
+        desc = str_field(meta, 'description', page)
         if not desc:
             findings.append(('NO-DESC', route, ''))
         else:

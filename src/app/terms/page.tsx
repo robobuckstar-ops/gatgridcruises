@@ -4,7 +4,23 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   alternates: { canonical: '/terms' },
   title: 'Terms of Use',
-  description: 'GatGridCruises terms of use — the rules and guidelines for using our website.',
+  description:
+    'The GatGridCruises terms of use — what this site is and is not, how our pricing data should be used, affiliate disclosures, and limits on our liability.',
+  openGraph: {
+    type: 'website',
+    title: 'Terms of Use — GatGridCruises',
+    description:
+      'What GatGridCruises is and is not, how to use our pricing data, our affiliate relationships, and the limits of our liability as an information site.',
+    url: 'https://gatgridcruises.com/terms',
+    siteName: 'GatGridCruises',
+    images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Terms of Use — GatGridCruises',
+    description: 'An independent information site, not a travel agency — here is what that means.',
+    images: ['https://gatgridcruises.com/og-image.png'],
+  },
 }
 
 export default function TermsPage() {

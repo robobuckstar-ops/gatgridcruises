@@ -11,7 +11,8 @@ export const dynamic = 'force-dynamic'
 export const metadata: Metadata = {
   alternates: { canonical: '/tools/flights' },
   title: 'Flight Finder — Find Flights to Your Cruise Port',
-  description: 'Find the best flights to your Disney cruise departure port. Get arrival time recommendations and booking links.',
+  description:
+    'Find flights to your Disney cruise departure port, with arrival-day recommendations, airport-to-terminal distances, and links to compare fares.',
   openGraph: {
     title: 'Flight Finder — Find Flights to Your Cruise Port',
     description: 'Find the best flights to your Disney cruise departure port. Arrival time recommendations and booking links.',

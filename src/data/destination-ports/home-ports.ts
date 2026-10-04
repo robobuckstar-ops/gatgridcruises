@@ -270,7 +270,7 @@ export const homePorts: DestinationPort[] = [
       { title: 'Free trolley to Old Town', detail: 'The San Diego MTS trolley is cheap and connects the cruise terminal area to Old Town and Balboa Park — easier than driving.' },
       { title: 'Sunday at the zoo', detail: 'The zoo can be packed on weekends; Sunday afternoon gets the lightest crowds.' },
     ],
-    bestTimeSummary: 'San Diego is reliable year-round — mild Mediterranean climate. Disney Wonder\'s SD season runs October through April.',
+    bestTimeSummary: 'San Diego is reliable year-round — mild Mediterranean climate. The San Diego season runs October through early May, split between the Disney Wonder and the Disney Magic.',
     weatherWindows: [
       { months: 'Oct – May', weather: '60s–70s, dry', crowds: 'High', note: 'Cruise season' },
       { months: 'Jun – Sep', weather: '70s, dry', crowds: 'High', note: 'Tourist peak' },
@@ -281,11 +281,19 @@ export const homePorts: DestinationPort[] = [
       { method: 'MTS Trolley', cost: '$2.50 per ride', description: 'Light rail connecting downtown to Old Town, Mission Valley, the border.' },
       { method: 'Walking', cost: 'Free', description: 'The downtown is walkable — Gaslamp, Embarcadero, USS Midway all close together.' },
     ],
-    shipsThatVisit: [{ name: 'Disney Wonder', slug: 'disney-wonder' }],
+    shipsThatVisit: [
+      { name: 'Disney Wonder', slug: 'disney-wonder' },
+      { name: 'Disney Magic', slug: 'disney-magic' },
+    ],
     faqs: [
       { question: 'Do I need a passport for Mexican Riviera cruises?', answer: 'Yes — Mexico stops require a US passport book.' },
       { question: 'Can I walk from SAN Airport to the pier?', answer: 'Technically yes (~3 km) but not advisable with luggage. Uber is $15 and 10 minutes.' },
       { question: 'When do I board?', answer: 'Disney assigns port arrival times by deck/cabin. Don\'t arrive earlier than your assigned slot.' },
+      { question: 'Which itineraries sail from San Diego?', answer: '3- and 4-night Baja runs to Ensenada and Catalina Island, plus 5-, 6- and 7-night Mexican Riviera sailings that add Cabo San Lucas and Puerto Vallarta.' },
+    ],
+    relatedPosts: [
+      { slug: 'disney-cruise-from-san-diego-2027', title: 'Disney Cruise from San Diego: Your Guide to the 2026–27 Baja and Mexican Riviera Season' },
+      { slug: 'very-merrytime-cruises-2026-guide', title: 'Very Merrytime Cruises 2026: What to Expect and When to Sail' },
     ],
   },
 

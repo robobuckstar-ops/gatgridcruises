@@ -6,7 +6,8 @@ import { MapPin, Home, Heart } from 'lucide-react'
 export const metadata: Metadata = {
   alternates: { canonical: '/hotels' },
   title: 'Pre-Cruise Hotel Guide',
-  description: 'Honest hotel recommendations near Disney cruise ports. Find the best places to stay the night before your departure.',
+  description:
+    'Honest hotel recommendations near every Disney cruise port. Find the best places to stay the night before departure, with shuttle and parking notes.',
   openGraph: {
     title: 'Pre-Cruise Hotel Guide',
     description: 'Honest hotel recommendations near Disney cruise ports. Find the best places to stay before your departure.',
