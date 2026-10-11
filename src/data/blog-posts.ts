@@ -24,6 +24,97 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '29',
+    slug: 'what-to-pack-disney-cruise-winter',
+    title: 'What to Pack for a Disney Cruise in Winter: A November-Through-March Packing List',
+    meta_title: 'What to Pack for a Disney Cruise in Winter',
+    meta_description:
+      'What to pack for a Disney cruise in winter: layers for cool evenings, swimwear for warm ports, holiday outfits, and the gear most guests forget to pack.',
+    excerpt: 'Winter Disney sailings are warm by day and surprisingly cool at night, especially from Galveston and San Diego. Here is what to pack for a Disney cruise in winter, what to leave home, and the holiday extras worth the suitcase space.',
+    author: 'Dr. Grayson Starbuck, DPT',
+    published_date: '2026-10-11',
+    category: 'tips',
+    tags: ['packing', 'winter-cruise', 'very-merrytime', 'holiday-cruise', 'packing-list', 'what-to-wear', 'disney-cruise-line'],
+    read_time: '7 min read',
+    featured_image_url: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=1200&h=600&fit=crop',
+    content: `
+<p>Winter is the season when packing for a Disney cruise gets genuinely tricky. The Caribbean is warm, but the deck at 9 p.m. is not, the Texas coast can be chilly at embarkation, and a holiday sailing adds a whole second wardrobe of festive outfits. If you are trying to work out <strong>what to pack for a Disney cruise in winter</strong>, the short answer is: pack for two climates, and pack lightly for both.</p>
+<p>This guide covers the layering strategy, the swim-and-sun items you still need, the holiday extras, and the winter-specific mistakes we see most. For the full year-round checklist, start with our <a href="/blog/disney-cruise-packing-list">Disney cruise packing list</a> and use this post as the winter add-on.</p>
+
+<h2>Know Your Winter Climate Before You Pack</h2>
+<p>"Winter cruise" means different things depending on where you sail. The weather you will actually meet depends mostly on the departure port and the itinerary.</p>
+
+<h3>Florida and Caribbean sailings</h3>
+<p>Departures from <a href="/ports/port-canaveral">Port Canaveral</a> and <a href="/ports/fort-lauderdale">Fort Lauderdale</a> are the mildest. Days are typically warm enough for the pool, but sea breezes make evenings feel cooler, and a Bahamas stop like <a href="/ports/nassau">Nassau</a> can be breezier than guests expect in January. Expect shorts-and-tee days with a light layer after dark.</p>
+
+<h3>Texas Gulf Coast sailings</h3>
+<p>From <a href="/ports/galveston">Galveston</a>, you may board on a cold, gray morning and be in warm weather a couple of days later. Pack a real jacket for embarkation and the first sea day, then plan on lighter clothes once you reach Western Caribbean ports.</p>
+
+<h3>West Coast sailings</h3>
+<p>Baja and Mexican Riviera runs from <a href="/ports/san-diego">San Diego</a> are cooler on deck than Caribbean sailings, particularly on sea days and at night. Our <a href="/blog/disney-cruise-from-san-diego-2027">San Diego season guide</a> covers what each itinerary feels like.</p>
+
+<h2>The Winter Layering System</h2>
+<p>The goal is a small wardrobe that mixes and matches, not a bag for every possible forecast.</p>
+
+<h3>Base layers: light and breathable</h3>
+<p>Bring tees, tank tops, and shorts for port days and the pool deck. Cotton-blend and moisture-wicking fabrics both work. Plan roughly one outfit per day plus a spare, and use the ship's laundry if you are sailing longer than a week.</p>
+
+<h3>Mid layers: the pieces you will wear most</h3>
+<p>A light cardigan, quarter-zip, or hoodie covers most winter evenings on deck. This is the item guests most often wish they had packed more of, because the sail-away party and late-night deck events run cooler than the dining rooms.</p>
+
+<h3>One outer layer</h3>
+<p>A packable windbreaker or light jacket is enough for most Caribbean winter sailings. If you are departing from Galveston or San Diego, a slightly warmer jacket is worth the space.</p>
+
+<h2>Don't Skip the Warm-Weather Gear</h2>
+<p>Winter does not cancel the beach. Port days and private island days stay warm enough for swimming on most itineraries, and the sun at sea is strong in January too.</p>
+<ul>
+<li><strong>Two swimsuits per person</strong> so one can dry between pool and port days.</li>
+<li><strong>Reef-safe sunscreen and a hat.</strong> Winter sun still burns on open decks.</li>
+<li><strong>A beach cover-up or light shirt</strong> for walking between the pool and indoor areas, which can feel chilly when you are wet.</li>
+<li><strong>Water shoes</strong> if you plan to explore rocky shorelines or snorkel at ports.</li>
+</ul>
+<p>If you are visiting Disney's private islands, our <a href="/blog/castaway-cay-vs-lookout-cay">Castaway Cay vs. Lookout Cay comparison</a> covers what to bring ashore on island day.</p>
+
+<h2>Holiday and Themed Sailings: The Extras Worth Packing</h2>
+<p>If your dates fall in November or December, you are likely on a <a href="/blog/very-merrytime-cruises-2026-guide">Very Merrytime cruise</a>, and the outfits are part of the fun.</p>
+<ul>
+<li><strong>Festive outfits or matching pajamas</strong> for the tree lighting and holiday party. The atrium photo backdrops are some of the best of the year.</li>
+<li><strong>A few holiday accessories</strong> such as Santa hats, headbands, and ornament-style pins, which pack flat.</li>
+<li><strong>A small tote bag</strong> for holiday merchandise you may bring home.</li>
+<li><strong>Extra room in your suitcase.</strong> Seasonal merchandise tends to come home with guests.</li>
+</ul>
+<p>Stateroom doors are magnetic, so lightweight door decorations are a popular touch on holiday sailings and pack flat in a carry-on.</p>
+
+<h2>Dinner Attire in Winter</h2>
+<p>Dress codes do not change by season, but the clothes you choose might. Disney keeps most dining relaxed, with a slightly dressier feel on some evenings. Bring one or two nicer outfits, a light wrap or blazer for cooler dining rooms, and comfortable shoes you can wear all day. Pirate Night is costume-friendly, and specialty adult restaurants have their own expectations, so check before you board.</p>
+
+<h2>Carry-On and Day-One Essentials</h2>
+<p>Your checked bags won't reach your stateroom until the afternoon or evening. Keep the following with you:</p>
+<ul>
+<li>Swimsuits and sunscreen, since the pools are open on embarkation day</li>
+<li>A light layer for the sail-away party</li>
+<li>Medications, passports or birth certificates, and boarding documents</li>
+<li>A small refillable water bottle</li>
+</ul>
+<p>Our <a href="/blog/port-canaveral-disney-cruise-embarkation-day">Port Canaveral embarkation day walkthrough</a> explains exactly how luggage handoff works.</p>
+
+<h2>What to Leave Home</h2>
+<ul>
+<li><strong>Bulky winter coats and boots</strong>, unless you are flying out of somewhere genuinely cold. Wear them to the airport and check them if needed.</li>
+<li><strong>Too many shoes.</strong> Sandals, sneakers, and one dressier pair cover almost everything.</li>
+<li><strong>Irons and steamers.</strong> Disney prohibits them.</li>
+<li><strong>A different outfit for every hour.</strong> You'll wear the same layers repeatedly.</li>
+</ul>
+
+<h2>A Quick Winter Packing Checklist</h2>
+<p>For a typical seven-night winter sailing: five to seven tops, three pairs of shorts, two pairs of pants, two swimsuits, one light jacket, one cardigan or hoodie, two nicer dinner outfits, sleepwear, undergarments, sneakers, sandals, one dressier pair of shoes, sunscreen, a hat, and any holiday outfits for the sailing. Add a few spares if you have kids, because accidents happen.</p>
+
+<h2>The Bottom Line</h2>
+<p>Winter packing comes down to layers. Bring light clothes for the warm part of the day, one cozy layer for the evening, your swimsuits, and any holiday outfits for the sailing. Leave the bulky gear at home and you'll have room to spare on the way back.</p>
+<p>Not sure which itinerary or season fits your family's calendar and comfort level? <a href="/concierge">Talk to our concierge</a> for personalized recommendations, or <a href="/free-quote">get a free quote from our team</a>. You can also browse current options on our <a href="/sailings">sailings page</a>.</p>
+    `.trim(),
+  },
+  {
     id: '28',
     slug: 'disney-cruise-from-san-diego-2027',
     title: 'Disney Cruise from San Diego: Your Guide to the 2026–27 Baja and Mexican Riviera Season',
@@ -888,7 +979,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2>Protect Your Investment</h2>
 <p>A Disney cruise is often $3,000–$12,000 or more for a family. The right credit card provides trip cancellation coverage, lost luggage protection, and purchase protection. See our guide to <a href="/blog/best-credit-cards-disney-cruises">the best credit cards for Disney cruises</a> for which cards offer the best protection and how to trigger coverage on your booking.</p>
-<p>Sailing over the holidays? Add festive outfits and matching pajamas to the list — the photo backdrops on a <a href="/blog/very-merrytime-cruises-2026-guide">Very Merrytime cruise</a> are the best the ship offers all year, and almost everyone wishes they had packed for them.</p>
+<p>Sailing in winter? Our <a href="/blog/what-to-pack-disney-cruise-winter">winter packing guide</a> covers layers and cool-weather ports. Sailing over the holidays? Add festive outfits and matching pajamas to the list — the photo backdrops on a <a href="/blog/very-merrytime-cruises-2026-guide">Very Merrytime cruise</a> are the best the ship offers all year, and almost everyone wishes they had packed for them.</p>
 <p>For our full gear guide, visit our <a href="/guides/disney-cruise-packing-list">Disney Cruise Packing Gear Guide</a>. Ready to find your sailing? Our <a href="/search">AI cruise finder</a> scans Disney's inventory for deals, or <a href="/book">reach out to Grayson directly</a> for personalized guidance.</p>
     `.trim(),
   },
@@ -2069,7 +2160,7 @@ export const blogPosts: BlogPost[] = [
 <p>A few things that make a real difference:</p>
 <ul>
 <li><strong>Book the November sailing if the calendar allows.</strong> Same decorations, materially different fare.</li>
-<li><strong>Pack festive.</strong> Matching pajamas and holiday outfits are common on these sailings, and the photo backdrops are the best the ship offers all year. Our <a href="/blog/disney-cruise-packing-list">Disney cruise packing list</a> covers the rest.</li>
+<li><strong>Pack festive.</strong> Matching pajamas and holiday outfits are common on these sailings, and the photo backdrops are the best the ship offers all year. Our <a href="/blog/disney-cruise-packing-list">Disney cruise packing list</a> covers the rest, and our <a href="/blog/what-to-pack-disney-cruise-winter">winter packing guide</a> covers layers for cool evenings.</li>
 <li><strong>Learn the Navigator app before you board.</strong> Merrytime events are layered on top of the normal daily schedule, and the tree lighting in particular is easy to miss if you are not looking for it.</li>
 <li><strong>Book dining and activities the morning your window opens.</strong> Holiday sailings fill their reservation inventory faster than an average week.</li>
 <li><strong>Stack your onboard credit.</strong> Holiday merchandise and specialty menus are exactly what credit is for. Our <a href="/blog/disney-cruise-onboard-credit-guide">onboard credit guide</a> explains where it comes from and how much to expect.</li>
