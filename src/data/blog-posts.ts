@@ -24,6 +24,76 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '30',
+    slug: 'disney-cruise-discounts-2027',
+    title: 'Disney Cruise Discounts for 2027: How Sales, Member Offers, and Price Drops Actually Work',
+    meta_title: 'Disney Cruise Discounts 2027: How Offers Really Work',
+    meta_description:
+      'Disney cruise discounts explained: how per-person savings, DVC member offers, and post-booking price drops work, plus a simple way to compare any deal.',
+    excerpt: 'Disney cruise discounts look different every few weeks, but they follow a pattern. Here is how Disney Cruise Line sales, member offers, and price drops work, and how to tell a real deal from a headline number.',
+    author: 'Dr. Grayson Starbuck, DPT',
+    published_date: '2026-10-18',
+    category: 'tips',
+    tags: ['disney-cruise-discounts', 'savings', 'money-saving', 'dvc-member-offer', 'cruise-deals', '2027', 'disney-cruise-line'],
+    read_time: '6 min read',
+    featured_image_url: 'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=1200&h=600&fit=crop',
+    content: `
+<p>Disney Cruise Line rarely runs a blanket sale, which is why <strong>Disney cruise discounts</strong> tend to come as short, targeted offers tied to specific ships, sailing dates, and stateroom types. If you are planning a 2027 sailing, understanding how those offers are built will help you decide when to book, when to wait, and when a flashy headline is not worth chasing.</p>
+<p>This guide explains the main types of Disney cruise discounts, uses real offers from this year as examples, and ends with a quick method for comparing any deal. For a broader list of strategies, pair it with our <a href="/blog/save-money-disney-cruise">10 insider tips for saving money on a Disney cruise</a>.</p>
+
+<h2>How Disney Cruise Discounts Are Structured</h2>
+<p>Most Disney cruise discounts are not a percentage off the whole trip. They are usually a fixed amount per guest, taken off the base cruise fare, and they only apply to certain sailings and stateroom categories. That structure matters because the savings you see in a headline often shrink once you look at your actual cabin and dates.</p>
+
+<h3>A real example: the 2026-27 savings offer</h3>
+<p>This summer, Disney advertised savings of up to $1,500 per stateroom on select sailings departing from October 1, 2026 through March 26, 2027. The amount was a flat figure per guest, for up to five guests in a room. On seven-night sailings that worked out to $500 per guest in a Verandah stateroom, $400 in Oceanview, and $300 in Inside. On three- to six-night sailings it was $250, $200, and $150. The offer covered select <a href="/ships/disney-treasure">Disney Treasure</a>, <a href="/ships/disney-fantasy">Disney Fantasy</a>, and <a href="/ships/disney-wonder">Disney Wonder</a> sailings, and the booking window closed on August 30, 2026.</p>
+<p>That offer has ended, but it is a useful template. Notice what it rewarded: longer sailings, nicer staterooms, and larger families. A couple in an Inside stateroom on a short cruise saw a very different number than a family of five in a Verandah room.</p>
+
+<h2>Member and Resident Offers</h2>
+<p>Some of the best Disney cruise discounts are tied to who you are rather than when you book.</p>
+
+<h3>Disney Vacation Club member offers</h3>
+<p>Disney Vacation Club has announced offers for members on newly released Fall 2027 and Spring 2028 sailings aboard the Disney Wonder, Disney Dream, and Disney Fantasy. As announced in August, the offer was 20 percent off the voyage fare plus a $250 onboard credit for members who book by October 31, 2026. The credit has point-related conditions, and Disney had not yet published a full list of eligible sailings at the time, so DVC members should confirm the details directly with Member Services before relying on it.</p>
+
+<h3>Other special rates</h3>
+<p>From time to time Disney also releases offers for Florida residents, military families, and past guests. These come and go, and they usually have their own booking windows and blackout dates. If you qualify for one, it is worth asking about it every time you check pricing.</p>
+
+<h2>Price Drops After You Book</h2>
+<p>A booking is not always locked in at the price you paid. When Disney lowers the fare or releases a new promotion on a sailing you have already reserved, you may be able to have the better price applied to your existing reservation without cancelling. In the 2026-27 offer above, guests or their travel agents could call Disney to apply the savings to a current booking.</p>
+<p>The practical lesson is to keep watching your sailing after you book. Final payment is the point where changes get harder, so check prices regularly until then. Our <a href="/price-tracker">price tracker</a> and <a href="/deal-alerts">deal alerts</a> are built for exactly this.</p>
+
+<h2>Disney Cruise Discounts Beyond the Fare</h2>
+<p>The cruise fare is only part of what you spend. Other savings can be just as valuable:</p>
+<ul>
+<li><strong>Onboard credit.</strong> Credit you can spend on excursions, dining, and gifts often beats a small fare reduction. See our <a href="/blog/disney-cruise-onboard-credit-guide">onboard credit guide</a> and the <a href="/tools/obc-calculator">onboard credit calculator</a>.</li>
+<li><strong>Shoulder-season dates.</strong> Sailings outside school holidays are consistently cheaper. Our <a href="/guides/best-time-to-book-disney-cruise">best time to book guide</a> explains the pattern.</li>
+<li><strong>Error fares.</strong> Occasional pricing mistakes can be dramatic, as we cover in <a href="/blog/error-fares-how-to-find-deals">error fares explained</a>.</li>
+<li><strong>Using a travel agent.</strong> Agents can often add perks without changing your fare. Read <a href="/blog/transfer-disney-cruise-booking-to-travel-agent">how a booking transfer works</a> if you have already reserved.</li>
+</ul>
+
+<h2>How to Compare Any Disney Cruise Discount</h2>
+<p>When a new offer appears, run it through four quick questions:</p>
+<ol>
+<li><strong>Does my sailing qualify?</strong> Check the ship, date range, and itinerary first.</li>
+<li><strong>Does my stateroom qualify?</strong> Many offers exclude suites and some categories.</li>
+<li><strong>What is the total after the discount?</strong> Compare the final fare, not the percentage or the headline amount.</li>
+<li><strong>What is the deadline?</strong> Short windows are common, so know the date before you start planning.</li>
+</ol>
+<p>It also helps to compare a few sailings side by side. You can browse current options on our <a href="/sailings">sailings page</a> to see how dates, ships, and prices stack up.</p>
+
+<h2>Common Mistakes to Avoid</h2>
+<ul>
+<li><strong>Booking only because of a deadline.</strong> A discount on the wrong sailing is not a savings.</li>
+<li><strong>Ignoring the fine print.</strong> Category limits and guest caps change the math.</li>
+<li><strong>Forgetting to recheck.</strong> A price that drops after you book is only useful if you notice it.</li>
+<li><strong>Comparing cruises to resorts.</strong> Disney fares include dining, entertainment, and kids' clubs, so compare total trip cost, not just the sticker price.</li>
+</ul>
+
+<h2>The Bottom Line</h2>
+<p>Disney cruise discounts are real, but they are narrow. The people who save the most are the ones who know their dates and cabin type, watch pricing before and after booking, and read the terms of each offer before acting. Treat any single headline number as a starting point, not a promise.</p>
+<p>Want help figuring out which current offers fit your family? <a href="/concierge">Talk to our concierge</a> for personalized recommendations, or <a href="/free-quote">get a free quote from our team</a>. Offers and eligibility change often, so always confirm final terms with Disney Cruise Line.</p>
+    `.trim(),
+  },
+  {
     id: '29',
     slug: 'what-to-pack-disney-cruise-winter',
     title: 'What to Pack for a Disney Cruise in Winter: A November-Through-March Packing List',
@@ -655,6 +725,7 @@ export const blogPosts: BlogPost[] = [
     featured_image_url: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1200&h=600&fit=crop',
     content: `
 <p>Error fares are glitches in cruise line pricing systems that result in significantly underpriced sailings. These rare opportunities can save you 50% or more on cruise costs—if you know how to spot and book them.</p>
+<p>Error fares are the rare exception. For the more common, predictable offers, read how <a href="/blog/disney-cruise-discounts-2027">Disney cruise discounts work in 2027</a>.</p>
 
 <h2>How Error Fares Happen</h2>
 <p>Cruise lines process thousands of price changes daily across multiple systems and channels. Occasionally, a pricing system error results in a sailing being offered at an incorrect (lower) rate.</p>
@@ -1297,6 +1368,7 @@ export const blogPosts: BlogPost[] = [
     featured_image_url: 'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=1200&h=600&fit=crop',
     content: `
 <p>There's no way around it — Disney cruises are expensive. But expensive doesn't mean there aren't real, meaningful levers you can pull to reduce what you pay. These ten strategies have helped real Disney cruisers save hundreds to thousands of dollars without cutting anything from the experience that matters.</p>
+<p><em>Updated: for how current offers are built and how to compare them, see our guide to <a href="/blog/disney-cruise-discounts-2027">Disney cruise discounts for 2027</a>.</em></p>
 
 <h2>Tip 1: Use GatGrid's Real-Time Deal Scanner</h2>
 <p>Disney's pricing changes constantly — sometimes daily — as their revenue management algorithms adjust for demand and unsold inventory. A sailing that's overpriced today can drop 15–25% within two weeks if Disney's system detects soft demand. Manually checking prices is tedious and easy to miss.</p>
