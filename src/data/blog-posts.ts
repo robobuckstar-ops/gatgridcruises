@@ -24,6 +24,182 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '33',
+    slug: 'pixar-day-at-sea-2027-disney-fantasy-guide',
+    title: 'Pixar Day at Sea 2027: Dates, Characters, and Tips for the Disney Fantasy Sailings',
+    meta_title: 'Pixar Day at Sea 2027: Dates, Characters, Tips',
+    meta_description:
+      'Pixar Day at Sea 2027 returns on nine Disney Fantasy sailings from Port Canaveral. See the dates, characters, deck parties, dining, and tips for families.',
+    excerpt:
+      'Pixar Day at Sea returns to the Disney Fantasy for nine 5-night sailings from Port Canaveral between January and April 2027. Here are the dates, what is included, what needs a reservation, and how to plan the day with kids.',
+    author: 'Dr. Grayson Starbuck, DPT',
+    published_date: '2026-10-25',
+    category: 'tips',
+    tags: ['pixar-day-at-sea', 'disney-fantasy', 'port-canaveral', '2027', 'kids-and-family', 'onboard-activities', 'disney-cruise-line'],
+    read_time: '6 min read',
+    featured_image_url: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&h=600&fit=crop',
+    content: `
+<p><strong>Pixar Day at Sea 2027</strong> is coming back to the Disney Fantasy, and it is one of the more fun reasons to pick a specific sailing instead of just the cheapest one. Disney is running the celebration on nine 5-night Bahamian-style sailings out of Port Canaveral between late January and late April 2027. If your family quotes Toy Story, Inside Out, or The Incredibles on a regular basis, this is the themed sailing to look at.</p>
+<p>Here is what the day includes, the exact dates, what costs extra, and a few planning tips we would give a friend.</p>
+
+<h2>What Is Pixar Day at Sea?</h2>
+<p>Pixar Day at Sea is a themed overlay on a regular Disney cruise. Nothing about the ship changes: you still get rotational dining, the Broadway-style shows, the kids' clubs, and the AquaDuck. What gets added is a day of Pixar programming, with characters, parties, games, and a themed dinner layered on top of the normal schedule.</p>
+<p>Two things are worth knowing up front. First, most of the programming is included in your fare. Second, Disney has loosened the format over the years: it used to be strictly one sea day, and the programming can now be spread across the cruise, so check the schedule in the Disney Cruise Line Navigator app once your booking is linked.</p>
+
+<h2>Pixar Day at Sea 2027 Sailing Dates</h2>
+<p>All nine sailings are on the <a href="/ships/disney-fantasy">Disney Fantasy</a>, depart from <a href="/ports/port-canaveral">Port Canaveral</a>, and run five nights. The 2027 departure dates are:</p>
+<ul>
+<li>January 24, January 29, and February 7</li>
+<li>February 12 and February 21</li>
+<li>April 4, April 9, April 18, and April 23</li>
+</ul>
+<p>Itineraries are Bahamian, with a stop at Disney's Lookout Cay at Lighthouse Point and, on some sailings, Castaway Cay. The January 29 sailing is listed as a Western Caribbean itinerary on our <a href="/sailings">sailings page</a>, so confirm the route for the exact date you like. You can compare prices side by side on the <a href="/sailing/sailing-DF0856">January 24 sailing</a> and the <a href="/sailing/sailing-DF0872">April 9 sailing</a>, and the full list is filterable by ship and date.</p>
+
+<h2>Pixar Characters You Can Expect to Meet</h2>
+<p>Lineups vary by sailing, but the usual cast includes Woody, Buzz Lightyear, and Jessie from Toy Story; Mr. Incredible, Elastigirl, and Frozone; Joy and Sadness from Inside Out; Mike and Sulley; Miguel from Coco; Remy; and Dug, Russell, and Carl from Up. Some of the most popular meet-and-greets have been reservation-only on past sailings, so look for those in the Navigator app early.</p>
+
+<h3>Unscheduled sightings</h3>
+<p>Not every character appearance is on the schedule. Pixar friends turn up around the ship, which is a nice reason to keep a phone ready for photos during ordinary moments.</p>
+
+<h2>Deck Parties, Pool Fun, and Games</h2>
+<h3>Pixar Pals Celebration</h3>
+<p>The signature deck party happens on the pool deck stage, with characters singing and dancing alongside guests. Arrive 15 to 20 minutes early for a spot with a good view. Younger kids do best near the front but off to one side, where there is room to wiggle.</p>
+
+<h3>Crush's pool party and Edna Mode's style show</h3>
+<p>Crush hosts a pool party with games, and Edna Mode's Style on Parade is a costume-friendly runway moment. If your kids like dressing up, pack Pixar-themed outfits. There is also a costume celebration in the atrium.</p>
+
+<h3>Movies, shorts, trivia, and crafts</h3>
+<p>Expect Pixar films and shorts, trivia, and activities in the kids' spaces. These fill the gaps between the big events without any planning from you.</p>
+
+<h2>Pixar Day at Sea Dining</h2>
+<p>The rotational dining rooms serve a Pixar-themed dinner menu on the celebration night, and quick-service spots and cafes offer themed treats and drinks. Two experiences are worth planning around. The Hey Howdy breakfast with Woody, Jessie, and Bullseye is complimentary but requires a reservation, as does the Anyone Can Cook session. Reservations typically open 30 days before sailing, and the breakfast is popular. Treats at Sweet on You Ice Cream and Sweets cost extra and can sell out. Our <a href="/guides/disney-cruise-food-guide">Disney cruise food guide</a> covers the rest of the dining options on board.</p>
+
+<h2>How to Plan Pixar Day at Sea with Kids</h2>
+<ul>
+<li><strong>Pick the sailing around your calendar first.</strong> Late January and early February sailings overlap fewer school breaks than April, which can affect both crowds and fares.</li>
+<li><strong>Set a reminder for the reservation window.</strong> The character breakfast and cooking session are the two things families most often miss.</li>
+<li><strong>Link your booking to the Navigator app early.</strong> That is where meet times, showtimes, and reservation windows live.</li>
+<li><strong>Plan a quiet break.</strong> If things get busy, the Senses Spa, the Quiet Cove adults-only pool (for the grown-ups), or a calmer dining room give everyone a reset.</li>
+<li><strong>Use onboard credit on the extras.</strong> Themed treats, photos, and merchandise are exactly what credit is for. Our <a href="/blog/disney-cruise-onboard-credit-guide">onboard credit guide</a> explains how it works.</li>
+<li><strong>Know your embarkation day.</strong> Our <a href="/blog/port-canaveral-disney-cruise-embarkation-day">Port Canaveral embarkation walkthrough</a> helps the first day go smoothly.</li>
+</ul>
+
+<h2>Pixar vs. Marvel vs. Seasonal Sailings</h2>
+<p>Disney runs several of these themed overlays. If your family leans toward superheroes, our <a href="/blog/marvel-day-at-sea-2027-guide">Marvel Day at Sea 2027 guide</a> covers the Disney Magic sailings from Galveston. If you want a seasonal feel, our <a href="/blog/halloween-on-the-high-seas-2026-guide">Halloween on the High Seas guide</a> is worth a read. For toddlers and younger kids, Pixar is usually the gentlest of the three.</p>
+
+<h2>The Bottom Line</h2>
+<p>Pixar Day at Sea 2027 is a good fit for families with kids roughly 3 to 10, and for any adult who grew up on Toy Story. The nine Disney Fantasy sailings run January through April 2027, the programming is mostly included, and a couple of the best experiences need advance reservations. Pick your date, mark your reservation window, and pack the costumes.</p>
+<p>Not sure which of the nine sailings fits your family, or how to compare Pixar week against another sailing? <a href="/concierge">Talk to our concierge</a> for personalized recommendations, or <a href="/free-quote">get a free quote from our team</a>. There is no obligation either way.</p>
+<!-- Image alt text suggestions: "Woody and Jessie greeting kids at breakfast on the Disney Fantasy"; "Pixar Pals Celebration deck party on the Disney Fantasy pool deck"; "Disney Fantasy sailing from Port Canaveral." -->
+    `.trim(),
+  },
+  {
+    id: '32',
+    slug: 'disney-cruise-from-galveston-2027',
+    title: 'Disney Cruise from Galveston: Your Guide to the 2026–27 Western Caribbean Season',
+    meta_title: 'Disney Cruise from Galveston 2026–27: Magic Season Guide',
+    meta_description:
+      'Plan a Disney cruise from Galveston in 2026–27: the Disney Magic, Western Caribbean itineraries, ports, and drive-up tips for Texas families.',
+    excerpt:
+      'Disney is back in Galveston for the 2026–27 winter season aboard the Disney Magic, with 4- to 7-night Western Caribbean sailings you can drive to. Here is how to plan one — ports, timing, and how to add free onboard credit.',
+    author: 'Dr. Grayson Starbuck, DPT',
+    published_date: '2026-10-21',
+    category: 'destinations',
+    tags: ['galveston', 'texas', 'disney-magic', 'western-caribbean', 'port-guide', 'drive-up-cruise', 'disney-cruise-line'],
+    read_time: '7 min read',
+    featured_image_url: 'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=1200&h=600&fit=crop',
+    content: `
+<p>For families across Texas and the central U.S., a <strong>Disney cruise from Galveston</strong> is the rare Disney sailing you can reach without a flight. For the 2026–27 winter season, the <a href="/ships/disney-magic">Disney Magic</a> returns to Galveston with Western Caribbean itineraries, and it is the only Disney Cruise Line ship sailing from the port.</p>
+<p>This guide covers what to expect from the season, the ports you will visit, how to pick a sailing, and how booking through a concierge can add free onboard credit at no extra cost.</p>
+
+<h2>The 2026–27 Galveston Season at a Glance</h2>
+<p>The Disney Magic is scheduled to sail from Galveston from late November 2026 through late April 2027. Galveston has been a seasonal Disney port since 2012, and this is expected to be the last traditional winter-only season before Disney moves toward year-round service from Galveston — reportedly with a newer, larger ship. That change has not been officially confirmed by Disney, so for now the Magic is your ship.</p>
+<p>Itineraries typically run 4 to 7 nights, which makes Galveston flexible for both a long weekend and a full week at sea. Exact dates and prices change, so always confirm the current schedule before planning — you can compare live sailings on our <a href="/sailings">sailings page</a>.</p>
+
+<h2>Where You'll Go</h2>
+<p>Western Caribbean sailings from Galveston usually feature a mix of these ports:</p>
+<ul>
+<li><strong>Cozumel, Mexico.</strong> Reefs, beach clubs, and Mayan ruins. See our <a href="/ports/cozumel">Cozumel port guide</a>.</li>
+<li><strong>Grand Cayman.</strong> Stingray City, Seven Mile Beach, and great snorkeling. Our <a href="/ports/grand-cayman">Grand Cayman guide</a> has the details.</li>
+<li><strong>Costa Maya or Progreso, Mexico.</strong> Shorter 4-night sailings often call at Progreso; longer ones add a second Mexican or Caribbean stop.</li>
+<li><strong>Falmouth, Jamaica.</strong> Appears on some 7-night itineraries.</li>
+</ul>
+<p>Because Disney's private island, Castaway Cay, is on the Atlantic side, Galveston sailings focus on the Western Caribbean rather than the Bahamas — a different trip from the Florida departures.</p>
+
+<h2>Why a Drive-Up Cruise Is Worth It</h2>
+<p>Flying a family of four to a Florida port adds up fast. From much of Texas, Oklahoma, Louisiana, and Arkansas, Galveston is a drivable port, which can save hundreds in airfare and lets you pack the car without baggage limits. For many central-U.S. families, that savings alone changes the math on a Disney cruise.</p>
+<p>If you are coming from farther out, Houston's two airports put you about an hour from the terminal. Our <a href="/tools/flights">flight finder</a> can help you compare fares into Houston.</p>
+
+<h2>Picking the Right Sailing</h2>
+<p>A few things to weigh:</p>
+<ol>
+<li><strong>Length.</strong> A 4-night is a great first cruise and an easier sell for a long weekend; a 7-night gives you more time at sea and more ports.</li>
+<li><strong>Stateroom.</strong> The Magic's Deluxe Family Oceanview and Verandah rooms are popular with families; see our <a href="/guides/best-disney-cruise-staterooms">stateroom guide</a>.</li>
+<li><strong>Dates.</strong> Holiday and spring-break weeks book early and cost more. Shoulder weeks are calmer and cheaper — our <a href="/guides/best-time-to-book-disney-cruise">best-time-to-book guide</a> explains the pattern.</li>
+</ol>
+
+<h2>First Time on the Disney Magic?</h2>
+<p>The Magic is the original Disney ship — smaller and more intimate than the newer Wish-class vessels, which many first-timers love. If this is your first Disney cruise, our <a href="/blog/first-time-disney-cruise-tips">first-timer tips</a> and <a href="/blog/first-time-disney-cruise-mistakes">common mistakes to avoid</a> are worth a read before you sail.</p>
+
+<h2>How to Add Free Onboard Credit</h2>
+<p>If you want help planning your Galveston sailing, our concierge team can walk you through it at no cost to you — Disney pays the agency commission, not you — and free onboard credit may be available. You can estimate your credit with our <a href="/tools/obc-calculator">onboard credit calculator</a>. Onboard credit amounts are an estimate, not a guarantee, and are confirmed when you book.</p>
+
+<p>Ready to plan your Texas Disney cruise? <a href="/book">Get a free, no-obligation quote</a> and we'll help you compare dates, ships, and staterooms — and lock in your onboard credit.</p>
+`,
+  },
+  {
+    id: '31',
+    slug: 'disney-cruise-from-fort-lauderdale-2027',
+    title: 'Disney Cruise from Fort Lauderdale: The 2026–27 Port Everglades Guide',
+    meta_title: 'Disney Cruise from Fort Lauderdale 2026–27 Guide',
+    meta_description:
+      'Planning a Disney cruise from Fort Lauderdale? Our 2026–27 Port Everglades guide covers the Disney Destiny, Disney Dream, and Bahamas itineraries.',
+    excerpt:
+      'Fort Lauderdale is now a year-round Disney homeport, with the Disney Destiny and Disney Dream sailing Bahamas and Caribbean trips from Port Everglades. Here is how to plan one and add free onboard credit.',
+    author: 'Dr. Grayson Starbuck, DPT',
+    published_date: '2026-10-21',
+    category: 'destinations',
+    tags: ['fort-lauderdale', 'port-everglades', 'disney-destiny', 'disney-dream', 'bahamas', 'caribbean', 'disney-cruise-line'],
+    read_time: '7 min read',
+    featured_image_url: 'https://images.unsplash.com/photo-1548574505-5e239809ee19?w=1200&h=600&fit=crop',
+    content: `
+<p>A <strong>Disney cruise from Fort Lauderdale</strong> is a newer option that has quickly become one of Disney's busiest departure points. Port Everglades is now Disney Cruise Line's second year-round Florida homeport after Port Canaveral, and for 2026–27 it is home to two ships: the brand-new <a href="/ships/disney-destiny">Disney Destiny</a> and the <a href="/ships/disney-dream">Disney Dream</a>.</p>
+<p>This guide explains which ship fits your trip, where these sailings go, and how booking through a concierge adds free onboard credit at no cost to you.</p>
+
+<h2>Two Ships, Two Different Trips</h2>
+<p>Having two ships at one port means real choice:</p>
+<h3>Disney Destiny</h3>
+<p>The Destiny is a Wish-class ship spending its inaugural season at Fort Lauderdale, sailing short 4- and 5-night cruises to the Bahamas and the Caribbean, with some special 7-night sailings announced for summer 2026. As the newest ship at the port, it has the latest Wish-class features and themed spaces. If you want the most modern Disney ship, this is it. Compare it with its sister in our <a href="/blog/disney-destiny-vs-disney-treasure">Destiny vs. Treasure guide</a>.</p>
+<h3>Disney Dream</h3>
+<p>The Dream runs a year-round program of short 3-, 4-, and 5-night cruises to the Caribbean and Bahamas from Port Everglades. It is a beautifully maintained classic with the signature AquaDuck water coaster, and it is often a bit more affordable than the newest ships — a great pick for a first cruise or a quick getaway.</p>
+<p>Exact ship assignments and dates shift over time, so confirm the current schedule before planning. You can compare live options on our <a href="/sailings">sailings page</a>.</p>
+
+<h2>Where You'll Go</h2>
+<p>Most Fort Lauderdale sailings are short Bahamas and Caribbean trips, which typically include:</p>
+<ul>
+<li><strong>Disney's private islands.</strong> Many Bahamas itineraries visit <a href="/ports/castaway-cay">Castaway Cay</a> or <a href="/ports/lookout-cay">Lookout Cay at Lighthouse Point</a> — the highlight of the trip for most families.</li>
+<li><strong>Nassau, Bahamas.</strong> See our <a href="/ports/nassau">Nassau port guide</a>.</li>
+<li><strong>Caribbean stops.</strong> Longer sailings add ports like Grand Cayman or Cozumel.</li>
+</ul>
+
+<h2>Why Fort Lauderdale Is Easy to Reach</h2>
+<p>Port Everglades sits right next to Fort Lauderdale–Hollywood International Airport (FLL) — one of the shortest airport-to-terminal transfers of any U.S. cruise port, often under 10 minutes. Miami International is about 45 minutes away and adds more flight options. Our <a href="/tools/flights">flight finder</a> can help you compare fares into both.</p>
+<p>The terminal itself is Disney's newest, with the theming and streamlined embarkation you would expect. For a smooth first morning, our <a href="/blog/port-canaveral-disney-cruise-embarkation-day">embarkation-day walkthrough</a> applies to Fort Lauderdale too.</p>
+
+<h2>Choosing Your Sailing</h2>
+<ol>
+<li><strong>Newest ship or best value?</strong> The Destiny for cutting-edge Wish-class features; the Dream for a proven classic at a friendlier price.</li>
+<li><strong>Private island.</strong> If Castaway Cay or Lookout Cay matters to your family, check that it is on the itinerary before booking.</li>
+<li><strong>Length.</strong> A 3- or 4-night is a perfect first cruise; a 5- or 7-night gives you more beach days.</li>
+</ol>
+
+<h2>How to Add Free Onboard Credit</h2>
+<p>If you want help planning your Fort Lauderdale sailing, our concierge team can walk you through it at no cost to you — Disney pays the commission, not you — and free onboard credit may be available. Estimate yours with our <a href="/tools/obc-calculator">onboard credit calculator</a>. Onboard credit is an estimate, not a guarantee, and is confirmed when you book.</p>
+
+<p>Thinking about sailing from Fort Lauderdale? <a href="/book">Get a free, no-obligation quote</a> and we'll help you choose between the Destiny and the Dream, compare dates, and lock in your onboard credit.</p>
+`,
+  },
+  {
     id: '30',
     slug: 'disney-cruise-discounts-2027',
     title: 'Disney Cruise Discounts for 2027: How Sales, Member Offers, and Price Drops Actually Work',
@@ -119,6 +295,7 @@ export const blogPosts: BlogPost[] = [
 
 <h3>Texas Gulf Coast sailings</h3>
 <p>From <a href="/ports/galveston">Galveston</a>, you may board on a cold, gray morning and be in warm weather a couple of days later. Pack a real jacket for embarkation and the first sea day, then plan on lighter clothes once you reach Western Caribbean ports.</p>
+<p>Heading out on a January or February sailing? Our <a href="/blog/pixar-day-at-sea-2027-disney-fantasy-guide">Pixar Day at Sea 2027 guide</a> covers nine Disney Fantasy dates where costumes are part of the fun, and our <a href="/blog/disney-cruise-from-galveston-2027">Galveston guide</a> has more on that port.</p>
 
 <h3>West Coast sailings</h3>
 <p>Baja and Mexican Riviera runs from <a href="/ports/san-diego">San Diego</a> are cooler on deck than Caribbean sailings, particularly on sea days and at night. Our <a href="/blog/disney-cruise-from-san-diego-2027">San Diego season guide</a> covers what each itinerary feels like.</p>
@@ -334,6 +511,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2>Every Marvel Day at Sea 2027 Sailing from Galveston</h2>
 <p>All ten 2027 dates sail on the <a href="/ships/disney-magic">Disney Magic</a> from Galveston, Texas. Eight are Western Caribbean itineraries; two are seven-night Bahamian runs, which is the longer format the event has only recently started appearing on.</p>
+<p>Sailing from Texas? Our <a href="/blog/disney-cruise-from-galveston-2027">Disney cruise from Galveston guide</a> covers the drive-up season, and if your kids lean Pixar over Marvel, see our <a href="/blog/pixar-day-at-sea-2027-disney-fantasy-guide">Pixar Day at Sea 2027 guide</a> for the nine Disney Fantasy dates.</p>
 <ul>
 <li><strong>Jan. 20, 2027</strong> — 4-night Western Caribbean</li>
 <li><strong>Jan. 24, 2027</strong> — 7-night Bahamian</li>
@@ -2223,6 +2401,7 @@ export const blogPosts: BlogPost[] = [
 <h2>Which Ships and Ports Have Very Merrytime Sailings</h2>
 <p>In 2026 the holiday treatment covers the entire U.S. fleet: Disney Magic, Disney Wonder, Disney Dream, Disney Fantasy, Disney Wish, <a href="/ships/disney-treasure">Disney Treasure</a>, and <a href="/ships/disney-destiny">Disney Destiny</a>. If you have been waiting for a reason to try one of the newest ships, a Merrytime sailing on the Destiny or Treasure stacks two novelties into one trip.</p>
 <p>Departures run from <a href="/ports/port-canaveral">Port Canaveral</a> and <a href="/ports/fort-lauderdale">Fort Lauderdale</a> in Florida, <a href="/ports/galveston">Galveston</a> in Texas, and <a href="/ports/san-diego">San Diego</a> in California. Itinerary lengths range from 3- and 4-night Bahamian runs up through 5-night and longer Caribbean and Mexican Riviera sailings. Our <a href="/sailings">sailings page</a> lets you filter by ship, port, and date, which is the fastest way to see what is still open in the window you want.</p>
+<p>Two newer port guides are worth a look if you are choosing a departure city: our <a href="/blog/disney-cruise-from-galveston-2027">Galveston guide</a> for drive-up Texas families and our <a href="/blog/disney-cruise-from-fort-lauderdale-2027">Fort Lauderdale guide</a> for the Port Everglades season.</p>
 <p>West Coast families have the best Merrytime value in the fleet this year: the decorated Disney Wonder runs short Baja sailings in November at off-peak fares. Our guide to taking a <a href="/blog/disney-cruise-from-san-diego-2027">Disney cruise from San Diego</a> covers that season in full.</p>
 
 <h2>The Holidays Follow You to Castaway Cay and Lookout Cay</h2>
