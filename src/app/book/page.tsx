@@ -434,7 +434,10 @@ export default function BookPage() {
                     className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-slate-900 text-sm"
                   >
                     <option value="any">Any Ship</option>
-                    {DCL_SHIPS.map(s => (
+                    {/* Only ships already in service are bookable. Announced-but-not-yet-sailing
+                        ships (e.g. Disney Believe, late 2027) live on /ships for info but must
+                        not appear as a bookable option here. */}
+                    {DCL_SHIPS.filter(s => s.year_launched <= new Date().getFullYear()).map(s => (
                       <option key={s.id} value={s.slug.replace('disney-', '')}>{s.name}</option>
                     ))}
                   </select>

@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { getBlogPostBySlug, getRelatedPosts, getBlogPosts } from '@/lib/data'
-import { ArrowLeft, Calendar, Clock } from 'lucide-react'
+import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react'
 import { ShareButtons } from './share-buttons'
 import { StructuredData } from '@/components/ui/structured-data'
 import { generateArticleSchema, generateBreadcrumbSchema } from '@/lib/structured-data'
@@ -167,6 +167,38 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           className="prose prose-slate max-w-none"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
+
+        {/* Lead-capture CTA — renders on every blog post so engaged readers have a
+            clear next step. Analytics showed posts pulling real search traffic with
+            zero conversions because there was no quote prompt in the article. */}
+        <aside className="mt-14 rounded-2xl bg-gradient-to-br from-[#0a1628] to-[#1E3A5F] p-8 sm:p-10 text-center shadow-lg">
+          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#D4AF37]/20 border border-[#D4AF37]/40 text-[#D4AF37] text-xs font-semibold tracking-wide mb-4">
+            Free Onboard Credit
+          </span>
+          <h2 className="font-display text-2xl sm:text-3xl font-bold text-white mb-3">
+            Planning a Disney cruise? Get a free quote.
+          </h2>
+          <p className="text-blue-100 max-w-2xl mx-auto mb-7">
+            We&apos;re a Disney Cruise Line concierge through Boardwalk Travel Agency. Our help is
+            100% free &mdash; Disney pays the commission, not you &mdash; and clients who book with us
+            earn free onboard credit to spend onboard. No pressure, no obligation.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <Link
+              href="/book"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#D4AF37] text-[#1E3A5F] font-bold text-lg hover:bg-amber-300 transition-colors shadow"
+            >
+              Get My Free Quote
+              <ArrowRight className="h-5 w-5" />
+            </Link>
+            <Link
+              href="/tools/obc-calculator"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl border border-white/30 text-white font-semibold hover:bg-white/10 transition-colors"
+            >
+              Estimate my onboard credit
+            </Link>
+          </div>
+        </aside>
 
         {post.tags.length > 0 && (
           <div className="mt-12 pt-8 border-t border-slate-200">

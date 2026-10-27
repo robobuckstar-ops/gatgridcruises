@@ -5,6 +5,7 @@
 import { Resend } from 'resend'
 import { agentNotifyRecipients } from './agent-inbox'
 import { formatPhoneDisplay } from './twilio'
+import { sendPushover, PRIORITY_HIGH } from './pushover'
 
 // Where the inbound-text alert lands. Previously this defaulted to
 // bookings@gatgridcruises.com — the public-facing address Grayson does NOT read
@@ -36,6 +37,13 @@ export interface InboundAlert {
   readyToBook: boolean
   /** Absolute URL of the inbox, so the alert is one click from a reply. */
   inboxUrl: string
+  /**
+   * Whether to send the Pushover phone buzz. The caller sets this to true only
+   * for a NEW conversation or a booking-intent text, so Grayson isn't buzzed on
+   * every reply during an active chat. The email alert is sent regardless.
+   * Defaults to true when unset.
+   */
+  pushover?: boolean
 }
 
 function alertHtml(alert: InboundAlert): string {
@@ -63,14 +71,28 @@ function alertHtml(alert: InboundAlert): string {
 
 /** Best effort: an alert that fails must never fail the inbound webhook. */
 export async function notifyInboundMessage(alert: InboundAlert): Promise<boolean> {
-  const apiKey = process.env.RESEND_API_KEY?.trim()
-  if (!apiKey) {
-    console.warn('[sms-notify] RESEND_API_KEY not set — no email alert sent for inbound text')
-    return false
-  }
-
   const preview = alert.body.replace(/\s+/g, ' ').slice(0, 60)
   const label = alert.contactName || formatPhoneDisplay(alert.from)
+
+  // Buzz Grayson's phone via Pushover for a NEW conversation or a booking-intent
+  // text (the caller decides via alert.pushover) — email alone is easy to miss,
+  // and a fresh inbound can be an urgent lead. We skip the buzz on ongoing
+  // back-and-forth so an active chat doesn't spam his phone. sendPushover never
+  // throws and no-ops (with a logged warning) if PUSHOVER_TOKEN / PUSHOVER_USER
+  // are unset, so it is safe to fire regardless of whether email is configured.
+  if (alert.pushover !== false) {
+    await sendPushover({
+      title: alert.readyToBook ? '🔥 Ready to book — new text' : 'New text from a lead',
+      message: `${label}: ${alert.body.replace(/\s+/g, ' ').slice(0, 300)}`,
+      priority: PRIORITY_HIGH,
+    })
+  }
+
+  const apiKey = process.env.RESEND_API_KEY?.trim()
+  if (!apiKey) {
+    console.warn('[sms-notify] RESEND_API_KEY not set — email alert skipped (Pushover still attempted)')
+    return false
+  }
 
   try {
     const resend = new Resend(apiKey)

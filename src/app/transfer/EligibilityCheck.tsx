@@ -55,10 +55,13 @@ const QUESTIONS: Question[] = [
   },
 ]
 
-/** Illustrative dollar figures, always derived from the OBC module. */
-const OBC_LOW = formatUSD(getOBC(2000))
-const OBC_HIGH = formatUSD(getOBC(10000))
-const OBC_MID = formatUSD(getOBC(5000))
+/**
+ * Illustrative dollar figures, always derived from the OBC module. Transferred-in
+ * bookings earn the reduced (placeholder/transfer) OBC rate, so these use it.
+ */
+const OBC_LOW = formatUSD(getOBC(2000, { placeholder: true }))
+const OBC_HIGH = formatUSD(getOBC(10000, { placeholder: true }))
+const OBC_MID = formatUSD(getOBC(5000, { placeholder: true }))
 
 type Outcome = 'eligible' | 'window' | 'paid' | 'agent'
 
@@ -210,8 +213,8 @@ export function EligibilityCheck() {
                     Booked direct in the last 30 days, still on a deposit, no agency attached —
                     that&apos;s exactly the reservation Disney lets you move. Once the transfer
                     completes you get free onboard credit on the same cruise you already booked.
-                    Typical amounts run {OBC_LOW} to {OBC_HIGH}; a {formatUSD(5000)} cruise fare
-                    earns {OBC_MID}.
+                    Estimated amounts run {OBC_LOW} to {OBC_HIGH} at the transfer rate; a {formatUSD(5000)} cruise
+                    fare earns an estimated {OBC_MID}. Final amount confirmed at booking.
                   </p>
                 </div>
               </div>

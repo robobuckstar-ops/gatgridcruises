@@ -78,6 +78,13 @@ export function ChatWidget() {
     if (isOpen) {
       setTimeout(() => inputRef.current?.focus(), 100)
     }
+    // Let the newsletter popup know the chat is open so it doesn't cover it.
+    if (typeof window !== 'undefined') {
+      ;(window as unknown as { __gatgridChatOpen?: boolean }).__gatgridChatOpen = isOpen
+      window.dispatchEvent(
+        new CustomEvent(isOpen ? 'gatgrid:chat-open' : 'gatgrid:chat-closed')
+      )
+    }
   }, [isOpen])
 
   const handleSend = async () => {
@@ -139,7 +146,7 @@ export function ChatWidget() {
             ? {
                 ...m,
                 content:
-                  "I'm having trouble connecting right now. Please try again or email bookings@gatgridcruises.com for help!",
+                  "I'm having trouble connecting right now. Please try again in a moment, or send a quick quote request at /book and Grayson will follow up personally.",
               }
             : m
         )
@@ -154,7 +161,8 @@ export function ChatWidget() {
             ...prev,
             {
               role: 'transition',
-              content: 'Grayson, your cruise concierge, has joined the chat.',
+              content:
+                'Want a real person? Dr. Grayson Starbuck follows up personally on every quote request — send one from /book and he\'ll be in touch, usually the same day.',
               id: 'grayson-transition',
             },
           ])
@@ -200,23 +208,14 @@ export function ChatWidget() {
           {/* Header */}
           <div className="bg-[#1E3A5F] text-white px-4 py-3 rounded-t-xl flex items-center justify-between shrink-0">
             <div className="flex items-center gap-2.5">
-              {graysonJoined ? (
-                <span
-                  className="w-8 h-8 rounded-full bg-[#D4AF37] text-[#1E3A5F] font-bold text-sm flex items-center justify-center shrink-0"
-                  aria-hidden="true"
-                >
-                  G
-                </span>
-              ) : (
-                <span className="text-[#D4AF37] text-xl leading-none" aria-hidden="true">
-                  ⚓
-                </span>
-              )}
+              <span className="text-[#D4AF37] text-xl leading-none" aria-hidden="true">
+                ⚓
+              </span>
               <div>
                 <h2 id="chat-widget-title" className="font-semibold text-sm leading-tight">
-                  {graysonJoined ? 'Grayson' : 'GatGrid Cruise Assistant'}
+                  GatGrid Cruise Assistant
                 </h2>
-                <p className="text-xs text-blue-200 leading-tight">Your Disney Cruise Concierge</p>
+                <p className="text-xs text-blue-200 leading-tight">AI helper · Grayson follows up personally</p>
               </div>
             </div>
             <button
@@ -253,14 +252,6 @@ export function ChatWidget() {
                   key={msg.id}
                   className={`flex items-end gap-1.5 ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
                 >
-                  {msg.role === 'assistant' && msg.isGrayson && (
-                    <span
-                      className="w-6 h-6 rounded-full bg-[#D4AF37] text-[#1E3A5F] font-bold text-xs flex items-center justify-center shrink-0 mb-0.5"
-                      aria-hidden="true"
-                    >
-                      G
-                    </span>
-                  )}
                   <div
                     className={`max-w-[85%] px-3.5 py-2.5 rounded-2xl text-sm leading-relaxed ${
                       msg.role === 'user'

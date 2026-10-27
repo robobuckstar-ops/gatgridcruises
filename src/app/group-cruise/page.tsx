@@ -13,6 +13,8 @@ import {
 import { OBCDisclaimer } from '@/components/ui/obc-disclaimer'
 import { formatUSD, getOBC } from '@/lib/obc'
 import { GroupCruiseForm } from './GroupCruiseForm'
+import { StructuredData } from '@/components/ui/structured-data'
+import { generateFAQSchema } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
   title: 'GatGrid Group Sailing — Join a Hosted Disney Cruise | GatGrid',
@@ -132,6 +134,9 @@ export default function GroupCruisePage() {
 
   return (
     <main className="min-h-screen bg-slate-50">
+      {/* FAQ structured data — surfaces these Q&As to Google and AI assistants. */}
+      <StructuredData data={generateFAQSchema(FAQ.map(f => ({ question: f.q, answer: f.a })))} />
+
       {/* Hero */}
       <section className="relative bg-gradient-to-br from-[#0a1628] to-[#1E3A5F] py-20 md:py-28 overflow-hidden">
         <div

@@ -3,6 +3,8 @@ import Link from 'next/link'
 import { Gift, CheckCircle, ArrowRight, Star } from 'lucide-react'
 import { getOBC, formatUSD, OBC_EXAMPLE_FARES } from '@/lib/obc'
 import { OBCDisclaimer } from '@/components/ui/obc-disclaimer'
+import { StructuredData } from '@/components/ui/structured-data'
+import { generateFAQSchema } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
   alternates: { canonical: '/onboard-credit' },
@@ -64,6 +66,9 @@ const FAQ = [
 export default function OnboardCreditPage() {
   return (
     <main className="min-h-screen bg-slate-50">
+      {/* FAQ structured data — lets Google and AI assistants surface these
+          Q&As directly. The visible FAQ below is the single source. */}
+      <StructuredData data={generateFAQSchema(FAQ.map(f => ({ question: f.q, answer: f.a })))} />
 
       {/* Hero */}
       <section className="bg-gradient-to-br from-[#0a1628] to-[#1E3A5F] py-16 md:py-24">

@@ -137,15 +137,11 @@ export async function POST(request: NextRequest) {
     console.error(`[sms/inbound] NOT PERSISTED — from ${from}: ${body.slice(0, 200)}`)
   }
 
-  // Awaited on purpose: the serverless invocation freezes the moment we
-  // respond, which would kill an in-flight alert send.
-  await notifyInboundMessage({ from, body, contactName, readyToBook, inboxUrl: inboxUrl() })
-
-  // Auto-acknowledge a NEW inbound conversation so the sender never hears
-  // silence — but only ONCE per window. Sending the ack on every inbound is
-  // what made a real back-and-forth read as a loop: each reply re-fired the
-  // same "text or call?" message. So skip the ack if we've already auto-acked
-  // this number within the last 12 hours.
+  // Figure out whether this is a NEW conversation (first inbound from this
+  // number in the last 12 hours) vs. an ongoing back-and-forth. We reuse this
+  // for two things: the auto-ack (only greet once per window) and the Pushover
+  // phone alert (only buzz when a NEW client reaches out — not on every reply
+  // during an active chat, which would just be noise).
   const firstWord = body.toLowerCase().split(/\s+/)[0] || ''
 
   let alreadyAckedRecently = false
@@ -165,6 +161,22 @@ export async function POST(request: NextRequest) {
     // going silent — a duplicate greeting is less harmful than none.
     console.error('[sms/inbound] auto-ack dedupe lookup failed; will still ack:', err)
   }
+
+  const isNewConversation = !alreadyAckedRecently
+
+  // Awaited on purpose: the serverless invocation freezes the moment we respond,
+  // which would kill an in-flight alert send. The Pushover phone buzz fires only
+  // when a NEW client/conversation reaches out, or when the message shows booking
+  // intent (urgent) — never on every message in an active thread. The email alert
+  // still logs every inbound text for the record.
+  await notifyInboundMessage({
+    from,
+    body,
+    contactName,
+    readyToBook,
+    inboxUrl: inboxUrl(),
+    pushover: isNewConversation || readyToBook,
+  })
 
   const shouldAck =
     body.length > 0 && !OPTOUT_KEYWORDS.has(firstWord) && !alreadyAckedRecently

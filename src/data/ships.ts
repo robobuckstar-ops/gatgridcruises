@@ -958,5 +958,104 @@ export const ships: Ship[] = [
     hero_image_url: '/images/ships/disney-adventure.jpg',
     created_at: '2026-01-01T00:00:00Z',
     updated_at: '2026-01-01T00:00:00Z'
+  },
+  {
+    id: 'ship-0009',
+    name: 'Disney Believe',
+    slug: 'disney-believe',
+    year_launched: 2027,
+    capacity: 4000,
+    tonnage: 144000,
+    highlights: [
+      'Announced for late 2027 — not yet open for booking (join our alerts to be first in line)',
+      'The fourth Wish-class ship, a sister to Disney Wish, Treasure, and Destiny',
+      'Design theme built around promise, possibility, and believing in yourself',
+      'Story worlds inspired by Encanto and Frozen, with Moana, The Little Mermaid, and Snow White touches',
+      'Roughly 4,000 guests across the signature Wish-class layout',
+    ],
+    whats_included: [
+      {
+        category: 'Dining',
+        items: [
+          'Rotational dining across themed restaurants',
+          'Room service with an extensive menu',
+          'Buffet and quick-service dining',
+          'Coffee, tea, and complimentary soft drinks',
+        ],
+      },
+      {
+        category: 'Entertainment',
+        items: [
+          'Broadway-style original stage productions',
+          'Nightly deck parties and fireworks at sea',
+          'Live music, comedy, and family game shows',
+          'Immersive, character-driven experiences',
+        ],
+      },
+      {
+        category: 'Kids\' Clubs',
+        items: [
+          'Disney\'s Oceaneer Club (ages 3-12)',
+          'Edge (ages 11-14)',
+          'Vibe (ages 14-17)',
+          'Nursery services for the littlest cruisers',
+        ],
+      },
+      {
+        category: 'Pools & Recreation',
+        items: [
+          'Multiple themed pools and family water play',
+          'AquaMouse-style water attraction (Wish-class signature)',
+          'Full fitness center and deck sports',
+        ],
+      },
+      {
+        category: 'Character Meet & Greets',
+        items: [
+          'Daily character appearances',
+          'Scheduled meet-and-greet experiences',
+          'Character dining and photo opportunities',
+        ],
+      },
+    ],
+    whats_extra: [
+      {
+        category: 'Adult Dining',
+        items: [
+          { name: 'Palo (Italian)', price_range: 'expected ~$50 per person' },
+          { name: 'Signature French restaurant', price_range: 'expected ~$135 per person' },
+        ],
+      },
+      {
+        category: 'Beverages',
+        items: [
+          { name: 'Alcoholic beverages', price_range: 'typically $8-16 per drink' },
+          { name: 'Beverage package', price_range: 'typically ~$75 per day' },
+        ],
+      },
+      {
+        category: 'Spa & Fitness',
+        items: [
+          { name: 'Spa and wellness treatments', price_range: 'typically $150-400 per session' },
+          { name: 'Thermal suite access', price_range: 'typically $20-40 per day' },
+        ],
+      },
+      {
+        category: 'Port Adventures',
+        items: [
+          { name: 'Shore excursions and guided tours', price_range: '$50-500 per person' },
+        ],
+      },
+      {
+        category: 'Internet',
+        items: [
+          { name: 'WiFi passes', price_range: 'typically $15 per day' },
+        ],
+      },
+    ],
+    editorial_take: 'Disney Believe is the next ship on the horizon — announced in March 2026 as the fourth Wish-class vessel and scheduled to enter service in late 2027. Built around the theme of belief and possibility, it is expected to bring story worlds from Encanto and Frozen to sea, alongside the AquaMouse and the Grand Hall experiences that define the Wish class. It is not yet open for booking, and onboard details will be confirmed by Disney closer to launch — but if you want to sail one of its earliest voyages, the best move is to get on our list now so we can reach out the moment itineraries and pricing are released.',
+    hero_image_url: '',
+    created_at: '2026-10-22T00:00:00Z',
+    updated_at: '2026-10-22T00:00:00Z'
   }
 ]

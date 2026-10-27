@@ -8,8 +8,20 @@
  * Public copy shows DOLLAR amounts only. The rate itself is not advertised.
  */
 
-/** Share of total cruise fare returned as OBC. Edit here to change the offer. */
-export const OBC_RATE = 0.03
+/**
+ * Share of total cruise fare returned as OBC. Edit here to change the offer.
+ *
+ * Standard new bookings earn OBC_RATE. Bookings made with a Disney onboard
+ * "placeholder" / future-cruise discount (or transferred-in bookings) earn the
+ * reduced OBC_PLACEHOLDER_RATE, because those pay the agency a lower commission.
+ * This mirrors how the major Disney agencies price OBC (full rate on new
+ * bookings, half on placeholders/transfers). The estimate is based on the fare;
+ * if a placeholder lowers the fare too, OBC drops further — see OBCDisclaimer.
+ */
+export const OBC_RATE = 0.05
+
+/** Reduced OBC rate for placeholder / transferred-in bookings (half the standard). */
+export const OBC_PLACEHOLDER_RATE = 0.025
 
 /** Quoted OBC is rounded up to this increment so figures stay clean. */
 export const OBC_ROUNDING = 10
@@ -31,9 +43,13 @@ export function isValidFare(totalFare: number): boolean {
  * Rounds up to the nearest $10 and never quotes below OBC_MINIMUM, so a small
  * fare still earns something rather than rounding away to $0.
  */
-export function getOBC(totalFare: number): number {
+export function getOBC(
+  totalFare: number,
+  opts: { placeholder?: boolean } = {},
+): number {
   if (!isValidFare(totalFare)) return 0
-  const raw = totalFare * OBC_RATE
+  const rate = opts.placeholder ? OBC_PLACEHOLDER_RATE : OBC_RATE
+  const raw = totalFare * rate
   return Math.max(OBC_MINIMUM, Math.ceil(raw / OBC_ROUNDING) * OBC_ROUNDING)
 }
 

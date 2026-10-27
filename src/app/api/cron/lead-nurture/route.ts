@@ -8,6 +8,7 @@ import {
 } from '@/lib/email-templates'
 import { LEAD_FIELDS, LEADS_TABLE } from '@/lib/airtable-leads'
 import { isAuthorizedCronRequest } from '@/lib/cron-auth'
+import { sendLifecycleEmail, emailTransportConfigured } from '@/lib/send-email'
 
 export const runtime = 'nodejs'
 
@@ -80,33 +81,6 @@ async function airtableFetch(url: string, apiKey: string, options?: RequestInit)
   return res.json()
 }
 
-async function sendBrevoEmail(
-  apiKey: string,
-  to: { email: string; name: string },
-  subject: string,
-  htmlContent: string
-) {
-  const res = await fetch('https://api.brevo.com/v3/smtp/email', {
-    method: 'POST',
-    headers: {
-      accept: 'application/json',
-      'api-key': apiKey,
-      'content-type': 'application/json',
-    },
-    body: JSON.stringify({
-      sender: { name: 'Grayson Starbuck - GatGrid Cruises', email: 'bookings@gatgridcruises.com' },
-      to: [to],
-      subject,
-      htmlContent,
-    }),
-  })
-  if (!res.ok) {
-    const text = await res.text()
-    throw new Error(`Brevo ${res.status}: ${text}`)
-  }
-  return res.json()
-}
-
 export async function GET(request: NextRequest) {
   // Vercel Cron authenticates with `Authorization: Bearer $CRON_SECRET`, which
   // this route did not accept — it only read `x-cron-secret` / `?secret=`. So
@@ -118,12 +92,14 @@ export async function GET(request: NextRequest) {
   }
 
   const airtableKey = process.env.AIRTABLE_API_KEY
-  const brevoKey = process.env.BREVO_API_KEY
   if (!airtableKey) {
     return NextResponse.json({ error: 'AIRTABLE_API_KEY not configured' }, { status: 500 })
   }
-  if (!brevoKey) {
-    return NextResponse.json({ error: 'BREVO_API_KEY not configured' }, { status: 500 })
+  if (!emailTransportConfigured()) {
+    return NextResponse.json(
+      { error: 'no email transport configured (set RESEND_API_KEY or BREVO_API_KEY)' },
+      { status: 500 },
+    )
   }
 
   const sent: string[] = []
@@ -182,7 +158,7 @@ export async function GET(request: NextRequest) {
 
       try {
         const html = stepToSend.templateFn(name)
-        await sendBrevoEmail(brevoKey, { email, name }, stepToSend.subject, html)
+        await sendLifecycleEmail({ to: email, name, subject: stepToSend.subject, html })
         sent.push(`${stepToSend.sequenceLabel}:${email}`)
 
         // Determine new drip sequence value

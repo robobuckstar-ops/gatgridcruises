@@ -12,6 +12,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { isAuthorizedCronRequest } from '@/lib/cron-auth'
 import { fetchClientName } from '@/lib/portal-airtable'
 import { sendPushover } from '@/lib/pushover'
+import { sendLifecycleEmail, emailTransportConfigured } from '@/lib/send-email'
 import {
   BK,
   BOOKINGS_TABLE,
@@ -39,30 +40,6 @@ async function airtableFetch(url: string, apiKey: string, options?: RequestInit)
   if (!res.ok) {
     const text = await res.text()
     throw new Error(`Airtable ${res.status}: ${text}`)
-  }
-  return res.json()
-}
-
-async function sendBrevoEmail(
-  apiKey: string,
-  to: { email: string; name: string },
-  subject: string,
-  htmlContent: string,
-) {
-  const res = await fetch('https://api.brevo.com/v3/smtp/email', {
-    method: 'POST',
-    headers: { accept: 'application/json', 'api-key': apiKey, 'content-type': 'application/json' },
-    body: JSON.stringify({
-      sender: { name: 'Grayson Starbuck - GatGrid Cruises', email: 'bookings@gatgridcruises.com' },
-      to: [to],
-      replyTo: { email: 'bookings@gatgridcruises.com', name: 'GatGrid Cruises' },
-      subject,
-      htmlContent,
-    }),
-  })
-  if (!res.ok) {
-    const text = await res.text()
-    throw new Error(`Brevo ${res.status}: ${text}`)
   }
   return res.json()
 }
@@ -103,7 +80,6 @@ export async function GET(request: NextRequest) {
   )
 
   const airtableKey = process.env.AIRTABLE_API_KEY
-  const brevoKey = process.env.BREVO_API_KEY
   if (!airtableKey) {
     return NextResponse.json({ error: 'AIRTABLE_API_KEY not configured' }, { status: 500 })
   }
@@ -150,12 +126,12 @@ export async function GET(request: NextRequest) {
 
         try {
           if (m.audience === 'client') {
-            if (!brevoKey) {
-              errors.push(`${m.key}:${rec.id}: BREVO_API_KEY not configured`)
+            if (!emailTransportConfigured()) {
+              errors.push(`${m.key}:${rec.id}: no email transport configured (set RESEND_API_KEY or BREVO_API_KEY)`)
               continue
             }
             const email = String(fields[BK.clientEmail] ?? '')
-            await sendBrevoEmail(brevoKey, { email, name: firstName || 'there' }, m.subject!, m.html!)
+            await sendLifecycleEmail({ to: email, name: firstName || 'there', subject: m.subject!, html: m.html! })
             await logTouchpoint(airtableKey, rec.id, m.touchpointName, m.triggerLabel, m.subject!)
           } else {
             await sendPushover({ title: m.pushTitle!, message: m.pushMessage! })

@@ -25,6 +25,7 @@ const ACCENT_BY_SHIP: Record<string, string> = {
   'Disney Treasure':  'from-emerald-700 via-teal-600 to-emerald-900',
   'Disney Destiny':   'from-orange-700 via-amber-600 to-orange-900',
   'Disney Adventure': 'from-cyan-700 via-[#1E3A5F] to-cyan-900',
+  'Disney Believe':   'from-violet-700 via-indigo-600 to-violet-900',
 }
 
 export function ShipHeroImage({

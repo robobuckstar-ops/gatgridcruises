@@ -30,6 +30,7 @@ export default function OBCCalculatorPage() {
 
   const numericFare = hasInput && parsedFare > 0 ? parsedFare : 0
   const obc = getOBC(numericFare)
+  const obcPlaceholder = getOBC(numericFare, { placeholder: true })
 
   return (
     <main className="min-h-screen bg-white">
@@ -87,20 +88,28 @@ export default function OBCCalculatorPage() {
 
             {/* Result */}
             {numericFare > 0 && (
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="rounded-xl border-2 border-slate-200 p-5 text-center">
-                  <p className="text-sm font-semibold text-slate-500 mb-1">Plan Direct with Disney</p>
-                  <p className="font-fraunces text-4xl font-bold text-slate-400">$0</p>
-                  <p className="text-xs text-slate-400 mt-1">No onboard credit</p>
-                </div>
-                <div className="rounded-xl border-2 border-[#D4AF37] bg-amber-50 p-5 text-center relative overflow-hidden">
-                  <div className="absolute top-0 right-0 bg-[#D4AF37] text-[#1E3A5F] text-xs font-bold px-3 py-1 rounded-bl-lg">
-                    Your Perk
+              <div className="space-y-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="rounded-xl border-2 border-slate-200 p-5 text-center">
+                    <p className="text-sm font-semibold text-slate-500 mb-1">Plan Direct with Disney</p>
+                    <p className="font-fraunces text-4xl font-bold text-slate-400">$0</p>
+                    <p className="text-xs text-slate-400 mt-1">No onboard credit</p>
                   </div>
-                  <p className="text-sm font-semibold text-[#1E3A5F] mb-1">Plan with GatGrid Concierge</p>
-                  <p className="font-fraunces text-4xl font-bold text-[#1E3A5F]">{formatUSD(obc)}</p>
-                  <p className="text-xs text-amber-700 mt-1 font-semibold">Free onboard credit*</p>
+                  <div className="rounded-xl border-2 border-[#D4AF37] bg-amber-50 p-5 text-center relative overflow-hidden">
+                    <div className="absolute top-0 right-0 bg-[#D4AF37] text-[#1E3A5F] text-xs font-bold px-3 py-1 rounded-bl-lg">
+                      Your Perk
+                    </div>
+                    <p className="text-sm font-semibold text-[#1E3A5F] mb-1">Plan with GatGrid Concierge</p>
+                    <p className="font-fraunces text-4xl font-bold text-[#1E3A5F]">~{formatUSD(obc)}</p>
+                    <p className="text-xs text-amber-700 mt-1 font-semibold">Estimated onboard credit*</p>
+                  </div>
                 </div>
+                <p className="text-xs text-slate-500 text-center leading-relaxed">
+                  This is an <span className="font-semibold">estimate, not a guarantee</span> — your actual onboard
+                  credit is confirmed in writing when you book. If you book using a Disney onboard
+                  &ldquo;placeholder&rdquo;/future-cruise discount or transfer in an existing reservation, the estimate
+                  is lower — about <span className="font-semibold">{formatUSD(obcPlaceholder)}</span> for this fare.
+                </p>
               </div>
             )}
 
@@ -116,8 +125,8 @@ export default function OBCCalculatorPage() {
         {/* Example amounts — every figure derived from the same calculator */}
         <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
           <div className="px-8 py-5 border-b border-slate-100 bg-slate-50">
-            <h2 className="font-fraunces text-xl font-bold text-slate-900">Example Credit Amounts</h2>
-            <p className="text-slate-500 text-sm mt-0.5">The bigger the cruise fare, the more free credit you earn</p>
+            <h2 className="font-fraunces text-xl font-bold text-slate-900">Example Estimated Credit Amounts</h2>
+            <p className="text-slate-500 text-sm mt-0.5">Estimates only — the bigger the cruise fare, the more credit you earn. Final amount is confirmed when you book.</p>
           </div>
           <div className="divide-y divide-slate-100">
             {OBC_EXAMPLE_FARES.map((exampleFare) => (

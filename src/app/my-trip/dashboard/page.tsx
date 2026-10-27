@@ -72,9 +72,12 @@ function getMidnightETLocal(isoDate: string, localTz: string) {
 
 function parseSailingDate(iso: string): Date | null {
   if (!iso) return null
-  // Airtable date-only fields come back as "YYYY-MM-DD". Default to 4:30 PM
-  // local-time so the countdown lines up with a typical cruise departure.
-  const date = iso.includes('T') ? new Date(iso) : new Date(`${iso}T16:30:00`)
+  // Airtable date-only fields come back as "YYYY-MM-DD". Anchor to the START of
+  // the sailing day (local midnight) so the countdown matches the official
+  // Disney Cruise Line app, which counts down to midnight of embarkation day.
+  // (Previously defaulted to 4:30 PM, which made the hours/minutes ticker read
+  // ~16 hours ahead of Disney's — same day count, wrong sub-day time.)
+  const date = iso.includes('T') ? new Date(iso) : new Date(`${iso}T00:00:00`)
   return Number.isNaN(date.getTime()) ? null : date
 }
 
@@ -1209,6 +1212,25 @@ export default function DashboardPage() {
             <OBCDisclaimer />
           </section>
         ) : null}
+
+        {/* ── Official-source disclaimer ── */}
+        <section className="border-t border-slate-200 pt-6">
+          <div className="p-4 bg-slate-50 border border-slate-200 rounded-xl flex items-start gap-2.5 max-w-3xl mx-auto">
+            <Info className="w-4 h-4 text-slate-400 flex-shrink-0 mt-0.5" />
+            <p className="text-xs text-slate-500 leading-relaxed">
+              This dashboard is a planning companion from GatGrid Cruises / Boardwalk Travel Agency and is <span className="font-semibold">not an official Disney document</span>. Dates, times, pricing, itineraries, and policies can change. Always confirm the latest details — including weather-related itinerary changes, port updates, check-in windows, and travel alerts — directly on the official{' '}
+              <a
+                href="https://disneycruise.disney.go.com/my-disney-cruise/my-reservations/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-navy font-semibold hover:underline"
+              >
+                Disney Cruise Line website
+              </a>{' '}
+              and the Disney Cruise Line Navigator app, which are the authoritative source for your reservation. For urgent sailing updates, Disney is always the first and final word.
+            </p>
+          </div>
+        </section>
 
       </div>
     </div>

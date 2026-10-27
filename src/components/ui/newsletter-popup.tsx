@@ -10,6 +10,24 @@ export function NewsletterPopup() {
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
 
+  const [chatOpen, setChatOpen] = useState(false)
+
+  // Never cover the chat widget: if it's open, stay hidden; if it opens while
+  // we're showing, step aside.
+  useEffect(() => {
+    const onChatOpen = () => {
+      setChatOpen(true)
+      setVisible(false)
+    }
+    const onChatClosed = () => setChatOpen(false)
+    window.addEventListener('gatgrid:chat-open', onChatOpen)
+    window.addEventListener('gatgrid:chat-closed', onChatClosed)
+    return () => {
+      window.removeEventListener('gatgrid:chat-open', onChatOpen)
+      window.removeEventListener('gatgrid:chat-closed', onChatClosed)
+    }
+  }, [])
+
   useEffect(() => {
     const dismissedAt = localStorage.getItem('newsletter_popup_dismissed_at')
     if (dismissedAt) {
@@ -18,16 +36,21 @@ export function NewsletterPopup() {
     }
     if (localStorage.getItem('newsletter_subscribed')) return
 
+    const chatIsOpen = () =>
+      (window as unknown as { __gatgridChatOpen?: boolean }).__gatgridChatOpen === true
+
     const handleScroll = () => {
       const scrollPercent =
         window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)
       if (scrollPercent > 0.4) {
-        setVisible(true)
+        if (!chatIsOpen()) setVisible(true)
         window.removeEventListener('scroll', handleScroll)
       }
     }
 
-    const timer = setTimeout(() => setVisible(true), 25000)
+    const timer = setTimeout(() => {
+      if (!chatIsOpen()) setVisible(true)
+    }, 25000)
     window.addEventListener('scroll', handleScroll, { passive: true })
 
     return () => {
@@ -71,11 +94,11 @@ export function NewsletterPopup() {
     }
   }
 
-  if (!visible) return null
+  if (!visible || chatOpen) return null
 
   return (
     <div
-      className="fixed bottom-6 right-6 z-50 w-full max-w-sm animate-in slide-in-from-bottom-4 duration-300"
+      className="fixed bottom-44 right-4 sm:right-6 sm:bottom-24 z-40 w-[calc(100vw-2rem)] sm:w-full max-w-sm animate-in slide-in-from-bottom-4 duration-300"
       role="dialog"
       aria-modal="true"
       aria-label="Newsletter signup"
