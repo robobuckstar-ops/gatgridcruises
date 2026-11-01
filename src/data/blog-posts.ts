@@ -24,6 +24,73 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '34',
+    slug: 'disney-cruise-kids-clubs-by-age-guide',
+    title: 'Disney Cruise Kids Clubs by Age: Nursery, Oceaneer Club, Edge, and Vibe Explained',
+    meta_title: 'Disney Cruise Kids Clubs by Age: Complete Guide',
+    meta_description:
+      'Disney cruise kids clubs explained by age: the nursery, Oceaneer Club, Edge, and Vibe. How check-in works, what is included, and tips for each age group.',
+    excerpt:
+      'Disney cruise kids clubs are a big reason families choose Disney. Here is which club fits each age, how wristband check-in works, what to do before you sail, and how the newer ships differ.',
+    author: 'Dr. Grayson Starbuck, DPT',
+    published_date: '2026-11-01',
+    category: 'tips',
+    tags: ['disney-cruise-kids-clubs', 'oceaneer-club', 'edge', 'vibe', 'nursery', 'kids-and-family', 'family-cruising', 'disney-cruise-line'],
+    read_time: '6 min read',
+    featured_image_url: 'https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=1200&h=600&fit=crop',
+    content: `
+<p>If you are cruising with children, <strong>Disney cruise kids clubs</strong> are probably the first thing you will want to understand, because they shape how the whole week feels for parents and kids. Disney splits its youth spaces by age, from a nursery for babies to a teen lounge, and each one has its own rules, hours, and personality. This guide explains which club fits which age, how check-in works, and what to do before you sail.</p>
+<p>One note up front: ages, hours, and fees can change, and they vary a little by ship. Always confirm the current details with Disney Cruise Line before you travel.</p>
+
+<h2>Disney Cruise Kids Clubs at a Glance</h2>
+<p>Here is the basic age breakdown across the fleet:</p>
+<ul>
+<li><strong>"it's a small world" Nursery:</strong> roughly 6 months to 3 years, by reservation and billed by the hour.</li>
+<li><strong>Oceaneer Club (and Oceaneer Lab on some ships):</strong> ages 3 to 10, included in your fare.</li>
+<li><strong>Edge:</strong> tweens, about ages 11 to 14, included.</li>
+<li><strong>Vibe:</strong> teens, about ages 14 to 17, included.</li>
+</ul>
+<p>Everything except the nursery is complimentary, which surprises many first-time cruisers who expect to pay for every hour of childcare.</p>
+
+<h2>The Nursery: Ages 6 Months to 3 Years</h2>
+<p>The nursery is the one youth space with a fee. It is billed hourly with a one-hour minimum, and you need a reservation, which opens well ahead of sailing and earlier for returning-cruiser members. Spots go fast on holiday weeks, so set a reminder for your booking window.</p>
+<p>Diapers or Pull-Ups are required, and the staff handle naps and snacks. If you are traveling with a baby or toddler, our <a href="/guides/disney-cruise-with-toddlers">Disney cruise with toddlers guide</a> covers the nursery, strollers, and dining in more depth.</p>
+
+<h2>Oceaneer Club and Oceaneer Lab: Ages 3 to 10</h2>
+<p>This is the centerpiece of the kids' programming and the space most children never want to leave. On the newer Wish-class ships, the club is built around themed areas such as the Marvel Super Hero Academy, Fairytale Hall, an Imagineering-style lab, and a Star Wars cargo bay. On older ships, the club and lab are two connected spaces with different themes, and kids can move between them.</p>
+<h3>What a typical day looks like</h3>
+<p>Expect crafts, games, story time, character visits, and open play. Hours generally run from morning until late evening, but they shift on embarkation day and some port days, so check the schedule in the Disney Cruise Line Navigator app once you are aboard.</p>
+<h3>Tips for ages 3 to 5</h3>
+<p>Younger kids are the most likely to need a warm-up. Visit together during the open house time, let them pick one activity, then try a short drop-off first. Staff will message you through the app if your child needs a parent.</p>
+
+<h2>Edge: The Tween Club, Ages 11 to 14</h2>
+<p>Edge is built for the in-between age. Think video games, dance parties, trivia, and hangout space that feels less like a kids' room and more like a clubhouse. Tweens usually sign themselves in and out, so talk through your expectations on day one. On the Disney Wish, the entrance is cleverly hidden behind a pop-art painting, which tweens tend to love.</p>
+
+<h2>Vibe: The Teen Lounge, Ages 14 to 17</h2>
+<p>Vibe is the teen lounge, with a more relaxed, social feel. Teens can pop in for activities or just hang out with others their age. For more ideas on keeping older kids happy at sea, read our guide to <a href="/blog/cruising-with-teens-activities">cruising with teens</a>.</p>
+
+<h2>How Check-In and Wristbands Work</h2>
+<p>Registration happens before or on embarkation day. You complete the paperwork, kids receive a wristband, and they tap it to check in and out of each club. A password is required for pickup. Children of a certain age, with parental permission, can sign themselves out. Staying on top of the Navigator app helps, since club messages from staff come through there.</p>
+
+<h2>Five Tips for Using the Kids Clubs</h2>
+<ul>
+<li><strong>Finish registration early.</strong> Doing the paperwork before boarding saves a long line later.</li>
+<li><strong>Do an open house visit.</strong> Seeing the space with you makes the first drop-off easier.</li>
+<li><strong>Pick club times around dinner and shows.</strong> Rotational dining and evening shows are natural moments to use the clubs.</li>
+<li><strong>Keep port days flexible.</strong> On a private island day, check the Castaway Cay program times. Our <a href="/ports/castaway-cay">Castaway Cay page</a> has the island basics.</li>
+<li><strong>Do not skip family time.</strong> Most kids love both the club and the pool deck, so balance them.</li>
+</ul>
+
+<h2>Which Ship Has the Best Kids Clubs?</h2>
+<p>All Disney ships offer the core age-based programs, but the newer ships have the most elaborate spaces. The <a href="/ships/disney-wish">Disney Wish</a>, <a href="/ships/disney-treasure">Disney Treasure</a>, and <a href="/ships/disney-destiny">Disney Destiny</a> share a similar club layout, while the older ships have the classic club-and-lab arrangement. Our <a href="/blog/disney-destiny-vs-disney-treasure">Destiny vs Treasure comparison</a> covers how the two newest ships differ. If you want to see current sailings by ship, browse our <a href="/sailings">sailings page</a>.</p>
+
+<h2>The Bottom Line</h2>
+<p>Disney cruise kids clubs are included in your fare for ages 3 and up, and they are a major reason families sail Disney. Match the club to your child's age, finish registration early, and use the Navigator app to stay in touch. For a broader planning checklist, our <a href="/blog/first-time-disney-cruise-tips">first-time Disney cruise tips</a> are a good next read.</p>
+<p>Not sure which ship or sailing fits your kids' ages? <a href="/concierge">Talk to our concierge</a> for personalized recommendations, or <a href="/free-quote">get a free quote from our team</a>. There is no obligation either way.</p>
+<!-- Image alt text suggestions: "Children playing in the Oceaneer Club on a Disney cruise ship"; "Tweens relaxing in the Edge club on the Disney Wish"; "Teens in the Vibe lounge on a Disney cruise". -->
+    `.trim(),
+  },
+  {
     id: '33',
     slug: 'pixar-day-at-sea-2027-disney-fantasy-guide',
     title: 'Pixar Day at Sea 2027: Dates, Characters, and Tips for the Disney Fantasy Sailings',
@@ -450,7 +517,7 @@ export const blogPosts: BlogPost[] = [
 <p>Start with what you do not have to think about. Both are Wish-class ships — the Treasure debuted at the end of 2024, the Destiny in late 2025 — and both carry roughly 4,000 guests across the same footprint.</p>
 <ul>
 <li><strong>AquaMouse</strong>, the Disney-storytelling water coaster, on both.</li>
-<li><strong>The same kids' programming:</strong> Oceaneer Club and Oceaneer Lab for ages 3–12, Edge for tweens, Vibe for teens, plus nursery care.</li>
+<li><strong>The same kids' programming:</strong> Oceaneer Club and Oceaneer Lab for ages 3–12, Edge for tweens, Vibe for teens, plus nursery care. See our <a href="/blog/disney-cruise-kids-clubs-by-age-guide">kids clubs by age guide</a> for details.</li>
 <li><strong>Rotational dining</strong> across three family restaurants, included in your fare.</li>
 <li><strong>The same adult-dining upcharges:</strong> Palo around $45 per person and Enchanté around $145 per person.</li>
 <li><strong>1923</strong>, the Walt-and-Roy tribute restaurant, appears on both ships.</li>
@@ -1032,6 +1099,7 @@ export const blogPosts: BlogPost[] = [
 <li>Shore excursion groups exclusively for teens</li>
 <li>Karaoke competitions</li>
 </ul>
+<p>For the full age breakdown of every club on board, see our <a href="/blog/disney-cruise-kids-clubs-by-age-guide">Disney cruise kids clubs guide</a>.</p>
 <p>Encourage your teen to spend time in Vibe. The social component often becomes the highlight of their cruise, and they'll bond with other teens from around the world.</p>
 
 <h2>Embrace Independence</h2>
@@ -1290,7 +1358,7 @@ export const blogPosts: BlogPost[] = [
 </ul>
 
 <h2>The Youth Clubs: Don't Skip These</h2>
-<p>Disney's youth clubs are genuinely exceptional — immersive themed environments with structured activities, not glorified babysitting. The Oceaneer Club (ages 3–10) is a fully-realized, themed space where kids often don't want to leave. Edge (11–14) and Vibe (14–17) serve older kids with age-appropriate social programming.</p>
+<p>Disney's youth clubs are genuinely exceptional (see our <a href="/blog/disney-cruise-kids-clubs-by-age-guide">kids clubs by age guide</a>) — immersive themed environments with structured activities, not glorified babysitting. The Oceaneer Club (ages 3–10) is a fully-realized, themed space where kids often don't want to leave. Edge (11–14) and Vibe (14–17) serve older kids with age-appropriate social programming.</p>
 <p>The clubs are complimentary and supervised by professionally-trained Disney staff. They give parents genuine vacation time while kids have a separate, memorable experience. Register kids in advance via the app to speed up check-in.</p>
 
 <h2>Castaway Cay: How to Have the Best Day</h2>
