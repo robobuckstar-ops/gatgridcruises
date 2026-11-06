@@ -11,6 +11,7 @@ import {
   type LeadSource,
 } from '@/lib/lead-autotext'
 import { sendPushover } from '@/lib/pushover'
+import { sendLeadDetailsEmail } from '@/lib/lead-details-email'
 import { SAVE_CONTACT_BLOCK } from '@/lib/email-templates'
 import { BUSINESS_PHONE_DISPLAY } from '@/lib/constants'
 
@@ -160,6 +161,21 @@ ${SAVE_CONTACT_BLOCK}
 </td></tr></table></body></html>`
 }
 
+const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+
+/** /book's month and year dropdowns as an inclusive YYYY-MM-DD window. */
+function windowFromPreferences(prefs: Record<string, unknown> | null): { windowStart?: string; windowEnd?: string } {
+  if (!prefs) return {}
+  const startM = MONTHS.indexOf(String(prefs.startMonth ?? ''))
+  const startY = Number(prefs.startYear)
+  const endM = MONTHS.indexOf(String(prefs.endMonth ?? ''))
+  const endY = Number(prefs.endYear)
+  return {
+    windowStart: startY ? `${startY}-${String(Math.max(startM, 0) + 1).padStart(2, '0')}-01` : undefined,
+    windowEnd: endY ? `${endY}-${String((endM < 0 ? 11 : endM) + 1).padStart(2, '0')}-31` : undefined,
+  }
+}
+
 export async function POST(request: NextRequest) {
   const ip = getClientIp({ headers: request.headers })
 
@@ -260,6 +276,25 @@ export async function POST(request: NextRequest) {
     return textOk
   }
 
+  // The AI-prepared details email goes to quote requests only: a sailing request
+  // or /book, which sends preferences. A /contact message has neither.
+  const rawPrefs = (body.preferences && typeof body.preferences === 'object' ? body.preferences : null) as Record<string, unknown> | null
+  const sendDetailsEmail = async (): Promise<void> => {
+    if (!sailing && !rawPrefs) return
+    await sendLeadDetailsEmail(email, {
+      name,
+      sailingId: sailing?.sailingId,
+      shipName: sailing?.shipName,
+      sailDate: sailing?.sailDate,
+      itineraryName: sailing?.itineraryName,
+      lengthNights: sailing?.lengthNights,
+      listedFare: sailing?.startingPrice,
+      ship: rawPrefs ? sanitize(rawPrefs.ship, 40) : undefined,
+      destination: rawPrefs ? sanitize(rawPrefs.destination, 40) : undefined,
+      ...windowFromPreferences(rawPrefs),
+    })
+  }
+
   /** High-priority push to Grayson, with what already went out to the lead. */
   const pushLeadAlert = async (ackOk: boolean): Promise<void> => {
     await sendPushover({
@@ -340,6 +375,7 @@ export async function POST(request: NextRequest) {
       // Awaited before responding: a serverless invocation is frozen once the
       // response is returned, which would kill an in-flight CRM write.
       await leadWrite
+      await sendDetailsEmail()
       await pushLeadAlert(ackOk)
       return NextResponse.json({ success: true })
     } catch (err) {
@@ -377,6 +413,7 @@ export async function POST(request: NextRequest) {
       }
       await leadWrite
       await sendWelcomeText()
+      await sendDetailsEmail()
       await pushLeadAlert(false)
       return NextResponse.json({ success: true })
     } catch (err) {

@@ -6,6 +6,7 @@ import { AGENT_REPLY_TO, agentNotifyRecipients } from '@/lib/agent-inbox'
 import { readSmsConsent, smsConsentNote } from '@/lib/sms-consent'
 import { sendLeadAutoText } from '@/lib/lead-autotext'
 import { sendPushover } from '@/lib/pushover'
+import { sendLeadDetailsEmail } from '@/lib/lead-details-email'
 
 // Booking-transfer requests from visitors who already booked direct with
 // Disney. Same delivery contract as /api/concierge: the lead is written to the
@@ -256,6 +257,16 @@ export async function POST(request: NextRequest) {
         knownTimeframe: sail_date,
       })
     : false
+
+  // A transfer form has a date but no ship, so match sailings closest to it. A
+  // value that is not a plain date just falls through to upcoming sailings.
+  const isoSailDate = /^\d{4}-\d{2}-\d{2}$/.test(sail_date) ? sail_date : undefined
+  await sendLeadDetailsEmail(email, {
+    name,
+    transfer: true,
+    windowStart: isoSailDate,
+    windowEnd: isoSailDate,
+  })
 
   await sendPushover({
     title: `New GatGrid lead: ${name}`,

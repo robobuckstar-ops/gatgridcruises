@@ -4,6 +4,7 @@ import { checkRateLimit } from '@/lib/rate-limit'
 import { saveLeadSafely } from '@/lib/airtable-leads'
 import { AGENT_REPLY_TO, agentNotifyRecipients } from '@/lib/agent-inbox'
 import { leadFirstName, missingLeadDetails, sendLeadAutoText } from '@/lib/lead-autotext'
+import { sendLeadDetailsEmail, windowFromTimeframe } from '@/lib/lead-details-email'
 import { sendPushover } from '@/lib/pushover'
 import { SAVE_CONTACT_BLOCK } from '@/lib/email-templates'
 import { BUSINESS_PHONE_DISPLAY } from '@/lib/constants'
@@ -285,6 +286,12 @@ export async function POST(request: NextRequest) {
       console.error('[free-quote] auto-ack email failed:', err)
     }
   }
+
+  await sendLeadDetailsEmail(email, {
+    name,
+    interest: sailing_interest,
+    ...windowFromTimeframe(timeframe),
+  })
 
   await sendPushover({
     title: `New GatGrid lead: ${name}`,

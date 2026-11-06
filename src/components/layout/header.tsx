@@ -3,8 +3,9 @@
 import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Menu, X, ChevronDown } from 'lucide-react'
+import { Menu, X, ChevronDown, Phone } from 'lucide-react'
 import { SrOnly } from '@/components/ui/sr-only'
+import { BUSINESS_PHONE_DISPLAY, BUSINESS_PHONE_TEL } from '@/lib/constants'
 
 type NavChild = { label: string; href: string; badge?: string }
 type NavItem = { label: string; href: string; children?: NavChild[] }
@@ -165,7 +166,7 @@ export function Header() {
             <span className="text-gold text-xl" aria-hidden="true">
               ⚓
             </span>
-            <span className="text-xl font-bold text-navy">
+            <span className="text-base sm:text-xl font-bold text-navy">
               GatGridCruises
               <SrOnly> — Best Disney Cruise Deals</SrOnly>
             </span>
@@ -173,6 +174,13 @@ export function Header() {
 
           {/* Desktop CTAs */}
           <div className="hidden md:flex items-center gap-2">
+            <a
+              href={BUSINESS_PHONE_TEL}
+              className="inline-flex items-center gap-1 whitespace-nowrap px-1 py-2 text-sm font-bold text-navy hover:underline"
+            >
+              <Phone className="h-3.5 w-3.5" aria-hidden="true" />
+              {BUSINESS_PHONE_DISPLAY}
+            </a>
             <Link
               href="/transfer"
               className="cta-shimmer hidden lg:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-[#1E3A5F] text-white text-sm font-semibold shadow-[0_1px_6px_rgba(30,58,95,0.28)] hover:bg-[#2a4d75] transition-colors duration-200"
@@ -259,6 +267,15 @@ export function Header() {
               )
             )}
           </nav>
+
+          {/* Mobile phone link */}
+          <a
+            href={BUSINESS_PHONE_TEL}
+            className="md:hidden ml-auto mr-1 inline-flex items-center gap-1 whitespace-nowrap py-2 text-xs font-bold text-navy"
+          >
+            <Phone className="h-3 w-3" aria-hidden="true" />
+            {BUSINESS_PHONE_DISPLAY}
+          </a>
 
           {/* Mobile hamburger */}
           <button

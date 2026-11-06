@@ -19,6 +19,7 @@ import { StructuredData } from '@/components/ui/structured-data'
 import { generateBreadcrumbSchema, generateFAQSchema } from '@/lib/structured-data'
 import { OBC_EXAMPLE_FARES, formatUSD, getOBC } from '@/lib/obc'
 import { EligibilityCheck } from './EligibilityCheck'
+import { HowWeWork } from '@/components/ui/how-we-work'
 
 export const metadata: Metadata = {
   // `absolute` opts out of the root layout's "%s | Disney Cruise Deal Finder"
@@ -267,6 +268,7 @@ export default function TransferPage() {
             Eligibility and timing are set by Disney Cruise Line — we&apos;ll confirm yours for
             free, and tell you honestly either way.
           </p>
+          <HowWeWork className="mt-6" />
         </div>
       </section>
 

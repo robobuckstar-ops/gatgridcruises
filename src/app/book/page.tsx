@@ -8,6 +8,8 @@ import { trackLead } from '@/lib/analytics'
 import { OBCDisclaimer } from '@/components/ui/obc-disclaimer'
 import { GraysonFamilyPhoto } from '@/components/ui/grayson-family-photo'
 import { SmsConsentCheckbox } from '@/components/ui/sms-consent-checkbox'
+import { HowWeWork } from '@/components/ui/how-we-work'
+import { BUSINESS_PHONE_DISPLAY, BUSINESS_PHONE_TEL } from '@/lib/constants'
 import { ships as DCL_SHIPS } from '@/data/ships'
 
 export default function BookPage() {
@@ -92,6 +94,14 @@ export default function BookPage() {
           sms_consent: smsConsent,
           guests: `${form.adults}A/${form.children}C`,
           notes: notesParts.join('\n'),
+          preferences: {
+            ship: form.ship,
+            destination: form.destination,
+            startMonth: form.startMonth,
+            startYear: form.startYear,
+            endMonth: form.endMonth,
+            endYear: form.endYear,
+          },
         }),
       })
       if (!res.ok) {
@@ -137,126 +147,17 @@ export default function BookPage() {
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
-        <div className="text-center mb-10">
-          <h1 className="font-fraunces text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+        <div className="text-center mb-6">
+          <h1 className="font-fraunces text-3xl md:text-5xl font-bold text-slate-900 mb-3">
             Get Your Free Disney Cruise Quote
           </h1>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             Tell us about your dream cruise and a licensed Disney cruise specialist will send you personalized pricing and options within 24 hours.
           </p>
-        </div>
-
-        {/* Trust signals */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
-          <div className="flex items-start gap-3 bg-white rounded-xl p-4 border border-slate-200 shadow-sm">
-            <Shield className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
-            <div>
-              <p className="font-semibold text-slate-900 text-sm">Free, No-Obligation Quote</p>
-              <p className="text-xs text-slate-500">Zero pressure, zero commitment</p>
-            </div>
-          </div>
-          <div className="flex items-start gap-3 bg-white rounded-xl p-4 border border-slate-200 shadow-sm">
-            <Star className="w-5 h-5 text-[#D4AF37] flex-shrink-0 mt-0.5" />
-            <div>
-              <p className="font-semibold text-slate-900 text-sm">Licensed Travel Advisor</p>
-              <p className="text-xs text-slate-500">Through Boardwalk Travel Agency</p>
-            </div>
-          </div>
-          <div className="flex items-start gap-3 bg-white rounded-xl p-4 border border-slate-200 shadow-sm">
-            <Phone className="w-5 h-5 text-[#1E3A5F] flex-shrink-0 mt-0.5" />
-            <div>
-              <p className="font-semibold text-slate-900 text-sm">Our Service is 100% Free</p>
-              <p className="text-xs text-slate-500">We earn a commission from the cruise line, not you</p>
-            </div>
-          </div>
-        </div>
-
-        {/* OBC Promo Banner */}
-        <div className="rounded-2xl bg-[#1E3A5F] p-6 mb-2">
-          <div className="flex items-center gap-3 mb-3">
-            <Gift className="w-6 h-6 text-[#D4AF37] flex-shrink-0" aria-hidden="true" />
-            <h2 className="font-fraunces text-xl font-bold text-white">Get Free Onboard Credit With Our Concierge Service</h2>
-          </div>
-          <p className="text-blue-200 text-sm mb-5">
-            The bigger your cruise fare, the more free spending money we add to your onboard account. This perk is available when you book through our partner, Boardwalk Travel Agency.
+          <p className="mt-2 text-sm text-slate-600">
+            Prefer to talk? Call{' '}
+            <a href={BUSINESS_PHONE_TEL} className="font-bold text-[#1E3A5F] underline">{BUSINESS_PHONE_DISPLAY}</a>
           </p>
-
-          {/* Example amounts */}
-          <div className="rounded-xl overflow-hidden border border-white/10 mb-4">
-            <div className="grid grid-cols-2 gap-2 px-4 py-2 bg-white/10">
-              <span className="text-[#D4AF37] text-xs font-bold uppercase tracking-widest">Cruise Fare</span>
-              <span className="text-[#D4AF37] text-xs font-bold uppercase tracking-widest text-right">Free OBC*</span>
-            </div>
-            <div className="divide-y divide-white/10">
-              {OBC_EXAMPLE_FARES.map((exampleFare) => (
-                <div key={exampleFare} className="grid grid-cols-2 gap-2 px-4 py-2.5 items-center hover:bg-white/5 transition-colors">
-                  <span className="text-blue-100 text-sm">{formatUSD(exampleFare)}</span>
-                  <span className="font-fraunces font-bold text-white text-right">{formatUSD(getOBC(exampleFare))}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="flex items-center justify-between gap-4">
-            <p className="text-blue-300 text-xs">Not sure what your fare would earn?</p>
-            <Link
-              href="/tools/obc-calculator"
-              className="inline-flex items-center gap-1.5 text-[#D4AF37] font-semibold text-sm hover:text-yellow-300 transition-colors flex-shrink-0"
-            >
-              <Gift className="w-4 h-4" aria-hidden="true" />
-              Calculate My OBC →
-            </Link>
-          </div>
-
-          <div className="mt-4 pt-4 border-t border-white/10">
-            <OBCDisclaimer />
-          </div>
-        </div>
-
-        {/* Agent Credentials */}
-        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 mb-6">
-          <div className="flex items-center gap-2 mb-4">
-            <BadgeCheck className="w-5 h-5 text-[#1E3A5F] flex-shrink-0" />
-            <h2 className="font-fraunces text-lg font-bold text-slate-900">Your Personal Disney Cruise Specialist</h2>
-          </div>
-          <div className="flex flex-col sm:flex-row gap-6">
-            <div className="flex-1 space-y-3">
-              <div className="flex items-start gap-3">
-                <GraysonFamilyPhoto />
-                <div>
-                  <p className="font-semibold text-slate-900">Dr. Grayson Starbuck, DPT</p>
-                  <p className="text-sm text-slate-500">Disney cruise specialist &amp; founder of GatGridCruises</p>
-                </div>
-              </div>
-              <p className="text-sm text-slate-600 leading-relaxed">
-                No booking fees — the cruise line pays our commission, so you get expert concierge service at zero cost to you.
-              </p>
-            </div>
-            <div className="sm:border-l sm:border-slate-200 sm:pl-6 space-y-2.5 text-sm">
-              <div className="flex items-center gap-2">
-                <Building2 className="w-4 h-4 text-slate-400 flex-shrink-0" />
-                <div>
-                  <span className="text-slate-500">Host Agency: </span>
-                  <span className="font-semibold text-slate-800">Boardwalk Travel Agency</span>
-                </div>
-              </div>
-              <div className="flex items-center gap-2">
-                <BadgeCheck className="w-4 h-4 text-slate-400 flex-shrink-0" />
-                <div>
-                  <span className="text-slate-500">CLIA: </span>
-                  <span className="font-semibold text-slate-800">00039054</span>
-                </div>
-              </div>
-              <div className="flex items-center gap-2">
-                <Shield className="w-4 h-4 text-slate-400 flex-shrink-0" />
-                <div>
-                  <span className="text-slate-500">FL Seller of Travel: </span>
-                  <span className="font-semibold text-slate-800">ST43802</span>
-                  <span className="text-slate-400 text-xs ml-1">(via Boardwalk Travel Agency)</span>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* Form */}
@@ -586,6 +487,121 @@ export default function BookPage() {
             </div>
 
           </form>
+        </div>
+
+        <HowWeWork className="mt-8 mb-10" />
+
+        {/* Trust signals */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
+          <div className="flex items-start gap-3 bg-white rounded-xl p-4 border border-slate-200 shadow-sm">
+            <Shield className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+            <div>
+              <p className="font-semibold text-slate-900 text-sm">Free, No-Obligation Quote</p>
+              <p className="text-xs text-slate-500">Zero pressure, zero commitment</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-3 bg-white rounded-xl p-4 border border-slate-200 shadow-sm">
+            <Star className="w-5 h-5 text-[#D4AF37] flex-shrink-0 mt-0.5" />
+            <div>
+              <p className="font-semibold text-slate-900 text-sm">Licensed Travel Advisor</p>
+              <p className="text-xs text-slate-500">Through Boardwalk Travel Agency</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-3 bg-white rounded-xl p-4 border border-slate-200 shadow-sm">
+            <Phone className="w-5 h-5 text-[#1E3A5F] flex-shrink-0 mt-0.5" />
+            <div>
+              <p className="font-semibold text-slate-900 text-sm">Our Service is 100% Free</p>
+              <p className="text-xs text-slate-500">We earn a commission from the cruise line, not you</p>
+            </div>
+          </div>
+        </div>
+
+        {/* OBC Promo Banner */}
+        <div className="rounded-2xl bg-[#1E3A5F] p-6 mb-2">
+          <div className="flex items-center gap-3 mb-3">
+            <Gift className="w-6 h-6 text-[#D4AF37] flex-shrink-0" aria-hidden="true" />
+            <h2 className="font-fraunces text-xl font-bold text-white">Get Free Onboard Credit With Our Concierge Service</h2>
+          </div>
+          <p className="text-blue-200 text-sm mb-5">
+            The bigger your cruise fare, the more free spending money we add to your onboard account. This perk is available when you book through our partner, Boardwalk Travel Agency.
+          </p>
+
+          {/* Example amounts */}
+          <div className="rounded-xl overflow-hidden border border-white/10 mb-4">
+            <div className="grid grid-cols-2 gap-2 px-4 py-2 bg-white/10">
+              <span className="text-[#D4AF37] text-xs font-bold uppercase tracking-widest">Cruise Fare</span>
+              <span className="text-[#D4AF37] text-xs font-bold uppercase tracking-widest text-right">Free OBC*</span>
+            </div>
+            <div className="divide-y divide-white/10">
+              {OBC_EXAMPLE_FARES.map((exampleFare) => (
+                <div key={exampleFare} className="grid grid-cols-2 gap-2 px-4 py-2.5 items-center hover:bg-white/5 transition-colors">
+                  <span className="text-blue-100 text-sm">{formatUSD(exampleFare)}</span>
+                  <span className="font-fraunces font-bold text-white text-right">{formatUSD(getOBC(exampleFare))}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="flex items-center justify-between gap-4">
+            <p className="text-blue-300 text-xs">Not sure what your fare would earn?</p>
+            <Link
+              href="/tools/obc-calculator"
+              className="inline-flex items-center gap-1.5 text-[#D4AF37] font-semibold text-sm hover:text-yellow-300 transition-colors flex-shrink-0"
+            >
+              <Gift className="w-4 h-4" aria-hidden="true" />
+              Calculate My OBC →
+            </Link>
+          </div>
+
+          <div className="mt-4 pt-4 border-t border-white/10">
+            <OBCDisclaimer />
+          </div>
+        </div>
+
+        {/* Agent Credentials */}
+        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 mb-6">
+          <div className="flex items-center gap-2 mb-4">
+            <BadgeCheck className="w-5 h-5 text-[#1E3A5F] flex-shrink-0" />
+            <h2 className="font-fraunces text-lg font-bold text-slate-900">Your Personal Disney Cruise Specialist</h2>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-6">
+            <div className="flex-1 space-y-3">
+              <div className="flex items-start gap-3">
+                <GraysonFamilyPhoto />
+                <div>
+                  <p className="font-semibold text-slate-900">Dr. Grayson Starbuck, DPT</p>
+                  <p className="text-sm text-slate-500">Disney cruise specialist &amp; founder of GatGridCruises</p>
+                </div>
+              </div>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                No booking fees — the cruise line pays our commission, so you get expert concierge service at zero cost to you.
+              </p>
+            </div>
+            <div className="sm:border-l sm:border-slate-200 sm:pl-6 space-y-2.5 text-sm">
+              <div className="flex items-center gap-2">
+                <Building2 className="w-4 h-4 text-slate-400 flex-shrink-0" />
+                <div>
+                  <span className="text-slate-500">Host Agency: </span>
+                  <span className="font-semibold text-slate-800">Boardwalk Travel Agency</span>
+                </div>
+              </div>
+              <div className="flex items-center gap-2">
+                <BadgeCheck className="w-4 h-4 text-slate-400 flex-shrink-0" />
+                <div>
+                  <span className="text-slate-500">CLIA: </span>
+                  <span className="font-semibold text-slate-800">00039054</span>
+                </div>
+              </div>
+              <div className="flex items-center gap-2">
+                <Shield className="w-4 h-4 text-slate-400 flex-shrink-0" />
+                <div>
+                  <span className="text-slate-500">FL Seller of Travel: </span>
+                  <span className="font-semibold text-slate-800">ST43802</span>
+                  <span className="text-slate-400 text-xs ml-1">(via Boardwalk Travel Agency)</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </main>

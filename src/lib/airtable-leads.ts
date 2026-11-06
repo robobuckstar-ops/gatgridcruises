@@ -88,11 +88,11 @@ export interface LeadInput {
   utmMedium?: string
   utmCampaign?: string
   /**
-   * Write the detail columns again when the lead already exists.
+   * Overwrite the detail columns when the lead already exists.
    *
    * Off by default: a repeat inquiry from a known contact shouldn't clobber
-   * whatever Grayson has since written in the CRM. The transfer form turns it
-   * on because its details — reservation number, sail date — are the whole
+   * whatever Grayson has since written in the CRM (the new details are appended
+   * to Notes either way). The transfer form turns it on because its details — reservation number, sail date — are the whole
    * point of the submission, and silently dropping them on a returning
    * visitor's second request would lose the thing he needs to act on.
    */
@@ -143,9 +143,27 @@ function describeAirtableError(err: unknown): Record<string, unknown> {
 }
 
 /**
+ * The dated block a repeat inquiry adds to an existing lead's Notes, carrying
+ * everything that came in on the new submission.
+ */
+export function repeatInquiryNote(input: LeadInput, date: string): string {
+  return [
+    `--- Repeat inquiry ${date} (${input.source}) ---`,
+    `Name: ${input.name}`,
+    input.phone ? `Phone: ${input.phone}` : null,
+    input.guests ? `Guests: ${input.guests}` : null,
+    input.sailingInterest ? `Sailing: ${input.sailingInterest}` : null,
+    input.reservationNumber ? `Reservation #: ${input.reservationNumber}` : null,
+    input.notes ? input.notes : null,
+  ]
+    .filter((line): line is string => line !== null)
+    .join('\n')
+}
+
+/**
  * Upsert by email so a repeat inquiry doesn't create a duplicate CRM row or
- * restart the nurture drip. An existing lead only gets its contact dates
- * refreshed — pipeline stage and drip progress are Grayson's to manage.
+ * restart the nurture drip. An existing lead keeps its name, stage and drip
+ * progress; the new details are appended to Notes so nothing is lost.
  */
 export async function saveLead(
   input: LeadInput,
@@ -177,11 +195,18 @@ export async function saveLead(
   }
 
   if (existing) {
-    const touch: Record<string, unknown> = { [LEAD_FIELDS.lastContactDate]: today() }
+    const priorNotes = existing.fields[OPTIONAL_FIELDS.notes]
+    const addition = repeatInquiryNote(input, today())
+    const touch: Record<string, unknown> = {
+      [LEAD_FIELDS.lastContactDate]: today(),
+      [OPTIONAL_FIELDS.notes]:
+        typeof priorNotes === 'string' && priorNotes.trim()
+          ? `${priorNotes}\n\n${addition}`
+          : addition,
+    }
 
     if (input.refreshDetailsOnUpdate) {
       touch[OPTIONAL_FIELDS.source] = input.source
-      if (input.notes) touch[OPTIONAL_FIELDS.notes] = input.notes
       if (input.phone) touch[OPTIONAL_FIELDS.phone] = input.phone
       if (input.sailingInterest) touch[OPTIONAL_FIELDS.sailingInterest] = input.sailingInterest
       if (input.reservationNumber) {

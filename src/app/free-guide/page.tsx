@@ -12,6 +12,7 @@ import {
   Wallet,
 } from 'lucide-react'
 import { GuideForm } from './GuideForm'
+import { HowWeWork } from '@/components/ui/how-we-work'
 
 export const metadata: Metadata = {
   title: 'Free Disney Cruise First-Timer’s Guide (PDF) | GatGrid',
@@ -239,6 +240,8 @@ export default function FreeGuidePage() {
           <div className="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8">
             <GuideForm />
           </div>
+
+          <HowWeWork className="mt-8" />
         </div>
       </section>
 

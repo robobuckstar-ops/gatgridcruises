@@ -14,6 +14,7 @@ export const PRICES_DISCLAIMER =
 
 /** The GatGrid business line, formatted the way customers see it. */
 export const BUSINESS_PHONE_DISPLAY = '(405) 526-4956'
+export const BUSINESS_PHONE_TEL = 'tel:+14055264956'
 
 /**
  * The deliverability nudge on every lead form's success screen. A lead who

@@ -6,7 +6,7 @@
  * Three tags coexist on the site and each wants its own signal for the same
  * event, so they are fired together from one place rather than duplicated at
  * every call site:
- *   - GA4 (G-434T744BN1) — configured in the root layout, untouched here.
+ *   - GA4 (G-434T744BN1) — `gtag('event', 'generate_lead', { send_to })`.
  *   - Meta Pixel — `fbq('track', 'Lead')`.
  *   - Google Ads (AW-18395230133) — `gtag('event', 'conversion', { send_to })`.
  *
@@ -18,6 +18,9 @@
  * runs during SSR, the helper returns quietly. Analytics must never be the
  * reason a visitor's inquiry appears to fail.
  */
+
+export const GA_MEASUREMENT_ID =
+  process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-434T744BN1'
 
 export const META_PIXEL_ID =
   process.env.NEXT_PUBLIC_META_PIXEL_ID || '1492719586051938'
@@ -48,7 +51,7 @@ export type LeadSource =
   | 'contact'
 
 /**
- * Report a submitted lead to Meta and Google Ads.
+ * Report a submitted lead to Meta, Google Ads and GA4.
  *
  * Call this only after the API responded OK — a lead that failed to reach us
  * is not a conversion.
@@ -65,6 +68,15 @@ export function trackLead(source: LeadSource): void {
   try {
     window.gtag?.('event', 'conversion', {
       send_to: `${GOOGLE_ADS_ID}/${GOOGLE_ADS_LEAD_CONVERSION_LABEL}`,
+    })
+  } catch {
+    // Same: never let a tag failure surface to the visitor.
+  }
+
+  try {
+    window.gtag?.('event', 'generate_lead', {
+      send_to: GA_MEASUREMENT_ID,
+      lead_source: source,
     })
   } catch {
     // Same: never let a tag failure surface to the visitor.

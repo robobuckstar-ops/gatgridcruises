@@ -13,6 +13,7 @@ import {
 import { OBCDisclaimer } from '@/components/ui/obc-disclaimer'
 import { OBC_EXAMPLE_FARES, formatUSD, getOBC } from '@/lib/obc'
 import { FreeQuoteForm } from './FreeQuoteForm'
+import { BUSINESS_PHONE_DISPLAY, BUSINESS_PHONE_TEL } from '@/lib/constants'
 
 // Destination page for Google and Meta ads. Everything here is subordinate to
 // one job: get the quote form filled in. The form sits in the hero on mobile
@@ -167,7 +168,8 @@ export default function FreeQuotePage() {
                 Request Your Free Quote
               </h2>
               <p className="font-inter text-sm text-blue-300 mb-6 leading-relaxed">
-                Four quick fields. No payment details, no obligation to book.
+                Four quick fields. No payment details, no obligation to book. Prefer to talk? Call{' '}
+                <a href={BUSINESS_PHONE_TEL} className="font-bold text-white underline">{BUSINESS_PHONE_DISPLAY}</a>
               </p>
               <FreeQuoteForm />
             </div>
