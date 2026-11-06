@@ -9,7 +9,7 @@ import { NewsletterPopup } from '@/components/ui/newsletter-popup'
 // newsletter popup — makes sense on the public marketing site but clutters the
 // private client portal, where the visitor is an already-booked client. Hide it
 // on /my-trip routes; render it normally everywhere else.
-const MOBILE_FORM_PAGES = ['/obc-estimate', '/book', '/transfer', '/free-guide', '/contact', '/concierge', '/group-cruise', '/price-watch']
+const LEAD_FORM_PAGES = ['/obc-estimate', '/book', '/transfer', '/free-guide', '/contact', '/concierge', '/group-cruise', '/price-watch']
 
 export function PortalChromeGate() {
   const pathname = usePathname()
@@ -18,11 +18,12 @@ export function PortalChromeGate() {
   return (
     <>
       {/* On phones these float over form fields, so lead form pages leave them off. */}
-      <div className={MOBILE_FORM_PAGES.includes(pathname) ? 'hidden md:block' : undefined}>
+      <div className={LEAD_FORM_PAGES.includes(pathname) ? 'hidden md:block' : undefined}>
         <ChatWidget />
         <ObcBadge />
       </div>
-      {pathname !== '/obc-thanks' && <NewsletterPopup />}
+      {/* The popup must never cover a lead form, or show on the thank-you page. */}
+      {pathname !== '/obc-thanks' && !LEAD_FORM_PAGES.includes(pathname) && <NewsletterPopup />}
     </>
   )
 }
