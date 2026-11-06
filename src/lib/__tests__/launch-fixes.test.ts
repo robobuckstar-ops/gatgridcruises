@@ -89,20 +89,15 @@ test('a repeat lead fills blank tracking columns without overwriting', async () 
   assert.equal(writes[0]['Ad Name'], 'ad')
 })
 
-test('every voice response is well-formed TwiML', () => {
-  const forms = [pressOneTwiml, forwardTwiml, voicemailOnlyTwiml, rejectTwiml]
-  return Promise.all(
-    forms.map(async (form) => {
-      const body = await form().text()
-      const tags = body.replace(/^<\?xml[^>]*\?>/, '')
-      // Every "<" must open a complete tag whose attributes are balanced.
-      for (const tag of tags.match(/<[^<>]*>/g) ?? []) {
-        assert.equal((tag.match(/"/g) ?? []).length % 2, 0, tag)
-      }
-      assert.equal(tags.replace(/<[^<>]*>/g, '').includes('<'), false, tags)
-      assert.equal(tags.replace(/<[^<>]*>/g, '').includes('>'), false, tags)
-    }),
-  )
+test('every voice response is well-formed TwiML', async () => {
+  for (const form of [pressOneTwiml, forwardTwiml, voicemailOnlyTwiml, rejectTwiml]) {
+    const tags = (await form().text()).replace(/^<\?xml[^>]*\?>/, '')
+    for (const tag of tags.match(/<[^<>]*>/g) ?? []) {
+      assert.equal((tag.match(/"/g) ?? []).length % 2, 0, tag)
+    }
+    const text = tags.replace(/<[^<>]*>/g, '')
+    assert.equal(text.includes('<') || text.includes('>'), false, tags)
+  }
 })
 
 test('press-1 points at the gather route', async () => {

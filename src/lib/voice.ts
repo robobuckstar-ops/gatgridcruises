@@ -8,7 +8,9 @@ import { DEFAULT_BUSINESS_NUMBER, normalizePhone } from './twilio'
 /** The cell that answers the business line. Overridable for testing. */
 export const FORWARD_TO = normalizePhone(process.env.VOICE_FORWARD_NUMBER) || '+15804306511'
 const RING_SECONDS = 20
-const PRESS_ONE_SECONDS = 6
+// A plain string on purpose: the production compiler mangled this tag when it was
+// a template literal joined with +, producing XML that Twilio cannot parse.
+const GATHER_OPEN = '<Gather numDigits="1" timeout="6" action="/api/voice/gather" method="POST">'
 const PROMPT = 'Thanks for calling Gat Grid Cruises. To reach a travel advisor, press 1.'
 
 // Grayson's own recorded greeting, hosted on the site. Set VOICE_GREETING_READY
@@ -45,7 +47,7 @@ function voicemailBody(): string {
 export function pressOneTwiml(): NextResponse {
   return xml(
     `<Response>` +
-      `<Gather numDigits="1" timeout="${PRESS_ONE_SECONDS}" action="/api/voice/gather" method="POST">` +
+      GATHER_OPEN +
       `<Say voice="alice">${PROMPT}</Say>` +
       `</Gather>` +
       voicemailBody() +
