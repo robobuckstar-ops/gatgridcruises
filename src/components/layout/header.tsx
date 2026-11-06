@@ -173,36 +173,35 @@ export function Header() {
           </Link>
 
           {/* Desktop CTAs */}
-          <div className="hidden md:flex items-center gap-2">
+          <div className="hidden xl:flex items-center gap-1.5">
             <a
               href={BUSINESS_PHONE_TEL}
-              className="inline-flex items-center gap-1 whitespace-nowrap px-1 py-2 text-sm font-bold text-navy hover:underline"
+              className="whitespace-nowrap px-1 py-2 text-sm font-bold text-navy hover:underline"
             >
-              <Phone className="h-3.5 w-3.5" aria-hidden="true" />
               {BUSINESS_PHONE_DISPLAY}
             </a>
             <Link
               href="/transfer"
-              className="cta-shimmer hidden lg:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-[#1E3A5F] text-white text-sm font-semibold shadow-[0_1px_6px_rgba(30,58,95,0.28)] hover:bg-[#2a4d75] transition-colors duration-200"
+              className="cta-shimmer inline-flex items-center gap-1.5 whitespace-nowrap px-3 py-2 rounded-lg bg-[#1E3A5F] text-white text-sm font-semibold shadow-[0_1px_6px_rgba(30,58,95,0.28)] hover:bg-[#2a4d75] transition-colors duration-200"
             >
               <span className="relative">Already Booked? Free Bonus →</span>
             </Link>
             <Link
               href="/my-trip"
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-navy text-navy text-sm font-semibold hover:bg-navy hover:text-white transition-colors duration-200"
+              className="inline-flex items-center gap-1 whitespace-nowrap px-3 py-2 rounded-lg border border-navy text-navy text-sm font-semibold hover:bg-navy hover:text-white transition-colors duration-200"
             >
               ⚓ My Trip
             </Link>
             <Link
               href="/book"
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#D4AF37] text-[#1E3A5F] text-sm font-bold hover:bg-yellow-300 transition-colors duration-200 shadow-sm"
+              className="inline-flex items-center gap-1 whitespace-nowrap px-3 py-2 rounded-lg bg-[#D4AF37] text-[#1E3A5F] text-sm font-bold hover:bg-yellow-300 transition-colors duration-200 shadow-sm"
             >
               Get a Quote
             </Link>
           </div>
 
           {/* Desktop nav */}
-          <nav aria-label="Main navigation" className="hidden md:flex items-center gap-1">
+          <nav aria-label="Main navigation" className="hidden xl:flex items-center">
             {navItems.map((item) =>
               item.children ? (
                 <div
@@ -212,7 +211,7 @@ export function Header() {
                   onMouseLeave={() => setOpenDropdown(null)}
                 >
                   <button
-                    className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-slate-700 hover:text-navy rounded-lg hover:bg-slate-50 transition-colors duration-200"
+                    className="flex items-center gap-0.5 px-2 py-2 text-sm font-medium text-slate-700 hover:text-navy rounded-lg hover:bg-slate-50 transition-colors duration-200"
                     aria-expanded={openDropdown === item.label}
                     aria-haspopup="true"
                     aria-controls={`${item.label.toLowerCase()}-dropdown`}
@@ -255,7 +254,7 @@ export function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`px-3 py-2 text-sm font-medium rounded-lg transition-colors duration-200 ${
+                  className={`px-2 py-2 text-sm font-medium rounded-lg transition-colors duration-200 ${
                     isCurrentPage(item.href)
                       ? 'text-navy bg-slate-100'
                       : 'text-slate-700 hover:text-navy hover:bg-slate-50'
@@ -271,7 +270,7 @@ export function Header() {
           {/* Mobile phone link */}
           <a
             href={BUSINESS_PHONE_TEL}
-            className="md:hidden ml-auto mr-1 inline-flex items-center gap-1 whitespace-nowrap py-2 text-xs font-bold text-navy"
+            className="xl:hidden ml-auto mr-1 inline-flex items-center gap-1 whitespace-nowrap py-2 text-xs sm:text-sm font-bold text-navy"
           >
             <Phone className="h-3 w-3" aria-hidden="true" />
             {BUSINESS_PHONE_DISPLAY}
@@ -281,7 +280,7 @@ export function Header() {
           <button
             ref={menuButtonRef}
             onClick={handleMobileMenuToggle}
-            className="md:hidden p-2 text-slate-700 hover:text-navy transition-colors duration-200 rounded-lg"
+            className="xl:hidden p-2 text-slate-700 hover:text-navy transition-colors duration-200 rounded-lg"
             aria-label={mobileOpen ? 'Close navigation menu' : 'Open navigation menu'}
             aria-expanded={mobileOpen}
             aria-controls="mobile-menu"
@@ -300,7 +299,7 @@ export function Header() {
         <div
           ref={menuRef}
           id="mobile-menu"
-          className="md:hidden border-t border-slate-200 bg-white max-h-[calc(100vh-4rem)] overflow-y-auto"
+          className="xl:hidden border-t border-slate-200 bg-white max-h-[calc(100vh-4rem)] overflow-y-auto"
           role="navigation"
           aria-label="Mobile navigation"
         >
