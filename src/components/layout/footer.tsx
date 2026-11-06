@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { EmailSignup } from '@/components/ui/email-signup'
+import { HideOnRoutes } from '@/components/layout/hide-on-routes'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -7,6 +8,7 @@ export function Footer() {
   return (
     <footer className="text-slate-700 border-t border-slate-200">
       {/* Newsletter Strip */}
+      <HideOnRoutes paths={['/obc-thanks']}>
       <div className="bg-[#1E3A5F]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -30,6 +32,7 @@ export function Footer() {
           </div>
         </div>
       </div>
+      </HideOnRoutes>
 
       {/* Main Footer Links */}
       <div className="bg-slate-50">

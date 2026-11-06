@@ -17,7 +17,7 @@ export function PortalChromeGate() {
     <>
       <ChatWidget />
       <ObcBadge />
-      <NewsletterPopup />
+      {pathname !== '/obc-thanks' && <NewsletterPopup />}
     </>
   )
 }
