@@ -29,7 +29,7 @@ export default function TermsPage() {
       <section className="bg-gradient-to-br from-[#1E3A5F] to-[#1a3a5c] text-white py-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="font-fraunces text-4xl font-bold mb-4">Terms of Use</h1>
-          <p className="text-gray-300">Last updated: April 2026</p>
+          <p className="text-gray-300">Last updated: November 6, 2026</p>
         </div>
       </section>
 
@@ -54,6 +54,24 @@ export default function TermsPage() {
           <h2 className="font-fraunces text-2xl font-bold text-[#1E3A5F] mb-4 mt-10">Affiliate Relationships</h2>
           <p className="text-gray-600 mb-6 leading-relaxed">
             Some links on our site are affiliate links to third-party services including hotel booking platforms (Booking.com), flight search engines (Skyscanner), and other travel services (Expedia). When you click these links and make a purchase, we may earn a commission at no extra cost to you. These relationships are disclosed throughout the site and on our <Link href="/disclosures" className="text-[#D4AF37] hover:underline">Disclosures page</Link>. Affiliate relationships do not influence our editorial content, scores, or recommendations.
+          </p>
+
+          <h2 className="font-fraunces text-2xl font-bold text-[#1E3A5F] mb-4 mt-10">SMS Text Messaging Terms</h2>
+
+          <p className="text-gray-600 mb-4 leading-relaxed">
+            <strong>Program:</strong> GatGrid Cruises sends recurring automated text messages about your cruise, including price-drop and deal alerts, quote and booking updates, and trip-preparation reminders, to people who opt in by entering a mobile number and checking the SMS consent box on one of our forms. Consent is not a condition of purchase.
+          </p>
+
+          <p className="text-gray-600 mb-4 leading-relaxed">
+            <strong>Frequency and cost:</strong> Message frequency varies, typically 2 to 6 messages per month. Msg &amp; data rates may apply.
+          </p>
+
+          <p className="text-gray-600 mb-4 leading-relaxed">
+            <strong>Opt out and help:</strong> Reply STOP to any message to stop receiving texts. Reply HELP for help, or contact us at bookings@gatgridcruises.com or (405) 526-4956. Carriers are not liable for delayed or undelivered messages.
+          </p>
+
+          <p className="text-gray-600 mb-6 leading-relaxed">
+            <strong>Privacy:</strong> We do not sell mobile numbers or SMS consent, and we do not share them with third parties or affiliates for their marketing or promotional purposes. See our <Link href="/privacy" className="text-[#D4AF37] hover:underline">Privacy Policy</Link> for details.
           </p>
 
           <h2 className="font-fraunces text-2xl font-bold text-[#1E3A5F] mb-4 mt-10">Intellectual Property</h2>

@@ -20,7 +20,7 @@
  */
 
 export const META_PIXEL_ID =
-  process.env.NEXT_PUBLIC_META_PIXEL_ID || '1781062076400794'
+  process.env.NEXT_PUBLIC_META_PIXEL_ID || '1492719586051938'
 
 export const GOOGLE_ADS_ID =
   process.env.NEXT_PUBLIC_GOOGLE_ADS_ID || 'AW-18395230133'

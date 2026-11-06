@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/privacy' },
   title: 'Privacy Policy',
   description:
-    'The GatGridCruises privacy policy — what information we collect, how we use and protect it, which cookies we set, and the rights you have over your data.',
+    'The GatGridCruises privacy policy — what we collect, analytics and advertising cookies (Google, Meta), AI-assisted emails, SMS terms, and your rights over your data.',
   openGraph: {
     type: 'website',
     title: 'Privacy Policy — GatGridCruises',
@@ -29,7 +29,7 @@ export default function PrivacyPage() {
       <section className="bg-gradient-to-br from-[#1E3A5F] to-[#1a3a5c] text-white py-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="font-fraunces text-4xl font-bold mb-4">Privacy Policy</h1>
-          <p className="text-gray-300">Last updated: April 2026</p>
+          <p className="text-gray-300">Last updated: November 6, 2026</p>
         </div>
       </section>
 
@@ -37,47 +37,122 @@ export default function PrivacyPage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <div className="prose prose-slate">
           <h2 className="font-fraunces text-2xl font-bold text-[#1E3A5F] mb-4">Overview</h2>
+
           <p className="text-gray-600 mb-6 leading-relaxed">
-            GatGridCruises.com (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) is committed to protecting your privacy. This policy explains what information we collect, how we use it, and your rights regarding that information. We are an independent informational website and are not affiliated with The Walt Disney Company or Disney Cruise Line.
+            GatGridCruises.com (&quot;GatGrid Cruises,&quot; &quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) is operated by GatGrid Financial LC. This policy explains what information we collect, how we use and share it, and the choices you have. We are an independent website and are not affiliated with, endorsed by, or sponsored by The Walt Disney Company or Disney Cruise Line.
           </p>
 
           <h2 className="font-fraunces text-2xl font-bold text-[#1E3A5F] mb-4 mt-10">Information We Collect</h2>
+
           <p className="text-gray-600 mb-4 leading-relaxed">
-            <strong>Email Subscriptions:</strong> If you subscribe to our newsletter, we collect your email address and optionally your first name. This information is stored securely and used solely to send you our weekly deal digest and occasional updates.
+            <strong>Quote, inquiry, and transfer forms:</strong> When you request a quote, ask about a sailing, or ask to transfer a booking, we collect what you enter. Depending on the form, that can include your name, email address, mobile phone number, travel dates, number of guests, ship, stateroom, destination and budget preferences, reservation number, original booking date, referral code, your notes, and your SMS consent choice. We also record the page or campaign that brought you to the form.
           </p>
+
           <p className="text-gray-600 mb-4 leading-relaxed">
-            <strong>Analytics:</strong> We use privacy-friendly analytics to understand how visitors use our site. This may include pages visited, time on site, and general geographic region. We do not track individual users across websites.
+            <strong>Email subscriptions and guides:</strong> If you subscribe to our newsletter or request a free guide, we collect your email address and, optionally, your first name.
           </p>
+
           <p className="text-gray-600 mb-4 leading-relaxed">
-            <strong>Cookies:</strong> We use essential cookies for site functionality and may use advertising cookies through Google AdSense. You can manage cookie preferences in your browser settings.
+            <strong>Analytics and advertising data:</strong> When you visit, the tools listed below collect information such as pages viewed, buttons clicked, forms submitted, device and browser type, IP address, approximate location, and identifiers stored in cookies or similar technologies.
           </p>
+
           <p className="text-gray-600 mb-6 leading-relaxed">
-            <strong>Affiliate Clicks:</strong> When you click affiliate links (marked with disclosure badges), we log the click for aggregate reporting. We do not associate clicks with personal information.
+            <strong>Affiliate clicks:</strong> When you click an affiliate link (marked with a disclosure), we log the click for aggregate reporting.
+          </p>
+
+          <h2 className="font-fraunces text-2xl font-bold text-[#1E3A5F] mb-4 mt-10">Analytics, Advertising, and Cookies</h2>
+
+          <p className="text-gray-600 mb-4 leading-relaxed">
+            We use cookies, pixels, and similar technologies, including ones set by third parties. These tools can recognize your browser across websites and over time, and can be used to show you GatGrid Cruises ads on other sites and apps:
+          </p>
+
+          <ul className="list-disc pl-6 text-gray-600 mb-4 leading-relaxed space-y-2">
+            <li><strong>Google Analytics 4</strong> (measurement ID G-434T744BN1) measures how visitors use the site.</li>
+            <li><strong>Google Ads conversion tracking and remarketing</strong> (AW-18395230133) measures which ads lead to inquiries and can show our ads to people who visited the site.</li>
+            <li><strong>Meta Pixel</strong> (Facebook and Instagram) records page views and submitted lead forms so we can measure our ads, build advertising audiences, and show ads to people who visited the site.</li>
+            <li><strong>Google AdSense and affiliate partner scripts</strong> may set cookies to display advertising and to attribute referrals to travel partners.</li>
+            <li><strong>Our own cookies</strong> remember referral codes and campaign details for 30 days and keep features such as sign-in working.</li>
+          </ul>
+
+          <p className="text-gray-600 mb-6 leading-relaxed">
+            You can block or delete cookies in your browser settings. You can also opt out of personalized ads through <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer" className="text-[#D4AF37] hover:underline">Google Ads Settings</a>, install the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" className="text-[#D4AF37] hover:underline">Google Analytics opt-out add-on</a>, or adjust your <a href="https://www.facebook.com/adpreferences" target="_blank" rel="noopener noreferrer" className="text-[#D4AF37] hover:underline">Facebook ad preferences</a>. Blocking some cookies may affect how parts of the site work.
           </p>
 
           <h2 className="font-fraunces text-2xl font-bold text-[#1E3A5F] mb-4 mt-10">How We Use Your Information</h2>
+
           <p className="text-gray-600 mb-6 leading-relaxed">
-            We use collected information to send requested newsletters, improve our content and tools, display relevant advertising, and monitor site performance. We never sell, rent, or share your personal information with third parties for marketing purposes.
+            We use your information to respond to your requests, research sailings, prepare quotes and follow-ups, provide trip support, send newsletters and messages you asked for, measure and improve the site, and run and measure our advertising.
           </p>
 
-          <h2 className="font-fraunces text-2xl font-bold text-[#1E3A5F] mb-4 mt-10">Third-Party Services</h2>
+          <h2 className="font-fraunces text-2xl font-bold text-[#1E3A5F] mb-4 mt-10">AI-Assisted Emails</h2>
+
           <p className="text-gray-600 mb-6 leading-relaxed">
-            We use the following third-party services: Supabase (database and authentication), Resend (email delivery), Google AdSense (advertising), and affiliate partners including Booking.com, Skyscanner, and Expedia (hotel and flight referrals). Each service has its own privacy policy governing their use of data.
+            Personalized follow-up emails may be prepared by an AI assistant using the details you submit and our sailing information, and are reviewed by a person. Automatic emails sent right after you submit a form are identified as AI-prepared, and a person reviews your request and follows up afterward. Information you submit may be processed by an AI service provider to prepare these messages. The chat assistant on our site is also powered by an AI service provider.
           </p>
+
+          <h2 className="font-fraunces text-2xl font-bold text-[#1E3A5F] mb-4 mt-10">SMS Text Messaging</h2>
+
+          <p className="text-gray-600 mb-4 leading-relaxed">
+            <strong>Consent:</strong> You can opt in to text messages by entering your mobile number and checking the SMS consent box on one of our forms. By opting in, you agree to receive recurring automated text messages from GatGrid Cruises about your cruise, including price-drop and deal alerts, quote and booking updates, and trip-preparation reminders. Consent is not a condition of purchase.
+          </p>
+
+          <p className="text-gray-600 mb-4 leading-relaxed">
+            <strong>Message frequency:</strong> Message frequency varies, typically 2 to 6 messages per month.
+          </p>
+
+          <p className="text-gray-600 mb-4 leading-relaxed">
+            <strong>Costs:</strong> Msg &amp; data rates may apply.
+          </p>
+
+          <p className="text-gray-600 mb-4 leading-relaxed">
+            <strong>Opt out and help:</strong> Reply STOP to any message to stop receiving texts. Reply HELP for help, or contact us at bookings@gatgridcruises.com or (405) 526-4956. Carriers are not liable for delayed or undelivered messages.
+          </p>
+
+          <p className="text-gray-600 mb-6 leading-relaxed">
+            <strong>Your mobile information:</strong> We do not sell mobile numbers or SMS consent, and we do not share them with third parties or affiliates for their marketing or promotional purposes. Text messaging opt-in data and consent are not shared with any third party, except with service providers such as our messaging platform as needed to deliver messages to you.
+          </p>
+
+          <h2 className="font-fraunces text-2xl font-bold text-[#1E3A5F] mb-4 mt-10">How We Share Information</h2>
+
+          <p className="text-gray-600 mb-4 leading-relaxed">
+            We do not sell your name, email address, or phone number to data brokers or other companies. We share information only as follows:
+          </p>
+
+          <ul className="list-disc pl-6 text-gray-600 mb-6 leading-relaxed space-y-2">
+            <li><strong>Advertising and analytics partners:</strong> Google and Meta receive the data described above through the tools on our site. Depending on where you live, this kind of sharing for targeted advertising may be considered a &quot;sale&quot; or &quot;sharing&quot; under state privacy law.</li>
+            <li><strong>Service providers:</strong> companies that run parts of our service, including Vercel (hosting), Supabase (database and authentication), Airtable (customer records), Resend and Brevo (email), Twilio (text messages), Pushover (internal staff alerts), and our AI service provider.</li>
+            <li><strong>Travel partners:</strong> if you move forward with a booking, Boardwalk Travel Agency and Disney Cruise Line receive what is needed to make and manage it. Affiliate partners including Booking.com, Skyscanner, and Expedia receive referral information when you click through to them.</li>
+            <li><strong>Legal and safety reasons:</strong> when required by law, or to protect our rights, our customers, or others.</li>
+          </ul>
 
           <h2 className="font-fraunces text-2xl font-bold text-[#1E3A5F] mb-4 mt-10">Your Rights</h2>
+
           <p className="text-gray-600 mb-6 leading-relaxed">
-            You may unsubscribe from our newsletter at any time using the link in any email. You may request deletion of your personal data by contacting us. If you are in the EU, you have additional rights under GDPR including the right to access, rectify, and port your data.
+            You may unsubscribe from marketing emails at any time using the link in the email, and opt out of text messages by replying STOP. You may ask us to access, correct, or delete your personal information, or to opt you out of targeted advertising, by contacting us. Depending on where you live, including California, other U.S. states, and the EU, you may have additional rights under applicable privacy law.
+          </p>
+
+          <h2 className="font-fraunces text-2xl font-bold text-[#1E3A5F] mb-4 mt-10">Children</h2>
+
+          <p className="text-gray-600 mb-6 leading-relaxed">
+            Our site is meant for adults planning travel. We do not knowingly collect personal information directly from children under 13. If you share details about children traveling with you, we use them only to plan your trip.
           </p>
 
           <h2 className="font-fraunces text-2xl font-bold text-[#1E3A5F] mb-4 mt-10">Data Security</h2>
+
           <p className="text-gray-600 mb-6 leading-relaxed">
-            We implement industry-standard security measures including encrypted connections (HTTPS), secure database hosting with row-level security, and limited access to personal data. No method of transmission over the Internet is 100% secure, but we strive to protect your information.
+            We use security measures including encrypted connections (HTTPS), access-controlled hosted databases, and limited access to personal data. No method of transmission over the Internet is 100% secure, but we strive to protect your information.
+          </p>
+
+          <h2 className="font-fraunces text-2xl font-bold text-[#1E3A5F] mb-4 mt-10">Changes to This Policy</h2>
+
+          <p className="text-gray-600 mb-6 leading-relaxed">
+            We may update this policy from time to time. The date at the top of this page shows when it last changed.
           </p>
 
           <h2 className="font-fraunces text-2xl font-bold text-[#1E3A5F] mb-4 mt-10">Contact</h2>
+
           <p className="text-gray-600 mb-6 leading-relaxed">
-            For privacy-related inquiries, contact us at bookings@gatgridcruises.com or via our <Link href="/about" className="text-[#D4AF37] hover:underline">About page</Link>.
+            For privacy-related inquiries, contact us at bookings@gatgridcruises.com, call or text (405) 526-4956, or visit our <Link href="/about" className="text-[#D4AF37] hover:underline">About page</Link>.
           </p>
         </div>
         </div>
