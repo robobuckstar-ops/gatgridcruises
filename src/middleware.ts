@@ -55,7 +55,13 @@ const SECURITY_HEADERS: Record<string, string> = {
   'Referrer-Policy': 'strict-origin-when-cross-origin',
 }
 
+// Server-to-server webhooks with their own secret. Make's user agent must never
+// be able to cost us a lead.
+const WEBHOOK_PATHS = ['/api/meta-lead']
+
 export function middleware(req: NextRequest) {
+  if (WEBHOOK_PATHS.includes(req.nextUrl.pathname)) return NextResponse.next()
+
   const ua = req.headers.get('user-agent') || ''
 
   // Always let legitimate search engine crawlers through

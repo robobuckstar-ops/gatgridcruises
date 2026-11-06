@@ -70,7 +70,7 @@
     },
     {
       "path": "/api/cron/sms-queue",
-      "schedule": "5 13,14 * * *"
+      "schedule": "5 14 * * *"
     }
   ]
 }

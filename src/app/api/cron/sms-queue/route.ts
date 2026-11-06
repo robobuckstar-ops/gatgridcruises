@@ -5,9 +5,8 @@ import { flushQueuedTexts, isWithinSmsWindow } from '@/lib/lead-autotext'
 export const runtime = 'nodejs'
 export const maxDuration = 60
 
-// Sends welcome texts held overnight. Scheduled at both 13:05 and 14:05 UTC so
-// one run lands just after 8am Central in both standard and daylight time. The
-// run outside the window does nothing.
+// Sends welcome texts held overnight. Scheduled daily at 14:05 UTC, which is
+// 8:05am Central in standard time and 9:05am in daylight time.
 export async function GET(request: NextRequest) {
   if (!isAuthorizedCronRequest(request)) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
