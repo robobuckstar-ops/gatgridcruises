@@ -62,9 +62,9 @@ const NEW_LEAD_STAGE = process.env.AIRTABLE_LEAD_NEW_STAGE?.trim() || 'New Lead'
 const OPTIONAL_FIELDS = {
   phone: 'Phone',
   notes: 'Notes',
-  source: 'Source',
-  sailingInterest: 'Sailing Interest',
-  guests: 'Guests',
+  source: 'Form Source',
+  sailingInterest: 'Interested In',
+  guests: 'Party Size',
   reservationNumber: 'Reservation Number',
   referralCode: 'Referral Code',
   utmSource: 'UTM Source',
@@ -176,6 +176,38 @@ function describeAirtableError(err: unknown): Record<string, unknown> {
   }
 }
 
+/** Party Size is a number column. "2A/1C" is 3, and "not sure" leaves it blank. */
+export function partySizeNumber(guests: string | undefined): number | undefined {
+  if (!guests) return undefined
+  const split = guests.match(/(\d+)\s*A\s*\/\s*(\d+)\s*C/i)
+  if (split) return Number(split[1]) + Number(split[2])
+  const first = guests.match(/\d+/)
+  return first ? Number(first[0]) : undefined
+}
+
+/** Columns a repeat lead may fill when blank, but never overwrite. */
+function fillBlankFields(input: LeadInput, existing: Record<string, unknown>): Record<string, unknown> {
+  const candidates: [string, unknown][] = [
+    [OPTIONAL_FIELDS.utmSource, input.utmSource],
+    [OPTIONAL_FIELDS.utmMedium, input.utmMedium],
+    [OPTIONAL_FIELDS.utmCampaign, input.utmCampaign],
+    [OPTIONAL_FIELDS.utmContent, input.utmContent],
+    [OPTIONAL_FIELDS.fbclid, input.fbclid],
+    [OPTIONAL_FIELDS.adName, input.adName],
+    [OPTIONAL_FIELDS.adsetName, input.adsetName],
+    [OPTIONAL_FIELDS.campaignName, input.campaignName],
+    [OPTIONAL_FIELDS.metaLeadId, input.metaLeadId],
+    [OPTIONAL_FIELDS.metaFormId, input.metaFormId],
+    [OPTIONAL_FIELDS.qualified, input.qualified],
+    [OPTIONAL_FIELDS.sailingInterest, input.sailingInterest],
+    [OPTIONAL_FIELDS.guests, partySizeNumber(input.guests)],
+    [OPTIONAL_FIELDS.phone, input.phone],
+  ]
+  return Object.fromEntries(
+    candidates.filter(([key, value]) => value !== undefined && value !== '' && !existing[key]),
+  )
+}
+
 /** Tracking values as one line, so Notes keeps them even if a column is missing. */
 function attributionLine(input: LeadInput): string | null {
   const parts = [
@@ -268,6 +300,7 @@ export async function saveLead(
         typeof priorNotes === 'string' && priorNotes.trim()
           ? `${priorNotes}\n\n${addition}`
           : addition,
+      ...fillBlankFields(input, existing.fields),
       ...consentFields(input),
     }
 
@@ -293,7 +326,7 @@ export async function saveLead(
     [LEAD_FIELDS.nextFollowUp]: daysFromNow(1),
     [LEAD_FIELDS.dripSequence]: 'Not Started',
     [OPTIONAL_FIELDS.source]: input.source,
-    [OPTIONAL_FIELDS.leadSource]: input.leadSource || input.source,
+    [OPTIONAL_FIELDS.leadSource]: input.leadSource || 'Website Form',
     [STATUS_FIELD]: 'New',
     [STATUS_DATE_FIELDS.New]: today(),
     ...consentFields(input),
@@ -305,7 +338,8 @@ export async function saveLead(
     fields[OPTIONAL_FIELDS.notes] = [input.notes, tracking].filter(Boolean).join('\n')
   }
   if (input.sailingInterest) fields[OPTIONAL_FIELDS.sailingInterest] = input.sailingInterest
-  if (input.guests) fields[OPTIONAL_FIELDS.guests] = input.guests
+  const partySize = partySizeNumber(input.guests)
+  if (partySize !== undefined) fields[OPTIONAL_FIELDS.guests] = partySize
   if (input.reservationNumber) {
     fields[OPTIONAL_FIELDS.reservationNumber] = input.reservationNumber
   }

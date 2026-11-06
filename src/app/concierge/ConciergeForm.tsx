@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { CheckCircle, Loader2, Send, Anchor } from 'lucide-react'
 import { readReferralCookie, readUtmCookies } from '@/components/ui/referral-tracker'
-import { trackLead } from '@/lib/analytics'
+import { trackLeadUnlessFlagged } from '@/lib/analytics'
 import { SmsConsentCheckbox } from '@/components/ui/sms-consent-checkbox'
 
 const TIMEZONES = [
@@ -113,7 +113,7 @@ export function ConciergeForm() {
         }).catch(() => {})
       }
 
-      trackLead('concierge')
+      await trackLeadUnlessFlagged(res, 'concierge')
       setStatus('success')
     } catch {
       setStatus('error')

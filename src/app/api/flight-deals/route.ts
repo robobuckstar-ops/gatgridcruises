@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { recordPossibleBot } from '@/lib/possible-bot'
 import { checkRateLimit } from '@/lib/rate-limit'
 import { isSubscriberStoreConfigured, upsertSubscriber } from '@/lib/subscriber-store'
 
@@ -27,9 +28,7 @@ export async function POST(request: NextRequest) {
     const body = await request.json()
     const { email, departureCity, cruiseMonth, destination, _honeypot } = body
 
-    if (_honeypot) {
-      return NextResponse.json({ success: true, message: 'Subscribed successfully' })
-    }
+    if (_honeypot) return recordPossibleBot(body, 'flight-deals', 'hidden field filled')
 
     const sanitizedEmail = sanitizeString(email || '', 200)
     if (!sanitizedEmail || !EMAIL_REGEX.test(sanitizedEmail)) {

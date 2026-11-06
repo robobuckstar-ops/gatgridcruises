@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { recordPossibleBot } from '@/lib/possible-bot'
 import { Resend } from 'resend'
 import { sendChecked } from '@/lib/send-email'
 import { checkRateLimit, getClientIp } from '@/lib/rate-limit'
@@ -200,15 +201,12 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Invalid request' }, { status: 400 })
   }
 
-  // Honeypot: silently 200 so bots don't probe.
-  if (body._honeypot) return NextResponse.json({ success: true })
-
-  // Time-based bot check (server-side mirror of the client check). Humans
-  // can't realistically fill the form in under 2 seconds; bots usually
-  // submit instantly. Silently 200 to avoid signaling rejection.
+  // Bot checks flag a submission instead of dropping it, since autofill can trip
+  // them too. See lib/possible-bot.ts.
+  if (body._honeypot) return recordPossibleBot(body, 'inquiry', 'hidden field filled')
   const elapsedMs = typeof body.elapsed_ms === 'number' ? body.elapsed_ms : 0
   if (elapsedMs > 0 && elapsedMs < 2000) {
-    return NextResponse.json({ success: true })
+    return recordPossibleBot(body, 'inquiry', `submitted in ${elapsedMs}ms`)
   }
 
   const name = sanitize(body.name, 200)

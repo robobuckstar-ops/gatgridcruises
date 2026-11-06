@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { recordPossibleBot } from '@/lib/possible-bot'
 import { Resend } from 'resend'
 import { sendChecked } from '@/lib/send-email'
 import { checkRateLimit } from '@/lib/rate-limit'
@@ -132,9 +133,7 @@ export async function POST(request: NextRequest) {
   }
 
   // Honeypot — bots fill it, humans never see it. Silently 200 to avoid hinting.
-  if (body._honeypot) {
-    return NextResponse.json({ success: true })
-  }
+  if (body._honeypot) return recordPossibleBot(body, 'transfer', 'hidden field filled')
 
   const name = sanitize(body.name, 200)
   const email = sanitize(body.email, 200).toLowerCase()

@@ -4,7 +4,7 @@ import { SmsConsentCheckbox } from '@/components/ui/sms-consent-checkbox'
 import { useState, useRef, useEffect } from 'react'
 import { CheckCircle, Loader2, Send } from 'lucide-react'
 import { readReferralCookie, readUtmCookies } from '@/components/ui/referral-tracker'
-import { trackLead } from '@/lib/analytics'
+import { trackLeadUnlessFlagged } from '@/lib/analytics'
 import { LEAD_CONFIRMATION_HEADS_UP } from '@/lib/constants'
 
 interface FormData {
@@ -71,7 +71,7 @@ export function ContactForm() {
         throw new Error(data?.error || `HTTP ${res.status}`)
       }
 
-      trackLead('contact')
+      await trackLeadUnlessFlagged(res, 'contact')
       setStatus('success')
     } catch (err) {
       setStatus('error')

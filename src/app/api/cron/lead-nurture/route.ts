@@ -4,6 +4,7 @@ import { LEAD_FIELDS, LEADS_TABLE, STATUS_DATE_FIELDS, STATUS_FIELD } from '@/li
 import { isAuthorizedCronRequest } from '@/lib/cron-auth'
 import { dateFromText, isTestLead } from '@/lib/lead-tracking'
 import { leadUnsubscribeUrl } from '@/lib/lead-unsubscribe'
+import { POSSIBLE_BOT_SOURCE } from '@/lib/possible-bot'
 import { nextNurtureStep, NURTURE_STEPS, nurtureEmailHtml } from '@/lib/nurture-emails'
 import { emailTransportConfigured, sendLifecycleEmail } from '@/lib/send-email'
 import { findSubscriberByEmail, STATUS_UNSUBSCRIBED } from '@/lib/subscriber-store'
@@ -69,6 +70,7 @@ export async function GET(request: NextRequest) {
     const email = text(f, 'Email')
     const firstContact = text(f, 'First Contact Date')
     if (!email || !firstContact || isTestLead(name)) continue
+    if (text(f, 'Lead Source') === POSSIBLE_BOT_SOURCE) continue
     if (!ACTIVE_STATUSES.includes(status) || EXCLUDED_STAGES.includes(text(f, 'Pipeline Stage'))) continue
 
     const current = text(f, 'Drip Sequence')
@@ -90,7 +92,7 @@ export async function GET(request: NextRequest) {
         sent.push(`${step.label}:${record.id}`)
         continue
       }
-      const interest = text(f, 'Sailing Interest')
+      const interest = text(f, 'Interested In')
       await sendLifecycleEmail({
         to: email,
         name,

@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { checkRateLimit, getClientIp } from '@/lib/rate-limit'
+import { recordPossibleBot } from '@/lib/possible-bot'
 import { selectLeadSailings } from '@/lib/lead-details-email'
 import { runLeadPipeline } from '@/lib/lead-pipeline'
 import { computeQualified, readAttribution } from '@/lib/lead-tracking'
@@ -30,7 +31,7 @@ export async function POST(request: NextRequest) {
   } catch {
     return NextResponse.json({ error: 'Invalid request' }, { status: 400 })
   }
-  if (body._honeypot) return NextResponse.json({ success: true, sailings: [] })
+  if (body._honeypot) return recordPossibleBot(body, 'obc-estimate', 'hidden field filled')
 
   const email = field(body, 'email', 200).toLowerCase()
   if (!EMAIL_REGEX.test(email)) {

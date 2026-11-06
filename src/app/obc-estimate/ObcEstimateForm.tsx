@@ -72,7 +72,7 @@ export function ObcEstimateForm() {
       })
       const data = await res.json().catch(() => ({}))
       if (!res.ok) throw new Error(data?.error || 'Something went wrong.')
-      if (data.recorded) trackLead('obc-estimate')
+      if (data.recorded && !data.flagged) trackLead('obc-estimate')
       setSailings(data.sailings ?? [])
       setStatus('done')
       window.scrollTo({ top: 0, behavior: 'smooth' })

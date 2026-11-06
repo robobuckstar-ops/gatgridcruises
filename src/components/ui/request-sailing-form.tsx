@@ -4,7 +4,7 @@ import { useState, useEffect, useId, useRef } from 'react'
 import { CheckCircle, Loader2, Send, X, Anchor, Mail } from 'lucide-react'
 import { SmsConsentCheckbox } from '@/components/ui/sms-consent-checkbox'
 import { readReferralCookie, readUtmCookies } from '@/components/ui/referral-tracker'
-import { trackLead } from '@/lib/analytics'
+import { trackLeadUnlessFlagged } from '@/lib/analytics'
 import { LEAD_CONFIRMATION_HEADS_UP } from '@/lib/constants'
 
 // Bots typically fill and submit forms in under a second. Real users take
@@ -165,7 +165,7 @@ export function RequestSailingForm({ open, onClose, context }: RequestSailingFor
         body: JSON.stringify(payload),
       })
       if (!res.ok) throw new Error(`HTTP ${res.status}`)
-      trackLead('request-sailing')
+      await trackLeadUnlessFlagged(res, 'request-sailing')
       setStatus('success')
     } catch {
       setStatus('error')

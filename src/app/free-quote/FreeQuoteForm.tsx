@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { CheckCircle, Loader2, Send } from 'lucide-react'
 import { readReferralCookie, readUtmCookies } from '@/components/ui/referral-tracker'
-import { trackLead } from '@/lib/analytics'
+import { trackLeadUnlessFlagged } from '@/lib/analytics'
 import { SmsConsentCheckbox } from '@/components/ui/sms-consent-checkbox'
 import { LEAD_CONFIRMATION_HEADS_UP } from '@/lib/constants'
 
@@ -78,7 +78,7 @@ export function FreeQuoteForm() {
       if (!res.ok) throw new Error(`HTTP ${res.status}`)
 
       // Only counted as a conversion once the request actually reached us.
-      trackLead('free-quote')
+      await trackLeadUnlessFlagged(res, 'free-quote')
       setStatus('success')
     } catch {
       setStatus('error')

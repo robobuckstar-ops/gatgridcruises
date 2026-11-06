@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { CheckCircle, Download, Loader2 } from 'lucide-react'
 import { readReferralCookie, readUtmCookies } from '@/components/ui/referral-tracker'
-import { trackLead } from '@/lib/analytics'
+import { trackLeadUnlessFlagged } from '@/lib/analytics'
 
 export const GUIDE_PDF_PATH = '/downloads/disney-cruise-first-timer-guide.pdf'
 
@@ -68,7 +68,7 @@ export function GuideForm() {
       }
 
       // Only counted as a conversion once the signup actually reached us.
-      trackLead('free-guide')
+      await trackLeadUnlessFlagged(res, 'free-guide')
       setStatus('success')
     } catch {
       setStatus('error')

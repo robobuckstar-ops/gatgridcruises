@@ -60,9 +60,9 @@ const FIELD_NAMES = {
   lastContactDate: 'Last Contact Date',
   nextFollowUp: 'Next Follow-Up',
   dripSequence: 'Drip Sequence',
-  source: 'Source',
-  sailingInterest: 'Sailing Interest',
-  guests: 'Guests',
+  source: 'Form Source',
+  sailingInterest: 'Interested In',
+  guests: 'Party Size',
   notes: 'Notes',
 } as const
 
@@ -184,7 +184,7 @@ export function classifyLeadRecord(record: AirtableRecord, now: number): Abandon
   // TEST leads never count in reports.
   if (isTestLead(pick(fields, F.leadName, FIELD_NAMES.leadName))) return null
 
-  const source = pick(fields, 'Source', FIELD_NAMES.source)
+  const source = pick(fields, FIELD_NAMES.source, FIELD_NAMES.source)
   if (!isQuoteSource(source)) return null
 
   const pipelineStage = pick(fields, F.pipelineStage, FIELD_NAMES.pipelineStage)
@@ -203,8 +203,8 @@ export function classifyLeadRecord(record: AirtableRecord, now: number): Abandon
     name: pick(fields, F.leadName, FIELD_NAMES.leadName),
     email,
     source,
-    sailingInterest: pick(fields, 'Sailing Interest', FIELD_NAMES.sailingInterest),
-    guests: pick(fields, 'Guests', FIELD_NAMES.guests),
+    sailingInterest: pick(fields, FIELD_NAMES.sailingInterest, FIELD_NAMES.sailingInterest),
+    guests: pick(fields, FIELD_NAMES.guests, FIELD_NAMES.guests),
     pipelineStage,
     dripSequence: pick(fields, F.dripSequence, FIELD_NAMES.dripSequence),
     firstContactDate,

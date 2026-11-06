@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { CheckCircle, Loader2, Send } from 'lucide-react'
 import { readReferralCookie, readUtmCookies } from '@/components/ui/referral-tracker'
-import { trackLead } from '@/lib/analytics'
+import { trackLeadUnlessFlagged } from '@/lib/analytics'
 
 interface FormData {
   name: string
@@ -57,7 +57,7 @@ export function PriceWatchForm() {
       if (!res.ok) throw new Error(`HTTP ${res.status}`)
 
       // Only counted as a conversion once the opt-in actually reached us.
-      trackLead('price-watch')
+      await trackLeadUnlessFlagged(res, 'price-watch')
       setStatus('success')
     } catch {
       setStatus('error')

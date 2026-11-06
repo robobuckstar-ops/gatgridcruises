@@ -1,20 +1,16 @@
 // Twilio's inbound-call webhook for the business line (405) 526-4956.
 //
 // Flow:
-//   1. Log the incoming call into the same per-contact thread as texts.
-//   2. Ring Grayson's cell, but SCREEN it: when his phone (or his carrier
-//      voicemail) answers, it first hears "press any key to accept." Only a real
-//      person pressing a key bridges the call. A voicemail can't press a key, so
-//      it never silently swallows the call.
-//   3. If the call isn't accepted (no answer, or the carrier voicemail grabbed
-//      it), the caller falls through to the GatGrid greeting + voicemail here,
-//      never Grayson's personal voicemail.
+//   1. A blocked caller is rejected (VOICE_BLOCK_LIST, or Spam ticked in Messages).
+//   2. Log the call into the same per-contact thread as texts, and push.
+//   3. Ask the caller to press 1. Pressing 1 (/api/voice/gather) rings Grayson's
+//      cell. No key or a wrong key goes to the GatGrid voicemail with no ring.
 
 import { NextRequest, NextResponse } from 'next/server'
 import { lookupContactName, saveMessageSafely } from '@/lib/airtable-messages'
 import { sendPushover } from '@/lib/pushover'
+import { isBlockedCaller, pressOneTwiml, rejectTwiml } from '@/lib/voice'
 import {
-  DEFAULT_BUSINESS_NUMBER,
   formatPhoneDisplay,
   normalizePhone,
   validateTwilioSignature,
@@ -25,71 +21,6 @@ import {
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
 
-/** The cell that answers the business line. Overridable for testing. */
-const FORWARD_TO = normalizePhone(process.env.VOICE_FORWARD_NUMBER) || '+15804306511'
-/** Ring Grayson's cell this long before rolling to voicemail. Screening means a
- * carrier voicemail can't falsely "answer," so this can be a normal ring length. */
-const RING_SECONDS = 20
-
-// Grayson's own recorded greeting, hosted on the site. Set VOICE_GREETING_READY
-// = false to fall back to spoken text, or VOICE_GREETING_URL to point elsewhere.
-const GREETING_URL =
-  process.env.VOICE_GREETING_URL?.trim() || 'https://gatgridcruises.com/voicemail-greeting.mp3'
-const USE_RECORDED_GREETING = process.env.VOICE_GREETING_READY !== 'false'
-const FALLBACK_GREETING =
-  "Hi, you've reached Grayson with GatGrid Cruises. I'm sorry I missed your call. " +
-  'Please leave your name, your number, and a little about the Disney cruise you are planning, ' +
-  "and I'll call you right back. Thanks so much."
-
-function xml(body: string): NextResponse {
-  return new NextResponse(`<?xml version="1.0" encoding="UTF-8"?>${body}`, {
-    status: 200,
-    headers: { 'Content-Type': 'text/xml; charset=utf-8' },
-  })
-}
-
-function greetingVerb(): string {
-  return USE_RECORDED_GREETING
-    ? `<Play>${GREETING_URL}</Play>`
-    : `<Say voice="alice">${FALLBACK_GREETING}</Say>`
-}
-
-/**
- * Ring the cell behind a keypress screen, then — if the caller is still on the
- * line because the call was never accepted — play the GatGrid greeting and take
- * a voicemail. A bridged (accepted) call ends when the parties hang up and never
- * reaches the voicemail verbs.
- */
-/** Greeting + voicemail capture (no forwarding). Shared by both flows. */
-function voicemailBody(): string {
-  return (
-    greetingVerb() +
-    `<Record maxLength="120" playBeep="true" timeout="5" transcribe="true" ` +
-    `transcribeCallback="/api/voice/voicemail" action="/api/voice/voicemail" method="POST"/>` +
-    `<Say voice="alice">I did not catch a message. Goodbye.</Say>` +
-    `<Hangup/>`
-  )
-}
-
-function callTwiml(): NextResponse {
-  return xml(
-    `<Response>` +
-      `<Dial callerId="${DEFAULT_BUSINESS_NUMBER}" answerOnBridge="true" timeout="${RING_SECONDS}">` +
-      `<Number url="/api/voice/screen" method="POST">${FORWARD_TO}</Number>` +
-      `</Dial>` +
-      voicemailBody() +
-      `</Response>`,
-  )
-}
-
-/** Straight to the GatGrid greeting + voicemail, no forwarding. Used when the
- * caller IS the forward-to cell (self-call), which otherwise tries to ring the
- * same busy line and ends the call abruptly. Also lets Grayson test the greeting
- * from his own phone. */
-function voicemailOnlyTwiml(): NextResponse {
-  return xml(`<Response>` + voicemailBody() + `</Response>`)
-}
-
 export async function POST(request: NextRequest) {
   const params: Record<string, string> = {}
   try {
@@ -99,7 +30,7 @@ export async function POST(request: NextRequest) {
     }
   } catch (err) {
     console.error('[voice/inbound] could not parse the Twilio form body:', err)
-    return callTwiml()
+    return pressOneTwiml()
   }
 
   // Same authenticity check as the SMS webhook: prove the POST is really Twilio.
@@ -120,6 +51,11 @@ export async function POST(request: NextRequest) {
 
   const from = normalizePhone(params.From)
   const to = normalizePhone(params.To)
+
+  if (await isBlockedCaller(from)) {
+    console.log(`[voice/inbound] rejected blocked caller ${from}`)
+    return rejectTwiml()
+  }
 
   // Match the caller, log the call, and buzz once at normal priority (the phone
   // is already ringing). The high-priority missed/voicemail alert comes later
@@ -151,17 +87,10 @@ export async function POST(request: NextRequest) {
     console.error('[voice/inbound] webhook had no From number; params:', Object.keys(params).join(','))
   }
 
-  // Self-call guard: if the caller is the same cell we'd forward to, don't try to
-  // ring that (busy) line — it ends the call abruptly. Go straight to voicemail,
-  // which also lets Grayson hear his own greeting when he tests from his cell.
-  if (from && from === FORWARD_TO) {
-    return voicemailOnlyTwiml()
-  }
-
-  return callTwiml()
+  return pressOneTwiml()
 }
 
 /** Twilio can be set to GET; route the call the same way. */
 export async function GET() {
-  return callTwiml()
+  return pressOneTwiml()
 }

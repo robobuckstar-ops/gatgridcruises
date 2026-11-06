@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { Shield, Star, Phone, Gift, BadgeCheck, Building2 } from 'lucide-react'
 import Link from 'next/link'
 import { getOBC, formatUSD, OBC_EXAMPLE_FARES } from '@/lib/obc'
-import { trackLead } from '@/lib/analytics'
+import { trackLeadUnlessFlagged } from '@/lib/analytics'
 import { readUtmCookies } from '@/components/ui/referral-tracker'
 import { OBCDisclaimer } from '@/components/ui/obc-disclaimer'
 import { GraysonFamilyPhoto } from '@/components/ui/grayson-family-photo'
@@ -62,7 +62,6 @@ export default function BookPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setFormError('')
-    if (honeypot) return
     if (!form.fullName.trim()) { setFormError('Please enter your full name.'); return }
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     if (!form.email || !emailRegex.test(form.email)) { setFormError('Please enter a valid email address.'); return }
@@ -92,6 +91,7 @@ export default function BookPage() {
           name: form.fullName,
           email: form.email,
           phone: form.phone,
+          _honeypot: honeypot,
           sms_consent: smsConsent,
           ...readUtmCookies(),
           guests: `${form.adults}A/${form.children}C`,
@@ -111,7 +111,7 @@ export default function BookPage() {
         setFormError('Something went wrong. Please try again or email bookings@gatgridcruises.com.')
         return
       }
-      trackLead('book')
+      await trackLeadUnlessFlagged(res, 'book')
       setSubmitting(false)
       setSubmitted(true)
       window.scrollTo({ top: 0, behavior: 'smooth' })

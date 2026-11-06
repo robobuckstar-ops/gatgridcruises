@@ -83,3 +83,9 @@ export function trackLead(source: LeadSource): void {
     // Same: never let a tag failure surface to the visitor.
   }
 }
+
+/** Count the conversion unless the server flagged the submit as a possible bot. */
+export async function trackLeadUnlessFlagged(res: Response, source: LeadSource): Promise<void> {
+  const data = await res.clone().json().catch(() => ({}))
+  if (!(data as { flagged?: boolean })?.flagged) trackLead(source)
+}

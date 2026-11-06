@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { CheckCircle, Loader2, Send } from 'lucide-react'
 import { readReferralCookie, readUtmCookies } from '@/components/ui/referral-tracker'
-import { trackLead } from '@/lib/analytics'
+import { trackLeadUnlessFlagged } from '@/lib/analytics'
 
 interface FormData {
   name: string
@@ -70,7 +70,7 @@ export function GroupCruiseForm() {
       if (!res.ok) throw new Error(`HTTP ${res.status}`)
 
       // Only counted as a conversion once the interest actually reached us.
-      trackLead('group-cruise')
+      await trackLeadUnlessFlagged(res, 'group-cruise')
       setStatus('success')
     } catch {
       setStatus('error')

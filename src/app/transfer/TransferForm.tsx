@@ -77,6 +77,8 @@ export function TransferForm({ quiz }: { quiz?: TransferQuizContext } = {}) {
     setStatus('loading')
     setErrorMsg('')
 
+    let flagged = false
+
     try {
       const referralCode = readReferralCookie()
       const utm = readUtmCookies()
@@ -108,6 +110,7 @@ export function TransferForm({ quiz }: { quiz?: TransferQuizContext } = {}) {
         body: JSON.stringify(payload),
       })
       if (!res.ok) throw new Error(`HTTP ${res.status}`)
+      flagged = Boolean((await res.clone().json().catch(() => ({})))?.flagged)
       setStatus('success')
     } catch {
       setStatus('error')
@@ -121,7 +124,7 @@ export function TransferForm({ quiz }: { quiz?: TransferQuizContext } = {}) {
     // deliberately outside the try above. Third-party tags on this page (the
     // Travelpayouts loader has been 503ing) must not be able to turn a lead we
     // already delivered into an error message for the visitor.
-    trackLead('transfer')
+    if (!flagged) trackLead('transfer')
   }
 
   if (status === 'success') {

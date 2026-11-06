@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { recordPossibleBot } from '@/lib/possible-bot'
 import { checkRateLimit } from '@/lib/rate-limit'
 import { Resend } from 'resend'
 import { welcomeEmail1 } from '@/lib/email-templates'
@@ -54,9 +55,7 @@ export async function POST(request: NextRequest) {
     const { email, name = '', preferences = {}, _honeypot } = body
 
     // Honeypot check — bots fill this field, real users never see it
-    if (_honeypot) {
-      return NextResponse.json({ success: true, message: 'Subscribed successfully' })
-    }
+    if (_honeypot) return recordPossibleBot(body, 'subscribe', 'hidden field filled')
 
     const sanitizedEmail = sanitizeString(email || '')
     if (!sanitizedEmail || !EMAIL_REGEX.test(sanitizedEmail)) {
