@@ -5,6 +5,7 @@ import { POST as inbound } from '../../app/api/voice/inbound/route'
 import { POST as gather } from '../../app/api/voice/gather/route'
 import { partySizeNumber, saveLead } from '../airtable-leads'
 import { recordPossibleBot } from '../possible-bot'
+import { forwardTwiml, pressOneTwiml, rejectTwiml, voicemailOnlyTwiml } from '../voice'
 
 delete process.env.TWILIO_AUTH_TOKEN
 delete process.env.RESEND_API_KEY
@@ -86,4 +87,25 @@ test('a repeat lead fills blank tracking columns without overwriting', async () 
   assert.equal(writes[0]['UTM Source'], undefined)
   assert.equal(writes[0]['UTM Campaign'], 'c')
   assert.equal(writes[0]['Ad Name'], 'ad')
+})
+
+test('every voice response is well-formed TwiML', () => {
+  const forms = [pressOneTwiml, forwardTwiml, voicemailOnlyTwiml, rejectTwiml]
+  return Promise.all(
+    forms.map(async (form) => {
+      const body = await form().text()
+      const tags = body.replace(/^<\?xml[^>]*\?>/, '')
+      // Every "<" must open a complete tag whose attributes are balanced.
+      for (const tag of tags.match(/<[^<>]*>/g) ?? []) {
+        assert.equal((tag.match(/"/g) ?? []).length % 2, 0, tag)
+      }
+      assert.equal(tags.replace(/<[^<>]*>/g, '').includes('<'), false, tags)
+      assert.equal(tags.replace(/<[^<>]*>/g, '').includes('>'), false, tags)
+    }),
+  )
+})
+
+test('press-1 points at the gather route', async () => {
+  const body = await pressOneTwiml().text()
+  assert.ok(/<Gather numDigits="1" timeout="6" action="\/api\/voice\/gather" method="POST">/.test(body))
 })
