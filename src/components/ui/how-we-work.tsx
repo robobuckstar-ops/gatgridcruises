@@ -13,11 +13,11 @@ export function HowWeWork({ className = '' }: { className?: string }) {
       </h2>
       <div className="space-y-4 font-inter text-sm leading-relaxed text-slate-700 sm:text-base">
         <p>
-          We give our clients some of the most generous onboard credit around, and 5% of every
-          commission goes to CURE.org to fund surgeries for kids in need. To keep doing both,
-          we&apos;re a small, family-run team — not a call center. Grayson personally reviews
-          requests midday on weekdays, and sometimes on weekends (not often — that&apos;s family
-          time), so a reply may take a little while. You&apos;ll hear from Grayson within 1
+          We give our clients some of the most generous onboard credit around, and we donate 5% of
+          our commission to CURE.org to fund surgeries for kids in need. To keep doing both, you talk
+          to Grayson, not a call center. Grayson personally reviews requests midday on weekdays, and
+          sometimes on weekends (not often — that&apos;s family time), so a reply may take a little
+          while. You&apos;ll hear from Grayson within 1
           business day.
         </p>
         <p>

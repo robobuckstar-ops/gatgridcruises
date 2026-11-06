@@ -39,6 +39,8 @@ export interface LeadDetailsInput {
   windowEnd?: string
   /** Transfers earn the reduced OBC rate, per the OBC policy in obc.ts. */
   transfer?: boolean
+  /** Listed fares are per cabin for 2 guests, so larger parties scale up. */
+  partySize?: number
 }
 
 export interface LeadSailingCard {
@@ -82,7 +84,7 @@ function addDays(iso: string, days: number): string {
   return d.toISOString().slice(0, 10)
 }
 
-function toCard(s: Sailing, transfer: boolean): LeadSailingCard {
+function toCard(s: Sailing, transfer: boolean, partySize = 2): LeadSailingCard {
   const ports = (s.itinerary_details ?? [])
     .map((d) => d.port)
     .filter((p) => p && !/at sea/i.test(p))
@@ -92,7 +94,10 @@ function toCard(s: Sailing, transfer: boolean): LeadSailingCard {
     nights: s.length_nights,
     itinerary: s.itinerary_name,
     ports: [...new Set(ports)],
-    obcEstimate: s.current_lowest_price > 0 ? getOBC(s.current_lowest_price, { placeholder: transfer }) : null,
+    obcEstimate:
+      s.current_lowest_price > 0
+        ? getOBC(s.current_lowest_price * Math.max(1, partySize / 2), { placeholder: transfer })
+        : null,
   }
 }
 
@@ -132,7 +137,7 @@ function pickVaried(list: Sailing[]): Sailing[] {
 export function selectLeadSailings(input: LeadDetailsInput): LeadSailingSelection {
   const transfer = Boolean(input.transfer)
   const picked = input.sailingId ? getSailingById(input.sailingId) : undefined
-  if (picked) return { requested: true, cards: [toCard(picked, transfer)] }
+  if (picked) return { requested: true, cards: [toCard(picked, transfer, input.partySize)] }
 
   if (input.shipName && input.sailDate) {
     return {
@@ -190,7 +195,7 @@ export function selectLeadSailings(input: LeadDetailsInput): LeadSailingSelectio
     pool = [...pool].sort(byDistanceFrom(input.windowStart))
   }
   const chosen = namedShip ? pool.slice(0, MAX_MATCHES) : pickVaried(pool)
-  return { requested: false, cards: chosen.map((s) => toCard(s, transfer)) }
+  return { requested: false, cards: chosen.map((s) => toCard(s, transfer, input.partySize)) }
 }
 
 /** Turn the /free-quote timeframe option into a travel window. */

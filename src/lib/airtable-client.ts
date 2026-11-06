@@ -158,6 +158,9 @@ async function writeWithFieldFallback(
       }
       delete payload[unknownField]
       dropped.push(unknownField)
+      // Airtable allows 5 requests a second and a 429 costs a 30 second lockout,
+      // so several missing columns must not retry as fast as they can.
+      await new Promise((resolve) => setTimeout(resolve, 220))
       continue
     }
 

@@ -1,10 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
+import { sendChecked } from '@/lib/send-email'
 import { checkRateLimit } from '@/lib/rate-limit'
 import { saveLeadSafely } from '@/lib/airtable-leads'
 import { AGENT_REPLY_TO, agentNotifyRecipients } from '@/lib/agent-inbox'
 import { readSmsConsent, smsConsentNote } from '@/lib/sms-consent'
-import { sendLeadAutoText } from '@/lib/lead-autotext'
+import { deliverLeadAutoText, textOutcomeLabel } from '@/lib/lead-autotext'
+import { readAttribution } from '@/lib/lead-tracking'
 import { sendPushover } from '@/lib/pushover'
 import { sendLeadDetailsEmail } from '@/lib/lead-details-email'
 
@@ -180,6 +182,10 @@ export async function POST(request: NextRequest) {
     utmSource: utm_source,
     utmMedium: utm_medium,
     utmCampaign: utm_campaign,
+    ...readAttribution(body),
+    smsConsent,
+    smsConsentSource: 'transfer',
+    qualified: 'Y',
     // A transfer request is only useful with its reservation details attached,
     // so a repeat submission refreshes them rather than just bumping the date.
     refreshDetailsOnUpdate: true,
@@ -191,7 +197,7 @@ export async function POST(request: NextRequest) {
 
   if (resend) {
     try {
-      await resend.emails.send({
+      await sendChecked(resend, {
         from: '"GatGrid Transfers" <bookings@gatgridcruises.com>',
         // Internal alert — goes to the inbox Grayson actually watches, not just
         // the public bookings@ address. Never customer-visible.
@@ -233,7 +239,7 @@ export async function POST(request: NextRequest) {
   let ackOk = false
   if (resend) {
     try {
-      await resend.emails.send({
+      await sendChecked(resend, {
         from: '"Dr. Grayson Starbuck, DPT" <bookings@gatgridcruises.com>',
         replyTo: AGENT_INBOX,
         to: email,
@@ -248,15 +254,12 @@ export async function POST(request: NextRequest) {
 
   // Awaited, not fire-and-forget: the serverless invocation freezes the moment
   // the response goes out, which would kill an in-flight text or push.
-  const textOk = phone
-    ? await sendLeadAutoText(phone, {
-        name,
-        source: 'transfer',
-        // The form collects the sail date, so the welcome text never asks for
-        // it back.
-        knownTimeframe: sail_date,
-      })
-    : false
+  const textOutcome = await deliverLeadAutoText(phone, smsConsent, {
+    name,
+    source: 'transfer',
+    // The form collects the sail date, so the welcome text never asks for it back.
+    knownTimeframe: sail_date,
+  })
 
   // A transfer form has a date but no ship, so match sailings closest to it. A
   // value that is not a plain date just falls through to upcoming sailings.
@@ -281,7 +284,7 @@ export async function POST(request: NextRequest) {
       booking_date ? `Booked direct on: ${booking_date}` : null,
       `SMS opt-in: ${smsConsent ? 'yes' : 'no'}`,
       '',
-      `Auto-text: ${textOk ? 'sent' : phone ? 'not sent (check Twilio env)' : 'no phone on the form'}`,
+      `Auto-text: ${textOutcomeLabel(textOutcome)}`,
       `Auto-email: ${ackOk ? 'sent' : 'not sent (check Resend)'}`,
     ]
       .filter((line) => line !== null)

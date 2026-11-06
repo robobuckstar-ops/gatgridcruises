@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
 import { checkRateLimit } from '@/lib/rate-limit'
 import { saveLeadSafely } from '@/lib/airtable-leads'
+import { readAttribution } from '@/lib/lead-tracking'
 import { AGENT_REPLY_TO, agentNotifyRecipients } from '@/lib/agent-inbox'
 
 // Price-drop watch opt-ins from /price-watch. Same delivery contract as
@@ -159,6 +160,8 @@ export async function POST(request: NextRequest) {
     utmSource: utm_source,
     utmMedium: utm_medium,
     utmCampaign: utm_campaign,
+    ...readAttribution(body),
+    qualified: 'Y',
     // The reservation details are the whole point of a watch request — a
     // returning visitor's second submission must not silently drop them.
     refreshDetailsOnUpdate: true,

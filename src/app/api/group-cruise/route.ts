@@ -1,9 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
+import { sendChecked } from '@/lib/send-email'
 import { checkRateLimit } from '@/lib/rate-limit'
 import { saveLeadSafely } from '@/lib/airtable-leads'
 import { AGENT_REPLY_TO, agentNotifyRecipients } from '@/lib/agent-inbox'
-import { sendLeadAutoText } from '@/lib/lead-autotext'
+import { deliverLeadAutoText, textOutcomeLabel } from '@/lib/lead-autotext'
+import { readSmsConsent } from '@/lib/sms-consent'
+import { computeQualified, dateFromText, readAttribution } from '@/lib/lead-tracking'
 import { sendPushover } from '@/lib/pushover'
 
 // Interest capture for the hosted GatGrid group sailing (/group-cruise).
@@ -135,6 +138,7 @@ export async function POST(request: NextRequest) {
   // Optional and not on the form yet, but read here so the welcome text starts
   // working the day a phone field is added rather than needing a code change.
   const phone = sanitize(body.phone, 50)
+  const smsConsent = readSmsConsent(body.sms_consent)
   const referral_code = body.referral_code ? sanitize(body.referral_code, 60) : undefined
   const utm_source = body.utm_source ? sanitize(body.utm_source, 80) : undefined
   const utm_medium = body.utm_medium ? sanitize(body.utm_medium, 80) : undefined
@@ -160,6 +164,10 @@ export async function POST(request: NextRequest) {
     utmSource: utm_source,
     utmMedium: utm_medium,
     utmCampaign: utm_campaign,
+    ...readAttribution(body),
+    smsConsent,
+    smsConsentSource: 'group-cruise',
+    qualified: computeQualified({ sailDate: dateFromText(timeframe) }),
     // Timeframe and party size are what decide which sailing we hold, so a
     // repeat submission should overwrite the earlier answer.
     refreshDetailsOnUpdate: true,
@@ -171,7 +179,7 @@ export async function POST(request: NextRequest) {
 
   if (resend) {
     try {
-      await resend.emails.send({
+      await sendChecked(resend, {
         from: '"GatGrid Group Sailings" <bookings@gatgridcruises.com>',
         // Internal alert — the inbox Grayson actually watches. Not customer-visible.
         to: agentNotifyRecipients(),
@@ -210,7 +218,7 @@ export async function POST(request: NextRequest) {
   let ackOk = false
   if (resend) {
     try {
-      await resend.emails.send({
+      await sendChecked(resend, {
         from: '"Dr. Grayson Starbuck, DPT" <bookings@gatgridcruises.com>',
         replyTo: AGENT_INBOX,
         to: email,
@@ -225,15 +233,13 @@ export async function POST(request: NextRequest) {
 
   // Awaited, not fire-and-forget: the serverless invocation freezes the moment
   // the response goes out, which would kill an in-flight text or push.
-  const textOk = phone
-    ? await sendLeadAutoText(phone, {
-        name,
-        source: 'group-cruise',
-        // Both are required fields on this form, so neither gets asked again.
-        knownTimeframe: timeframe,
-        knownPartySize: party_size,
-      })
-    : false
+  const textOutcome = await deliverLeadAutoText(phone, smsConsent, {
+    name,
+    source: 'group-cruise',
+    // Both are required fields on this form, so neither gets asked again.
+    knownTimeframe: timeframe,
+    knownPartySize: party_size,
+  })
 
   await sendPushover({
     title: `New GatGrid lead: ${name}`,
@@ -247,7 +253,7 @@ export async function POST(request: NextRequest) {
       `Party: ${party_size}`,
       notes ? `Notes: ${notes.replace(/\s+/g, ' ').slice(0, 200)}` : null,
       '',
-      `Auto-text: ${textOk ? 'sent' : phone ? 'not sent (check Twilio env)' : 'no phone on the form'}`,
+      `Auto-text: ${textOutcomeLabel(textOutcome)}`,
       `Auto-email: ${ackOk ? 'sent' : 'not sent (check Resend)'}`,
     ]
       .filter((line) => line !== null)

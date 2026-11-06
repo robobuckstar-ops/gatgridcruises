@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { checkRateLimit } from '@/lib/rate-limit'
 import { logReferralLead } from '@/lib/airtable-referrals'
-import { sendLeadAutoText } from '@/lib/lead-autotext'
+import { deliverLeadAutoText, textOutcomeLabel } from '@/lib/lead-autotext'
 import { sendPushover } from '@/lib/pushover'
 
 export const runtime = 'nodejs'
@@ -51,9 +51,8 @@ export async function POST(request: NextRequest) {
    * There is no customer acknowledgment email on this endpoint.
    */
   const fireInstantFollowUps = async (persisted: boolean): Promise<void> => {
-    const textOk = lead_phone
-      ? await sendLeadAutoText(lead_phone, { name: lead_name, source: 'referral' })
-      : false
+    // A referrer typed this number in, so the lead has not consented to texts.
+    const textOutcome = await deliverLeadAutoText(lead_phone ?? '', false, { name: lead_name, source: 'referral' })
 
     await sendPushover({
       title: `New GatGrid lead: ${lead_name || 'name not given'}`,
@@ -66,7 +65,7 @@ export async function POST(request: NextRequest) {
         notes ? `Notes: ${notes.replace(/\s+/g, ' ').slice(0, 200)}` : null,
         persisted ? null : 'Heads up: not written to Airtable, log this one by hand.',
         '',
-        `Auto-text: ${textOk ? 'sent' : lead_phone ? 'not sent (check Twilio env)' : 'no phone on the form'}`,
+        `Auto-text: ${textOutcomeLabel(textOutcome)}`,
         'Auto-email: none on this form',
       ]
         .filter((line) => line !== null)

@@ -70,7 +70,7 @@ const FAQ = [
   },
   {
     q: 'Is GatGrid affiliated with CURE.org?',
-    a: "No. We're an independent donor — not a partner, sponsor, or affiliate. CURE has not endorsed or reviewed GatGrid Cruises. We chose them because their work is effective and verifiable, not because of any business relationship.",
+    a: "No. We're an independent donor, and we donate 5% of our commission to CURE.org. We are not a sponsor or affiliate. CURE has not endorsed or reviewed GatGrid Cruises. We chose them because their work is effective and verifiable, not because of any business relationship.",
   },
   {
     q: 'Can I donate to CURE directly instead?',

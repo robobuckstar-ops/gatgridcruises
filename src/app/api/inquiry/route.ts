@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
+import { sendChecked } from '@/lib/send-email'
 import { checkRateLimit, getClientIp } from '@/lib/rate-limit'
 import { saveLeadSafely } from '@/lib/airtable-leads'
 import { AGENT_REPLY_TO, agentNotifyRecipients } from '@/lib/agent-inbox'
@@ -7,10 +8,13 @@ import { readSmsConsent, smsConsentNote } from '@/lib/sms-consent'
 import {
   leadFirstName,
   missingLeadDetails,
-  sendLeadAutoText,
+  deliverLeadAutoText,
+  textOutcomeLabel,
   type LeadSource,
+  type TextOutcome,
 } from '@/lib/lead-autotext'
 import { sendPushover } from '@/lib/pushover'
+import { computeQualified, dateFromText, readAttribution } from '@/lib/lead-tracking'
 import { sendLeadDetailsEmail } from '@/lib/lead-details-email'
 import { SAVE_CONTACT_BLOCK } from '@/lib/email-templates'
 import { BUSINESS_PHONE_DISPLAY } from '@/lib/constants'
@@ -264,24 +268,28 @@ export async function POST(request: NextRequest) {
   // a text is waiting, and name the number it came from. Best effort and
   // awaited, since the invocation freezes at the response.
   let textOk = false
+  let textOutcome: TextOutcome = 'no-phone'
+  let alertOk = false
+  let detailsOk = false
   const sendWelcomeText = async (): Promise<boolean> => {
-    if (!phone) return false
-    textOk = await sendLeadAutoText(phone, {
+    textOutcome = await deliverLeadAutoText(phone, smsConsent, {
       name,
       source: leadSource,
       knownTimeframe: sailing?.sailDate ?? '',
       knownPartySize: guests,
       knownDeparturePort: sailing?.itineraryName ?? '',
     })
+    textOk = textOutcome === 'sent'
     return textOk
   }
 
   // The AI-prepared details email goes to quote requests only: a sailing request
   // or /book, which sends preferences. A /contact message has neither.
+  const rawPrefsSource = body.preferences ? 'book' : 'contact'
   const rawPrefs = (body.preferences && typeof body.preferences === 'object' ? body.preferences : null) as Record<string, unknown> | null
   const sendDetailsEmail = async (): Promise<void> => {
     if (!sailing && !rawPrefs) return
-    await sendLeadDetailsEmail(email, {
+    detailsOk = await sendLeadDetailsEmail(email, {
       name,
       sailingId: sailing?.sailingId,
       shipName: sailing?.shipName,
@@ -311,8 +319,11 @@ export async function POST(request: NextRequest) {
         `Guests: ${guests || 'not provided'}`,
         `SMS opt-in: ${smsConsent ? 'yes' : 'no'}`,
         '',
-        `Auto-text: ${textOk ? 'sent' : phone ? 'not sent (check Twilio env)' : 'no phone on the form'}`,
-        `Auto-email: ${ackOk ? 'sent' : 'not sent (check Resend)'}`,
+        `CRM: ${(await leadWrite)?.outcome ?? 'NOT SAVED'}`,
+        `Email alert: ${alertOk ? 'sent' : 'FAILED (check Resend)'}`,
+        `Auto-text: ${textOutcomeLabel(textOutcome)}`,
+        `Auto-email: ${ackOk ? 'sent' : 'FAILED (check Resend)'}`,
+        sailing || rawPrefs ? `Details email: ${detailsOk ? 'sent' : 'FAILED'}` : 'Details email: not applicable',
       ].join('\n'),
     })
   }
@@ -334,6 +345,12 @@ export async function POST(request: NextRequest) {
     utmSource: utm_source,
     utmMedium: utm_medium,
     utmCampaign: utm_campaign,
+    ...readAttribution(body),
+    smsConsent,
+    smsConsentSource: sailing ? 'request-this-sailing' : rawPrefsSource,
+    qualified: computeQualified({
+      sailDate: sailing?.sailDate ? dateFromText(sailing.sailDate) : windowFromPreferences(rawPrefs).windowStart,
+    }),
   })
 
   // Resend is the primary path. If unconfigured, fall back to the existing
@@ -345,23 +362,28 @@ export async function POST(request: NextRequest) {
   if (resendKey) {
     try {
       const resend = new Resend(resendKey)
-      // Notify the agent
-      await resend.emails.send({
-        from: '"GatGrid Inquiries" <bookings@gatgridcruises.com>',
-        // Internal alert: the inbox Grayson actually watches. Not customer-visible.
-        to: agentNotifyRecipients(),
-        replyTo: email,
-        subject: sailing?.itineraryName
-          ? `Sailing inquiry: ${sailing.itineraryName} (${name})`
-          : `Disney cruise inquiry: ${name}`,
-        html: notificationHtml({ name, email, phone, guests, notes, sailing, referralCode }),
-      })
+      // Notify the agent. A rejected alert must not cost the lead its ack or CRM row.
+      try {
+        await sendChecked(resend, {
+          from: '"GatGrid Inquiries" <bookings@gatgridcruises.com>',
+          // Internal alert: the inbox Grayson actually watches. Not customer-visible.
+          to: agentNotifyRecipients(),
+          replyTo: email,
+          subject: sailing?.itineraryName
+            ? `Sailing inquiry: ${sailing.itineraryName} (${name})`
+            : `Disney cruise inquiry: ${name}`,
+          html: notificationHtml({ name, email, phone, guests, notes, sailing, referralCode }),
+        })
+        alertOk = true
+      } catch (alertErr) {
+        console.error('[inquiry] agent alert email failed:', alertErr)
+      }
       // Text first, so the ack email can point at it by number.
       await sendWelcomeText()
       // Auto-ack to the user (best effort)
       let ackOk = false
       try {
-        await resend.emails.send({
+        await sendChecked(resend, {
           from: '"Dr. Grayson Starbuck, DPT" <bookings@gatgridcruises.com>',
           to: email,
           replyTo: INBOX,
@@ -374,10 +396,11 @@ export async function POST(request: NextRequest) {
       }
       // Awaited before responding: a serverless invocation is frozen once the
       // response is returned, which would kill an in-flight CRM write.
-      await leadWrite
+      const saved = await leadWrite
       await sendDetailsEmail()
       await pushLeadAlert(ackOk)
-      return NextResponse.json({ success: true })
+      // Only fall through to the webhook when neither the alert nor the CRM has it.
+      if (alertOk || saved) return NextResponse.json({ success: true })
     } catch (err) {
       console.error('[inquiry] resend send failed:', err)
       // fall through to webhook fallback

@@ -1,5 +1,6 @@
 'use client'
 
+import { SmsConsentCheckbox } from '@/components/ui/sms-consent-checkbox'
 import { useState, useRef, useEffect } from 'react'
 import { CheckCircle, Loader2, Send } from 'lucide-react'
 import { readReferralCookie, readUtmCookies } from '@/components/ui/referral-tracker'
@@ -20,6 +21,7 @@ const inputClass =
 const labelClass = 'block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-1.5'
 
 export function ContactForm() {
+  const [smsConsent, setSmsConsent] = useState(false)
   const [form, setForm] = useState<FormData>({
     name: '',
     email: '',
@@ -57,6 +59,7 @@ export function ContactForm() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           ...form,
+          sms_consent: smsConsent,
           elapsed_ms: mountedAt.current ? Date.now() - mountedAt.current : 0,
           ...(referralCode ? { referral_code: referralCode } : {}),
           ...utm,
@@ -170,6 +173,9 @@ export function ContactForm() {
             className={inputClass}
             placeholder="So we can text you back"
           />
+          <div className="mt-2">
+            <SmsConsentCheckbox id="contact-sms-consent" checked={smsConsent} onChange={setSmsConsent} />
+          </div>
         </div>
 
         <div>

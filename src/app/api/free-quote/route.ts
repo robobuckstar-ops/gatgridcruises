@@ -1,9 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
+import { sendChecked } from '@/lib/send-email'
 import { checkRateLimit } from '@/lib/rate-limit'
 import { saveLeadSafely } from '@/lib/airtable-leads'
 import { AGENT_REPLY_TO, agentNotifyRecipients } from '@/lib/agent-inbox'
-import { leadFirstName, missingLeadDetails, sendLeadAutoText } from '@/lib/lead-autotext'
+import { deliverLeadAutoText, leadFirstName, missingLeadDetails, textOutcomeLabel } from '@/lib/lead-autotext'
+import { readSmsConsent, smsConsentNote } from '@/lib/sms-consent'
+import { computeQualified, dateFromText, readAttribution } from '@/lib/lead-tracking'
 import { sendLeadDetailsEmail, windowFromTimeframe } from '@/lib/lead-details-email'
 import { sendPushover } from '@/lib/pushover'
 import { SAVE_CONTACT_BLOCK } from '@/lib/email-templates'
@@ -171,6 +174,7 @@ export async function POST(request: NextRequest) {
   const phone = sanitize(body.phone, 50)
   const sailing_interest = sanitize(body.sailing_interest, 300)
   const notes = sanitize(body.notes, 2000)
+  const smsConsent = readSmsConsent(body.sms_consent)
   const referral_code = body.referral_code ? sanitize(body.referral_code, 60) : undefined
   const utm_source = body.utm_source ? sanitize(body.utm_source, 80) : undefined
   const utm_medium = body.utm_medium ? sanitize(body.utm_medium, 80) : undefined
@@ -184,6 +188,7 @@ export async function POST(request: NextRequest) {
     `Party size: ${party_size}`,
     sailing_interest ? `Ship / itinerary interest: ${sailing_interest}` : null,
     notes ? `\n${notes}` : null,
+    smsConsentNote(smsConsent, 'free-quote'),
   ]
     .filter(Boolean)
     .join('\n')
@@ -200,6 +205,11 @@ export async function POST(request: NextRequest) {
     utmSource: utm_source,
     utmMedium: utm_medium,
     utmCampaign: utm_campaign,
+    ...readAttribution(body),
+    smsConsent,
+    smsConsentSource: 'free-quote',
+    qualified:
+      windowFromTimeframe(timeframe).windowEnd ? 'Y' : computeQualified({ sailDate: dateFromText(sailing_interest) }),
     // A quote is only answerable with the dates and party size attached, so a
     // repeat submission refreshes them rather than just bumping the date.
     refreshDetailsOnUpdate: true,
@@ -211,7 +221,7 @@ export async function POST(request: NextRequest) {
 
   if (resend) {
     try {
-      await resend.emails.send({
+      await sendChecked(resend, {
         from: '"GatGrid Quotes" <bookings@gatgridcruises.com>',
         // Internal alert: the inbox Grayson actually watches. Not customer-visible.
         to: agentNotifyRecipients(),
@@ -260,21 +270,20 @@ export async function POST(request: NextRequest) {
   // The text goes first so the acknowledgment email can say truthfully that a
   // text is waiting, and name the number it came from. Awaited, not
   // fire-and-forget: the invocation freezes the moment the response goes out.
-  const textOk = phone
-    ? await sendLeadAutoText(phone, {
-        name,
-        source: 'free-quote',
-        knownTimeframe: timeframe,
-        knownPartySize: party_size,
-      })
-    : false
+  const textOutcome = await deliverLeadAutoText(phone, smsConsent, {
+    name,
+    source: 'free-quote',
+    knownTimeframe: timeframe,
+    knownPartySize: party_size,
+  })
+  const textOk = textOutcome === 'sent'
 
   // Best-effort acknowledgment. A delivery path already succeeded, so this
   // never fails the request.
   let ackOk = false
   if (resend) {
     try {
-      await resend.emails.send({
+      await sendChecked(resend, {
         from: '"Dr. Grayson Starbuck, DPT" <bookings@gatgridcruises.com>',
         replyTo: AGENT_INBOX,
         to: email,
@@ -306,7 +315,7 @@ export async function POST(request: NextRequest) {
       `Interest: ${sailing_interest || 'not specified'}`,
       notes ? `Notes: ${notes.replace(/\s+/g, ' ').slice(0, 200)}` : null,
       '',
-      `Auto-text: ${textOk ? 'sent' : phone ? 'not sent (check Twilio env)' : 'no phone on the form'}`,
+      `Auto-text: ${textOutcomeLabel(textOutcome)}`,
       `Auto-email: ${ackOk ? 'sent' : 'not sent (check Resend)'}`,
     ]
       .filter((line) => line !== null)

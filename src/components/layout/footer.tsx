@@ -323,6 +323,13 @@ export function Footer() {
             </p>
           </div>
 
+          {/* Seller-of-travel registrations, as published on Boardwalk's terms of service page. */}
+          {/* TODO: add HI TAR once verified. It is not on Boardwalk's public site. */}
+          <p className="mb-8 text-center text-xs text-slate-500">
+            Booking services through Boardwalk Travel Agency: CA SOT #2150638-50 &middot; FL SOT
+            #ST43802 &middot; WA SOT #605109590
+          </p>
+
           {/* Copyright */}
           <div className="border-t border-slate-200 pt-8 text-center text-slate-500 space-y-1">
             <p>

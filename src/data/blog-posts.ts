@@ -1983,8 +1983,8 @@ export const blogPosts: BlogPost[] = [
 <p>That $460 covers, for example: a Palo dinner for two adults ($90), a half-day spa treatment ($180), and three specialty cocktails per adult across the sailing ($180) — with change left over. Or if your family doesn't drink, it covers an excursion at every port. Or premium photo packages and a few gift-shop pickups. The point: it's real, usable money against costs you'd otherwise pay out of pocket.</p>
 
 <h2>Why Disney Lets Travel Advisors Pass Credit Back</h2>
-<p>The short version: Disney's loyalty model is built around long-term repeat bookings, and travel advisors generate exactly that. When a family books through an advisor who provides good service, they're meaningfully more likely to book a second and third Disney cruise. From Disney's perspective, the commission paid to advisors is a customer acquisition cost — and they don't care whether the advisor rebates part of it as OBC, because the published fare to the guest is the same.</p>
-<p>The practical takeaway: if you're going to book a Disney cruise anyway, there's essentially no downside to booking through an advisor that rebates OBC. You get the same Disney customer service, the same Disney cruise, the same Disney fare — plus more onboard credit.</p>
+<p>The short version: Disney's loyalty model is built around long-term repeat bookings, and travel advisors generate exactly that. When a family books through an advisor who provides good service, they're meaningfully more likely to book a second and third Disney cruise. From Disney's perspective, the commission paid to advisors is a customer acquisition cost — and they don't care whether the advisor shares part of it as onboard credit, because the published fare to the guest is the same.</p>
+<p>The practical takeaway: if you're going to book a Disney cruise anyway, there's essentially no downside to booking through an advisor that offers onboard credit. You get the same Disney customer service, the same Disney cruise, the same Disney fare — plus more onboard credit.</p>
 
 <h2>What If I Already Booked Direct With Disney?</h2>
 <p>You have a 30-day window after booking during which you can transfer your reservation to a Disney-authorized travel advisor at no cost. Some Disney terms apply (you generally can't transfer reservations made with Disney Vacation Club points or certain restricted fares), but the standard cash reservation transfer is straightforward.</p>
@@ -2028,7 +2028,7 @@ export const blogPosts: BlogPost[] = [
 <p>If you'd rather skip the calculator and just talk through it with someone who watches Disney pricing every day, use the <a href="/concierge">concierge form</a>. We'll pull your specific sailing, identify any active Disney promotions, and confirm exactly what your stacked credit total would look like. There's no pressure, no obligation, and no charge for the conversation — and your Disney fare is identical to what you'd pay direct, so the only thing you're missing by not asking is the OBC.</p>
 
 <h2>The Bottom Line</h2>
-<p>Onboard credit is one of the most reliable ways to reduce the all-in cost of a Disney cruise, and it stacks with everything in our <a href="/blog/save-money-disney-cruise">10 insider tips for saving money on a Disney cruise</a>. Stack Disney's promotional credit with a travel advisor's rebate, and you're looking at $200–$500 on a typical family booking — enough to cover the experiences that most first-time cruisers regret skipping (Palo, the spa, the cabana). It costs nothing to ask. The hardest part of getting more OBC on your Disney cruise is just knowing to ask in the first place.</p>
+<p>Onboard credit is one of the most reliable ways to reduce the all-in cost of a Disney cruise, and it stacks with everything in our <a href="/blog/save-money-disney-cruise">10 insider tips for saving money on a Disney cruise</a>. Stack Disney's promotional credit with a travel advisor's onboard credit, and you're looking at $200–$500 on a typical family booking — enough to cover the experiences that most first-time cruisers regret skipping (Palo, the spa, the cabana). It costs nothing to ask. The hardest part of getting more OBC on your Disney cruise is just knowing to ask in the first place.</p>
     `.trim(),
   },
   {
@@ -2157,7 +2157,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2>Is a Halloween Sailing Worth the Fall Premium?</h2>
 <p>Fall is hurricane season in the Caribbean, and that is priced in — September and early October sailings are often among the cheapest of the year, even with the overlay, which is the case we make in detail in <a href="/blog/september-best-month-caribbean-cruise">why September is the best month to cruise the Caribbean</a>. The trade-off is real: itineraries do get modified for weather, and travel insurance is worth more in this window than in March.</p>
-<p>Value-wise, the season is included rather than ticketed, which means you are getting the full overlay at standard fare. Stack that against the usual levers — our <a href="/blog/disney-cruise-onboard-credit-guide">onboard credit guide</a> covers how to layer promotional credit with an advisor rebate — and a Halloween sailing is frequently the best cost-per-day Disney cruise on the calendar.</p>
+<p>Value-wise, the season is included rather than ticketed, which means you are getting the full overlay at standard fare. Stack that against the usual levers — our <a href="/blog/disney-cruise-onboard-credit-guide">onboard credit guide</a> covers how to layer promotional credit with an advisor's onboard credit — and a Halloween sailing is frequently the best cost-per-day Disney cruise on the calendar.</p>
 <p>One more thing worth knowing: many families sailing this window are repeat cruisers who book the same weeks every year, so the Bahamian short sailings around the last week of October fill earliest. If your dates are fixed to a school break, that is the constraint to solve first.</p>
 
 <h2>The Bottom Line</h2>
@@ -2222,7 +2222,7 @@ export const blogPosts: BlogPost[] = [
 </tbody>
 </table>
 <p>The credit posts to your stateroom folio after final payment is received — typically 90 to 120 days before you sail — and you spend it on anything that bills to your room key: Palo or Enchanté, the spa, drink packages, port adventures, photo packages, internet, the gift shops. To see the figure for your own fare, run it through our <a href="/tools/obc-calculator">free OBC calculator</a>.</p>
-<p>A note on expectations: this is a rebate on a commission, not a discount on Disney. Nobody is going to hand you $2,000 on a $5,000 booking, and an agency promising that is telling you something about the service you'd get afterward. What you should expect is a real, confirmed-in-writing dollar amount that shows up on your folio.</p>
+<p>A note on expectations: this is onboard credit funded from a commission, not a lower Disney fare. Nobody is going to hand you $2,000 on a $5,000 booking, and an agency promising that is telling you something about the service you'd get afterward. What you should expect is a real, confirmed-in-writing dollar amount that shows up on your folio.</p>
 
 <h2>How the Transfer Actually Works</h2>
 <p>Three steps, and you're only involved in two of them:</p>

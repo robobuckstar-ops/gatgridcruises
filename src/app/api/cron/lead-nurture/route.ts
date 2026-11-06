@@ -1,201 +1,130 @@
 import { NextRequest, NextResponse } from 'next/server'
-import {
-  leadNurtureDay1,
-  leadNurtureDay3,
-  leadNurtureDay7,
-  leadNurtureDay14,
-  leadNurtureDay30,
-} from '@/lib/email-templates'
-import { LEAD_FIELDS, LEADS_TABLE } from '@/lib/airtable-leads'
+import { getAirtableKey, listRecords, updateRecord } from '@/lib/airtable-client'
+import { LEAD_FIELDS, LEADS_TABLE, STATUS_DATE_FIELDS, STATUS_FIELD } from '@/lib/airtable-leads'
 import { isAuthorizedCronRequest } from '@/lib/cron-auth'
-import { sendLifecycleEmail, emailTransportConfigured } from '@/lib/send-email'
+import { dateFromText, isTestLead } from '@/lib/lead-tracking'
+import { leadUnsubscribeUrl } from '@/lib/lead-unsubscribe'
+import { nextNurtureStep, NURTURE_STEPS, nurtureEmailHtml } from '@/lib/nurture-emails'
+import { emailTransportConfigured, sendLifecycleEmail } from '@/lib/send-email'
+import { findSubscriberByEmail, STATUS_UNSUBSCRIBED } from '@/lib/subscriber-store'
 
 export const runtime = 'nodejs'
+export const maxDuration = 60
 
-const AIRTABLE_BASE = 'applSFcQkOus2fFsx'
+// Nurture emails on days 3, 5, 8 and 12 after a lead comes in. Progress lives in
+// the Drip Sequence column, so each email goes out once even if a run is missed.
+// Also stamps the date column for each Status the first time a lead reaches it.
 
-// Table + field IDs are shared with the direct lead writer used by the
-// inquiry/concierge forms, so both halves of the CRM funnel stay in sync.
-const F = LEAD_FIELDS
-
-// Pipeline stages that should NOT receive drip emails
 const EXCLUDED_STAGES = ['Converted', 'Lost', 'Unsubscribed', 'Ready to Book']
+const ACTIVE_STATUSES = ['', 'New', 'Replied']
+/** Older leads never started this sequence, so don't start it for them now. */
+const MAX_AGE_TO_START_DAYS = NURTURE_STEPS[NURTURE_STEPS.length - 1].day + 4
 
-function daysSince(dateStr: string): number {
-  return Math.floor((Date.now() - new Date(dateStr).getTime()) / 86_400_000)
+function text(fields: Record<string, unknown>, name: string): string {
+  const raw = fields[name]
+  return raw === null || raw === undefined ? '' : String(raw).trim()
 }
 
-interface DripStep {
-  day: number
-  sequenceLabel: string
-  templateFn: (name: string) => string
-  subject: string
-}
-
-const DRIP_STEPS: DripStep[] = [
-  {
-    day: 1,
-    sequenceLabel: 'Day 1 - Welcome',
-    templateFn: leadNurtureDay1,
-    subject: 'Thanks for reaching out — here are some resources',
-  },
-  {
-    day: 3,
-    sequenceLabel: 'Day 3 - Value Add',
-    templateFn: leadNurtureDay3,
-    subject: 'Quick question about your Disney cruise plans',
-  },
-  {
-    day: 7,
-    sequenceLabel: 'Day 7 - Social Proof',
-    templateFn: leadNurtureDay7,
-    subject: 'What other families are saying about GatGrid Cruises',
-  },
-  {
-    day: 14,
-    sequenceLabel: 'Day 14 - Urgency',
-    templateFn: leadNurtureDay14,
-    subject: 'Disney cruise prices are moving — here\'s what to know',
-  },
-  {
-    day: 30,
-    sequenceLabel: 'Day 30 - Last Chance',
-    templateFn: leadNurtureDay30,
-    subject: 'Still thinking about a Disney cruise?',
-  },
-]
-
-async function airtableFetch(url: string, apiKey: string, options?: RequestInit) {
-  const res = await fetch(url, {
-    ...options,
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      'Content-Type': 'application/json',
-      ...options?.headers,
-    },
-  })
-  if (!res.ok) {
-    const text = await res.text()
-    throw new Error(`Airtable ${res.status}: ${text}`)
-  }
-  return res.json()
+function daysSince(date: string): number {
+  return Math.floor((Date.now() - new Date(date).getTime()) / 86_400_000)
 }
 
 export async function GET(request: NextRequest) {
-  // Vercel Cron authenticates with `Authorization: Bearer $CRON_SECRET`, which
-  // this route did not accept — it only read `x-cron-secret` / `?secret=`. So
-  // the scheduled 13:00 run 401'd every day and the nurture drip never sent,
-  // even though leads were landing in the CRM correctly. The shared helper
-  // accepts all three forms (and still requires the secret in production).
   if (!isAuthorizedCronRequest(request)) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
-
-  const airtableKey = process.env.AIRTABLE_API_KEY
-  if (!airtableKey) {
-    return NextResponse.json({ error: 'AIRTABLE_API_KEY not configured' }, { status: 500 })
-  }
+  const apiKey = getAirtableKey()
+  if (!apiKey) return NextResponse.json({ error: 'AIRTABLE_API_KEY not configured' }, { status: 500 })
   if (!emailTransportConfigured()) {
-    return NextResponse.json(
-      { error: 'no email transport configured (set RESEND_API_KEY or BREVO_API_KEY)' },
-      { status: 500 },
-    )
+    return NextResponse.json({ error: 'no email transport configured' }, { status: 500 })
   }
 
+  const preview = new URL(request.url).searchParams.get('preview') === '1'
   const sent: string[] = []
   const errors: string[] = []
-  const updated: string[] = []
+  const stamped: string[] = []
+  const today = new Date().toISOString().slice(0, 10)
 
-  try {
-    // Fetch all leads that are NOT converted/lost/unsubscribed and have NOT completed the drip
-    const excludeFormula = EXCLUDED_STAGES.map(
-      (s) => `{Pipeline Stage}!="${s}"`
-    ).join(',')
-    const formula = encodeURIComponent(
-      `AND(${excludeFormula},{Drip Sequence}!="Completed",{Drip Sequence}!="Opted Out",{Email}!="")`
-    )
-    const fieldParams = Object.values(F)
-      .map((id) => `fields[]=${id}`)
-      .join('&')
-    const url = `https://api.airtable.com/v0/${AIRTABLE_BASE}/${LEADS_TABLE}?filterByFormula=${formula}&${fieldParams}`
+  const records = await listRecords(
+    LEADS_TABLE,
+    { filterByFormula: 'AND({Email}!="",{Drip Sequence}!="Completed",{Drip Sequence}!="Opted Out")' },
+    apiKey,
+  )
 
-    const data = await airtableFetch(url, airtableKey)
-    const records = data.records ?? []
+  for (const record of records) {
+    const f = record.fields
+    const status = text(f, STATUS_FIELD)
 
-    for (const record of records) {
-      const fields = record.fields
-      const name = String(fields[F.leadName] ?? '').split(' ')[0] || 'there'
-      const email = String(fields[F.email] ?? '')
-      const firstContact = String(fields[F.firstContactDate] ?? '')
-      const currentDrip = String(fields[F.dripSequence] ?? 'Not Started')
-
-      if (!email || !firstContact) continue
-
-      const elapsed = daysSince(firstContact)
-
-      // Find the next drip step this lead should receive
-      const currentStepIndex = DRIP_STEPS.findIndex(
-        (s) => s.sequenceLabel === currentDrip
-      )
-
-      // Determine which step to send
-      let stepToSend: DripStep | null = null
-
-      if (currentDrip === 'Not Started' || currentDrip === '') {
-        // Haven't started — send Day 1 if at least 1 day has passed
-        if (elapsed >= 1) {
-          stepToSend = DRIP_STEPS[0]
-        }
-      } else if (currentStepIndex >= 0 && currentStepIndex < DRIP_STEPS.length - 1) {
-        // Already on a step — check if it's time for the next one
-        const nextStep = DRIP_STEPS[currentStepIndex + 1]
-        if (elapsed >= nextStep.day) {
-          stepToSend = nextStep
-        }
-      }
-
-      if (!stepToSend) continue
-
+    const dateField = STATUS_DATE_FIELDS[status]
+    if (dateField && !text(f, dateField) && !preview) {
       try {
-        const html = stepToSend.templateFn(name)
-        await sendLifecycleEmail({ to: email, name, subject: stepToSend.subject, html })
-        sent.push(`${stepToSend.sequenceLabel}:${email}`)
-
-        // Determine new drip sequence value
-        const isLastStep =
-          DRIP_STEPS.indexOf(stepToSend) === DRIP_STEPS.length - 1
-        const newDripValue = isLastStep ? 'Completed' : stepToSend.sequenceLabel
-
-        // Update the lead record in Airtable
-        await airtableFetch(
-          `https://api.airtable.com/v0/${AIRTABLE_BASE}/${LEADS_TABLE}/${record.id}`,
-          airtableKey,
-          {
-            method: 'PATCH',
-            body: JSON.stringify({
-              fields: {
-                [F.dripSequence]: newDripValue,
-                [F.lastContactDate]: new Date().toISOString().split('T')[0],
-              },
-            }),
-          }
-        )
-        updated.push(record.id)
+        await updateRecord(LEADS_TABLE, record.id, { [dateField]: today }, apiKey, 'leads.statusDate')
+        stamped.push(record.id)
       } catch (err) {
-        errors.push(`${email}: ${err}`)
+        errors.push(`${record.id}: ${err}`)
       }
     }
-  } catch (err) {
-    return NextResponse.json(
-      { error: 'Failed to process leads', detail: String(err) },
-      { status: 500 }
-    )
+
+    const name = text(f, 'Lead Name')
+    const email = text(f, 'Email')
+    const firstContact = text(f, 'First Contact Date')
+    if (!email || !firstContact || isTestLead(name)) continue
+    if (!ACTIVE_STATUSES.includes(status) || EXCLUDED_STAGES.includes(text(f, 'Pipeline Stage'))) continue
+
+    const current = text(f, 'Drip Sequence')
+    const elapsed = daysSince(firstContact)
+    if ((current === '' || current === 'Not Started') && elapsed > MAX_AGE_TO_START_DAYS) continue
+    const step = nextNurtureStep(current, elapsed)
+    if (!step) continue
+
+    const unsubscribeUrl = leadUnsubscribeUrl(email)
+    if (!unsubscribeUrl) {
+      errors.push('no unsubscribe secret: set LEAD_UNSUBSCRIBE_SECRET or CRON_SECRET')
+      break
+    }
+
+    try {
+      const subscriber = await findSubscriberByEmail(email).catch(() => null)
+      if (subscriber?.status === STATUS_UNSUBSCRIBED) continue
+      if (preview) {
+        sent.push(`${step.label}:${record.id}`)
+        continue
+      }
+      const interest = text(f, 'Sailing Interest')
+      await sendLifecycleEmail({
+        to: email,
+        name,
+        subject: step.subject,
+        html: nurtureEmailHtml(
+          step,
+          { name, interest, windowStart: dateFromText(interest) ?? undefined },
+          unsubscribeUrl,
+        ),
+        fromName: 'Grayson Starbuck - GatGrid Cruises',
+      })
+      const isLast = step === NURTURE_STEPS[NURTURE_STEPS.length - 1]
+      await updateRecord(
+        LEADS_TABLE,
+        record.id,
+        {
+          [LEAD_FIELDS.dripSequence]: isLast ? 'Completed' : step.label,
+          [LEAD_FIELDS.lastContactDate]: today,
+        },
+        apiKey,
+        'leads.nurture',
+      )
+      sent.push(`${step.label}:${record.id}`)
+    } catch (err) {
+      errors.push(`${record.id}: ${err}`)
+    }
   }
 
   return NextResponse.json({
+    preview,
+    scanned: records.length,
     processed: sent.length,
     sent,
-    updated,
+    stamped: stamped.length,
     errors,
     timestamp: new Date().toISOString(),
   })

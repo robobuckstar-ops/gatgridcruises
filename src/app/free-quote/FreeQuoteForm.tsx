@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { CheckCircle, Loader2, Send } from 'lucide-react'
 import { readReferralCookie, readUtmCookies } from '@/components/ui/referral-tracker'
 import { trackLead } from '@/lib/analytics'
+import { SmsConsentCheckbox } from '@/components/ui/sms-consent-checkbox'
 import { LEAD_CONFIRMATION_HEADS_UP } from '@/lib/constants'
 
 interface FormData {
@@ -45,6 +46,7 @@ export function FreeQuoteForm() {
     sailing_interest: '',
     _honeypot: '',
   })
+  const [smsConsent, setSmsConsent] = useState(false)
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [errorMsg, setErrorMsg] = useState('')
 
@@ -64,6 +66,7 @@ export function FreeQuoteForm() {
       const utm = readUtmCookies()
       const payload = {
         ...form,
+        sms_consent: smsConsent,
         ...(referralCode ? { referral_code: referralCode } : {}),
         ...utm,
       }
@@ -229,6 +232,9 @@ export function FreeQuoteForm() {
             placeholder="(555) 000-0000"
             className={inputClass}
           />
+          <div className="mt-2">
+            <SmsConsentCheckbox id="quote-sms-consent" checked={smsConsent} onChange={setSmsConsent} dark />
+          </div>
         </div>
         <div>
           <label htmlFor="quote-interest" className={labelClass}>

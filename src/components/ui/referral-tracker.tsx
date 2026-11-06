@@ -23,6 +23,9 @@ const UTM_COOKIES: Record<UtmKey, string> = {
 // stripping anything weird users could shove in the URL.
 const UTM_SAFE = /^[A-Za-z0-9._\- ]{1,80}$/
 
+const FBCLID_COOKIE = 'gg_fbclid'
+const FBCLID_SAFE = /^[A-Za-z0-9._\-]{1,500}$/
+
 function writeCookie(name: string, value: string) {
   document.cookie = [
     `${name}=${encodeURIComponent(value)}`,
@@ -70,6 +73,9 @@ export function ReferralTracker() {
         writeCookie(UTM_COOKIES[key], value)
       }
     }
+
+    const fbclid = params.get('fbclid')
+    if (fbclid && FBCLID_SAFE.test(fbclid)) writeCookie(FBCLID_COOKIE, fbclid)
   }, [])
 
   return null
@@ -79,7 +85,7 @@ export function readReferralCookie(): string | null {
   return readCookie(REF_COOKIE)
 }
 
-export type UtmParams = Partial<Record<UtmKey, string>>
+export type UtmParams = Partial<Record<UtmKey | 'fbclid', string>>
 
 export function readUtmCookies(): UtmParams {
   const out: UtmParams = {}
@@ -87,5 +93,7 @@ export function readUtmCookies(): UtmParams {
     const v = readCookie(UTM_COOKIES[key])
     if (v) out[key] = v
   }
+  const fbclid = readCookie(FBCLID_COOKIE)
+  if (fbclid) out.fbclid = fbclid
   return out
 }

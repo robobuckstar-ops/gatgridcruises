@@ -82,3 +82,15 @@ export async function sendLifecycleEmail(
 
   throw new Error('No email transport configured (set RESEND_API_KEY or BREVO_API_KEY)')
 }
+
+/**
+ * Resend reports a rejected send in the return value and does not throw, so an
+ * unchecked call looks like a success. This throws, so callers record the truth.
+ */
+export async function sendChecked(
+  resend: Resend,
+  args: Parameters<Resend['emails']['send']>[0],
+): Promise<void> {
+  const { error } = await resend.emails.send(args)
+  if (error) throw new Error(`Resend: ${JSON.stringify(error)}`)
+}

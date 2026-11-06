@@ -9,7 +9,9 @@
 // Rules baked in on purpose: no fares, no promises about price, one message
 // only, and the STOP footer every automated first text needs.
 
-import { sendSms } from './twilio'
+import { listRecords, getAirtableKey, updateRecord } from './airtable-client'
+import { MESSAGE_FIELDS, MESSAGES_TABLE, saveMessageSafely } from './airtable-messages'
+import { DEFAULT_BUSINESS_NUMBER, sendSms } from './twilio'
 
 /** One SMS segment is 160 chars. Two segments is the ceiling for a first text. */
 const MAX_LENGTH = 300
@@ -169,4 +171,84 @@ export async function sendLeadAutoText(
     console.error('[lead-autotext] welcome text threw:', err)
     return false
   }
+}
+
+export type TextOutcome = 'sent' | 'queued' | 'no-phone' | 'no-consent' | 'failed'
+
+export function textOutcomeLabel(outcome: TextOutcome): string {
+  switch (outcome) {
+    case 'sent':
+      return 'sent'
+    case 'queued':
+      return 'queued for 8am Central'
+    case 'no-phone':
+      return 'no phone on the form'
+    case 'no-consent':
+      return 'not sent (no SMS consent)'
+    default:
+      return 'FAILED (check Twilio)'
+  }
+}
+
+/** Texts may go out from 8:00am up to, but not including, 9:00pm Central. */
+export function isWithinSmsWindow(now: Date = new Date()): boolean {
+  const hour = Number(
+    new Intl.DateTimeFormat('en-US', { timeZone: 'America/Chicago', hour: 'numeric', hourCycle: 'h23' }).format(now),
+  )
+  return hour >= 8 && hour < 21
+}
+
+/**
+ * The only way a lead form may text someone. Needs SMS consent, and holds the
+ * text for the morning outside the window. A queued text is a Messages row with
+ * Status "Queued", which /api/cron/sms-queue sends.
+ */
+export async function deliverLeadAutoText(
+  phone: string,
+  consented: boolean,
+  input: LeadAutoTextInput,
+  now: Date = new Date(),
+): Promise<TextOutcome> {
+  if (!phone.trim()) return 'no-phone'
+  if (!consented) return 'no-consent'
+  if (isWithinSmsWindow(now)) {
+    return (await sendLeadAutoText(phone, input)) ? 'sent' : 'failed'
+  }
+  const queued = await saveMessageSafely({
+    from: DEFAULT_BUSINESS_NUMBER,
+    to: phone,
+    body: buildLeadAutoText(input),
+    direction: 'outbound',
+    contactName: input.name,
+    status: 'Queued',
+  })
+  return queued ? 'queued' : 'failed'
+}
+
+/** Send every queued welcome text. Called by the morning cron. */
+export async function flushQueuedTexts(): Promise<{ sent: number; failed: number }> {
+  const apiKey = getAirtableKey()
+  if (!apiKey) return { sent: 0, failed: 0 }
+  const queued = await listRecords(
+    MESSAGES_TABLE,
+    { filterByFormula: `{${MESSAGE_FIELDS.status}}="Queued"`, maxRecords: 100 },
+    apiKey,
+  )
+  let sent = 0
+  let failed = 0
+  for (const record of queued) {
+    const to = String(record.fields[MESSAGE_FIELDS.to] ?? '')
+    const body = String(record.fields[MESSAGE_FIELDS.body] ?? '')
+    const result = await sendSms(to, body).catch(() => ({ ok: false }))
+    if (result.ok) sent++
+    else failed++
+    await updateRecord(
+      MESSAGES_TABLE,
+      record.id,
+      { [MESSAGE_FIELDS.status]: result.ok ? 'Sent' : 'Failed' },
+      apiKey,
+      'messages.queue',
+    )
+  }
+  return { sent, failed }
 }

@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useId, useRef } from 'react'
 import { CheckCircle, Loader2, Send, X, Anchor, Mail } from 'lucide-react'
+import { SmsConsentCheckbox } from '@/components/ui/sms-consent-checkbox'
 import { readReferralCookie, readUtmCookies } from '@/components/ui/referral-tracker'
 import { trackLead } from '@/lib/analytics'
 import { LEAD_CONFIRMATION_HEADS_UP } from '@/lib/constants'
@@ -89,6 +90,7 @@ export function RequestSailingForm({ open, onClose, context }: RequestSailingFor
   const dialogRef = useRef<HTMLDivElement>(null)
   const openedAtRef = useRef<number>(0)
   const lastSubmitAtRef = useRef<number>(0)
+  const [smsConsent, setSmsConsent] = useState(false)
   const [form, setForm] = useState<FormState>(initialForm)
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [errorMsg, setErrorMsg] = useState('')
@@ -151,6 +153,7 @@ export function RequestSailingForm({ open, onClose, context }: RequestSailingFor
       const utm = readUtmCookies()
       const payload = {
         ...form,
+        sms_consent: smsConsent,
         sailing: context ?? null,
         elapsed_ms: elapsed,
         ...(referralCode ? { referral_code: referralCode } : {}),
@@ -313,6 +316,9 @@ export function RequestSailingForm({ open, onClose, context }: RequestSailingFor
                   autoComplete="tel"
                   className={inputClass}
                 />
+                <div className="mt-2">
+                  <SmsConsentCheckbox id="inquiry-sms-consent" checked={smsConsent} onChange={setSmsConsent} />
+                </div>
               </div>
             </div>
 

@@ -43,7 +43,7 @@ export type Direction = 'inbound' | 'outbound'
 export type Channel = 'SMS' | 'Voice' | 'Email'
 
 /** Inbound rows carry read state; outbound rows carry delivery state. */
-export type MessageStatus = 'Unread' | 'Read' | 'Sent' | 'Failed'
+export type MessageStatus = 'Unread' | 'Read' | 'Sent' | 'Failed' | 'Queued'
 
 export interface StoredMessage {
   id: string

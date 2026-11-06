@@ -15,6 +15,7 @@
 import { escapeFormulaValue, getAirtableKey, listRecords, updateRecord } from './airtable-client'
 import type { AirtableRecord } from './airtable-client'
 import { LEAD_FIELDS, LEADS_TABLE } from './airtable-leads'
+import { isTestLead } from './lead-tracking'
 
 /**
  * Hours a quote request may sit unworked before it counts as abandoned.
@@ -35,7 +36,7 @@ export const STALE_AFTER_DAYS = 30
  * to `saveLeadSafely` in the API routes). Matched as a prefix so decorated
  * values like `concierge · Instagram` still count.
  */
-const QUOTE_SOURCE_PREFIXES = [
+const QUOTE_SOURCE_PREFIXES = ['meta-lead', 'obc-estimate', 
   'free-quote',
   'request-this-sailing',
   'group-cruise',
@@ -179,6 +180,9 @@ export function classifyLeadRecord(record: AirtableRecord, now: number): Abandon
 
   const email = pick(fields, F.email, FIELD_NAMES.email)
   if (!email) return null
+
+  // TEST leads never count in reports.
+  if (isTestLead(pick(fields, F.leadName, FIELD_NAMES.leadName))) return null
 
   const source = pick(fields, 'Source', FIELD_NAMES.source)
   if (!isQuoteSource(source)) return null

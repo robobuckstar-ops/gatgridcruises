@@ -5,6 +5,7 @@ import { Shield, Star, Phone, Gift, BadgeCheck, Building2 } from 'lucide-react'
 import Link from 'next/link'
 import { getOBC, formatUSD, OBC_EXAMPLE_FARES } from '@/lib/obc'
 import { trackLead } from '@/lib/analytics'
+import { readUtmCookies } from '@/components/ui/referral-tracker'
 import { OBCDisclaimer } from '@/components/ui/obc-disclaimer'
 import { GraysonFamilyPhoto } from '@/components/ui/grayson-family-photo'
 import { SmsConsentCheckbox } from '@/components/ui/sms-consent-checkbox'
@@ -92,6 +93,7 @@ export default function BookPage() {
           email: form.email,
           phone: form.phone,
           sms_consent: smsConsent,
+          ...readUtmCookies(),
           guests: `${form.adults}A/${form.children}C`,
           notes: notesParts.join('\n'),
           preferences: {

@@ -70,7 +70,29 @@ const OPTIONAL_FIELDS = {
   utmSource: 'UTM Source',
   utmMedium: 'UTM Medium',
   utmCampaign: 'UTM Campaign',
+  utmContent: 'UTM Content',
+  fbclid: 'fbclid',
+  leadSource: 'Lead Source',
+  adName: 'Ad Name',
+  adsetName: 'Adset Name',
+  campaignName: 'Campaign Name',
+  qualified: 'Qualified',
+  smsConsent: 'SMS Consent',
+  smsConsentAt: 'SMS Consent At',
+  smsConsentSource: 'SMS Consent Source',
+  metaLeadId: 'Meta Lead ID',
+  metaFormId: 'Meta Form ID',
 } as const
+
+export const STATUS_FIELD = 'Status'
+/** The date column stamped the first time a lead reaches each Status. */
+export const STATUS_DATE_FIELDS: Record<string, string> = {
+  New: 'Status New Date',
+  Replied: 'Status Replied Date',
+  Quoted: 'Status Quoted Date',
+  Booked: 'Status Booked Date',
+  Lost: 'Status Lost Date',
+}
 
 export interface LeadInput {
   name: string
@@ -87,6 +109,18 @@ export interface LeadInput {
   utmSource?: string
   utmMedium?: string
   utmCampaign?: string
+  utmContent?: string
+  fbclid?: string
+  /** Friendly source for reporting. Defaults to `source`. */
+  leadSource?: string
+  adName?: string
+  adsetName?: string
+  campaignName?: string
+  qualified?: 'Y' | 'N'
+  smsConsent?: boolean
+  smsConsentSource?: string
+  metaLeadId?: string
+  metaFormId?: string
   /**
    * Overwrite the detail columns when the lead already exists.
    *
@@ -99,7 +133,7 @@ export interface LeadInput {
   refreshDetailsOnUpdate?: boolean
 }
 
-export type LeadOutcome = 'created' | 'updated'
+export type LeadOutcome = 'created' | 'updated' | 'duplicate'
 
 function today(): string {
   return new Date().toISOString().split('T')[0]
@@ -142,6 +176,28 @@ function describeAirtableError(err: unknown): Record<string, unknown> {
   }
 }
 
+/** Tracking values as one line, so Notes keeps them even if a column is missing. */
+function attributionLine(input: LeadInput): string | null {
+  const parts = [
+    input.utmSource && `utm_source=${input.utmSource}`,
+    input.utmMedium && `utm_medium=${input.utmMedium}`,
+    input.utmCampaign && `utm_campaign=${input.utmCampaign}`,
+    input.utmContent && `utm_content=${input.utmContent}`,
+    input.fbclid && `fbclid=${input.fbclid}`,
+  ].filter(Boolean)
+  return parts.length ? `Tracking: ${parts.join(' ')}` : null
+}
+
+/** Consent columns, written only on a yes so a later "no" never erases a yes. */
+function consentFields(input: LeadInput): Record<string, unknown> {
+  if (!input.smsConsent) return {}
+  return {
+    [OPTIONAL_FIELDS.smsConsent]: 'Yes',
+    [OPTIONAL_FIELDS.smsConsentAt]: new Date().toISOString(),
+    [OPTIONAL_FIELDS.smsConsentSource]: input.smsConsentSource || input.source,
+  }
+}
+
 /**
  * The dated block a repeat inquiry adds to an existing lead's Notes, carrying
  * everything that came in on the new submission.
@@ -155,6 +211,7 @@ export function repeatInquiryNote(input: LeadInput, date: string): string {
     input.sailingInterest ? `Sailing: ${input.sailingInterest}` : null,
     input.reservationNumber ? `Reservation #: ${input.reservationNumber}` : null,
     input.notes ? input.notes : null,
+    attributionLine(input),
   ]
     .filter((line): line is string => line !== null)
     .join('\n')
@@ -196,6 +253,14 @@ export async function saveLead(
 
   if (existing) {
     const priorNotes = existing.fields[OPTIONAL_FIELDS.notes]
+    // Make can retry a webhook, and a retry must not re-email or re-text anyone.
+    if (
+      input.metaLeadId &&
+      typeof priorNotes === 'string' &&
+      priorNotes.includes(`Meta lead ID: ${input.metaLeadId}`)
+    ) {
+      return { id: existing.id, outcome: 'duplicate' }
+    }
     const addition = repeatInquiryNote(input, today())
     const touch: Record<string, unknown> = {
       [LEAD_FIELDS.lastContactDate]: today(),
@@ -203,6 +268,7 @@ export async function saveLead(
         typeof priorNotes === 'string' && priorNotes.trim()
           ? `${priorNotes}\n\n${addition}`
           : addition,
+      ...consentFields(input),
     }
 
     if (input.refreshDetailsOnUpdate) {
@@ -227,10 +293,17 @@ export async function saveLead(
     [LEAD_FIELDS.nextFollowUp]: daysFromNow(1),
     [LEAD_FIELDS.dripSequence]: 'Not Started',
     [OPTIONAL_FIELDS.source]: input.source,
+    [OPTIONAL_FIELDS.leadSource]: input.leadSource || input.source,
+    [STATUS_FIELD]: 'New',
+    [STATUS_DATE_FIELDS.New]: today(),
+    ...consentFields(input),
   }
 
   if (input.phone) fields[OPTIONAL_FIELDS.phone] = input.phone
-  if (input.notes) fields[OPTIONAL_FIELDS.notes] = input.notes
+  const tracking = attributionLine(input)
+  if (input.notes || tracking) {
+    fields[OPTIONAL_FIELDS.notes] = [input.notes, tracking].filter(Boolean).join('\n')
+  }
   if (input.sailingInterest) fields[OPTIONAL_FIELDS.sailingInterest] = input.sailingInterest
   if (input.guests) fields[OPTIONAL_FIELDS.guests] = input.guests
   if (input.reservationNumber) {
@@ -240,6 +313,14 @@ export async function saveLead(
   if (input.utmSource) fields[OPTIONAL_FIELDS.utmSource] = input.utmSource
   if (input.utmMedium) fields[OPTIONAL_FIELDS.utmMedium] = input.utmMedium
   if (input.utmCampaign) fields[OPTIONAL_FIELDS.utmCampaign] = input.utmCampaign
+  if (input.utmContent) fields[OPTIONAL_FIELDS.utmContent] = input.utmContent
+  if (input.fbclid) fields[OPTIONAL_FIELDS.fbclid] = input.fbclid
+  if (input.adName) fields[OPTIONAL_FIELDS.adName] = input.adName
+  if (input.adsetName) fields[OPTIONAL_FIELDS.adsetName] = input.adsetName
+  if (input.campaignName) fields[OPTIONAL_FIELDS.campaignName] = input.campaignName
+  if (input.qualified) fields[OPTIONAL_FIELDS.qualified] = input.qualified
+  if (input.metaLeadId) fields[OPTIONAL_FIELDS.metaLeadId] = input.metaLeadId
+  if (input.metaFormId) fields[OPTIONAL_FIELDS.metaFormId] = input.metaFormId
 
   // Name and email are what make the row a lead at all. Everything else may be
   // shed by the field-fallback if the base lacks the column ("Source" and

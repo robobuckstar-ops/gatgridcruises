@@ -1,10 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
+import { sendChecked } from '@/lib/send-email'
 import { checkRateLimit } from '@/lib/rate-limit'
 import { CONCIERGE_RECEIVED } from '@/lib/email-templates'
 import { saveLeadSafely } from '@/lib/airtable-leads'
 import { AGENT_REPLY_TO, agentNotifyRecipients } from '@/lib/agent-inbox'
-import { sendLeadAutoText } from '@/lib/lead-autotext'
+import { deliverLeadAutoText } from '@/lib/lead-autotext'
+import { computeQualified, dateFromText, readAttribution } from '@/lib/lead-tracking'
 import { readSmsConsent, smsConsentNote } from '@/lib/sms-consent'
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -143,6 +145,10 @@ export async function POST(request: NextRequest) {
     utmSource: utm_source,
     utmMedium: utm_medium,
     utmCampaign: utm_campaign,
+    ...readAttribution(body),
+    smsConsent,
+    smsConsentSource: 'concierge',
+    qualified: computeQualified({ sailDate: dateFromText(sailing_interest ?? '') }),
   })
 
   let notifyOk = false
@@ -151,7 +157,7 @@ export async function POST(request: NextRequest) {
 
   if (resend) {
     try {
-      await resend.emails.send({
+      await sendChecked(resend, {
         from: '"GatGrid Concierge" <bookings@gatgridcruises.com>',
         // Internal alert — the inbox Grayson actually watches. Not customer-visible.
         to: agentNotifyRecipients(),
@@ -193,19 +199,17 @@ export async function POST(request: NextRequest) {
   // Welcome text — best-effort, same first-touch the other high-intent forms
   // send. Only fires with SMS consent and a phone number; never fails the
   // request (the lead is already recorded above).
-  if (smsConsent && phone) {
-    await sendLeadAutoText(phone, {
-      name,
-      source: 'concierge',
-      knownPartySize: family_members,
-    }).catch(() => {})
-  }
+  await deliverLeadAutoText(phone, smsConsent, {
+    name,
+    source: 'concierge',
+    knownPartySize: family_members,
+  }).catch(() => {})
 
   // Auto-acknowledgment email to the user. Best-effort — at least one delivery
   // path already succeeded, so we never fail the request on this.
   if (resend) {
     try {
-      await resend.emails.send({
+      await sendChecked(resend, {
         from: '"Dr. Grayson Starbuck, DPT" <bookings@gatgridcruises.com>',
         replyTo: AGENT_INBOX,
         to: email,

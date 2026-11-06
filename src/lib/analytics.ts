@@ -49,6 +49,7 @@ export type LeadSource =
   | 'free-guide'
   | 'free-quote'
   | 'contact'
+  | 'obc-estimate'
 
 /**
  * Report a submitted lead to Meta, Google Ads and GA4.
