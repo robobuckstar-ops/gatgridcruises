@@ -68,7 +68,7 @@ export async function runLeadPipeline(lead: PipelineLead): Promise<PipelineResul
   }
 
   const text = await deliverLeadAutoText(crm.phone ?? '', lead.smsConsent, {
-    name: crm.name,
+    name: details.name,
     source: lead.textSource,
     knownPartySize: crm.guests,
   })

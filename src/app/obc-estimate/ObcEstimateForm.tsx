@@ -41,6 +41,7 @@ export function ObcEstimateForm() {
     when: 'not-sure',
     party_size: '2',
     already_booked: 'no',
+    name: '',
     email: '',
     phone: '',
     _honeypot: '',
@@ -169,6 +170,12 @@ export function ObcEstimateForm() {
             <option value="yes">Yes</option>
           </select>
         </div>
+      </div>
+      <div>
+        <label htmlFor="obc-name" className={label}>
+          First name <span className="font-normal text-slate-400">(optional)</span>
+        </label>
+        <input id="obc-name" name="name" type="text" autoComplete="given-name" value={form.name} onChange={set} className={input} />
       </div>
       <div>
         <label htmlFor="obc-email" className={label}>Email</label>

@@ -37,7 +37,9 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Please enter a valid email address.' }, { status: 400 })
   }
 
-  const name = field(body, 'name', 200) || email.split('@')[0]
+  // The first name is optional. Greet as "there", and file the lead under its email.
+  const firstName = field(body, 'name', 200)
+  const name = firstName || 'there'
   const phone = field(body, 'phone', 50)
   const ship = field(body, 'ship', 60)
   const whenMonth = /^\d{4}-\d{2}$/.test(field(body, 'when', 7)) ? field(body, 'when', 7) : ''
@@ -61,7 +63,7 @@ export async function POST(request: NextRequest) {
     textSource: alreadyBooked ? 'transfer' : 'inquiry',
     smsConsent,
     crm: {
-      name,
+      name: firstName || email,
       email,
       phone,
       notes: [
