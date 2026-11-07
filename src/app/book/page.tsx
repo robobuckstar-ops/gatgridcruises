@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { useHydrated } from '@/lib/use-hydrated'
 import { Shield, Star, Phone, Gift, BadgeCheck, Building2 } from 'lucide-react'
 import Link from 'next/link'
 import { getOBC, formatUSD, OBC_EXAMPLE_FARES } from '@/lib/obc'
@@ -14,6 +15,7 @@ import { BUSINESS_PHONE_DISPLAY, BUSINESS_PHONE_TEL } from '@/lib/constants'
 import { ships as DCL_SHIPS } from '@/data/ships'
 
 export default function BookPage() {
+  const hydrated = useHydrated()
   const [submitted, setSubmitted] = useState(false)
   const [submitting, setSubmitting] = useState(false)
   const [honeypot, setHoneypot] = useState('')
@@ -470,7 +472,7 @@ export default function BookPage() {
             <div className="pt-2">
               <button
                 type="submit"
-                disabled={submitting}
+                disabled={!hydrated || submitting}
                 aria-busy={submitting}
                 className="w-full py-4 bg-[#1E3A5F] text-white font-bold text-lg rounded-xl hover:bg-[#162d4a] transition-colors duration-200 shadow-lg disabled:opacity-60 disabled:cursor-not-allowed"
               >

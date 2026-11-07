@@ -1,6 +1,7 @@
 'use client'
 
 import { useMemo, useState } from 'react'
+import { useHydrated } from '@/lib/use-hydrated'
 import { Download, Gift, Loader2 } from 'lucide-react'
 import { readReferralCookie, readUtmCookies } from '@/components/ui/referral-tracker'
 import { SmsConsentCheckbox } from '@/components/ui/sms-consent-checkbox'
@@ -36,6 +37,7 @@ function nextMonths(count: number): { value: string; label: string }[] {
 
 export function ObcEstimateForm() {
   const months = useMemo(() => nextMonths(18), [])
+  const hydrated = useHydrated()
   const [form, setForm] = useState({
     ship: 'not-sure',
     when: 'not-sure',
@@ -190,7 +192,7 @@ export function ObcEstimateForm() {
       <SmsConsentCheckbox id="obc-sms-consent" checked={smsConsent} onChange={setSmsConsent} />
       <button
         type="submit"
-        disabled={status === 'loading'}
+        disabled={!hydrated || status === 'loading'}
         className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#1E3A5F] py-3.5 text-lg font-bold text-white disabled:opacity-60"
       >
         {status === 'loading' && <Loader2 className="h-5 w-5 animate-spin" aria-hidden="true" />}

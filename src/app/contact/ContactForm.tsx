@@ -2,6 +2,7 @@
 
 import { SmsConsentCheckbox } from '@/components/ui/sms-consent-checkbox'
 import { useState, useRef, useEffect } from 'react'
+import { useHydrated } from '@/lib/use-hydrated'
 import { CheckCircle, Loader2, Send } from 'lucide-react'
 import { readReferralCookie, readUtmCookies } from '@/components/ui/referral-tracker'
 import { trackLeadUnlessFlagged } from '@/lib/analytics'
@@ -21,6 +22,7 @@ const inputClass =
 const labelClass = 'block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-1.5'
 
 export function ContactForm() {
+  const hydrated = useHydrated()
   const [smsConsent, setSmsConsent] = useState(false)
   const [form, setForm] = useState<FormData>({
     name: '',
@@ -218,7 +220,7 @@ export function ContactForm() {
 
       <button
         type="submit"
-        disabled={status === 'loading'}
+        disabled={!hydrated || status === 'loading'}
         className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#1E3A5F] text-white font-inter font-semibold rounded-lg hover:bg-[#0a1628] disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
       >
         {status === 'loading' ? (

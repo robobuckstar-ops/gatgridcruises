@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { useHydrated } from '@/lib/use-hydrated'
 import { CheckCircle, Loader2, Plus, Send } from 'lucide-react'
 import { readReferralCookie, readUtmCookies } from '@/components/ui/referral-tracker'
 import { trackLead } from '@/lib/analytics'
@@ -50,6 +51,7 @@ const inputClass =
 const labelClass = 'block text-xs font-semibold text-blue-300 uppercase tracking-wider mb-1.5'
 
 export function TransferForm({ quiz }: { quiz?: TransferQuizContext } = {}) {
+  const hydrated = useHydrated()
   const [form, setForm] = useState<FormData>({
     name: '',
     email: '',
@@ -316,7 +318,7 @@ export function TransferForm({ quiz }: { quiz?: TransferQuizContext } = {}) {
 
       <button
         type="submit"
-        disabled={status === 'loading'}
+        disabled={!hydrated || status === 'loading'}
         aria-busy={status === 'loading'}
         className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#D4AF37] text-[#1E3A5F] font-bold rounded-xl hover:bg-yellow-300 transition-colors shadow-lg text-base disabled:opacity-70 disabled:cursor-not-allowed"
       >
