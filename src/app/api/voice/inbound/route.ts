@@ -3,13 +3,20 @@
 // Flow:
 //   1. A blocked caller is rejected (VOICE_BLOCK_LIST, or Spam ticked in Messages).
 //   2. Log the call into the same per-contact thread as texts, and push.
-//   3. Ask the caller to press 1. Pressing 1 (/api/voice/gather) rings Grayson's
+//   3. Failed caller-ID verification (StirVerstat) goes straight to voicemail.
+//   4. Ask the caller to press 1. Pressing 1 (/api/voice/gather) rings Grayson's
 //      cell. No key or a wrong key goes to the GatGrid voicemail with no ring.
 
 import { NextRequest, NextResponse } from 'next/server'
 import { lookupContactName, saveMessageSafely } from '@/lib/airtable-messages'
 import { sendPushover } from '@/lib/pushover'
-import { isBlockedCaller, pressOneTwiml, rejectTwiml } from '@/lib/voice'
+import {
+  failedCallerVerification,
+  isBlockedCaller,
+  pressOneTwiml,
+  rejectTwiml,
+  voicemailOnlyTwiml,
+} from '@/lib/voice'
 import {
   formatPhoneDisplay,
   normalizePhone,
@@ -85,6 +92,12 @@ export async function POST(request: NextRequest) {
     })
   } else {
     console.error('[voice/inbound] webhook had no From number; params:', Object.keys(params).join(','))
+  }
+
+  // Failed caller-ID verification goes straight to voicemail, with no prompt.
+  if (failedCallerVerification(params.StirVerstat)) {
+    console.log(`[voice/inbound] ${from} failed verification: ${params.StirVerstat}`)
+    return voicemailOnlyTwiml()
   }
 
   return pressOneTwiml()

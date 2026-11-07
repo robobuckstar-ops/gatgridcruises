@@ -329,8 +329,7 @@ export function Footer() {
           {/* Seller-of-travel registrations, as published on Boardwalk's terms of service page. */}
           {/* TODO: add HI TAR once verified. It is not on Boardwalk's public site. */}
           <p className="mb-8 text-center text-xs text-slate-500">
-            Booking services through Boardwalk Travel Agency: CA SOT #2150638-50 &middot; FL SOT
-            #ST43802 &middot; WA SOT #605109590
+            Boardwalk Travel Agency &middot; CST 2150638-50 &middot; FL ST43802 &middot; WA 605109590
           </p>
 
           {/* Copyright */}

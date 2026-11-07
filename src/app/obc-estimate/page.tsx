@@ -14,7 +14,7 @@ export default function ObcEstimatePage() {
     <main className="bg-slate-50 py-8 md:py-14">
       <div className="mx-auto max-w-xl px-4 sm:px-6">
         <h1 className="mb-2 text-center font-fraunces text-3xl font-bold text-[#1E3A5F] md:text-4xl">
-          See your onboard credit in 60 seconds
+          Get Your Onboard Credit Estimate
         </h1>
         <p className="mb-6 text-center font-inter text-base text-slate-600">
           Same Disney fare. Free onboard credit on top. Tell us a little and see your estimate right

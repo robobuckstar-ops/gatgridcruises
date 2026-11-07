@@ -3,6 +3,7 @@ import assert from 'node:assert/strict'
 import { NextRequest } from 'next/server'
 import { POST as inbound } from '../../app/api/voice/inbound/route'
 import { POST as gather } from '../../app/api/voice/gather/route'
+import { POST as voicemail } from '../../app/api/voice/voicemail/route'
 import { partySizeNumber, saveLead } from '../airtable-leads'
 import { recordPossibleBot } from '../possible-bot'
 import { forwardTwiml, pressOneTwiml, rejectTwiml, voicemailOnlyTwiml } from '../voice'
@@ -103,4 +104,87 @@ test('every voice response is well-formed TwiML', async () => {
 test('press-1 points at the gather route', async () => {
   const body = await pressOneTwiml().text()
   assert.ok(/<Gather numDigits="1" timeout="6" action="\/api\/voice\/gather" method="POST">/.test(body))
+})
+
+test('only Digits exactly 1 can dial the cell', async () => {
+  const cases: Record<string, string>[] = [
+    { From: '+14055550100' },
+    { From: '+14055550100', Digits: '' },
+    { From: '+14055550100', Digits: '0' },
+    { From: '+14055550100', Digits: '2' },
+    { From: '+14055550100', Digits: '9' },
+    { From: '+14055550100', Digits: '*' },
+    { From: '+14055550100', Digits: '#' },
+    { From: '+14055550100', Digits: '11' },
+    { From: '+14055550100', Digits: '1#' },
+  ]
+  for (const fields of cases) {
+    const twiml = await (await gather(voiceRequest('/api/voice/gather', fields))).text()
+    assert.ok(!twiml.includes('<Dial'), JSON.stringify(fields))
+    assert.ok(!twiml.includes('5804306511'), JSON.stringify(fields))
+    assert.ok(twiml.includes('<Record'), JSON.stringify(fields))
+  }
+})
+
+test('the prompt falling through on a timeout never dials', async () => {
+  const body = await pressOneTwiml().text()
+  assert.ok(!body.includes('<Dial'))
+  assert.ok(!body.includes('5804306511'))
+  assert.ok(body.indexOf('</Gather>') < body.indexOf('<Record'))
+})
+
+test('failed caller verification skips the prompt and goes to voicemail', async () => {
+  process.env.AIRTABLE_API_KEY = 'test'
+  mockAirtable()
+  for (const StirVerstat of ['TN-Validation-Failed-A', 'TN-Validation-Failed-B', 'TN-Validation-Failed-C', 'No-TN-Validation']) {
+    const twiml = await (await inbound(voiceRequest('/api/voice/inbound', { From: '+14055550100', StirVerstat }))).text()
+    assert.ok(!twiml.includes('<Gather'), StirVerstat)
+    assert.ok(!twiml.includes('<Dial'), StirVerstat)
+    assert.ok(twiml.includes('<Record'), StirVerstat)
+  }
+  for (const StirVerstat of ['TN-Validation-Passed-A', 'TN-Validation-Passed-C', '']) {
+    const twiml = await (await inbound(voiceRequest('/api/voice/inbound', { From: '+14055550100', StirVerstat }))).text()
+    assert.ok(twiml.includes('<Gather'), StirVerstat)
+  }
+})
+
+function mockVoicemail(messages: unknown[] = []) {
+  const calls = { pushes: 0, rows: [] as Record<string, unknown>[] }
+  process.env.PUSHOVER_TOKEN = 't'
+  process.env.PUSHOVER_USER = 'u'
+  process.env.AIRTABLE_API_KEY = 'test'
+  globalThis.fetch = (async (url: string, init?: RequestInit) => {
+    if (String(url).includes('pushover')) {
+      calls.pushes++
+      return new Response('{}', { status: 200 })
+    }
+    if (init?.body) {
+      calls.rows.push(JSON.parse(String(init.body)).fields)
+      return new Response(JSON.stringify({ id: 'r', fields: {} }), { status: 200 })
+    }
+    return new Response(JSON.stringify({ records: messages }), { status: 200 })
+  }) as typeof fetch
+  return calls
+}
+
+test('voicemails under 5 seconds or with no recording log without a push', async () => {
+  for (const fields of [{}, { RecordingUrl: 'https://r/1', RecordingDuration: '1' }, { RecordingUrl: 'https://r/1', RecordingDuration: '4' }] as Record<string, string>[]) {
+    const calls = mockVoicemail()
+    await voicemail(voiceRequest('/api/voice/voicemail', { From: '+14055550100', ...fields }))
+    assert.equal(calls.pushes, 0, JSON.stringify(fields))
+    assert.equal(calls.rows.length, 1, JSON.stringify(fields))
+  }
+  const calls = mockVoicemail()
+  await voicemail(voiceRequest('/api/voice/voicemail', { From: '+14055550100', RecordingUrl: 'https://r/1', RecordingDuration: '5' }))
+  assert.equal(calls.pushes, 1)
+  assert.equal(calls.rows.length, 1)
+})
+
+test('a transcript is pushed only for a voicemail of 5 seconds or more', async () => {
+  const short = mockVoicemail([{ id: 'm', fields: { Body: 'Voicemail (3s): https://r/1.mp3' } }])
+  await voicemail(voiceRequest('/api/voice/voicemail', { From: '+14055550100', TranscriptionText: 'hi', RecordingUrl: 'https://r/1' }))
+  assert.equal(short.pushes, 0)
+  const long = mockVoicemail([{ id: 'm', fields: { Body: 'Voicemail (30s): https://r/2.mp3' } }])
+  await voicemail(voiceRequest('/api/voice/voicemail', { From: '+14055550100', TranscriptionText: 'hi', RecordingUrl: 'https://r/2' }))
+  assert.equal(long.pushes, 1)
 })

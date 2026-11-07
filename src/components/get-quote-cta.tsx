@@ -29,7 +29,7 @@ export function GetQuoteCTA() {
               <ArrowRight className="w-5 h-5" aria-hidden="true" />
             </Link>
             <p className="text-blue-300 text-xs text-center">
-              Licensed advisor through Boardwalk Travel Agency
+              Independent advisor booking through Boardwalk Travel Agency, a registered seller of travel
             </p>
           </div>
         </div>

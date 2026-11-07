@@ -110,3 +110,13 @@ export async function isBlockedCaller(from: string): Promise<boolean> {
     return false
   }
 }
+
+/**
+ * Twilio's caller-ID attestation. A failed check (TN-Validation-Failed-A/B/C) or
+ * no check at all (No-TN-Validation) skips the press-1 prompt and goes to voicemail.
+ * A missing value is normal for many carriers, so those callers still get the prompt.
+ */
+export function failedCallerVerification(stirVerstat: string | undefined): boolean {
+  const value = (stirVerstat ?? '').trim()
+  return value.startsWith('TN-Validation-Failed') || value === 'No-TN-Validation'
+}

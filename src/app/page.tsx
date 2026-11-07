@@ -116,7 +116,7 @@ export default async function Home() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
             {([
-              { icon: ShieldCheck, text: 'Authorized Disney Vacation Planner', sub: 'via Boardwalk Travel' },
+              { icon: ShieldCheck, text: 'Independent advisor', sub: 'booking through Boardwalk Travel Agency, a registered seller of travel' },
               { icon: Anchor, text: 'Powered by Real Cruise Experience', sub: undefined },
               { icon: Star, text: 'Personal Concierge Service', sub: undefined },
               { icon: TrendingDown, text: 'Price Drop Watch', sub: undefined },
