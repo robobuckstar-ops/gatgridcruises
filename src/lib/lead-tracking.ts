@@ -16,10 +16,10 @@ function clean(value: unknown, maxLen: number): string | undefined {
 /** Pull the tracking params a form forwarded from its cookies. */
 export function readAttribution(body: Record<string, unknown>): LeadAttribution {
   return {
-    utmSource: clean(body.utm_source, 80),
-    utmMedium: clean(body.utm_medium, 80),
-    utmCampaign: clean(body.utm_campaign, 80),
-    utmContent: clean(body.utm_content, 80),
+    utmSource: clean(body.utm_source, 200),
+    utmMedium: clean(body.utm_medium, 200),
+    utmCampaign: clean(body.utm_campaign, 200),
+    utmContent: clean(body.utm_content, 200),
     fbclid: clean(body.fbclid, 500),
   }
 }

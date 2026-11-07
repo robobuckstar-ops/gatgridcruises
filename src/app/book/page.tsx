@@ -135,7 +135,7 @@ export default function BookPage() {
               You&rsquo;re All Set!
             </h1>
             <p className="text-lg text-slate-600 mb-6">
-              Thanks! A Disney cruise specialist will get back to you within 24 hours with personalized options.
+              Thanks! A Disney cruise advisor will get back to you within 1 business day with personalized options.
             </p>
             <p className="text-sm text-slate-500">
               Keep an eye on your inbox — we&rsquo;ll send you a summary of your request along with our best cruise recommendations.
@@ -156,7 +156,7 @@ export default function BookPage() {
             Get Your Free Disney Cruise Quote
           </h1>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Tell us about your dream cruise and a licensed Disney cruise specialist will send you personalized pricing and options within 24 hours.
+            Tell us about your dream cruise and an independent Disney cruise advisor will send you personalized pricing and options within 1 business day.
           </p>
           <p className="mt-2 text-sm text-slate-600">
             Prefer to talk? Call{' '}
@@ -485,7 +485,7 @@ export default function BookPage() {
                 <p className="text-xs text-slate-400">
                   Booking services provided through{' '}
                   <span className="font-semibold text-slate-500">Boardwalk Travel Agency</span>
-                  {' '}— your licensed travel advisor
+                  {' '}— your independent travel advisor
                 </p>
               </div>
             </div>
@@ -507,7 +507,7 @@ export default function BookPage() {
           <div className="flex items-start gap-3 bg-white rounded-xl p-4 border border-slate-200 shadow-sm">
             <Star className="w-5 h-5 text-[#D4AF37] flex-shrink-0 mt-0.5" />
             <div>
-              <p className="font-semibold text-slate-900 text-sm">Licensed Travel Advisor</p>
+              <p className="font-semibold text-slate-900 text-sm">Independent Travel Advisor</p>
               <p className="text-xs text-slate-500">Through Boardwalk Travel Agency</p>
             </div>
           </div>

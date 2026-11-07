@@ -101,7 +101,7 @@ function confirmationHtml(name: string): string {
 <tr><td style="background:#1E3A5F;padding:20px 24px;color:#D4AF37;font-family:Georgia,serif;font-size:20px;font-weight:bold;">We got your transfer request</td></tr>
 <tr><td style="padding:24px;font-size:15px;color:#334155;line-height:1.6;">
 <p style="margin:0 0 14px;">Hi ${escapeHtml(name)},</p>
-<p style="margin:0 0 14px;">Thanks for sending this over. I'll check your reservation against Disney Cruise Line's current transfer rules and email you back — usually within the hour, always the same business day.</p>
+<p style="margin:0 0 14px;">Thanks for sending this over. I'll check your reservation against Disney Cruise Line's current transfer rules and email you back within 1 business day.</p>
 <p style="margin:0 0 14px;">If your booking is eligible, I'll send you Disney's one-page transfer form to sign. Nothing about your cruise changes: same ship, same sail date, same stateroom, same fare. Once the transfer completes you'll have onboard credit and our concierge service on the booking, at no additional cost to you.</p>
 <p style="margin:0 0 14px;">If it turns out it isn't eligible, I'll tell you straight — and you're still welcome to use the concierge side for free.</p>
 <p style="margin:0 0 4px;">— Dr. Grayson Starbuck, DPT</p>
@@ -242,7 +242,7 @@ export async function POST(request: NextRequest) {
         from: '"Dr. Grayson Starbuck, DPT" <bookings@gatgridcruises.com>',
         replyTo: AGENT_INBOX,
         to: email,
-        subject: "We got your transfer request — I'll confirm eligibility today",
+        subject: "We got your transfer request — I'll confirm eligibility within 1 business day",
         html: confirmationHtml(name),
       })
       ackOk = true

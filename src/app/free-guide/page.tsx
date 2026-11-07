@@ -241,7 +241,7 @@ export default function FreeGuidePage() {
             <GuideForm />
           </div>
 
-          <HowWeWork className="mt-8" />
+          <HowWeWork className="mt-8" guideSignup />
         </div>
       </section>
 

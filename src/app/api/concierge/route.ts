@@ -212,7 +212,7 @@ export async function POST(request: NextRequest) {
         from: '"Dr. Grayson Starbuck, DPT" <bookings@gatgridcruises.com>',
         replyTo: AGENT_INBOX,
         to: email,
-        subject: 'Thanks for reaching out — I\'ll be in touch within the hour',
+        subject: 'Thanks for reaching out — I\'ll be in touch within 1 business day',
         html: CONCIERGE_RECEIVED({
           name,
           sailingInterest: sailing_interest,

@@ -146,7 +146,7 @@ function ackHtml(
 <tr><td style="background:#1E3A5F;padding:20px 28px;color:#D4AF37;font-family:Georgia,serif;font-size:20px;font-weight:bold;">GatGrid Cruises</td></tr>
 <tr><td style="padding:28px;">
 <h2 style="margin:0 0 12px;color:#1E3A5F;font-family:Georgia,serif;font-size:20px;">Hi ${escapeHtml(firstName)},</h2>
-<p style="margin:0 0 14px;color:#334155;font-size:15px;line-height:1.6;">It's Grayson. I got your request about <strong>${escapeHtml(sailingSummary)}</strong> and I'm looking at it now. You'll hear back from me today.</p>
+<p style="margin:0 0 14px;color:#334155;font-size:15px;line-height:1.6;">It's Grayson. I got your request about <strong>${escapeHtml(sailingSummary)}</strong> and I'm on it. You'll hear back from me within 1 business day.</p>
 ${asks ? `<p style="margin:0 0 8px;color:#334155;font-size:15px;line-height:1.6;">A few quick things would help me get this right the first time:</p>${asks}` : ''}
 <p style="margin:0 0 14px;color:#334155;font-size:15px;line-height:1.6;">Just hit reply and tell me, or answer by text. Whichever is easier is fine by me.</p>
 ${textLine}
@@ -385,7 +385,7 @@ export async function POST(request: NextRequest) {
           from: '"Dr. Grayson Starbuck, DPT" <bookings@gatgridcruises.com>',
           to: email,
           replyTo: INBOX,
-          subject: "Got your inquiry, I'll be in touch today",
+          subject: "Got your inquiry, I'll be in touch within 1 business day",
           html: ackHtml(name, customerSailingSummary, openQuestions, textOk),
         })
         ackOk = true

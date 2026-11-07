@@ -188,3 +188,16 @@ test('a transcript is pushed only for a voicemail of 5 seconds or more', async (
   await voicemail(voiceRequest('/api/voice/voicemail', { From: '+14055550100', TranscriptionText: 'hi', RecordingUrl: 'https://r/2' }))
   assert.equal(long.pushes, 1)
 })
+
+test('the incoming-call push fires only after pressing 1', async () => {
+  const quiet = mockVoicemail()
+  await inbound(voiceRequest('/api/voice/inbound', { From: '+14055550100', To: '+14055264956' }))
+  assert.equal(quiet.pushes, 0)
+  const wrongKey = mockVoicemail()
+  await gather(voiceRequest('/api/voice/gather', { From: '+14055550100', Digits: '2' }))
+  assert.equal(wrongKey.pushes, 0)
+  const pressed = mockVoicemail()
+  const twiml = await (await gather(voiceRequest('/api/voice/gather', { From: '+14055550100', Digits: '1' }))).text()
+  assert.equal(pressed.pushes, 1)
+  assert.ok(twiml.includes('<Dial'))
+})

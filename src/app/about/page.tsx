@@ -176,7 +176,7 @@ export default function AboutPage() {
         <section className="mb-16">
           <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-4">Editorial Independence</h2>
           <p className="font-inter text-lg text-gray-700 leading-relaxed mb-4">
-            This site is independently owned and operated. The founder is an independent travel agent under Boardwalk Travel Agency (an Authorized Disney Vacation Planner), but the website is a separate media property. This separation is intentional to maintain editorial credibility.
+            This site is independently owned and operated. The founder is an independent travel agent under Boardwalk Travel Agency, a registered seller of travel, but the website is a separate media property. This separation is intentional to maintain editorial credibility.
           </p>
           <p className="font-inter text-lg text-gray-700 leading-relaxed">
             That means our cruise reviews, price analyses, and ship evaluations are never influenced by bookings we might take. We're building a resource for families first, a business second.

@@ -220,7 +220,7 @@ export function INQUIRY_RECEIVED(data: InquiryData): string {
       I'm Dr. Grayson Starbuck, DPT — founder of GatGrid Cruises and a Disney cruise fanatic who has taken his family on more sailings than I care to admit. There's truly nothing like it, and I'd love to help your family experience that same magic.
     </p>
     <p style="margin:0 0 20px;color:#334155;font-size:15px;line-height:1.6;">
-      I received your request and will personally review your preferences and get back to you within <strong>24 hours</strong> with hand-picked options that fit your family's needs and budget.
+      I received your request and will personally review your preferences and get back to you within <strong>1 business day</strong> with hand-picked options that fit your family's needs and budget.
     </p>
     <div style="background-color:#F0F7FF;border-left:4px solid #1E3A5F;border-radius:6px;padding:20px;margin-bottom:24px;">
       <h3 style="margin:0 0 12px;color:#1E3A5F;font-size:15px;font-family:Georgia,serif;">Here's what you're looking for:</h3>
@@ -249,7 +249,7 @@ export function CONCIERGE_RECEIVED(data: ConciergeAckData): string {
   return wrapBookingEmail(`
     <h2 style="margin:0 0 12px;color:#1E3A5F;font-family:Georgia,serif;font-size:22px;">Hi ${firstName} —</h2>
     <p style="margin:0 0 16px;color:#334155;font-size:15px;line-height:1.6;">
-      Thanks for reaching out to GatGrid Cruises! I just got your inquiry${data.sailingInterest ? ` about <strong>${data.sailingInterest}</strong>` : ''} and I'll personally follow up <strong>within the hour</strong>.
+      Thanks for reaching out to GatGrid Cruises! I just got your inquiry${data.sailingInterest ? ` about <strong>${data.sailingInterest}</strong>` : ''} and I'll personally follow up <strong>within 1 business day</strong>.
     </p>
     <p style="margin:0 0 20px;color:#334155;font-size:15px;line-height:1.6;">
       I'm Dr. Grayson Starbuck, DPT — founder of GatGrid Cruises and a Disney cruise nut who has taken his family on more sailings than I care to admit. I'll review what you sent over and come back with options that actually fit your family.
@@ -834,7 +834,7 @@ export function leadNurtureDay1(name: string): string {
       </ul>
     </div>
     <p style="margin:0 0 16px;color:#334155;font-size:15px;line-height:1.6;">
-      Just reply to this email anytime — I personally read every message and typically respond within a few hours.
+      Just reply to this email anytime — I personally read every message and respond within 1 business day.
     </p>
     <p style="margin:0;color:#64748B;font-size:13px;">Talk soon,<br><strong style="color:#1E3A5F;">Grayson Starbuck</strong><br>Cruise Concierge, GatGrid Cruises</p>
   `)

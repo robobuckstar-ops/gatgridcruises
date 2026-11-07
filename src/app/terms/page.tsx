@@ -5,12 +5,12 @@ export const metadata: Metadata = {
   alternates: { canonical: '/terms' },
   title: 'Terms of Use',
   description:
-    'The GatGridCruises terms of use — what this site is and is not, how our pricing data should be used, affiliate disclosures, and limits on our liability.',
+    'The GatGridCruises terms of use — what this site is, how bookings work, how our pricing data should be used, affiliate disclosures, and limits on our liability.',
   openGraph: {
     type: 'website',
     title: 'Terms of Use — GatGridCruises',
     description:
-      'What GatGridCruises is and is not, how to use our pricing data, our affiliate relationships, and the limits of our liability as an information site.',
+      'What GatGridCruises is, how bookings work, how to use our pricing data, our affiliate relationships, and the limits of our liability.',
     url: 'https://gatgridcruises.com/terms',
     siteName: 'GatGridCruises',
     images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Terms of Use — GatGridCruises',
-    description: 'An independent information site, not a travel agency — here is what that means.',
+    description: 'What GatGridCruises is, how bookings work, and the limits of our liability.',
     images: ['https://gatgridcruises.com/og-image.png'],
   },
 }
@@ -43,7 +43,7 @@ export default function TermsPage() {
 
           <h2 className="font-fraunces text-2xl font-bold text-[#1E3A5F] mb-4 mt-10">Nature of the Service</h2>
           <p className="text-gray-600 mb-6 leading-relaxed">
-            GatGridCruises.com is an independent informational and editorial website. We are <strong>not</strong> a travel agency, booking platform, or authorized seller of Disney Cruise Line products. We do not sell cruises, accept bookings, process payments, or issue travel documents. All pricing information displayed is sourced from publicly available data and is subject to change. Always verify current pricing on the official Disney Cruise Line website before making purchasing decisions.
+            GatGridCruises.com is an independent website run by an independent travel advisor. Cruise bookings are made through Boardwalk Travel Agency, a registered seller of travel, and are subject to the terms of Boardwalk Travel Agency and Disney Cruise Line. All pricing information displayed is sourced from publicly available data and is subject to change. Always verify current pricing on the official Disney Cruise Line website before making purchasing decisions.
           </p>
 
           <h2 className="font-fraunces text-2xl font-bold text-[#1E3A5F] mb-4 mt-10">Disclaimer of Warranties</h2>

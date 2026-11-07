@@ -136,7 +136,7 @@ export function ConciergeForm() {
           Thanks! We got your inquiry.
         </h3>
         <p className="font-inter text-blue-200 max-w-md mx-auto leading-relaxed mb-3">
-          Grayson will personally follow up within the hour. We&apos;ve also sent a
+          Grayson will personally follow up within 1 business day. We&apos;ve also sent a
           confirmation email to your inbox — check your spam folder if you don&apos;t see
           it within a few minutes.
         </p>

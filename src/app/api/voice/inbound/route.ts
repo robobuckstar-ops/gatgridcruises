@@ -9,7 +9,6 @@
 
 import { NextRequest, NextResponse } from 'next/server'
 import { lookupContactName, saveMessageSafely } from '@/lib/airtable-messages'
-import { sendPushover } from '@/lib/pushover'
 import {
   failedCallerVerification,
   isBlockedCaller,
@@ -18,7 +17,6 @@ import {
   voicemailOnlyTwiml,
 } from '@/lib/voice'
 import {
-  formatPhoneDisplay,
   normalizePhone,
   validateTwilioSignature,
   webhookUrlFor,
@@ -64,16 +62,14 @@ export async function POST(request: NextRequest) {
     return rejectTwiml()
   }
 
-  // Match the caller, log the call, and buzz once at normal priority (the phone
-  // is already ringing). The high-priority missed/voicemail alert comes later
-  // from /api/voice/voicemail if the call isn't accepted.
+  // Match the caller and log the call. The push waits for press 1, so spam that
+  // never presses it doesn't ping Grayson (see /api/voice/gather).
   let contactName = ''
   try {
     contactName = await lookupContactName(from)
   } catch (err) {
     console.error('[voice/inbound] contact lookup failed:', err)
   }
-  const who = contactName ? `${contactName} (${formatPhoneDisplay(from)})` : formatPhoneDisplay(from)
 
   if (from) {
     await saveMessageSafely({
@@ -84,11 +80,6 @@ export async function POST(request: NextRequest) {
       channel: 'Voice',
       contactName: contactName || undefined,
       status: 'Unread',
-    })
-    await sendPushover({
-      title: 'Incoming call',
-      message: `${who} is calling the business line.`,
-      priority: 0,
     })
   } else {
     console.error('[voice/inbound] webhook had no From number; params:', Object.keys(params).join(','))

@@ -223,7 +223,7 @@ export function RequestSailingForm({ open, onClose, context }: RequestSailingFor
               Got it, we&apos;ll be in touch.
             </h3>
             <p className="text-slate-600 text-sm leading-relaxed max-w-sm mx-auto mb-3">
-              Grayson personally follows up on every inquiry, usually within the hour. A confirmation
+              Grayson personally follows up on every inquiry within 1 business day. A confirmation
               email is also on its way to <strong>{form.email}</strong>.
             </p>
             <p className="text-slate-500 text-xs leading-relaxed max-w-sm mx-auto mb-4">

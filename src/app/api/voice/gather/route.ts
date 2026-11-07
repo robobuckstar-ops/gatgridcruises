@@ -2,7 +2,9 @@
 // 1 forwards to Grayson's cell. Any other key goes to voicemail, with no ring.
 
 import { NextRequest, NextResponse } from 'next/server'
-import { normalizePhone, validateTwilioSignature, webhookUrlFor } from '@/lib/twilio'
+import { lookupContactName } from '@/lib/airtable-messages'
+import { sendPushover } from '@/lib/pushover'
+import { formatPhoneDisplay, normalizePhone, validateTwilioSignature, webhookUrlFor } from '@/lib/twilio'
 import { FORWARD_TO, forwardTwiml, voicemailOnlyTwiml } from '@/lib/voice'
 
 export const runtime = 'nodejs'
@@ -30,7 +32,20 @@ export async function POST(request: NextRequest) {
   }
 
   // A call from the forward-to cell can't ring itself, so it goes to voicemail.
-  if (params.Digits === '1' && normalizePhone(params.From) !== FORWARD_TO) {
+  const from = normalizePhone(params.From)
+  if (params.Digits === '1' && from !== FORWARD_TO) {
+    let contactName = ''
+    try {
+      contactName = await lookupContactName(from)
+    } catch (err) {
+      console.error('[voice/gather] contact lookup failed:', err)
+    }
+    const who = contactName ? `${contactName} (${formatPhoneDisplay(from)})` : formatPhoneDisplay(from)
+    await sendPushover({
+      title: 'Incoming call',
+      message: `${who} pressed 1 and is ringing through from the business line.`,
+      priority: 0,
+    })
     return forwardTwiml()
   }
   return voicemailOnlyTwiml()

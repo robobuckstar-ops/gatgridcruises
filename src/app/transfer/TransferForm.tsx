@@ -140,7 +140,7 @@ export function TransferForm({ quiz }: { quiz?: TransferQuizContext } = {}) {
         </h3>
         <p className="font-inter text-blue-200 max-w-md mx-auto leading-relaxed mb-3">
           Grayson will confirm whether your reservation is eligible to transfer and email you
-          back the same business day. If it is, you&apos;ll get Disney&apos;s one-page transfer
+          back within 1 business day. If it is, you&apos;ll get Disney&apos;s one-page transfer
           form to sign — nothing about your cruise changes.
         </p>
         <p className="font-inter text-sm text-blue-300/80 max-w-md mx-auto">

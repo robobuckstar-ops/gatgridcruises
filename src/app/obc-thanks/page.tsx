@@ -1,6 +1,8 @@
 import { Metadata } from 'next'
 import { Download, Phone } from 'lucide-react'
+import { OBCDisclaimer } from '@/components/ui/obc-disclaimer'
 import { BUSINESS_PHONE_DISPLAY, BUSINESS_PHONE_TEL } from '@/lib/constants'
+import { formatUSD, getOBC, OBC_EXAMPLE_FARES } from '@/lib/obc'
 
 // Destination of the Meta Instant Form's "Visit website" button. The lead was
 // already counted on the form, so this page must never call trackLead. The root
@@ -24,6 +26,29 @@ export default function ObcThanksPage() {
           Grayson personally reviews it midday on weekdays and emails your onboard credit estimate,
           usually within one business day.
         </p>
+        <h2 className="mb-2 font-fraunces text-lg font-bold text-[#1E3A5F]">
+          Example onboard credit estimates
+        </h2>
+        <table className="mb-2 w-full text-left font-inter text-sm text-slate-700">
+          <thead>
+            <tr className="border-b border-slate-200 text-slate-500">
+              <th scope="col" className="py-2 font-semibold">Cruise fare</th>
+              <th scope="col" className="py-2 text-right font-semibold">Estimated credit*</th>
+            </tr>
+          </thead>
+          <tbody>
+            {OBC_EXAMPLE_FARES.map((fare) => (
+              <tr key={fare} className="border-b border-slate-100">
+                <td className="py-2">{formatUSD(fare)}</td>
+                <td className="py-2 text-right font-bold text-[#1E3A5F]">{formatUSD(getOBC(fare))}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <p className="mb-6 font-inter text-xs leading-relaxed text-slate-500">
+          For new bookings. If you already booked directly with Disney, your estimate will be lower.
+          Grayson&apos;s email will have your own number.
+        </p>
         <a
           href="/downloads/disney-cruise-first-timer-guide.pdf"
           download
@@ -39,6 +64,9 @@ export default function ObcThanksPage() {
           <Phone className="h-5 w-5 flex-shrink-0" aria-hidden="true" />
           Call {BUSINESS_PHONE_DISPLAY}
         </a>
+        <div className="mt-6">
+          <OBCDisclaimer />
+        </div>
       </div>
     </main>
   )

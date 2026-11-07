@@ -2,11 +2,11 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Get a Free Disney Cruise Quote',
-  description: 'Tell us about your dream Disney cruise and a licensed specialist will send you personalized pricing within 24 hours. Free, no obligation.',
+  description: 'Tell us about your dream Disney cruise and an independent advisor will send you personalized pricing within 1 business day. Free, no obligation.',
   alternates: { canonical: '/book' },
   openGraph: {
     title: 'Get a Free Disney Cruise Quote',
-    description: 'A licensed Disney cruise specialist will send you personalized pricing within 24 hours. Free, no obligation.',
+    description: 'An independent Disney cruise advisor will send you personalized pricing within 1 business day. Free, no obligation.',
     url: 'https://gatgridcruises.com/book',
     images: [{ url: 'https://gatgridcruises.com/og-image.png', width: 1200, height: 630, alt: 'GatGridCruises' }],
   },

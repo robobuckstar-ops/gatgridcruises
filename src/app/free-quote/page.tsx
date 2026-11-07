@@ -156,7 +156,7 @@ export default function FreeQuotePage() {
 
               <p className="font-inter text-xs text-blue-400 mt-6 flex items-center justify-center lg:justify-start gap-2">
                 <Clock className="w-3.5 h-3.5 flex-shrink-0" aria-hidden="true" />
-                Quotes go out the same business day.
+                Quotes go out within 1 business day.
               </p>
             </div>
 
@@ -360,7 +360,7 @@ export default function FreeQuotePage() {
           </h2>
           <p className="font-inter text-base text-blue-200 leading-relaxed mb-8">
             Under a minute to send, no payment details, no obligation. We&apos;ll email your
-            options the same business day.
+            options within 1 business day.
           </p>
           <a
             href="#quote"

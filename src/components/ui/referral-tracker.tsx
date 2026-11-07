@@ -18,10 +18,9 @@ const UTM_COOKIES: Record<UtmKey, string> = {
   utm_term: 'gg_utm_term',
 }
 
-// Allow letters, numbers, dots, dashes, underscores, spaces — covers typical
-// platform names ("tiktok", "ig_story", "youtube-shorts") while still
-// stripping anything weird users could shove in the URL.
-const UTM_SAFE = /^[A-Za-z0-9._\- ]{1,80}$/
+// Ad names from {{ad.name}} can hold pipes, ampersands and other symbols, so only
+// control characters and angle brackets are refused. Cookie values are URL-encoded.
+const UTM_SAFE = /^[^\u0000-\u001f<>]{1,200}$/
 
 const FBCLID_COOKIE = 'gg_fbclid'
 const FBCLID_SAFE = /^[A-Za-z0-9._\-]{1,500}$/
