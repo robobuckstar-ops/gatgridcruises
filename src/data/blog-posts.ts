@@ -24,6 +24,104 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '36',
+    slug: 'disney-cruise-rotational-dining-menu-refresh-2026',
+    title: 'Disney Cruise Rotational Dining Menus Refreshed for 2026: What’s New on Magic, Wonder, Dream and Fantasy',
+    meta_title: 'Disney Cruise Rotational Dining Menus 2026: What’s New',
+    meta_description:
+      'Disney cruise rotational dining menus were refreshed on Magic, Wonder, Dream and Fantasy. See the new dishes, desserts, and how rotation works before you sail.',
+    excerpt:
+      'Disney Cruise Line refreshed the dinner menus in the rotational dining rooms on its four original ships. Here is what changed, what is new on Pirate Night, and how rotational dining works if you have never sailed.',
+    author: 'Dr. Grayson Starbuck, DPT',
+    published_date: '2026-11-08',
+    category: 'reviews',
+    tags: ['rotational-dining', 'disney-cruise-food', 'disney-magic', 'disney-wonder', 'disney-dream', 'disney-fantasy', 'pirate-night', 'disney-cruise-line'],
+    read_time: '6 min read',
+    featured_image_url: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&h=600&fit=crop',
+    content: `
+<p>If you have sailed the Disney Magic, Wonder, Dream, or Fantasy, it is worth knowing that the <strong>Disney cruise rotational dining menus</strong> on those ships were refreshed in 2026. Reports from May 2026 describe new appetizers, entrées, and desserts in the family dining rooms, plus a freshened Pirate Night spread. Here is what changed, how rotational dining works, and how to get the most from it. Menus and availability can change, so treat this as a guide rather than a guarantee.</p>
+
+<h2>How Disney Cruise Rotational Dining Works</h2>
+<p>Rotational dining is the heart of the Disney dining experience, and it confuses nearly every first-timer. You rotate through three different themed restaurants over the course of your cruise, and your server team follows you from room to room. By the end of the week they know your table's preferences, which is why service tends to be a highlight.</p>
+<p>Because it is included in your fare, there is no extra charge for these dinners. If you want a deeper explainer on the system, our <a href="/guides/disney-cruise-food-guide">Disney cruise food guide</a> covers every restaurant, and our post on <a href="/blog/first-time-disney-cruise-mistakes">first-time cruiser mistakes</a> explains why understanding rotation matters before you board.</p>
+
+<h2>What Is New in Disney Cruise Rotational Dining Menus</h2>
+<h3>Animator's Palate on All Four Ships</h3>
+<p>Animator's Palate, where the room transforms from black-and-white sketches into color over the course of dinner, picked up a new watermelon, orange, and jicama salad, revised entrées, and new desserts. Reported additions include an apple crumble rice pudding, a key lime pie, and a chocolate beetroot cake.</p>
+
+<h3>Enchanted Garden on Dream and Fantasy</h3>
+<p>The garden-themed restaurant on the <a href="/ships/disney-dream">Disney Dream</a> and <a href="/ships/disney-fantasy">Disney Fantasy</a> has revised appetizers and several new plant-forward options, including ricotta gnocchi and a shiitake and tofu udon. There is also a no-sugar-added coffee crème dome for guests watching their sugar.</p>
+
+<h3>The Formal Dining Rooms</h3>
+<p>The more traditional rotational restaurants are Lumière's on the <a href="/ships/disney-magic">Disney Magic</a>, Triton's on the <a href="/ships/disney-wonder">Disney Wonder</a>, Royal Palace on the Dream, and Royal Court on the Fantasy. New dishes reported across them include a burrata and fennel salad with Bartlett pear, tortiglioni pasta, Moroccan-spiced roasted squash, carved roasted beef tenderloin, and a coconut tapioca pudding.</p>
+
+<h2>Pirate Night Gets Fresh Desserts Too</h2>
+<p>Pirate Night is a fleet-wide tradition on many Caribbean and Bahamas sailings, with fireworks at sea and themed dinners. The refresh adjusted the dinner layouts and added new sweets, including an orange chocolate cake and a warm banana sticky toffee pudding. If your sailing has a Pirate Night, dress up, and save room for dessert.</p>
+
+<h2>What About the Newer Wish-Class Ships?</h2>
+<p>The refresh was reported for the four original ships. The Wish, Treasure, and Destiny have their own signature rotational venues, including themed restaurants built around Frozen, Coco, Marvel, and The Lion King. Our <a href="/blog/disney-destiny-vs-disney-treasure">Destiny vs Treasure comparison</a> covers how those dining rooms differ.</p>
+
+<h2>Tips for Getting the Most from Rotational Dining</h2>
+<ul>
+<li><strong>Choose your dining time with your family in mind.</strong> Families with young children often prefer the earlier seating; those who like a slower evening may prefer the later one.</li>
+<li><strong>Share dietary needs before you sail.</strong> Disney asks for allergy and dietary information in advance, and your server team will help each night. Confirm details with Disney directly.</li>
+<li><strong>Order more than one dish.</strong> There is no extra charge for ordering several appetizers or desserts, so sample freely.</li>
+<li><strong>Keep your menu expectations flexible.</strong> Menus rotate and change, so a dish you read about may not appear on your particular night.</li>
+<li><strong>Consider one adults-only meal.</strong> If you want a quieter dinner, see our guide to <a href="/blog/disney-cruise-adult-dining-palo-remy-enchante">Palo, Remy, and Enchanté</a>.</li>
+</ul>
+
+<h2>Which Ship Fits Your Dining Style?</h2>
+<p>The Magic and Wonder feel classic, with a smaller footprint and a traditional restaurant lineup. The Dream and Fantasy add Enchanted Garden and more specialty options. Comparing itineraries and ships side by side on our <a href="/sailings">sailings page</a> is an easy way to narrow it down based on where and when you want to sail.</p>
+
+<h2>Want Help Choosing a Ship and Sailing?</h2>
+<p>Food is just one piece of picking the right cruise. <a href="/concierge">Talk to our concierge</a> for personalized recommendations, or <a href="/free-quote">get a free quote from our team</a> with no obligation.</p>
+    `.trim(),
+  },
+  {
+    id: '35',
+    slug: 'disney-cruise-from-port-canaveral-2027',
+    title: 'Disney Cruise from Port Canaveral: Your Guide to Sailing from Orlando’s Home Port in 2027',
+    meta_title: 'Disney Cruise from Port Canaveral: 2027 Guide',
+    meta_description:
+      'A Disney cruise from Port Canaveral is the closest sailing to Orlando. Which ships sail in 2027, how itineraries compare, and how to plan your trip.',
+    excerpt:
+      'Port Canaveral is Disney Cruise Line’s busiest Florida home port and the easiest to pair with a Walt Disney World trip. Here is which ships are sailing from there in 2027, how the itineraries differ, and how to plan the logistics.',
+    author: 'Dr. Grayson Starbuck, DPT',
+    published_date: '2026-11-02',
+    category: 'destinations',
+    tags: ['port-canaveral', 'orlando', 'disney-wish', 'disney-treasure', 'disney-destiny', 'port-guide', 'florida', 'disney-cruise-line'],
+    read_time: '7 min read',
+    featured_image_url: 'https://images.unsplash.com/photo-1548574505-5e239809ee19?w=1200&h=600&fit=crop',
+    content: `
+<p>If you are building a vacation around Walt Disney World, a <strong>Disney cruise from Port Canaveral</strong> is the most natural add-on in the fleet. The port sits roughly an hour east of Orlando, so a few days at the parks can flow straight into a few days at sea without a second flight. And 2027 is a notable year there: more of Disney's newest ships are scheduled to call Port Canaveral home.</p>
+<p>Here is what to know about which ships sail from Port Canaveral, what the itineraries look like, and how to handle the logistics. Schedules change, so treat the details below as a guide and confirm current sailings before you book.</p>
+
+<h2>Which Ships Sail from Port Canaveral in 2027</h2>
+<p>Disney has announced a busy lineup for the port. The <a href="/ships/disney-wish">Disney Wish</a> is scheduled to return to Port Canaveral in mid-November 2026 for short Bahamian sailings. Later in 2027 the <a href="/ships/disney-treasure">Disney Treasure</a> and the <a href="/ships/disney-destiny">Disney Destiny</a> are scheduled to join her, which would put three of Disney's newest ships at the same port. The Disney Fantasy and Disney Dream are also expected to sail from here for part of the year.</p>
+<p>For families, that variety is the real story. Short Bahamian runs, longer Eastern and Western Caribbean itineraries, and different ship personalities are all available from the same airport and the same hotel area. Our <a href="/blog/disney-destiny-vs-disney-treasure">Destiny vs Treasure comparison</a> can help you choose between the newest two.</p>
+
+<h2>What the Itineraries Look Like</h2>
+<h3>3- and 4-Night Bahamian Sailings</h3>
+<p>The most common Port Canaveral itinerary is a short Bahamas run that includes Disney's private islands. These are a good fit for first-timers, for travelers adding a cruise onto a park trip, and for anyone with limited vacation days. Our <a href="/blog/castaway-cay-vs-lookout-cay">Castaway Cay vs. Lookout Cay comparison</a> covers what each island offers.</p>
+<h3>5- to 7-Night Caribbean Sailings</h3>
+<p>Longer itineraries add Caribbean ports and extra sea days. If you want more time to enjoy the ship itself, this is where it pays to look. Itineraries vary by ship and season, so ask us which sailing lines up with your dates.</p>
+
+<h2>Planning Your Trip Around Port Canaveral</h2>
+<ul>
+<li><strong>Flying in:</strong> Most guests fly into Orlando International (MCO) and take a car or shuttle to the port, usually around an hour. See our <a href="/blog/port-canaveral-disney-cruise-embarkation-day">embarkation day walkthrough</a> for what to expect at the terminal.</li>
+<li><strong>Arrive the day before:</strong> A pre-cruise night in Orlando or near the port protects you from flight delays and makes boarding day relaxed.</li>
+<li><strong>Park-and-cruise combos:</strong> Many families do a few park days first, then sail. Plan ground transportation in advance for the cruise-day transfer.</li>
+<li><strong>Dress for the season:</strong> Florida winters can be cool on deck in the evening. Our <a href="/blog/what-to-pack-disney-cruise-winter">winter packing list</a> has you covered.</li>
+</ul>
+
+<h2>Is Port Canaveral the Right Port for You?</h2>
+<p>Choose Port Canaveral if you want to combine Disney World and a cruise, if you are flying from most of the eastern or central U.S., or if you want access to the newest ships. If you live in Texas, <a href="/blog/disney-cruise-from-galveston-2027">Galveston</a> may be closer; if you are in the Northeast, look at <a href="/blog/disney-cruise-from-new-york-2027">New York sailings</a>; and for a different Florida option see <a href="/blog/disney-cruise-from-fort-lauderdale-2027">Fort Lauderdale</a>.</p>
+
+<h2>Ready to Plan Your Sailing?</h2>
+<p>Port Canaveral sailings, ship choices, and pre-cruise logistics can feel like a lot to compare. <a href="/book">Get a free, no-obligation quote</a> and we will help you match ship, dates, and stateroom to your family, and explain any onboard credit available on your booking. You can also <a href="/concierge">talk to our concierge</a> for personalized recommendations.</p>
+    `.trim(),
+  },
+  {
     id: '34',
     slug: 'disney-cruise-kids-clubs-by-age-guide',
     title: 'Disney Cruise Kids Clubs by Age: Nursery, Oceaneer Club, Edge, and Vibe Explained',
@@ -1768,6 +1866,7 @@ export const blogPosts: BlogPost[] = [
 <h2>Mistake 4: Not Understanding Rotational Dining</h2>
 <p>Disney's signature dining model — where you rotate through three or four themed restaurants while your servers follow you each night — confuses nearly every first-timer. Many guests show up to the wrong restaurant on night two, miss themed shows that play during dinner, or feel disappointed because they expected an open-seating buffet model.</p>
 <p><strong>How to avoid it:</strong> Read your dining rotation on the Navigator the first afternoon. Know which restaurant goes with which night, because some — like Animator's Palate on the Dream and Fantasy, or Pride Lands on the Destiny — feature shows built into the meal that you don't want to miss.</p>
+<p>Want a preview of what is on the plate? See what changed in the <a href="/blog/disney-cruise-rotational-dining-menu-refresh-2026">2026 rotational dining menu refresh</a>.</p>
 
 <h2>Mistake 5: Treating the Oceaneer Club Like Babysitting</h2>
 <p>Many first-time parents either (a) don't use the kids' clubs at all because they assume they're glorified daycare, or (b) drop their kids off the first day and never check in. Both miss the point. <strong>Disney's Oceaneer Club and Oceaneer Lab are some of the most imaginative themed spaces in the entire cruise industry</strong> — Marvel's Hero Zone on the Wish, Andy's Room on the Fantasy, Star Wars: Cargo Bay on the Dream. Kids genuinely don't want to leave.</p>
@@ -2341,6 +2440,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2>The Bottom Line</h2>
 <p>Embarkation day at Port Canaveral is a solved problem. Fly in the night before, check in online the morning your window opens, take the earliest port arrival time you can get, put swimsuits in the carry-on, and register the kids at the clubs before you do anything else. The terminal itself is the easy part.</p>
+<p>New to the port? Our <a href="/blog/disney-cruise-from-port-canaveral-2027">guide to Disney cruises from Port Canaveral in 2027</a> covers which ships sail from here and how to plan the trip around Orlando.</p>
 <p>If you're still choosing a sailing, browse what's leaving from Port Canaveral on our <a href="/sailings">sailings page</a>, and when you're ready to lock it in, <a href="/book">book with us</a> — a $5,000 fare comes with $150 in onboard credit at the same price Disney charges direct, and you can check your own number with the <a href="/tools/obc-calculator">OBC calculator</a>. Already booked direct in the last month? Our guide to <a href="/blog/transfer-disney-cruise-booking-to-travel-agent">transferring a Disney cruise booking to a travel agent</a> explains how to capture that credit on a reservation you've already made.</p>
     `.trim(),
   },
@@ -2414,6 +2514,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2>The Bottom Line</h2>
 <p>Disney cruise adult dining is one of the few onboard upcharges that consistently delivers what it promises — but only if you match the restaurant to the trip. Palo brunch is close to a universal yes. Remy and Enchanté are a yes for the right occasion and an easy no otherwise. Book the morning your window opens, and if you miss out, ask at the podium on day one.</p>
+<p>Not sure what the included dinners look like? See what is new in the <a href="/blog/disney-cruise-rotational-dining-menu-refresh-2026">refreshed rotational dining menus</a> on the Magic, Wonder, Dream, and Fantasy.</p>
 <p>Not sure which ship gives you the dining lineup you want, or how to fit an adult meal around an itinerary with only one sea day? <a href="/concierge">Talk to our concierge</a> — we'll walk through the ships and sailings that fit what you're after, and you can <a href="/free-quote">get a free quote from our team</a> with no obligation attached.</p>
     `.trim(),
   },
