@@ -24,6 +24,116 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '38',
+    slug: 'disney-adventure-vs-disney-wish',
+    title: 'Disney Adventure vs Disney Wish: Which New Disney Ship Is Right for Your Family?',
+    meta_title: 'Disney Adventure vs Disney Wish: Ship Comparison',
+    meta_description:
+      'Disney Adventure vs Disney Wish compared: size, Singapore vs Bahamas itineraries, rotational dining, rides, kids clubs, and which ship fits your family best.',
+    excerpt:
+      'The Disney Adventure is the biggest ship Disney has ever sailed, and the Wish is the flagship of the Bahamas. Here is how they compare and who each one suits.',
+    author: 'Dr. Grayson Starbuck, DPT',
+    published_date: '2026-11-15',
+    category: 'reviews',
+    tags: ['disney-adventure', 'disney-wish', 'ship-comparison', 'singapore', 'port-canaveral', 'disney-cruise-line'],
+    read_time: '7 min read',
+    featured_image_url: '/images/ships/disney-adventure.jpg',
+    content: `
+<p>Disney now sails two very different ideas of a "big new ship," and the <strong>Disney Adventure vs Disney Wish</strong> question is one we hear more every week, especially with National Geographic's documentary <em>Disney Adventure: Charting a New Course</em> arriving on Disney+ on November 28, 2026. One ship is a roughly 4,000-guest Wish-class flagship sailing short Bahamas trips from Florida. The other is the largest ship Disney has ever operated, homeported in Singapore and built for days at sea. Here is how they compare on size, itineraries, dining, attractions, and who each one suits best.</p>
+<p>Specs and itineraries below reflect what has been published as of mid-November 2026. Disney adjusts schedules and onboard offerings, so confirm current details before you commit to a sailing.</p>
+
+<h2>Disney Adventure vs Disney Wish at a Glance</h2>
+<p>The headline difference is scale. The <a href="/ships/disney-adventure">Disney Adventure</a> comes in at about 208,000 gross tons with around 2,110 staterooms. That works out to roughly 4,200 guests at two per room and up to about 6,700 at full occupancy. The <a href="/ships/disney-wish">Disney Wish</a> is about 144,000 gross tons, with about 1,250 staterooms and around 4,000 guests. The Adventure is roughly 45% larger, so think of it as a different kind of ship, not just a bigger version of the Wish.</p>
+<p>The Adventure started life as the <em>Global Dream</em>, a ship Genting was building for its Dream Cruises brand. Disney bought it mid-build after Genting collapsed in 2022, then redesigned it. That history explains a lot about how the ship feels compared with the purpose-built Wish class, and it is the story the new documentary sets out to tell.</p>
+<ul>
+<li><strong>Home port:</strong> Adventure sails from Marina Bay Cruise Centre Singapore. The Wish sails from <a href="/ports/port-canaveral">Port Canaveral</a>.</li>
+<li><strong>Debut:</strong> Adventure's maiden voyage was March 10, 2026. The Wish debuted in July 2022.</li>
+<li><strong>Staterooms:</strong> Adventure's rooms are noticeably more compact than the Wish's, which matters most for families of four or five.</li>
+</ul>
+
+<h2>Itineraries: Sea Days vs Private Islands</h2>
+<h3>Disney Adventure itineraries from Singapore</h3>
+<p>The Adventure runs 3-night sailings (Monday to Thursday) and 4-night sailings (Thursday to Monday). Most are sea-only, meaning the ship itself is the destination. Starting December 31, 2026, a selection of 4-night sailings adds a day in Langkawi, Malaysia, with roughly ten hours ashore. If you love port days, look for those dates specifically. Our <a href="/ports/singapore">Singapore port guide</a> covers the departure city.</p>
+<h3>Disney Wish itineraries from Port Canaveral</h3>
+<p>The Wish is built around the Bahamas, with 3- and 4-night sailings that typically call at Disney Castaway Cay and, on many dates, Disney Lookout Cay at Lighthouse Point. If a private-island beach day is the highlight of a Disney cruise for your family, the Wish wins this category easily. See our <a href="/blog/castaway-cay-vs-lookout-cay">Castaway Cay vs Lookout Cay comparison</a> to see how the two islands differ.</p>
+<p>One timing note: the Wish is scheduled to spend part of 2027 in Europe, so if you are looking at 2027 dates, check our <a href="/blog/disney-wish-europe-2027-ports">Disney Wish Europe 2027 guide</a> before assuming a Bahamas itinerary.</p>
+
+<h2>Themed Areas and Signature Attractions</h2>
+<p>The Adventure is organized into seven themed areas: Disney Imagination Garden, Marvel Landing, San Fransokyo Street (a first-at-sea <em>Big Hero 6</em> zone), Town Square, Toy Story Place, Disney Discovery Reef, and the <em>Moana</em>-inspired Wayfinder Bay. The showpiece is <strong>IronCycle Test Run</strong> at Marvel Landing, Disney Cruise Line's first roller coaster, with about 820 feet of track roughly 30 feet above the deck (120 cm minimum height). Pym Quantum Racers and Groot Galaxy Spin round out Marvel Landing, and all three are included in the fare.</p>
+<p>The Wish is themed around enchantment and classic fairytales, centered on its Grand Hall atrium. Its headline attraction is the <strong>AquaMouse</strong>, the first Disney attraction at sea, a water-coaster ride with show scenes. It is a smaller-scale thrill than a true coaster, but it is a hit with families who have younger kids.</p>
+<p><strong>Our take:</strong> if your kids are Marvel fans or thrill-seekers who meet the height requirement, the Adventure's ride lineup is unlike anything else in the fleet. For a cozier, more storybook feel, the Wish delivers that better.</p>
+
+<h2>Disney Adventure vs Disney Wish Dining: How Rotational Dining Compares</h2>
+<p>Both ships use Disney's rotational dining, but the Adventure does it a little differently. You dine at one restaurant from each of three pairs: Navigator's Club or Hollywood Spotlight Club, Animator's Palate or Animator's Table, and Enchanted Summer or Pixar Market. Included quick-service options include Mowgli's Eatery, Gramma Tala's Kitchen, Stitch's 'Ohana Grill, Cosmic Kebabs, and Pizza Planet. Extra-cost options include Mike &amp; Sulley's Flavors of Asia and the adults-only Palo Trattoria.</p>
+<p>The Wish rotates through <strong>Arendelle: A Frozen Dining Adventure</strong>, <strong>Worlds of Marvel</strong>, and <strong>1923</strong>, with Palo Steakhouse and Enchanté as the adult specialty restaurants. Our <a href="/blog/disney-cruise-rotational-dining-menu-refresh-2026">rotational dining menu refresh guide</a> and <a href="/blog/disney-cruise-adult-dining-palo-remy-enchante">adult dining breakdown</a> go deeper on the Wish-class menus.</p>
+
+<h2>Kids, Teens, and Adults-Only Space</h2>
+<p>Both ships offer the Oceaneer Club for younger kids, Edge for tweens, and Vibe for teens, included in the fare. On the Adventure, the tween and teen spaces sit on San Fransokyo Street. Our <a href="/blog/disney-cruise-kids-clubs-by-age-guide">kids clubs by age guide</a> explains how the age bands work.</p>
+<p>Adults are where the ships differ most. The Wish has a dedicated adults-only pool area and a full adult lounge district. The Adventure has no adults-only pool deck. Its adult options are Palo Trattoria and evening adults-only hours at spaces like the Marvel Style Studio lounge. Couples traveling without kids may find the Wish more relaxing.</p>
+
+<h2>Disney Adventure vs Disney Wish: Which Ship Should You Choose?</h2>
+<h3>Choose the Disney Adventure if:</h3>
+<ul>
+<li>You live in or are already traveling to Southeast Asia, Australia, or the Pacific Rim.</li>
+<li>Your family wants rides, big shows, and a "floating theme park" more than port stops.</li>
+<li>You want the newest, largest ship in the fleet and do not mind smaller staterooms.</li>
+</ul>
+<h3>Choose the Disney Wish if:</h3>
+<ul>
+<li>You are flying from North America and want a short trip with minimal travel time.</li>
+<li>A Castaway Cay or Lookout Cay beach day is non-negotiable.</li>
+<li>You want roomier staterooms and dedicated adults-only spaces.</li>
+</ul>
+<p>Still weighing other Wish-class ships? Our <a href="/blog/disney-treasure-vs-disney-wish-comparison">Treasure vs Wish comparison</a> and <a href="/blog/disney-destiny-vs-disney-treasure">Destiny vs Treasure guide</a> cover the rest of the class. You can also browse current dates for both ships on our <a href="/sailings">sailings page</a>.</p>
+
+<h2>Get Personalized Help Comparing the Two</h2>
+<p>Choosing between a Singapore sea-day adventure and a Bahamas island getaway depends on where you are flying from, your kids' ages, and what your crew wants most from the trip. <a href="/concierge">Talk to our concierge for personalized recommendations</a>, or <a href="/free-quote">get a free quote from our team</a> and we will lay out the options side by side.</p>
+    `.trim(),
+  },
+  {
+    id: '37',
+    slug: 'disney-cruise-from-vancouver-alaska-2027',
+    title: 'Disney Cruise from Vancouver: Your Guide to Alaska Sailings in Summer 2027',
+    meta_title: 'Disney Cruise from Vancouver: 2027 Alaska Guide',
+    meta_description:
+      'A Disney cruise from Vancouver means Alaska in summer 2027 on the Disney Magic and Disney Wonder. Itinerary lengths, how to get there, and how to plan.',
+    excerpt:
+      'Disney is sending two ships to Alaska from Vancouver in summer 2027. Here is which ships sail, how long the itineraries run, and what to plan before you book.',
+    author: 'Dr. Grayson Starbuck, DPT',
+    published_date: '2026-11-09',
+    category: 'destinations',
+    tags: ['vancouver', 'alaska', 'disney-magic', 'disney-wonder', 'port-guide', 'summer-2027', 'disney-cruise-line'],
+    read_time: '7 min read',
+    featured_image_url: 'https://images.unsplash.com/photo-1531176175280-33e81422c3b3?w=1200&h=600&fit=crop',
+    content: `
+<p>Most Disney cruise guides are about palm trees and private islands. A <strong>Disney cruise from Vancouver</strong> is the opposite: glaciers, whales, and mountain scenery, with the same Disney service and entertainment you would find anywhere else in the fleet. Disney has announced Alaska sailings from Vancouver for summer 2027, and if the Pacific Northwest has been on your list, this is the season to look at.</p>
+<p>Below is what Disney has announced so far, how the itineraries differ, and how to plan the logistics. Schedules and ports of call can change, so confirm current details before you book.</p>
+
+<h2>Which Ships Sail from Vancouver in Summer 2027</h2>
+<p>Two ships are scheduled for Alaska from Vancouver. The <strong>Disney Magic</strong> is announced with 6-, 7-, and 8-night options, and the <strong>Disney Wonder</strong> is announced with 7-night sailings. Both are smaller, classic-style ships, which suits a scenic itinerary well: there is plenty of deck space and big windows for watching the coastline go by.</p>
+<p>If you are comparing ships generally, our <a href="/blog/disney-destiny-vs-disney-treasure">Destiny vs Treasure comparison</a> covers the newest vessels, while the Magic and Wonder offer a more traditional Disney feel.</p>
+
+<h2>Choosing Between 6, 7, and 8 Nights</h2>
+<p>Because the Magic offers three lengths, the main decision is how much time you want. Six nights is a solid fit for a tighter vacation budget or school calendar. Seven nights is the most common Alaska length and the one the Wonder sails. Eight nights gives the most time in port and at sea. Itineraries differ by sailing, so ask us which one lines up with your dates and the ports you want to see.</p>
+
+<h2>Planning Your Trip to Vancouver</h2>
+<ul>
+<li><strong>Flying in:</strong> Vancouver International Airport (YVR) is the gateway, and the cruise terminal is in the downtown area, a short transfer away.</li>
+<li><strong>Passports:</strong> Because you are sailing from Canada, check current passport and entry requirements for every traveler in your party well ahead of time.</li>
+<li><strong>Arrive the day before:</strong> A pre-cruise night in Vancouver protects you against flight delays and lets you enjoy the city.</li>
+<li><strong>Pack in layers:</strong> Alaska weather swings quickly even in summer. Our <a href="/blog/what-to-pack-disney-cruise-winter">winter packing list</a> is a good starting point for layering, and our <a href="/blog/disney-cruise-packing-list">Disney cruise packing list</a> covers the basics.</li>
+<li><strong>Excursions:</strong> Alaska shore excursions tend to be popular and limited, so plan them early.</li>
+</ul>
+
+<h2>Is a Vancouver Sailing Right for You?</h2>
+<p>Choose Vancouver if you want scenery over beaches, if you are traveling from the western U.S. or Canada, or if you have already done the Bahamas and want something different. If warm water and private islands are the goal, look at <a href="/blog/disney-cruise-from-port-canaveral-2027">Port Canaveral</a> or <a href="/blog/disney-cruise-from-fort-lauderdale-2027">Fort Lauderdale</a> instead, and West Coast families who prefer a shorter trip can compare our <a href="/blog/disney-cruise-from-san-diego-2027">San Diego guide</a>.</p>
+<p>First time on Disney? Our <a href="/blog/first-time-disney-cruise-tips">first-time cruiser tips</a> will help, and you can see how pricing works in our <a href="/blog/disney-cruise-discounts-2027">2027 discounts guide</a>.</p>
+
+<h2>Ready to Plan Your Alaska Sailing?</h2>
+<p>Alaska sailings are popular and the best cabins go first. <a href="/book">Get a free, no-obligation quote</a> and we will help you match ship, dates, and stateroom to your family, and explain any onboard credit available on your booking. You can also <a href="/concierge">talk to our concierge</a> for personalized recommendations.</p>
+    `.trim(),
+  },
+  {
     id: '36',
     slug: 'disney-cruise-rotational-dining-menu-refresh-2026',
     title: 'Disney Cruise Rotational Dining Menus Refreshed for 2026: What’s New on Magic, Wonder, Dream and Fantasy',
@@ -589,6 +699,7 @@ export const blogPosts: BlogPost[] = [
 <h2>The Bottom Line</h2>
 <p>A Disney cruise from San Diego is the most underrated corner of the calendar: two refreshed classic ships, four distinct itineraries, a terminal ten minutes from the airport, and fares that generally run below the Florida equivalents. Start with the 4-night Baja run for Catalina; graduate to the 7-night Mexican Riviera.</p>
 <p>Two things to read before you commit: our <a href="/blog/disney-cruise-onboard-credit-guide">onboard credit guide</a>, and our <a href="/blog/disney-cruise-packing-list">Disney cruise packing list</a> — Baja in December is not Caribbean weather, and people pack for the wrong ocean constantly.</p>
+<p>Want to stay on the West Coast but trade beaches for glaciers? Our <a href="/blog/disney-cruise-from-vancouver-alaska-2027">Disney cruise from Vancouver guide</a> covers the summer 2027 Alaska season on the Magic and Wonder.</p>
 <p>Still deciding between a 3-night sampler and a full week, or trying to work out which ship and date fit your school calendar? <a href="/concierge">Talk to our concierge</a> for personalized recommendations, or <a href="/free-quote">get a free quote from our team</a> — no obligation either way.</p>
     `.trim(),
   },
@@ -649,6 +760,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2>Planning a Disney Destiny or Disney Treasure Sailing</h2>
 <p>The Disney Destiny vs Disney Treasure question almost always resolves itself once you answer two smaller ones: how many nights can you take, and which airport is cheap for you. Everything else is a preference, not a mistake. You can compare live dates and pricing for both ships on our <a href="/sailings">sailings page</a>.</p>
+<p>Looking beyond the Wish class entirely? Our <a href="/blog/disney-adventure-vs-disney-wish">Disney Adventure vs Disney Wish guide</a> compares Disney's biggest ship, sailing from Singapore, with the original Wish-class flagship.</p>
 <p>If you would rather have someone lay the two calendars side by side for your specific dates, <a href="/concierge">talk to our concierge</a> for personalized recommendations, or <a href="/free-quote">get a free quote from our team</a> and we will pull current pricing on both.</p>
 `,
   },
@@ -2026,6 +2138,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2>Looking Beyond the Wish and Treasure</h2>
 <p>If you're open to a third option, the new <a href="/blog/disney-destiny-heroes-villains-guide">Disney Destiny — the Heroes &amp; Villains ship</a> is the most theatrically themed Wish-class ship in the fleet and a natural third comparison point. The Destiny is essentially Treasure-class hardware with the most ambitious storytelling overlay Disney has ever built. For Disney superfans, it's the strongest combination of new-ship excitement and theming density on the market. If the Destiny makes your short list, read our direct comparison of <a href="/blog/disney-destiny-vs-disney-treasure">Disney Destiny vs Disney Treasure</a> next — the itinerary and home-port differences matter more than the theming does.</p>
+<p>Traveling from Asia or the Pacific, or curious about Disney's largest ship? See our <a href="/blog/disney-adventure-vs-disney-wish">Disney Adventure vs Disney Wish comparison</a> for how the Singapore-based Adventure stacks up against the Wish.</p>
     `.trim(),
   },
   {

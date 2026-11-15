@@ -76,6 +76,10 @@ export const homePorts: DestinationPort[] = [
       { question: 'Can I drive to the port?', answer: 'Yes — Port Canaveral is easy highway driving. Parking is $17/day in the on-port lot.' },
       { question: 'How early should I arrive?', answer: 'Disney recommends arriving 60–90 minutes before your assigned port arrival time. Don\'t arrive too early — the terminal can be crowded.' },
     ],
+    relatedPosts: [
+      { slug: 'disney-cruise-from-port-canaveral-2027', title: 'Disney Cruise from Port Canaveral: Your Guide to Sailing from Orlando’s Home Port in 2027' },
+      { slug: 'disney-adventure-vs-disney-wish', title: 'Disney Adventure vs Disney Wish: Which New Disney Ship Is Right for Your Family?' },
+    ],
   },
 
   {
@@ -145,6 +149,9 @@ export const homePorts: DestinationPort[] = [
       { question: 'Is FLL airport closer than MIA?', answer: 'For Disney cruises from Port Everglades, yes — FLL is 15 minutes away vs. 30+ minutes from MIA.' },
       { question: 'Do I need a passport for Caribbean sailings?', answer: 'Yes — Disney requires passport books for all international sailings.' },
       { question: 'Can I park at the port?', answer: 'Yes — $15/day at the on-port garage. Discount Park & Cruise hotels can be cheaper.' },
+    ],
+    relatedPosts: [
+      { slug: 'disney-cruise-from-fort-lauderdale-2027', title: 'Disney Cruise from Fort Lauderdale: The 2026–27 Port Everglades Guide' },
     ],
   },
 
@@ -216,6 +223,9 @@ export const homePorts: DestinationPort[] = [
       { question: 'Should I fly into IAH or HOU?', answer: 'HOU (Hobby) is 45 min to Galveston; IAH is 90 min. HOU is closer and cheaper if your airline serves it.' },
       { question: 'Do I need a passport?', answer: 'Yes — Disney requires a passport book for any international cruise.' },
       { question: 'Can I drive to Galveston?', answer: 'Yes — Galveston is reachable by highway from Houston. Bridge access; weather can occasionally delay travel.' },
+    ],
+    relatedPosts: [
+      { slug: 'disney-cruise-from-galveston-2027', title: 'Disney Cruise from Galveston: Your Guide to the 2026–27 Western Caribbean Season' },
     ],
   },
 
@@ -366,6 +376,9 @@ export const homePorts: DestinationPort[] = [
       { question: 'Should I bring Canadian dollars?', answer: 'Most cruise-area businesses accept USD. Credit cards work everywhere. Canadian dollars are useful for small change.' },
       { question: 'Is Vancouver walkable to the cruise terminal?', answer: 'Yes — most downtown hotels are within 10 minutes of Canada Place.' },
     ],
+    relatedPosts: [
+      { slug: 'disney-cruise-from-vancouver-alaska-2027', title: 'Disney Cruise from Vancouver: Your Guide to Alaska Sailings in Summer 2027' },
+    ],
   },
 
   {
@@ -436,6 +449,9 @@ export const homePorts: DestinationPort[] = [
       { question: 'Do I need a passport?', answer: 'Yes — Singapore is a sovereign country.' },
       { question: 'Is it safe?', answer: 'One of the safest cities in the world. Pickpockets are rare; standard precautions are minimal.' },
       { question: 'Should I bring local currency?', answer: 'Major attractions accept USD or credit cards. Hawker food vendors often want SGD cash — exchange a small amount on arrival.' },
+    ],
+    relatedPosts: [
+      { slug: 'disney-adventure-vs-disney-wish', title: 'Disney Adventure vs Disney Wish: Which New Disney Ship Is Right for Your Family?' },
     ],
   },
 ]
