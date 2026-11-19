@@ -108,9 +108,9 @@ const PLANNING_LINKS = [
     blurb: 'Every tracked sailing, scored by value and filterable by ship.',
   },
   {
-    href: '/tools/obc-calculator',
-    title: 'Onboard credit calculator',
-    blurb: 'See the free onboard credit your fare would earn through us.',
+    href: '/obc-estimate',
+    title: 'Get your onboard credit estimate',
+    blurb: 'Tell us your sailing and we will send your estimated onboard credit.',
   },
   {
     href: '/ports',

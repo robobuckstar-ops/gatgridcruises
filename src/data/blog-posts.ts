@@ -24,6 +24,93 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '39',
+    slug: 'disney-cruise-baja-ports-guide-2027',
+    title: 'Disney Cruise Baja Ports Guide: Ensenada, Catalina Island, and Cabo San Lucas for the 2026–27 Season',
+    meta_title: 'Disney Cruise Baja Ports: Ensenada, Catalina & Cabo',
+    meta_description:
+      'A port-by-port guide to the Disney cruise Baja ports from San Diego: Ensenada, Catalina Island, and Cabo San Lucas. What to do, tender tips, and which itinerary to pick.',
+    excerpt:
+      'Every Disney sailing out of San Diego this season is built around three ports: Ensenada, Catalina Island, and Cabo San Lucas. Here is what each port day actually looks like, what to do with it, and how to use the ports to choose your itinerary length.',
+    author: 'Dr. Grayson Starbuck, DPT',
+    published_date: '2026-11-16',
+    category: 'destinations',
+    tags: ['baja', 'mexican-riviera', 'ensenada', 'catalina-island', 'cabo-san-lucas', 'san-diego', 'port-guide', 'disney-wonder', 'disney-magic'],
+    read_time: '8 min read',
+    featured_image_url: 'https://images.unsplash.com/photo-1519046904884-53103b34b206?w=1200&h=600&fit=crop',
+    content: `
+<p>Most people choose a Disney cruise from San Diego by length and price, then find out what the ports are once they are on board. That is backwards. The <strong>Disney cruise Baja ports</strong> are what separate a 3-night run from a 7-night one, and each of the three has a very different personality: a working Mexican city, a car-free California island, and a resort town at the tip of the peninsula.</p>
+<p>The <a href="/ships/disney-wonder">Disney Wonder</a> and <a href="/ships/disney-magic">Disney Magic</a> are sailing these ports from San Diego through spring 2027. Here is what each port day looks like, the best way to spend it with a family, and how to use the ports to choose your itinerary.</p>
+<p>Port times, docking arrangements, and itineraries can change, so confirm the details for your specific sailing before you plan anything time-sensitive.</p>
+
+<h2>The Three Disney Cruise Baja Ports at a Glance</h2>
+<ul>
+<li><strong><a href="/ports/ensenada">Ensenada, Mexico</a>:</strong> on nearly every San Diego itinerary. Ships dock at a pier within walking distance of downtown, so there is no tender line.</li>
+<li><strong><a href="/ports/catalina-island">Catalina Island, California</a>:</strong> added on the 4-night Baja run. A tender port into Avalon, the island's only town.</li>
+<li><strong><a href="/ports/cabo-san-lucas">Cabo San Lucas, Mexico</a>:</strong> the headline port on the 5-, 6-, and 7-night Mexican Riviera sailings. Also a tender port.</li>
+</ul>
+<p>Puerto Vallarta joins the list on the 7-night Mexican Riviera itinerary. Our <a href="/blog/disney-cruise-from-san-diego-2027">Disney cruise from San Diego guide</a> walks through every itinerary length and what each one costs.</p>
+
+<h2>Ensenada: The Port Everyone Gets</h2>
+<p>Ensenada is a real working city about 70 miles south of San Diego, not a cruise-built shopping complex, and that is its charm. You can walk off the ship and be on the malecón and the main tourist street, Avenida López Mateos, in about ten minutes.</p>
+<h3>What to do in Ensenada</h3>
+<ul>
+<li><strong>La Bufadora.</strong> One of the largest marine blowholes in North America, about 30 minutes south of town. On a good day it sprays dozens of feet into the air, and the walk to the viewpoint runs past a long row of craft stalls. This is the classic family half-day.</li>
+<li><strong>Fish tacos.</strong> Ensenada claims to be where the fish taco was born. The stands near the fish market by the pier are fast, inexpensive, and a great lunch even if you do nothing else.</li>
+<li><strong>Valle de Guadalupe.</strong> Mexico's best-known wine region sits about 30 minutes inland. It is a full-day, mostly adults trip, and the wineries are spread out, so this is the one Ensenada outing where a booked excursion with a driver makes real sense.</li>
+</ul>
+<p><strong>Our take:</strong> Ensenada rewards a low-effort day. Families with young kids can do La Bufadora in the morning and be back on board for an uncrowded pool afternoon.</p>
+
+<h2>Catalina Island: Why the 4-Night Is Worth It</h2>
+<p>Catalina sits about 26 miles off the Los Angeles coast, and ships anchor offshore and tender guests into Avalon. Cars are restricted on the island, so people get around on foot and by golf cart, and the whole town is walkable in about 90 minutes.</p>
+<h3>What to do on Catalina</h3>
+<ul>
+<li><strong>Glass-bottom or semi-submersible boat.</strong> A short ride over the Lover's Cove marine preserve, with bright orange Garibaldi and kelp forest visible below. It is the best quick hit for younger kids.</li>
+<li><strong>Snorkeling at Lover's Cove.</strong> Calm, clear, and protected water just off Avalon. It is some of the most accessible snorkeling on any Disney itinerary.</li>
+<li><strong>Descanso Beach.</strong> A short walk from the pier, with chair rentals and calmer water than Avalon's small town beach.</li>
+<li><strong>The Catalina Casino.</strong> The 1929 Art Deco landmark on the harbor. Despite the name, it has never been a gambling casino. It is a ballroom and movie theater, and the guided tour is a nice hour for history fans.</li>
+</ul>
+<p><strong>Our take:</strong> Catalina is the reason the 4-night Baja is the best value on the San Diego schedule. It is a port day you cannot get on a Caribbean itinerary, and the 4-night sometimes prices close to the 3-night in the same week.</p>
+
+<h2>Cabo San Lucas: The Best Port on the West Coast Schedule</h2>
+<p>Cabo sits where the Sea of Cortez meets the Pacific at the tip of the Baja peninsula. It is a tender port, and the tenders land at the downtown marina, which puts almost everything worth doing within a short walk or boat ride.</p>
+<h3>What to do in Cabo</h3>
+<ul>
+<li><strong>El Arco by boat.</strong> Small boats leave the marina for the natural rock arch at Land's End, passing the sea lion colony and Lover's Beach on the way. It is short, easy for every age, and the photo everyone came for.</li>
+<li><strong>Medano Beach.</strong> The main swimmable beach in town, about a ten-minute walk from the marina, with calm Sea of Cortez water and beach restaurants. Many of Cabo's Pacific-side beaches have dangerous surf, so stick to Medano or a guided cove unless you know the conditions.</li>
+<li><strong>Whale watching.</strong> From roughly December through April, gray and humpback whales pass close to Cabo. If your sailing falls in that window, this is the excursion to prioritize.</li>
+<li><strong>Snorkeling at Santa María Bay.</strong> A protected cove north of town with some of the clearest water on the Mexican Riviera, best for confident swimmers about age six and up.</li>
+</ul>
+<p><strong>Our take:</strong> because the marina is right where the tenders land, Cabo is easy to do on your own. Book through Disney mainly for the longer wildlife tours, where guaranteed timing back to the ship is worth paying for.</p>
+
+<h2>Tender Port Tips for Catalina and Cabo</h2>
+<p>Two of the three Baja ports are tender ports, which is the biggest planning difference from a Florida sailing.</p>
+<ul>
+<li><strong>Go early or go late.</strong> The first hour of tendering is the busiest. Guests on Disney excursions usually go ashore first, so independent travelers often have a smoother time waiting until mid-morning.</li>
+<li><strong>Watch the last tender time.</strong> It is earlier than the ship's departure time and it is not flexible. Build in a real buffer.</li>
+<li><strong>Bring what you need ashore.</strong> A return trip to the ship for a forgotten swimsuit or sunscreen costs you an hour.</li>
+<li><strong>Strollers and mobility.</strong> Tender boats involve steps and a gap that moves with the sea. Ask Guest Services about tender accessibility before you board if anyone in your group needs it.</li>
+</ul>
+
+<h2>Documents and Money</h2>
+<p>Ensenada and Cabo are in Mexico, so every San Diego sailing crosses the border. U.S. citizens on closed-loop sailings can generally use a passport card or a birth certificate with photo ID, but a passport book is the only document that covers you if you ever need to fly home from Mexico. Our <a href="/guides/first-time-disney-cruise">first-time Disney cruise guide</a> covers the rest of the pre-trip checklist. U.S. dollars are widely accepted in Ensenada and Cabo, though small bills help with taxis, tips, and market stalls.</p>
+<p>Excursions booked through Disney go on your stateroom account, which means any onboard credit you have can pay for them. Our <a href="/blog/disney-cruise-onboard-credit-guide">onboard credit guide</a> explains where that credit comes from. Amounts vary by sailing and booking, so it is worth asking about before you book.</p>
+
+<h2>Which Itinerary Fits the Ports You Want</h2>
+<ul>
+<li><strong>3-night Baja:</strong> Ensenada only. A good sampler if you are testing whether a cruise works for your family.</li>
+<li><strong>4-night Baja:</strong> Ensenada plus Catalina. Our pick for most families on a short trip.</li>
+<li><strong>5- and 6-night Mexican Riviera:</strong> adds Cabo San Lucas, the strongest single port day out of San Diego.</li>
+<li><strong>7-night Mexican Riviera:</strong> Cabo, Ensenada, and Puerto Vallarta, with the most sea-day breathing room.</li>
+</ul>
+<p>Sailing in December or later? Pack layers. Baja evenings are cooler than people expect, and our <a href="/blog/what-to-pack-disney-cruise-winter">winter packing guide</a> covers what to bring. You can see current dates and prices for every San Diego sailing on our <a href="/sailings">sailings page</a>.</p>
+
+<h2>The Bottom Line</h2>
+<p>The Disney cruise Baja ports give the West Coast season its personality: an easy, authentic Ensenada day, a car-free island morning on Catalina, and Cabo's arch, beaches, and winter whales. Choose your itinerary by the ports you want, not just by the number of nights, and you will get far more out of the trip.</p>
+<p>Want help matching a sailing to the ports your family cares about? <a href="/book">Get a free, no-obligation quote</a> and we will lay out the San Diego dates that fit your calendar, or <a href="/concierge">talk to our concierge</a> for personalized recommendations.</p>
+    `.trim(),
+  },
+  {
     id: '38',
     slug: 'disney-adventure-vs-disney-wish',
     title: 'Disney Adventure vs Disney Wish: Which New Disney Ship Is Right for Your Family?',

@@ -5,14 +5,14 @@ import { StructuredData } from '@/components/ui/structured-data';
 import { generateBreadcrumbSchema, generateFAQSchema } from '@/lib/structured-data';
 
 const PUBLISHED = '2025-08-01';
-const UPDATED = '2026-08-21';
+const UPDATED = '2026-11-10';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/guides/disney-cruise-food-guide' },
   // `absolute` opts out of the root layout's "%s | Disney Cruise Deal Finder"
   // template, which was pushing this title to 76 characters in search results.
   title: { absolute: 'Disney Cruise Food Guide: Every Restaurant Ranked' },
-  description: 'Every Disney cruise restaurant ranked — rotational dining, Palo and Remy, buffets, free room service, and what each specialty venue costs per person.',
+  description: 'Every Disney cruise restaurant ranked, how reviewers rate Disney dining, Palo\'s new à la carte menu, Remy and Enchanté prices, buffets, and free room service.',
   openGraph: {
     title: 'Disney Cruise Food Guide: Every Restaurant Ranked',
     description: 'Ranked reviews of every Disney cruise restaurant — rotational dining, buffets, specialty restaurants, and best dishes.',
@@ -34,6 +34,11 @@ export const metadata: Metadata = {
  */
 const FAQS = [
   {
+    question: 'How do reviewers rate dining and cuisine on Disney ships?',
+    answer:
+      'Mostly well, with real caveats. Disney Cruise Line holds a 4.2 out of 5 ("Very Good") average across roughly 2,500 Cruise Critic member reviews as of November 2026. Reviewers most often praise the service and the dining team that rotates with you from room to room. The common complaints are menus that feel repetitive, mixed opinions on the Wish-class food options, and rising specialty dining prices. Individual dining scores vary a lot from sailing to sailing.',
+  },
+  {
     question: 'Is food included on a Disney cruise?',
     answer:
       'Yes. Your fare covers the three rotational dining rooms, the main buffet, quick-service venues, and 24-hour room service. Soft drinks, coffee, and tea at meals are included too. What is not included: alcohol, specialty coffee, and the adults-only specialty restaurants, which carry a per-person upcharge.',
@@ -46,7 +51,7 @@ const FAQS = [
   {
     question: 'How much does Palo cost on a Disney cruise?',
     answer:
-      'Palo runs about $45 per person and is available on every Disney ship. It is the fleet\'s Italian fine-dining venue, adults only (18+), and reservations open before you sail. The higher-end venues — Remy on the Dream and Fantasy, Enchanté on the Wish, and The Rose on the Treasure — run around $125 per person.',
+      'Palo brunch is a $55-per-person prix fixe. In late October 2026 Disney moved Palo dinner (called Palo Steakhouse on the Wish-class ships) to an à la carte menu, so dinner now costs whatever you order rather than a set price. Palo is adults only (18+) and reservations open before you sail. The higher-end venues, Remy on the Dream and Fantasy and Enchanté on the Wish and Treasure, were priced at $145 per person for dinner after Disney\'s June 2025 increase. Confirm current prices before you sail.',
   },
   {
     question: 'Is room service free on a Disney cruise?',
@@ -61,7 +66,7 @@ const FAQS = [
   {
     question: 'Do I need to book specialty dining in advance?',
     answer:
-      'Yes. Palo, Remy, Enchanté, and The Rose fill within hours of your online booking window opening, and the popular sea-day brunch slots go first. Book the moment your window unlocks — cancellations do open up onboard, but you should not count on them.',
+      'Yes. Palo, Remy, and Enchanté fill within hours of your online booking window opening, and the popular sea-day brunch slots go first. Book the moment your window unlocks — cancellations do open up onboard, but you should not count on them.',
   },
   {
     question: 'Which Disney ship has the best food?',
@@ -155,6 +160,37 @@ export default function DisneyCruiseFoodGuide() {
           </p>
           <p className="font-inter text-slate-600 leading-relaxed mb-4">
             This guide reviews every restaurant across the Disney fleet, ranks them by quality, and provides insider tips on must-try dishes and the best ways to experience Disney dining.
+          </p>
+        </section>
+
+        {/* How reviewers rate Disney dining — targets the "how do reviewers rate
+            dining and cuisine on disney ships" query (GSC pos ~6.7, Nov 2026). */}
+        <section className="mb-12" id="how-reviewers-rate-disney-dining">
+          <h2 className="font-fraunces text-3xl font-bold text-slate-900 mb-4">How Reviewers Rate Disney Cruise Dining</h2>
+          <p className="font-inter text-slate-600 leading-relaxed mb-4">
+            <strong>Short answer:</strong> cruisers rate Disney well overall and give the service the most praise. Opinions on the food itself are more mixed. As of November 2026, Disney Cruise Line holds a <strong>4.2 out of 5 (&ldquo;Very Good&rdquo;)</strong> average across roughly 2,500 Cruise Critic member reviews. That is an overall rating, not a dining-only score, but dining comes up in most reviews.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <div className="p-4 bg-green-50 rounded">
+              <p className="font-inter font-bold text-slate-900 mb-2">What reviewers praise</p>
+              <ul className="space-y-2 font-inter text-slate-600 text-sm">
+                <li>• Friendly, attentive waitstaff (the most consistent theme)</li>
+                <li>• Servers who rotate with you from restaurant to restaurant</li>
+                <li>• Main-dining-room food that many guests call very good</li>
+              </ul>
+            </div>
+            <div className="p-4 bg-amber-50 rounded">
+              <p className="font-inter font-bold text-slate-900 mb-2">Common complaints</p>
+              <ul className="space-y-2 font-inter text-slate-600 text-sm">
+                <li>• Main-dining menus that feel repetitive on longer sailings</li>
+                <li>• Mixed opinions on Wish-class food options</li>
+                <li>• Some recent reviews rate dining as only average</li>
+                <li>• Specialty dining prices that keep rising</li>
+              </ul>
+            </div>
+          </div>
+          <p className="font-inter text-slate-600 leading-relaxed">
+            <strong>Our take:</strong> if food is the top priority for the adults in your group, budget for one specialty dinner or the Palo brunch, and pick a ship whose rotational restaurants appeal to you. We can help you compare ships in a <Link href="/book" className="text-[#1E3A5F] underline">free quote</Link>, and our <Link href="/blog/disney-destiny-vs-disney-treasure" className="text-[#1E3A5F] underline">Destiny vs Treasure comparison</Link> covers the newest ships.
           </p>
         </section>
 
@@ -284,15 +320,15 @@ export default function DisneyCruiseFoodGuide() {
 
           <div className="space-y-6">
             <div className="p-6 bg-amber-50 border-l-4 border-amber-600 rounded">
-              <p className="font-inter font-bold text-slate-900 mb-2">Palo: $45 per person (all ships)</p>
+              <p className="font-inter font-bold text-slate-900 mb-2">Palo / Palo Steakhouse: brunch $55 per person, dinner à la carte (all ships)</p>
               <p className="font-inter text-slate-600 mb-3">
-                Italian fine-dining restaurant on all Disney ships. Elegant, intimate setting with Italian cuisine. Menu changes seasonally but always features fresh pasta, risotto, seafood, and beef preparations. Reservations essential and book early.
+                Italian fine-dining restaurant on all Disney ships (called Palo Steakhouse on the Wish-class ships). In late October 2026 Disney replaced the prix fixe dinner with an à la carte menu, so dinner now costs whatever you order. Brunch is still a $55 prix fixe. Menu features fresh pasta, seafood, and steaks. Reservations essential and book early.
               </p>
               <p className="font-inter text-slate-600 text-sm"><strong>Must-Try Dishes:</strong> Handmade pappardelle, scallops, osso buco.</p>
             </div>
 
             <div className="p-6 bg-amber-50 border-l-4 border-amber-600 rounded">
-              <p className="font-inter font-bold text-slate-900 mb-2">Remy: $125 per person (Dream & Fantasy only)</p>
+              <p className="font-inter font-bold text-slate-900 mb-2">Remy: dinner $145 per person (Dream & Fantasy only)</p>
               <p className="font-inter text-slate-600 mb-3">
                 Ultra-premium French fine-dining experience inspired by the movie "Ratatouille." Tasting-menu only, 10-12 courses over 2+ hours. Pairs optional wines, champagnes, and spirits. The most exclusive and expensive dining Disney offers.
               </p>
@@ -300,20 +336,20 @@ export default function DisneyCruiseFoodGuide() {
             </div>
 
             <div className="p-6 bg-amber-50 border-l-4 border-amber-600 rounded">
-              <p className="font-inter font-bold text-slate-900 mb-2">Enchante: $125 per person (Wish only)</p>
+              <p className="font-inter font-bold text-slate-900 mb-2">Enchanté: $145 per person (Wish & Treasure)</p>
               <p className="font-inter text-slate-600 mb-3">
-                French restaurant on Disney Wish featuring contemporary French cuisine with Spanish influences. Tasting menu format. Similar in format to Remy but with a slightly less formal atmosphere.
+                French fine dining on the Disney Wish and Disney Treasure, with a menu designed by three-Michelin-star chef Arnaud Lallement. Multi-course format and the most luxurious meal onboard either ship.
               </p>
               <p className="font-inter text-slate-600 text-sm"><strong>Must-Try:</strong> Multi-course tasting menu experience, wine pairings.</p>
             </div>
 
             <div className="p-6 bg-amber-50 border-l-4 border-amber-600 rounded">
-              <p className="font-inter font-bold text-slate-900 mb-2">The Rose: $125 per person (Treasure only)</p>
+              <p className="font-inter font-bold text-slate-900 mb-2">The Rose (Treasure): a lounge, not a restaurant</p>
               <p className="font-inter text-slate-600 mb-3">
-                Premium dining venue on Disney Treasure celebrating gold-age cuisine with Southern influences. Tasting menu or a la carte options available.
+                The Rose sits at the entrance to Palo Steakhouse and Enchanté on the Disney Treasure. It is a cocktail lounge for a pre-dinner aperitif or nightcap, with small plates from the Enchanté galley. You do not need a dinner reservation to visit.
               </p>
-              <p className="font-inter text-slate-600 text-sm"><strong>Focus:</strong> Classic, elegant cuisine with a modern twist.</p>
             </div>
+            <p className="font-inter text-slate-500 text-xs">Prices reflect Disney&rsquo;s June 2025 increase and the October 2026 Palo menu change. Confirm current pricing before you sail.</p>
           </div>
         </section>
 
@@ -450,8 +486,8 @@ export default function DisneyCruiseFoodGuide() {
                 <li>Handmade pappardelle with truffle (Palo)</li>
                 <li>Scallop risotto</li>
                 <li>Osso buco (braised veal)</li>
-                <li>French tasting menu (Remy & Enchante)</li>
-                <li>Gold-age cuisine (The Rose)</li>
+                <li>French tasting menu (Remy & Enchanté)</li>
+                <li>Steaks at Palo Steakhouse (Wish-class ships)</li>
               </ul>
             </div>
 
@@ -557,10 +593,10 @@ export default function DisneyCruiseFoodGuide() {
           </p>
           <div className="flex flex-wrap gap-4">
             <Link
-              href="/deals"
+              href="/obc-estimate"
               className="inline-block px-6 py-3 bg-[#D4AF37] text-slate-900 font-inter font-bold rounded hover:bg-yellow-300 transition"
             >
-              Browse Deals
+              Get your onboard credit estimate
             </Link>
             <Link
               href="/book"
